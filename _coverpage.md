@@ -11,4 +11,4 @@
 </div>
 
 [Ausarbeitungen](index)
-[Präsentationen](./presentations.html)
+[Präsentationen](https://mwithoeft.github.io/SGSE22/presentations.html)
