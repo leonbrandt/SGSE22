@@ -71,6 +71,7 @@ Folgende praktische Themen werden bearbeitet:
   * Anforderungsanalyse (Ansätze vergleichen)
 * Moritz Withöft
   * WebSockets mit Angular (vs. Polling, SSE etc.) und node.js
+    * Fragestellung: Implementierung und Vergleich von WebSockets und WebTransport im Hinblick auf Geschwindigkeit, Stabilität und Performanz unter Last
   * GraphQL vs. REST
 * Timo Wortmann
   * Deployment auf Kubernetes (Tools, Konzepte, Architektur)
