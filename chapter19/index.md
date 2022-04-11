@@ -1,6 +1,22 @@
-# Software processes
+# Systems engineering
 
 **Autor:** Moritz Withöft
+
+## Soziotechnische Systeme
+
+## Konzeptionelles Design
+
+## Systembeschaffung
+
+## Systementwicklung
+
+## Systembetrieb und -entwicklung
+
+
+
+
+
+
 
 Nach dem Lesen des Kapitels sollten Sie einiges wissen und dann noch viel mehr und sehr viel mehr und weniger.
 
