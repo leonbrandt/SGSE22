@@ -174,7 +174,27 @@ verteilte System (über meherere Rechner) beschränkt
 - in client-server modell wird eine Applikation als Menge von Diensten ("Services")
 modelliert, welche von Servern bereitgestellt werden
 - clients müssen die Server kennen, aber nichts über andere clients wissen
--
+- jeder client kann unterschiedliche services von unterschiedlichen servern nutzen
+- server können unterschiedliche services bereitstellen
+- oftmals laufen mehrere client-prozesse auf dem gleichen Prozessor (Mail-Client, Web-Browser, Drucker-Treiber)
+- es können theoretisch auch mehrere Server-Prozesse auf dem gleichen Prozessor
+laufen, allerdings werden Server-Systeme oftmals als Mehrkern-System aufgesetzt,
+bei dem eine Instanz des gleichen Server-Programms auf jedem Kern läuft
+	- Verteilung der Client-Anfragen an Server wird oftmals durch Load Balancing Software
+	gleichmäßig auf die Prozesse verteilt -> Vermeidung von Überlastung eines Prozesses,
+	was eine Verschlechterung des Dienstes bedeuten würde, der dem Client bereitgestellt
+	werden kann
+- client-server systeme sind von der klaren Trennung zwischen der Darstellung von Informationen
+und den Berechnungen, die diese Informationen erzeugen/bereitstellen abhängig
+	- setzt Organisation der Applikationsarchitektur in logischen Schichten voraus, die
+	durch klar definiert Schnittstellen von einander getrennt sind
+	- Bsp. hierfür in Fig 17.5:
+		1. Präsentationsschicht: Darstellung von Information für den User und Interaktion mit dem User
+		2. Daten-Behandlung (data-handling, TODO: besseren Namen finden): Behandlung der
+		Daten, die zum und vom Client geschickt werden (Implementierung von Input-Validierung etc.)
+		3. Anwendungs-Berechnungs Schicht (application processing layer): Implementierung
+		der Anwendungslogik und deren Bereitstellung
+		4. Datenbankenschicht: Speicherung und Bereitstellung (+ transaction management) der Daten
 
 ## architectural patterns for distributed system ##
 
