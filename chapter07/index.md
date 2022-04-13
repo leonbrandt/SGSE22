@@ -2,31 +2,41 @@
 
 **Autor:** Rei Berberi
 
-## Object-oriented design using the UML
+Kurze Beschreibung...
 
-### System context and interactions
+## Ziele
 
-### Architectural design
+- A
+- B
+- C
 
-### Object class identification
+---
 
-### Design models
+## Objektorientiertes Design unter Verwendung der UML
 
-### Interface specification
+### Systemkontext und Interaktionen
 
-## Design patterns
+### Architektur-Design
 
-## Implementation issues
+### Identifizierung der Objektklasse
 
-### Reuse
+### Design Modelle
 
-### Configuration management
+### Schnittstellenspezifikation
 
-### Host-target development
+## Entwurfsmuster
 
-## Open-source development
+## Implementierungsfragen
 
-### Open-source licensing
+### Wiederverwendung
+
+### Konfigurationsmanagement
+
+### Host-Target-Entwicklung
+
+## Open-Source-Entwicklung
+
+### Open-Source-Lizenzierung
 
 ## Unterkapitel
 
