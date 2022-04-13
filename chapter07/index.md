@@ -14,6 +14,8 @@ Kurze Beschreibung...
 
 ## Objektorientiertes Design unter Verwendung der UML
 
+![image](https://user-images.githubusercontent.com/58107983/163242011-39596cc7-e94c-4597-b1d8-af4ff9fcd91a.png)
+
 ### Systemkontext und Interaktionen
 
 ### Architektur-Design
