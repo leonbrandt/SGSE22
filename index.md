@@ -35,7 +35,7 @@ Folgende praktische Themen werden bearbeitet:
   * User Centered Design (Vergleich Ansätzen)
   * PWA vs. native Anwendungen (Vergleich Performanz, Nutzbarkeit, Unterschiede, Vor- und Nchteile)
 * Tim Lücking
-  * Computergraphik (Raytracing, Vergleich von Ansätzen)
+  * Computergraphik (Evaluierung von Test-Driven Development in der Computergraphik anhand eines Raytracers)
   * WebAssembly (Programmiersprache, die WebAssembly als Ziel haben)
 * Christoph Raitzig
   * Just-in-time Kompilierung mit Julia
