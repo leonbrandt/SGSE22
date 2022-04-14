@@ -16,5 +16,5 @@ Inhalt/Fragestellungen:
        - Kann KI Programmierer ersetzen ?
        
   - Welche tools sind auf dem Markt erhältich und welche tools eignen sich für welche Programmiersprachen ?
-       - vergleich tabnine vs. Kite oder Gitlab
+       - vergleich Tabnine vs. Kite oder GitHub Copilot
  
