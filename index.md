@@ -68,6 +68,7 @@ Folgende praktische Themen werden bearbeitet:
       * Betrachtung für den Fall Automatisierung, also für Sensor / Aktornetze
       * Vor- & Nachteile des Mesh-Ansatzes 
     * Konzeptentwicklung des Netzes (Sensoren, Aktoren etc.) und (prototypische) Implementierung
+      * Evaluierungsgrundlage: Bestehende Systeme?
 * Marco Schwier
   * Node.js vs. Deno (Performanz, etc.)
   * Vite vs. webpack vs. other (Funktionalität, Performance, ...)
