@@ -12,6 +12,7 @@ Steffen Dorsch
     	  * Xamarin: enthalten in Visual Studio Lizenz:
     	    * Community Edition für nichtkommerzielle Nutzung
     	    * Professional / Enterprise Editionen für gewerbliche Nutzung
+    	    * .NET MAUI: MIT-Lizenz
     	  * React Native: MIT-Lizenz
     	* Unterschiede Kompilierung und Ausführung
     	* JavaScript vs. C#
