@@ -2,6 +2,24 @@
 
 **Autor:** Sebastian Sossna
 
+Some Text, that has to be rewritten, corrected and sorted:
+
+Die moderne Welt benötigt Software, um zu funktionieren. 
+Vielen industrielle Bereichen sind Software-intensiv und die meisten elektrischen Produkte beinhalten einen Computer und werden durch Software gesteuert.
+Softwaresysteme sind nicht physisch, daher auch nicht beschränkt durch die physischen Gesetze. 
+Softwaresysteme sind abstrakt und aufgrund der fehlenden physischen Beschränkungen kann ein Softwaresystem schnell sehr komplex werden. 
+Auch kann das Softwaresystem schwer zu verstehen und teuer bei Änderungen sein.
+Es existieren viele verschiedene Arten von Softwaresystemen, welche unterschiedliche Ansätze benötigen.
+Daher existiert keine einheitliche Notation, Methode oder Technik beim Softwareengineering.
+
+Softwareengineering bietet Techniken, um komplexe Software entwickeln zu können.
+Die Komplexität der Software steigt, da immer größere Software schneller umgesetzt werden muss.
+Softwareengineering adressiert das Problem der steigenden Komplexität der Software fortlaufend, allerdings nicht schnell genug. 
+Deswegen ist die steigende Komplexität der Systeme eine Ursache für die Kritik am Softwareengineering für gescheiterte Software.
+Eine weitere Ursache dafür ist das Scheitern, die Software Engineering Methoden beim Entwickeln von Software zu nutzen.
+Dieses Problem kann mit einer besseren Bildung und einem besseren Training im Bereich Software Engineering adressiert werden.
+
+
 Nach dem Lesen des Kapitels sollten Sie einiges wissen und dann noch viel mehr und sehr viel mehr und weniger.
 
 ## Unterkapitel
