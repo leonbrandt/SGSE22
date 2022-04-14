@@ -60,6 +60,7 @@ Folgende praktische Themen werden bearbeitet:
 * Marco Schwier
   * Node.js vs. Deno (Performanz, etc.)
   * Vite vs. webpack vs. other (Funktionalität, Performance, ...)
+    * Wie unterscheiden sich Webpack und Vite im Hinblick auf Nutzen, Funktionalität und Performance
 * Artem Shipilov
   * Azure Services für Microservice (Secrets, Kubernetes, Service Bus)
   * API-Gateway für Microservices (Vorteile, Warum)
