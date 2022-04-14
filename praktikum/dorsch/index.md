@@ -5,8 +5,8 @@ Steffen Dorsch
     	   * App-Startup, CPU-intensive Tasks, Installationsdauer, App-Größe
     	* Einarbeitungs- und Implementierungsaufwand
     	* Funktionalitäten Entwicklungsumgebungen
-    	   * Xamarin: Visual Studio, Xamarin Studio
-    	   * React Native: Visual Studio Code, WebStorm
+    	   * Xamarin: Visual Studio, Jetbrains Rider
+    	   * React Native: Visual Studio Code, Jetbrains WebStorm
     	* Lizenzen
     	  * Xamarin: enthalten in Visual Studio Lizenz:
     	    * Community Edition für nichtkommerzielle Nutzung
