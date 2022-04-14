@@ -48,7 +48,9 @@ Folgende praktische Themen werden bearbeitet:
   * Performanzsteigerung von Compilern durch Metaprogrammierung (Rust, o.ä.)
 * Kevin Ratschinski
   * Vergleich NoSQL/ RDBMS (Performance, Skalierung)
+    * Wie unterscheiden sich **NoSQL** Datenbanken hinsichtlich Skalierung, Performance, Einsatzgebiete und Datenstrukturen zu **SQL** Datenbanken?
   * Vergleich REST / GraphQL (Vor- und Nachteile)
+    * Welche Vorteile bietet **GraphQL** gegenüber **REST**, **SOAP** und **RPC**?
 * Marco Reineke
   * Stock prediction (Machine Learning)
   * Music genre classification (Welche Machine Learning Algorithmen sind geeignet)
