@@ -2,7 +2,90 @@
 
 **Autor:** Artem Shipilov
 
-Nach dem Lesen des Kapitels sollten Sie einiges wissen und dann noch viel mehr und sehr viel mehr und weniger.
+## Ziele:
+* **die Konzepte von Softwareprozessen** und Softwareprozessmodellen verstehen;
+* wurden in **drei allgemeine Software-Prozessmodelle** eingeführt und wann sie verwendet werden könnten;
+* **die grundlegenden Prozessaktivitäten** des Software Requirements Engineering, der Softwareentwicklung, des Testens und der Evolution kennen;
+* verstehen, **warum Prozesse organisiert werden sollten**, um mit Änderungen in den Softwareanforderungen und -designs fertig zu werden;
+* den Begriff der **Softwareprozessverbesserung** und die Faktoren verstehen, die die Softwareprozessqualität beeinflussen.
+
+Ein Softwareprozess ist eine Reihe zusammenhängender Aktivitäten, die zur Produktion eines Softwaresystems führen.
+
+Es gibt keinen allgemeingültigen Softwareprozess. Der in verschiedenen Unternehmen verwendete Prozess hängt von der Art der zu entwickelnden Software, den Anforderungen des Kunden und den Fähigkeiten der Personen ab, die die Software schreiben.
+
+Es gibt jedoch viele verschiedene Softwareprozesse, die alle die vier grundlegenden Softwareentwicklungsaktivitäten umfassen müssen:
+1. Softwarespezifikation. Die Funktionalität der Software und Einschränkungen für ihren Betrieb müssen definiert werden.
+2. Softwareentwicklung. Die Software zur Erfüllung der Spezifikation muss erstellt werden.
+3. Softwarevalidierung. Die Software muss validiert werden, um sicherzustellen, dass sie das tut, was der Kunde will.
+4. Softwareentwicklung. Die Software muss sich weiterentwickeln, um den sich ändernden Kundenanforderungen gerecht zu werden.
+
+Diese komplexen Aktivitäten umfassen Anforderungsprüfung, Architekturdesign und Komponententests. Die Prozesse umfassen auch das Softwarekonfigurationsmanagement und die Projektplanung, die die Produktionsaktivitäten unterstützen.
+
+Wenn wir Prozesse beschreiben und diskutieren, sprechen wir normalerweise von Aktivitäten in diesen Prozessen. Bei der Beschreibung von Prozessen ist es aber auch wichtig zu beschreiben, wer beteiligt ist, was produziert wird und welche Bedingungen den Handlungsablauf beeinflussen:
+1. Produkte oder Ergebnisse sind die Ergebnisse der Aktivitäten des Prozesses.
+2. Rollen spiegeln die Verantwortlichkeiten der am Prozess beteiligten Personen wider.
+3. Vor- und Nachbedingungen sind die Bedingungen, die erfüllt sein müssen, bevor und nachdem die Prozesstätigkeit durchgeführt oder das Produkt hergestellt wurde. Beispielsweise kann eine Vorbedingung vor Beginn des architektonischen Entwurfs die Zustimmung des Kunden zu allen Anforderungen sein; Nachdem diese Aktion abgeschlossen ist, kann die Nachbedingung eine Validierung der UML-Modelle sein, die die Architektur beschreiben.
+
+Softwareprozesse sind komplex und hängen von den Menschen ab, die die Entscheidungen treffen. Da es keinen einheitlichen Prozess gibt, haben die meisten Softwareunternehmen ihre eigenen Entwicklungsprozesse entwickelt. Prozesse entwickeln sich ständig weiter. Sicherheitskritische Systeme erfordern einen sehr strukturierten Entwicklungsprozess, der detaillierte Aufzeichnungen führt. Für Geschäftssysteme mit sich schnell ändernden Anforderungen ist ein flexiblerer Prozess wahrscheinlich am besten geeignet.
+
+Die Planung ist ein fester Bestandteil aller Prozesse. Plangesteuerte Prozesse sind Prozesse, bei denen alle Aktivitäten des Prozesses im Voraus geplant und der Fortschritt anhand dieses Plans gemessen wird. In agilen Prozessen erfolgt die Planung inkrementell und kontinuierlich mit der Entwicklung der Software. In der Regel muss bei großen Systemen eine Balance zwischen geplanten und flexiblen Prozessen gefunden werden.
+
+Organisationen können ihre Prozesse verbessern, indem sie Praktiken wie UML-Modellierung und testgetriebene Entwicklung übernehmen.
+
+
+## 2.1 Software-Prozessmodelle
+Jedes Prozessmodell liefert nur teilweise Informationen über diesen Prozess. Das heißt, wir sehen die Struktur des Prozesses, aber nicht die Details seiner Aktivitäten.
+Diese Modelle sind abstrakte Prozessbeschreibungen, mit denen sich die Softwareentwicklung erklären lässt.
+Allgemeine Prozessmodelle:
+
+1. Das Wasserfallmodell nimmt die Hauptaktivitäten des Spezifikations-, Entwicklungs-, Verifikations- und Evolutionsprozesses und stellt sie als separate Prozessschritte wie Anforderungsspezifikation, Softwaredesign, Implementierung und Test dar.
+2. Inkrementelle Entwicklung. Dieser Ansatz wechselt zwischen Spezifikation, Entwicklung und Verifikation. Das System wird in einer Reihe von Versionen (Inkremente) entwickelt, wobei die neue Version der vorherigen Version Funktionalität hinzufügt.
+3. Integration und Anpassung. Dieser Ansatz basiert auf wiederverwendbaren Komponenten oder Systemen. Der Entwicklungsprozess konzentriert sich darauf, diese Komponenten für den Einsatz in neuen Umgebungen anzupassen und in das System zu integrieren.
+
+Der richtige Prozess hängt von den Anforderungen des Kunden und der Umgebung ab, in der die Software verwendet werden soll, sowie von der Art der zu entwickelnden Software. Beispielsweise wird sicherheitskritische Software normalerweise in einem (1.) Wasserfallprozess entwickelt, da viele Analysen und Dokumentationen erforderlich sind, bevor die Implementierung beginnen kann. Softwareprodukte werden heute immer nach dem (2.) inkrementellen Prozessmodell entwickelt. Geschäftssysteme werden oft entwickelt, indem bestehende Systeme (3.) angepasst und integriert werden, um ein neues System mit der gewünschten Funktionalität zu erstellen.
+
+Bei großen Systemen ist es sinnvoll, einige der besten Eigenschaften aller gängigen Prozesse zu kombinieren. Subsysteme in einem größeren System können mit verschiedenen Ansätzen entwickelt werden. Teile des Systems, die gut verstanden sind, können mithilfe eines wasserfallbasierten Prozesses identifiziert und entwickelt werden. Andere Teile des Systems sollten immer in Inkrementen entwickelt werden. In beiden Fällen werden Softwarekomponenten wahrscheinlich wiederverwendet.
+
+Es wurden verschiedene Versuche unternommen, „universelle“ Prozessmodelle zu entwickeln, die sich auf all diese allgemeinen Modelle stützen. Eines der bekanntesten dieser universellen Modelle ist der Rational Unified Process (RUP) (Krutchen 2003), der von Rational, einem US-amerikanischen Softwareentwicklungsunternehmen, entwickelt wurde. Das RUP ist ein flexibles Modell, das auf unterschiedliche Weise instanziiert werden kann, um Prozesse zu erstellen, die einem der hier besprochenen allgemeinen Prozessmodelle ähneln. Das RUP wurde von einigen großen Softwareunternehmen (insbesondere IBM) übernommen, hat jedoch keine breite Akzeptanz gefunden.
+
+### 2.1.1 Das Wasserfallmodell
+
+Das erste veröffentlichte Softwareentwicklungsprozessmodell wurde von technischen Prozessmodellen abgeleitet, die bei der Entwicklung großer militärischer Systeme verwendet wurden (Royce, 1970). Es stellt den Softwareentwicklungsprozess als eine Reihe von Schritten dar, wie in Abbildung 2.1 dargestellt. Aufgrund des kaskadierenden Übergangs von einer Phase zur nächsten wird dieses Modell als Wasserfallmodell bezeichnet. Das Wasserfallmodell ist ein Beispiel für einen plangesteuerten Prozess. Die Planung und Terminierung aller Prozessaktivitäten erfolgt vor der Softwareentwicklung.
+
+![](media/image.jpg)
+**Abbildung 2.1: Das Wasserfallmodell**
+
+Die Stufen des Wasserfallmodells spiegeln direkt die Hauptaktivitäten der Softwareentwicklung wider:
+	1. Anforderungsdefinition. Die Dienste, Einschränkungen und Ziele des Systems werden durch Rücksprache mit Systembenutzern festgelegt. Anschließend werden sie detailliert definiert und dienen als Systemspezifikation.
+2. System- und Softwaredesign. Der Systemdesignprozess ordnet die Anforderungen entweder Hardware- oder Softwaresystemen zu. Es baut eine Gesamtsystemarchitektur auf. Softwaredesign beinhaltet die Identifizierung und Beschreibung der grundlegenden Abstraktionen von Softwaresystemen und ihrer Beziehungen.
+3. Implementierung und Unit-Tests. In dieser Phase wird das Softwaredesign als Satz von Programmen oder Programm Einheiten realisiert. Beim Unit-Test wird überprüft, ob jede Unit ihre Spezifikation erfüllt.
+4. Integrations- und Systemtests. Die einzelnen Programm Einheiten bzw. Programme werden als Gesamtsystem integriert und getestet, um sicherzustellen, dass die Softwarevoraussetzungen erfüllt sind. Nach dem Test wird das Softwaresystem an den Kunden geliefert.
+5. Betrieb und Wartung. Normalerweise ist dies die längste Lebenszyklusphase. Das System wird installiert und in den praktischen Einsatz gebracht. Die Wartung umfasst die Korrektur von Fehlern, die in früheren Phasen des Lebenszyklus nicht entdeckt wurden, die Verbesserung der Implementierung von Systemeinheiten und die Verbesserung der Systemdienste, wenn neue Anforderungen entdeckt werden.
+
+Das Ergebnis jeder Stufe des Wasserfallmodells sind ein oder mehrere genehmigte Dokumente. Die nächste Phase darf nicht beginnen, bevor die vorherige Phase abgeschlossen ist. Dies ist sinnvoll für die Hardwareentwicklung, bei der hohe Herstellungskosten erforderlich sind.
+
+Der Softwareprozess in der Praxis ist nie ein einfaches lineares Modell, sondern beinhaltet Rückkopplungen von einer Phase zur anderen.
+
+Wenn in einem Prozessschritt neue Informationen verfügbar werden, sollten die in den vorherigen Schritten erstellten Dokumente geändert werden, um die erforderlichen Systemänderungen widerzuspiegeln. Wenn beispielsweise festgestellt wird, dass die Implementierung einer Anforderung zu teuer ist, sollte das Anforderungsdokument geändert werden, um die Anforderung zu entfernen. Dies erfordert jedoch die Zustimmung des Kunden und verzögert den gesamten Entwicklungsprozess.
+
+Infolgedessen können sowohl Kunden als auch Entwickler die Softwarespezifikation vorzeitig einfrieren, um weitere Änderungen zu verhindern. Leider bedeutet dies, dass Probleme später gelöst, ignoriert oder programmiert werden. Ein vorzeitiges Einfrieren von Anforderungen kann dazu führen, dass das System nicht das tut, was der Benutzer wünscht. Es kann auch zu schlecht strukturierten Systemen führen.
+
+In der Endphase des Lebenszyklus werden Fehler und Auslassungen in den anfänglichen Softwareanforderungen identifiziert. Es treten Softwarefehler auf, und es besteht Bedarf an neuen Funktionen.
+
+Daher muss sich das System weiterentwickeln, um nützlich zu bleiben. Das Vornehmen dieser Änderungen erfordert möglicherweise das Wiederholen vorheriger Schritte im Prozess.
+
+Tatsächlich sollte Software flexibel sein und sich während ihrer Entwicklung an Änderungen anpassen. Aufgrund der Notwendigkeit, das System bei Änderungen frühzeitig zu verfeinern, ist das Wasserfallmodell nur für einige Arten von Systemen geeignet:
+1. Eingebettete Systeme, bei denen Software mit Hardwaresystemen interagieren muss. Aufgrund der Inflexibilität von Hardware ist es in der Regel nicht möglich, Entscheidungen über Softwarefunktionen erst nach deren Implementierung zu treffen.
+2. Kritische Systeme, bei denen eine umfassende Sicherheitsanalyse der Softwarespezifikation und des Softwaredesigns erforderlich ist. Bei diesen Systemen müssen die Spezifikations- und Entwurfsdokumentation vollständig sein, damit diese Analyse möglich ist. Sicherheitsprobleme in der Spezifikation und im Design sind normalerweise sehr teuer, um sie während der Implementierungsphase zu beheben.
+3. Große Softwaresysteme, die Teil umfassenderer technischer Systeme sind, die von mehreren Partnerunternehmen entwickelt wurden. Hardware in Systemen kann nach einem ähnlichen Modell entworfen werden, und es ist für Unternehmen einfacher, ein gemeinsames Modell für Hardware und Software zu verwenden. Wenn mehrere Unternehmen beteiligt sind, können außerdem vollständige Spezifikationen erforderlich sein, um eine unabhängige Entwicklung der verschiedenen Subsysteme zu ermöglichen.
+
+Das Wasserfallmodell ist kein geeignetes Vorgehensmodell in Situationen, in denen eine informelle Teamkommunikation möglich ist und sich die Softwareanforderungen schnell ändern. Agile Methoden sind für diese Systeme besser geeignet.
+
+Eine wichtige Variante des Wasserfallmodells ist die formale Systementwicklung, bei der ein mathematisches Modell der Systemspezifikation erstellt wird. Dieses Modell wird dann durch mathematische Transformationen in ausführbaren Code verfeinert. Formale Entwicklungsprozesse wie Methode B (Abrial 2005, 2010) werden hauptsächlich bei der Entwicklung von Softwaresystemen verwendet, die strenge Sicherheits-, Zuverlässigkeits- oder Sicherheitsanforderungen haben. Der formale Ansatz erleichtert das Schreiben eines Sicherheitsfalls. Aufgrund der hohen Kosten für die Entwicklung einer formalen Spezifikation wird dieses Entwicklungsmodell jedoch selten verwendet.
+
+
+
+
 
 ## Unterkapitel
 
