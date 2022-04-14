@@ -1,5 +1,5 @@
 Steffen Dorsch
-* Thema: Mobile Anwendungsentwicklung: React Native vs. Xamarin
+* Thema: Evaluation der mobilen Anwendungsentwicklung mit React Native vs. Xamarin
     * Entwicklung einer App je Framework
     	* Evalutation Performanz
     	* Einarbeitungs- und Umsetzungsaufwand
