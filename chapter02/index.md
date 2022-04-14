@@ -52,11 +52,11 @@ Es wurden verschiedene Versuche unternommen, „universelle“ Prozessmodelle zu
 
 Das erste veröffentlichte Softwareentwicklungsprozessmodell wurde von technischen Prozessmodellen abgeleitet, die bei der Entwicklung großer militärischer Systeme verwendet wurden (Royce, 1970). Es stellt den Softwareentwicklungsprozess als eine Reihe von Schritten dar, wie in Abbildung 2.1 dargestellt. Aufgrund des kaskadierenden Übergangs von einer Phase zur nächsten wird dieses Modell als Wasserfallmodell bezeichnet. Das Wasserfallmodell ist ein Beispiel für einen plangesteuerten Prozess. Die Planung und Terminierung aller Prozessaktivitäten erfolgt vor der Softwareentwicklung.
 
-![](media/image.jpg)
+![](img/01.png)
 **Abbildung 2.1: Das Wasserfallmodell**
 
 Die Stufen des Wasserfallmodells spiegeln direkt die Hauptaktivitäten der Softwareentwicklung wider:
-	1. Anforderungsdefinition. Die Dienste, Einschränkungen und Ziele des Systems werden durch Rücksprache mit Systembenutzern festgelegt. Anschließend werden sie detailliert definiert und dienen als Systemspezifikation.
+1. Anforderungsdefinition. Die Dienste, Einschränkungen und Ziele des Systems werden durch Rücksprache mit Systembenutzern festgelegt. Anschließend werden sie detailliert definiert und dienen als Systemspezifikation.
 2. System- und Softwaredesign. Der Systemdesignprozess ordnet die Anforderungen entweder Hardware- oder Softwaresystemen zu. Es baut eine Gesamtsystemarchitektur auf. Softwaredesign beinhaltet die Identifizierung und Beschreibung der grundlegenden Abstraktionen von Softwaresystemen und ihrer Beziehungen.
 3. Implementierung und Unit-Tests. In dieser Phase wird das Softwaredesign als Satz von Programmen oder Programm Einheiten realisiert. Beim Unit-Test wird überprüft, ob jede Unit ihre Spezifikation erfüllt.
 4. Integrations- und Systemtests. Die einzelnen Programm Einheiten bzw. Programme werden als Gesamtsystem integriert und getestet, um sicherzustellen, dass die Softwarevoraussetzungen erfüllt sind. Nach dem Test wird das Softwaresystem an den Kunden geliefert.
@@ -83,6 +83,12 @@ Das Wasserfallmodell ist kein geeignetes Vorgehensmodell in Situationen, in dene
 
 Eine wichtige Variante des Wasserfallmodells ist die formale Systementwicklung, bei der ein mathematisches Modell der Systemspezifikation erstellt wird. Dieses Modell wird dann durch mathematische Transformationen in ausführbaren Code verfeinert. Formale Entwicklungsprozesse wie Methode B (Abrial 2005, 2010) werden hauptsächlich bei der Entwicklung von Softwaresystemen verwendet, die strenge Sicherheits-, Zuverlässigkeits- oder Sicherheitsanforderungen haben. Der formale Ansatz erleichtert das Schreiben eines Sicherheitsfalls. Aufgrund der hohen Kosten für die Entwicklung einer formalen Spezifikation wird dieses Entwicklungsmodell jedoch selten verwendet.
 
+## 2.1.2 Inkrementelle Entwicklung
+
+Die inkrementelle Entwicklung basiert auf der Idee, eine Implementierung zu entwickeln, Feedback von Benutzern und anderen einzuholen und die Software über mehrere Versionen hinweg weiterzuentwickeln, bis das erforderliche System entwickelt ist (Abbildung 2.2).
+Spezifikations-, Entwicklungs- und Validierungsaktivitäten sind verschachtelt und nicht getrennt, mit aktivitätenübergreifendem Feedback.
+
+Die inkrementelle Entwicklung ist derzeit der am weitesten verbreitete Ansatz in der Softwareentwicklung. Dieser Ansatz kann geplant, flexibel oder meistens eine Kombination dieser Ansätze sein. Bei einem planmäßigen Vorgehen werden Systeminkremente im Voraus festgelegt; Wenn ein agiler Ansatz gewählt wird, werden frühe Inkremente identifiziert, aber die Entwicklung späterer Inkremente hängt von den Prioritäten des Kunden ab.
 
 
 
