@@ -17,8 +17,9 @@ Folgende praktische Themen werden bearbeitet:
   * Funktionstests in der SE (Property-based, KI basiertes Testen)
   * IT-Didaktik (Welche Programmiersprachen)
 * Leon Brandt
-  * Container-Orchestrierung mit Kubernetes / IaC (Use Cases, Tools)
-  * Event-Driven Architecture
+  * Container-Orchestrierung mit Kubernetes / IaC (Use Cases, Tools) ([Kurzexpose](https://gitlab.com/-/snippets/2292013))
+    * Konstruktion eines Tool-Stacks zum deklarativen Deployment von Software in Cloud-Architekturen
+  * Event-Driven Architecture ([Kurzexpose](https://gitlab.com/-/snippets/2292013))
 * Steffen Dorsch
   * Mobile Anwendungsentwicklung: React Native vs. Xamarin
   * Automatisierte Softwaretests für Webfrontends (z.B. Selenium)
