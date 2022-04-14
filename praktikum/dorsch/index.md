@@ -14,3 +14,4 @@ Steffen Dorsch
     	  * React Native: MIT-Lizenz
     	* Unterschiede Kompilierung und Ausführung
     	* JavaScript vs. C#
+    	* Community
