@@ -86,13 +86,9 @@ Folgende praktische Themen werden bearbeitet:
   * TDD (Ansätze, Tooling)
   * Continuous Integration / Deployment (Tooling)
 * Benedikt Wiest
-  * Vorgehensmodelle (SAFE / LESS)
-    * Vorgehensmodelle (SAFE / LESS)
-    * Gegenüberstellung der beiden Frameworks
-     * Welche Vor-& Nachteile haben die Frameworks
-     * Welche Frameworks eignen sich für welche Anwendungsfälle?
-     * Wie sehen konkrete Entwicklungsprozesse unter Anwendung der Frameworks aus?
   * Anforderungsanalyse (Ansätze vergleichen)
+    * Welche Methodiken zur Anforderungsanalyse gibt es und wo liegen die Einsatzbereiche
+    * Evaluierung verschiedener Methoden anhand eines Beispielprojekts
 * Moritz Withöft
   * WebSockets mit Angular (vs. Polling, SSE etc.) und node.js
     * Fragestellung: Implementierung und Vergleich von WebSockets und WebTransport im Hinblick auf Geschwindigkeit, Stabilität und Performanz unter Last
