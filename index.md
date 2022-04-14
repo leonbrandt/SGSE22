@@ -13,6 +13,7 @@ Folgende praktische Themen werden bearbeitet:
   * CI / CD / DevOps
   * React / Angular (Unterschied, Vor- und Nachteile)
   * Security: Authentifizierung mit OpenIDConnect (Vergleich mit Ansätzen)
+    * Wie sieht das Konzept von OpenID Connect aus und wie kann es eingesetzt werden?
 * Frederic Birwe
   * Funktionstests in der SE (Property-based, KI basiertes Testen)
   * IT-Didaktik (Welche Programmiersprachen)
