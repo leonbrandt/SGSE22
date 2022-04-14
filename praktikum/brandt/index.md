@@ -4,7 +4,7 @@ Arbeitstitel: Konstruktion eines Tool-Stacks zum deklarativen Deployment von Sof
 
 - Problemstellung aus dem SE: Bereitstellung / Deployment von cloudbasierter, verteilter Software (hier: Services in Form von Containern)
 - Ansätze: CaaS, PaaS (Probleme: Vendor lock-in, Kosteneffizienz, etc.)
-	- Vorteile: Aus SE-Sicht schlecht geeignet
+	- Vorteile: Aus SE-Sicht gut geeignet
 	- Probleme: Vendor lock-in, Kosteneneffizienz, mangelnde Flexibilität für komplexe Architekturen 
 - Alternative: Vollständige Bereitstellung via IaaS
 	- Vorteile: Probleme von anderen Ansätzen bestehen nicht
@@ -38,3 +38,4 @@ Arbeitstitel: Konstruktion eines Tool-Stacks zum deklarativen Deployment von Sof
 	- (Statische Analysemethoden!)
 		- z.B. welche Eigenschaften / Funktionen müssen Tools besitzen, etc.
 - Definieren von Zielvorgaben zur Bewertung einer Qualitätseigenschaft als "erfüllt"
+	- Daraus geht hervor, was "aus SE-Sicht gut/schlecht" geeignet bedeutet
