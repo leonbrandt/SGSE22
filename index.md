@@ -33,6 +33,10 @@ Folgende praktische Themen werden bearbeitet:
   * Automatische GUI-Tests (Tools, Vorgehen, Frameworks)
 * Finn Kuhn
   * User Centered Design (Vergleich Ansätzen)
+    * User Centered Design: Integration in Entwicklungsprozess
+      * Was ist User Centered Design?
+      * Wie lässt sich User Centered Design in Entwicklungsprozess einbinden?
+      * Umsetzen eines Projekts mithilfe der Erkenntnisse
   * PWA vs. native Anwendungen (Vergleich Performanz, Nutzbarkeit, Unterschiede, Vor- und Nchteile)
 * Tim Lücking
   * Computergraphik (Evaluierung von Test-Driven Development in der Computergraphik anhand eines Raytracers)
