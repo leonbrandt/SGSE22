@@ -64,6 +64,10 @@ Folgende praktische Themen werden bearbeitet:
   * Containerisierung (Docker vergleichen mit anderen Ansätzen/Tools, Wofür, Was kann das?)
 * Paul Schlarmann
   * Konzept für verteilte Sensor-Meshnetze mit intelligenter Automatisierung
+    * Gegenüberstellung Meshnetz und traditionelle Architekturen für Drahtlose Netze (Punkt-zu-Punkt, Stern)
+      * Betrachtung für den Fall Automatisierung, also für Sensor / Aktornetze
+      * Vor- & Nachteile des Mesh-Ansatzes 
+    * Konzeptentwicklung des Netzes (Sensoren, Aktoren etc.) und (prototypische) Implementierung
 * Marco Schwier
   * Node.js vs. Deno (Performanz, etc.)
   * Vite vs. webpack vs. other (Funktionalität, Performance, ...)
