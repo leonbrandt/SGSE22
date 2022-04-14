@@ -1,8 +1,15 @@
 # Software processes
 
-test
-
 **Autor:** Artem Shipilov
+
+## Ziele:
+* **die Konzepte von Softwareprozessen** und Softwareprozessmodellen verstehen;
+* wurden in **drei allgemeine Software-Prozessmodelle** eingeführt und wann sie verwendet werden könnten;
+* **die grundlegenden Prozessaktivitäten** des Software Requirements Engineering, der Softwareentwicklung, des Testens und der Evolution kennen;
+* verstehen, **warum Prozesse organisiert werden sollten**, um mit Änderungen in den Softwareanforderungen und -designs fertig zu werden;
+* den Begriff der **Softwareprozessverbesserung** und die Faktoren verstehen, die die Softwareprozessqualität beeinflussen.
+
+
 
 Nach dem Lesen des Kapitels sollten Sie einiges wissen und dann noch viel mehr und sehr viel mehr und weniger.
 
