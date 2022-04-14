@@ -62,6 +62,11 @@ Folgende praktische Themen werden bearbeitet:
   * Continuous Integration / Deployment (Tooling)
 * Benedikt Wiest
   * Vorgehensmodelle (SAFE / LESS)
+   * Gegenüberstellung der beiden Frameworks
+   * Welche Vor-& Nachteile haben die Frameworks
+   * Welche Frameworks eignen sich für welche Anwendungsfälle?
+   * Wie sehen konkrete Entwicklungsprozesse unter Anwendung der Frameworks aus?
+  * 
   * Anforderungsanalyse (Ansätze vergleichen)
 * Moritz Withöft
   * WebSockets mit Angular (vs. Polling, SSE etc.) und node.js
