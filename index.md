@@ -79,6 +79,7 @@ Folgende praktische Themen werden bearbeitet:
   * GraphQL vs. REST
 * Timo Wortmann
   * Deployment auf Kubernetes (Tools, Konzepte, Architektur)
+    * Implementierung, Vergleich und Bewertung von Continuous Deployment Ansätzen auf Kubernetes
   * Edge Computing auf Azure (Vor- und Nachteile)
 * Christiane Zolkin
   * Flutter: Unterschied zu anderen Frameworks
