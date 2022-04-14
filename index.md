@@ -8,9 +8,25 @@ Folgende praktische Themen werden bearbeitet:
 
 * Rei Berberi
   * WebEntwicklung mit PHP (Vergleich mit anderen Skriptsprachen (Javascript, Python, Ruby))
-    * Wie unterscheidet sich PHP hinsichtlich Simplizität, Performanz und Integration zu JavaScript?
-    * Wie relevant ist PHP heutzutage für die Webentwicklung?
-  * Flutter: mobile Anwendungsentwicklung
+    * Wie unterscheidet sich PHP hinsichtlich Simplizität, Performanz und Integration zu JavaScript? Wie relevant ist PHP heutzutage für die Webentwicklung im Vergleich zu JavaScript?
+      * Simplizität (Lernkurve und Syntax)
+        * Welche der beiden Skriptsprachen ist einfacher zu erlernen?
+        * Wie sind die Syntaxen im Vergleich zueinander?
+      * Performanz und Geschwindigkeit
+        * JavaScript: ereignisgesteuertes, einfädiges, nicht blockierendes E/A-Ausführungsmodell, asynchron
+        * PHP: Multithreading, blockierendes E/A-Ausführungsmodell, synchron
+      * Integration (Erweiterbarkeit)
+        * JavaScript kann mit HTML, XML und Ajax kombiniert werden. Front-end Technologien wie Vue, Angular, React. Node js als server-side framework. NPM als Package Manager. 
+        * PHP kann nur mit HTML kombiniert werden. Integration mit CMS (z.B. WordPress) und LAMP Stack Technologien wie MySQL und PostgreSQL. PEAR und Composer als Package Managers.
+      * Universalität
+        * JavaScript: Full Stack
+        * PHP: Back End only. LAMP Stack als Nachteil?
+      * Community und Arbeitsmarkt
+      * Ideen:
+        * Forschungsstatistiken finden
+        * Performanz testen durch Anwendungsbeispiele, z.B die gleiche Anwendung PHP vs JavaScript
+        * Simplizität durch einfache Code-Beispiele
+        * Integration, Universalität, Community und Arbeitsmarkt durch Recherche vergleichen.
 * Rafael Berger
   * CI / CD / DevOps
   * React / Angular (Unterschied, Vor- und Nachteile)
@@ -64,6 +80,11 @@ Folgende praktische Themen werden bearbeitet:
   * Containerisierung (Docker vergleichen mit anderen Ansätzen/Tools, Wofür, Was kann das?)
 * Paul Schlarmann
   * Konzept für verteilte Sensor-Meshnetze mit intelligenter Automatisierung
+    * Gegenüberstellung Meshnetz und traditionelle Architekturen für Drahtlose Netze (Punkt-zu-Punkt, Stern)
+      * Betrachtung für den Fall Automatisierung, also für Sensor / Aktornetze
+      * Vor- & Nachteile des Mesh-Ansatzes 
+    * Konzeptentwicklung des Netzes (Sensoren, Aktoren etc.) und (prototypische) Implementierung
+      * Evaluierungsgrundlage: Bestehende Systeme?
 * Marco Schwier
   * Node.js vs. Deno (Performanz, etc.)
   * Vite vs. webpack vs. other (Funktionalität, Performance, ...)
@@ -81,8 +102,9 @@ Folgende praktische Themen werden bearbeitet:
   * TDD (Ansätze, Tooling)
   * Continuous Integration / Deployment (Tooling)
 * Benedikt Wiest
-  * Vorgehensmodelle (SAFE / LESS)
   * Anforderungsanalyse (Ansätze vergleichen)
+    * Welche Methodiken zur Anforderungsanalyse gibt es und wo liegen die Einsatzbereiche
+    * Evaluierung verschiedener Methoden anhand eines Beispielprojekts
 * Moritz Withöft
   * WebSockets mit Angular (vs. Polling, SSE etc.) und node.js
     * Fragestellung: Implementierung und Vergleich von WebSockets und WebTransport im Hinblick auf Geschwindigkeit, Stabilität und Performanz unter Last
