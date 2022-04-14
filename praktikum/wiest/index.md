@@ -1,13 +1,16 @@
 # Ausarbeitung zum Thema Anforderungsanalyse
 
+ - Grundlagen
+	 - Begriffe ... (Anforderungen, Ziele,...)
  - Anforderungsanalyse ist Teil des Softwareentwicklungsprozess
- - Anforderungsanalyse läuft nach verschiedenen Methoden
- - Vergleich der Methodiken
-	 - Vorgehen (Prozesschritte)
-	 - Bestandteile
-	 - Artefakte
-	 - Ergebnisse
-	 - Anwendungsgebiete
+	 - Warum wird Anforderungsanalyse gemacht? (Aufzeigen von Kosten senken, Risiken verkleinern)
+ - Anforderungsanalyse läuft nach verschiedenen Methoden, welche unterschiedliche Bestandteile und Vorgehen vorgeben  (IEEE , CMMI, Volere,...)
+	 - Vergleich der Methodiken
+		 - Vorgehen (Prozesschritte)
+		 - Bestandteile
+		 - Artefakte
+		 - Ergebnisse
+		 - Anwendungsgebiete
 
 # Evaluierungsmöglichkeiten
 
