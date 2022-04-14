@@ -6,9 +6,14 @@
 
 
 
+## Fragen und Aufgaben
+
+
+
 - Hat WebTransport das Potential WebSockets abzulösen oder haben die Protokolle unterschiedliche Anwendungsbereiche (wie z.B. WASM, JS)?
 
 - Wie unterscheiden sich WebTransport und WebSockets von einander?
+- Welche Schnittstelle ist unter welchen Bedingungen performanter?
 
 
 
