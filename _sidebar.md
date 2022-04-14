@@ -42,7 +42,6 @@ Chapter 21 Real-time software engineering 610
 Chapter 22 Project management 641
 -->
 
-* [**Project planning**](chapter23/index)
 * [**Quality management**](chapter24/index)
 * [**Configuration management**](chapter25/index)
 
