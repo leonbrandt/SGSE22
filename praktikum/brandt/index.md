@@ -2,9 +2,11 @@ Arbeitstitel: Konstruktion eines Tool-Stacks zum deklarativen Deployment von Sof
 
 # Kontext
 
+(Hier aufgeführte Thesen sollen noch stichhaltig verargumentiert werden)
+
 - Problemstellung aus dem SE: Bereitstellung / Deployment von cloudbasierter, verteilter Software (hier: Services in Form von Containern)
 - Ansätze: CaaS, PaaS (Probleme: Vendor lock-in, Kosteneffizienz, etc.)
-	- Vorteile: Aus SE-Sicht schlecht geeignet
+	- Vorteile: Aus SE-Sicht gut geeignet
 	- Probleme: Vendor lock-in, Kosteneneffizienz, mangelnde Flexibilität für komplexe Architekturen 
 - Alternative: Vollständige Bereitstellung via IaaS
 	- Vorteile: Probleme von anderen Ansätzen bestehen nicht
@@ -29,12 +31,17 @@ Arbeitstitel: Konstruktion eines Tool-Stacks zum deklarativen Deployment von Sof
 - (ggf.) Untersuchen von Qualitätseigenschaften anhand einer Fallstudie
 	- Fachliche Komplexität der Fallstudie minimal halten!
 	- Frage: Weshalb genau ist eine Fallstudie notwendig?
+	- Verschiedene Use-Cases (z.B. herkömmlicher Stack für Webanwendungen vs. IOT-Anwendung)
+		- Fraglich ob Differenzierung hinsichtlich spezifischer Anforderungen für Anwendungsfälle möglich
 
 # TODOs für dieses Dokument
 
 - Definieren notwendiger Qualitätseigenschaften für ein Vorgehensansatz
+	- ISO 25010
+	- Stichwort: Developer Experience (DX)
 - Definieren von Metriken zur Messung dieser Qualitätseigenschaften
 - Definieren von Methoden zur Erhebung dieser Metriken
 	- (Statische Analysemethoden!)
 		- z.B. welche Eigenschaften / Funktionen müssen Tools besitzen, etc.
 - Definieren von Zielvorgaben zur Bewertung einer Qualitätseigenschaft als "erfüllt"
+	- Daraus geht hervor, was "aus SE-Sicht gut/schlecht" geeignet bedeutet
