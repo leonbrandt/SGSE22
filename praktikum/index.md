@@ -21,9 +21,6 @@ Folgende praktische Themen werden bearbeitet:
 * Maxim Fründt
   * Datenbanken
   * Spieleentwicklung
-* Niklas Herz
-  * Cloud Services (Vor- und Nachteile)
-  * Frameworks für WebApplikationen (Angular, React)
 * Benjamin Krüger
   * NoSQL-DBs (Performance)
   * Automatische GUI-Tests (Tools, Vorgehen, Frameworks)
@@ -57,10 +54,6 @@ Folgende praktische Themen werden bearbeitet:
 * Sebastian Sossna
   * Swarm Simulation (Ants / Bee)
   * 2D Game Development (im Vergleich zum Übergang von 3D)
-* Niklas Theis (?)
-* Marcus Wiebe
-  * TDD (Ansätze, Tooling)
-  * Continuous Integration / Deployment (Tooling)
 * Benedikt Wiest
   * Vorgehensmodelle (SAFE / LESS)
    * Gegenüberstellung der beiden Frameworks
