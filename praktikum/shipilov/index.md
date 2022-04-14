@@ -1,4 +1,11 @@
-##Artem Shipilov
+## Artem Shipilov
 
-* Azure Services für Microservice (Secrets, Kubernetes, Service Bus)
-* API-Gateway für Microservices (Vorteile, Warum)
+# Azure Services für Microservice 
+* Azure Key Vault
+* Azure Kubernetes Service
+* Azure Service Bus
+* Azure Container Registry
+
+# API-Gateway für Microservices
+* Vorteile
+* Warum
