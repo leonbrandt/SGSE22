@@ -54,6 +54,9 @@ Folgende praktische Themen werden bearbeitet:
   * Music genre classification (Welche Machine Learning Algorithmen sind geeignet)
 * Malte Reinsch
   * WebAssembly mit Rust (Vergleich Frameworks, Vor- und Nachteile)
+  	* Fragestellung (Vorschlag): Vergleich verschiedener Rust-Frameworks zur Erzeugung
+		von WebAssembly im Hinblick auf architektonische Unterscheide und Größe
+		des erzeugten WebAssembly-Codes
   * Containerisierung (Docker vergleichen mit anderen Ansätzen/Tools, Wofür, Was kann das?)
 * Paul Schlarmann
   * Konzept für verteilte Sensor-Meshnetze mit intelligenter Automatisierung
