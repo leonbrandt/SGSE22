@@ -1,18 +1,22 @@
 # Finn Kuhn
  
 ## Vergleich von zwei Entwicklungsansätzen: User Centered Design vs. ???
-  
-* Vorstellung der beiden Ansätze 
+#### These: Mit UCD werden bessere UIs entwickelt  
+
+* Vorstellung der beiden Ansätze
 * Entwicklung von zwei Projekten jeweils nach den beiden Ansätzen 
     * Ein Projekt mit Fokus auf GUI
-        * Vermutung: UCD sollte besser funktionieren
     * Ein Projekt mit Fokus auf Logik/Backend:
-        * Vermutung: alternativer Ansatz sollte besser funktionieren
     
     * für UCD iterative Nutzerbefragung
         * kleine Nutzergruppe für Übersichtlichkeit und Einfachheit (10-20 Personen)
         * sowohl gezielte Fragen, als auch offene Anmerkungen 
         * sinnvoller Aufbau von Feedback Teil der Recherche
+    
+### Forschungsfragen
+* Welcher Ansatz hat welche Vorteile/Nachteile?
+* Welcher Ansatz ist aufwendiger? (Time to production) 
+* Ist UCD wirklich sinnvoller für Projekte mit Fokus auf Frontend?
     
 ### Zeitplan
 
