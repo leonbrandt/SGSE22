@@ -1,6 +1,16 @@
-# Malte Reinsch #
+# Christoph Raitzig & Malte Reinsch #
 
-## Fragestellung ##
+## Wasm mit compilerbau ##
+
+- Verbindung wasm und compilerbau
+	- Optimierung speziell für wasm
+	- KI Optimierung für wasm
+		- wie kommt man da an Daten und wie verwendet man die (Praxisbeispiele)?
+	- von LLVM nach wasm?
+
+-------------
+
+## Backup: Fragestellung ##
 
 Vergleich verschiedener Rust-Frameworks zur Erzeugung von WebAssembly im
 Hinblick auf architektonische Unterscheide, Performance und Größe des erzeugten WebAssembly-Codes
@@ -29,3 +39,5 @@ Hinblick auf architektonische Unterscheide, Performance und Größe des erzeugte
 ## Ziel der Arbeit ##
 
 - Ermittlung des "besten" Frameworks im Hinblick auf oben genannte Parameter
+
+
