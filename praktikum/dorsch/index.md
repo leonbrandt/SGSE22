@@ -8,5 +8,9 @@ Steffen Dorsch
     	   * Xamarin: Visual Studio, Xamarin Studio
     	   * React Native: Visual Studio Code, WebStorm
     	* Lizenzen
+    	  * Xamarin: enthalten in Visual Studio Lizenz:
+    	    * Community Edition für nichtkommerzielle Nutzung
+    	    * Professional / Enterprise Editionen für gewerbliche Nutzung
+    	  * React Native: MIT-Lizenz
     	* Unterschiede Kompilierung und Ausführung
     	* JavaScript vs. C#
