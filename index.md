@@ -8,6 +8,8 @@ Folgende praktische Themen werden bearbeitet:
 
 * Rei Berberi
   * WebEntwicklung mit PHP (Vergleich mit anderen Skriptsprachen (Javascript, Python, Ruby))
+    * Wie unterscheidet sich PHP hinsichtlich Simplizität, Performanz und Integration zu JavaScript?
+    * Wie relevant ist PHP heutzutage für die Webentwicklung?
   * Flutter: mobile Anwendungsentwicklung
 * Rafael Berger
   * CI / CD / DevOps
