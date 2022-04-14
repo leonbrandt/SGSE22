@@ -8,6 +8,14 @@
 - Funktionsweise
 - Anwendungsbereiche
 - Mögliche Sicherheitsrisiken
+- zu messende Metriken
+    - Anmeldezeit
+    - Erweiterungsmöglichkeiten (2 Faktor usw.)
+    - Session parameter (limit, dauer)
+    - Developer experience (Konfigurationsaufwand)
+    - Verschlüsselungsalgorithmus/Signieralgorithmus
+    - Unterstützte Programmiersprachen
+    - Anzahl möglicher Identitätsanbieter (Google, Facebook, etc.)
 
 ## Fragen
 
