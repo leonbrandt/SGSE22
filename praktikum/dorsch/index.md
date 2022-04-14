@@ -1,6 +1,6 @@
 Steffen Dorsch
 * Thema: Evaluation der mobilen Anwendungsentwicklung mit React Native vs. Xamarin
-    * Entwicklung einer App je Framework
+    * Entwicklung einer App mit gleicher Funktionalität je Framework
     	* Evalutation Performanz
     	   * App-Startup, CPU-intensive Tasks, Installationsdauer, App-Größe
     	* Einarbeitungs- und Implementierungsaufwand
