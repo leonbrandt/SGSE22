@@ -6,7 +6,8 @@
 ### Fragestellungen
  * Wie unterscheiden sich die Ansaetze?
  * Wie ist die Performanz der Simulation im Vergleich?
-	*Beeinflussen andere Objekte in der Szene die performance?
+	* Wie kann die Performanz in Unity und Unreal Engine 5 getestet werden?
+	* Beeinflussen andere Objekte in der Szene die performance?
  * Welche Simulation ist flueﬂiger?
  * Welche Simulation sieht realisitischer aus?
 
