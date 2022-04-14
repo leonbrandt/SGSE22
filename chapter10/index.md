@@ -1,6 +1,6 @@
-# Software processes
+# Dependable systems
 
-**Autor:** Marcus Wiebe
+**Autor:** Maxim Fründt
 
 Nach dem Lesen des Kapitels sollten Sie einiges wissen und dann noch viel mehr und sehr viel mehr und weniger.
 

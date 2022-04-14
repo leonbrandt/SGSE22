@@ -42,6 +42,7 @@ Folgende praktische Themen werden bearbeitet:
 * Marco Reineke
   * Stock prediction (Machine Learning)
   * Music genre classification (Welche Machine Learning Algorithmen sind geeignet)
+  * KI gestützte Softwareentwicklung,Vor-/Nachteile,Limitierungen und Möglichkeiten(Vergleich von tools)
 * Malte Reinsch
   * WebAssembly mit Rust (Vergleich Frameworks, Vor- und Nachteile)
   * Containerisierung (Docker vergleichen mit anderen Ansätzen/Tools, Wofür, Was kann das?)
@@ -62,6 +63,11 @@ Folgende praktische Themen werden bearbeitet:
   * Continuous Integration / Deployment (Tooling)
 * Benedikt Wiest
   * Vorgehensmodelle (SAFE / LESS)
+   * Gegenüberstellung der beiden Frameworks
+   * Welche Vor-& Nachteile haben die Frameworks
+   * Welche Frameworks eignen sich für welche Anwendungsfälle?
+   * Wie sehen konkrete Entwicklungsprozesse unter Anwendung der Frameworks aus?
+  * 
   * Anforderungsanalyse (Ansätze vergleichen)
 * Moritz Withöft
   * WebSockets mit Angular (vs. Polling, SSE etc.) und node.js
