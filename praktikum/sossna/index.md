@@ -1,7 +1,4 @@
-# Rei Berberi
-
-*   2D Physikalische Simulation (Vergleich unterschiedlicher Ansätze)
-*   Automatisches Bewässerungssystem (Evaluation verschiedener Ansätze)
-*   Swarm Simulation (Ants / Bee)
-*   2D Game Development (im Vergleich zum Übergang von 3D)
-* 
+# Sebastian Sossna
+* In Unity/Unreal engine 2d/3d physikalische Simulationen entwickeln. Wie unterscheiden sich die Ansätze? Welcher Ansatz ist besser geeignet? 
+	** Welches Simuliert die Flüßigkeit realistischer /fließender? Gibt es unterschiede die erkennbar sind? Welcher Ansatz wurde bei Unity genutzt und welcher bei Unreal? Welcher Ansatz ist wann sinnvoller?
+	
