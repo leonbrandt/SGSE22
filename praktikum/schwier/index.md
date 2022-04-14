@@ -7,8 +7,11 @@
 ## Inhalt
 - Welche Funktionaltäten bieten die einzelnen Tools und worin unterscheiden sich diese?
 - Wie unterscheidet sich die Buildzeit?
-- Welchen Performance Gewinn kann man durch die die Verwendung von Webpack, esbuild oder Vite gewinnen?
-- Wie größ ist der Konfigurationsaufwand von Webpack, Vite und esbuild?
-- Gibt es Anwendungsbereiche in den Vite, Webpack oder esbuild zu bevorzugen ist?
+- Welchen Performancegewinn kann durch die Verwendung von Webpack, esbuild oder Vite gewonnen werden?
+- Wie groß ist der Konfigurationsaufwand von Webpack, Vite und esbuild?
+- Welche Programmiersprachen werden unterstützt?
+- Welche Build-Module gibt es?
+- Wie stark verändert sich die Größe des Deployments?
+- Gibt es Anwendungsbereiche in den Vite, Webpack oder esbuild zu bevorzugen sind?
 
 
