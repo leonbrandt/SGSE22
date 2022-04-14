@@ -12,4 +12,4 @@
 
 [Ausarbeitungen](index)
 [Präsentationen](https://mwithoeft.github.io/SGSE22/presentations.html)
-[Praktikum](praktikum/praktikum)
+[Praktikum](praktikum/index)
