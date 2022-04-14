@@ -5,6 +5,7 @@
 
 * Vorstellung der beiden Ansätze
 * Entwicklung von zwei Projekten jeweils nach den beiden Ansätzen 
+    * kleine Projekte (z. B. Single-Screen Anwendung)
     * Ein Projekt mit Fokus auf GUI
     * Ein Projekt mit Fokus auf Logik/Backend:
     
