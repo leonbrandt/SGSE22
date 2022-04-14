@@ -17,7 +17,6 @@
 * [**Dependable Systems**](chapter10/index)
 * [**Reliability engineering**](chapter11/index)
 * [**Safety engineering**](chapter12/index)
-* [**Security engineering**](chapter13/index)
 * [**Resilience engineering**](chapter14/index)
 
 <br>
