@@ -1,85 +1,44 @@
-# Software processes
+# Qualitätsmanagement
 
 **Autor:** Kevin Ratschinski
 
-Nach dem Lesen des Kapitels sollten Sie einiges wissen und dann noch viel mehr und sehr viel mehr und weniger.
+## Inhalt
 
-## Unterkapitel
+- **24 Einführung**
+- **24.1 Softwarequalität**
+- **24.2 Software - Standards**
+- **24.3 Reviews und Inspektionen**
+- **24.4 Qualitätsmanagement und agile Entwicklung**
+- **24.5 Softwaremessung**
+- **24.6 Zusammenfassung**
+- **24.7 Quellen**
 
-* **Softwaresystem**:
-  Die *innere* Sicht des Informatikers nimmt Software als Softwaresystem wahr.
-* **Softwareprodukt**: Die *äußere* Sicht eines Auftraggeber nimmt ein Softwaresystem als Softwareprodukt wahr. 
+## 24 Einführung
 
-### Tabelle
+## 24.1 Softwarequalität
 
-| A          |     B       |           C               | 
-|:----------:|:-----------:|:-------------------------:|
-| Eins | Zwei | Drei |
-| Vier | Fünf | Sechs |
+## 24.2 Softwarestandards
 
-## Links
+### 24.2.1 ISO 9001
 
-[Markdown] ist eine Sprache, die nach HTML konvertiert werden kann. 
+## 24.3 Reviews und Inspektionen
 
-[Markdown]: http://daringfireball.net/projects/markdown/
+### 24.3.1 Review-Prozess
 
-## Aufzählung
+### 24.3.2 Programminspektionen
 
-Es unterteilt sich in:
+## 24.4 Qualitätsmanagement und agile Entwicklung
 
-* A
-  * A1
-* B
-  * B1
-  * B2
-* C
+## 24.5 Softwaremessung
 
+### 24.5.1 Produktmetriken
 
-# Überschrift
+### 24.5.2 Softwarekomponentenanalyse
 
-"...the **go to** statement should be abolished..." [1].
+### 24.5.3 Mehrdeutigkeit von Messungen
 
-Dieser Link führt intern zu einem anderen [Thema](qualitaet/README)
+### 24.5.4 Softwareanalytik
 
-Dieser Link führt extern nach [Youtube](https://www.youtube.com/)
+## 24.6 Quellen
 
-> Dieser Text ist völlig sinnlos, aber steht trotzdem hier. Dieser Text geht über mehrere Zeilen.
-
-## Unterüberschrift
-
-* Eins
-  * eins.eins
-  * eins.zwei
-* Zwei
-  * Zwei.zwei
-* Drei
-
-### Code
-
-```javascript
-public class A {
-  Integer a;
-  public A() {
-    this.a = 1
-  }
-}
-```
-
-Syntax Highlighting für Javascript. Weitere Sprachen müssen konfiguriert werden.
-
-### Bilder
-
-![](media/image.jpg)
-
-### Audio
-
-[](media/sample.mp3 ':include')
-
-### Video
-
-[](media/sample.mp4 ':include')
-
-## Referenzen
-
-[1]: Dijkstra, E. W. (1968). Go to statement considered harmful. 
-Communications of the ACM, 11(3), 147-148.
+[1]: Sommerville Ian (2018). Software Engineering. Quality management, 700-729.
