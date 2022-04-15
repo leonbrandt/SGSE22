@@ -33,3 +33,6 @@ Ist die Kommunikation implementiert, sollen gewisse Tests für die Evaluierung i
 Die bereits genannten Fragen sollen unter folgendem Arbeitstitel untersucht werden:
 
 **Implementierung und Vergleich von WebSockets und WebTransport im Hinblick auf Geschwindigkeit, Stabilität und Performanz unter Last**
+
+Der aktuelle Implementierungsfortschritt kann [HIER](https://github.com/mwithoeft/Spezielle-Gebiete-zum-Softwareengineering) eingesehen werden.
+
