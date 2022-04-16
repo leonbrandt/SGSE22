@@ -1,3 +1,8 @@
+<!-- github -->
+<link rel="stylesheet" type="text/css"  href="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/style.css"  />
+<!-- local -->
+<!-- <link rel="stylesheet" type="text/css"  href="chapter24/assets/style.css"  /> -->
+
 # Qualitätsmanagement
 
 **Autor:** Kevin Ratschinski
@@ -36,8 +41,13 @@ Die Techniken des Softwarequalitätsmanagement kommen ursprünglich aus der Fert
 Um diese Prozesse umzusetzen werden in der Softwareentwicklung oft QM-Teams eingesetzt. Die Teams sorgen für eine unabhängige Produktprüfung.
 Damit wird sichergestellt, dass die zuvor festgelegten Standards und Ziele des Unternehmens mit dem Produkt übereinstimmen.
 
-![24.1 QM und Softwareentwicklung](assets/24.1_qm_und_softwareentwicklung.png)  
-Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung
+<figure class="image">
+  <!-- github -->
+  <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.1_qm_und_softwareentwicklung.png" alt="Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung"/> 
+  <!-- local -->
+  <!-- <img src="chapter24/assets/24.1_qm_und_softwareentwicklung.png" alt="Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung"/> -->
+  <figcaption>Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung</figcaption>
+</figure>
 
 Abbildung 24.1 Zeigt den Ablauf eines Softwareentwicklungsprozess. Bevor die Entwicklung beginnt werden die Standards festgelegt und ein Qualitätsplan vom QM-Team erstellt. Das QM-team sollte stets unabhängig von der Entwicklergruppe sein, damit es die Qualität der Software objektiv beurteilen kann.
 Die gewünschten Softwareeigenschaften welche das Produkt später haben muss, sollten vor Projektbeginn in einem Qualitätsplan festgehalten werden.
@@ -83,8 +93,13 @@ Manche dieser Merkmale können sich gegenseitig beeinflussen. Zum Beispiel kann 
 Traditionelles Softwarequalitätsmanagement geht grundsätzlich davon aus, dass die Qualität der Software in direktem Bezug zu der Qualität des Softwareentwicklungsprozesses steht.  
 Die folgende Abbildung zeigt einen prozessbasierten Qualitätsansatz.
 
-![24.2 Prozessbasierte Qualität](assets/24.2_prozessbasierte_qualitaet.png)  
-Abbildung 24.2 Prozessbasierte Qualität
+<figure class="image">
+  <!-- github -->
+  <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.2_prozessbasierte_qualitaet.png" alt="Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung"/> 
+  <!-- local -->
+  <!-- <img src="chapter24/assets/24.2_prozessbasierte_qualitaet.png" alt="Abbildung 24.2 Prozessbasierte Qualität"/> -->
+  <figcaption>Abbildung 24.2 Prozessbasierte Qualität</figcaption>
+</figure>
 
 Anders als in der Fertigung ist die Beziehung zwischen Prozess- und Produktqualität komplexer. Prozesse lassen sich schwieriger standardisieren und überwachen, als es in der Fertigung der Fall ist. Trotzdem hat der Prozess, der für die Entwicklung der Software verwendet wird, einen großen Einfluss auf die Qualität der Software. Gute Entwicklungsprozesse werden mit großer Wahrscheinlichkeit auch qualitativ bessere Software hervorbringen.
 
