@@ -1,5 +1,5 @@
 <!-- github -->
-<link rel="stylesheet" type="text/css"  href="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/style.css"  />
+<link rel="stylesheet" type="text/css"  href="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/style.css?raw=true"  />
 <!-- local -->
 <!-- <link rel="stylesheet" type="text/css"  href="chapter24/assets/style.css"  /> -->
 
@@ -43,7 +43,7 @@ Damit wird sichergestellt, dass die zuvor festgelegten Standards und Ziele des U
 
 <figure class="image">
   <!-- github -->
-  <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.1_qm_und_softwareentwicklung.png" alt="Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung"/> 
+  <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.1_qm_und_softwareentwicklung.png?raw=true" alt="Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung"/> 
   <!-- local -->
   <!-- <img src="chapter24/assets/24.1_qm_und_softwareentwicklung.png" alt="Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung"/> -->
   <figcaption>Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung</figcaption>
@@ -95,7 +95,7 @@ Die folgende Abbildung zeigt einen prozessbasierten Qualitätsansatz.
 
 <figure class="image">
   <!-- github -->
-  <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.2_prozessbasierte_qualitaet.png" alt="Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung"/> 
+  <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.2_prozessbasierte_qualitaet.png?raw=true" alt="Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung"/> 
   <!-- local -->
   <!-- <img src="chapter24/assets/24.2_prozessbasierte_qualitaet.png" alt="Abbildung 24.2 Prozessbasierte Qualität"/> -->
   <figcaption>Abbildung 24.2 Prozessbasierte Qualität</figcaption>
