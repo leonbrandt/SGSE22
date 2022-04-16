@@ -102,7 +102,66 @@ Definierte Standards sind ebenfalls wichtig, aber zusätzlich sollte noch versuc
 
 ## 24.2 Softwarestandards
 
+Softwarestandards spielen eine wichtige Rolle im Softwarequalitätsmanagement. Die Wahl der Standards legt zum großen Teil die eingesetzten Werkzeuge und Methoden fest die während des Entwicklungsprozesses verwendet werden.  
+Standards sind aus den folgenden drei Gründen wichtig:
+
+1. Standards basieren oft auf Erfahrung, die für das Unternehmen von großen Wert sind. Die Standardisierung trägt dazu bei, auf diese Erfahrung zurückzugreifen und frühere Fehler zu vermeiden.
+
+2. Standards bieten einen Rahmen für die Definition, was "Qualität" innerhalb des Softwareentwicklungsprojekt bedeutet. Sie beschreiben vorab das Qualitätsniveau, welches erreicht werden muss.
+
+3. Standards tragen zur Kontinuität bei, sodass alle Entwickler nach denselben Verfahren arbeiten.
+
+Es gibt zwei verwandte Arten von Software-Engineering-Standards, die im Softwarequalitätsmanagement definiert und verwendet werden können:
+
+1. Produktstandards: Diese gelten für das zu entwickelnde Produkt.
+
+2. Prozessstandards: Diese definieren die Prozesse, die während des Entwicklungsprozesses zu befolgen sind.
+
+Standards müssen sich immer positiv auf die Produktqualität auswirken. Produktstandards sollten dabei so entworfen werden, dass sie kosteneffizient angewendet und geprüft werden können. Prozessstandards sollten die Prozesse definieren, die prüfen, dass die Produktstandards eingehalten werden.  
+Folgende Tabelle zeigt mögliche Produkt- und Prozessstandards:
+
+| Produktstandards                   | Prozessstandards                                     |
+| ---------------------------------- | ---------------------------------------------------- |
+| Formular für Entwurfsprüfung       | Durchführung des entwurfs-Reviews                    |
+| Struktur des Anforderungsdokuments | Einreichung des neuen Codes für die Systemerstellung |
+| Headerformat für Methoden          | Prozess der Versionsfreigabe                         |
+| Java-Programmierstil               | Genehmigungsprozess für den Projektplan              |
+| Format des Projektplans            | Prozess für die Änderungskontrolle                   |
+| Formular für Änderungsanträge      | Prozess für die Testprotokollierung                  |
+
+Tabelle 24.2: Produkt- und Prozessstandards
+
+Die eingesetzten Standards in Unternehmen, basieren oft auf allgemeineren nationalen und internationalen Standards. So gibt es viele Standards die festlegen wie die verwendete Technologie, Programmiersprache oder Dokumentation eingesetzt werden sollte.
+
+Entwickler finden oft, dass die Standards einen zu starken Vorschriftencharakter haben und die Entwicklung zum Teil ausbremsen. Um die Entwickler von den Standards zu überzeugen und deren positiven Aspekte hervorzuheben, sollten währen der Entwicklung folgende Punkte berücksichtigt werden.
+
+- Die Softwareentwickler in die Entwicklung von Produktstandards einbeziehen.
+
+- Die eingesetzten Standards regelmäßig überprüfen und gegebenenfalls ändern, damit sie technische Veränderungen widerspiegeln.
+
+- Sicherstellen, dass Werkzeugunterstützung für die standardbasierte Entwicklung zur Verfügung steht.
+
 ### 24.2.1 ISO 9001
+
+Mit der **ISO 9000** gibt es eine internationale Normenreihe, die in allen Branchen zur Entwicklung eines Qualitätsmanagementsystem eingesetzt werden kann. Die **ISO 9001** ist die allgemeinste dieser Normen und betrifft Firmen, die Produkte entwerfen, entwickeln und warten.
+
+Alle Standards die in diesem Abschnitte besprochen werden, gehen auf die **ISO 9001** ein welche im Jahr **2008** veröffentlicht worden ist.
+
+Die ISO 9001 ist kein Standard speziell für die Softwareentwicklung. Die Norm legt die allgemeinen Qualitätsgrundsätze fest und beschreibt generell die Qualitätsprozesse und skizziert die zu definierenden betrieblichen Standards und Verfahren.  
+Alle Unternehmen die sich nach ISO 9001 zertifizieren lassen möchten, müssen dokumentieren, dass ihre Prozesse ISO 9001-konform sind. Darüber hinaus müssen Maßnahmen definiert und Protokolle erstellt werden, die nachweisen, dass die festgelegten Unternehmensprozesse eingehalten werden. Um dies zu realisieren sollten in einem Qualitätshandbuch alle wichtigen Prozesse beschrieben werden.  
+Abbildung 24.3 zeigt die Kernprozesse eines Software- oder Systemherstellers nach ISO 9001.
+
+<figure style="text-align: center;">
+  <!-- github -->
+  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.3_kernprozesse_iso9001.png?raw=true" alt="Abbildung 24.3 Kernprozesse eines Software- oder Systemherstellers nach ISO 9001"/> 
+  <!-- local -->
+  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.3_kernprozesse_iso9001.png" alt="Abbildung 24.3 Kernprozesse eines Software- oder Systemherstellers nach ISO 9001"/> -->
+  <figcaption>Abbildung 24.3 Kernprozesse eines Software- oder Systemherstellers nach ISO 9001</figcaption>
+</figure>
+
+In der Norm werden keine Qualitätsprozesse definiert oder vorgeschrieben welche Prozesse eingesetzt werden müssen. Um mit der ISO 9001 kompatibel zu sein muss ein Unternehmen z.B. die verschiedenen Prozesse aus Abbildung 24.3 definieren und Verfahren entwickeln, die nachweisen, dass seine Qualitätsprozesse eingehalten werden. Diese gewährt den Unternehmen eine gewisse Flexibilität, bei der Umsetzung der Norm.
+
+Unabhängige Zertifizierungsbehörden prüfen die Qualitätsmanagementprozesse und deren Dokumentation und entscheiden, ob die Prozesse alle die in der ISO 9001 angegebenen Bereiche abdecken. Wenn ja, erfolgt eine Zertifizierung, dass alle Prozesse eines Unternehmens mit der ISO 9001 übereinstimmen.
 
 ## 24.3 Reviews und Inspektionen
 
