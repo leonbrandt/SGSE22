@@ -4,14 +4,14 @@
 
 ## Inhalt
 
-- **24 Einführung**
-- **24.1 Softwarequalität**
-- **24.2 Software - Standards**
-- **24.3 Reviews und Inspektionen**
-- **24.4 Qualitätsmanagement und agile Entwicklung**
-- **24.5 Softwaremessung**
-- **24.6 Zusammenfassung**
-- **24.7 Referenzen**
+- [**24 Einführung**](#_24-einführung)
+- [**24.1 Softwarequalität**](#_241-softwarequalität)
+- [**24.2 Software - Standards**](#_242-softwarestandards)
+- [**24.3 Reviews und Inspektionen**](#_243-reviews-und-inspektionen)
+- [**24.4 Qualitätsmanagement und agile Entwicklung**](#_244-qualitätsmanagement-und-agile-entwicklung)
+- [**24.5 Softwaremessung**](#_245-softwaremessung)
+- [**24.6 Zusammenfassung**](#_246-zusammenfassung)
+- [**24.7 Referenzen**](#_247-referenzen)
 
 ## 24 Einführung
 
@@ -165,7 +165,32 @@ Unabhängige Zertifizierungsbehörden prüfen die Qualitätsmanagementprozesse u
 
 ## 24.3 Reviews und Inspektionen
 
-### 24.3.1 Review-Prozess
+Reviews und Inspektionen sind Teile der Qualitätssicherung, mit denen sich die Qualität von Projektlieferungen prüfen lässt. Dabei wird die Software, ihre Dokumentation sowie die Prozessprotokolle untersucht, um Fehler und Versäumnisse festzustellen und um zu sehen, ob die zuvor festgelegten Qualitätsstandards eingehalten wurden.
+
+Mit Hilfe von Reviews und Inspektionen, soll die Softwarequalität verbessert und nicht die Leistung der einzelnen Mitarbeiter bewertet werden.
+
+### 24.3.1 Reviews
+
+Auch wenn Reviews sehr unterschiedlich ausfallen können, ist der Review-Prozess normalerweise in drei Phasen gegliedert.
+Abbildung 24.4 zeigt einen Review-Prozess in der Softwareentwicklung.
+
+<figure style="text-align: center;">
+  <!-- github -->
+  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.4_review_prozess.png?raw=true" alt="Abbildung 24.4 Der Review-Prozess in der Softwareentwicklung"/> 
+  <!-- local -->
+  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.4_review_prozess.png" alt="Abbildung 24.4 Der Review-Prozess in der Softwareentwicklung"/> -->
+  <figcaption>Abbildung 24.4 Der Review-Prozess in der Softwareentwicklung</figcaption>
+</figure>
+
+1. **Aktivitäten vor dem Review**:  
+   Vor dem eigentlichen Review muss sich bereits intensiv mit der Planung und der Vorbereitung auseinander gesetzt werden. Die Planung umfasst das Zusammenstellen eines Review-Teams, Festlegen von Ort und Zeit und das Verteilen der zu prüfenden Dokumente. Während der Vorbereitung kann das Team sich bereits vorab einen Überblick über die zu prüfende Software verschaffen. Die Teammitglieder müssen vertraut mit der Software, den Dokumenten und den entsprechenden Standards sein.  
+   Ein Review-Team sollte normalerweise eine Kernmannschaft von drei bis vier Personen aufweisen, die anschließend als Hauptprüfer bestimmt werden. Einer davon sollte ein erfahrener Entwickler sein, der die Verantwortung für wichtige technische Entscheidungen übernehmen kann.
+
+2. **Review-Sitzung**:  
+   Während des Reviews sollte der Verantwortliche der geprüften Dokumente oder Programms das ganze gemeinsam mit dem Review-Team "durchgehen". Eine Sitzung sollte dabei nicht zu lange dauern (maximal 2 Stunden). Alle Entscheidungen die während der Sitzung getroffen werden, sollten formell festgehalten werden. Abschließend sollte auf Basis der getroffenen Entscheidungen ein Abschlussprotokoll erstellt werden, in dem alle Maßnahmen festgehalten werden, auf die man sich während des Reviews geeinigt hat.
+
+3. **Aktivitäten nach dem Review**:  
+   Nachdem Review, müssen Lösungen für die Fragen, die sich bei der Sitzung ergeben haben, gefunden werden. Eventuell müssen Softwarefehler behoben werden oder die Software muss umgestaltet werden, um den Qualitätsstandards zu entsprechen. Sind schwerwiegende Fehler während des Reviews festgestellt worden, kann zusätzlich ein Management-Review erforderlich sein, um zu entscheiden ob mehr Ressourcen zur Verfügung gestellt werden müssen. Nachdem sämtliche Änderungen vorgenommen wurden, kann der Verantwortliche prüfen, ob alle zuvor vereinbarten Punkte erledigt sind.
 
 ### 24.3.2 Programminspektionen
 
@@ -181,7 +206,9 @@ Unabhängige Zertifizierungsbehörden prüfen die Qualitätsmanagementprozesse u
 
 ### 24.5.4 Softwareanalytik
 
-## 24.6 Referenzen
+## 24.6 Zusammenfassung
+
+## 24.7 Referenzen
 
 <span id="ref_1">[1]: Sommerville Ian (2018). Software Engineering. Quality management, 700-729. </span>  
 <span id="ref_2">[2]: Managing the Software Process. Humphrey, W. 1989.</span>
