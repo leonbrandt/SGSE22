@@ -1,8 +1,3 @@
-<!-- github -->
-<link rel="stylesheet" type="text/css"  href="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/style.css?raw=true"  />
-<!-- local -->
-<!-- <link rel="stylesheet" type="text/css"  href="chapter24/assets/style.css"  /> -->
-
 # Qualitätsmanagement
 
 **Autor:** Kevin Ratschinski
@@ -41,11 +36,11 @@ Die Techniken des Softwarequalitätsmanagement kommen ursprünglich aus der Fert
 Um diese Prozesse umzusetzen werden in der Softwareentwicklung oft QM-Teams eingesetzt. Die Teams sorgen für eine unabhängige Produktprüfung.
 Damit wird sichergestellt, dass die zuvor festgelegten Standards und Ziele des Unternehmens mit dem Produkt übereinstimmen.
 
-<figure class="image">
+<figure style="text-align: center;">
   <!-- github -->
-  <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.1_qm_und_softwareentwicklung.png?raw=true" alt="Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung"/> 
+  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.1_qm_und_softwareentwicklung.png?raw=true" alt="Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung"/> 
   <!-- local -->
-  <!-- <img src="chapter24/assets/24.1_qm_und_softwareentwicklung.png" alt="Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung"/> -->
+  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.1_qm_und_softwareentwicklung.png" alt="Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung"/> -->
   <figcaption>Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung</figcaption>
 </figure>
 
@@ -93,11 +88,11 @@ Manche dieser Merkmale können sich gegenseitig beeinflussen. Zum Beispiel kann 
 Traditionelles Softwarequalitätsmanagement geht grundsätzlich davon aus, dass die Qualität der Software in direktem Bezug zu der Qualität des Softwareentwicklungsprozesses steht.  
 Die folgende Abbildung zeigt einen prozessbasierten Qualitätsansatz.
 
-<figure class="image">
+<figure style="text-align: center;">
   <!-- github -->
-  <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.2_prozessbasierte_qualitaet.png?raw=true" alt="Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung"/> 
+  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.2_prozessbasierte_qualitaet.png?raw=true" alt="Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung"/> 
   <!-- local -->
-  <!-- <img src="chapter24/assets/24.2_prozessbasierte_qualitaet.png" alt="Abbildung 24.2 Prozessbasierte Qualität"/> -->
+  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.2_prozessbasierte_qualitaet.png" alt="Abbildung 24.2 Prozessbasierte Qualität"/> -->
   <figcaption>Abbildung 24.2 Prozessbasierte Qualität</figcaption>
 </figure>
 
