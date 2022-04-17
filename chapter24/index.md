@@ -194,6 +194,92 @@ Abbildung 24.4 zeigt einen Review-Prozess in der Softwareentwicklung.
 
 ### 24.3.2 Programminspektionen
 
+Programminspektionen sind "**Peer-Reviews**", bei denen Teammitglieder zusammen nach Fehlern in der Software suchen, die gerade entwickelt wird. Die Mitglieder sehen sich den Quelltext des Programms an und suchen nach Fehlern und Problemen. Bei den Fehlern kann es sich um logische Fehler, Anomalien im Code, die zu einen möglicherweise falschen Zustand führen oder um Funktionen die im Code nicht verwendet werden handeln. Das Review-Team überprüft den Programmcode und hebt Probleme hervor, mit denen sich das Entwicklerteam noch einmal beschäftigen muss.
+
+Bei Inspektionen wird oft eine Checkliste häufiger Programmierfehler verwendet, um eine konzentrierte Suche nach den Fehlern zu ermöglichen. Mögliche Überprüfungen, die während eines Inspektionsprozesses vorgenommen werden können, sind in Tabelle 24.3 abgebildet.
+
+<table>
+  <tr>
+    <th>Fehlerklasse</th>
+    <th>Überprüfung während der Inspektion</th>
+  </tr>
+  <tr>
+    <td>Datenfehler </td>
+    <td>
+      <ul>
+        <li>Sind alle Programmvariablen initialisiert, bevor sie verwendet werden?</li>
+        <li>Sind alle Konstanten benannt?</li>
+        <li>Sollte der höchste Indexwert von Arrays der Anzahl an Elemente entsprechen oder die Anzahl der Elemente -1?</li>
+        <li>Falls Zeichenketten benutzt werden, ist ein Trennzeichen explizit zugewiesen?</li>
+        <li>Besteht die Möglichkeit eines Speicherüberlaufs?</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Kontrollstrukturfehler </td>
+    <td>
+      <ul>
+        <li>Sind die Bedingungen jeder bedingten Anweisung korrekt?</li>
+        <li>Wird jede Schleife mit Sicherheit beendet?</li>
+        <li>Sind zusammengesetzte Anweisungen richtig geklammert?</li>
+        <li>Sind in <strong>case</strong>-Anweisungen alle möglicherweise auftretenden Fälle berücksichtigt?</li>
+        <li>Beinhaltet jede <strong>case</strong>-Anweisung ein <strong>break</strong>, wenn es benötigt wird?</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Ein-/Ausgabefehler</td>
+    <td>
+      <ul>
+        <li> Werden alle Eingabevariablen benutzt?</li>
+        <li>Sind allen Ausgangsvariablen Werte zugewiesen, bevor sie ausgegeben werden?</li>
+        <li> Können unerwartete Eingaben zu Fehlern führen?</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Schnittstellenfehler</td>
+    <td>
+      <ul>
+        <li>Haben alle Aufrufe von Funktionen, die richtige Anzahl an Parameter?</li>
+        <li>Stimmen die formalen mit den tatsächlichen Parametertypen überein?</li>
+        <li>Stimmt die Reihenfolge von Parametern?</li>
+        <li>Falls Komponenten auf gemeinsam genutzten Speicher zugreifen, benutzen sie dasselbe Strukturmodell für diesen Speicher?</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Speicherverwaltungsfehler</td>
+    <td>
+      <ul>
+        <li>Falls eine verknüpfte Struktur verändert wurde, wurden alle Verknüpfungen wieder korrekt neu zugewiesen?</li>
+        <li>Fall eine dynamische Speicherung erfolgt, wurde der Speicherplatz korrekt zugeteilt?</li>
+        <li>Wird der Speicherplatz explizit wieder freigegeben, nachdem er nicht mehr genutzt wird?</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Ausnahmeverwaltungsfehler</td>
+    <td>
+      <ul>
+        <li>Werden alle möglichen Fehlerzustände abgefangen?</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+Tabelle 24.2: Produkt- und Prozessstandards
+
+Jedes Unternehmen sollte eigene Checklisten auf der Grundlage ihrer Standards erstellen und diese Checklisten in regelmäßigen Abständen aktualisieren, sobald neue Fehler bekannt werden. Firmen die Inspektionen einsetzen, können damit sehr effektiv Fehler finden.  
+Fagan (1986) [[3]](#ref_3) berichtete, dass mehr als 60% der Fehler in einem Programm durch die Inspektion eines Programms entdeckt werden können.  
+McConnell (2004) [[4]](#ref_4) vergleicht Modultests, die eine ungefähre Fehlererkennungsrate von 25% aufweisen, mit Inspektionen, deren Fehlererkennungsrate bei 60% lag. Zu berücksichtigen ist, dass diese Vergleiche angestellt wurden, bevor automatische Tests eine weite Verbreitung fanden. Es ist nicht bekannt wie Inspektionen im Vergleich mit diesem Ansatz aussehen.
+
+Obwohl bekannt ist wie erfolgversprechend Inspektionen sind, werden sie von den Firmen nur zögerliche eingesetzt.
+Dies hat mitunter folgende Gründe:
+
+- Im Testen erfahrene Entwickler werden eventuell sich nur ungern eingestehen, dass Inspektionen effektiver sind als Tests.
+- Zusätzliche Kosten während der Entwicklungsphase.
+- Manager haben das Risiko dieser Zusatzkosten, welches sie oft nicht tragen wollen.
+
 ## 24.4 Qualitätsmanagement und agile Entwicklung
 
 ## 24.5 Softwaremessung
@@ -210,5 +296,7 @@ Abbildung 24.4 zeigt einen Review-Prozess in der Softwareentwicklung.
 
 ## 24.7 Referenzen
 
-<span id="ref_1">[1]: Sommerville Ian (2018). Software Engineering. Quality management, 700-729. </span>  
-<span id="ref_2">[2]: Managing the Software Process. Humphrey, W. 1989.</span>
+<span id="ref_1">[1]: Sommerville Ian (2018). Software Engineering. Quality management. 700-729.</span>  
+<span id="ref_2">[2]: Humphrey, W. (1989). Managing the Software Process.</span>  
+<span id="ref_3">[3]: Fagan, M. E. (1986). Advances in Software Inspections. 744-751</span>  
+<span id="ref_4">[4]: McConnell (2004). Code Complete: A Practical Handbook of Software Construction, 2nd ed.</span>
