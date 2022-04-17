@@ -5,6 +5,9 @@
 - Verbindung wasm und compilerbau
 	- Optimierung speziell für wasm
 	- KI Optimierung für wasm
+		- Nutzung / Erweiterung von [MLGO](https://arxiv.org/pdf/2101.04808.pdf)
+		- Potentielles Ziel: Optimierung hinsichtlich Codegröße (.wasm muss immer
+		an Client geschickt werden)
 		- wie kommt man da an Daten und wie verwendet man die (Praxisbeispiele)?
 	- von LLVM nach wasm?
 
