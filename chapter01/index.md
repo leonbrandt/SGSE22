@@ -4,6 +4,8 @@
 
 Some Text, that has to be rewritten, corrected and sorted:
 
+Kapitel 1
+
 Die moderne Welt benötigt Software, um zu funktionieren. 
 Vielen industrielle Bereichen sind Software-intensiv und die meisten elektrischen Produkte beinhalten einen Computer und werden durch Software gesteuert.
 Softwaresysteme sind nicht physisch, daher auch nicht beschränkt durch die physischen Gesetze. 
@@ -20,7 +22,13 @@ Eine weitere Ursache dafür ist das Scheitern, die Software Engineering Methoden
 Dieses Problem kann mit einer besseren Bildung und einem besseren Training im Bereich Software Engineering adressiert werden.
 
 
-Nach dem Lesen des Kapitels sollten Sie einiges wissen und dann noch viel mehr und sehr viel mehr und weniger.
+Kapitel 1.1
+
+Die Techniken des Softwareengineerings umfassen die Weiterentwicklung von Software, das Design der Software und die Programmspezifizierung. 
+Diese Techniken sind nicht für die private Nutzung der Software entwickelt worden, sondern mit der Intention diese Software für eine Vielzahl an Nutzer zu entwickeln. 
+Im Softwareengineering umfasst der Begriff Software jegliche Programme, Dateien oder Informationen, welche dazu benötigt werden, um die Software nutzbar zu machen. 
+Dies inkludiert auch jegliche Dokumentation, welche für die Wartung oder Weiterentwicklung benötigt wird.
+
 
 ## Unterkapitel
 
