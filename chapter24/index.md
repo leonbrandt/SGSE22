@@ -267,7 +267,7 @@ Bei Inspektionen wird oft eine Checkliste häufiger Programmierfehler verwendet,
     </td>
   </tr>
 </table>
-Tabelle 24.2: Produkt- und Prozessstandards
+Tabelle 24.3: Produkt- und Prozessstandards
 
 Jedes Unternehmen sollte eigene Checklisten auf der Grundlage ihrer Standards erstellen und diese Checklisten in regelmäßigen Abständen aktualisieren, sobald neue Fehler bekannt werden. Firmen die Inspektionen einsetzen, können damit sehr effektiv Fehler finden.  
 Fagan (1986) [[3]](#ref_3) berichtete, dass mehr als 60% der Fehler in einem Programm durch die Inspektion eines Programms entdeckt werden können.  
@@ -281,6 +281,33 @@ Dies hat mitunter folgende Gründe:
 - Manager haben das Risiko dieser Zusatzkosten, welches sie oft nicht tragen wollen.
 
 ## 24.4 Qualitätsmanagement und agile Entwicklung
+
+Qualitätsmanagement ist ein formaler Prozess, der sich auf eine ausführliche Dokumentation der Tests sowie auf die Einhaltung dieser Prozesse stützt. Diesem steht die agile Entwicklung gegenüber, die zum Ziel hat, so wenig Zeit wie möglich für das Schreiben von Dokumenten und dem Formalisieren der Entwicklungsarbeit aufzuwenden. Deshalb mussten QM-Techniken für den Einsatz von agilen Methoden entwickelt werden.
+
+Agile Methoden stellen die Codeentwicklung in den Mittelpunkt und minimieren die Dokumentation und Prozesse. Der Schwerpunkt wird auf die Kommunikation zwischen den Teammitgliedern gelegt und nicht auf die Kommunikation über Projektdokumente. Qualitätsmanagement in der agilen Entwicklung, basiert auf die Etablierung einer Qualitätsstruktur in der sich die Teammitglieder für die Qualität der Software verantwortlich fühlen.  
+Firmen die agile Entwicklungsmethoden einsetzen, sind selten nach _ISO 9001_ zertifiziert, aufgrund des bürokratischen Aufwands der von der Norm vorgegeben wird.
+
+Einige Beispiele für agile Entwicklungsmethoden sind folgende:
+
+- _Prüfen von Code bevor er eingefügt wird:_ Entwickler prüfen den Code ihrer Teammitglieder, bevor der Code in die aktuelle Version eingebracht wird.
+
+- _Niemals die aktuellste Version zerstören:_ Bevor Codeänderungen übernommen werden, müssen sie gegen das ganze System getestet werden. Falls die aktuelle Version fehlerhaft ist, muss der Behebung des Problems die höchste Priorität eingeräumt werden.
+
+- _Probleme beheben, sobald sie auftreten:_ Probleme sollten sofort behoben werden wenn sie entdeckt werden, auch wenn der Code von anderen Entwicklern stammt.
+
+Reviews oder Inspektionen die in den vorherigen Kapiteln beschrieben wurden, kommen in der agilen Softwareentwicklung normalerweise nicht zum Einsatz.  
+In Scrum beispielsweise gibt es nach Abschluss einer Softwareiteration ein Review des gesamten Teams, in der Qualitätsfragen und Probleme diskutiert werden.
+
+Die agilen Methoden sind in Unternehmen nur dann effektiv, wenn das Unternehmen, das die Software entwickelt, auch die dazugehörige Spezifikation kontrolliert. Wenn große Systeme für einen externen Kunden entwickelt werden, können sich agile Ansätze des Qualitätsmanagement mit minimaler Dokumentation als ungeeignet erweisen.  
+Dies kann folgende Gründe haben:
+
+- Der Kunde eines großes Unternehmens, hat meist eigene Qualitätsstandards und erwartet von Softwareunternehmen, dass die Qualitätsstandards mit den firmeninternen Prozessen kompatibel sind. In so einem Fall müsste das Entwicklungsteam wie vom Kunden gefordert einen Qualitätsplan und Qualitätsberichte erstellen.
+
+- Wenn geografisch verteilte Teams, eventuell noch aus verschiedenen Unternehmen, an der Entwicklung beteiligt sind. Ist eine informelle Kommunikation oft nicht ausreichend. Dies führt häufig dazu, dass eine formale Dokumentation zwischen den Teams wieder benötigt wird.
+
+- Bei Systemen mit einer langen Laufzeit, änder sich häufig das Entwicklungsteam. Wenn es bei solchen Projekten keine Dokumentation gibt, können neue Entwickler schlecht nachvollziehen, warum bestimmte Entscheidungen getroffen wurden.
+
+Aus folgenden Gründen muss der informelle Ansatz in agilen Methoden, bei größeren Projekten welche eine Dokumentation erfordern, angepasst werden. Anstatt Software zu entwickeln könnte zum Beispiel einer der Sprints sich auf die Erstellung der wichtigsten Softwaredokumentationen konzentrieren.
 
 ## 24.5 Softwaremessung
 
