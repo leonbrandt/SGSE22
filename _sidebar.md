@@ -17,7 +17,6 @@
 * [**Dependable Systems**](chapter10/index)
 * [**Reliability engineering**](chapter11/index)
 * [**Safety engineering**](chapter12/index)
-* [**Security engineering**](chapter13/index)
 * [**Resilience engineering**](chapter14/index)
 
 <br>
@@ -42,7 +41,6 @@ Chapter 21 Real-time software engineering 610
 Chapter 22 Project management 641
 -->
 
-* [**Project planning**](chapter23/index)
 * [**Quality management**](chapter24/index)
 * [**Configuration management**](chapter25/index)
 
