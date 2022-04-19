@@ -2,84 +2,20 @@
 
 **Autor:** Maxim Fründt
 
-Nach dem Lesen des Kapitels sollten Sie einiges wissen und dann noch viel mehr und sehr viel mehr und weniger.
+## 10 Einführung
 
-## Unterkapitel
+Durch die hohe Bedeutung, die Software in unserem alltäglichem Leben hat, ist es von großer Wichtigkeit, dass man sich auf diese verlassen kann. Man spricht auch von der Dependability (=Zuverlässigkeit) von Software(-Systemen). Die Software sollte nicht nur immer zur Verfügung stehen, wenn sie benötigt wird, sondern korrent und ohne Seiteneffekte funktionieren.
 
-* **Softwaresystem**:
-  Die *innere* Sicht des Informatikers nimmt Software als Softwaresystem wahr.
-* **Softwareprodukt**: Die *äußere* Sicht eines Auftraggeber nimmt ein Softwaresystem als Softwareprodukt wahr. 
+Die Zuverlässigkeit von Systemen ist in der Regel wichtiger als die Gesamtheit an Funktion dessen, hauptsächlich aus folgenden Gründen:
+- Oft ist es verkraftbar wenn eine Funktion des Systems ausfällt, solange das System weiter verfügbar ist
+- Unzuverlässliche oder unsichere Systeme werden von Benutzern abgelehnt, diese Ablehnung kann sich auch auf andere Produkte des Unternehmens auswirken
+- Die Kosten eines Ausfalls können je nach Anwendung immens hoch sein
+- Unzuverlässige Systeme können zu Datenleaks oder Datenverlust führen
 
-### Tabelle
+Systeme können auch ohne hohe Zuverlässigkeit nützlich sein, jedoch wird in diesem Fall von außen versucht dies zu kompensieren. Beispielsweise wird ein Privatnutzer seine Daten regelmäßig Backupen, um diese nicht durch einen Softwarefehler auf dem Gerät zu verlieren.
 
-| A          |     B       |           C               | 
-|:----------:|:-----------:|:-------------------------:|
-| Eins | Zwei | Drei |
-| Vier | Fünf | Sechs |
+Um ein zuverlässiges System Designen zu können, muss mehr als nur die Software betrachtet werden. Die ausführende Hardware und der bedienede Nutzer spielen auch einen Faktor in der Zuverlässigkeit des Systems, folglich unterscheidet man zwischen
 
-## Links
-
-[Markdown] ist eine Sprache, die nach HTML konvertiert werden kann. 
-
-[Markdown]: http://daringfireball.net/projects/markdown/
-
-## Aufzählung
-
-Es unterteilt sich in:
-
-* A
-  * A1
-* B
-  * B1
-  * B2
-* C
-
-
-# Überschrift
-
-"...the **go to** statement should be abolished..." [1].
-
-Dieser Link führt intern zu einem anderen [Thema](qualitaet/README)
-
-Dieser Link führt extern nach [Youtube](https://www.youtube.com/)
-
-> Dieser Text ist völlig sinnlos, aber steht trotzdem hier. Dieser Text geht über mehrere Zeilen.
-
-## Unterüberschrift
-
-* Eins
-  * eins.eins
-  * eins.zwei
-* Zwei
-  * Zwei.zwei
-* Drei
-
-### Code
-
-```javascript
-public class A {
-  Integer a;
-  public A() {
-    this.a = 1
-  }
-}
-```
-
-Syntax Highlighting für Javascript. Weitere Sprachen müssen konfiguriert werden.
-
-### Bilder
-
-![](media/image.jpg)
-
-### Audio
-
-[](media/sample.mp3 ':include')
-
-### Video
-
-[](media/sample.mp4 ':include')
-
-## Referenzen
-
-[1]: Dijkstra, E. W. (1968). Go to statement considered harmful. 
-Communications of the ACM, 11(3), 147-148.
+- Hardware-Fehler, welche durch einen Designfehler, einem Herstellungsfehler, einem Fehler durch die Umgebung oder durch erreichen des Endes der Lebenszeit auftreten können
+- Software-Fehler, welche durch Fehler in der Spezifikation, dem Design oder der Implementierung der Software auftreten können
+- Menschliche-Fehler, welche durch nicht vorhergesehene Bedienung der Software entstehen können
