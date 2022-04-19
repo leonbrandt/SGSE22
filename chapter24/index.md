@@ -33,7 +33,7 @@ Die Techniken des Softwarequalitätsmanagement kommen ursprünglich aus der Fert
 
 **Quality Control** ist die Anwendung dieser Qualitätsprozesse, um Produkte auszusieben, die dem geforderten Qualitätsniveau nicht entsprechen.
 
-Um diese Prozesse umzusetzen werden in der Softwareentwicklung oft QM-Teams eingesetzt. Die Teams sorgen für eine unabhängige Produktprüfung.
+Um diese Prozesse umzusetzen, werden in der Softwareentwicklung oft QM-Teams eingesetzt. Die Teams sorgen für eine unabhängige Produktprüfung.
 Damit wird sichergestellt, dass die zuvor festgelegten Standards und Ziele des Unternehmens mit dem Produkt übereinstimmen.
 
 <figure style="text-align: center;">
@@ -44,8 +44,8 @@ Damit wird sichergestellt, dass die zuvor festgelegten Standards und Ziele des U
   <figcaption>Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung</figcaption>
 </figure>
 
-Abbildung 24.1 Zeigt den Ablauf eines Softwareentwicklungsprozess. Bevor die Entwicklung beginnt werden die Standards festgelegt und ein Qualitätsplan vom QM-Team erstellt. Das QM-team sollte stets unabhängig von der Entwicklergruppe sein, damit es die Qualität der Software objektiv beurteilen kann.
-Die gewünschten Softwareeigenschaften welche das Produkt später haben muss, sollten vor Projektbeginn in einem Qualitätsplan festgehalten werden.
+Abbildung 24.1 zeigt den Ablauf eines Softwareentwicklungsprozess. Bevor die Entwicklung beginnt, werden die Standards festgelegt und ein Qualitätsplan vom QM-Team erstellt. Das QM-team sollte stets unabhängig von der Entwicklergruppe sein, damit es die Qualität der Software objektiv beurteilen kann.
+Die gewünschten Softwareeigenschaften, welche das Produkt später haben muss, sollten vor Projektbeginn in einem Qualitätsplan festgehalten werden.
 
 Nach Humphrey (1989) [[2]](#ref_2) könnte ein Qualitätsplan wie folgt aufgebaut werden:
 
@@ -61,7 +61,7 @@ Traditionelles Qualitätsmanagement ist ein formaler Prozess, der sich auf eine 
 
 Die Grundlagen für das Qualitätsmanagement kommen ursprünglich aus der Fertigungsindustrie. Mit Hilfe von QM kann in der Fertigung, die Qualität der produzierten Produkte verbessert werden. Die Produzierten Produkte können mit der Produktspezifikation verglichen werden. Liegt ein Produkt im Toleranzbereich der Spezifikation wird es als akzeptabel klassifiziert.
 
-Softwarequalität lässt sich nicht direkt mit der Qualität in der Fertigungsindustrie vergleichen. Ein Toleranzbereich ist in Softwaresystemen in der Regel nicht erwünscht. Hinzu kommt noch ,dass es oft unmöglich ist, objektiv zu beurteilen, ob ein Softwaresystem seiner Spezifikation entspricht.  
+Softwarequalität lässt sich nicht direkt mit der Qualität in der Fertigungsindustrie vergleichen. Ein Toleranzbereich ist in Softwaresystemen in der Regel nicht erwünscht. Hinzu kommt noch, dass es oft unmöglich ist, objektiv zu beurteilen, ob ein Softwaresystem seiner Spezifikation entspricht.  
 Das liegt an folgenden Gründen:
 
 - Es ist schwierig, vollständige und eindeutige Systemanforderungen zu schreiben.
@@ -71,7 +71,7 @@ Das liegt an folgenden Gründen:
 Aufgrund dieser Probleme handelt es sich beim Qualitätsmanagement in der Softwareentwicklung um einen subjektiven Prozess, bei dem die Mitglieder des QM-Teams anhand ihrer Sachkenntnis und Erfahrung entscheiden müssen, ob eine Software als akzeptabel klassifiziert werden kann.
 
 Die subjektive Qualität eines Softwaresystems basiert größtenteils auf seinen nicht funktionalen Eigenschaften. Deshalb ist Softwarequalität nicht nur eine Frage der korrekten Implementierung, sondern hängt auch sehr stark von den nicht funktionalen Eigenschaften ab.  
-Folgende Tabelle zeigt einige nicht funktionale Eigenschaften die bei der Ermittlung der Softwarequalität oft eine wichtige Rolle spielen.
+Folgende Tabelle zeigt einige nicht funktionale Eigenschaften, die bei der Ermittlung der Softwarequalität oft eine wichtige Rolle spielen.
 
 |                        |                  |                        |
 | ---------------------- | ---------------- | ---------------------- |
@@ -83,7 +83,7 @@ Folgende Tabelle zeigt einige nicht funktionale Eigenschaften die bei der Ermitt
 
 Tabelle 24.1: Softwarequalitätsmerkmale
 
-Manche dieser Merkmale können sich gegenseitig beeinflussen. Zum Beispiel kann eine Verbesserung der Informationssicherheit zur einer geringeren Performanz führen. Deshalb ist es wichtig die Merkmale mit der größten Relevanz, vorab im Qualitätsplan festzuhalten. Das ermöglicht den Entwicklern sich schon während des Entwicklungsprozess, auf die zuvor festlegten Merkmale zu konzentrieren.
+Manche dieser Merkmale können sich gegenseitig beeinflussen. Zum Beispiel kann eine Verbesserung der Informationssicherheit zu einer geringeren Performanz führen. Deshalb ist es wichtig die Merkmale mit der größten Relevanz, vorab im Qualitätsplan festzuhalten. Das ermöglicht den Entwicklern sich schon während des Entwicklungsprozesses, auf die zuvor festlegten Merkmale zu konzentrieren.
 
 Traditionelles Softwarequalitätsmanagement geht grundsätzlich davon aus, dass die Qualität der Software in direktem Bezug zu der Qualität des Softwareentwicklungsprozesses steht.  
 Die folgende Abbildung zeigt einen prozessbasierten Qualitätsansatz.
@@ -102,10 +102,10 @@ Definierte Standards sind ebenfalls wichtig, aber zusätzlich sollte noch versuc
 
 ## 24.2 Softwarestandards
 
-Softwarestandards spielen eine wichtige Rolle im Softwarequalitätsmanagement. Die Wahl der Standards legt zum großen Teil die eingesetzten Werkzeuge und Methoden fest die während des Entwicklungsprozesses verwendet werden.  
+Softwarestandards spielen eine wichtige Rolle im Softwarequalitätsmanagement. Die Wahl der Standards legt zum großen Teil die eingesetzten Werkzeuge und Methoden fest, die während des Entwicklungsprozesses verwendet werden.  
 Standards sind aus den folgenden drei Gründen wichtig:
 
-1. Standards basieren oft auf Erfahrung, die für das Unternehmen von großen Wert sind. Die Standardisierung trägt dazu bei, auf diese Erfahrung zurückzugreifen und frühere Fehler zu vermeiden.
+1. Standards basieren oft auf Erfahrung, die für das Unternehmen von großem Wert sind. Die Standardisierung trägt dazu bei, auf diese Erfahrung zurückzugreifen und frühere Fehler zu vermeiden.
 
 2. Standards bieten einen Rahmen für die Definition, was "Qualität" innerhalb des Softwareentwicklungsprojekt bedeutet. Sie beschreiben vorab das Qualitätsniveau, welches erreicht werden muss.
 
@@ -131,7 +131,7 @@ Folgende Tabelle zeigt mögliche Produkt- und Prozessstandards:
 
 Tabelle 24.2: Produkt- und Prozessstandards
 
-Die eingesetzten Standards in Unternehmen, basieren oft auf allgemeineren nationalen und internationalen Standards. So gibt es viele Standards die festlegen wie die verwendete Technologie, Programmiersprache oder Dokumentation eingesetzt werden sollte.
+Die eingesetzten Standards in Unternehmen, basieren oft auf allgemeineren nationalen und internationalen Standards. So gibt es viele Standards, die festlegen wie die verwendete Technologie, Programmiersprache oder Dokumentation eingesetzt werden sollte.
 
 Entwickler finden oft, dass die Standards einen zu starken Vorschriftencharakter haben und die Entwicklung zum Teil ausbremsen. Um die Entwickler von den Standards zu überzeugen und deren positiven Aspekte hervorzuheben, sollten währen der Entwicklung folgende Punkte berücksichtigt werden.
 
@@ -145,10 +145,10 @@ Entwickler finden oft, dass die Standards einen zu starken Vorschriftencharakter
 
 Mit der **ISO 9000** gibt es eine internationale Normenreihe, die in allen Branchen zur Entwicklung eines Qualitätsmanagementsystem eingesetzt werden kann. Die **ISO 9001** ist die allgemeinste dieser Normen und betrifft Firmen, die Produkte entwerfen, entwickeln und warten.
 
-Alle Standards die in diesem Abschnitte besprochen werden, gehen auf die **ISO 9001** ein welche im Jahr **2008** veröffentlicht worden ist.
+Alle Standards, die in diesem Abschnitte besprochen werden, gehen auf die **ISO 9001** ein welche im Jahr **2008** veröffentlicht worden ist.
 
 Die ISO 9001 ist kein Standard speziell für die Softwareentwicklung. Die Norm legt die allgemeinen Qualitätsgrundsätze fest und beschreibt generell die Qualitätsprozesse und skizziert die zu definierenden betrieblichen Standards und Verfahren.  
-Alle Unternehmen die sich nach ISO 9001 zertifizieren lassen möchten, müssen dokumentieren, dass ihre Prozesse ISO 9001-konform sind. Darüber hinaus müssen Maßnahmen definiert und Protokolle erstellt werden, die nachweisen, dass die festgelegten Unternehmensprozesse eingehalten werden. Um dies zu realisieren sollten in einem Qualitätshandbuch alle wichtigen Prozesse beschrieben werden.  
+Alle Unternehmen, die sich nach ISO 9001 zertifizieren lassen möchten, müssen dokumentieren, dass ihre Prozesse ISO 9001-konform sind. Darüber hinaus müssen Maßnahmen definiert und Protokolle erstellt werden, die nachweisen, dass die festgelegten Unternehmensprozesse eingehalten werden. Um dies zu realisieren, sollten in einem Qualitätshandbuch alle wichtigen Prozesse beschrieben werden.  
 Abbildung 24.3 zeigt die Kernprozesse eines Software- oder Systemherstellers nach ISO 9001.
 
 <figure style="text-align: center;">
@@ -159,7 +159,7 @@ Abbildung 24.3 zeigt die Kernprozesse eines Software- oder Systemherstellers nac
   <figcaption>Abbildung 24.3 Kernprozesse eines Software- oder Systemherstellers nach ISO 9001</figcaption>
 </figure>
 
-In der Norm werden keine Qualitätsprozesse definiert oder vorgeschrieben welche Prozesse eingesetzt werden müssen. Um mit der ISO 9001 kompatibel zu sein muss ein Unternehmen z.B. die verschiedenen Prozesse aus Abbildung 24.3 definieren und Verfahren entwickeln, die nachweisen, dass seine Qualitätsprozesse eingehalten werden. Diese gewährt den Unternehmen eine gewisse Flexibilität, bei der Umsetzung der Norm.
+In der Norm werden keine Qualitätsprozesse definiert oder vorgeschrieben welche Prozesse eingesetzt werden müssen. Um mit der ISO 9001 kompatibel zu sein, muss ein Unternehmen z.B. die verschiedenen Prozesse aus Abbildung 24.3 definieren und Verfahren entwickeln, die nachweisen, dass seine Qualitätsprozesse eingehalten werden. Diese gewährt den Unternehmen eine gewisse Flexibilität, bei der Umsetzung der Norm.
 
 Unabhängige Zertifizierungsbehörden prüfen die Qualitätsmanagementprozesse und deren Dokumentation und entscheiden, ob die Prozesse alle die in der ISO 9001 angegebenen Bereiche abdecken. Wenn ja, erfolgt eine Zertifizierung, dass alle Prozesse eines Unternehmens mit der ISO 9001 übereinstimmen.
 
@@ -183,18 +183,18 @@ Abbildung 24.4 zeigt einen Review-Prozess in der Softwareentwicklung.
 </figure>
 
 1. **Aktivitäten vor dem Review**:  
-   Vor dem eigentlichen Review muss sich bereits intensiv mit der Planung und der Vorbereitung auseinander gesetzt werden. Die Planung umfasst das Zusammenstellen eines Review-Teams, Festlegen von Ort und Zeit und das Verteilen der zu prüfenden Dokumente. Während der Vorbereitung kann das Team sich bereits vorab einen Überblick über die zu prüfende Software verschaffen. Die Teammitglieder müssen vertraut mit der Software, den Dokumenten und den entsprechenden Standards sein.  
+   Vor dem eigentlichen Review muss sich bereits intensiv mit der Planung und der Vorbereitung auseinandergesetzt werden. Die Planung umfasst das Zusammenstellen eines Review-Teams, Festlegen von Ort und Zeit und das Verteilen der zu prüfenden Dokumente. Während der Vorbereitung kann das Team sich bereits vorab einen Überblick über die zu prüfende Software verschaffen. Die Teammitglieder müssen vertraut mit der Software, den Dokumenten und den entsprechenden Standards sein.  
    Ein Review-Team sollte normalerweise eine Kernmannschaft von drei bis vier Personen aufweisen, die anschließend als Hauptprüfer bestimmt werden. Einer davon sollte ein erfahrener Entwickler sein, der die Verantwortung für wichtige technische Entscheidungen übernehmen kann.
 
 2. **Review-Sitzung**:  
-   Während des Reviews sollte der Verantwortliche der geprüften Dokumente oder Programms das ganze gemeinsam mit dem Review-Team "durchgehen". Eine Sitzung sollte dabei nicht zu lange dauern (maximal 2 Stunden). Alle Entscheidungen die während der Sitzung getroffen werden, sollten formell festgehalten werden. Abschließend sollte auf Basis der getroffenen Entscheidungen ein Abschlussprotokoll erstellt werden, in dem alle Maßnahmen festgehalten werden, auf die man sich während des Reviews geeinigt hat.
+   Während des Reviews sollte der Verantwortliche der geprüften Dokumente oder Programms das ganze gemeinsam mit dem Review-Team "durchgehen". Eine Sitzung sollte dabei nicht zu lange dauern (maximal 2 Stunden). Alle Entscheidungen, die während der Sitzung getroffen werden, sollten formell festgehalten werden. Abschließend sollte auf Basis der getroffenen Entscheidungen ein Abschlussprotokoll erstellt werden, in dem alle Maßnahmen festgehalten werden, auf die man sich während des Reviews geeinigt hat.
 
 3. **Aktivitäten nach dem Review**:  
    Nachdem Review, müssen Lösungen für die Fragen, die sich bei der Sitzung ergeben haben, gefunden werden. Eventuell müssen Softwarefehler behoben werden oder die Software muss umgestaltet werden, um den Qualitätsstandards zu entsprechen. Sind schwerwiegende Fehler während des Reviews festgestellt worden, kann zusätzlich ein Management-Review erforderlich sein, um zu entscheiden ob mehr Ressourcen zur Verfügung gestellt werden müssen. Nachdem sämtliche Änderungen vorgenommen wurden, kann der Verantwortliche prüfen, ob alle zuvor vereinbarten Punkte erledigt sind.
 
 ### 24.3.2 Programminspektionen
 
-Programminspektionen sind "**Peer-Reviews**", bei denen Teammitglieder zusammen nach Fehlern in der Software suchen, die gerade entwickelt wird. Die Mitglieder sehen sich den Quelltext des Programms an und suchen nach Fehlern und Problemen. Bei den Fehlern kann es sich um logische Fehler, Anomalien im Code, die zu einen möglicherweise falschen Zustand führen oder um Funktionen die im Code nicht verwendet werden handeln. Das Review-Team überprüft den Programmcode und hebt Probleme hervor, mit denen sich das Entwicklerteam noch einmal beschäftigen muss.
+Programminspektionen sind "**Peer-Reviews**", bei denen Teammitglieder zusammen nach Fehlern in der Software suchen, die gerade entwickelt wird. Die Mitglieder sehen sich den Quelltext des Programms an und suchen nach Fehlern und Problemen. Bei den Fehlern kann es sich um logische Fehler, Anomalien im Code, die zu einen möglicherweise falschen Zustand führen oder um Funktionen, die im Code nicht verwendet werden handeln. Das Review-Team überprüft den Programmcode und hebt Probleme hervor, mit denen sich das Entwicklerteam noch einmal beschäftigen muss.
 
 Bei Inspektionen wird oft eine Checkliste häufiger Programmierfehler verwendet, um eine konzentrierte Suche nach den Fehlern zu ermöglichen. Mögliche Überprüfungen, die während eines Inspektionsprozesses vorgenommen werden können, sind in Tabelle 24.3 abgebildet.
 
@@ -271,7 +271,7 @@ Tabelle 24.3: Produkt- und Prozessstandards
 
 Jedes Unternehmen sollte eigene Checklisten auf der Grundlage ihrer Standards erstellen und diese Checklisten in regelmäßigen Abständen aktualisieren, sobald neue Fehler bekannt werden. Firmen die Inspektionen einsetzen, können damit sehr effektiv Fehler finden.  
 Fagan (1986) [[3]](#ref_3) berichtete, dass mehr als 60% der Fehler in einem Programm durch die Inspektion eines Programms entdeckt werden können.  
-McConnell (2004) [[4]](#ref_4) vergleicht Modultests, die eine ungefähre Fehlererkennungsrate von 25% aufweisen, mit Inspektionen, deren Fehlererkennungsrate bei 60% lag. Zu berücksichtigen ist, dass diese Vergleiche angestellt wurden, bevor automatische Tests eine weite Verbreitung fanden. Es ist nicht bekannt wie Inspektionen im Vergleich mit diesem Ansatz aussehen.
+McConnell (2004) [[4]](#ref_4) vergleicht Modultests, die eine ungefähre Fehlererkennungsrate von 25% aufweisen, mit Inspektionen, deren Fehlererkennungsrate bei 60% lag. Zu berücksichtigen ist, dass diese Vergleiche angestellt wurden, bevor automatische Tests eine weite Verbreitung fanden. Es ist nicht bekannt, wie Inspektionen im Vergleich mit diesem Ansatz aussehen.
 
 Obwohl bekannt ist wie erfolgversprechend Inspektionen sind, werden sie von den Firmen nur zögerliche eingesetzt.
 Dies hat mitunter folgende Gründe:
@@ -284,8 +284,8 @@ Dies hat mitunter folgende Gründe:
 
 Qualitätsmanagement ist ein formaler Prozess, der sich auf eine ausführliche Dokumentation der Tests sowie auf die Einhaltung dieser Prozesse stützt. Diesem steht die agile Entwicklung gegenüber, die zum Ziel hat, so wenig Zeit wie möglich für das Schreiben von Dokumenten und dem Formalisieren der Entwicklungsarbeit aufzuwenden. Deshalb mussten QM-Techniken für den Einsatz von agilen Methoden entwickelt werden.
 
-Agile Methoden stellen die Codeentwicklung in den Mittelpunkt und minimieren die Dokumentation und Prozesse. Der Schwerpunkt wird auf die Kommunikation zwischen den Teammitgliedern gelegt und nicht auf die Kommunikation über Projektdokumente. Qualitätsmanagement in der agilen Entwicklung, basiert auf die Etablierung einer Qualitätsstruktur in der sich die Teammitglieder für die Qualität der Software verantwortlich fühlen.  
-Firmen die agile Entwicklungsmethoden einsetzen, sind selten nach _ISO 9001_ zertifiziert, aufgrund des bürokratischen Aufwands der von der Norm vorgegeben wird.
+Agile Methoden stellen die Codeentwicklung in den Mittelpunkt und minimieren die Dokumentation und Prozesse. Der Schwerpunkt wird auf die Kommunikation zwischen den Teammitgliedern gelegt und nicht auf die Kommunikation über Projektdokumente. Qualitätsmanagement in der agilen Entwicklung, basiert auf die Etablierung einer Qualitätsstruktur, in der sich die Teammitglieder für die Qualität der Software verantwortlich fühlen.  
+Firmen die agile Entwicklungsmethoden einsetzen, sind selten nach _ISO 9001_ zertifiziert, aufgrund des bürokratischen Aufwands, der von der Norm vorgegeben wird.
 
 Einige Beispiele für agile Entwicklungsmethoden sind folgende:
 
@@ -295,19 +295,19 @@ Einige Beispiele für agile Entwicklungsmethoden sind folgende:
 
 - _Probleme beheben, sobald sie auftreten:_ Probleme sollten sofort behoben werden wenn sie entdeckt werden, auch wenn der Code von anderen Entwicklern stammt.
 
-Reviews oder Inspektionen die in den vorherigen Kapiteln beschrieben wurden, kommen in der agilen Softwareentwicklung normalerweise nicht zum Einsatz.  
+Reviews oder Inspektionen, die in den vorherigen Kapiteln beschrieben wurden, kommen in der agilen Softwareentwicklung normalerweise nicht zum Einsatz.  
 In Scrum beispielsweise gibt es nach Abschluss einer Softwareiteration ein Review des gesamten Teams, in der Qualitätsfragen und Probleme diskutiert werden.
 
-Die agilen Methoden sind in Unternehmen nur dann effektiv, wenn das Unternehmen, das die Software entwickelt, auch die dazugehörige Spezifikation kontrolliert. Wenn große Systeme für einen externen Kunden entwickelt werden, können sich agile Ansätze des Qualitätsmanagement mit minimaler Dokumentation als ungeeignet erweisen.  
+Die agilen Methoden sind in Unternehmen nur dann effektiv, wenn das Unternehmen, das die Software entwickelt, auch die dazugehörige Spezifikation kontrolliert. Wenn große Systeme für einen externen Kunden entwickelt werden, können sich agile Ansätze des Qualitätsmanagements mit minimaler Dokumentation als ungeeignet erweisen.  
 Dies kann folgende Gründe haben:
 
-- Der Kunde eines großes Unternehmens, hat meist eigene Qualitätsstandards und erwartet von Softwareunternehmen, dass die Qualitätsstandards mit den firmeninternen Prozessen kompatibel sind. In so einem Fall müsste das Entwicklungsteam wie vom Kunden gefordert einen Qualitätsplan und Qualitätsberichte erstellen.
+- Der Kunde eines großen Unternehmens, hat meist eigene Qualitätsstandards und erwartet von Softwareunternehmen, dass die Qualitätsstandards mit den firmeninternen Prozessen kompatibel sind. In so einem Fall müsste das Entwicklungsteam wie vom Kunden gefordert einen Qualitätsplan und Qualitätsberichte erstellen.
 
 - Wenn geografisch verteilte Teams, eventuell noch aus verschiedenen Unternehmen, an der Entwicklung beteiligt sind. Ist eine informelle Kommunikation oft nicht ausreichend. Dies führt häufig dazu, dass eine formale Dokumentation zwischen den Teams wieder benötigt wird.
 
-- Bei Systemen mit einer langen Laufzeit, änder sich häufig das Entwicklungsteam. Wenn es bei solchen Projekten keine Dokumentation gibt, können neue Entwickler schlecht nachvollziehen, warum bestimmte Entscheidungen getroffen wurden.
+- Bei Systemen mit einer langen Laufzeit, ändert sich häufig das Entwicklungsteam. Wenn es bei solchen Projekten keine Dokumentation gibt, können neue Entwickler schlecht nachvollziehen, warum bestimmte Entscheidungen getroffen wurden.
 
-Aus folgenden Gründen muss der informelle Ansatz in agilen Methoden, bei größeren Projekten welche eine Dokumentation erfordern, angepasst werden. Anstatt Software zu entwickeln könnte zum Beispiel einer der Sprints sich auf die Erstellung der wichtigsten Softwaredokumentationen konzentrieren.
+Aus den folgenden Gründen muss der informelle Ansatz in agilen Methoden, bei größeren Projekten welche eine Dokumentation erfordern, angepasst werden. Anstatt Software zu entwickeln könnte zum Beispiel einer der Sprints sich auf die Erstellung der wichtigsten Softwaredokumentationen konzentrieren.
 
 ## 24.5 Softwaremessung
 
@@ -315,7 +315,7 @@ Bei der Softwaremessung geht es darum, Merkmale eines Softwaresystems zu quantif
 Langfristig zielt Softwaremessung darauf ab, die Softwarequalität anhand von Messungen zu beurteilen.
 
 **Softwaremetriken** dienen zur objektiven Bewertung von Systemen, Dokumentationen oder Entwicklungsprozessen.  
-Metriken sind z.B:
+Metriken sind z.B.:
 
 - Anzahl der Codezeilen
 - Fog-Index (Lesbarkeit eines Textes)
@@ -347,7 +347,7 @@ Soll ein Messwert eines internen Merkmals für die Vorhersage eines externen Mer
 
 1. Das interne Merkmal muss korrekt gemessen werden.
 
-2. Zwischen den internen und den externen Merkmal muss eine Beziehung bestehen.
+2. Zwischen den internen und den externen Merkmalen muss eine Beziehung bestehen.
 
 3. Die Beziehung zwischen den internen und den externen Merkmal muss sich als Formel oder als Modell ausdrücken lassen.
 
@@ -379,7 +379,7 @@ Dynamische Metriken sind für die Beurteilung der Zuverlässigkeit und Effizienz
   <tr>
     <td>Fan-in / Fan-out</td>
     <td>
-      Bei <strong>Fan-in</strong> handelt es sich um die Anzahl von Funktionen die eine andere Funktion aufrufen. Ein hoher Wert bedeutet, dass die aufrufenden Funktionen eng mit der Funktion verknüpft sind.<br>
+      Bei <strong>Fan-in</strong> handelt es sich um die Anzahl von Funktionen, die eine andere Funktion aufrufen. Ein hoher Wert bedeutet, dass die aufrufenden Funktionen eng mit der Funktion verknüpft sind.<br>
       <strong>Fan-out</strong> ist die Anzahl der von einer bestimmten Funktion aufgerufenen Funktionen. Ein hoher Wert legt nahe, dass die Gesamtkomplexität der Funktion groß sein könnte.
     </td>
   </tr>
@@ -440,7 +440,7 @@ Neben den Metriken aus Tabelle 24.4 für die statische Analyse, gibt es auch noc
   <tr>
     <td>Anzahl der Kinder</td>
     <td>
-      Gibt die Anzahl der direkten Subklassen einer Klasse an. Im Gegensatz der zuvor betrachteten Tiefe, wird hier die Breite einer Klasse betrachtet. Bei einem hohem Wert, sollte der Basisklasse größere Aufmerksamkeit geschenkt werden, weil viele untergeordnete Klassen davon abhängen.
+      Gibt die Anzahl der direkten Subklassen einer Klasse an. Im Gegensatz der zuvor betrachteten Tiefe, wird hier die Breite einer Klasse betrachtet. Bei einem hohen Wert sollte der Basisklasse größere Aufmerksamkeit geschenkt werden, weil viele untergeordnete Klassen davon abhängen.
     </td>
   </tr>
   <tr>
@@ -468,7 +468,7 @@ El-Amam (2001) [[7]](#ref_7) beschreibt in einem Aufsatz die CK-Metriken sowie a
 
 ### 24.5.2 Softwarekomponentenanalyse
 
-In der Softwarekomponentenanalyse werden einzelne Komponenten eines Systems, unter Verwendung verschiedener Metriken, separat analysiert. Ein Prozess der die Messung einer Komponente zeigt, ist in Abbildung 24.6 dargestellt.
+In der Softwarekomponentenanalyse werden einzelne Komponenten eines Systems, unter Verwendung verschiedener Metriken, separat analysiert. Ein Prozess, der die Messung einer Komponente zeigt, ist in Abbildung 24.6 dargestellt.
 
 <figure style="text-align: center;">
   <!-- github -->
@@ -519,7 +519,7 @@ Im Allgemeinen lässt sich nicht sagen, welche das beste Analysewerkzeug für ei
 
 Zhang et al. (2013) [[10]](#ref_10) beschreibt eine praktische Anwendung der Softwareanalytik. Dabei wurde die benutze Software mit Funktionalität ausgestattet, die es ermöglicht die Antwortzeiten und den damit verbundenen Systemzustand zu ermitteln. Sobald die Antwortzeit größer als erwartet ausfiel, wurden die Daten weitergeleitet und analysiert. Die automatische Analyse zeigte dann die Leistungsengpässe in der Software. Auf der Grundlage dieser Daten konnten die Entwickler ihre Algorithmen verbessern und die Engpässe damit beseitigen.
 
-Harford (2013) [[11]](#ref_11) beschreibt in \_Big Data: Are We Making a Big Mistake?\* ein großes Problem der Softwareanalytik. Oft hängt unser Wissen immer von Daten ab, die bei großen Unternehmen gesammelt wurden. Diese Daten stammen hauptsächlich von den Softwareprodukten der Unternehmen und es ist noch nicht geklärt, ob sich die Techniken, die sich für die Produkte eigenen, auch für kundenspezifische Software verwendet werden kann. Hinzu kommt noch das kleine Unternehmen oft nicht die finanziellen Mittel haben, um in Datenerfassung zu investieren, die für eine automatische Analyse erforderlich wäre, sodass sie keine Möglichkeit haben, Softwareanalytik zu nutzen.
+Harford (2013) [[11]](#ref\*11) beschreibt in "_Big Data: Are We Making a Big Mistake ?_" ein großes Problem der Softwareanalytik. Oft hängt unser Wissen immer von Daten ab, die bei großen Unternehmen gesammelt wurden. Diese Daten stammen hauptsächlich von den Softwareprodukten der Unternehmen und es ist noch nicht geklärt, ob sich die Techniken, die sich für die Produkte eigenen, auch für kundenspezifische Software verwendet werden kann. Hinzu kommt noch das kleine Unternehmen oft nicht die finanziellen Mittel haben, um in Datenerfassung zu investieren, die für eine automatische Analyse erforderlich wäre, sodass sie keine Möglichkeit haben, Softwareanalytik zu nutzen.
 
 ## 24.6 Zusammenfassung
 
