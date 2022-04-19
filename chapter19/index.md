@@ -43,8 +43,38 @@ Das Einbeziehen von verschiedenen Fachleuten aus den Gebieten ist auf Grund der 
 - **Voreingenommenheit:** Fachbereiche stellen oft (falsche) Vermutungen über andere Fachbereiche und deren Kompetenzen auf. So sollte beispielsweise ein Elektro-Ingenieur nicht zwingend über die Verwendung von Software im System entscheiden.
 - **Einbindung in eigenen Fachbereich:** Die Fachbereiche könnten für gewisse Entscheidungen im Design argumentieren, die die Expertise des eigenen Fachbereichs verlangen. Dabei sollte jedoch stets der Fachbereich für gewissen Prozesse bzw. eine Aufgabe gewählt werden, der diese am Besten und im Bezug auf das oben genannte Beispiel, am zuverlässigsten umsetzen kann.
 
-
 ## Soziotechnische Systeme
+
+Der Begriff *System* wird universal benutzt. So spricht man über Betriebssysteme, Bezahlsysteme oder auch das Bildungssystem. Auch wenn diese Begriffe natürlich das Wort *System* für sich unterschiedlich einsetzen und definieren, so teilen sie doch eine Gemeinsamkeit. Das System ist mehr als nur die Menge der sich zusammensetzenden Teile. Sommerville gibt diesen Systemen eine Definition, die sich wie folgt übersetzen lässt:
+
+> Ein System ist eine zweckbehaftete Sammlung von in einer Beziehung stehenden Komponenten verschiedener Art, die zusammenarbeiten, um dem Systembesitzer und den Nutzern eine gewisse Menge an Diensten bereitzustellen.
+
+Diese allgemeine Definition deckt eine sehr hohe Bandbreite an verschiedenen Systemen ab. Dabei fängt ein System an bei einem simplen Produkt mit wenigen Komponenten - wie einem Laserpointer - an. Bei größeren Systemen, wie bei Air Traffic Control-Systemen, mit einer großen Anzahl an verschiedenen Komponenten, sind diese stark miteinander verwoben und verknüpft. Dabei hängt die korrekte Funktionsweise einer jeden Komponente, von der korrekten Funktionsweise andere Komponenten ab. So kann ein Prozessor beispielsweise nur für Berechnungen eingesetzt werden, wenn die Software für diese Berechnungen korrekt installiert wurde.
+
+Großangelegte Systeme (engl: *large-scale systems*) sind häufig soziotechnische Systeme. Dann spricht man bei ihnen auch von Enterprise-Systemen, die einen gewissen Zweck im Unternehmen erfüllen sollen. Da in so ein großes System viele Personen involviert sind - z.B. Endnutzer, Entwickler, Manager und weitere Stakeholder innerhalb und außerhalb des Unternehmens - kann es schwierig werden, genaue Grenzen des System festzulegen. Jeder involvierte Person sieht die Grenzen des Systems an einer anderen Stelle. Dies muss berücksichtigt werden, da es essentiell ist, was in den Bereich des Systems fällt und was nicht, wenn die Systemanforderungen definiert werden.
+
+<figure style="text-align: center;">
+    <img src="./media/soziotechnischeSysteme/LayeredStructureOfSociotechnicalSystems.PNG" style="border: 3px solid black; border-radius: 5px;" />
+    <figcaption>Abbildung 3: Schichten-Struktur eines soziotechnischen Systems.</figcaption>
+</figure>
+
+*Abbildung 3* legt das aufgezeigte Problem grafisch dar. Dabei wird ein soziotechnisches System dargestellt, in dem jede Schicht auf eine gewisse Weise zur funktionsweise des Systems beiträgt. Im Kern befindet sich das technische System und seine Prozesse. Doch auch außerhalb des Kerns liegen soziotechnische Faktoren, die das Verhalten beeinflussen. Ob diese Faktoren außerhalb des Kerns als Teil des Systems gesehen werden, hängt vom Unternehmen und den entsprechenden Regularien ab. Ändern sich Unternehmensrichtlinien häufig wäre es sinnvoll sie als Teil des Systems anzusehen. Welche Schichten noch als Bestandteil des Systems gesehen werden lässt sich jedoch nicht allgemeingültig sagen. Viel mehr müssen diese Fragen beim Designprozess des Systems berücksichtigt werden. Dafür muss - soweit wie möglich - das Nutzungsumfeld für das System nachvollzogen werden, da sonst das System nicht oder nur teilweise den eigentlich angedachten Zweck erfüllen kann.
+
+<figure style="text-align: center;">
+    <img src="./media/soziotechnischeSysteme/OrganizationalElements.PNG" style="border: 3px solid black; border-radius: 5px;" />
+    <figcaption>Abbildung 4: Mögliche betroffene Gebiete bei der Einführung eines neuen Systems.</figcaption>
+</figure>
+
+*Abbildung 4* zeigt Schlüsselelemente, die Anforderungen, Design und Betrieb eines soziotechnischen Systems betreffen können und ggf. selbst betroffen sind. Dabei kann es in manchen oder allen von diesen Bereich zu Änderungen kommen.
+
+- **Prozessänderungen**
+- **Arbeitsänderungen / Jobänderungen**
+- **Unternehmensrichtlinien**
+- **Unternehmenspolitische Änderungen**
+
+1. Sie haben emergente Eigenschaften. Emergente Eigenschaften in einem System sind solche Eigenschaften, die das System selbst besitzt, obwohl keine der Komponenten diese hat.
+2. 
+3. 
 
 ## Konzeptionelles Design
 
