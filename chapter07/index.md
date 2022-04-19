@@ -1,39 +1,74 @@
-# Software processes
+# Design and implementation
 
 **Autor:** Rei Berberi
 
-Nach dem Lesen des Kapitels sollten Sie einiges wissen und dann noch viel mehr und sehr viel mehr und weniger.
+Kurze Beschreibung...
+
+## Ziele
+
+- A
+- B
+- C
+
+---
+
+## Objektorientiertes Design unter Verwendung der UML
+
+![image](https://user-images.githubusercontent.com/58107983/163242011-39596cc7-e94c-4597-b1d8-af4ff9fcd91a.png)
+
+### Systemkontext und Interaktionen
+
+### Architektur-Design
+
+### Identifizierung der Objektklasse
+
+### Design Modelle
+
+### Schnittstellenspezifikation
+
+## Entwurfsmuster
+
+## Implementierungsfragen
+
+### Wiederverwendung
+
+### Konfigurationsmanagement
+
+### Host-Target-Entwicklung
+
+## Open-Source-Entwicklung
+
+### Open-Source-Lizenzierung
 
 ## Unterkapitel
 
-* **Softwaresystem**:
-  Die *innere* Sicht des Informatikers nimmt Software als Softwaresystem wahr.
-* **Softwareprodukt**: Die *äußere* Sicht eines Auftraggeber nimmt ein Softwaresystem als Softwareprodukt wahr. 
+- **Softwaresystem**:
+  Die _innere_ Sicht des Informatikers nimmt Software als Softwaresystem wahr.
+- **Softwareprodukt**: Die _äußere_ Sicht eines Auftraggeber nimmt ein Softwaresystem als Softwareprodukt wahr.
 
 ### Tabelle
 
-| A          |     B       |           C               | 
-|:----------:|:-----------:|:-------------------------:|
-| Eins | Zwei | Drei |
+|  A   |  B   |   C   |
+| :--: | :--: | :---: |
+| Eins | Zwei | Drei  |
 | Vier | Fünf | Sechs |
 
 ## Links
 
-[Markdown] ist eine Sprache, die nach HTML konvertiert werden kann. 
+[Markdown] ist eine Sprache, die nach HTML konvertiert werden kann.
 
-[Markdown]: http://daringfireball.net/projects/markdown/
+[markdown]: http://daringfireball.net/projects/markdown/
 
 ## Aufzählung
 
 Es unterteilt sich in:
 
-* A
-  * A1
-* B
-  * B1
-  * B2
-* C
-
+- A
+  - A1
+- B
+  - B1
+  - B2
+- C
 
 # Überschrift
 
@@ -47,12 +82,12 @@ Dieser Link führt extern nach [Youtube](https://www.youtube.com/)
 
 ## Unterüberschrift
 
-* Eins
-  * eins.eins
-  * eins.zwei
-* Zwei
-  * Zwei.zwei
-* Drei
+- Eins
+  - eins.eins
+  - eins.zwei
+- Zwei
+  - Zwei.zwei
+- Drei
 
 ### Code
 
@@ -73,13 +108,13 @@ Syntax Highlighting für Javascript. Weitere Sprachen müssen konfiguriert werde
 
 ### Audio
 
-[](media/sample.mp3 ':include')
+[](media/sample.mp3 ":include")
 
 ### Video
 
-[](media/sample.mp4 ':include')
+[](media/sample.mp4 ":include")
 
 ## Referenzen
 
-[1]: Dijkstra, E. W. (1968). Go to statement considered harmful. 
+[1]: Dijkstra, E. W. (1968). Go to statement considered harmful.
 Communications of the ACM, 11(3), 147-148.
