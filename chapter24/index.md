@@ -122,7 +122,7 @@ Folgende Tabelle zeigt mögliche Produkt- und Prozessstandards:
 
 | Produktstandards                   | Prozessstandards                                     |
 | ---------------------------------- | ---------------------------------------------------- |
-| Formular für Entwurfsprüfung       | Durchführung des entwurfs-Reviews                    |
+| Formular für Entwurfsprüfung       | Durchführung des Entwurfs-Reviews                    |
 | Struktur des Anforderungsdokuments | Einreichung des neuen Codes für die Systemerstellung |
 | Headerformat für Methoden          | Prozess der Versionsfreigabe                         |
 | Java-Programmierstil               | Genehmigungsprozess für den Projektplan              |
@@ -311,13 +311,215 @@ Aus folgenden Gründen muss der informelle Ansatz in agilen Methoden, bei größ
 
 ## 24.5 Softwaremessung
 
+Bei der Softwaremessung geht es darum, Merkmale eines Softwaresystems zu quantifizieren. Die gemessenen Werte, ermöglichen ein Vergleich mit den unternehmensweiten Standards. Idealerweise könnte sich das Qualitätsmanagement auf die Messungen dieser Werte verlassen. Dann könnten sie objektiv bewerten, inwiefern Änderungen an den Prozessen sich auf die Softwarequalität auswirken.  
+Langfristig zielt Softwaremessung darauf ab, die Softwarequalität anhand von Messungen zu beurteilen.
+
+**Softwaremetriken** dienen zur objektiven Bewertung von Systemen, Dokumentationen oder Entwicklungsprozessen.  
+Metriken sind z.B:
+
+- Anzahl der Codezeilen
+- Fog-Index (Lesbarkeit eines Textes)
+- Anzahl der Fehler, in der ausgelieferten Software
+- Arbeitsaufwand (Tage) für die Entwicklung neuer Softwarekomponenten
+
+Bei Metriken handelt es sich entweder um **Steuer-** oder um **Vorhersagemetriken**.  
+Steuermetriken unterstützen das Prozessmanagement, während Vorhersagemetriken helfen, Eigenschaften der Software vorherzusagen. Beispiele für Steuer- oder Prozessmetriken sind der durchschnittliche Aufwand sowie der Zeitaufwand zu nennen, der für die Beseitigung festgestellter Fehler erforderlich ist.  
+Es gibt drei verschiedene Arten von Prozessmetriken:
+
+1. _Die benötigte Zeit zur Fertigstellung eines Prozesses:_ Dies kann die Gesamtzeit sein oder die Arbeitszeit bestimmter Entwickler.
+
+2. _Die für einen Prozess erforderlichen Ressourcen:_ Dies kann der Gesamtaufwand in Personentagen, Reisekosten oder Computerressourcen sein.
+
+3. _Die Häufigkeit bestimmter Ereignisse:_ Beispiele für Ereignisse könnte die Zahl der geforderten Anforderungsänderungen oder die Anzahl der Fehlerberichte in einem ausgelieferten System sein.
+
+Viele der Qualitätsmerkmale aus _Tabelle 24.1_ lassen sich nur schwer direkt messen. Attribute wie Verständlichkeit und Benutzerfreundlichkeit, beziehen sich darauf, wie Entwickler und Benutzer die Software sehen. Sie unterliegen stark subjektiven Faktoren wie zum Beispiel Erfahrung und können deshalb objektiv nicht richtig gemessen werden. Um diese Attribute zu beurteilen, müssen zuerst einige interne Attribute (wie Codegröße, Komplexität, usw.) gemessen werden und diese danach mit den anderen Attributen in Verbindung gebracht werden. Ein Beispiel hierfür zeigt Abbildung 24.5.
+
+<figure style="text-align: center;">
+  <!-- github -->
+  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.5_beziehungen_von_softwaremerkmalen.png?raw=true" alt="Abbildung 24.5 Beziehungen zwischen internen und externen Softwaremerkmalen"/> 
+  <!-- local -->
+  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.5_beziehungen_von_softwaremerkmalen.png" alt="Abbildung 24.5 Beziehungen zwischen internen und externen Softwaremerkmalen"/> -->
+  <figcaption>Abbildung 24.5 Beziehungen zwischen internen und externen Softwaremerkmalen</figcaption>
+</figure>
+
+In der Abbildung 24.5 sind externe sowie interne Merkmale zueinander in Beziehung gesetzt. Es liegt nahe, dass es Beziehungen zwischen externen und internen Merkmalen geben könnte. Die Abbildung zeigt aber nicht wie sich die internen Merkmale auf die externen auswirken.  
+Soll ein Messwert eines internen Merkmals für die Vorhersage eines externen Merkmals nützlich sein, müssen laut Kitchenham (1990) [[5]](#ref_5) drei Bedingungen erfüllt sein:
+
+1. Das interne Merkmal muss korrekt gemessen werden.
+
+2. Zwischen den internen und den externen Merkmal muss eine Beziehung bestehen.
+
+3. Die Beziehung zwischen den internen und den externen Merkmal muss sich als Formel oder als Modell ausdrücken lassen.
+
+Es gibt wenige Informationen über den Einsatz von Softwaremessungen in der Industrie. Firmen sammeln Daten über ihre Software, wie zum Beispiel die Anzahl der beim Testen festgestellten Fehler. Es ist jedoch nicht bekannt, ob die Werte anschließend genutzt werden, um Softwareprodukte zu vergleichen oder die Auswirkungen von Änderungen an Softwareprozessen zu bewerten.  
+Zudem gibt es mehrere Gründe, warum dies schwierig ist:
+
+- Es ist unmöglich zu quantifizieren, wie sich die Einführung eines Softwareanalyseprogramms im Unternehmen auszahlt. Die Qualität von Software hat sich in den letzten Jahren auch ohne die Verwendung von Metriken verbessert, sodass es schwierig ist, die Kosten für die Einführung von Softwaremessungen und -bewertungen zu rechtfertigen.
+
+- Es gibt keine Standards für Softwaremetriken oder Prozessen für Messung und Analyse. Deshalb zögern viele Firmen, solange keine Standards zur Verfügung stehen.
+
+- Die Softwaremessungen und -metriken haben den Schwerpunkt vornehmlich auf codebasierte oder plangesteuerte Entwicklungsprozesse gelegt. Heutzutage wird Software zunehmend durch Wiederverwenden und Konfigurieren bestehender Anwendungssysteme oder mit agilen Methoden entwickelt. Deshalb lässt sich schwer sagen, ob sich der bisherige Einsatz der Metriken auf diese Softwareentwicklungsmethoden übertragen lässt.
+
 ### 24.5.1 Produktmetriken
+
+Produktmetriken sind Vorhersagemetriken, mit denen sich interne Attribute eines Systems quantifiziert messen lassen. Zu den Produktmetriken gehören zum Beispiel die Anzahl an Codezeilen oder die Anzahl der Methoden zu einer Klasse.  
+Produktmetriken lassen sich in zwei Gruppen einteilen:
+
+- _Dynamische Metriken:_ Lassen sich während der Programmausführung durch Messungen sammeln. Ein Beispiel wäre die Anzahl an Fehlerberichten oder die Zeit für die Ausführung von bestimmten Berechnungen.
+
+- _Statische Metriken:_ Werden aus dem Entwurf des Programms oder aus der Dokumentation gesammelt. Beispiele für statische Messgrößen sind in Tabelle 24.4 abgebildet.
+
+Dynamische Metriken sind für die Beurteilung der Zuverlässigkeit und Effizienz eines Programmes sehr hilfreich. Statische Metriken sind für die Beurteilung der Verständlichkeit, Komplexität und der Wartung eines Softwaresystems wichtig.
+
+<table>
+  <tr>
+    <th>Statische Softwaremetrik</th>
+    <th>Beschreibung</th>
+  </tr>
+  <tr>
+    <td>Fan-in / Fan-out</td>
+    <td>
+      Bei <strong>Fan-in</strong> handelt es sich um die Anzahl von Funktionen die eine andere Funktion aufrufen. Ein hoher Wert bedeutet, dass die aufrufenden Funktionen eng mit der Funktion verknüpft sind.<br>
+      <strong>Fan-out</strong> ist die Anzahl der von einer bestimmten Funktion aufgerufenen Funktionen. Ein hoher Wert legt nahe, dass die Gesamtkomplexität der Funktion groß sein könnte.
+    </td>
+  </tr>
+  <tr>
+    <td>Codelänge</td>
+    <td>
+      Umso länger der Code einer Komponente ist, desto komplexer und fehleranfälliger ist sie "wahrscheinlich". Die Codelänge hat sich als einer der zuverlässigsten Metriken für die Vorhersage der Fehleranfälligkeit erwiesen.
+    </td>
+  </tr>
+  <tr>
+    <td>Zyklomatische Komplexität</td>
+    <td>
+      Maß für die Komplexität von Kontrollstrukturen. Wirkt sich auf die Verständlichkeit des Programms aus.
+    </td>
+  </tr>
+  <tr>
+    <td>Länge der Bezeichner</td>
+    <td>
+     Maß für die Länge einzelner Bezeichner im Programm (Namen für Variablen, Klassen, Methoden, usw.) Umso länger Bezeichner sind, desto wahrscheinlicher ist es, dass sie eine gewisse Aussagekraft haben.
+    </td>
+  </tr>
+  <tr>
+    <td>Tiefe von Verzweigungen</td>
+    <td>
+      Ein Maß für die Tiefe von if-Anweisungen in einem Programm. Tief verschachtelte if-Anweisungen sind schwerer zu verstehen und möglicherweise fehlerbehaftet.
+    </td>
+  </tr>
+  <tr>
+    <td>Fog-Index</td>
+    <td>
+      Maß für die Länge der Wörter und Sätze in Dokumenten. Umso höher der Fog-Index eines Dokumentes ist, desto schwerer ist das Dokument zu verstehen.
+    </td>
+  </tr>
+</table>
+Tabelle 24.4: Statische Softwaremetriken
+
+Viele Experimente zeigten, dass die Größe eines Programms und die Komplexität der Kontrollstrukturen die zuverlässigsten Vorhersagen für die Verständlichkeit und die Wartbarkeit liefern.
+
+Neben den Metriken aus Tabelle 24.4 für die statische Analyse, gibt es auch noch Metriken die sich speziell für die Objektorientierung eignen. Tabelle 24.5 ist eine Zusammenfassung der (Chidamber-Kemerer-Metriksuite) [[6]](#ref_6), die aus 6 objektorientierten Metriken besteht. Diese bereits in den frühen 90er Jahren entwickelten Metriken, sind immer noch die am weitesten verbreiteten objektorientierten Metriken.
+
+<table>
+  <tr>
+    <th>Objektorientierte Metrik</th>
+    <th>Beschreibung</th>
+  </tr>
+  <tr>
+    <td>Gewichtete Methoden pro Klasse</td>
+    <td>
+      Hierbei werden die Methoden einer Klasse, nach ihrer Komplexität gewichtet. Je größer der Wert ist, desto komplexer ist die Klasse. Bei komplexen Klassen lässt sich annehmen, dass sie schwieriger zu verstehen sind.
+    </td>
+  </tr>
+  <tr>
+    <td>Tiefe des Vererbungsbaums</td>
+    <td>
+      Zählt die Anzahl der Ebenen im Vererbungsbaum. Je tiefer der Vererbungsbaum ist, desto komplexer ist der Entwurf, da viele Oberklassen verstanden werden müssen, um die Klasse auf der tiefsten Ebene zu verstehen.
+    </td>
+  </tr>
+  <tr>
+    <td>Anzahl der Kinder</td>
+    <td>
+      Gibt die Anzahl der direkten Subklassen einer Klasse an. Im Gegensatz der zuvor betrachteten Tiefe, wird hier die Breite einer Klasse betrachtet. Bei einem hohem Wert, sollte der Basisklasse größere Aufmerksamkeit geschenkt werden, weil viele untergeordnete Klassen davon abhängen.
+    </td>
+  </tr>
+  <tr>
+    <td>Kopplung zwischen Objektklassen</td>
+    <td>
+     Klassen sind gekoppelt, wenn Methoden oder Variablen der einen Klasse in Methoden einer anderen Klasse verwendet werden. Desto höher der Wert, umso stärker die Kopplung, Eine hoher Wert bedeutet, dass Änderungen einer Klasse Auswirkungen auf die andere Klasse im Programm haben können.
+    </td>
+  </tr>
+  <tr>
+    <td>Antwort für eine Klasse</td>
+    <td>
+      Gibt die Anzahl an Methoden an, die als Antwort auf eine Nachricht von einem Objekt dieser Klasse ausgeführt werden können. Umso höher der RFC-Wert (Response For a Class), desto komplexer ist wahrscheinlich eine Klasse.
+    </td>
+  </tr>
+  <tr>
+    <td>Fehlende Kohäsion unter den Methoden</td>
+    <td>
+      Der Wert gibt die Differenz zwischen der Zahl der Methoden ohne gemeinsame Attribute und der Zahl der Methoden mit gemeinsamen Attributen an. Der Wert ist umstritten und es ist nicht klar, ob er wirklich neue Informationen liefert, welche nicht schon von anderen Metriken abgedeckt wird.
+    </td>
+  </tr>
+</table>
+Tabelle 24.5: Objektorientierte CK-Metriksuite.
+
+El-Amam (2001) [[7]](#ref_7) beschreibt in einem Aufsatz die CK-Metriken sowie andere objektorientierte Metriken und kommt zu der Schlussfolgerung, dass noch nicht ausreichend Beweise vorliegen in welche Beziehung diese Metriken zur Softwarequalität stehen. Diese Situation hat sich seit der Analyse 2001 nicht verändert. Es ist immer noch nicht bekannt wie Messungen von objektorientierten Programmen, zuverlässige Schlüsse über die Qualität liefern können.
 
 ### 24.5.2 Softwarekomponentenanalyse
 
-### 24.5.3 Mehrdeutigkeit von Messungen
+In der Softwarekomponentenanalyse werden einzelne Komponenten eines Systems, unter Verwendung verschiedener Metriken, separat analysiert. Ein Prozess der die Messung einer Komponente zeigt, ist in Abbildung 24.6 dargestellt.
 
-### 24.5.4 Softwareanalytik
+<figure style="text-align: center;">
+  <!-- github -->
+  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.6_komponentenanalyse.png?raw=true" alt="Abbildung 24.6 Prozess der Komponentenanalyse"/> 
+  <!-- local -->
+  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.6_komponentenanalyse.png" alt="Abbildung 24.6 Prozess der Komponentenanalyse"/> -->
+  <figcaption>Abbildung 24.6 Prozess der Komponentenanalyse</figcaption>
+</figure>
+
+Der Prozess setzt sich wie folgt zusammen:
+
+1. _Durchzuführende Messung auswählen:_ Welche Fragen sollen beantwortet werden und dafür die entsprechenden Messungen auswählen.
+
+2. _Komponente auswählen:_ Alle Komponenten auswählen die benötigt werden, um die Analyse durchzuführen.
+
+3. _Komponenteneigenschaften messen:_ Die zuvor ausgewählten Komponenten Messen und die Werte für die Metrik errechnen.
+
+4. _Auffällige Messwerte erkennen:_ Nach der Messung können die Messwerte mit den früheren Messungen verglichen werden. Ungewöhnlich hohe oder niedrige Werte, könnten auf Probleme mit der Komponente hinweisen.
+
+5. _Auffällige Komponenten analysieren:_ Auffällige Komponenten überprüfen und ermitteln ob sich die Qualität der Komponente verschlechtert hat.
+
+Die gesammelten Daten sollten, protokolliert werden, damit sie für spätere Tests wieder zur Verfügung stehen. Wenn nach vielen Tests eine ausreichend große Datenbank vorhanden ist, kann die Softwarequalität verglichen und die Beziehung zwischen Komponenten und Qualitätsmerkmalen validiert werden.
+
+### 24.5.3 Softwareanalytik
+
+In den letzten Jahren hat der Begriff **Big Data Analysis** immer mehr an Relevanz in der Softwareanalytik gewonnen. Durch _Data-Mining_ lassen sich sehr große Mengen an Daten sammeln und anschließend analysieren. Dadurch ist es möglich, die Beziehung von Daten herzustellen, die mit einer manuellen Datenanalyse nicht möglich ist. **Softwareanalytik** ist die Anwendung dieser Techniken auf Daten über Software und Prozesse.
+
+Menzies und Zimmermann (2013) [[8]](#ref_8) definierten Softwareanalytik folgendermaßen:
+
+_Softwareanalytik ist die Analyse von Softwaredaten für Manager und Softwareentwickler mit dem Ziel, Softwareentwickler oder Teams zu befähigen, Erkenntnisse aus ihren Daten zu ziehen, um bessere Entscheidungen zu treffen._
+
+Zwei wichtige Faktoren haben die Softwareanalytik erst möglich gemacht:
+
+1. Das automatisierte sammeln von Nutzerdaten durch Softwareunternehmen, während der Benutzung der eigenen Software. Sobald die Software abstürzt oder Fehler auftreten, können die erzeugten Meldungen über das Internet an die Server des Entwicklers gesendet werden. So kommen riesige Datenmengen zusammen, die anschließend für die Softwareanalytik benutzt werden können.
+
+2. Die Verwendung von Open-Source-Software, angeboten auf Plattformen wie zum Beispiel Github. Der Quellcode von solcher Software steht frei für die Analyse zur Verfügung.
+
+Die Analytik hat zum Ziel, die Informationen von Problemen in Echtzeit zu analysieren, sodass auf Grund der gesammelten Daten direkt Maßnahmen ergriffen werden können.  
+Im Allgemeinen lässt sich nicht sagen, welche das beste Analysewerkzeug für eine bestimmte Situation ist. Buse und Zimmermann (2012) [[9]](#ref_9) schlagen mehrere Richtlinien für die Nutzung der Tools vor:
+
+- Die Tools sollen leicht zu benutzen sein, weil Manager oft wenig Erfahrung mit der Analyse haben.
+
+- Die Tolls sollten schnell ausführbar sein und präzise Ergebnisse liefern, anstatt riesige Datenmengen.
+
+- Die Tools sollten viele Messungen mit möglichst vielen Parametern durchführen. Es ist im Vorfeld schwer möglich vorherzusagen, welche Erkenntnisse sich daraus ergeben könnten.
+
+- Die Tools sollten Managern und Entwicklern ermöglichen, die Analysen zu untersuchen.
+
+Zhang et al. (2013) [[10]](#ref_10) beschreibt eine praktische Anwendung der Softwareanalytik. Dabei wurde die benutze Software mit Funktionalität ausgestattet, die es ermöglicht die Antwortzeiten und den damit verbundenen Systemzustand zu ermitteln. Sobald die Antwortzeit größer als erwartet ausfiel, wurden die Daten weitergeleitet und analysiert. Die automatische Analyse zeigte dann die Leistungsengpässe in der Software. Auf der Grundlage dieser Daten konnten die Entwickler ihre Algorithmen verbessern und die Engpässe damit beseitigen.
+
+Harford (2013) [[11]](#ref_11) beschreibt in \_Big Data: Are We Making a Big Mistake?\* ein großes Problem der Softwareanalytik. Oft hängt unser Wissen immer von Daten ab, die bei großen Unternehmen gesammelt wurden. Diese Daten stammen hauptsächlich von den Softwareprodukten der Unternehmen und es ist noch nicht geklärt, ob sich die Techniken, die sich für die Produkte eigenen, auch für kundenspezifische Software verwendet werden kann. Hinzu kommt noch das kleine Unternehmen oft nicht die finanziellen Mittel haben, um in Datenerfassung zu investieren, die für eine automatische Analyse erforderlich wäre, sodass sie keine Möglichkeit haben, Softwareanalytik zu nutzen.
 
 ## 24.6 Zusammenfassung
 
@@ -325,5 +527,12 @@ Aus folgenden Gründen muss der informelle Ansatz in agilen Methoden, bei größ
 
 <span id="ref_1">[1]: Sommerville Ian (2018). Software Engineering. Quality management. 700-729.</span>  
 <span id="ref_2">[2]: Humphrey, W. (1989). Managing the Software Process.</span>  
-<span id="ref_3">[3]: Fagan, M. E. (1986). Advances in Software Inspections. 744-751</span>  
-<span id="ref_4">[4]: McConnell (2004). Code Complete: A Practical Handbook of Software Construction, 2nd ed.</span>
+<span id="ref_3">[3]: Fagan, M. E. (1986). Advances in Software Inspections. 744-751.</span>  
+<span id="ref_4">[4]: McConnell (2004). Code Complete: A Practical Handbook of Software Construction, 2nd ed.</span>  
+<span id="ref_5">[5]: Kitchenham, B. (1990). Software Development Cost Models. 487-517.</span>  
+<span id="ref_6">[6]: Chidamber, S., and C. Kemerer. (1994). A Metrics Suite for Object-Oriented Design. 476-493.</span>  
+<span id="ref_7">[7]: El-Amam, K. (2001). Object-Oriented Metrics: A Review of Theory and Practice.</span>  
+<span id="ref_8">[8]: Menzies, T., and T. Zimmermann. (2013). Software Analytics: So What?. 31-37.</span>  
+<span id="ref_9">[9]: Buse, R. P. L., and T. Zimmermann. (2012). Information Needs for Software Development Analytics. 987-996.</span>  
+<span id="ref_10">[10]: Zhang, D, S. Han, Y. Dang, J-G. Lou, H. Zhang, and T. Xie. (2013). Software Analytics in Practice. 30-37.</span>  
+<span id="ref_11">[11]: Harford, T. (2013). Big Data: Are We Making a Big Mistake?.</span>
