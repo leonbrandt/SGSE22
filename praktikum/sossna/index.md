@@ -4,16 +4,17 @@
 
 
 ### Fragestellungen
- * Wie unterscheiden sich die Ansaetze?
+ * Wie unterscheiden sich die Ansätze?
  * Wie ist die Performanz der Simulation im Vergleich?
 	* Wie kann die Performanz in Unity und Unreal Engine 5 getestet werden?
 	* Beeinflussen andere Objekte in der Szene die performance?
- * Welche Simulation ist flue�iger?
+ * Welche Simulation ist flüßiger?
  * Welche Simulation sieht realisitischer aus?
 
 ### Umsetzung
  * Entwicklung unterschiedlicher Szenen je Engine
- * Implementierung der Flue�igkeitssimulation in die szene
+ * Implementierung der Flüßigkeitssimulation in die szene
  * Implementierung der Kollision mit anderen Objekten
  * Performanz messen & vergleich aufstellen (Tabelle+ Simulation)
- * Visuelle Auswertung der Simulationen mit selber Szene und Gegenueberstellung(bsp. Video nebeneinander ablaufen lassen)
+ * Visuelle Auswertung der Simulationen mit selber Szene und Gegenüberstellung(bsp. Video nebeneinander ablaufen lassen)
+
