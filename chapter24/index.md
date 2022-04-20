@@ -73,15 +73,34 @@ Aufgrund dieser Probleme handelt es sich beim Qualitätsmanagement in der Softwa
 Die subjektive Qualität eines Softwaresystems basiert größtenteils auf seinen nicht funktionalen Eigenschaften. Deshalb ist Softwarequalität nicht nur eine Frage der korrekten Implementierung, sondern hängt auch sehr stark von den nicht funktionalen Eigenschaften ab.  
 Folgende Tabelle zeigt einige nicht funktionale Eigenschaften, die bei der Ermittlung der Softwarequalität oft eine wichtige Rolle spielen.
 
-|                        |                  |                        |
-| ---------------------- | ---------------- | ---------------------- |
-| Betriebssicherheit     | Verständlichkeit | Portierbarkeit         |
-| Informationssicherheit | Testbarkeit      | Benutzerfreundlichkeit |
-| Zuverlässigkeit        | Anpassbarkeit    | Wiederverwendbarkeit   |
-| Skalierbarkeit         | Modularität      | Effizienz              |
-| Stabilität             | Komplexität      | Erlernbarkeit          |
-
-Tabelle 24.1: Softwarequalitätsmerkmale
+<p style="margin: 0 auto; width: fit-content;">Tabelle 24.1: Softwarequalitätsmerkmale</p>
+<table style="border: 4px solid rgba(0, 0, 0, 0.4); border-radius: 10px; margin: 0.5rem auto; width: fit-content;">
+  <tr>
+    <td>Betriebssicherheit</td>
+    <td>Verständlichkeit</td>
+    <td>Portierbarkeit</td>
+  </tr>
+  <tr>
+    <td>Informationssicherheit</td>
+    <td>Testbarkeit</td>
+    <td>Benutzerfreundlichkeit</td>
+  </tr>
+  <tr>
+    <td>Zuverlässigkeit</td>
+    <td>Anpassbarkeit</td>
+    <td>Wiederverwendbarkeit</td>
+  </tr>
+  <tr>
+    <td>Skalierbarkeit</td>
+    <td>Modularität</td>
+    <td>Effizienz</td>
+  </tr>
+  <tr>
+    <td>Stabilität</td>
+    <td>Komplexität</td>
+    <td>Erlernbarkeit</td>
+  </tr>
+</table>
 
 Manche dieser Merkmale können sich gegenseitig beeinflussen. Zum Beispiel kann eine Verbesserung der Informationssicherheit zu einer geringeren Performanz führen. Deshalb ist es wichtig die Merkmale mit der größten Relevanz, vorab im Qualitätsplan festzuhalten. Das ermöglicht den Entwicklern sich schon während des Entwicklungsprozesses, auf die zuvor festlegten Merkmale zu konzentrieren.
 
@@ -120,16 +139,37 @@ Es gibt zwei verwandte Arten von Software-Engineering-Standards, die im Software
 Standards müssen sich immer positiv auf die Produktqualität auswirken. Produktstandards sollten dabei so entworfen werden, dass sie kosteneffizient angewendet und geprüft werden können. Prozessstandards sollten die Prozesse definieren, die prüfen, dass die Produktstandards eingehalten werden.  
 Folgende Tabelle zeigt mögliche Produkt- und Prozessstandards:
 
-| Produktstandards                   | Prozessstandards                                     |
-| ---------------------------------- | ---------------------------------------------------- |
-| Formular für Entwurfsprüfung       | Durchführung des Entwurfs-Reviews                    |
-| Struktur des Anforderungsdokuments | Einreichung des neuen Codes für die Systemerstellung |
-| Headerformat für Methoden          | Prozess der Versionsfreigabe                         |
-| Java-Programmierstil               | Genehmigungsprozess für den Projektplan              |
-| Format des Projektplans            | Prozess für die Änderungskontrolle                   |
-| Formular für Änderungsanträge      | Prozess für die Testprotokollierung                  |
-
-Tabelle 24.2: Produkt- und Prozessstandards
+<p style="margin: 0 auto; width: fit-content;">Tabelle 24.2: Produkt- und Prozessstandards</p>
+<table style="border: 4px solid rgba(0, 0, 0, 0.4); border-radius: 10px; margin: 0.5rem auto; width: fit-content;">
+  <tr>
+    <th>Produktstandards</th>
+    <th>Prozessstandards</th>
+  </tr>
+  <tr>
+    <td>Formular für Entwurfsprüfung</td>
+    <td>Durchführung des Entwurfs-Reviews</td>
+  </tr>
+  <tr>
+    <td>Struktur des Anforderungsdokuments</td>
+    <td>Einreichung des neuen Codes für die Systemerstellung</td>
+  </tr>
+  <tr>
+    <td>Headerformat für Methoden</td>
+    <td>Prozess der Versionsfreigabe</td>
+  </tr>
+  <tr>
+    <td>Java-Programmierstil</td>
+    <td>Genehmigungsprozess für den Projektplan</td>
+  </tr>
+  <tr>
+    <td>Format des Projektplans</td>
+    <td>Prozess für die Änderungskontrolle</td>
+  </tr>
+  <tr>
+    <td>Formular für Änderungsanträge</td>
+    <td>Prozess für die Testprotokollierung</td>
+  </tr>
+</table>
 
 Die eingesetzten Standards in Unternehmen, basieren oft auf allgemeineren nationalen und internationalen Standards. So gibt es viele Standards, die festlegen wie die verwendete Technologie, Programmiersprache oder Dokumentation eingesetzt werden sollte.
 
@@ -198,7 +238,8 @@ Programminspektionen sind "**Peer-Reviews**", bei denen Teammitglieder zusammen 
 
 Bei Inspektionen wird oft eine Checkliste häufiger Programmierfehler verwendet, um eine konzentrierte Suche nach den Fehlern zu ermöglichen. Mögliche Überprüfungen, die während eines Inspektionsprozesses vorgenommen werden können, sind in Tabelle 24.3 abgebildet.
 
-<table>
+<p style="margin: 0 auto; width: fit-content;">Tabelle 24.3: Produkt- und Prozessstandards</p>
+<table style="border: 4px solid rgba(0, 0, 0, 0.4); border-radius: 10px; margin: 0.5rem auto; width: fit-content;">
   <tr>
     <th>Fehlerklasse</th>
     <th>Überprüfung während der Inspektion</th>
@@ -267,7 +308,6 @@ Bei Inspektionen wird oft eine Checkliste häufiger Programmierfehler verwendet,
     </td>
   </tr>
 </table>
-Tabelle 24.3: Produkt- und Prozessstandards
 
 Jedes Unternehmen sollte eigene Checklisten auf der Grundlage ihrer Standards erstellen und diese Checklisten in regelmäßigen Abständen aktualisieren, sobald neue Fehler bekannt werden. Firmen die Inspektionen einsetzen, können damit sehr effektiv Fehler finden.  
 Fagan (1986) [[3]](#ref_3) berichtete, dass mehr als 60% der Fehler in einem Programm durch die Inspektion eines Programms entdeckt werden können.  
@@ -371,7 +411,8 @@ Produktmetriken lassen sich in zwei Gruppen einteilen:
 
 Dynamische Metriken sind für die Beurteilung der Zuverlässigkeit und Effizienz eines Programmes sehr hilfreich. Statische Metriken sind für die Beurteilung der Verständlichkeit, Komplexität und der Wartung eines Softwaresystems wichtig.
 
-<table>
+<p style="margin: 0 auto; width: fit-content;">Tabelle 24.4: Statische Softwaremetriken</p>
+<table style="border: 4px solid rgba(0, 0, 0, 0.4); border-radius: 10px; margin: 0.5rem auto; width: fit-content;">
   <tr>
     <th>Statische Softwaremetrik</th>
     <th>Beschreibung</th>
@@ -414,13 +455,13 @@ Dynamische Metriken sind für die Beurteilung der Zuverlässigkeit und Effizienz
     </td>
   </tr>
 </table>
-Tabelle 24.4: Statische Softwaremetriken
 
 Viele Experimente zeigten, dass die Größe eines Programms und die Komplexität der Kontrollstrukturen die zuverlässigsten Vorhersagen für die Verständlichkeit und die Wartbarkeit liefern.
 
 Neben den Metriken aus Tabelle 24.4 für die statische Analyse, gibt es auch noch Metriken die sich speziell für die Objektorientierung eignen. Tabelle 24.5 ist eine Zusammenfassung der (Chidamber-Kemerer-Metriksuite) [[6]](#ref_6), die aus 6 objektorientierten Metriken besteht. Diese bereits in den frühen 90er Jahren entwickelten Metriken, sind immer noch die am weitesten verbreiteten objektorientierten Metriken.
 
-<table>
+<p style="margin: 0 auto; width: fit-content;">Tabelle 24.5: Objektorientierte CK-Metriksuite.</p>
+<table style="border: 4px solid rgba(0, 0, 0, 0.4); border-radius: 10px; margin: 0.5rem auto; width: fit-content;">
   <tr>
     <th>Objektorientierte Metrik</th>
     <th>Beschreibung</th>
@@ -462,7 +503,6 @@ Neben den Metriken aus Tabelle 24.4 für die statische Analyse, gibt es auch noc
     </td>
   </tr>
 </table>
-Tabelle 24.5: Objektorientierte CK-Metriksuite.
 
 El-Amam (2001) [[7]](#ref_7) beschreibt in einem Aufsatz die CK-Metriken sowie andere objektorientierte Metriken und kommt zu der Schlussfolgerung, dass noch nicht ausreichend Beweise vorliegen in welche Beziehung diese Metriken zur Softwarequalität stehen. Diese Situation hat sich seit der Analyse 2001 nicht verändert. Es ist immer noch nicht bekannt wie Messungen von objektorientierten Programmen, zuverlässige Schlüsse über die Qualität liefern können.
 
@@ -523,11 +563,11 @@ Harford (2013) [[11]](#ref_11) beschreibt in "Big Data: Are We Making a Big Mist
 
 ## 24.6 Zusammenfassung
 
-- Qualitätsmanagement soll sicherstellen, dass die Software so wenig Fehler wie möglich enthält, Wartungsfreundlich ist und Zuverlässig läuft. Zusätzlich stellt QM sicher, dass alle festgelegten Standards für Prozesse und Produkte eingehalten werden.
+- Qualitätsmanagement soll sicherstellen, dass die Software so wenig Fehler wie möglich enthält, wartungsfreundlich ist und zuverlässig läuft. Zusätzlich stellt QM sicher, dass alle festgelegten Standards für Prozesse und Produkte eingehalten werden.
 
 - Standards sind wichtig für die Qualitätssicherung, da sie die "beste Vorgehensweise" darstellen. Sie bieten eine solide Grundlage für die Erstellung qualitativ hochwertiger Software.
 
-- Reviews werden von einem extra Team durchgeführt. Das Review-Team prüft das die definierten Qualitätsstandards eingehalten werden. Reviews stellen die häufigste Methode zur Beurteilung der Qualität dar.
+- Reviews werden von einem extra Team durchgeführt. Das Review-Team prüft, dass die definierten Qualitätsstandards eingehalten werden. Reviews stellen die häufigste Methode zur Beurteilung der Qualität dar.
 
 - Während einer Inspektion, wir der Code von einem kleinen Team systematisch geprüft. Die Teammitglieder durchsuchen den Code nach potenziellen Fehlern. Die festgestellten Mängel werden anschließend in einer Code-Review-Sitzung diskutiert.
 
