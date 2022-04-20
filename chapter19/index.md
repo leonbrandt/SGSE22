@@ -83,6 +83,23 @@ Auf Grund der soziotechnischen Faktoren ist es nicht leicht zu ermitteln, ob ein
 
 ### Emergente Eigenschaften
 
+Emergente Eigenschaften können keiner spezifischen Komponente des Systems zugeschrieben werden, sondern werden sichtbar sobald die Komponenten integriert wurden und mit einander in Verbindung stehen. Die folgende Tabelle zeigt einige Beispiele für emergente Eigenschaften.
+
+| Eigenschaft            | Beschreibung                                                 |
+| ---------------------- | ------------------------------------------------------------ |
+| Zuverlässigkeit        | Die Zuverlässigkeit des Systems hängt zwar von der Zuverlässigkeit der einzelnen Komponenten ab, doch unerwartete Interaktionen können neue Fehler hervorrufen und die Zuverlässigkeit des Systems beeinträchtigen. |
+| Reparierbarkeit        | Diese Eigenschaft beschreibt wie leicht es ist Probleme zu beheben. Diese hängt von der Zugänglichkeit zu den Komponenten, der Diagnostizierbarkeit und der Einfachheit diese Probleme zu beheben ab. |
+| Sicherheit             | Die Sicherheit eines Systems kann nicht so einfach gemessen werden. Sie hängt von der Fähigkeit ab, Attacken abzublocken und nicht entdeckte Sicherheitslücken schnell und effizient zu füllen. |
+| Benutzerfreundlichkeit | Benutzerfreundlichkeit beschreibt die Einfachheit in der Bedienung des Systems. Diese hängt von den Komponenten, den Anwendern und der Betriebsumgebung ab. |
+| Größe / Ausmaß         | Die Größe bzw. das Ausmaß eines Systems hängt von der Komponentenanordnung und deren Verbindungen ab. |
+
+Es wird zwischen zwei Arten von emergenten Eigenschaften unterschieden:
+
+1. **Funktionale emergente Eigenschaften** tauchen auf nachdem die Komponenten eines Systems integriert wurden. Ein Computer hat beispielsweise die Möglichkeit Software auszuführen, nachdem dieser aus den Komponenten zusammengebaut wurde.
+2. **Nicht-funktionale emergente Eigenschaften** beziehen sich auf das Verhalten eines Systems in dessen Betriebsumgebung. Zuverlässigkeit, Reparierbarkeit etc. sind Beispiele hierfür. Wenn ein gewisses Level für diese Eigenschaften nicht erreicht wird, kann ein sicherer Betrieb des Systems nicht gewährleistet werden. Sollte <u>kein</u> Nutzer eine gewisse Eigenschaft benötigen, kann diese Eigenschaft dann vernachlässigt werden. Bei großen Enterprise-Systemen ist davon allerdings nicht auszugehen.
+
+
+
 ### Nichtdeterminismus
 
 ### Erfolgskriterien
