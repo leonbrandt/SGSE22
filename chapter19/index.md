@@ -54,16 +54,17 @@ Diese allgemeine Definition deckt eine sehr hohe Bandbreite an verschiedenen Sys
 Großangelegte Systeme (engl: *large-scale systems*) sind häufig soziotechnische Systeme. Dann spricht man bei ihnen auch von Enterprise-Systemen, die einen gewissen Zweck im Unternehmen erfüllen sollen. Da in so ein großes System viele Personen involviert sind - z.B. Endnutzer, Entwickler, Manager und weitere Stakeholder innerhalb und außerhalb des Unternehmens - kann es schwierig werden, genaue Grenzen des System festzulegen. Jeder involvierte Person sieht die Grenzen des Systems an einer anderen Stelle. Dies muss berücksichtigt werden, da es essentiell ist, was in den Bereich des Systems fällt und was nicht, wenn die Systemanforderungen definiert werden.
 
 <figure style="text-align: center;">
-    <img src="./media/soziotechnischeSysteme/LayeredStructureOfSociotechnicalSystems.PNG" style="border: 3px solid black; border-radius: 5px;" />
+    <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter19/media/soziotechnischeSysteme/LayeredStructureOfSociotechnicalSystems.PNG?raw=true" style="border: 3px solid black; border-radius: 5px;" />
     <figcaption>Abbildung 3: Schichten-Struktur eines soziotechnischen Systems.</figcaption>
 </figure>
 
 *Abbildung 3* legt das aufgezeigte Problem grafisch dar. Dabei wird ein soziotechnisches System dargestellt, in dem jede Schicht auf eine gewisse Weise zur funktionsweise des Systems beiträgt. Im Kern befindet sich das technische System und seine Prozesse. Doch auch außerhalb des Kerns liegen soziotechnische Faktoren, die das Verhalten beeinflussen. Ob diese Faktoren außerhalb des Kerns als Teil des Systems gesehen werden, hängt vom Unternehmen und den entsprechenden Regularien ab. Ändern sich Unternehmensrichtlinien häufig wäre es sinnvoll sie als Teil des Systems anzusehen. Welche Schichten noch als Bestandteil des Systems gesehen werden lässt sich jedoch nicht allgemeingültig sagen. Viel mehr müssen diese Fragen beim Designprozess des Systems berücksichtigt werden. Dafür muss - soweit wie möglich - das Nutzungsumfeld für das System nachvollzogen werden, da sonst das System nicht oder nur teilweise den eigentlich angedachten Zweck erfüllen kann.
 
 <figure style="text-align: center;">
-    <img src="./media/soziotechnischeSysteme/OrganizationalElements.PNG" style="border: 3px solid black; border-radius: 5px;" />
+    <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter19/media/soziotechnischeSysteme/OrganizationalElements.PNG?raw=true" style="border: 3px solid black; border-radius: 5px;" />
     <figcaption>Abbildung 4: Mögliche betroffene Gebiete bei der Einführung eines neuen Systems.</figcaption>
 </figure>
+
 
 *Abbildung 4* zeigt Schlüsselelemente, die Anforderungen, Design und Betrieb eines soziotechnischen Systems betreffen können und ggf. selbst betroffen sind. Dabei kann es in manchen oder allen von diesen Bereich zu Änderungen kommen.
 
