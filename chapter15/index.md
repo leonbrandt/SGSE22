@@ -1,6 +1,53 @@
-# Software processes
+# Software Reuse 
 
 **Autor:** Tim Lücking
+
+"Reuse-based" Software Entwicklung ist eine Strategie, innerhalb des 
+Entwicklungsprozesses bereits vorhandene Software wieder zu verwenden.
+Das Wiederverwenden von Software soll die Produktions- und Wartungskosten
+verringern, eine schnellere Lieferung von Systemen und die Erhoehung der 
+Qualitaet ermoeglichen.
+Open-Source liefert beispielsweise viel wiederverwendbaren Code in Form
+von Softwarebibliotheken oder ganzen Applikationen. ERP Systeme koennen,
+fuer Kunden angepasst werden. Auch die Einfuehrung von Standards, wie 
+zum Beispiel Webservice-Standards, ermoeglichen ein einfacheres Entwickeln
+und Wiederverwenden von Software.
+
+"Reuse-based" Software Entwicklung ist ein Ansatz, das Wiederverwenden von 
+existierender Software zu maximieren. Die Softwareeinheiten koennen
+dabei von unterschiedlicher Groesse sein:
+
+1. *System-Wiederverwendung* Komplette Systeme, welche aus einer Anzahl an
+Applikationsprogrammen besteht, koennen als Teil eines Systems bestehend aus Systemen
+wiederverwendet werden (Kapitel 20)
+2. *Applikations-Wiederverwendung* Eine Applikation kann unveraendert oder nach Anpassung
+an Wuenschen vom Kunden in einem System wiederverwendet werden. Applikations-Familien oder Applikationen 
+mit gleicher Architektur, welche an individuelle Kunden angepasst sind, koennen
+ebenfalls auch zur Entwicklung neuer Systeme verwendet werden. 
+3. *Komponenten-Wiederverwendung* Komponenten (von Subsystemen bis hin zu einzelnen Objekten)eines Systems koennen wiederverwendet werden.
+Komponenten koennen dabei in der Cloud oder auf einem privaten Server gehostet werden und eventuell mit Hilfe
+eines "Application programming interfaces" (API) als Service erreichbar sein.
+4. *Objekt- und Funktions-Wiederverwendung* Softwarekomponenten, welche eine einzelne Funktion
+(zum Beispiel eine mathematische Funktion) oder eine Objektklasse implementieren, kann 
+wiederverwendet werden. Standard Bibliotheken verwenden diese Art der Wiederverwendung.
+In Bereichen von mathematischen Alorithmen und Grafiken, wird teure Expertise 
+fuer die Entwicklung effizienter Objekte und Funktionen benoetigt. Die Wiederverwendung von 
+Standard Bibliotheken ist deshalb besonders Kosteneffizient.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Nach dem Lesen des Kapitels sollten Sie einiges wissen und dann noch viel mehr und sehr viel mehr und weniger.
 
