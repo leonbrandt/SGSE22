@@ -67,14 +67,24 @@ Großangelegte Systeme (engl: *large-scale systems*) sind häufig soziotechnisch
 
 *Abbildung 4* zeigt Schlüsselelemente, die Anforderungen, Design und Betrieb eines soziotechnischen Systems betreffen können und ggf. selbst betroffen sind. Dabei kann es in manchen oder allen von diesen Bereich zu Änderungen kommen.
 
-- **Prozessänderungen**
-- **Arbeitsänderungen / Jobänderungen**
-- **Unternehmensrichtlinien**
-- **Unternehmenspolitische Änderungen**
+- **Prozessänderungen** können dazu führen, dass Personen ihre Arbeitsweise anpassen müssen. In so einem Fall werden Schulungen nötig. Wenn solche Prozessänderungen dazu führen, dass Personen ihren Job verlieren, ist es wahrscheinlich, dass diese die Einführung des neuen Systems ablehnen.
+- **Arbeitsänderungen / Jobänderungen** werden ebenfalls durch ein neues System hervorgerufen. Dabei kann ein neues System beispielsweise Ärzten Teile ihrer Arbeit abnehmen. Wenn sich Personen dadurch in ihrer Arbeit eingeschränkt oder degradiert fühlen, lehnen sie das System meist ab.
+- **Unternehmensrichtlinien** wie zur Privatsphäre können nicht mit dem neuen System vereinbart werden. Hier sind Änderungen am System, an den Richtlinien oder an Prozessen notwendig, um eine Konsistenz von System und Richtlinien zu erreichen.
+- **Unternehmenspolitische Änderungen** können durch das System hervorgerufen werden. Wenn das System große Teile des Unternehmens steuert, haben solche mit Zugriff und Erfahrung in diesem System eine erhöhte politische Macht. 
 
-1. Sie haben emergente Eigenschaften. Emergente Eigenschaften in einem System sind solche Eigenschaften, die das System selbst besitzt, obwohl keine der Komponenten diese hat.
-2. 
-3. 
+Soziotechnische Systeme sind so komplex, dass es im Voraus praktisch unmöglich ist diese komplett zu verstehen. Dadurch sind solchen Systemen drei entscheidende Eigenschaften zuzuordnen:
+
+1. Sie haben emergente Eigenschaften. Emergente Eigenschaften in einem System sind solche Eigenschaften, die das System selbst besitzt, obwohl keine der Komponenten diese hat. Dabei hängen sie von den Systemkomponenten, aber auch den Beziehungen zwischen ihnen ab. Manche tauchen erst bei der Einführungen und dem Betrieb des Systems auf, sodass sie erst hier betrachtet werden können.
+2. Sie sind nicht-deterministisch, sprich sie geben nicht zwingend bei der gleichen Eingabe die gleiche Ausgabe. Das Verhalten hängt ebenso vom Benutzer ab und ein fortlaufender Betrieb kann neue Beziehungen zwischen einzelnen Komponenten erschaffen / erfordern.
+3. Die Erfolgskriterien des Systems sind als subjektiv einzuordnen. Dabei hängt der Erfolg nicht nur vom System selbst ab, sondern auch von Konflikten, Beziehungen und Stabilität der zu erreichenden Ziele. Unterschiedliche Abteilungen können dabei die Ziele jeweils anders interpretieren.
+
+Auf Grund der soziotechnischen Faktoren ist es nicht leicht zu ermitteln, ob ein System seine gesetzten Ziele erreicht. Besonders, dann wenn die Ingenieure  wenig Erfahrung in den benötigten sozialen und kulturellen Feldern haben. Hier hilft es, sich die Methoden für die soziotechnische Auswertung anzuschauen [[4]](#ref4).
+
+### Emergente Eigenschaften
+
+### Nichtdeterminismus
+
+### Erfolgskriterien
 
 ## Konzeptionelles Design
 
@@ -93,3 +103,5 @@ Großangelegte Systeme (engl: *large-scale systems*) sind häufig soziotechnisch
 <span id="ref2">[2]: *White, S., et al.* *Systems Engineering of Computer Based Systems.* *IEEE Computer, November, 1993.*</span>
 
 <span id="ref3">[3]: *["CIVILIAN AND MILITARY AIR TRAFFIC CONTROL IN THE EU"](https://www.europarl.europa.eu/meetdocs/committees/rett/20020121/297568EN.pdf) (PDF). November, 2001.*</span>
+
+<span id="ref4">[4]: *Gordon Baxter, Ian Sommerville, Socio-technical systems: From design methods to systems engineering, Interacting with Computers, Volume 23, Issue 1, January 2011.*</span>
