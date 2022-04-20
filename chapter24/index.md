@@ -519,9 +519,23 @@ Im Allgemeinen lässt sich nicht sagen, welche das beste Analysewerkzeug für ei
 
 Zhang et al. (2013) [[10]](#ref_10) beschreibt eine praktische Anwendung der Softwareanalytik. Dabei wurde die benutze Software mit Funktionalität ausgestattet, die es ermöglicht die Antwortzeiten und den damit verbundenen Systemzustand zu ermitteln. Sobald die Antwortzeit größer als erwartet ausfiel, wurden die Daten weitergeleitet und analysiert. Die automatische Analyse zeigte dann die Leistungsengpässe in der Software. Auf der Grundlage dieser Daten konnten die Entwickler ihre Algorithmen verbessern und die Engpässe damit beseitigen.
 
-Harford (2013) [[11]](#ref\*11) beschreibt in "_Big Data: Are We Making a Big Mistake ?_" ein großes Problem der Softwareanalytik. Oft hängt unser Wissen immer von Daten ab, die bei großen Unternehmen gesammelt wurden. Diese Daten stammen hauptsächlich von den Softwareprodukten der Unternehmen und es ist noch nicht geklärt, ob sich die Techniken, die sich für die Produkte eigenen, auch für kundenspezifische Software verwendet werden kann. Hinzu kommt noch das kleine Unternehmen oft nicht die finanziellen Mittel haben, um in Datenerfassung zu investieren, die für eine automatische Analyse erforderlich wäre, sodass sie keine Möglichkeit haben, Softwareanalytik zu nutzen.
+Harford (2013) [[11]](#ref_11) beschreibt in "Big Data: Are We Making a Big Mistake?" ein großes Problem der Softwareanalytik. Oft hängt unser Wissen immer von Daten ab, die bei großen Unternehmen gesammelt wurden. Diese Daten stammen hauptsächlich von den Softwareprodukten der Unternehmen und es ist noch nicht geklärt, ob sich die Techniken, die sich für die Produkte eigenen, auch für kundenspezifische Software verwendet werden kann. Hinzu kommt noch das kleine Unternehmen oft nicht die finanziellen Mittel haben, um in Datenerfassung zu investieren, die für eine automatische Analyse erforderlich wäre, sodass sie keine Möglichkeit haben, Softwareanalytik zu nutzen.
 
 ## 24.6 Zusammenfassung
+
+- Qualitätsmanagement soll sicherstellen, dass die Software so wenig Fehler wie möglich enthält, Wartungsfreundlich ist und Zuverlässig läuft. Zusätzlich stellt QM sicher, dass alle festgelegten Standards für Prozesse und Produkte eingehalten werden.
+
+- Standards sind wichtig für die Qualitätssicherung, da sie die "beste Vorgehensweise" darstellen. Sie bieten eine solide Grundlage für die Erstellung qualitativ hochwertiger Software.
+
+- Reviews werden von einem extra Team durchgeführt. Das Review-Team prüft das die definierten Qualitätsstandards eingehalten werden. Reviews stellen die häufigste Methode zur Beurteilung der Qualität dar.
+
+- Während einer Inspektion, wir der Code von einem kleinen Team systematisch geprüft. Die Teammitglieder durchsuchen den Code nach potenziellen Fehlern. Die festgestellten Mängel werden anschließend in einer Code-Review-Sitzung diskutiert.
+
+- Softwaremessungen können zum Sammeln quantitativer Daten über die verwendete Software eingesetzt werden. Möglicherweise können mit Hilfe der Daten Metriken erstellt werden, um Schlussfolgerungen über die Qualität zu ziehen.
+
+- Metriken sind besonders nützlich, um auf Komponenten zu stoßen, die Qualitätsprobleme aufweisen könnten.
+
+- Softwareanalytik befasst sich mit der automatischen Analyse von großen Datenmengen, um Beziehungen festzustellen, die für Manager und Entwickler wichtig sein könnten.
 
 ## 24.7 Referenzen
 
