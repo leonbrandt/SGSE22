@@ -41,10 +41,14 @@ des CFG (control flow graph) an einer bestimmten Call Site zu einer optimalen L�
 - eine Alternative stellen Evolution Strategies dar (Teil der Black Box Optimierungstechniken)
 	- lernt auch durch trial and error
 
+# Offene Fragen #
 
-# Welche LLVM-Pässe haben Einfluss auf die executable size? #
+- Welche LLVM-Pässe haben Einfluss auf die executable size?
+	- https://link.springer.com/content/pdf/10.1007/s40012-019-00248-5.pdf
+- Welche dieser Pässe nutzen Heuristiken, die effektiv durch
+ML-Modelle ausgetauscht werden können? (kritische Frage!)
 
-- https://link.springer.com/content/pdf/10.1007/s40012-019-00248-5.pdf
+
 
 # LLVM Projects #
 
