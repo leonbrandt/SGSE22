@@ -64,8 +64,6 @@ Großangelegte Systeme (engl: *large-scale systems*) sind häufig soziotechnisch
     <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter19/media/soziotechnischeSysteme/OrganizationalElements.PNG?raw=true" style="border: 3px solid black; border-radius: 5px;" />
     <figcaption>Abbildung 4: Mögliche betroffene Gebiete bei der Einführung eines neuen Systems.</figcaption>
 </figure>
-
-
 *Abbildung 4* zeigt Schlüsselelemente, die Anforderungen, Design und Betrieb eines soziotechnischen Systems betreffen können und ggf. selbst betroffen sind. Dabei kann es in manchen oder allen von diesen Bereich zu Änderungen kommen.
 
 - **Prozessänderungen** können dazu führen, dass Personen ihre Arbeitsweise anpassen müssen. In so einem Fall werden Schulungen nötig. Wenn solche Prozessänderungen dazu führen, dass Personen ihren Job verlieren, ist es wahrscheinlich, dass diese die Einführung des neuen Systems ablehnen.
@@ -98,7 +96,14 @@ Es wird zwischen zwei Arten von emergenten Eigenschaften unterschieden:
 1. **Funktionale emergente Eigenschaften** tauchen auf nachdem die Komponenten eines Systems integriert wurden. Ein Computer hat beispielsweise die Möglichkeit Software auszuführen, nachdem dieser aus den Komponenten zusammengebaut wurde.
 2. **Nicht-funktionale emergente Eigenschaften** beziehen sich auf das Verhalten eines Systems in dessen Betriebsumgebung. Zuverlässigkeit, Reparierbarkeit etc. sind Beispiele hierfür. Wenn ein gewisses Level für diese Eigenschaften nicht erreicht wird, kann ein sicherer Betrieb des Systems nicht gewährleistet werden. Sollte <u>kein</u> Nutzer eine gewisse Eigenschaft benötigen, kann diese Eigenschaft dann vernachlässigt werden. Bei großen Enterprise-Systemen ist davon allerdings nicht auszugehen.
 
+Emergente Eigenschaften, wie beispielsweise Zuverlässigkeit, hängen wiederum von den Eigenschaften der einzelnen Komponenten und deren Interaktionen sowie Beziehungen ab. Die Zuverlässigkeit wird dabei von drei Unterkategorien der Zuverlässigkeit beeinflusst. Diese sind die Zuverlässigkeit der Hardware, die Zuverlässigkeit der Software und die Zuverlässigkeit der Benutzer. *Abbildung 5* zeigt wie sich Fehler auf einem dieser Level auf andere ausbreiten können. Hardwarefehler können sich auf die Software auswirken, sodass das diese nicht mehr ordnungsgemäß funktioniert, woraus eine Verwirrung oder Stress beim Nutzer entsteht.
 
+<figure style="text-align: center;">
+    <img src="./media/soziotechnischeSysteme/FailurePropagation.png" style="border: 3px solid black; border-radius: 5px;" />
+    <figcaption>Abbildung 5: Ausbreitung von Fehlern auf andere Schichten.</figcaption>
+</figure>
+
+Die Zuverlässigkeit eines Systems hängt auch vom Kontext ab, in dem es genutzt wird. Doch dieser Kontext kann nicht immer komplett spezifiziert werden. Wenn ein System dafür ausgelegt ist bei Raumtemperatur zu arbeiten, können Temperaturen außerhalb eines gewissen Bereichs für unvorhersehbares Verhalten sorgen. Wenn nun eine Klimaanlage für eine gewisse Temperatur zuständig ist, ist das System von einem anderen externen System - der Klimaanlage - abhängig. Emergente Eigenschaften können somit oft nur erfasst und berücksichtigt werden - vor allem auftretende Fehler - wenn das System in Betrieb genommen wurde. Wichtig ist einen möglichst guten Zugang zu diesen Aspekten zu planen.
 
 ### Nichtdeterminismus
 
