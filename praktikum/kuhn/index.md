@@ -4,7 +4,7 @@
 #### Evaluation der Design-Ansätze User Centered Design und Design Thinking 
 
 * Vorstellung der beiden Ansätze
-* Entwicklung von zwei Projekten je nach den beiden Ansätzen 
+* Entwicklung von zwei Projekten je nach einem Ansatz
 
 ### UCD
 * wird vor allem für Entwicklung der Benutzeroberfläche genutzt
@@ -30,6 +30,7 @@
 
     
 ### Forschungsfragen
+
 * Welcher Ansatz hat welche Vorteile/Nachteile?
 * Welcher Ansatz ist aufwendiger? (Time to production) 
 * In welchen Fällen ist welcher Ansatz sinnvoll?
