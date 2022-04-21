@@ -1,6 +1,6 @@
 # Marco Reineke
 
-# Thema: KI gestützte Softwareentwicklung, ei
+# Thema: KI gestützte Softwareentwicklung
 
 * Inhalt/Fragestellungen:
   * Welche Vor- und Nachteile hat die KI gestützte Softwareentwicklung ?
