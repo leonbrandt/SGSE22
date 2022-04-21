@@ -11,6 +11,9 @@
 		- wie kommt man da an Daten und wie verwendet man die (Praxisbeispiele)?
 	- von LLVM nach wasm?
 
+[Recherche zum MLGO Paper/Framework](praktikum/reinsch_raitzig/research.md)
+
+
 -------------
 
 ## Backup: Fragestellung ##
