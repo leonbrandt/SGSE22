@@ -1,4 +1,6 @@
-# Tim Luecking
+# Computergraphik (Raytracer)
+
+## Evaluierung von Test-Driven Development
 
 * Computergraphik (Evaluierung von Test-Driven Development in der Computergraphik anhand eines Raytracers)
 	* Implementierung eines Raytracers im Test-Driven Kontext
@@ -47,3 +49,21 @@
 
 ![](media/tdd.png)
 		
+## Raytracer im Web
+
+* OpenGL 
+* WebGL
+* WebGPU
+* Vulcan
+
+* JavaScript
+* ams.js
+* WebAssembly
+* Shader 
+
+* Vergleich Javascript und WebAssembly 
+	* Implemetierung eines Raytracers 
+	* Testen auf Schnelligkeit 
+	* Falls Animationen moeglich > framerate vergleich
+
+
