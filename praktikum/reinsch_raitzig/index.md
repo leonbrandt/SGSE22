@@ -13,6 +13,13 @@
 
 [Recherche zum MLGO Paper/Framework](praktikum/reinsch_raitzig/research.md)
 
+- Potentielles Ziel: Optimierung hinsichtlich Codegröße (.wasm muss immer
+an Client geschickt werden)
+- Mögliche Ausprägungen:
+	- Anwendung von MLGO mit .wasm und beobachten, wie sich Codegröße
+	ändert
+	- Erweiterung von MLGO mit weiterem Modell für weiteren Pass
+	und Effekt auf Codegröße beobachten
 
 -------------
 
