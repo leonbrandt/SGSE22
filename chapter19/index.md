@@ -64,8 +64,6 @@ Großangelegte Systeme (engl: *large-scale systems*) sind häufig soziotechnisch
     <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter19/media/soziotechnischeSysteme/OrganizationalElements.PNG?raw=true" style="border: 3px solid black; border-radius: 5px;" />
     <figcaption>Abbildung 4: Mögliche betroffene Gebiete bei der Einführung eines neuen Systems.</figcaption>
 </figure>
-
-
 *Abbildung 4* zeigt Schlüsselelemente, die Anforderungen, Design und Betrieb eines soziotechnischen Systems betreffen können und ggf. selbst betroffen sind. Dabei kann es in manchen oder allen von diesen Bereich zu Änderungen kommen.
 
 - **Prozessänderungen** können dazu führen, dass Personen ihre Arbeitsweise anpassen müssen. In so einem Fall werden Schulungen nötig. Wenn solche Prozessänderungen dazu führen, dass Personen ihren Job verlieren, ist es wahrscheinlich, dass diese die Einführung des neuen Systems ablehnen.
@@ -83,9 +81,43 @@ Auf Grund der soziotechnischen Faktoren ist es nicht leicht zu ermitteln, ob ein
 
 ### Emergente Eigenschaften
 
+Emergente Eigenschaften können keiner spezifischen Komponente des Systems zugeschrieben werden, sondern werden sichtbar sobald die Komponenten integriert wurden und mit einander in Verbindung stehen. Die folgende Tabelle zeigt einige Beispiele für emergente Eigenschaften.
+
+| Eigenschaft            | Beschreibung                                                 |
+| ---------------------- | ------------------------------------------------------------ |
+| Zuverlässigkeit        | Die Zuverlässigkeit des Systems hängt zwar von der Zuverlässigkeit der einzelnen Komponenten ab, doch unerwartete Interaktionen können neue Fehler hervorrufen und die Zuverlässigkeit des Systems beeinträchtigen. |
+| Reparierbarkeit        | Diese Eigenschaft beschreibt wie leicht es ist Probleme zu beheben. Diese hängt von der Zugänglichkeit zu den Komponenten, der Diagnostizierbarkeit und der Einfachheit diese Probleme zu beheben ab. |
+| Sicherheit             | Die Sicherheit eines Systems kann nicht so einfach gemessen werden. Sie hängt von der Fähigkeit ab, Attacken abzublocken und nicht entdeckte Sicherheitslücken schnell und effizient zu füllen. |
+| Benutzerfreundlichkeit | Benutzerfreundlichkeit beschreibt die Einfachheit in der Bedienung des Systems. Diese hängt von den Komponenten, den Anwendern und der Betriebsumgebung ab. |
+| Größe / Ausmaß         | Die Größe bzw. das Ausmaß eines Systems hängt von der Komponentenanordnung und deren Verbindungen ab. |
+
+Es wird zwischen zwei Arten von emergenten Eigenschaften unterschieden:
+
+1. **Funktionale emergente Eigenschaften** tauchen auf nachdem die Komponenten eines Systems integriert wurden. Ein Computer hat beispielsweise die Möglichkeit Software auszuführen, nachdem dieser aus den Komponenten zusammengebaut wurde.
+2. **Nicht-funktionale emergente Eigenschaften** beziehen sich auf das Verhalten eines Systems in dessen Betriebsumgebung. Zuverlässigkeit, Reparierbarkeit etc. sind Beispiele hierfür. Wenn ein gewisses Level für diese Eigenschaften nicht erreicht wird, kann ein sicherer Betrieb des Systems nicht gewährleistet werden. Sollte <u>kein</u> Nutzer eine gewisse Eigenschaft benötigen, kann diese Eigenschaft dann vernachlässigt werden. Bei großen Enterprise-Systemen ist davon allerdings nicht auszugehen.
+
+Emergente Eigenschaften, wie beispielsweise Zuverlässigkeit, hängen wiederum von den Eigenschaften der einzelnen Komponenten und deren Interaktionen sowie Beziehungen ab. Die Zuverlässigkeit wird dabei von drei Unterkategorien der Zuverlässigkeit beeinflusst. Diese sind die Zuverlässigkeit der Hardware, die Zuverlässigkeit der Software und die Zuverlässigkeit der Benutzer. *Abbildung 5* zeigt wie sich Fehler auf einem dieser Level auf andere ausbreiten können. Hardwarefehler können sich auf die Software auswirken, sodass das diese nicht mehr ordnungsgemäß funktioniert, woraus eine Verwirrung oder Stress beim Nutzer entsteht.
+
+<figure style="text-align: center;">
+    <img src="./media/soziotechnischeSysteme/FailurePropagation.png" style="border: 3px solid black; border-radius: 5px;" />
+    <figcaption>Abbildung 5: Ausbreitung von Fehlern auf andere Schichten.</figcaption>
+</figure>
+
+Die Zuverlässigkeit eines Systems hängt auch vom Kontext ab, in dem es genutzt wird. Doch dieser Kontext kann nicht immer komplett spezifiziert werden. Wenn ein System dafür ausgelegt ist bei Raumtemperatur zu arbeiten, können Temperaturen außerhalb eines gewissen Bereichs für unvorhersehbares Verhalten sorgen. Wenn nun eine Klimaanlage für eine gewisse Temperatur zuständig ist, ist das System von einem anderen externen System - der Klimaanlage - abhängig. Emergente Eigenschaften können somit oft nur erfasst und berücksichtigt werden - vor allem auftretende Fehler - wenn das System in Betrieb genommen wurde. Wichtig ist einen möglichst guten Zugang zu diesen Aspekten zu planen.
+
 ### Nichtdeterminismus
 
+Ein deterministisches System ist absolut vorhersehbar und berechenbar. Software-Systeme, die auf zuverlässiger, robuster Hardware laufen, werden als deterministisch angesehen und geben bei gleichem Input immer den gleichen Output. Menschen sind auf hingegen nicht deterministisch. Wenn eine Person 20 mal eine relativ komplexe Aufgabe bekommt, aber immer die gleiche, ist es unwahrscheinlich, dass sie jedes mal dasselbe Ergebnis liefert. Soziotechnische Systeme sind also auch nicht deterministisch, weil Personen teil dieses Systems sind aber auch weil Änderungen an Software, Hardware und den Daten so häufig vorgenommen werden.
+
+Wenn ein System 20 Testeingaben erhält und die Ergebnisse aufgezeichnet werden, kann dann von einem Fehler gesprochen werden, wenn bei einem zweiten Testdurchlauf fünf dieser Ergebnisse abweichen? Das muss nicht zwingend der Fall sein, denn bei genauem Betrachten der Ergebnisse kann es durchaus gute Gründe für die Abweichungen geben. Nichtdeterminismus wird häufig als etwas schlechtes Betrachtet. Dabei bietet diese Eigenschaft gewisse Vorzüge. Es bedeutet, dass das Verhalten eines Systems nicht für alle Zeit statisch ist, sondern sich entsprechend der Systemumgebung anpassen kann.
+
 ### Erfolgskriterien
+
+Soziotechnische Systeme werden entwickelt, um gefährliche oder starke Probleme (engl: *wicked problems* [[5]](#ref5)) zu lösen. Solche Probleme sind so komplex und haben derart viele Entitäten, dass keine endgültige Spezifikation vorgenommen werden kann. Dabei sehen verschiedene Stakeholder das Problem auf verschiedene Weisen, doch niemand besitzt ein Verständnis für das Problem als Ganzes. Meist wird das Problem als solches er erfasst, wenn eine Lösung entwickelt wird.
+
+Sommerville gibt als Beispiel die Nachwirkungen eines Erdbebens. Niemand weiß wo so ein Erdbeben genau vorkommen wird, zu welcher Zeit und welche Auswirkungen es haben wird. Dadurch wird es unmöglich genau im Vorfeld festzulegen, wie mit dem Problem umgegangen werden kann. So ist es auch schwierig genaue Erfolgskriterien festzulegen. Wie kann entschieden werden, ob ein System dem Unternehmen, das es bestellt hat beim erreichen seiner Ziele hilft? Da solche Dinge nicht im Voraus festgestellt werden können, ergibt es mehr Sinn, beim Systembetrieb zu entscheiden, ob das System effektiv ist.
+
+Wenn in den frühen Phasen des Systementwicklungsprozesses Erfolgskriterien festgelegt wurden, müssen diese im weiteren Verlauf regelmäßig kritisch begutachtet und ggf. angepasst werden. Eine objektive Auswertung der Kriterien ist dabei schwierig, da es für gewisse Nutzer hilfreich sein kann, wenn es für andere praktisch nutzlos ist. Gleichermaßen kann ein System seine gesetzten Anforderungen erfüllen, aber innerhalb der eingesetzten Umgebung keinen Mehrwert bieten.
 
 ## Konzeptionelles Design
 
@@ -106,3 +138,8 @@ Auf Grund der soziotechnischen Faktoren ist es nicht leicht zu ermitteln, ob ein
 <span id="ref3">[3]: *["CIVILIAN AND MILITARY AIR TRAFFIC CONTROL IN THE EU"](https://www.europarl.europa.eu/meetdocs/committees/rett/20020121/297568EN.pdf) (PDF). November, 2001.*</span>
 
 <span id="ref4">[4]: *Gordon Baxter, Ian Sommerville, Socio-technical systems: From design methods to systems engineering, Interacting with Computers, Volume 23, Issue 1, January 2011.*</span>
+
+<span id="ref5">[5]: *Rittel, H.W.J., Webber, M.M. Dilemmas in a general theory of planning. Policy Sci 4, 155–169, 1973.*</span>
+
+
+
