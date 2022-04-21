@@ -2,6 +2,9 @@
 
 ## Wasm mit compilerbau ##
 
+TODO: genaue Fragestellung definieren
+TODO: Projektplan / wer macht was?
+
 - Verbindung wasm und compilerbau
 	- Optimierung speziell für wasm
 	- KI Optimierung für wasm
@@ -9,17 +12,25 @@
 		- Potentielles Ziel: Optimierung hinsichtlich Codegröße (.wasm muss immer
 		an Client geschickt werden)
 		- wie kommt man da an Daten und wie verwendet man die (Praxisbeispiele)?
+			- evtl. Unity-WebAssembly Projekt als Testprojekt verwenden
+			- Frage: wie hängt sich der angepasste Compiler in die entsprechende
+			Toolchain ein?
 	- von LLVM nach wasm?
 
 [Recherche zum MLGO Paper/Framework](praktikum/reinsch_raitzig/research.md)
 
 - Potentielles Ziel: Optimierung hinsichtlich Codegröße (.wasm muss immer
 an Client geschickt werden)
+- Auch hinsichtlich Performance testen
 - Mögliche Ausprägungen:
 	- Anwendung von MLGO mit .wasm und beobachten, wie sich Codegröße
 	ändert
 	- Erweiterung von MLGO mit weiterem Modell für weiteren Pass
 	und Effekt auf Codegröße beobachten
+
+- Annahme eines Passes, der analysiert werden soll
+- Ziel: kein wissenschaftliches Papier, semi-formal wissenschaftlich
+bearbeiten
 
 -------------
 
