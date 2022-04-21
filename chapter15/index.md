@@ -34,16 +34,14 @@ In Bereichen von mathematischen Alorithmen und Grafiken, wird teure Expertise
 fuer die Entwicklung effizienter Objekte und Funktionen benoetigt. Die Wiederverwendung von 
 Standard Bibliotheken ist deshalb besonders Kosteneffizient.
 
+Grundsaetzlich sind alle Softwaresysteme mit generischer Funktionalitaet 
+wiederverwendbar. Dennoch koennen diese Systeme oder Komponenten so
+spezifisch implementiert sein, sodass ein Veraendern fuer die Wiederverwendung
+sehr teuer sein kann. Statt den Programmcode wieder zu verwenden, koennen
+ebenfalls die Ideen, welche der Software zu Grunde liegen, wiederverwendet werden.
+Das Konzept wird "Konzept-Wiederverwendung" genannt.
 
-
-
-
-
-
-
-
-
-
+bli bla blub 
 
 
 
