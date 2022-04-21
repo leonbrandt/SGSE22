@@ -13,13 +13,25 @@
         font-weight: normal;
         margin-bottom: 20px;
       }
-      .remark-code, .remark-inline-code { 
-        font-family: 'Courier New', monospace;
-      }
       img {
         max-width: 100%;
         border: 2px solid rgba(0, 0, 0, 0.4);
         border-radius: 10px;
+      }
+      table {
+        border-collapse: collapse;
+        margin: 20px auto;
+      }
+      td, th {
+        border: 1px solid rgba(0, 0, 0, 0.6);
+        padding: 0.5rem;
+        text-align: left;
+      }
+      tr:nth-child(2n) {
+        background-color: rgba(68, 114, 196, 0.08);
+      }
+      .remark-code, .remark-inline-code { 
+        font-family: 'Courier New', monospace;
       }
       .underline{
         border-bottom: 2px solid rgb(68, 114, 196);
@@ -118,6 +130,142 @@ Die Teams stellen sicher, dass die zuvor festgelegten Standards und Ziele des Un
 # 2. Softwarequalität
 <div class="underline"></div>
 
+Qualität bedeutet, vereinfacht ausgedrückt, dass ein Produkt seiner Spezifikation entsprechen sollte.
+
+Anders als in der Fertigung, lässt sich Softwarequalität allerdings nur sehr schwer objektiv beurteilen.
+
+- Kunden haben andere Anforderungen (Effizienz, Zuverlässigkeit) als Entwickler (Wartbarkeit, Wiederverwendbarkeit).
+- In die Spezifikation fließen oft die Anforderungen von mehreren Stakeholdern mit ein.
+- Qualitätsmerkmale wie (z.B. Wartbarkeit) lassen sich nicht direkt messen.
+
+der Schwerpunkt liegt eher auf "_fit for purpose_", als auf die Übereinstimmung mit den Spezifikationen.
+
+---
+
+# 2. Softwarequalität
+<div class="underline"></div>
+
+Die Bewertung der Softwarequalität ist ein subjektiver Prozess, welches vom QM-Team durchgeführt wird.
+
+- Wurde die Software ordentlich getestet?
+- Ist die Software verlässlich genug, um eingesetzt zu werden?
+- Ist die Performanz der Software bei normalen Gebrauch akzeptabel?
+- Ist die Software einsatzfähig?
+- Ist die Software gut strukturiert und verständlich?
+- Hat man sich im Entwicklungsprozess an Programmier- und Dokumentationsstandards gehalten?
+
+Die subjektive Qualität eines Systems basiert oft auf den **nicht funktionalen Eigenschaften**.
+
+---
+
+# 2. Softwarequalität
+<div class="underline"></div>
+
+<table>
+  <tr>
+    <td>Betriebssicherheit</td>
+    <td>Verständlichkeit</td>
+    <td>Portierbarkeit</td>
+  </tr>
+  <tr>
+    <td>Informationssicherheit</td>
+    <td>Testbarkeit</td>
+    <td>Benutzerfreundlichkeit</td>
+  </tr>
+  <tr>
+    <td>Zuverlässigkeit</td>
+    <td>Anpassbarkeit</td>
+    <td>Wiederverwendbarkeit</td>
+  </tr>
+  <tr>
+    <td>Skalierbarkeit</td>
+    <td>Modularität</td>
+    <td>Effizienz</td>
+  </tr>
+  <tr>
+    <td>Stabilität</td>
+    <td>Komplexität</td>
+    <td>Erlernbarkeit</td>
+  </tr>
+</table>
+
+### Im Qualitätsplan sollten die wichtigsten Merkmale für die zu entwickelnde Software definiert werden. 
+
+---
+
+# 2. Softwarequalität
+<div class="underline"></div>
+
+Traditionelles Softwarequalitätsmanagement geht grundsätzlich davon aus, dass die Qualität der Software in direktem Bezug zu der Qualität des Softwareentwicklungsprozesses steht.
+
+<figure>
+  <img style="margin-top: 20px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.2_prozessbasierte_qualitaet.png?raw=true" alt="Qualitätsmanagement und Softwareentwicklung"/>
+</figure>
+
+---
+
+# 2. Softwarequalität
+<div class="underline"></div>
+
+Qualitätskultur...
+
+---
+
+# 3. Software - Standards
+<div class="underline"></div>
+
+Softwarestandards spielen eine wichtige Rolle im Qualitätsmanagement.
+
+1. Standards kapseln Erfahrungen, die für das Unternehmen von großen Wert sind.
+
+2. Standards bieten einen Rahmen für die Definition, was "Qualität" innerhalb des Softwareentwicklungsprojekt bedeutet.
+
+3. Standards tragen zur Kontinuität bei, sodass alle Entwickler nach denselben Verfahren arbeiten.
+
+--
+
+Es gibt zwei verwandte Arten von Software-Engineering-Standards, die im Softwarequalitätsmanagement definiert werden:
+
+1. Produktstandards: Diese gelten für das zu entwickelnde Produkt.
+
+2. Prozessstandards: Diese definieren die Prozesse, die während des Entwicklungsprozesses zu befolgen sind.
+
+---
+
+# 3. Software - Standards
+<div class="underline"></div>
+
+<table>
+  <tr>
+    <th>Produktstandards</th>
+    <th>Prozessstandards</th>
+  </tr>
+  <tr>
+    <td>Formular für Entwurfsprüfung</td>
+    <td>Durchführung des Entwurfs-Reviews</td>
+  </tr>
+  <tr>
+    <td>Struktur des Anforderungsdokuments</td>
+    <td>Einreichung des neuen Codes für die Systemerstellung</td>
+  </tr>
+  <tr>
+    <td>Headerformat für Methoden</td>
+    <td>Prozess der Versionsfreigabe</td>
+  </tr>
+  <tr>
+    <td>Java-Programmierstil</td>
+    <td>Genehmigungsprozess für den Projektplan</td>
+  </tr>
+  <tr>
+    <td>Format des Projektplans</td>
+    <td>Prozess für die Änderungskontrolle</td>
+  </tr>
+  <tr>
+    <td>Formular für Änderungsanträge</td>
+    <td>Prozess für die Testprotokollierung</td>
+  </tr>
+</table>
+
 ---
 
 # 3. Software - Standards
@@ -125,7 +273,22 @@ Die Teams stellen sicher, dass die zuvor festgelegten Standards und Ziele des Un
 
 ---
 
+# 3.1 ISO 9001
+<div class="underline"></div>
+
+---
+
 # 4. Reviews und Inspektionen
+<div class="underline"></div>
+
+---
+
+# 4.1 Reviews
+<div class="underline"></div>
+
+---
+
+# 4.2 Programminspektionen
 <div class="underline"></div>
 
 ---
@@ -136,6 +299,21 @@ Die Teams stellen sicher, dass die zuvor festgelegten Standards und Ziele des Un
 ---
 
 # 6. Softwaremessung
+<div class="underline"></div>
+
+---
+
+# 6.1 Produktmetriken
+<div class="underline"></div>
+
+---
+
+# 6.2 Komponentenanalyse
+<div class="underline"></div>
+
+---
+
+# 6.3 Softwareanalytik
 <div class="underline"></div>
 
 ---
