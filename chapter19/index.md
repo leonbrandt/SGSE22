@@ -99,7 +99,7 @@ Es wird zwischen zwei Arten von emergenten Eigenschaften unterschieden:
 Emergente Eigenschaften, wie beispielsweise Zuverlässigkeit, hängen wiederum von den Eigenschaften der einzelnen Komponenten und deren Interaktionen sowie Beziehungen ab. Die Zuverlässigkeit wird dabei von drei Unterkategorien der Zuverlässigkeit beeinflusst. Diese sind die Zuverlässigkeit der Hardware, die Zuverlässigkeit der Software und die Zuverlässigkeit der Benutzer. *Abbildung 5* zeigt wie sich Fehler auf einem dieser Level auf andere ausbreiten können. Hardwarefehler können sich auf die Software auswirken, sodass das diese nicht mehr ordnungsgemäß funktioniert, woraus eine Verwirrung oder Stress beim Nutzer entsteht.
 
 <figure style="text-align: center;">
-    <img src="./media/soziotechnischeSysteme/FailurePropagation.png" style="border: 3px solid black; border-radius: 5px;" />
+    <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter19/media/soziotechnischeSysteme/FailurePropagation.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
     <figcaption>Abbildung 5: Ausbreitung von Fehlern auf andere Schichten.</figcaption>
 </figure>
 
