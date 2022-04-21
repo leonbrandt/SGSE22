@@ -10,7 +10,7 @@
 * [**Christoph Raitzig**](praktikum/raitzig/index)
 * [**Kevin Ratschinski**](praktikum/ratschinski/index)
 * [**Marco Reineke**](praktikum/reineke/index)
-* [**Malte Reinsch**](praktikum/reinsch/index)
+* [**Christop Raitzig & Malte Reinsch**](praktikum/reinsch_raitzig/index)
 * [**Paul Schlarmann**](praktikum/schlarmann/index)
 * [**Marco Schwier**](praktikum/schwier/index)
 * [**Artem Shipilov**](praktikum/shipilov/index)
