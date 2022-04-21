@@ -107,7 +107,17 @@ Die Zuverlässigkeit eines Systems hängt auch vom Kontext ab, in dem es genutzt
 
 ### Nichtdeterminismus
 
+Ein deterministisches System ist absolut vorhersehbar und berechenbar. Software-Systeme, die auf zuverlässiger, robuster Hardware laufen, werden als deterministisch angesehen und geben bei gleichem Input immer den gleichen Output. Menschen sind auf hingegen nicht deterministisch. Wenn eine Person 20 mal eine relativ komplexe Aufgabe bekommt, aber immer die gleiche, ist es unwahrscheinlich, dass sie jedes mal dasselbe Ergebnis liefert. Soziotechnische Systeme sind also auch nicht deterministisch, weil Personen teil dieses Systems sind aber auch weil Änderungen an Software, Hardware und den Daten so häufig vorgenommen werden.
+
+Wenn ein System 20 Testeingaben erhält und die Ergebnisse aufgezeichnet werden, kann dann von einem Fehler gesprochen werden, wenn bei einem zweiten Testdurchlauf fünf dieser Ergebnisse abweichen? Das muss nicht zwingend der Fall sein, denn bei genauem Betrachten der Ergebnisse kann es durchaus gute Gründe für die Abweichungen geben. Nichtdeterminismus wird häufig als etwas schlechtes Betrachtet. Dabei bietet diese Eigenschaft gewisse Vorzüge. Es bedeutet, dass das Verhalten eines Systems nicht für alle Zeit statisch ist, sondern sich entsprechend der Systemumgebung anpassen kann.
+
 ### Erfolgskriterien
+
+Soziotechnische Systeme werden entwickelt, um gefährliche oder starke Probleme (engl: *wicked problems* [[5]](#ref5)) zu lösen. Solche Probleme sind so komplex und haben derart viele Entitäten, dass keine endgültige Spezifikation vorgenommen werden kann. Dabei sehen verschiedene Stakeholder das Problem auf verschiedene Weisen, doch niemand besitzt ein Verständnis für das Problem als Ganzes. Meist wird das Problem als solches er erfasst, wenn eine Lösung entwickelt wird.
+
+Sommerville gibt als Beispiel die Nachwirkungen eines Erdbebens. Niemand weiß wo so ein Erdbeben genau vorkommen wird, zu welcher Zeit und welche Auswirkungen es haben wird. Dadurch wird es unmöglich genau im Vorfeld festzulegen, wie mit dem Problem umgegangen werden kann. So ist es auch schwierig genaue Erfolgskriterien festzulegen. Wie kann entschieden werden, ob ein System dem Unternehmen, das es bestellt hat beim erreichen seiner Ziele hilft? Da solche Dinge nicht im Voraus festgestellt werden können, ergibt es mehr Sinn, beim Systembetrieb zu entscheiden, ob das System effektiv ist.
+
+Wenn in den frühen Phasen des Systementwicklungsprozesses Erfolgskriterien festgelegt wurden, müssen diese im weiteren Verlauf regelmäßig kritisch begutachtet und ggf. angepasst werden. Eine objektive Auswertung der Kriterien ist dabei schwierig, da es für gewisse Nutzer hilfreich sein kann, wenn es für andere praktisch nutzlos ist. Gleichermaßen kann ein System seine gesetzten Anforderungen erfüllen, aber innerhalb der eingesetzten Umgebung keinen Mehrwert bieten.
 
 ## Konzeptionelles Design
 
@@ -128,3 +138,8 @@ Die Zuverlässigkeit eines Systems hängt auch vom Kontext ab, in dem es genutzt
 <span id="ref3">[3]: *["CIVILIAN AND MILITARY AIR TRAFFIC CONTROL IN THE EU"](https://www.europarl.europa.eu/meetdocs/committees/rett/20020121/297568EN.pdf) (PDF). November, 2001.*</span>
 
 <span id="ref4">[4]: *Gordon Baxter, Ian Sommerville, Socio-technical systems: From design methods to systems engineering, Interacting with Computers, Volume 23, Issue 1, January 2011.*</span>
+
+<span id="ref5">[5]: *Rittel, H.W.J., Webber, M.M. Dilemmas in a general theory of planning. Policy Sci 4, 155–169, 1973.*</span>
+
+
+
