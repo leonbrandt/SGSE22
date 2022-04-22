@@ -54,6 +54,12 @@
 * OpenGL 
 * WebGL
 * WebGPU
+	* sehr neue Technologie
+	* Vorteil 
+		* Verwendung der GPU
+	* Nachteil
+		* kann sich stetig aendern
+		* Kompatibilitaet mit Browsern
 * Vulcan
 
 * JavaScript
@@ -65,5 +71,10 @@
 	* Implemetierung eines Raytracers 
 	* Testen auf Schnelligkeit 
 	* Falls Animationen moeglich > framerate vergleich
+	* Offene Fragen
+		* Wie genau werden die Bilder gerendert
+		* Wird WebGL oder aehnliches verwendet (Javascript und WebAssembly)
+		* Wird ein echter Raytracer gebaut oder ist es eine Art Hacken mit Hilfe von Shadern o.ae.
+		* Wie erstellt man vergleichbare Software in verschiedenen Sprachen
 
 
