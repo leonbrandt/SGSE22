@@ -1,67 +1,35 @@
 # Christoph Raitzig & Malte Reinsch #
 
-## Wasm mit compilerbau ##
+## Evaluierung der Anwendungsmöglichkeiten von Machine Learning gestützten Compiler-Optimierungsverfahren bezüglich WebAssembly ##
 
-TODO: genaue Fragestellung definieren
-TODO: Projektplan / wer macht was?
-
-- Verbindung wasm und compilerbau
-	- Optimierung speziell für wasm
-	- KI Optimierung für wasm
-		- Nutzung / Erweiterung von [MLGO](https://arxiv.org/pdf/2101.04808.pdf)
-		- Potentielles Ziel: Optimierung hinsichtlich Codegröße (.wasm muss immer
-		an Client geschickt werden)
-		- wie kommt man da an Daten und wie verwendet man die (Praxisbeispiele)?
-			- evtl. Unity-WebAssembly Projekt als Testprojekt verwenden
-			- Frage: wie hängt sich der angepasste Compiler in die entsprechende
-			Toolchain ein?
-	- von LLVM nach wasm?
-
-[Recherche zum MLGO Paper/Framework](praktikum/reinsch_raitzig/research.md)
-
-- Potentielles Ziel: Optimierung hinsichtlich Codegröße (.wasm muss immer
-an Client geschickt werden)
-- Auch hinsichtlich Performance testen
+Ziel:
+- Untersuchung zweier Fälle:
+	- Optimierung hinsichtlich Codegröße (Begründung: .wasm muss immer an Client geschickt werden)
+	- Optimierung hinsichtlich Performance (Begründung: Kernidee von WebAssembly ist das Versprechen von Performance)
 - Mögliche Ausprägungen:
-	- Anwendung von MLGO mit .wasm und beobachten, wie sich Codegröße
-	ändert
+	- Anwendung von MLGO mit .wasm und beobachten, wie sich Codegröße ändert
 	- Erweiterung von MLGO mit weiterem Modell für weiteren Pass
 	und Effekt auf Codegröße beobachten
+		- Annahme eines Passes, der analysiert werden soll
+- kein wissenschaftliches Paper
+- Nutzung / Erweiterung von [MLGO](https://arxiv.org/pdf/2101.04808.pdf)
 
-- Annahme eines Passes, der analysiert werden soll
-- Ziel: kein wissenschaftliches Papier, semi-formal wissenschaftlich
-bearbeiten
+TODOs:
+- Pass festlegen, der hinsichtlich Codegröße und Performance relevant ist und Ergebnisse verspricht
+- Benchmark-Projekt finden
+	- Wie integriert man custom-LLVM mit KI-Modell in die Toolchain?
+		- Unity: nutzt "complex toolchain" aus IL2CPP, emscripten, binaryen
+- Welche Projekte zum trainieren nutzen?
+- Wie können MLGO und LLVM erweitert werden, sodass eigener Pass trainiert werden kann?
+	- feature-doc: https://github.com/google/ml-compiler-opt/blob/main/docs/adding_features.md
+	- demo-doc: https://github.com/google/ml-compiler-opt/blob/main/docs/demo/demo.md
+- welche Features sind für Training bzgl. ausgewähltem Pass wichtig?
+- Realisierung
 
--------------
+## Projektplanung ##
 
-## Backup: Fragestellung ##
+https://crocus-island-7de.notion.site/e698d92cbf0a476d8f044fe727f03ea3?v=29abe0d1019e4d908513bf765bc34eff
 
-Vergleich verschiedener Rust-Frameworks zur Erzeugung von WebAssembly im
-Hinblick auf architektonische Unterscheide, Performance und Größe des erzeugten WebAssembly-Codes
+## Recherche ##
 
-### Frameworks ###
-
-- yew
-- seed
-- percy
-- perseus
-- sycamore
-- ...
-
-### Zu vergleichende Parameter ###
-
-- Denkansätze / architektonische Ansätze
-- Entwicklererfahrung
-- Größe des erzeugten WebAssembly-Codes (des Deployments)
-- Performance
-
-### "Testaufbau" ###
-
-- Umsetzung einer kleinen Webanwendung (z.B. einfaches soziales Netzwerk)
-- Datenbank & Backend bleiben konstant
-
-## Ziel der Arbeit ##
-
-- Ermittlung des "besten" Frameworks im Hinblick auf oben genannte Parameter
-
-
+[Recherche zum MLGO Paper/Framework](praktikum/reinsch_raitzig/research.md)
