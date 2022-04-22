@@ -487,7 +487,7 @@ Neben den Metriken aus Tabelle 24.4 für die statische Analyse, gibt es auch noc
   <tr>
     <td>Kopplung zwischen Objektklassen</td>
     <td>
-     Klassen sind gekoppelt, wenn Methoden oder Variablen der einen Klasse in Methoden einer anderen Klasse verwendet werden. Desto höher der Wert, umso stärker die Kopplung, Eine hoher Wert bedeutet, dass Änderungen einer Klasse Auswirkungen auf die andere Klasse im Programm haben können.
+     Klassen sind gekoppelt, wenn Methoden oder Variablen der einen Klasse in Methoden einer anderen Klasse verwendet werden. Desto höher der Wert, umso stärker die Kopplung. Ein hoher Wert bedeutet, dass Änderungen einer Klasse Auswirkungen auf die andere Klasse im Programm haben können.
     </td>
   </tr>
   <tr>
