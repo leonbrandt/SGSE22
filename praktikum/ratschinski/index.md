@@ -1,29 +1,45 @@
 # Kevin Ratschinski
 
-## Thema: Vergleich von verschiedenen Schnittstellen
+## Thema: Vergleich von verschiedenen Architekturstilen für eine Programmierschnittstelle
 
-- Schnittstellen: **GraphQL**, **REST** und **gRPC**
+- Technologien: **GraphQL**, **REST** und **gRPC**
+
+  Mittels GraphQL, REST und gRPC können Client und Server miteinander kommunizieren. Für den Transport verwenden alle drei Technologien das HTTP Protokoll. Abgesehen von dieser Gemeinsamkeit, sind die drei Technologien grundverschieden. Während des Praktikums soll ermittelt werden, für welche Einsatzgebiete die verschiedenen Technologien am besten geeignet sind.
+
+- Paradigmen
+
+  - GraphQL
+
+    ![](./graphql.png)
+
+  - REST
+
+  ![](./rest.png)
+
+  - gRPC
+
+  ![](./grpc.png)
+
+- Einsatzgebiete für die verschiedenen Technologien ermitteln.  
+  Was eignet sich am besten für API`s, Microservices, Webanwendungen und Mobile Apps?
 
 - Metriken:
 
-  - Performance
+  - Performanz
   - Skalierung
-  - Effizienz beim Data fetching
-  - Implementationsaufwand,
+  - Effizienz
+  - Implementationsaufwand
   - Security
-  - Dokumentation
-  - Versionierung
-
-- Einsatzgebiete für die verschiedenen Schnittstellen anhand der zuvor festgelegten Metriken ermitteln.
-
-- Welche Schnittstellen eigenen sicher besser für welche Art von Datenbank (SQL oder NoSQL)
-
-  - Aufwandsabschätzung noch erforderlich "vielleicht auch nur ein Datenbanktyp".
+  - Versionierbarkeit
 
 - Nächste Schritte:
 
+  - Einarbeitung in die verschiedenen Technologien
+
   - Testfälle für die Metriken erstellen
 
-  - Verschiedene Architekturen aufbauen (SQL/GraphQL, SQL/REST, SQL/gRPC, NoSQL/GraphQL, NoSQL/REST, NoSQL/gRPC)
+  - Verschiedene Architekturen mit den unterschiedlichen Technologien aufbauen
 
   - Auf Grundlage der Architekturen werden verschiedene Tests durchgeführt, um die Unterschiede festzustellen
+
+  - Konkretes Ergebnis anhand der ermittelten Werte
