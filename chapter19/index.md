@@ -121,7 +121,29 @@ Wenn in den frühen Phasen des Systementwicklungsprozesses Erfolgskriterien fest
 
 ## Konzeptionelles Design
 
+Sobald eine Idee für ein System vorgeschlagen wurde, besteht der erste Schritt im Systemengineering aus dem Erschaffen des konzeptionellen Design. Dabei wird die Idee auf die Durchführbarkeit untersucht und eine allgemeine Vision des Systems entwickelt. Danach muss das System für Personen, die nicht als Experten gelten, beschrieben werden. Dazu zählen Nutzer, Politiker und Entscheidungsträger.
+
+Innerhalb dieses Prozesses mit deutlich werden, wie das System künftig genutzt werden soll. Dafür müssen Diskussionen mit den beschriebenen Personen geführt werden und untersucht werden, wie aktuell bestehende Systeme genutzt werden. Ziel ist es zu verstehen, wie die Nutzer arbeiten und welche praktikablen Grenzen das System haben könnte. In Militärbereichen gehört seit Jahren eine Konzeptanalyse und die Dokumentation der Ergebnisse dieser Analyse dazu. Das entstehende Dokument wird als *Concept of Operations (ConOps)* bezeichnet und wird für viele groß-skalierende Systeme verwendet. Auf Grund einer hohen Hürde in Sachen von Bürokratie und Regierungssystemen wurde für die flexiblere Umsetzung ein Standard hierfür vorgeschlagen *(IEEE, 2007)*.
+
+<figure style="text-align: center;">
+    <img src="./media/konzeptionellesDesign/ConceptualDesignActivities.png" style="border: 3px solid black; border-radius: 5px;" />
+    <figcaption>Abbildung 6: Aktivitäten im konzeptionellen Design.</figcaption>
+</figure>
+
+*Abbildung 6* zeigt Aktivitäten, die Teil des Designprozesses sein können. Dieser Prozess sollte immer im Team angegangen werden, welches mit Personen aus verschiedenen Arbeitsbereichen erstellt wurde. Die Formulierung des Konzepts ist die erste Phase im Prozess, sodass Bedürfnisse und Art des Systems festgelegt werden, die den Anforderungen der Stakeholder nachkommen. So kann es vorkommen, dass anfänglich angedachte Anforderungen verworfen werden müssen und nach solchen Gesprächen angepasst oder komplett neue formuliert werden. Hierfür muss während der Gespräche die Arbeitsweise der Stakeholder, vor allem der Nutzer, verstanden werden und wie das System ihre Arbeit verbessern und erleichtern kann. Dieser Schritt gehört bereits zur Phase Verstehen des Problems.
+
+In der nächsten Phase zeigt das Designteam seine Ideen für alternative Systeme, die die Basis für eine Machbarkeitsstudie darstellen. So kann festgestellt werden, welche Ideen für die weitere Entwicklung in Betracht gezogen werden. Während der Machbarkeitsstudie sollten vergleichbare, bereits entwickelte Systeme, angeschaut werden und dort aufgedeckte Probleme einbezogen werden. Dann muss ausgewertet werden, ob das System mit aktueller Hardware und Software realisierbar ist. Eine weitere Aktivität besteht aus der Skizzierung einer Architektur für das System. Diese hilft der Machbarkeitsstudie selbst, aber dient auch der späteren Umsetzung als Hilfsmittel. Dadurch werden direkt Schlüsselkomponenten identifiziert und können separat beschafft werden, was sicherer ist, als alle Komponenten von einem Zulieferer zu bekommen.
+
+Alle Komponenten des Systems sollten als ersetzbare Dienste angesehen werden. So wird ggf. das System nachträglich besser auf aufkommende Bedürfnisse angepasst. Alle Informationen aus den verschiedenen Aktivitäten finden ihren Weg in das Dokument. Dieses Dokument ist ein kritischer Bestandteil, das die Entscheidungsträger nutzen, um den Fortlauf des Projekts zu bestimmen. Anhand dessen können Risikoanalysen durchgeführt und Budgetberechnungen angestellt werden. Weil verschiedene Stakeholder verschiedene Detailierungsgrade des Systems benötigen, sollte es in zwei Teile strukturiert sein:
+
+1. Eine kurze Zusammenfassung der Kernelemente, die den Entscheidungsträgern Probleme und Komponenten des Systems darlegt. Es wird so geschrieben, dass Leser direkt erkennen, wie das System genutzt werden und welche Vorteile es bietet.
+2. Eine Reihe von Anhängen, die die Ideen mit mehr Details darstellen und die für Systembeschaffung und -anforderungen genutzt werden.
+
+Es stellt eine große Anforderung dar, die Zusammenfassung auf eine Weise zu schreiben, dass Personen ohne technischen Hintergrund nicht abhängt. Hierfür bieten sich *User Stories* an, die eine anschauliche Vision darstellen und solche Personen nachvollziehen können. Solche Stories sollten kurz gefasst sein und eine praktikable Beschreibung des Systems liefern. Weiterhin zeigen sie die Möglichkeiten des Systems durch einfache, deutliche Beispiele auf. User Stories sind Teil des *ConOps*, das aber trotzdem Beschreibungen auf einer höheren, technischeren Ebene beinhalten muss, um den Wert des Systems für das Unternehmen zu verdeutlichen.
+
 ## Systembeschaffung
+
+
 
 ## Systementwicklung
 
