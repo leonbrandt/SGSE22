@@ -143,7 +143,38 @@ Es stellt eine große Anforderung dar, die Zusammenfassung auf eine Weise zu sch
 
 ## Systembeschaffung
 
+Die Systembeschaffung ist ein Prozess, an dessen Ende die Entscheidung steht, eins oder mehrere Systeme von Zulieferern einzukaufen. Hierbei werden Entscheidungen getroffen über die Größe des Systems, Budget und Zeitplanung und Systemanforderungen auf höchster Ebene. Anhand dieser Informationen wird dann letztlich entschieden, ob ein Systemkauf wirklich zustande kommt, welche Art von System eingekauft wird und welcher Zulieferer ausgewählt wird. Dabei spielen folgende Faktoren eine Rolle:
 
+- **Ersetzen bestehender Systeme:** Wenn ein Unternehmen bereits verschiedene Systeme in Betrieb hat, die nicht zusammenarbeiten können oder eine aufwändige Wartung erfordern, kann sich ein Ersatzsystem positiv auswirken.
+- **Befolgen externer Regularien**: Wenn bestehende Systeme nicht mit (neuen) Regularien und Richtlinien vereinbar sind, müssen ggf. Ersatzsysteme angeschafft werden, die solche Richtlinien befolgen können und unterstützen.
+- **Externer Wettbewerb:** Neue Systeme können dabei helfen effizienter eine wettbewerbsfähige Position des Unternehmens beizubehalten. So müssen im Militär beispielsweise effektive Systeme eingesetzt werden, die auch neue Risiken und Bedrohungen abwenden können.
+- **Restrukturierung:** Unternehmen restrukturieren sich häufig, um beispielsweise Kundenservice zu verbessern. Solche Änderungen führen zu Abweichungen in den Businessprozessen, sodass die Unterstützung neuer Systeme erforderlich sein kann.
+- **Verfügbares Budget:** Das verfügbare Budget spielt eine offensichtliche Rolle bei der Frage, ob und welche Systeme abgeschafft werden.
+
+Komplexe Systeme sind meist ein Mix aus Standardtechnik und individuell angefertigten Komponenten. Wenn neue Systeme angeschafft werden, müssen diese meist in die alte Technik und die alten Datenbankstrukturen integriert werden. Dabei muss die neue Software Schnittstellen bereitstellen, die diese Integration ermöglicht. Es muss sogenannte *glueware* (deutsch: Kleber/-verbindungssoftware) entwickelt werden, damit die nicht-individuellen Standardkomponenten mit dem System funktionieren. Drei Arten von Systemen bzw. Systemkomponenten müssen beschafft werden:
+
+1. Standardapplikationen, die ohne große Änderungen und mit minimaler Konfiguration verwendet werden können.
+2. Konfigurierbare Applikationen oder ERP-Software *(enterprise resource planning)*, die für die jeweiligen Prozessdefinitionen und -regeln angepasst werden.
+3. Spezielle Systeme, die genau für die angedachten Nutzungsfolder konstruiert und entwickelt worden sind.
+
+<figure style="text-align: center;">
+    <img src="./media/systembeschaffung/systemProcurementProcesses.png" style="border: 3px solid black; border-radius: 5px;" />
+    <figcaption>Abbildung 7: Prozesse der Systembeschaffung.</figcaption>
+</figure>
+
+*Abbildung 7* stellt die verschiedene Prozesse in der Systembeschaffung dar. Jede Komponente folgt dabei einem dieser Prozesse. Schlüsselaspekte, die auf diese Prozesse einwirken sind:
+
+1. Organisationen haben häufig eine gewisse Liste an zugelassenen und empfohlenen Applikationen/Hardware, die von der IT-Abteilung geprüft worden sind. Es ist häufig möglich Anwendungen oder Hardware aus dieser Liste zu kaufen, ohne dafür eine detaillierte Begründung zu liefern. Werden beispielsweise Mikrofone gebraucht, können diese als Standardtechnik gekauft werden. Es braucht dafür keine detaillierten Systemanforderungen und die Nutzer können sich einfach an diese Art von Technik gewöhnen.
+2. Andere Standardtechnik erfüllt nicht zwingend die Anforderungen direkt, es sei denn sie wurden so geschrieben, dass sie die Standardtechnik schon im Vorfeld berücksichtigen. Aus diesem Grund muss solche Standardtechnik ausgewählt werden, die bereits ohne Änderungen nah an die Systemanforderungen herankommt. Manchmal werden auch die Anforderungen - wenn möglich - an die Technik angepasst und nicht umgekehrt. ERP-Systeme fallen oft in diese Kategorie.
+3. Wenn spezielle Systemkomponenten entwickelt werden sollen, ist die Spezifikation bereits Bestandteil des Vertrags. Es ist daher sowohl ein rechtliches als auch ein technisches Dokument. Das Anforderungsdokument ist ein wichtiger Bestandteil und der Beschaffungsprozess braucht für diese Komponenten eine Menge Zeit.
+4. Für Systeme - vor allem im öffentlichen Sektor - gibt es gewisse Regularien bereits während des Beschaffungsprozesses. So müssen alle Systeme in der EU, die beschafft werden sollen und über einen gewissen Preis hinausgehen, für eine gewisse Zeit ausgeschrieben und beworben werden. Solche Ausschreibungen verlangsamen die komplette Systembeschaffung und verhindern eine effiziente, agile Entwicklung. Der Käufer muss Anforderung aufstellen, sodass alle Verkäuferunternehmen genug Informationen erhalten, um bei der Ausschreibung mitbieten zu können.
+5. Für Applikationssysteme und spezielle Systeme, die Änderungen erfordern, gibt es für gewöhnlich einen Zeitraum, in dem über Bedingungen und Konditionen für das zu entwickelnde System verhandelt wird. Sobald ein System festgelegt wurde, wird über Kosten, Lizenzen und weitere Änderungen verhandelt. Dafür werden Bezahlzeiträume bestimmt, Akzeptanzkriterien festgelegt und die Kosten weiterer Änderungen.
+
+Es kommt selten vor, dass komplexe soziotechnische Systeme von dem Käufer/Anwender selbst entwickelt werden. Es werden eher externe Unternehmen beauftragt sich auf den Entwicklungsprozess zu bewerben. Die Käufer beschäftigen sich meist nicht mit Systems Engineering und verfügen nicht über die Kompetenzen die Systeme selbst zu entwickeln. Für besonders große Systeme - wie das Air Traffic Control-System - kann sich eine Gruppe von Zulieferern zusammenschließen. Das umschließt Hardware- und softwareunternehmen sowie Unternehmen für Spezialanfertigungen und Peripherie (z.B. Radarsysteme).
+
+Weil die Käufer nicht mit jedem Unternehmen einzeln verhandeln möchten, übernimmt eines der Zuliefererunternehmen den Vorsitz und führt die Verhandlungen im Namen aller durch. Weiterhin ist dieses Unternehmen für die Koordination des Projekts zuständig und liefert dieses am Ende der Entwicklung aus. Entscheidungen während der Systembeschaffung haben einen starken Effekt auf die Sicherheit des Systems. Wird eine Standardkomponente anstatt einer Maßanfertigung bestellt, muss deutlich gemacht werden, dass weniger Einfluss auf die Sicherheit des Systems genommen werden kann. Weiterhin kommen bei solchen Komponenten oft Probleme bei der Integration auf, wenn sich diese nicht entsprechend konfigurieren lassen.
+
+Wenn sich auf der anderen Seite für eine speziell angefertigte Komponente entschieden wird, muss viel Zeit in das Verstehen und Definieren der Sicherheit und der Abhängigkeiten investiert werden. Besonders Unternehmen mit wenig Erfahrungen in diesem Feld dürfte das schwer fallen. Weiterhin könnte das Budget durch das Verzögern und der Kommunikation von Anforderungen in die Höhe getrieben werden. Viele schlechte Entscheidungen haben jedoch oft politische Gründe und weniger technische. So werden häufig Zulieferer ausgewählt, die bereits eine langfristige Beziehung mit dem Unternehmen haben, anstatt solche mit den tatsächlich besten Technologien den Vorzug zu geben. Somit spielen nicht nur technische Hintergründe eine große Rolle im Entscheidungsprozess.
 
 ## Systementwicklung
 
@@ -162,6 +193,3 @@ Es stellt eine große Anforderung dar, die Zusammenfassung auf eine Weise zu sch
 <span id="ref4">[4]: *Gordon Baxter, Ian Sommerville, Socio-technical systems: From design methods to systems engineering, Interacting with Computers, Volume 23, Issue 1, January 2011.*</span>
 
 <span id="ref5">[5]: *Rittel, H.W.J., Webber, M.M. Dilemmas in a general theory of planning. Policy Sci 4, 155–169, 1973.*</span>
-
-
-
