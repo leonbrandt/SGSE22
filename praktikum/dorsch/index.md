@@ -4,6 +4,13 @@ Steffen Dorsch
       * Idee: Bestellapp für firmeninterne Verbrauchsgüter
          * Frontend: React Native, Xamarin
          * Backend: MySQL Datenbank, REST-API für Datenbank
+         * Mockups:
+
+            ![Benchmark](./media/mockups/Register.png)
+            ![Benchmark](./media/mockups/Bestellübersicht.png)
+            ![Benchmark](./media/mockups/Neue%20Bestellung.png)
+            ![Benchmark](./media/mockups/Offene%20Bestellung.png)
+            ![Benchmark](./media/mockups/Benchmark.png)
     * Evalutation Performanz - Wie Leistungsfähig sind die Frameworks im Vergleich?
       * App-Startup, CPU-intensive Tasks, Installationsdauer, App-Größe
     * Wie hoch ist der Einarbeitungs- und Implementierungsaufwand?
