@@ -6,11 +6,13 @@ Steffen Dorsch
          * Backend: MySQL Datenbank, REST-API für Datenbank
          * Mockups:
 
-            ![Benchmark](./media/mockups/Register.png)
-            ![Benchmark](./media/mockups/Bestellübersicht.png)
-            ![Benchmark](./media/mockups/Neue%20Bestellung.png)
-            ![Benchmark](./media/mockups/Offene%20Bestellung.png)
+            ![Register](./media/mockups/Register.png)
+            ![Bestellübersicht](./media/mockups/Bestellübersicht.png)
+            ![Neue Bestellung](./media/mockups/Neue%20Bestellung.png)
+            ![Offene Bestellung](./media/mockups/Offene%20Bestellung.png)
             ![Benchmark](./media/mockups/Benchmark.png)
+         * ER-Diagramm:
+            ![ER-Diagramm](./media/ER-Diagramm.png)
     * Evalutation Performanz - Wie Leistungsfähig sind die Frameworks im Vergleich?
       * App-Startup, CPU-intensive Tasks, Installationsdauer, App-Größe
     * Wie hoch ist der Einarbeitungs- und Implementierungsaufwand?
