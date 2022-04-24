@@ -158,7 +158,7 @@ Komplexe Systeme sind meist ein Mix aus Standardtechnik und individuell angefert
 3. Spezielle Systeme, die genau für die angedachten Nutzungsfolder konstruiert und entwickelt worden sind.
 
 <figure style="text-align: center;">
-    <img src="./media/systembeschaffung/systemProcurementProcesses.png" style="border: 3px solid black; border-radius: 5px;" />
+    <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter19/media/systembeschaffung/systemProcurementProcesses.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
     <figcaption>Abbildung 7: Prozesse der Systembeschaffung.</figcaption>
 </figure>
 
