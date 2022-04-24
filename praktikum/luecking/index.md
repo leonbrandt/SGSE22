@@ -51,30 +51,12 @@
 		
 ## Raytracer im Web
 
-* OpenGL 
-* WebGL
-* WebGPU
-	* sehr neue Technologie
-	* Vorteil 
-		* Verwendung der GPU
-	* Nachteil
-		* kann sich stetig aendern
-		* Kompatibilitaet mit Browsern
-* Vulcan
-
-* JavaScript
-* ams.js
-* WebAssembly
-* Shader 
-
-* Vergleich Javascript und WebAssembly 
-	* Implemetierung eines Raytracers 
-	* Testen auf Schnelligkeit 
-	* Falls Animationen moeglich > framerate vergleich
-	* Offene Fragen
-		* Wie genau werden die Bilder gerendert
-		* Wird WebGL oder aehnliches verwendet (Javascript und WebAssembly)
-		* Wird ein echter Raytracer gebaut oder ist es eine Art Hacken mit Hilfe von Shadern o.ae.
-		* Wie erstellt man vergleichbare Software in verschiedenen Sprachen
-
+* Performancevergleich eines Raytracers geschrieben in WebAssembly Text Format und konvertiert zu WebAssembly mit Emscription
+	* WebAssembly Text Format
+		* Low Level Darstellung von WebAssembly
+		* besser lesbar
+		* konvertierung mit wat2wasm
+	* Emscription
+		* Konvertiert von LLVM nach WebAssembly
+		* Programmierung in C++
 
