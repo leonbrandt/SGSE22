@@ -126,7 +126,7 @@ Sobald eine Idee für ein System vorgeschlagen wurde, besteht der erste Schritt 
 Innerhalb dieses Prozesses mit deutlich werden, wie das System künftig genutzt werden soll. Dafür müssen Diskussionen mit den beschriebenen Personen geführt werden und untersucht werden, wie aktuell bestehende Systeme genutzt werden. Ziel ist es zu verstehen, wie die Nutzer arbeiten und welche praktikablen Grenzen das System haben könnte. In Militärbereichen gehört seit Jahren eine Konzeptanalyse und die Dokumentation der Ergebnisse dieser Analyse dazu. Das entstehende Dokument wird als *Concept of Operations (ConOps)* bezeichnet und wird für viele groß-skalierende Systeme verwendet. Auf Grund einer hohen Hürde in Sachen von Bürokratie und Regierungssystemen wurde für die flexiblere Umsetzung ein Standard hierfür vorgeschlagen *(IEEE, 2007)*.
 
 <figure style="text-align: center;">
-    <img src="./media/konzeptionellesDesign/ConceptualDesignActivities.png" style="border: 3px solid black; border-radius: 5px;" />
+    <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter19/media/konzeptionellesDesign/ConceptualDesignActivities.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
     <figcaption>Abbildung 6: Aktivitäten im konzeptionellen Design.</figcaption>
 </figure>
 
