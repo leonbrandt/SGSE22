@@ -197,7 +197,24 @@ Es gibt sieben grundlegende Aktivitäten im Prozess der Systementwicklung:
 - Das **Testen des Systems** ist eine große Aktivität, in der das ganze System getestet wird und Probleme offensichtlich werden. Die beiden zuvor genannten Aktivitäten werden erneut besucht, um diese Probleme zu beheben und neue Anforderungen umzusetzen. Es wird sowohl von Systementwicklern als auch von Nutzern/Kunden getestet.
 - Während der **Inbetriebnahme** wird das System den Nutzern zugänglich gemacht, Daten aus alten Systemen transferiert und Verbindungen im anderen Systemen hergestellt. Dieser Prozess endet mit der tatsächlichen Liveschaltung des Systems, nach der das System produktiv eingesetzt wird, um die Nutzer bei ihrer Arbeit zu unterstützen.
 
+Die Prozesse von Anforderungsentwicklung und Systemdesign sind eng miteinander verwoben. Die Anforderungen und das Design werden dabei zeitgleich entwickelt. Grenzen durch bestehende Systeme können Designentscheidungen eindämmen und diese Entscheidungen werden wiederum in den Anforderungen festgehalten. Da sich diese Prozesse immer wieder aufeinander auswirken, können sie als eine Art Spirale gesehen werden, wie in *Abbildung 9* dargestellt.
 
+<figure style="text-align: center;">
+    <img src="./media/systementwicklung/requirementsDesignSpiral.PNG" style="border: 3px solid black; border-radius: 5px;" />
+    <figcaption>Abbildung 9: Spirale für Anforderungen und Design.</figcaption>
+</figure>
+
+Angefangen im Zentrum der Spirale, fügt jede Runde mehr Details zu den Anforderungen und zum Design. Sobald Subsysteme identifiziert werden, schreibt man ihnen zu bewältigende Aufgaben aus den Anforderungen zu. Man wird feststellen, dass sich manche Runden eher mit dem Design und andere eher auf die Anforderungen auswirken.
+
+Während der Revisions- und Auswertungsphase kommen äußere Einflüsse auf das Design hinzu. Von vielen möglichen Designs zur Umsetzung wird vom Entwicklungsteam das beste für die technische Umsetzung ausgewählt. Doch wie bereits zu vor erwähnt, kann es auch hier vorkommen, dass aus politischen Gründen nicht das beste Design von einem Dienstleister gewählt wird, sondern eines vom einem Dienstleister mit langjährigen Beziehungen. Der gesamte Prozess endet, wenn entschieden wird, dass die Anforderungen und das Design detailliert genug ist, um die Systeme zu entwickeln.
+
+Verschiedene Subsysteme werden parallel entwickelt. Handelt es sich nicht um speziell angefertigte Systeme, werden die meisten von ihnen als Standardsysteme eingekauft. Der Kauf von Standardsystemen ist meist deutlich günstiger, bringt allerdings den großen Nachteil, dass diese noch mehr Konfigurationsaufwand erfordern. Wenn Probleme über Grenzen der Subsysteme hinweg auftreten, müssen Lösungen *(workarounds)* gefunden werden, die meist Softwareänderungen erfordern.
+
+Bei der Systemintegration werden die Subsysteme zusammengefügt. Hier können entweder alle Subsysteme auf einmal hinzugefügt werden oder es wird inkrementell vorgegangen. Aus Gründen der leichteren Fehlererkennung und -lokalisierung wird zu einer inkrementellen Integration geraten, die am Ende oft Kosten einspart. Schon während der Systemintegration wird das System getestet. Dabei sollte während der inkrementellen Integration der Fokus auf Verhalten und Schnittstellen gelegt werden. Testen erfordert viel Zeit, weil stets Probleme auftauchen, die zuerst behoben werden müssen. Sollte die Testphase zu lange dauern, kann es vorkommen, dass das Budget oder die zur Verfügung stehende Zeit aufgebraucht wird. Sollte das System trotz Fehler ausgeliefert werden und nachträglicher Korrekturen bedürfen, ist das in der Regel mit deutlich mehr Kosten verbunden, als das Testfenster zu erweitern.
+
+Die letzte Phase des Systementwicklungsprozesses ist die Inbetriebnahme. Die Software wird hierbei auf der Hardware installiert und das System für den Regelbetrieb vorbereitet. Hier kann es vorkommen, dass vor Ort nachträgliche Änderungen vorgenommen werden müssen, die an die Arbeitsumgebung angepasst sind. Neben Datentransferierungen muss sichergestellt sein, dass das neue System mit den bestehenden zusammenarbeiten kann.
+
+Der Prozess der Systementwicklung stellt sich theoretisch als einfacher, gradliniger Prozess dar. Weil sich aber immer wieder Probleme entwickeln, wird fast immer mehr Zeit als ursprünglich geplant benötigt. Wenn Schnittstellen bestehender Systeme nicht beschrieben wurden, müssen diese beispielsweise aufwändig analysiert werden, um sie an das neue System anzubinden. Geplante Betriebsprozesse müssen eventuell abgeändert werden, weil sie mit dem eigentlichen Arbeitsumfeld nicht vereinbar sind. Wenn Nutzer nicht geschult werden, können sie nicht das System im vollen Umfang nutzen. Aus mitunter oben genannten Gründen, sollte im Vorfeld bereits ein großzügiger Puffer für die Inbetriebnahme, aber auch die ganze Systementwicklung eingeplant werden.
 
 ## Systembetrieb und -weiterentwicklung
 
