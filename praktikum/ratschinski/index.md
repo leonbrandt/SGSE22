@@ -6,22 +6,29 @@
 
   Mittels GraphQL, REST und gRPC können Client und Server miteinander kommunizieren. Für den Transport verwenden alle drei Technologien das HTTP Protokoll. Abgesehen von dieser Gemeinsamkeit, sind die drei Technologien grundverschieden. Während des Praktikums soll ermittelt werden, für welche Einsatzgebiete die verschiedenen Technologien am besten geeignet sind.
 
-- Paradigmen
+### Technologien
 
-  - GraphQL
+&#8594; [GraphQL](/praktikum/ratschinski/graphql)
 
-    ![](./graphql.png)
+&#8594; [REST](/praktikum/ratschinski/rest)
 
-  - REST
+&#8594; [gRPC](/praktikum/ratschinski/grpc)
 
-  ![](./rest.png)
+### Vergleich Datenformat
 
-  - gRPC
-
-  ![](./grpc.png)
+|                      | gRPC     | GraphQL             | REST                 |
+| -------------------- | -------- | ------------------- | -------------------- |
+| **Datenformat**      | protobuf | JSON / graphql      | Beliebig             |
+| **Dokument Stil**    | ❌       | ✅                  | Ja bei JSON oder XML |
+| **Effizienz**        | ✅       | -                   | -                    |
+| **Komplexität**      | hoch     | gering              | mittel               |
+| **Abstraktion**      | hoch     | mittel              | gering               |
+| **Binärdaten**       | Bytes    | Base64 oder Verweis | Binäre 8 Bit Inhalte |
+| **Hypermedia**       | ❌       | ❌                  | ✅                   |
+| **Language Mapping** | ✅       | -                   | ❌                   |
 
 - Einsatzgebiete für die verschiedenen Technologien ermitteln.  
-  Was eignet sich am besten für API`s, Microservices, Webanwendungen und Mobile Apps?
+   Was eignet sich am besten für API`s, Microservices, Webanwendungen und Mobile Apps?
 
 - Metriken:
 
@@ -34,12 +41,8 @@
 
 - Nächste Schritte:
 
-  - Einarbeitung in die verschiedenen Technologien
-
-  - Testfälle für die Metriken erstellen
-
-  - Verschiedene Architekturen mit den unterschiedlichen Technologien aufbauen
-
-  - Auf Grundlage der Architekturen werden verschiedene Tests durchgeführt, um die Unterschiede festzustellen
-
-  - Konkretes Ergebnis anhand der ermittelten Werte
+  1. Einarbeitung in die verschiedenen Technologien
+  2. Testfälle für die Metriken erstellen
+  3. Verschiedene Architekturen mit den unterschiedlichen Technologien aufbauen
+  4. Auf Grundlage der Architekturen werden verschiedene Tests durchgeführt, um die Unterschiede festzustellen
+  5. Konkretes Ergebnis anhand der ermittelten Werte
