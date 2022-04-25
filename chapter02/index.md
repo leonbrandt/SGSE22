@@ -113,5 +113,5 @@ Sie können ein System inkrementell entwickeln und es Kunden und anderen Stakeho
 
 ## Referenzen
 
-[1]: Ian Sommerville (2016). Software Engineering, 43-71.
+[1]: Ian Sommerville. 2015. Software Engineering (10th. ed.), 43-71.
 
