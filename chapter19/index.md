@@ -200,7 +200,7 @@ Es gibt sieben grundlegende Aktivitäten im Prozess der Systementwicklung:
 Die Prozesse von Anforderungsentwicklung und Systemdesign sind eng miteinander verwoben. Die Anforderungen und das Design werden dabei zeitgleich entwickelt. Grenzen durch bestehende Systeme können Designentscheidungen eindämmen und diese Entscheidungen werden wiederum in den Anforderungen festgehalten. Da sich diese Prozesse immer wieder aufeinander auswirken, können sie als eine Art Spirale gesehen werden, wie in *Abbildung 9* dargestellt.
 
 <figure style="text-align: center;">
-    <img src="./media/systementwicklung/requirementsDesignSpiral.PNG" style="border: 3px solid black; border-radius: 5px;" />
+    <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter19/media/systementwicklung/requirementsDesignSpiral.PNG?raw=true" style="border: 3px solid black; border-radius: 5px;" />
     <figcaption>Abbildung 9: Spirale für Anforderungen und Design.</figcaption>
 </figure>
 
