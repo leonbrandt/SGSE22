@@ -178,6 +178,27 @@ Wenn sich auf der anderen Seite für eine speziell angefertigte Komponente entsc
 
 ## Systementwicklung
 
+Die Systementwicklung in ein komplexer Prozess. Hier werden die späteren Elemente des Systems entwickelt oder gekauft und danach zusammengefügt, um das endgültige System zu erschaffen. Die zuvor aufgestellten Systemanforderungen stellen die Verbindung zwischen dem konzeptionellen Design und dem Entwicklungsprozess dar.
+
+*Abbildung 8* stellt den Prozess der Systementwicklung als Modell dar. Dabei wird ein Wasserfallmodell befolgt, welches im Bereich der Softwareentwicklung als nicht mehr zeitgemäß gilt. Prozesse auf einem hohen Level im Systems Engineering verfolgen dieses Modell jedoch. Hierbei handelt es sich um plangetriebene *(engl: plan driven)* Prozesse, damit unterschiedliche Elemente des Systems von unterschiedlichen Vertragspartnern separat entwickelt werden können. Weil Änderungen hierbei schwierig, wenn nicht sogar unmögich sind, müssen die Anforderungen vor Beginn der Entwicklung komplett verstanden werden.
+
+<figure style="text-align: center;">
+    <img src="./media/systementwicklung/systemDevelopmentProcess.png" style="border: 3px solid black; border-radius: 5px;" />
+    <figcaption>Abbildung 8: Prozess der Systementwicklung.</figcaption>
+</figure>
+
+Es gibt sieben grundlegende Aktivitäten im Prozess der Systementwicklung:
+
+- **Anforderungsengineering** ist der Prozess, in dem die Anforderungen aus dem konzeptionellen Design überarbeitet, analysiert und dokumentiert werden.
+- Das **Architekturdesign** überschneidet sich teilweise stark mit dem Anforderungsengineering. Innerhalb dieser Aktivität soll die allgemeine Architektur des Systems bestätigt und die verschiedenen Komponenten des Systems identifiziert werden, sodass die Beziehung zwischen diesen deutlich wird.
+- **Anforderungsaufteilung** beschäftigt sich mit der Frage, welche Systembestandteile für welche Anforderungen verantwortlich sind. Idealerweise sollte für eine Anforderung immer ein Teil des Systems zuständig sein, sodass eine Zusammenarbeit zwischen Subsystemen nicht nötig ist.
+- Das Entwickeln der **Subsysteme** ist die nächste Aktivität im Modell. Hierbei wird die bestellte Standardtechnik eingerichtet und konfiguriert. Funktionsfähige Prozesse für das System aber auch Businessprozesse werden (neu) definiert.
+- Die **Systemintegration** ist die Aktivität, in der die verschiedenen Komponenten zusammengefügt werden, um das neue System zu erschaffen. Erst jetzt werden die beschriebenen emergenten Eigenschaften sichtbar.
+- Das **Testen des Systems** ist eine große Aktivität, in der das ganze System getestet wird und Probleme offensichtlich werden. Die beiden zuvor genannten Aktivitäten werden erneut besucht, um diese Probleme zu beheben und neue Anforderungen umzusetzen. Es wird sowohl von Systementwicklern als auch von Nutzern/Kunden getestet.
+- Während der **Inbetriebnahme** wird das System den Nutzern zugänglich gemacht, Daten aus alten Systemen transferiert und Verbindungen im anderen Systemen hergestellt. Dieser Prozess endet mit der tatsächlichen Liveschaltung des Systems, nach der das System produktiv eingesetzt wird, um die Nutzer bei ihrer Arbeit zu unterstützen.
+
+
+
 ## Systembetrieb und -weiterentwicklung
 
 
