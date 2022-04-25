@@ -93,10 +93,14 @@ Spezifikations-, Entwicklungs- und Validierungsaktivitäten sind verschachtelt u
 
 Die inkrementelle Entwicklung ist derzeit der am weitesten verbreitete Ansatz in der Softwareentwicklung. Dieser Ansatz kann geplant, flexibel oder meistens eine Kombination dieser Ansätze sein. Bei einem planmäßigen Vorgehen werden Systeminkremente im Voraus festgelegt; Wenn ein agiler Ansatz gewählt wird, werden frühe Inkremente identifiziert, aber die Entwicklung späterer Inkremente hängt von den Prioritäten des Kunden ab.
 
+Inkrementelle Softwareentwicklung, die ein grundlegender Bestandteil agiler Entwicklungsmethoden ist, ist besser als ein Wasserfallansatz für Systeme, deren Anforderungen sich wahrscheinlich während des Entwicklungsprozesses ändern. Dies ist bei den meisten Geschäftssystemen und Softwareprodukten der Fall. Indem die Software inkrementell entwickelt wird, ist es billiger und einfacher, Änderungen an der Software vorzunehmen, während sie entwickelt wird.
+
+Jedes Inkrement oder jede Version des Systems enthält einige der Funktionen, die vom Kunden benötigt werden. Im Allgemeinen enthalten die frühen Inkremente des Systems die wichtigsten oder am dringendsten benötigten Funktionen. Das bedeutet, dass der Kunde oder Anwender das System in einem relativ frühen Stadium der Entwicklung dahingehend bewerten kann, ob es die Anforderungen erfüllt. Wenn nicht, muss nur das aktuelle Inkrement geändert und ggf. neue Funktionalität für spätere Inkremente definiert werden. Die inkrementelle Entwicklung hat gegenüber dem Wasserfallmodell drei wesentliche Vorteile:
+
 
 
 
 ## Referenzen
 
-[1]: Ian Sommerville (2016). Software Engineering, 43-72.
+[1]: Ian Sommerville (2016). Software Engineering, 43-71.
 
