@@ -110,6 +110,11 @@ Sie können ein System inkrementell entwickeln und es Kunden und anderen Stakeho
 
 ## 2.1.3 Integration und Konfiguration
 
+In den meisten Softwareprojekten gibt es eine gewisse Wiederverwendung von Software. Dies geschieht häufig, wenn Projektmitarbeiter Code kennen oder suchen, der dem Erforderlichen ähnlich ist. Sie suchen nach diesen, modifizieren sie nach Bedarf und integrieren sie in den neu entwickelten Code.
+
+Diese informelle Wiederverwendung findet unabhängig vom verwendeten Entwicklungsprozess statt. Seit dem Jahr 2000 sind jedoch Softwareentwicklungsprozesse weit verbreitet, die sich auf die Wiederverwendung bestehender Software konzentrieren.
+
+Drei Arten von Softwarekomponenten werden häufig wiederverwendet:
 
 ## Referenzen
 
