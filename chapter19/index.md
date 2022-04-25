@@ -183,7 +183,7 @@ Die Systementwicklung in ein komplexer Prozess. Hier werden die späteren Elemen
 *Abbildung 8* stellt den Prozess der Systementwicklung als Modell dar. Dabei wird ein Wasserfallmodell befolgt, welches im Bereich der Softwareentwicklung als nicht mehr zeitgemäß gilt. Prozesse auf einem hohen Level im Systems Engineering verfolgen dieses Modell jedoch. Hierbei handelt es sich um plangetriebene *(engl: plan driven)* Prozesse, damit unterschiedliche Elemente des Systems von unterschiedlichen Vertragspartnern separat entwickelt werden können. Weil Änderungen hierbei schwierig, wenn nicht sogar unmögich sind, müssen die Anforderungen vor Beginn der Entwicklung komplett verstanden werden.
 
 <figure style="text-align: center;">
-    <img src="./media/systementwicklung/systemDevelopmentProcess.png" style="border: 3px solid black; border-radius: 5px;" />
+    <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter19/media/systementwicklung/systemDevelopmentProcess.PNG?raw=true" style="border: 3px solid black; border-radius: 5px;" />
     <figcaption>Abbildung 8: Prozess der Systementwicklung.</figcaption>
 </figure>
 
