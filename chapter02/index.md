@@ -104,7 +104,11 @@ Aus Managementsicht hat der inkrementelle Ansatz zwei Probleme:
 1. Der Prozess ist nicht sichtbar. Wenn Systeme schnell entwickelt werden, ist es nicht kosteneffektiv, Dokumente zu erstellen, die jede Version des Systems widerspiegeln.
 2. Die Systemstruktur verschlechtert sich, wenn neue Inkremente hinzugefügt werden. Regelmäßige Änderungen führen zu chaotischem Code, da neue Funktionen auf jede erdenkliche Weise hinzugefügt werden. Es wird immer schwieriger und kostspieliger, einem System neue Funktionen hinzuzufügen. Um die strukturelle Verschlechterung und allgemeine Code-Unordnung zu reduzieren, schlagen agile Methoden vor, dass Sie die Software regelmäßig umgestalten (verbessern und neu strukturieren) sollten.
 
+Die Probleme der inkrementellen Entwicklung werden groß bei großen, komplexen Systemen mit langer Lebensdauer, bei denen verschiedene Teams verschiedene Teile des Systems entwickeln. Große Systeme benötigen ein stabiles Framework oder eine stabile Architektur, und die Verantwortlichkeiten der verschiedenen Teams, die an Teilen des Systems arbeiten, müssen in Bezug auf diese Architektur klar definiert werden. Dies muss im Voraus geplant und nicht schrittweise entwickelt werden.
 
+Sie können ein System inkrementell entwickeln und es Kunden und anderen Stakeholdern zur Kommentierung zur Verfügung stellen, ohne es unbedingt zu liefern und in der Umgebung des Kunden einzusetzen. Es ist jedoch nicht immer möglich, Feedback zu geben, da das Experimentieren mit neuer Software normale Geschäftsprozesse stören kann.
+
+## 2.1.3 Integration und Konfiguration
 
 
 ## Referenzen
