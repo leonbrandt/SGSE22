@@ -96,6 +96,12 @@ Die inkrementelle Entwicklung ist derzeit der am weitesten verbreitete Ansatz in
 Inkrementelle Softwareentwicklung, die ein grundlegender Bestandteil agiler Entwicklungsmethoden ist, ist besser als ein Wasserfallansatz für Systeme, deren Anforderungen sich wahrscheinlich während des Entwicklungsprozesses ändern. Dies ist bei den meisten Geschäftssystemen und Softwareprodukten der Fall. Indem die Software inkrementell entwickelt wird, ist es billiger und einfacher, Änderungen an der Software vorzunehmen, während sie entwickelt wird.
 
 Jedes Inkrement oder jede Version des Systems enthält einige der Funktionen, die vom Kunden benötigt werden. Im Allgemeinen enthalten die frühen Inkremente des Systems die wichtigsten oder am dringendsten benötigten Funktionen. Das bedeutet, dass der Kunde oder Anwender das System in einem relativ frühen Stadium der Entwicklung dahingehend bewerten kann, ob es die Anforderungen erfüllt. Wenn nicht, muss nur das aktuelle Inkrement geändert und ggf. neue Funktionalität für spätere Inkremente definiert werden. Die inkrementelle Entwicklung hat gegenüber dem Wasserfallmodell drei wesentliche Vorteile:
+1. Die Kosten für die Implementierung von Anforderungsänderungen werden reduziert. Der erneute Analyse- und Dokumentationsaufwand ist deutlich geringer als beim Wasserfallmodell.
+2. Es ist einfacher, Kundenfeedback über die geleistete Entwicklungsarbeit einzuholen. Kunden können Demonstrationen der Software kommentieren und sehen, wie viel implementiert wurde. Kunden finden es schwierig, den Fortschritt anhand von Softwaredesigndokumenten zu beurteilen.
+3. Eine vorzeitige Lieferung und Bereitstellung nützlicher Software an den Kunden ist möglich, auch wenn nicht alle Funktionen enthalten sind. Kunden können die Software früher nutzen und daraus Nutzen ziehen, als dies mit einem Wasserfallprozess möglich ist.
+
+Aus Managementsicht hat der inkrementelle Ansatz zwei Probleme:
+
 
 
 
