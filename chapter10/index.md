@@ -33,4 +33,6 @@ Die Dependability eines Systems wird hauptsächlich durch fünf Eigenschaften be
 
 Nicht jede Eigenschaft ist zwingend für jedes System kritisch.
 
-![Haupteigenschaften der Dependability eines Systems](assets/PrincipleDependabilityProperties.png)
+|![](assets/PrincipleDependabilityProperties.png)|
+|:--:| 
+| *Abbildung 10.1: Haupteigenschaften der Dependability eines Systems* |
