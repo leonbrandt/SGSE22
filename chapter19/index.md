@@ -218,7 +218,36 @@ Der Prozess der Systementwicklung stellt sich theoretisch als einfacher, gradlin
 
 ## Systembetrieb und -weiterentwicklung
 
+Betriebliche Prozesse sind solche, die eingesetzt werden, um das System auf seine angedachte Art zu verwenden. So folgenden die Lotzen eines Air Traffic Control-Systems spezifische Prozesse, wenn ein Flugzeug den Luftraum verlässt oder betritt oder wenn die Höhe geändert werden muss. Für neue Systeme wurden diese Prozesse während des Entwicklungsprozesses festgelegt und die Nutzer anschließend darauf trainiert. Auch wenn ein System entsprechend seiner Spezifikation arbeitet, mag es nicht zwingend den direkten Betriebsanforderungen genüge leisten, sodass in diesem Fall die Lotzen das System nicht so nutzen, wie ursprünglich geplant.
 
+Nach der Einführung eines neuen Systems brauchen die Nutzer Gewöhnungszeit und finden anhand praktischer Prozesse heraus, wie das System zu bedienen ist. Studien zeigen, dass erfahrene Nutzer sich nach einer gewissen Zeit an komplexe Schnittstellen gewöhnen können und das System auf schnellen Wegen bedienen und nicht auf einfachen. Aus diesem Grund sollten Schnittstellen eines neuen Systems für erfahrene Nutzer entwickelt werden, die sich nach einiger Zeit an diese gewöhnen und nicht für unerfahrene Nutzer. Sommerville beschreibt zwei Probleme bei der Annahme, dass die Anwender die Ursache für auftretende Probleme sind und daher eher automatisierte Systeme eingesetzt werden sollen:
+
+- Automatisierte Systeme erhöhen sehr wahrscheinlich die technische Komplexität des Systems, weil diese auch mit allen Fehlerzuständen umgehen müssen. Das bringt neue Kosten und erfordert Zeit, das System auszubauen.
+- Menschen sind anpassungsfähig und können mit diversen unerwarteten Problemen umgehen. Aus diesem Grund muss nicht jeder mögliche Fehlerzustand im Voraus bekannt sein.
+
+Betriebliche Prozesse sollten so entwickelt werden, dass sie flexibel und anpassbar sind. Dabei sollten die Grenzen nicht zu strikt gesetzt werden und gewissen Vorgänge keine feste Reihenfolge erfordern. Außerdem sollte kein Prozess voraussetzen, dass nach Abschluss zwingend ein anderer Prozess anknüpfen muss, sodass Anwender die Prozesse selbst verbessern können und entscheiden, welche in bestimmten Situationen am Besten funktionieren. Bei der Nutzung des Systems durch Anwender können neue Probleme auftauchen, die dann im Bezug auf die Betriebsprozesse angepasst werden.
+
+### Systemweiterentwicklung
+
+Große, komplexe Systeme haben eine lange Lebensdauer, sodass Hardware und Software teilweise mehr als 20 Jahre benutzt wird, auch wenn die verwendeten Technologien eigentlich schon ausgedient haben. Die folgende Tabelle zeigt Gründe für diese Langlebigkeit auf.
+
+| Grund                 | Erklärung                                                    |
+| --------------------- | ------------------------------------------------------------ |
+| Investitionskosten    | Weil in ein System mehrere Millionen Euro investiert werden, soll ein System auch lange genug betrieben werden, damit sich solche Investitionen lohnen und rechtfertigen. |
+| Verlust der Expertise | Wenn sich Unternehmen verändern und neu strukturieren, führt das oft zu Verlust in der Expertise für die Systeme. Das kann soweit führen, dass nicht mehr die Kenntnisse zur Verfügung stehen, Anforderungen für ein neues System aufzustellen. |
+| Ersatzkosten          | Ein bestehenden System zu ersetzen ist ausgesprochen teuer. Ein Ersatzsystem lässt sich nur rechtfertigen, wenn es signifikant Kosten einsparen kann. |
+| Investitionsrückkehr  | Wenn ein festes Budget für Systems Engineering zur Verfügung steht, bringt es häufiger Gewinn neue System zu installieren als bestehende zu ersetzen. |
+| Änderungsrisiken      | Ein bestehendes, laufendes System durch ein neues zu ersetzen oder auch Änderungen durchzuführen, stellt ein erhebliches Risiko dar, das gut begründet sein will. Die potentiellen Kosten beim tatsächlichen auftreten der Risiken, will man nicht riskieren. |
+| Systemabhängigkeit    | Systeme sind oft eng verwoben und verknüpft, sodass Änderungen an einem System auch zu erforderlichen umfangreichen Anpassungen anderer Systeme führen kann. |
+
+Während der Lebensdauer eines Systems müssen Fehler korrigiert und Anpassungen durchgeführt werden. Neue Technik macht das System schneller und Prozessänderungen des Unternehmens müssen eingepflegt werden. Diese Weiterentwicklung des Systems läuft dabei während des regulären Betriebs. Aus diesen und weiter genannten Gründen ist die Systemweiterentwicklung ein teurer Vorgang:
+
+1. Vorgeschlagene Änderungen müssen genau analysiert werden, sowohl aus einer technischen als auch aus einer unternehmerischen Perspektive. Änderungen müssen dem Unternehmen tatsächlich von Nutzen sein und dürfen nicht rein technisch motiviert sein.
+2. Subsysteme sind selten komplett unabhängig und Änderungen an einem Subsystem kann ungewollte Nebenwirkungen anderer Subsysteme mit sich bringen.
+3. Gründe für ursprüngliche Entscheidungen im Design werden nicht immer festgehalten. Wenn Änderungen durchgeführt werden sollen, muss zuerst verstanden werden, warum und für welchen Zweck das bestehende System auf diese Art entwickelt wurde.
+4. Wenn Systeme älter werden, wird deren Struktur bei Änderungen angepasst oder sogar aufgegeben. Die Kosten für weitere Änderungen erhöhen sich.
+
+Systeme haben nach vielen Jahren nicht nur veraltete Hardware und Software; sie verwenden auch veraltete Prozesse zum bewältigen der Anforderungen. Diese veralteten Prozesse sind wiederum schwierig zu ändern, weil sie sich auf die Verhaltensweisen der bestehenden Hardware und Software verlassen. Änderungen an einer Komponente führt hier also auch unweigerlich zu Änderungen an anderen Bestandteilen. Ein großes Problem besteht darin, wenn solche Änderungen von Personen gemacht werden sollen, die nicht am ursprünglichen Designprozess des Systems teilgenommen haben. Sie sind sich oft nicht bewusst, dass gewisse Entscheidungen und Prozesse so entwickelt wurden, dass sie auch gewisse Sicherheitsanforderungen erfüllen. In solchen Fällen können Änderungen zum Verlust von Sicherheit und Zuverlässigkeit führen. Weiterhin ist das Testen nach Änderungen oft sehr teuer und unvollständig, sodass neue Sicherheitslücken, sowie durch neue Komponenten entstandene Fehler, nicht entdeckt werden.
 
 ## Referenzen
 
