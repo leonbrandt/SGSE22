@@ -28,6 +28,15 @@ Ist die Kommunikation implementiert, sollen gewisse Tests für die Evaluierung i
 - Messung des maximalen Austauschs von Nachrichten pro Sekunde
 - Messung der Performanz beim Austausch großer Datenmengen
 
+Anhand der oben gemessenen Faktoren soll ein Entscheidungsdiagramm aufgestellt werden, anhand dessen potentielle Anwender sich nach ihren Bedürfnissen für die passenden Technologie entscheiden können.
+
+## Weiteres
+
+- Überlegung die Schnittstelle für WebTransport so offen zu gestalten, dass hinterher eine Bibliothek daraus geformt werden kann
+- Bericht über Implementierung mit einschließen
+  - Was war einfach umzusetzen, was war schwierig
+  - Implementierung über Entwurfsmuster darstellen
+
 ## Titel der Arbeit
 
 Die bereits genannten Fragen sollen unter folgendem Arbeitstitel untersucht werden:
@@ -36,3 +45,29 @@ Die bereits genannten Fragen sollen unter folgendem Arbeitstitel untersucht werd
 
 Der aktuelle Implementierungsfortschritt kann [HIER](https://github.com/mwithoeft/Spezielle-Gebiete-zum-Softwareengineering) eingesehen werden.
 
+## Zeitplan
+
+| Termin                                                   | Fortschritt                     |
+| -------------------------------------------------------- | ------------------------------- |
+| 28.04.2022                                               | Fertigstellung der Ausarbeitung |
+| 05.05.2022                                               |                                 |
+| 12.05.2022                                               |                                 |
+| 19.05.2022                                               |                                 |
+| 26.05.2022                                               |                                 |
+| 02.06.2022                                               |                                 |
+| 09.06.2022                                               |                                 |
+| 16.06.2022                                               |                                 |
+| 23.06.2022                                               |                                 |
+| 30.07.2022 (letzter Termin vor Beginn der Prüfungsphase) |                                 |
+
+## Aufgetretene Probleme
+
+- Kein HTTP/3 Support in NodeJS
+  - https://github.com/nodejs/node/issues/38478
+  - https://github.com/expressjs/express/issues/4693
+  - https://www.reddit.com/r/node/comments/qbeo2n/node_v1700_current/
+
+Alternativen:
+
+- Server-Sent-Events
+- WebRTC (Nachteile: Verwendet oft Sockets under the hood)
