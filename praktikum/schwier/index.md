@@ -14,4 +14,16 @@
 - Wie stark verändert sich die Größe des Deployments?
 - Gibt es Anwendungsbereiche in den Vite, Webpack oder esbuild zu bevorzugen sind?
 
+## Zeitplan
+- KW 17 Abschluss Planung
+- KW 18 Einarbeitung Webpack
+- KW 19 Einarbeitung Vite
+- KW 20 Einarbeitung esbuild
+- KW 21 Implemntierung Webpack
+- KW 22 Implemntierung Vite
+- KW 23 Implemntierung esbuild
+- KW 24 Sammeln Messergebnisse, erstellen digitales Medium
+- KW 25 Erstellen digitales Medium
+- KW 26 Abgabe
+
 
