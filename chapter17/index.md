@@ -198,6 +198,70 @@ und den Berechnungen, die diese Informationen erzeugen/bereitstellen abhängig
 
 ## architectural patterns for distributed system ##
 
+Entwickler von verteilten Systemen müssen beim Systemdesign eine Balance zwischen
+Performance, Verlässlichkeit, Sicherheit und Verwaltbarkeit (Manageability) des Systems finden.
+
+Verschiedene architektonische Patterns haben sich mit der Zeit entwickelt.
+Fünf architektonische Stile werden im Kapitel behandelt:
+- Master-Slave Architektur: In Echtzeit-Systemen verwendet, welche eine Antwort in einer bestimmten Zeit
+garantieren
+- Zwei-Stufen Client-Server Architektur: Für einfache Client-Server Systeme verwendet und
+in Situationen, in denen Zentralisierung aus Sicherheitsgründen nötig ist
+- Mulit-Stufen Client-Server Architektur: Genutzt, wenn der Server viele Anfragen bearbeiten muss
+- Verteilte Komponenten Architektur: Verwendet, wenn Ressourcen verschiedener Systeme und
+Datenbanken verbunden werden müssen (oder als Implementierungsmodell der Multi-Stufen Client-Server Architektur)
+- Peer-to-peer Architektur: Verwendet, wenn Clients lokal gespeicherte Informationen austauschen
+und die Rolle des Servers darin besteht, die Clients miteinander zu verbinden
+
+### Master-Slave Architektur ###
+
+- Alternative Benennung: Controller & Responder
+- Insbesondere in Echtzeit-Systemen verwendet
+- In diesen Systemen sind evtl. unterschiedliche Rechner für Datenakquise, Datenverarbeitung,
+Berechnungen und Aktormanagement zuständig (Aktoren sind von Software gesteuerte Komponenten,
+die die Umwelt des Systems beeinflussen)
+- Klassisches Beispiel: SPS
+- "Master" Prozess ist in der Regel verantwortlich für Berechnungen, Verwaltung und Kommunikation
+- "Master" kontrolliert die "Slave" Prozesse
+- "Slave" Prozesse sind nur für spezifische Aktionen zuständig (Datenakquise, Aktorvorstellung)
+
+Beispiel in Fig 17.7: Ampelsteuerung
+- Master ist die Kontrollraumsteuerung
+- Slaves sind "sensor processor", der Verkehrssignale aufnimmt und die Lampensteuerung,
+die die Ansteuerung der elektrischen Lampen übernimmt
+- Sensorkontrolle pollt regelmäßig die Zustände der Sensoren, um Daten über den
+Verkehr zu erhalten und für weitere Verarbeitung zu sammeln
+- Die Sensorkontrolle selbst wird regelmäßig vom Master gepollt, um Berechnungen vorzunehmen, etc.
+- Kontrollsystem sendet Befehle an die Lichtsteuerung
+
+Zusammengefasst:
+- Master-Slave wird dann verwendet, wenn bereits im Vorfeld bekannt ist, welche
+Berechnungen wie häufig ausgeführt werden müssen und einzelne Berechnungen gut auf
+Slaves ausgelagert werden können (ADC-Wandlung zum Beispiel, oder weiteres Signalprocessing)
+- Diese Voraussetzungen sind insbesondere in Echtzeit-Systemen weit verbreitet, in
+denen es essentiell wichtig ist, Systemantworten in einer bestimmten Zykluszeit zu garantieren
+
+
+### zweistufige client-server Architektur ###
+
+- einfachtste Form der client-server architektur
+- System ist umgesetzt als ein logischer Server und eine theoretisch unbegrenzte
+Anzahl Clients, die diesen Server nutzen
+- Unterteilt in zwei Architekturarten
+	- thin-client model: Präsentationsschicht ist auf dem Client implementiert, alle
+	weiteren Schichten sind auf dem Server implementiert; Client Darstellungssoftware ist
+	meist in Webbrowser oder Apps
+	- fat-client model: ein Teil oder die gesamte Applikationslogik ist auf dem Client
+	angelagert, Datenmanagement und Datenbank sind auf dem Server implementiert.
+	In diesem Fall ist die Client-Software eng mit der Server-Applikation integriert
+
+### mehrstufige client-server Architektur ###
+
+### Peer-to-peer Architektur ###
+
+
+
+
 ## sofware as a service ##
 
 
