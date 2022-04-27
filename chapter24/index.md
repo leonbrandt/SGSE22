@@ -15,7 +15,8 @@
 
 ## 24 Einführung
 
-Kapitel 24 befasst sich mit dem Qualitätsmanagement in der Softwareentwicklung.
+Kapitel 24 befasst sich mit dem Qualitätsmanagement in der Softwareentwicklung.  
+Die beschriebenen Inhalte stammen aus dem Buch **Software Engineering** von **Ian Sommerville**[[1]](#ref_1) (S. 700-729).
 
 Softwaresysteme sollen "fit for purpose" sein. Das heißt den Bedürfnissen ihrer Benutzer entsprechen.
 Darunter zählen z.B.:
@@ -109,9 +110,9 @@ Die folgende Abbildung zeigt einen prozessbasierten Qualitätsansatz.
 
 <figure style="text-align: center;">
   <!-- github -->
-  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.2_prozessbasierte_qualitaet.png?raw=true" alt="Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung"/> 
+  <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.2_prozessbasierte_qualitaet_de.png?raw=true" alt="Abbildung 24.2 Prozessbasierte Qualität"/> 
   <!-- local -->
-  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.2_prozessbasierte_qualitaet.png" alt="Abbildung 24.2 Prozessbasierte Qualität"/> -->
+  <!-- <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.2_prozessbasierte_qualitaet_de.png" alt="Abbildung 24.2 Prozessbasierte Qualität"/> -->
   <figcaption>Abbildung 24.2 Prozessbasierte Qualität</figcaption>
 </figure>
 
@@ -193,9 +194,9 @@ Abbildung 24.3 zeigt die Kernprozesse eines Software- oder Systemherstellers nac
 
 <figure style="text-align: center;">
   <!-- github -->
-  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.3_kernprozesse_iso9001.png?raw=true" alt="Abbildung 24.3 Kernprozesse eines Software- oder Systemherstellers nach ISO 9001"/> 
+  <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.3_kernprozesse_iso9001_de.png?raw=true" alt="Abbildung 24.3 Kernprozesse eines Software- oder Systemherstellers nach ISO 9001"/> 
   <!-- local -->
-  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.3_kernprozesse_iso9001.png" alt="Abbildung 24.3 Kernprozesse eines Software- oder Systemherstellers nach ISO 9001"/> -->
+  <!-- <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.3_kernprozesse_iso9001_de.png" alt="Abbildung 24.3 Kernprozesse eines Software- oder Systemherstellers nach ISO 9001"/> -->
   <figcaption>Abbildung 24.3 Kernprozesse eines Software- oder Systemherstellers nach ISO 9001</figcaption>
 </figure>
 
@@ -216,9 +217,9 @@ Abbildung 24.4 zeigt einen Review-Prozess in der Softwareentwicklung.
 
 <figure style="text-align: center;">
   <!-- github -->
-  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.4_review_prozess.png?raw=true" alt="Abbildung 24.4 Der Review-Prozess in der Softwareentwicklung"/> 
+  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.4_review_prozess_de.png?raw=true" alt="Abbildung 24.4 Der Review-Prozess in der Softwareentwicklung"/> 
   <!-- local -->
-  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.4_review_prozess.png" alt="Abbildung 24.4 Der Review-Prozess in der Softwareentwicklung"/> -->
+  <!-- <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.4_review_prozess_de.png" alt="Abbildung 24.4 Der Review-Prozess in der Softwareentwicklung"/> -->
   <figcaption>Abbildung 24.4 Der Review-Prozess in der Softwareentwicklung</figcaption>
 </figure>
 
@@ -376,9 +377,9 @@ Viele der Qualitätsmerkmale aus _Tabelle 24.1_ lassen sich nur schwer direkt me
 
 <figure style="text-align: center;">
   <!-- github -->
-  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.5_beziehungen_von_softwaremerkmalen.png?raw=true" alt="Abbildung 24.5 Beziehungen zwischen internen und externen Softwaremerkmalen"/> 
+  <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.5_beziehungen_von_softwaremerkmalen_de.png?raw=true" alt="Abbildung 24.5 Beziehungen zwischen internen und externen Softwaremerkmalen"/> 
   <!-- local -->
-  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.5_beziehungen_von_softwaremerkmalen.png" alt="Abbildung 24.5 Beziehungen zwischen internen und externen Softwaremerkmalen"/> -->
+  <!-- <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.5_beziehungen_von_softwaremerkmalen_de.png" alt="Abbildung 24.5 Beziehungen zwischen internen und externen Softwaremerkmalen"/> -->
   <figcaption>Abbildung 24.5 Beziehungen zwischen internen und externen Softwaremerkmalen</figcaption>
 </figure>
 
@@ -512,9 +513,9 @@ In der Softwarekomponentenanalyse werden einzelne Komponenten eines Systems, unt
 
 <figure style="text-align: center;">
   <!-- github -->
-  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.6_komponentenanalyse.png?raw=true" alt="Abbildung 24.6 Prozess der Komponentenanalyse"/> 
+  <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.6_komponentenanalyse_de.png?raw=true" alt="Abbildung 24.6 Prozess der Komponentenanalyse"/> 
   <!-- local -->
-  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.6_komponentenanalyse.png" alt="Abbildung 24.6 Prozess der Komponentenanalyse"/> -->
+  <!-- <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.6_komponentenanalyse_de.png" alt="Abbildung 24.6 Prozess der Komponentenanalyse"/> -->
   <figcaption>Abbildung 24.6 Prozess der Komponentenanalyse</figcaption>
 </figure>
 
@@ -579,7 +580,7 @@ Harford (2013) [[11]](#ref_11) beschreibt in "Big Data: Are We Making a Big Mist
 
 ## 24.7 Referenzen
 
-<span id="ref_1">[1]: Sommerville Ian (2018). Software Engineering. Quality management. 700-729.</span>  
+<span id="ref_1">[1]: Sommerville Ian (2015). Software Engineering (10th. ed.), Quality management (700-729).</span>  
 <span id="ref_2">[2]: Humphrey, W. (1989). Managing the Software Process.</span>  
 <span id="ref_3">[3]: Fagan, M. E. (1986). Advances in Software Inspections. 744-751.</span>  
 <span id="ref_4">[4]: McConnell (2004). Code Complete: A Practical Handbook of Software Construction, 2nd ed.</span>  
@@ -589,4 +590,4 @@ Harford (2013) [[11]](#ref_11) beschreibt in "Big Data: Are We Making a Big Mist
 <span id="ref_8">[8]: Menzies, T., and T. Zimmermann. (2013). Software Analytics: So What?. 31-37.</span>  
 <span id="ref_9">[9]: Buse, R. P. L., and T. Zimmermann. (2012). Information Needs for Software Development Analytics. 987-996.</span>  
 <span id="ref_10">[10]: Zhang, D, S. Han, Y. Dang, J-G. Lou, H. Zhang, and T. Xie. (2013). Software Analytics in Practice. 30-37.</span>  
-<span id="ref_11">[11]: Harford, T. (2013). Big Data: Are We Making a Big Mistake?.</span>
+<span id="ref_11">[11]: Harford, T. (2013). Big Data: Are We Making a Big Mistake? Financial Times, March 28. http://timharford.com/2014/04/big-data-are-we-making-a-big-mistake/</span>
