@@ -43,24 +43,80 @@ UML Aktivitätsdiagramme bieten einen guten Rahmen, um Beziehungen zwischen Syst
 | Ausgefüllter Kreis mit Ring | Ende des Prozesses                                |
 | Rechteck mit runden Ecken   | Aktivität                                         |
 | Pfeil                       | Arbeitsfluss von einer Aktivität zu einer anderen |
-| Dicker Strich               | Koordination von Aktivitäten                      |
+| Balken                      | Koordination von Aktivitäten                      |
 
 
 ## Interaktionsmodelle
 
+Verschiedene Interaktionstypen sind in jedem System vertreten. Beispielsweise finden Interaktionen zwischen dem Nutzer und dem System in Form von Eingaben und Ausgaben statt. Doch wie bereits aus dem vorigen Kapitel hervorgegangen ist, sind auch Interaktionen zwischen Systemen präsent, sowie zwischen Komponenten innerhalb eines Systems. 
 
+Indem die Nutzerinteraktionen modelliert werden, können Anforderungen auf einfache Weise ermittelt werden. Modelle von Systeminteraktionen können mögliche Kommunikationsschwierigkeiten zwischen Systemen identifizieren und die Modellierung von Interaktionen zwischen Systemkomponenten kann Auskunft über die Performanz des Systems und vorhandene Abhängigkeiten geben.
+
+Diese Interaktionen können anhand von zwei UML-Diagrammen abgebildet werden:
+
+1. Use-Case-Diagramme
+2. Sequenzdiagramme
+
+Dabei fokussieren sich Use-Case-Diagramme weitestgehend um Interaktionen zwischen dem System und externen [?], wohingegen Sequenzdiagramme hauptsächlich Interaktionen zwischen Systemkomponenten modellieren. Doch auch externe [?] können in dieses Modell vertreten werden. Die zwei Diagramme geben die Abstraktion dieser Interaktionen in unterschiedlichem Detailgraden wider, weshalb die Nutzung der beiden in Kombination sinnvoll ist. 
 
 ### Use Case Modellierung
 
+Use-Cases stellen bestimmte Aufgaben dar, welche erreicht werden sollen, wenn ein Aktor mit dem System interagiert. Eine Modellierung der Use-Cases in den frühen Stadien des Systemdesigns ist also ausschlaggebend, um frühzeitig Anforderungen zu identifizieren.
+
+UML-Use-Case-Diagramme bieten eine einfache und übersichtliche Notation, um diese Aufgaben zu erfassen. Die folgenden Elemente sind dafür in dem Diagramm vorhanden:
+
+| Element        | Bedeutung   |
+| -------------- | ----------- |
+| Strichmännchen | Aktor       |
+| Ellipse        | Use-Case    |
+| Strich         | Interaktion |
+
+
+
 ![UseCases](C:\Users\Zolkin\Documents\Master Studium Informatik\1. Semester\Spezielle Gebiete zum Softwareengineering\SGSE22\chapter05\img\UseCases.png)
 
+Die Abbildung [?] zeigt ein Beispiel für eines Use-Case-Diagrammes, welches mehrere Use-Cases aufweist. Der Aktor ist medizinischer Rezeptionist, welche in Interaktion mit dem System die aufgezeigten Aufgaben bewältigen kann. Die Verbindungen zu den einzelnen Use-Cases stellen dabei einen Nachrichtenfluss in beide Richtungen dar - von Aktor zu System und von System zu Aktor.
+
+In manchen Fällen ist es möglich, alle vorhandenen Use-Cases in dem Diagramm wiederzugeben. Allerdings kann es auch vorkommen, dass dies aufgrund einer zu hohen Anzahl von Use-Cases nicht mehr möglich ist. In diesem Fall können mehrere Diagramme erstellt werden, wobei auf die Komplexität der Modelle geachtet werden muss, um das Verständnis dieser beizubehalten.
+
+Aufgrund der einfachen Darstellung bedarf es an Details, die dem Diagramm hinzuzufügen sind. Je nach Erklärungsbedarf des Use-Cases kann dies in Form von Text, Tabellen oder Sequenzdiagrammen erfolgen.
+
 ### Sequenzdiagramme
+
+Sequenzdiagramme werden dazu genutzt, Interaktionen zwischen Aktoren und Systemobjekten, sowie zwischen Systemobjekten untereinander abzubilden. Es stellt also eine detailliertere Form der Interaktionsmodellierung dar. Hierfür wird ein spezifischer Use-Case näher betrachtet, um die dort durchzuführenden Interaktionssequenzen in dem Diagramm wiederzuspiegeln. Ein Sequenzdiagramm setzt sich aus folgenden Elementen zusammen:
+
+| Element                                              | Bedeutung                                                    |
+| ---------------------------------------------------- | ------------------------------------------------------------ |
+| Obere Reihe bestehend aus Strichmännchen, Rechtecken | Aktoren und Objekte                                          |
+| Balken unterhalb von Aktoren/Objekten                | Lebenslinie                                                  |
+| Annotierte Pfeile zwischen Objekten                  | Funktionsaufrufe mit Parametern und Rückgabewert             |
+| alt-Box                                              | Fallunterscheidung (unterschiedliche Fälle in eckigen Klammern) |
+
+
 
 ![SequenceDiagram](C:\Users\Zolkin\Documents\Master Studium Informatik\1. Semester\Spezielle Gebiete zum Softwareengineering\SGSE22\chapter05\img\SequenceDiagram.png)
 
 ## Strukturmodelle
 
+Innerhalb von Strukturmodellen sollen Systemkomponenten und deren Beziehungen zueinander in organisierter Form erfasst werden. Dabei kann es sich sowohl um statische, als auch flexible Modelle handeln. Statische Modelle bilden hierbei die Organisation der Systemkomponenten ab, während dynamische diese Struktur zur Laufzeit des Systems erfasst.
 
+Die Strukturmodellierung kann einerseits die grobe Systemarchitektur festhalten, doch auch detailliertere Diagramme können Informationen über Systemobjekte und ihre Beziehungen untereinander liefern. Dies kann über die Nutzung von Klassendiagrammen erfolgen.
+
+### Klassendiagramme
+
+![ClassesAndAssociations](C:\Users\Zolkin\Documents\Master Studium Informatik\1. Semester\Spezielle Gebiete zum Softwareengineering\SGSE22\chapter05\img\ClassesAndAssociations.png)
+
+![Class](C:\Users\Zolkin\Documents\Master Studium Informatik\1. Semester\Spezielle Gebiete zum Softwareengineering\SGSE22\chapter05\img\Class.png)
+
+### Generalisierung
+
+![HierarchicalClasses](C:\Users\Zolkin\Documents\Master Studium Informatik\1. Semester\Spezielle Gebiete zum Softwareengineering\SGSE22\chapter05\img\HierarchicalClasses.png)
+
+![DetailedHierarchicalClasses](C:\Users\Zolkin\Documents\Master Studium Informatik\1. Semester\Spezielle Gebiete zum Softwareengineering\SGSE22\chapter05\img\DetailedHierarchicalClasses.png)
+
+### Aggregation
+
+![Aggregation](C:\Users\Zolkin\Documents\Master Studium Informatik\1. Semester\Spezielle Gebiete zum Softwareengineering\SGSE22\chapter05\img\Aggregation.png)
 
 ## Verhaltensmodelle 
 
@@ -70,86 +126,6 @@ UML Aktivitätsdiagramme bieten einen guten Rahmen, um Beziehungen zwischen Syst
 
 
 
-
-
-<-- Markdown Cheat Sheet -->
-
-## Unterkapitel
-
-* **Softwaresystem**:
-  Die *innere* Sicht des Informatikers nimmt Software als Softwaresystem wahr.
-* **Softwareprodukt**: Die *äußere* Sicht eines Auftraggeber nimmt ein Softwaresystem als Softwareprodukt wahr. 
-
-### Tabelle
-
-| A          |     B       |           C               |
-|:----------:|:-----------:|:-------------------------:|
-| Eins | Zwei | Drei |
-| Vier | Fünf | Sechs |
-
-## Links
-
-[Markdown] ist eine Sprache, die nach HTML konvertiert werden kann. 
-
-[Markdown]: http://daringfireball.net/projects/markdown/
-
-## Aufzählung
-
-Es unterteilt sich in:
-
-* A
-  * A1
-* B
-  * B1
-  * B2
-* C
-
-
-# Überschrift
-
-"...the **go to** statement should be abolished..." [1].
-
-Dieser Link führt intern zu einem anderen [Thema](qualitaet/README)
-
-Dieser Link führt extern nach [Youtube](https://www.youtube.com/)
-
-> Dieser Text ist völlig sinnlos, aber steht trotzdem hier. Dieser Text geht über mehrere Zeilen.
-
-## Unterüberschrift
-
-* Eins
-  * eins.eins
-  * eins.zwei
-* Zwei
-  * Zwei.zwei
-* Drei
-
-### Code
-
-```javascript
-public class A {
-  Integer a;
-  public A() {
-    this.a = 1
-  }
-}
-```
-
-Syntax Highlighting für Javascript. Weitere Sprachen müssen konfiguriert werden.
-
-### Bilder
-
-![](media/image.jpg)
-
-### Audio
-
-[](media/sample.mp3 ':include')
-
-### Video
-
-[](media/sample.mp4 ':include')
-
 ## Referenzen
 
-[1]: Dijkstra, E. W. (1968). Go to statement considered harmful. 
-Communications of the ACM, 11(3), 147-148.
+[1]: Sommerville, Ian (2016). Software Engineering (Tenth Edition).
