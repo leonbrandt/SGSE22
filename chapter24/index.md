@@ -15,7 +15,8 @@
 
 ## 24 Einführung
 
-Kapitel 24 befasst sich mit dem Qualitätsmanagement in der Softwareentwicklung.
+Kapitel 24 befasst sich mit dem Qualitätsmanagement in der Softwareentwicklung.  
+Die beschriebenen Inhalte stammen aus dem Buch **Software Engineering** von **Ian Sommerville**[[1]](#ref_1) (S. 700-729).
 
 Softwaresysteme sollen "fit for purpose" sein. Das heißt den Bedürfnissen ihrer Benutzer entsprechen.
 Darunter zählen z.B.:
@@ -579,7 +580,7 @@ Harford (2013) [[11]](#ref_11) beschreibt in "Big Data: Are We Making a Big Mist
 
 ## 24.7 Referenzen
 
-<span id="ref_1">[1]: Sommerville Ian (2018). Software Engineering. Quality management. 700-729.</span>  
+<span id="ref_1">[1]: Sommerville Ian (2015). Software Engineering (10th. ed.), Quality management (700-729).</span>  
 <span id="ref_2">[2]: Humphrey, W. (1989). Managing the Software Process.</span>  
 <span id="ref_3">[3]: Fagan, M. E. (1986). Advances in Software Inspections. 744-751.</span>  
 <span id="ref_4">[4]: McConnell (2004). Code Complete: A Practical Handbook of Software Construction, 2nd ed.</span>  
@@ -589,4 +590,4 @@ Harford (2013) [[11]](#ref_11) beschreibt in "Big Data: Are We Making a Big Mist
 <span id="ref_8">[8]: Menzies, T., and T. Zimmermann. (2013). Software Analytics: So What?. 31-37.</span>  
 <span id="ref_9">[9]: Buse, R. P. L., and T. Zimmermann. (2012). Information Needs for Software Development Analytics. 987-996.</span>  
 <span id="ref_10">[10]: Zhang, D, S. Han, Y. Dang, J-G. Lou, H. Zhang, and T. Xie. (2013). Software Analytics in Practice. 30-37.</span>  
-<span id="ref_11">[11]: Harford, T. (2013). Big Data: Are We Making a Big Mistake?.</span>
+<span id="ref_11">[11]: Harford, T. (2013). Big Data: Are We Making a Big Mistake? Financial Times, March 28. http://timharford.com/2014/04/big-data-are-we-making-a-big-mistake/</span>
