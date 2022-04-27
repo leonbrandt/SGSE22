@@ -109,9 +109,9 @@ Die folgende Abbildung zeigt einen prozessbasierten Qualitätsansatz.
 
 <figure style="text-align: center;">
   <!-- github -->
-  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.2_prozessbasierte_qualitaet.png?raw=true" alt="Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung"/> 
+  <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.2_prozessbasierte_qualitaet_de.png?raw=true" alt="Abbildung 24.2 Prozessbasierte Qualität"/> 
   <!-- local -->
-  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.2_prozessbasierte_qualitaet.png" alt="Abbildung 24.2 Prozessbasierte Qualität"/> -->
+  <!-- <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.2_prozessbasierte_qualitaet_de.png" alt="Abbildung 24.2 Prozessbasierte Qualität"/> -->
   <figcaption>Abbildung 24.2 Prozessbasierte Qualität</figcaption>
 </figure>
 
@@ -193,9 +193,9 @@ Abbildung 24.3 zeigt die Kernprozesse eines Software- oder Systemherstellers nac
 
 <figure style="text-align: center;">
   <!-- github -->
-  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.3_kernprozesse_iso9001.png?raw=true" alt="Abbildung 24.3 Kernprozesse eines Software- oder Systemherstellers nach ISO 9001"/> 
+  <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.3_kernprozesse_iso9001_de.png?raw=true" alt="Abbildung 24.3 Kernprozesse eines Software- oder Systemherstellers nach ISO 9001"/> 
   <!-- local -->
-  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.3_kernprozesse_iso9001.png" alt="Abbildung 24.3 Kernprozesse eines Software- oder Systemherstellers nach ISO 9001"/> -->
+  <!-- <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.3_kernprozesse_iso9001_de.png" alt="Abbildung 24.3 Kernprozesse eines Software- oder Systemherstellers nach ISO 9001"/> -->
   <figcaption>Abbildung 24.3 Kernprozesse eines Software- oder Systemherstellers nach ISO 9001</figcaption>
 </figure>
 
@@ -216,9 +216,9 @@ Abbildung 24.4 zeigt einen Review-Prozess in der Softwareentwicklung.
 
 <figure style="text-align: center;">
   <!-- github -->
-  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.4_review_prozess.png?raw=true" alt="Abbildung 24.4 Der Review-Prozess in der Softwareentwicklung"/> 
+  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.4_review_prozess_de.png?raw=true" alt="Abbildung 24.4 Der Review-Prozess in der Softwareentwicklung"/> 
   <!-- local -->
-  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.4_review_prozess.png" alt="Abbildung 24.4 Der Review-Prozess in der Softwareentwicklung"/> -->
+  <!-- <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.4_review_prozess_de.png" alt="Abbildung 24.4 Der Review-Prozess in der Softwareentwicklung"/> -->
   <figcaption>Abbildung 24.4 Der Review-Prozess in der Softwareentwicklung</figcaption>
 </figure>
 
@@ -376,9 +376,9 @@ Viele der Qualitätsmerkmale aus _Tabelle 24.1_ lassen sich nur schwer direkt me
 
 <figure style="text-align: center;">
   <!-- github -->
-  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.5_beziehungen_von_softwaremerkmalen.png?raw=true" alt="Abbildung 24.5 Beziehungen zwischen internen und externen Softwaremerkmalen"/> 
+  <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.5_beziehungen_von_softwaremerkmalen_de.png?raw=true" alt="Abbildung 24.5 Beziehungen zwischen internen und externen Softwaremerkmalen"/> 
   <!-- local -->
-  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.5_beziehungen_von_softwaremerkmalen.png" alt="Abbildung 24.5 Beziehungen zwischen internen und externen Softwaremerkmalen"/> -->
+  <!-- <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.5_beziehungen_von_softwaremerkmalen_de.png" alt="Abbildung 24.5 Beziehungen zwischen internen und externen Softwaremerkmalen"/> -->
   <figcaption>Abbildung 24.5 Beziehungen zwischen internen und externen Softwaremerkmalen</figcaption>
 </figure>
 
@@ -512,9 +512,9 @@ In der Softwarekomponentenanalyse werden einzelne Komponenten eines Systems, unt
 
 <figure style="text-align: center;">
   <!-- github -->
-  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.6_komponentenanalyse.png?raw=true" alt="Abbildung 24.6 Prozess der Komponentenanalyse"/> 
+  <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.6_komponentenanalyse_de.png?raw=true" alt="Abbildung 24.6 Prozess der Komponentenanalyse"/> 
   <!-- local -->
-  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.6_komponentenanalyse.png" alt="Abbildung 24.6 Prozess der Komponentenanalyse"/> -->
+  <!-- <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.6_komponentenanalyse_de.png" alt="Abbildung 24.6 Prozess der Komponentenanalyse"/> -->
   <figcaption>Abbildung 24.6 Prozess der Komponentenanalyse</figcaption>
 </figure>
 
