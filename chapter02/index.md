@@ -125,6 +125,7 @@ Die Abbildung 2.3 zeigt ein allgemeines Vorgehensmodell für die wiederverwendun
 Integration und Konfiguration. 
 
 ![](img/03.png)
+
 **Abbildung 2.3: Wiederverwendungsorientiertes Software Engineering**
 
 Es sind folgende Phasen dargestellt:
@@ -150,6 +151,7 @@ Softwarespezifikation oder Requirements Engineering ist der Prozess des Verstehe
 Vor dem beginn des Requirements-Engineering-Prozesses kann ein Betrieb eine Machbarkeitsstudie durchführen, die mögliche Lösungsansätze überprüft und analysiert. Es kann schon am Anfang die Frage beantwortet werden, ob eine detaillierte Analyse durchgeführt werden soll oder nicht. Ziel ist hier, eine Anforderungsdokumentation zu erstellen sowie auch mit der Prüfung und Abstimmung von Anforderungen mit den Stakeholdern. Die Anforderungen werden in der Regel auf zwei Detailebenen dargestellt. Endbenutzer bzw. Kunden benötigen eine allgemeine Erklärung der Anforderungen; die Systementwickler eine detaillierte Systemspezifikation. Um Missverständnisse zu vermeiden, sollte immer darauf geachtet werden, zwischen den Kommunikationspartnern Klarheit zu schaffen und Rücksprache zu halten. 
 
 ![](img/04.png)
+
 **Abbildung 2.4: Der Requirements-Engineering-Prozess**
 
 Es gibt 3 Hauptaktivitäten im Requirements-Engineering-Prozess:
@@ -169,6 +171,7 @@ Ein Softwareentwurf ist eine Beschreibung der Struktur der zu implementierenden 
 In der Abbildung 2.5 ist ein abstraktes Modell des Designprozesses dargestellt, das die Eingaben für den Prozess, Aktivitäten und die Ergebnisse zeigt. die Designprozessaktivitäten sind sowohl hier verschachtelt als auch voneinander abhängig. Nacharbeiten sind hier nicht auszuschließen, da es ständig neue Informationen über das Design generiert werden.
 
 ![](img/05.png)
+
 **Abbildung 2.5: Ein allgemeines Modell des Designprozesses**
 
 Die Softwareplattform, in der die Software ausgeführt wird, besteht aus einem Betriebssystem, die Datenbank, die Middleware und andere Anwendungssysteme. Informationen über diese Plattform sind ein wichtiger Teil für den Designprozess, da es auch Entscheidungen getroffen werden müssen, wie man die Prozesse integrieren soll. Für die Verarbeitung im System der vorhandenen Daten, kann die Beschreibung dieser Daten in die Plattformspezifikation aufgenommen werden. Sonst muss die Datenbeschreibung eine Eingabe in den Entwurfsprozess gemacht werden, damit die Systemdatenorganisation überhaupt definiert werden kann.
@@ -213,6 +216,7 @@ Die hauptsächliche Validierungstechnik ist wenn man Programmtests durchführt, 
 Die Abbildung 2.6 zeigt uns einen dreistufigen Testprozess , bei dem die Systemkomponenten auch einzeln getestet werden. Dabei wird auch das integrierte System getestet. Man kann sowohl z.B die kundenspezifische Software testet, dabei wird ein Test mit echten Kundendaten durchgeführt. Bei Produkten, die als Aufwendungen verkauft werden, werden die Test als „Beta-Tests“ bezeichnet . Dabei probieren die ausgewählte Benutzer die Software und hinterlassen Kommentare.
 
 ![](img/06.png)
+
 **Abbildung 2.6: Testphasen**
 
 Die Phasen des Testprozesses sind: 
@@ -237,6 +241,7 @@ Wenn ein plangesteuertes Softwareprozess verwendet wird (z.B für die Entwicklun
 Die Abbildung 2.7 zeigt uns, die Testpläne eine Verbindung zwischen Test und Entwicklungsaktivitäten zieht ( V-Modell). Das V-Modell zeigt uns die Software-Validierungsaktivitäten , die jeder Stufe des WasserfallsProzessmodells entsprechen ( siehe 2.2). Wenn ein System als Softwareprodukt vermarktet werden soll, wird hierbei häufig ein Testverfahren namens Beta-Testing verwendet. Dabei umfassen die Tests eine Bereitstellung eines Systems an die Kunden, die bereit sind dieses System auch zu benutzen. Bei der realen Nutzung des System werden auch Fehler erkannt, die von Entwicklern möglicherweise vorher nicht erkannt wurden. Nach dem Feedback von dem Kunden kann das Softwareprodukt modifiziert werden und es können hierbei auch weitere test durchgeführt werden sowie an einen allgemeinen Verkauf freigegeben werden. 
 
 ![](img/07.png)
+
 **Abbildung 2.7: Testphasen in einem plangesteuerten Softwareprozess**
 
 ## 2.2.4 Software evolution 
@@ -246,6 +251,7 @@ Es ist viel sinnvoller eine Änderungen an der Software vorzunehmen als an der S
 Es gibt aber nicht nur die Softwareentwicklung sondern auch der Prozess namens Softwareevolution ( Softwarewartung). Hier wird oft die Softwarepflege als weniger interessant empfunden und meist wenig unterschieden. Bei den  meisten neuen Systemen wird Entwicklung sowie die Wartung als ein zusammenhängendes Prozess angesehen. Man sollte es aber lieber als ein getrenntes Prozess vorstellen, wie in der Abbildung 2.8 dargestellt ist. Hier wird die Software im Laufe ihrer Lebensdauer als Reaktion auf sich ändern Anforderung und Kundenbedürfnisse kontinuierlich geändert.
 
 ![](img/08.png)
+
 **Abbildung 2.8: Weiterentwicklung von Softwaresystemen**
 
 ## 2.3 Umgang mit Veränderungen 
@@ -263,6 +269,7 @@ Es gibt zwei Möglichkeiten, mit Veränderungen und allgemein mit Systemänderun
 ## 2.3.1 Prototyping 
 
 ![](img/09.png)
+
 **Abbildung 2.9: Prototypenentwicklung**
 
 ## Referenzen
