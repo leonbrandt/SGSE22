@@ -239,6 +239,14 @@ Die Abbildung 2.7 zeigt uns, die Testpläne eine Verbindung zwischen Test und En
 ![](img/07.png)
 **Abbildung 2.7: Testphasen in einem plangesteuerten Softwareprozess**
 
+## 2.2.4 Software evolution 
+
+Es ist viel sinnvoller eine Änderungen an der Software vorzunehmen als an der Systemhardware ( am Hardwaredesign). Man kann auch umfangreiche Änderungen während und nach der Entwicklung vornehmen und es fällt den Programmierern viel leichter, dies ist auch eine günstigere Variante.
+
+Es gibt aber nicht nur die Softwareentwicklung sondern auch der Prozess namens Softwareevolution ( Softwarewartung). Hier wird oft die Softwarepflege als weniger interessant empfunden und meist wenig unterschieden. Bei den  meisten neuen Systemen wird Entwicklung sowie die Wartung als ein zusammenhängendes Prozess angesehen. Man sollte es aber lieber als ein getrenntes Prozess vorstellen, wie in der Abbildung 2.8 dargestellt ist. Hier wird die Software im Laufe ihrer Lebensdauer als Reaktion auf sich ändern Anforderung und Kundenbedürfnisse kontinuierlich geändert.
+
+![](img/08.png)
+**Abbildung 2.8: Weiterentwicklung von Softwaresystemen**
 
 ## Referenzen
 
