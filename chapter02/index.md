@@ -212,7 +212,32 @@ Die hauptsächliche Validierungstechnik ist wenn man Programmtests durchführt, 
 
 Die Abbildung 2.6 zeigt uns einen dreistufigen Testprozess , bei dem die Systemkomponenten auch einzeln getestet werden. Dabei wird auch das integrierte System getestet. Man kann sowohl z.B die kundenspezifische Software testet, dabei wird ein Test mit echten Kundendaten durchgeführt. Bei Produkten, die als Aufwendungen verkauft werden, werden die Test als „Beta-Tests“ bezeichnet . Dabei probieren die ausgewählte Benutzer die Software und hinterlassen Kommentare.
 
+![](img/06.png)
+**Abbildung 2.6: Testphasen**
 
+Die Phasen des Testprozesses sind: 
+
+1. **Komponententests.** Hierbei wird jede Komponente ,aus denen das System besteht unabhängig von anderen Komponenten getestet. Bespiel für ein Komponenten wäre hier eine einfache Entität wie Funktionen oder Objektklassen oder kohärente Gruppierungen dieser Entitäten sein. 
+Häufig werden Testautomatisierungstools wie Juni für JAVA verwendet, die Tests erneut ausführen können, wenn eine neue Version der Komponente erstellt werden. 
+
+2. **Systemtest.** Die Systemkomponenten werden zu einem Gesamtsystem integriert. 
+Hier ist es wichtig, zu prüfen, ob das System seine funktionalen und nicht funktionalen Anforderungen erfüllt sowie allgemein das Auffinden von Fehlern, die auch unvorhergesehenen Wechselwirkungen zwischen Komponenten und Schnittstellenproblemen resultieren.
+Außerdem werden hier die emergent Systemeigenschaften getestet.  
+Bei großen Systemen läuft hierbei ein mehrstufiger Prozess mit einzelner Testung von subsystemintegrierten Komponenten. 
+
+3. **Kundentests.** Das ist die letzte Phase des Testprozesses, bevor das System überhaupt für den Betrieb angenommen wird. Hierbei wird es von Systemkunden gestehst und mit realen Daten. Dabei kann man frühzeitig Fehler und Auslassungen in der Definition der Systemanforderungen aufdecken. Wenn das System nicht wirklich den Bedürfnissen der Benutzer entspricht oder die Systemleistung nicht akzeptabel ist, kann man hier auch die Systemanforderungen aufdecken. 
+
+In dem Fall muss das Programm von Fehlern befreit werden und dies kann erfordern ,dass andere Stufen im Testprozess wiederholt werden müssen. Beim Systemtest können beispielsweise Fehler in Programmkomponenten erkannt werden. Das nennt man daher ein integrativer Prozess, bei dem Informationen aus späteren Phasen an frühere Teile des Prozesses zurückgeführt werden. Eine Durchführung von Test ist ein wichtiger Bestandteil bei dem Entwicklungsprozess.
+
+Bei dem inkrementellen Entwicklungsansatz , sollte auch jedes Inkrement während der Entwicklung getestet werden, dabei wird es auf die Anforderungen für ein Inkrement geachtet.
+
+Bei einer testgetriebener Entwicklung werden die Tests mit den Anforderungen entwickelt, bevor überhaupt eine Entwicklung beginnt. 
+Wenn ein plangesteuertes Softwareprozess verwendet wird (z.B für die Entwicklung von kritischen Systeme) wird das Testen von Testplänen gesteuert. Die Testpläne werden aus der Systemspezifikation und dem Design entwickelt.
+
+Die Abbildung 2.7 zeigt uns, die Testpläne eine Verbindung zwischen Test und Entwicklungsaktivitäten zieht ( V-Modell). Das V-Modell zeigt uns die Software-Validierungsaktivitäten , die jeder Stufe des WasserfallsProzessmodells entsprechen ( siehe 2.2). Wenn ein System als Softwareprodukt vermarktet werden soll, wird hierbei häufig ein Testverfahren namens Beta-Testing verwendet. Dabei umfassen die Tests eine Bereitstellung eines Systems an die Kunden, die bereit sind dieses System auch zu benutzen. Bei der realen Nutzung des System werden auch Fehler erkannt, die von Entwicklern möglicherweise vorher nicht erkannt wurden. Nach dem Feedback von dem Kunden kann das Softwareprodukt modifiziert werden und es können hierbei auch weitere test durchgeführt werden sowie an einen allgemeinen Verkauf freigegeben werden. 
+
+![](img/07.png)
+**Abbildung 2.7: Testphasen in einem plangesteuerten Softwareprozess**
 
 
 ## Referenzen
