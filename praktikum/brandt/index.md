@@ -58,3 +58,34 @@ Als Unter-Problemfeld bei der Nutzung von CaaS lässt sich weiterhin die Konfigu
 ## Kommentar zur ursprünglichen Fragestellung
 
 Eine Feststellung von Qualitätseigenschaften entsprechender Technologien anhand einer empirischen Untersuchung halte ich für keine geeignete Zielsetzung für diese Arbeit. Es gelingt mir u.A. nicht ein geeignetes Set an relevanten Qualitätseigenschaften sowie eine geeignete Methode um diese zu Messen zu formulieren. Eine Untersuchung anhand einer Fallstudie setzt voraus, dass die Qualität einer Vorgehensweise anhand der Qualität der Ergebnisses dieser messbar ist. Ich halte diese Prämisse für nicht zutreffend. Weiterhin erfüllt die jetzige Fragestellung eher einen Lehrcharakter im Sinne des Moduls (Seminar). Diese ermöglicht mir einen höheren Lernzuwachs und ein besseres Vermitteln von Wissen an die Kommilitonen.
+
+## Projektplan
+
+### Zu erzeugende Artefakte
+
+- Textuelle Ausarbeitung
+- Präsentationsslides
+- Geplant, wenn geeignet: Kurzpaper, Thesenpapier, Infografik, Cheatsheet mit den wichtigsten Kernpunkten
+
+### Tasks
+
+- [ ] #1 Exakte Erarbeitung der Motivation, des Kontext sowie der Ansätze (WIP)
+- [ ] #2 Festlegen, Klassifizieren von Technologien
+- [ ] #3 Einarbeitung in Technologien (ggf. Implementieren einer fachlich reduzierten Fallstudie)
+- [ ] #4 "Evaluation": Dokumentieren, Aufarbeiten der SE-Relevanten Aspekte hinsichtlich der Behauptung, dass automatisiertes (bzw. deklaratives) Deployment Vorteile bringt
+- [ ] #5 Didaktische Aufarbeitung des Tool-Stacks
+- [ ] #6 Schreiben der Ausarbeitung
+- [ ] #7 Erzeugen von Präsentationsslides
+- [ ] #8 (Erzeugen des Cheatsheets)
+
+### Zeitplan
+
+- bis inkl. KW 18 (So, 08.05.) - "Kickoff" (Task #1, #2)
+- ab inkl. KW 19 - Schreiben der Ausarbeitung (Task #6)
+- KW 19+20+21 (So, 29.05.) - "Technologiearbeit" (Task #3)
+- KW 22+23+24 (So, 19.06.) - Evaluation (Task #4, #5)
+- bis inkl. KW 25 (So, 26.06.) - Fertigstellen der Ausarbeitung (Task #6)
+- bis inkl. KW 26 (So, 03.06.) - Fertigstellen aller Artefakte (Task #6, #7, #8)
+- KW 27+28 Prüfungszeitraum
+
+![](https://f002.backblazeb2.com/file/leonbrandt-public/studium/sgse/gantt.png)
