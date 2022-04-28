@@ -2,18 +2,20 @@
 
 Mögliche Fragestellungen:
 - Wie sehen Alternativen zum Antipattern des manuellen Deployments aus?
-- Welche Ansätze existieren?
-- Worin unterscheiden sich diese?
+- Welche Ansätze existieren? Worin unterscheiden sich diese?
+- Welche Technologien für entsprechende Ansätze existieren? Worin unterscheiden sich diese?
+
+Ziel: Lesern dieser Arbeit zu automatisierten bzw. deklarativen Deployment motivieren und sie in die Lage versetzen dies mit einem Toolstack umzusetzen.
 
 ---
 
 Humble & Farley beschreiben ein manuelles Deployment von Software als Antipattern. Morris nennt Reproducibility, Disposability, Consistency und Repeatability als nur einige Vorteile von IaC. Auch legen Praktiken wie Self-Documented Systems, Versionierung, Continuous Testing, Small Changes und Continuous Availability nahe, dass automatisiertes Deployment durch IaC als eine erstrebenswerte Vorgehensweise aus Sicht der Software Engineering ist.
 
-Änsätze wie das Nutzen von CaaS oder PaaS können Probleme wie Vendor Lock-In oder eine geringe Kosteneffizienz mit sich bringen. Dies ist vorallem dann der Fall, sollte in reinen PaaS-Umgebungen die Anforderung nach containerisierten Architekturkomponenten aufkommen und eine Nutzung von Komponenten in Form von SaaS (z.B. managed Datenbanken) erforderlich werden. Aus diesem Grund soll der Ausgangspunkt für diese Arbeit eine Nutzung von IaaS sein.
+Ansätze wie das Nutzen von CaaS oder PaaS können Probleme wie Vendor Lock-In oder eine geringe Kosteneffizienz mit sich bringen. Dies ist vorallem dann der Fall, sollte in reinen PaaS-Umgebungen die Anforderung nach containerisierten Architekturkomponenten aufkommen und eine Nutzung von Komponenten in Form von SaaS (z.B. managed Datenbanken) erforderlich werden. Aus diesem Grund soll der Ausgangspunkt für diese Arbeit eine Nutzung von IaaS sein.
 
 Endres et. al. identifizieren als Modellierungsmuster für automatisiertes Deployment einen imperativen sowie einen deklarativen Ansatz. Wurster et. al. formulieren ein Metamodell und bilden dieses auf 13 konkrete Technologien ab und klassifizieren diese.
 
-Diese Arbeit soll methodische Alternativen zum Antipattern des manuellen Deployments vorstellen. Hierzu soll auch die konkrete Verwendung ausgewählter Tools vorgestellt werden.
+Diese Arbeit soll methodische Alternativen zum Antipattern des manuellen Deployments vorstellen. Hierzu soll auch die konkrete Verwendung ausgewählter Tools vorgestellt werden. Die Motivation ist ein Aufzeigen der Vorteile von deklarativen Deployment. Ziel ist es Lesern der Arbeit von dieser Vorgehensweise zu überzeugen und ihnen das erforderliche Toolset an die Hand zu geben, um dieses umzusetzen.
 
 ## Methodischer Ansatz zur Umsetzung von deklarativen Deployment
 
@@ -53,6 +55,6 @@ Als Unter-Problemfeld bei der Nutzung von CaaS lässt sich weiterhin die Konfigu
 - Endres et. al. - (kein DOI) https://www.iaas.uni-stuttgart.de/publications/INPROC-2017-12-Declarative-vs-Imperative-Modeling-Patterns.pdf
 - Wurster et. al. - DOI: 10.1007/s00450-019-00412-x
 
-## Ursprüngliche Fragestellung
+## Kommentar zur ursprünglichen Fragestellung
 
-Eine Feststellung von Qualitätseigenschaften entsprechender Technologien anhand einer empirischen Untersuchung halte ich für keine geeignete Zielsetzung für diese Arbeit. Es gelingt mir u.A. nicht ein geeignetes Set an relevanten Qualitätseigenschaften sowie eine geeignete Methode um diese zu Messen zu formulieren. Weiterhin erfüllt diese Fragestellung eher einen lehrcharakter im Sinne des Moduls (Seminar).
+Eine Feststellung von Qualitätseigenschaften entsprechender Technologien anhand einer empirischen Untersuchung halte ich für keine geeignete Zielsetzung für diese Arbeit. Es gelingt mir u.A. nicht ein geeignetes Set an relevanten Qualitätseigenschaften sowie eine geeignete Methode um diese zu Messen zu formulieren. Eine Untersuchung anhand einer Fallstudie setzt voraus, dass die Qualität einer Vorgehensweise anhand der Qualität der Ergebnisses dieser messbar ist. Ich halte diese Prämisse für nicht zutreffend. Weiterhin erfüllt die jetzige Fragestellung eher einen Lehrcharakter im Sinne des Moduls (Seminar). Diese ermöglicht mir einen höheren Lernzuwachs und ein besseres Vermitteln von Wissen an die Kommilitonen.
