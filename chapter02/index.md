@@ -177,6 +177,14 @@ Die Aktivitäten im Designprozess unterscheiden sich je nach Art des zu entwicke
 
 Ein Beispiel hierfür wäre, wenn ein Echtzeitsystem eine zusätzliche Phase des Timing-Designs erfordert, aber hier möglicherweise keine Datenbank enthält, sodass kein Datenbankdesign erforderlich ist. 
 
+Die Abbildung 2.5 zeigt vier Aktivitäten, die Teil des Entwurfsprozesses für Informationssysteme sein können:
+1. Architekturenentwurf, bei dem die Gesamtstruktur des Systems ,die Komponenten und auch ihre Zusammenhänge und Verteilung zu identifiziert wird. 
+2. Datenbankdesign, wo man die Systemdatenstrukturen entworfen werden und wie diese auch darsgetellt werden. Hier hängt es davon ab, ob es die vorhandene Datenbank wiederverwendet wird oder eine neue Datenbank erstellt werden soll. 
+3. Schnittstellendesign, hier werden nun die Schnittstellen zwischen Systemkomponenten definiert. Als erstes wird eine Schnittstellenspezifikation vereinbart ( mit einer Schnittstelle kann eine Komponente von anderen Komponenten angewendet werden) , danach kann man die Komponenten separat entwerfen und entwickeln. 
+4. Komponentenauswahl und Design, bei der Aktivität, werden die wiederverwendbaren Komponenten gesucht. Wenn es keine geeigneten Komponenten gibt, kann man neue Softwarekomponente entwerfen. Es kann entweder eine einfache Komponentenbeschreibung sein oder detaillierte Implementierungsdetails (in Form einer Liste mit Änderungen/ o.a detailliertes Designmodell mit UML Druck) übernommen werden. 
+
+Diesen Aktivitäten führen zu den Entwurfsergebnissen. 
+
 
 ## Referenzen
 
