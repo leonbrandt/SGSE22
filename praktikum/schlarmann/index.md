@@ -20,12 +20,15 @@ Rolladen herunter- sowie wieder herauffährt sobald eine gewisse Außen-Helligke
 dabei natürlich von Endnutzer konfigurieren lassen.
 
 ## Inhalte
- * Gegenüberstellung Meshnetz und traditionelle Architekturen für Drahtlose Netze (Punkt-zu-Punkt, Stern)
+ * [Gegenüberstellung Meshnetz und traditionelle Architekturen für Drahtlose Netze](praktikum/schlarmann/gegenueberstellung.md) 
+   * Traditionelle Archiktekturen: Punkt-zu-Punkt, Stern
    * Betrachtung für den Fall Automatisierung, also für Sensor / Aktornetze
    * Vor- & Nachteile des Mesh-Ansatzes 
    * Anwendungsfälle für Meshnetze (z.B.: sinnvoll in Fabrik- / Maschinenhalle mit vielen verteilten Sensoren / Aktoren, wenig Sinnvoll bei wenigen Teilnehmern
         wie Lichtschalter + Beleuchtung)
- * Konzeptentwicklung des Netzes (Sensoren, Aktoren etc.) und (prototypische) Implementierung
+ * [Konzeptentwicklung des Netzes](praktikum/schlarmann/konzeptentwicklung.md)
+   * Sensoren, Aktoren etc.
+ * [Prototypische Implementierung und Evaluierung](praktikum/schlarmann/implementierung_evaluierung.md)
    * Evaluierungsgrundlage: Bestehende Systeme - Vergleich mit eigener Implementierung
 
 ## Konkrete Fragestellungen

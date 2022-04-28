@@ -125,6 +125,7 @@ Die Abbildung 2.3 zeigt ein allgemeines Vorgehensmodell für die wiederverwendun
 Integration und Konfiguration. 
 
 ![](img/03.png)
+
 **Abbildung 2.3: Wiederverwendungsorientiertes Software Engineering**
 
 Es sind folgende Phasen dargestellt:
@@ -150,6 +151,7 @@ Softwarespezifikation oder Requirements Engineering ist der Prozess des Verstehe
 Vor dem beginn des Requirements-Engineering-Prozesses kann ein Betrieb eine Machbarkeitsstudie durchführen, die mögliche Lösungsansätze überprüft und analysiert. Es kann schon am Anfang die Frage beantwortet werden, ob eine detaillierte Analyse durchgeführt werden soll oder nicht. Ziel ist hier, eine Anforderungsdokumentation zu erstellen sowie auch mit der Prüfung und Abstimmung von Anforderungen mit den Stakeholdern. Die Anforderungen werden in der Regel auf zwei Detailebenen dargestellt. Endbenutzer bzw. Kunden benötigen eine allgemeine Erklärung der Anforderungen; die Systementwickler eine detaillierte Systemspezifikation. Um Missverständnisse zu vermeiden, sollte immer darauf geachtet werden, zwischen den Kommunikationspartnern Klarheit zu schaffen und Rücksprache zu halten. 
 
 ![](img/04.png)
+
 **Abbildung 2.4: Der Requirements-Engineering-Prozess**
 
 Es gibt 3 Hauptaktivitäten im Requirements-Engineering-Prozess:
@@ -169,6 +171,7 @@ Ein Softwareentwurf ist eine Beschreibung der Struktur der zu implementierenden 
 In der Abbildung 2.5 ist ein abstraktes Modell des Designprozesses dargestellt, das die Eingaben für den Prozess, Aktivitäten und die Ergebnisse zeigt. die Designprozessaktivitäten sind sowohl hier verschachtelt als auch voneinander abhängig. Nacharbeiten sind hier nicht auszuschließen, da es ständig neue Informationen über das Design generiert werden.
 
 ![](img/05.png)
+
 **Abbildung 2.5: Ein allgemeines Modell des Designprozesses**
 
 Die Softwareplattform, in der die Software ausgeführt wird, besteht aus einem Betriebssystem, die Datenbank, die Middleware und andere Anwendungssysteme. Informationen über diese Plattform sind ein wichtiger Teil für den Designprozess, da es auch Entscheidungen getroffen werden müssen, wie man die Prozesse integrieren soll. Für die Verarbeitung im System der vorhandenen Daten, kann die Beschreibung dieser Daten in die Plattformspezifikation aufgenommen werden. Sonst muss die Datenbeschreibung eine Eingabe in den Entwurfsprozess gemacht werden, damit die Systemdatenorganisation überhaupt definiert werden kann.
@@ -212,8 +215,62 @@ Die hauptsächliche Validierungstechnik ist wenn man Programmtests durchführt, 
 
 Die Abbildung 2.6 zeigt uns einen dreistufigen Testprozess , bei dem die Systemkomponenten auch einzeln getestet werden. Dabei wird auch das integrierte System getestet. Man kann sowohl z.B die kundenspezifische Software testet, dabei wird ein Test mit echten Kundendaten durchgeführt. Bei Produkten, die als Aufwendungen verkauft werden, werden die Test als „Beta-Tests“ bezeichnet . Dabei probieren die ausgewählte Benutzer die Software und hinterlassen Kommentare.
 
+![](img/06.png)
 
+**Abbildung 2.6: Testphasen**
 
+Die Phasen des Testprozesses sind: 
+
+1. **Komponententests.** Hierbei wird jede Komponente ,aus denen das System besteht unabhängig von anderen Komponenten getestet. Bespiel für ein Komponenten wäre hier eine einfache Entität wie Funktionen oder Objektklassen oder kohärente Gruppierungen dieser Entitäten sein. 
+Häufig werden Testautomatisierungstools wie Juni für JAVA verwendet, die Tests erneut ausführen können, wenn eine neue Version der Komponente erstellt werden. 
+
+2. **Systemtest.** Die Systemkomponenten werden zu einem Gesamtsystem integriert. 
+Hier ist es wichtig, zu prüfen, ob das System seine funktionalen und nicht funktionalen Anforderungen erfüllt sowie allgemein das Auffinden von Fehlern, die auch unvorhergesehenen Wechselwirkungen zwischen Komponenten und Schnittstellenproblemen resultieren.
+Außerdem werden hier die emergent Systemeigenschaften getestet.  
+Bei großen Systemen läuft hierbei ein mehrstufiger Prozess mit einzelner Testung von subsystemintegrierten Komponenten. 
+
+3. **Kundentests.** Das ist die letzte Phase des Testprozesses, bevor das System überhaupt für den Betrieb angenommen wird. Hierbei wird es von Systemkunden gestehst und mit realen Daten. Dabei kann man frühzeitig Fehler und Auslassungen in der Definition der Systemanforderungen aufdecken. Wenn das System nicht wirklich den Bedürfnissen der Benutzer entspricht oder die Systemleistung nicht akzeptabel ist, kann man hier auch die Systemanforderungen aufdecken. 
+
+In dem Fall muss das Programm von Fehlern befreit werden und dies kann erfordern ,dass andere Stufen im Testprozess wiederholt werden müssen. Beim Systemtest können beispielsweise Fehler in Programmkomponenten erkannt werden. Das nennt man daher ein integrativer Prozess, bei dem Informationen aus späteren Phasen an frühere Teile des Prozesses zurückgeführt werden. Eine Durchführung von Test ist ein wichtiger Bestandteil bei dem Entwicklungsprozess.
+
+Bei dem inkrementellen Entwicklungsansatz , sollte auch jedes Inkrement während der Entwicklung getestet werden, dabei wird es auf die Anforderungen für ein Inkrement geachtet.
+
+Bei einer testgetriebener Entwicklung werden die Tests mit den Anforderungen entwickelt, bevor überhaupt eine Entwicklung beginnt. 
+Wenn ein plangesteuertes Softwareprozess verwendet wird (z.B für die Entwicklung von kritischen Systeme) wird das Testen von Testplänen gesteuert. Die Testpläne werden aus der Systemspezifikation und dem Design entwickelt.
+
+Die Abbildung 2.7 zeigt uns, die Testpläne eine Verbindung zwischen Test und Entwicklungsaktivitäten zieht ( V-Modell). Das V-Modell zeigt uns die Software-Validierungsaktivitäten , die jeder Stufe des WasserfallsProzessmodells entsprechen ( siehe 2.2). Wenn ein System als Softwareprodukt vermarktet werden soll, wird hierbei häufig ein Testverfahren namens Beta-Testing verwendet. Dabei umfassen die Tests eine Bereitstellung eines Systems an die Kunden, die bereit sind dieses System auch zu benutzen. Bei der realen Nutzung des System werden auch Fehler erkannt, die von Entwicklern möglicherweise vorher nicht erkannt wurden. Nach dem Feedback von dem Kunden kann das Softwareprodukt modifiziert werden und es können hierbei auch weitere test durchgeführt werden sowie an einen allgemeinen Verkauf freigegeben werden. 
+
+![](img/07.png)
+
+**Abbildung 2.7: Testphasen in einem plangesteuerten Softwareprozess**
+
+## 2.2.4 Software evolution 
+
+Es ist viel sinnvoller eine Änderungen an der Software vorzunehmen als an der Systemhardware ( am Hardwaredesign). Man kann auch umfangreiche Änderungen während und nach der Entwicklung vornehmen und es fällt den Programmierern viel leichter, dies ist auch eine günstigere Variante.
+
+Es gibt aber nicht nur die Softwareentwicklung sondern auch der Prozess namens Softwareevolution ( Softwarewartung). Hier wird oft die Softwarepflege als weniger interessant empfunden und meist wenig unterschieden. Bei den  meisten neuen Systemen wird Entwicklung sowie die Wartung als ein zusammenhängendes Prozess angesehen. Man sollte es aber lieber als ein getrenntes Prozess vorstellen, wie in der Abbildung 2.8 dargestellt ist. Hier wird die Software im Laufe ihrer Lebensdauer als Reaktion auf sich ändern Anforderung und Kundenbedürfnisse kontinuierlich geändert.
+
+![](img/08.png)
+
+**Abbildung 2.8: Weiterentwicklung von Softwaresystemen**
+
+## 2.3 Umgang mit Veränderungen 
+
+Veränderungen gibt es in allen großen Softwareprojekte. Es kann sein, dass sich die Systemanforderungen ändern, wenn ein Unternehmen auf externen Druck, Wettbewerb und geänderte Managementprioritäten anspringen. Wenn zum Beispiel neue Technologien verfügbar sind , werden neue Ansätze für Design und Implementierung möglich. Es ist auch unabhängig welches Softwareprozessmodell verwendet wird. Die Änderungen tragen auch hohe Kosten mit sich, da wenn z,B  die Verbindung zwischen den Anforderungen in einem System analysiere wurden und anschließen neue Anforderungen identifiziert werden, muss die Anforderungsanalyse ganz oder teilweise wiederholt werden. Manchmal muss man sogar ein System neu entwerfendem die Anforderungen zu erfüllen , alle entwickelten Programme zu ändern und das System dann erneut zu testen. 
+
+Es gibt zwei Ansätze , um die Kosten der Nacharbeit zu reduzieren: 
+1.	**Erwartung ändern.** Der Softwareprozess umfasst jegliche Aktivitäten, wo man mögliche Änderungen anzipieren bzw. vorher erkennen kann, bevor überhaupt eine Nacharbeit erforderlich ist. Beispielsweisen kann ein Prototypsystem entwickelt werden, um Kunden einige Merkmale des Systems zu zeigen. Man kann mit dem Prototypen experementieren und die Anforderungen verfeinern.
+2. **Änderungstoleranz.** Hier wird der Prozess und die Software so konzipiert, dass Änderungen am System problemlos vorgenommen werden können. Es ist eine inkrementelle Form von Entwicklung und hier können die vorgeschlagenen Änderungen in noch nicht entwickelten Schritten implementiert werden. Wenn es aber nicht möglich ist, muss nur ein einziges Konkrement geändert werden , um dann die Änderungen aufzunehmen.
+
+Es gibt zwei Möglichkeiten, mit Veränderungen und allgemein mit Systemänderungen umzugehen. Dabei werde ich die zwei Arten definieren: 
+1. **System-Prototyping.** Es ist eine schnelle Entwicklung einer Version eines Systems oder einen Teil von System.Hier gelingt es die Anforderungen des Kunden und die Machbarkeit von Designentscheidungen zu überprüfen. Dies ist eine Methode zur Vorwegnahme von Änderungen und einer Reduzierung von Änderungsvorschlägen für Anforderungen. 
+2. **Inkrementelle Lieferung.** Hierbei werden dem Kunden die Systeminkremente zur Kommentierung und zum Experimentieren geliefert. Dies unterstützt sowohl die Änderungsvermeidung, die vorzeitige Festlegung von Anforderungen für das gesamte System und auch die Änderungstoleranz. Ein wichtiger Mechanismus ist auch namens Refactoring. Dabei wird die Struktur und Organisation von Programmen unterstützt sowie die Toleranz gegenüber Änderungen. 
+
+## 2.3.1 Prototyping 
+
+![](img/09.png)
+
+**Abbildung 2.9: Prototypenentwicklung**
 
 ## Referenzen
 
