@@ -223,6 +223,92 @@ Status dieses Dokuments:
 
 # Architectural Views
 
+## Perspektiven auf Architektur
+
+- Zwei Arten der Verwendung von Architectural models
+	- Kommunikationshilfe im Designprozess
+	- Dokumentation (Als Basis für Design in höherem Detailgrad bzw. Implementierung)
+- Probleme / Fragestellungen:
+	- Welche Perspektiven sind beim Entwurf und der Dokumentation einer Systemarchitektur nützlch?
+	- Welche Notationen sollen für die Beschreibung von Architekturmodellen verwendet werden?
+
+---
+
+- Es ist nicht möglich, alle relevanten Informationen über die Architektur eines Systems in einem einzelnen Diagramm darzustellen
+	- Ein graphisches Modell kann nur eine Sichtweise / Perspektive zeigen
+		- Es zeigt möglicherweise:
+			- Wie ein System in Module zerlegt ist
+			- Wie Prozesse zur Laufzeit interagieren
+			- Wie Komponenten über ein Netzwerk verteilt sind
+		- Alle diese Perspektiven sind nützlich zu unterschiedlichen Zeitpunkten (für Design und Dokumentation)
+
+## 4 Views
+
+- Krutchen schlägt in einem 4+1-view-model of software architecture view fundamentale Architektur-Sichten vor (Krutchen 1995)
+	- Logical view
+		- Diese zeigt die wesentlichen Abstraktionen innerhalb des Systems als Objekte oder Objektklassen
+		- Eine Zuordnung von Systemanforderungen zu Entities sollte möglich sein
+	- Process view
+		- Diese zeigt wie das System zur Laufzeit aus interagierenden Prozessen zusammengesetzt ist
+		- Diese View ist nützlich um nicht-funktionale Charakteristiken wie Performance oder Availability zu beurteilen
+	- Development view
+		- Diese zeigt wie die Software zur Entwicklung zerlegt ist
+		- Komponenten, die von einem einzelnen Entwickler(-team) implementiert werden, sind sichtbar
+		- Diese View ist nützlich für Manager und Programmierer
+	- Physical view
+		- Diese zeigt die Hardware sowie die Verteilung von Komponenten über die Prozessoren im System
+		- Diese View ist nützlich für Systemingenieure zur Planung des Deployment
+
+## Conceptual View
+
+- Hofmeister et. al. ergänzen die "Conceptual view" (Hofmeister 2000)
+	- Diese ist eine abstrakte Ansicht des Systems, welche genutzt werden kann um High-Level-Anforderungen in detaillierte Spezifikationen zu zerlegen
+	- Diese View hift Ingeneuren zu entscheiden, welche Komponenten wiederverwendet werden können
+		- Welche Komponenten eine Product line anstatt eines Systems repräsentieren (Chapter 15)
+			- (Figure 6.1 ist Beispiel für Conceptual view)
+
+## Praxis
+
+- In der Praxis wird eine Conceptual view meistens innerhalb des Designprozesses erzeugt
+- Diese wird genutzt um Stakeholdern die Architektur zu erklären
+- Diese hilft Architectural design decisions zu machen
+- Innerhalb des Designprozesses werden andere Sichten bei Bedarf erzeugt
+- Es ist selten nötig, eine vollständige Beschreibung aller Sichten zu erzeugen
+
+## Formalität (Meinungen)
+
+- Es existieren unterschiedliche Meinungen darüber, ob zur Beschreibung von Softwarearchitekturen UML genutzt werden sollte
+- Umfrage: Wenn UML genutzt wird, dann meistens informell (Lange 2006)
+	- Autoren argumentieren, dass dies ein Problem darstellt
+
+---
+
+- Meinung (Sommerville):
+	- UML wurde entwickelt, um objektorientierte Systeme zu beschreiben
+	- Zur Phase des Architekturdesigns sollen Systeme in einem höheren Level von Abstraktion beschrieben werden
+	- Objektklassen sind zu nah an der Implementierung um zur Beschreibung von Architekturen nützlich zu sein
+	- UML ist im Designprozess nicht nützlich
+	- Besser: Informelle Notationen, die schneller zu schreiben sind und einfach auf Whiteboards gezeichnet werden können
+	- UML hat seinen größten Wert zu Dokumentation von Architekturen im Detail
+
+---
+
+- Bass et. al. schlagen die Verwendung von spezialisierten Architectural descriptions languages (ADLs) vor (Bass 2012)
+- Grundelemente: Komponenten, Verbinder
+- Enthalten Regeln und Leitlinien für wohlgeformte Architekturen
+- Diese Spezialsprachen sind für Domänen- und Anwendungs-Experten möglicherweise schwer zu nutzen
+- Meinung (Sommerville): Informelle Modelle und UML bleiben allgemeine Praxis
+
+---
+
+- Agile Methoden: Claim:
+	- Detaillierte Dokumentationen bleiben meistens ungenutzt
+	- Die Entwicklung von Dokumenten zur Dokumentation von Architekturen ist eine Verschwendung von Zeit und Geld
+- Meinung (Sommerville): Zustimmung
+	- Außerhalb von kritischen Systemen ist die Entwicklung einer Architekturbeschreibung im Sinne der 4 Views den Aufwand nicht wert
+	- Es sollten die Views genutzt werden, die zur Kommunikation nützlich sind
+	- Es sollte sich nicht um die Vollständigkeit der Dokumentation einer Architektur gesorgt werden
+
 # Architectural Patterns
 
 ## Layered Architecture
