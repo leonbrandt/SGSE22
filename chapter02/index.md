@@ -248,6 +248,18 @@ Es gibt aber nicht nur die Softwareentwicklung sondern auch der Prozess namens S
 ![](img/08.png)
 **Abbildung 2.8: Weiterentwicklung von Softwaresystemen**
 
+## 2.3 Umgang mit Veränderungen 
+
+Veränderungen gibt es in allen großen Softwareprojekte. Es kann sein, dass sich die Systemanforderungen ändern, wenn ein Unternehmen auf externen Druck, Wettbewerb und geänderte Managementprioritäten anspringen. Wenn zum Beispiel neue Technologien verfügbar sind , werden neue Ansätze für Design und Implementierung möglich. Es ist auch unabhängig welches Softwareprozessmodell verwendet wird. Die Änderungen tragen auch hohe Kosten mit sich, da wenn z,B  die Verbindung zwischen den Anforderungen in einem System analysiere wurden und anschließen neue Anforderungen identifiziert werden, muss die Anforderungsanalyse ganz oder teilweise wiederholt werden. Manchmal muss man sogar ein System neu entwerfendem die Anforderungen zu erfüllen , alle entwickelten Programme zu ändern und das System dann erneut zu testen. 
+
+Es gibt zwei Ansätze , um die Kosten der Nacharbeit zu reduzieren: 
+1.	**Erwartung ändern.** Der Softwareprozess umfasst jegliche Aktivitäten, wo man mögliche Änderungen anzipieren bzw. vorher erkennen kann, bevor überhaupt eine Nacharbeit erforderlich ist. Beispielsweisen kann ein Prototypsystem entwickelt werden, um Kunden einige Merkmale des Systems zu zeigen. Man kann mit dem Prototypen experementieren und die Anforderungen verfeinern.
+2. **Änderungstoleranz.** Hier wird der Prozess und die Software so konzipiert, dass Änderungen am System problemlos vorgenommen werden können. Es ist eine inkrementelle Form von Entwicklung und hier können die vorgeschlagenen Änderungen in noch nicht entwickelten Schritten implementiert werden. Wenn es aber nicht möglich ist, muss nur ein einziges Konkrement geändert werden , um dann die Änderungen aufzunehmen. 
+Es gibt zwei Möglichkeiten, mit Veränderungen und allgemein mit Systemänderungen umzugehen. Dabei werden ich die zwei Arten definieren: 
+3. **System-Prototyping.** Es ist eine schnelle Entwicklung einer Version eines Systems oder einen Teil von System.Hier gelingt es die Anforderungen des Kunden und die Machbarkeit von Designentscheidungen zu überprüfen. Dies ist eine Methode zur Vorwegnahme von Änderungen und einer Reduzierung von Änderungsvorschlägen für Anforderungen. 
+4. **Inkrementelle Lieferung.** Hierbei werden dem Kunden die Systeminkremente zur Kommentierung und zum Experimentieren geliefert. Dies unterstützt sowohl die Änderungsvermeidung, die vorzeitige Festlegung von Anforderungen für das gesamte System und auch die Änderungstoleranz. Ein wichtiger Mechanismus ist auch namens Refactoring. Dabei wird die Struktur und Organisation von Programmen unterstützt sowie die Toleranz gegenüber Änderungen. 
+
+
 ## Referenzen
 
 [1]: Ian Sommerville. 2015. Software Engineering (10th. ed.), 43-71.
