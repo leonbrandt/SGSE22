@@ -1,5 +1,11 @@
 # REST
 
+## Inhalt
+
+- [Paradigma](#paradigma)
+- [Datenformat](#datenformat)
+- [Vorläufiges Fazit](#vorläufiges-fazit)
+
 ## Paradigma
 
 ![rest](./assets/rest/rest.png)

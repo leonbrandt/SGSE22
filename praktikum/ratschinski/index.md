@@ -6,7 +6,7 @@
 
   Mittels GraphQL, REST und gRPC können Client und Server miteinander kommunizieren. Für den Transport verwenden alle drei Technologien das HTTP Protokoll. Abgesehen von dieser Gemeinsamkeit, sind die drei Technologien grundverschieden. Während des Praktikums soll ermittelt werden, für welche Einsatzgebiete die verschiedenen Technologien am besten geeignet sind.
 
-### Technologien
+## Technologien
 
 &#8594; [GraphQL](/praktikum/ratschinski/graphql)
 
@@ -14,7 +14,11 @@
 
 &#8594; [gRPC](/praktikum/ratschinski/grpc)
 
-### Vergleich Datenformat
+## Vergleich Datenformat
+
+[GraphQL Datenformat](/praktikum/ratschinski/graphql#datenformat) | [REST Datenformat](/praktikum/ratschinski/rest#datenformat) | [gRPC Datenformat](/praktikum/ratschinski/grpc#datenformat)
+
+### Datenformat Zusammenfassung
 
 |                      | gRPC     | GraphQL             | REST                 |
 | -------------------- | -------- | ------------------- | -------------------- |
@@ -26,6 +30,22 @@
 | **Binärdaten**       | Bytes    | Base64 oder Verweis | Binäre 8 Bit Inhalte |
 | **Hypermedia**       | ❌       | ❌                  | ✅                   |
 | **Language Mapping** | ✅       | -                   | ❌                   |
+
+## Schnittstellenbeschreibung
+
+| [GraphQL Schema](/praktikum/ratschinski/graphql#schnittstellenbeschreibung) | - | [gRPC Schnittstellenbeschreibung](/praktikum/ratschinski/grpc#schnittstellenbeschreibung)
+
+### Warum eine Schnittstelle beschreiben ?
+
+1. Aufrufe erleichtern
+2. Entwicklung Client und Server
+3. Einhaltung eines Vertrages
+4. Erzeugung von Dokumentationen (PDF's, HTML)
+5. Validierung von Nachrichten
+6. Vergleich von API Versionen (Kompatibilität)
+7. Qualitätssicherung
+
+## Sonstiges
 
 - Einsatzgebiete für die verschiedenen Technologien ermitteln.  
    Was eignet sich am besten für API`s, Microservices, Webanwendungen und Mobile Apps?

@@ -119,6 +119,135 @@ Drei Arten von Softwarekomponenten werden häufig wiederverwendet:
 2. Sammlungen von Objekten, die als Komponente oder als Paket entwickelt werden, um in ein Komponenten-Framework integriert zu werden.
 3. Webdienste, die gemäß Dienststandards entwickelt wurden und für den Fernaufruf über das Internet verfügbar sind.
 
+------------
+
+Die Abbildung 2.3 zeigt ein allgemeines Vorgehensmodell für die wiederverwendungsbasierte Entwicklung, wie z.B basierend auf
+Integration und Konfiguration. 
+
+![](img/03.png)
+**Abbildung 2.3: Wiederverwendungsorientiertes Software Engineering**
+
+Es sind folgende Phasen dargestellt:
+
+1.	**Anforderungsspezifikation.** Hier sind die anfänglichen Anforderungen an das System gestellt.bDiese müssen nicht im Detail ausgearbeitet werden, sollten aber kurz sein, wie Beschreibungen der wesentlichen Anforderungen und Systemmerkmale
+2. **Software-Erkennung und -Evaluierung** unter Berücksichtigung einer Übersicht über die Software-Anforderungen. Gesucht werden die Komponenten und Systeme, die die geforderte Funktionalität bieten. Hierfür werden die in Frage kommenden Komponenten und Systeme bewertet und ob sie die Anforderungen erfüllen. Wichtig ist es auch , dass die auch für den Einsatz im System geeignet sind. 
+3. **Verfeinerung der Anforderungen.** In dieser Phase werden die Anforderungen  anhand von gegebenen Informationen über die gefundenen Komponenten und Anwendungen verfeinert. Dafür werden Anforderungen an verfügbaren Komponenten angepasst und die Systemspezifikationen neu definiert. Wenn aber einige Modifikationen nicht möglich sind, muss man die Analyse von Komponenten hierfür erneut aufnehmen und nach alternativen Möglichkeiten suchen. 
+4. **Konfiguration des Anwenungssystems.** Wenn ein Standartanwendungssystem verfügbar ist, das auch die Anforderungen natürlich  erfüllt, kann es hier eine Konfiguration des neuen Systems erstellt werden. 
+5. **Komponentenanpassung und Integration.** Wenn es kein Standartsystem gibt, können einzelne Komponente modifiziert werden. Man kann die dann integrieren, um ein System zu erstellen. 
+
+Zusammenfassend würde man sagen, dass es einen relativen Vorteil hat, um die Menge der zu entwickelnden Software zu reduzieren und somit Kosten und Risiken zu reduzieren. Somit führt dies zu einer schnelleren Auslieferung der Software. Es gibt aber oft Fälle, wo die Anforderungen im System nicht den tatsächlich Bedürfnissen der Benutzer entsprechen. Darüber hinaus geht ein Teil der Kontrolle über die Systementwicklung verloren, da neue Versionen der wiederverwendbaren Komponenten nicht unter der Kontrolle der Organisation sind, die sie verwendet. Deswegen ist die Wiederverwendung von Software sehr wichtig.
+
+## 2.2 Aktivitäten verarbeiten 
+
+Echte Softwareprozesse sind verschachtelte Abläufe von technischen, kollaborativen und organisatorischen Aktivitäten mit dem übergeordneten Ziel, um ein Softwaresystem zu entwerfen, durchaus zu spezifizieren und implementieren und natürlich zu testen. Heutzutage sind die Prozesse meist Tool-gestützt. Das bedeutet, dass die Softwareentwickler eine Reihe von Softwaretools verwenden können, um eine Hilfe zu leisten, wie z.B Anforderungsmanagementsysteme , Desoignmodelleditoren, Programmeditoren , automatisierte Testwerkzeuge und Debugger. Die vier grundlegende Prozessaktivitäten , wie Spezifikation, Entwicklung, Validieren und Evolution sind in verschiedenen Entwicklungsprozessen auch unterschiedlich organisiert. Zum Beispiel bei einem Wasserfallmodell  werden die Entwicklungen anhand aufeinanderfolgenden Phasen abgebildet und während der inkrementellen Entwicklung in Einzelteilen erstellt und diese Inkremente werden dann anwendungsfähig ausgeliefert.
+
+Wie diese Aktivitäten jedoch ausgeführt werden, hängt von der Art der zu entwickelten Software ab, sowie Erfahrung und Kompetenz der Entwickler und der Art der Organisation , die die Software entwickelt. 
+
+## 2.2.1 Spezifikation von Software
+
+Softwarespezifikation oder Requirements Engineering ist der Prozess des Verstehens und Definierens, welche Dienste von System benötigt werden. Wichtig zu erwähnen ist,  dass es hier um das Spezifikation und Verwalten von Anforderungen an ein System bzw. Software geht sowie allgemein um die Entwicklung des Systems. Das Requirements Engineering ist eine besonders kritische Phase des Softwareprozesses , da Fehler, die in dieser Phase gemacht werden, zum späteren Problemen bei der Systemgestaltung und Implementierung führen können.
+
+Vor dem beginn des Requirements-Engineering-Prozesses kann ein Betrieb eine Machbarkeitsstudie durchführen, die mögliche Lösungsansätze überprüft und analysiert. Es kann schon am Anfang die Frage beantwortet werden, ob eine detaillierte Analyse durchgeführt werden soll oder nicht. Ziel ist hier, eine Anforderungsdokumentation zu erstellen sowie auch mit der Prüfung und Abstimmung von Anforderungen mit den Stakeholdern. Die Anforderungen werden in der Regel auf zwei Detailebenen dargestellt. Endbenutzer bzw. Kunden benötigen eine allgemeine Erklärung der Anforderungen; die Systementwickler eine detaillierte Systemspezifikation. Um Missverständnisse zu vermeiden, sollte immer darauf geachtet werden, zwischen den Kommunikationspartnern Klarheit zu schaffen und Rücksprache zu halten. 
+
+![](img/04.png)
+**Abbildung 2.4: Der Requirements-Engineering-Prozess**
+
+Es gibt 3 Hauptaktivitäten im Requirements-Engineering-Prozess:
+
+1. **Anforderungserhebung- und Analyse.** Dieses ist der Prozess der Ableitung der Systemanforderungen,durch das Beobachten bestehender Systeme, Diskussionen mit potenziellen Benutzern. Dies kann die Entwicklung eines oder mehreren Prototypen und Systemmodellen beinhalten. Auch Detaillierenden und Verfeinerung gehören dazu. 
+2. **Anforderungsspezifikation.** In diesem Prozess werden die gesammelten Informationen in ein Dokument überführt. Dieses Dokument kann zwei Arten von Anforderungen enthalten. Hier handelt sich hier von Formulierung von Anforderungen auf End-User Level (high level) und Systemlevel (genauere Beschreibung der bereitzustellenden Funktionalität) 
+3. **Anforderungsvalidierung.** Diese Aktivität überprüft die aufgenommenen Anforderungen hinsichtlich Umsetzbarkeit und  Vollständigkeit. Aktivität soll Qualität sicherstellen bzw. Fehler werden hierdurch gefunden. 
+
+Die Aktivitäten sind verschachtelt und laufen während der Analyse weiter, so dass Anforderungen mit der Zeit weiter verfeinert werden können oder fehlende Anforderungen nachgepflegt werden können. 
+
+## 2.2.2 Software Design und Implementierung 
+
+Die Implementierungsphase der Softwareentwicklung ist eine Aktivität welche das Ziel hat eine ausführbare Software zu liefern. Abhängig von Prozess Modell können die Aktivitäten Design und Implementierung getrennt vorhanden sein. Zum Beispiel bei agilem Vorgehen i.d.R. vermischt/verknüpft. Dadurch werden keine getrennten offiziellen Designdokumente erstellt.  Das Design wird informell auf Notebooks festgehalten.
+
+Ein Softwareentwurf ist eine Beschreibung der Struktur der zu implementierenden Software, der vom System verwendeten Datenmodelle - und Strukturen, der Schnittstellen zwischen Systemkomponenten und der Algorithmen, ist aber eher selten. 
+
+In der Abbildung 2.5 ist ein abstraktes Modell des Designprozesses dargestellt, das die Eingaben für den Prozess, Aktivitäten und die Ergebnisse zeigt. die Designprozessaktivitäten sind sowohl hier verschachtelt als auch voneinander abhängig. Nacharbeiten sind hier nicht auszuschließen, da es ständig neue Informationen über das Design generiert werden.
+
+![](img/05.png)
+**Abbildung 2.5: Ein allgemeines Modell des Designprozesses**
+
+Die Softwareplattform, in der die Software ausgeführt wird, besteht aus einem Betriebssystem, die Datenbank, die Middleware und andere Anwendungssysteme. Informationen über diese Plattform sind ein wichtiger Teil für den Designprozess, da es auch Entscheidungen getroffen werden müssen, wie man die Prozesse integrieren soll. Für die Verarbeitung im System der vorhandenen Daten, kann die Beschreibung dieser Daten in die Plattformspezifikation aufgenommen werden. Sonst muss die Datenbeschreibung eine Eingabe in den Entwurfsprozess gemacht werden, damit die Systemdatenorganisation überhaupt definiert werden kann.
+
+Die Aktivitäten im Designprozess unterscheiden sich je nach Art des zu entwickelnden Systems.
+
+Ein Beispiel hierfür wäre, wenn ein Echtzeitsystem eine zusätzliche Phase des Timing-Designs erfordert, aber hier möglicherweise keine Datenbank enthält, sodass kein Datenbankdesign erforderlich ist. 
+
+Die Abbildung 2.5 zeigt vier Aktivitäten, die Teil des Entwurfsprozesses für Informationssysteme sein können:
+1. Architekturenentwurf, bei dem die Gesamtstruktur des Systems ,die Komponenten und auch ihre Zusammenhänge und Verteilung zu identifiziert wird. 
+2. Datenbankdesign, wo man die Systemdatenstrukturen entworfen werden und wie diese auch darsgetellt werden. Hier hängt es davon ab, ob es die vorhandene Datenbank wiederverwendet wird oder eine neue Datenbank erstellt werden soll. 
+3. Schnittstellendesign, hier werden nun die Schnittstellen zwischen Systemkomponenten definiert. Als erstes wird eine Schnittstellenspezifikation vereinbart ( mit einer Schnittstelle kann eine Komponente von anderen Komponenten angewendet werden) , danach kann man die Komponenten separat entwerfen und entwickeln. 
+4. Komponentenauswahl und Design, bei der Aktivität, werden die wiederverwendbaren Komponenten gesucht. Wenn es keine geeigneten Komponenten gibt, kann man neue Softwarekomponente entwerfen. Es kann entweder eine einfache Komponentenbeschreibung sein oder detaillierte Implementierungsdetails (in Form einer Liste mit Änderungen/ o.a detailliertes Designmodell mit UML Druck) übernommen werden. 
+
+Diesen Aktivitäten führen zu den Entwurfsergebnissen. 
+
+Bei sicherheitskritischen Systemen sind die Ergebnisse des Designprozesses detailliert ihn Designdokumenten mit präzisen und genauen Beschreibungen des Systems aufgeführt.
+
+Wenn ein modellgetriebener Ansatz verwendet wird, sind die Entwurfsergebnisse in Entwurfsdiagrammen aufgeführt. Wenn agile Entwicklungsmethoden verwendet werden, dürfen die Ergebnisse des Designprozesses keine separaten Spezifikationsdokumente haben. Die Darstellung erfolgt hierfür aber im Code des Programms. 
+
+Die Entwicklung eines Programms zur Implementierung eines Systems folgt aus dem Systemdesign. Obwohl einige Klassen von Programmen wie .z.B bei sicherheitskritischen Systemen Normalerweisen vor Beginn der Implementierung im Detail entworfen w erden. Deswegen ist es sinnvoll ,dass Design und Programmentwicklung verschachtelt werden.
+
+Hierbei können auch softwareentwicklungswerkzeuge verwendet werden, um ein Skeletonprogramm (automatisch generierte Struktur) aus einem Entwurf zu erstellen. Hierzu wird ein IDL-Compiler Programmcode generiert und Schnittstellen implementiert. In den meisten Fällen wird hier nur Details der Operation jeder Programmkomponente hinzugefügt. 
+
+Dies schließt Code zum Definieren und Implementieren von Schnittstellen ein, und in vielen Fällen muss der Entwickler nur Details der Operation jeder Programmkomponente hinzufügen.
+
+Programmieren ist eine individuelle Aktivität, es gibt hierfür keine allgemeinen Prozesse, die befolgt werden bzw. auch fortgeschrieben werden.  
+
+Einige Programmierer beginnen mit Komponenten, die sie verstehen, entwickeln diese und gehen dann zu weniger verstandenen Komponenten über. Andere machen es andersrum belassen vertraute Komponenten bis zum Schluss, weil sie wissen, wie man sie entwickelt. Einige Entwickler definieren Daten gerne  schon am Anfang im Prozess und verwenden diese dann, um die Programmentwicklung voranzutreiben; andere lassen Daten so lange wie möglich unspezifiziert. Dies führt jedoch zu vielen Fehlern. 
+
+Normalerweise führen Programmierer einige Tests des von ihnen entwickelten Codes durch. Dabei werden häufig diese Programmfehler (Bugs) aufgedeckt, die aus dem Programm entfernt werden müssen. Das Auffinden und Beheben von Programmfehlern heißt Debuggen. 
+
+Fehlerprüfung und Fehlerbeseitigung sind unterschiedliche Prozesse. Die Prüfung stellt das Vorhandensein von Mängeln fest. Beim Debuggen geht es darum, diese Fehler zu finden und zu beheben.
+
+Beim Debuggen müssen Sie Hypothesen über das beobachtbare Verhalten des Programms aufstellen und diese Hypothesen dann testen, in der Hoffnung, den Fehler zu finden. Das Testen der Hypothesen kann man entweder manuell durch das Verfolgen des Programmscodes erfolgen  oder wenn es neue Testfälle erforderlich sind, um das Problem mehr zu spezifizieren, hierbei werden zur Unterstützung die Debugging-Prozesse angewendet ,in der Regel werden interaktive Debugging-Tools eingesetzt, die die Zwischenwerte von Programmvariablen und eine Ablaufverfolgung der ausgeführten Anweisungen anzeigen.
+
+## 2.2.3 Softwarevalidierung
+
+Die Vailidierung soll uns zeigen, dass ein System sowohl der Spezifikation entspricht als auch die Erwartungen des Systemkunden erfüllt. 
+Die hauptsächliche Validierungstechnik ist wenn man Programmtests durchführt, bei denen das System unter Verwendung simulierter Testdaten ausgeführt werden. Es kann auch Überprüfungsprozesse wie Inspektionen und Überprüfungen in jeder Phase des Softwareprozesses sein.  Am meisten verbraucht man die Zeit bzw. Arbeit für das Test von Programmen.
+
+Die Abbildung 2.6 zeigt uns einen dreistufigen Testprozess , bei dem die Systemkomponenten auch einzeln getestet werden. Dabei wird auch das integrierte System getestet. Man kann sowohl z.B die kundenspezifische Software testet, dabei wird ein Test mit echten Kundendaten durchgeführt. Bei Produkten, die als Aufwendungen verkauft werden, werden die Test als „Beta-Tests“ bezeichnet . Dabei probieren die ausgewählte Benutzer die Software und hinterlassen Kommentare.
+
+![](img/06.png)
+**Abbildung 2.6: Testphasen**
+
+Die Phasen des Testprozesses sind: 
+
+1. **Komponententests.** Hierbei wird jede Komponente ,aus denen das System besteht unabhängig von anderen Komponenten getestet. Bespiel für ein Komponenten wäre hier eine einfache Entität wie Funktionen oder Objektklassen oder kohärente Gruppierungen dieser Entitäten sein. 
+Häufig werden Testautomatisierungstools wie Juni für JAVA verwendet, die Tests erneut ausführen können, wenn eine neue Version der Komponente erstellt werden. 
+
+2. **Systemtest.** Die Systemkomponenten werden zu einem Gesamtsystem integriert. 
+Hier ist es wichtig, zu prüfen, ob das System seine funktionalen und nicht funktionalen Anforderungen erfüllt sowie allgemein das Auffinden von Fehlern, die auch unvorhergesehenen Wechselwirkungen zwischen Komponenten und Schnittstellenproblemen resultieren.
+Außerdem werden hier die emergent Systemeigenschaften getestet.  
+Bei großen Systemen läuft hierbei ein mehrstufiger Prozess mit einzelner Testung von subsystemintegrierten Komponenten. 
+
+3. **Kundentests.** Das ist die letzte Phase des Testprozesses, bevor das System überhaupt für den Betrieb angenommen wird. Hierbei wird es von Systemkunden gestehst und mit realen Daten. Dabei kann man frühzeitig Fehler und Auslassungen in der Definition der Systemanforderungen aufdecken. Wenn das System nicht wirklich den Bedürfnissen der Benutzer entspricht oder die Systemleistung nicht akzeptabel ist, kann man hier auch die Systemanforderungen aufdecken. 
+
+In dem Fall muss das Programm von Fehlern befreit werden und dies kann erfordern ,dass andere Stufen im Testprozess wiederholt werden müssen. Beim Systemtest können beispielsweise Fehler in Programmkomponenten erkannt werden. Das nennt man daher ein integrativer Prozess, bei dem Informationen aus späteren Phasen an frühere Teile des Prozesses zurückgeführt werden. Eine Durchführung von Test ist ein wichtiger Bestandteil bei dem Entwicklungsprozess.
+
+Bei dem inkrementellen Entwicklungsansatz , sollte auch jedes Inkrement während der Entwicklung getestet werden, dabei wird es auf die Anforderungen für ein Inkrement geachtet.
+
+Bei einer testgetriebener Entwicklung werden die Tests mit den Anforderungen entwickelt, bevor überhaupt eine Entwicklung beginnt. 
+Wenn ein plangesteuertes Softwareprozess verwendet wird (z.B für die Entwicklung von kritischen Systeme) wird das Testen von Testplänen gesteuert. Die Testpläne werden aus der Systemspezifikation und dem Design entwickelt.
+
+Die Abbildung 2.7 zeigt uns, die Testpläne eine Verbindung zwischen Test und Entwicklungsaktivitäten zieht ( V-Modell). Das V-Modell zeigt uns die Software-Validierungsaktivitäten , die jeder Stufe des WasserfallsProzessmodells entsprechen ( siehe 2.2). Wenn ein System als Softwareprodukt vermarktet werden soll, wird hierbei häufig ein Testverfahren namens Beta-Testing verwendet. Dabei umfassen die Tests eine Bereitstellung eines Systems an die Kunden, die bereit sind dieses System auch zu benutzen. Bei der realen Nutzung des System werden auch Fehler erkannt, die von Entwicklern möglicherweise vorher nicht erkannt wurden. Nach dem Feedback von dem Kunden kann das Softwareprodukt modifiziert werden und es können hierbei auch weitere test durchgeführt werden sowie an einen allgemeinen Verkauf freigegeben werden. 
+
+![](img/07.png)
+**Abbildung 2.7: Testphasen in einem plangesteuerten Softwareprozess**
+
+## 2.2.4 Software evolution 
+
+Es ist viel sinnvoller eine Änderungen an der Software vorzunehmen als an der Systemhardware ( am Hardwaredesign). Man kann auch umfangreiche Änderungen während und nach der Entwicklung vornehmen und es fällt den Programmierern viel leichter, dies ist auch eine günstigere Variante.
+
+Es gibt aber nicht nur die Softwareentwicklung sondern auch der Prozess namens Softwareevolution ( Softwarewartung). Hier wird oft die Softwarepflege als weniger interessant empfunden und meist wenig unterschieden. Bei den  meisten neuen Systemen wird Entwicklung sowie die Wartung als ein zusammenhängendes Prozess angesehen. Man sollte es aber lieber als ein getrenntes Prozess vorstellen, wie in der Abbildung 2.8 dargestellt ist. Hier wird die Software im Laufe ihrer Lebensdauer als Reaktion auf sich ändern Anforderung und Kundenbedürfnisse kontinuierlich geändert.
+
+![](img/08.png)
+**Abbildung 2.8: Weiterentwicklung von Softwaresystemen**
+
 ## Referenzen
 
 [1]: Ian Sommerville. 2015. Software Engineering (10th. ed.), 43-71.
