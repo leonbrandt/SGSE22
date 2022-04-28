@@ -259,6 +259,7 @@ Es gibt zwei Möglichkeiten, mit Veränderungen und allgemein mit Systemänderun
 3. **System-Prototyping.** Es ist eine schnelle Entwicklung einer Version eines Systems oder einen Teil von System.Hier gelingt es die Anforderungen des Kunden und die Machbarkeit von Designentscheidungen zu überprüfen. Dies ist eine Methode zur Vorwegnahme von Änderungen und einer Reduzierung von Änderungsvorschlägen für Anforderungen. 
 4. **Inkrementelle Lieferung.** Hierbei werden dem Kunden die Systeminkremente zur Kommentierung und zum Experimentieren geliefert. Dies unterstützt sowohl die Änderungsvermeidung, die vorzeitige Festlegung von Anforderungen für das gesamte System und auch die Änderungstoleranz. Ein wichtiger Mechanismus ist auch namens Refactoring. Dabei wird die Struktur und Organisation von Programmen unterstützt sowie die Toleranz gegenüber Änderungen. 
 
+## 2.3.1 Prototyping 
 
 ## Referenzen
 
