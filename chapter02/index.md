@@ -125,7 +125,7 @@ Die Abbildung 2.3 zeigt ein allgemeines Vorgehensmodell für die wiederverwendun
 Integration und Konfiguration. 
 
 ![](img/03.png)
-**Abbildung 2.2: Wiederverwendungsorientiertes Software Engineering**
+**Abbildung 2.3: Wiederverwendungsorientiertes Software Engineering**
 
 Es sind folgende Phasen dargestellt:
 
@@ -148,6 +148,9 @@ Wie diese Aktivitäten jedoch ausgeführt werden, hängt von der Art der zu entw
 Softwarespezifikation oder Requirements Engineering ist der Prozess des Verstehens und Definierens, welche Dienste von System benötigt werden. Wichtig zu erwähnen ist,  dass es hier um das Spezifikation und Verwalten von Anforderungen an ein System bzw. Software geht sowie allgemein um die Entwicklung des Systems. Das Requirements Engineering ist eine besonders kritische Phase des Softwareprozesses , da Fehler, die in dieser Phase gemacht werden, zum späteren Problemen bei der Systemgestaltung und Implementierung führen können.
 
 Vor dem beginn des Requirements-Engineering-Prozesses kann ein Betrieb eine Machbarkeitsstudie durchführen, die mögliche Lösungsansätze überprüft und analysiert. Es kann schon am Anfang die Frage beantwortet werden, ob eine detaillierte Analyse durchgeführt werden soll oder nicht. Ziel ist hier, eine Anforderungsdokumentation zu erstellen sowie auch mit der Prüfung und Abstimmung von Anforderungen mit den Stakeholdern. Die Anforderungen werden in der Regel auf zwei Detailebenen dargestellt. Endbenutzer bzw. Kunden benötigen eine allgemeine Erklärung der Anforderungen; die Systementwickler eine detaillierte Systemspezifikation. Um Missverständnisse zu vermeiden, sollte immer darauf geachtet werden, zwischen den Kommunikationspartnern Klarheit zu schaffen und Rücksprache zu halten. 
+
+![](img/04.png)
+**Abbildung 2.4: Der Requirements-Engineering-Prozess**
 
 Es gibt 3 Hauptaktivitäten im Requirements-Engineering-Prozess:
 
