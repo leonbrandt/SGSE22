@@ -205,6 +205,15 @@ Fehlerprüfung und Fehlerbeseitigung sind unterschiedliche Prozesse. Die Prüfun
 
 Beim Debuggen müssen Sie Hypothesen über das beobachtbare Verhalten des Programms aufstellen und diese Hypothesen dann testen, in der Hoffnung, den Fehler zu finden. Das Testen der Hypothesen kann man entweder manuell durch das Verfolgen des Programmscodes erfolgen  oder wenn es neue Testfälle erforderlich sind, um das Problem mehr zu spezifizieren, hierbei werden zur Unterstützung die Debugging-Prozesse angewendet ,in der Regel werden interaktive Debugging-Tools eingesetzt, die die Zwischenwerte von Programmvariablen und eine Ablaufverfolgung der ausgeführten Anweisungen anzeigen.
 
+## 2.2.3 Softwarevalidierung
+
+Die Vailidierung soll uns zeigen, dass ein System sowohl der Spezifikation entspricht als auch die Erwartungen des Systemkunden erfüllt. 
+Die hauptsächliche Validierungstechnik ist wenn man Programmtests durchführt, bei denen das System unter Verwendung simulierter Testdaten ausgeführt werden. Es kann auch Überprüfungsprozesse wie Inspektionen und Überprüfungen in jeder Phase des Softwareprozesses sein.  Am meisten verbraucht man die Zeit bzw. Arbeit für das Test von Programmen.
+
+Die Abbildung 2.6 zeigt uns einen dreistufigen Testprozess , bei dem die Systemkomponenten auch einzeln getestet werden. Dabei wird auch das integrierte System getestet. Man kann sowohl z.B die kundenspezifische Software testet, dabei wird ein Test mit echten Kundendaten durchgeführt. Bei Produkten, die als Aufwendungen verkauft werden, werden die Test als „Beta-Tests“ bezeichnet . Dabei probieren die ausgewählte Benutzer die Software und hinterlassen Kommentare.
+
+
+
 
 ## Referenzen
 
