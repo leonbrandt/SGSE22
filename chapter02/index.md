@@ -185,6 +185,26 @@ Die Abbildung 2.5 zeigt vier Aktivitäten, die Teil des Entwurfsprozesses für I
 
 Diesen Aktivitäten führen zu den Entwurfsergebnissen. 
 
+Bei sicherheitskritischen Systemen sind die Ergebnisse des Designprozesses detailliert ihn Designdokumenten mit präzisen und genauen Beschreibungen des Systems aufgeführt.
+
+Wenn ein modellgetriebener Ansatz verwendet wird, sind die Entwurfsergebnisse in Entwurfsdiagrammen aufgeführt. Wenn agile Entwicklungsmethoden verwendet werden, dürfen die Ergebnisse des Designprozesses keine separaten Spezifikationsdokumente haben. Die Darstellung erfolgt hierfür aber im Code des Programms. 
+
+Die Entwicklung eines Programms zur Implementierung eines Systems folgt aus dem Systemdesign. Obwohl einige Klassen von Programmen wie .z.B bei sicherheitskritischen Systemen Normalerweisen vor Beginn der Implementierung im Detail entworfen w erden. Deswegen ist es sinnvoll ,dass Design und Programmentwicklung verschachtelt werden.
+
+Hierbei können auch softwareentwicklungswerkzeuge verwendet werden, um ein Skeletonprogramm (automatisch generierte Struktur) aus einem Entwurf zu erstellen. Hierzu wird ein IDL-Compiler Programmcode generiert und Schnittstellen implementiert. In den meisten Fällen wird hier nur Details der Operation jeder Programmkomponente hinzugefügt. 
+
+Dies schließt Code zum Definieren und Implementieren von Schnittstellen ein, und in vielen Fällen muss der Entwickler nur Details der Operation jeder Programmkomponente hinzufügen.
+
+Programmieren ist eine individuelle Aktivität, es gibt hierfür keine allgemeinen Prozesse, die befolgt werden bzw. auch fortgeschrieben werden.  
+
+Einige Programmierer beginnen mit Komponenten, die sie verstehen, entwickeln diese und gehen dann zu weniger verstandenen Komponenten über. Andere machen es andersrum belassen vertraute Komponenten bis zum Schluss, weil sie wissen, wie man sie entwickelt. Einige Entwickler definieren Daten gerne  schon am Anfang im Prozess und verwenden diese dann, um die Programmentwicklung voranzutreiben; andere lassen Daten so lange wie möglich unspezifiziert. Dies führt jedoch zu vielen Fehlern. 
+
+Normalerweise führen Programmierer einige Tests des von ihnen entwickelten Codes durch. Dabei werden häufig diese Programmfehler (Bugs) aufgedeckt, die aus dem Programm entfernt werden müssen. Das Auffinden und Beheben von Programmfehlern heißt Debuggen. 
+
+Fehlerprüfung und Fehlerbeseitigung sind unterschiedliche Prozesse. Die Prüfung stellt das Vorhandensein von Mängeln fest. Beim Debuggen geht es darum, diese Fehler zu finden und zu beheben.
+
+Beim Debuggen müssen Sie Hypothesen über das beobachtbare Verhalten des Programms aufstellen und diese Hypothesen dann testen, in der Hoffnung, den Fehler zu finden. Das Testen der Hypothesen kann man entweder manuell durch das Verfolgen des Programmscodes erfolgen  oder wenn es neue Testfälle erforderlich sind, um das Problem mehr zu spezifizieren, hierbei werden zur Unterstützung die Debugging-Prozesse angewendet ,in der Regel werden interaktive Debugging-Tools eingesetzt, die die Zwischenwerte von Programmvariablen und eine Ablaufverfolgung der ausgeführten Anweisungen anzeigen.
+
 
 ## Referenzen
 
