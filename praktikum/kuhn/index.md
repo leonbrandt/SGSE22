@@ -37,8 +37,3 @@
 * Lassen sich die Vorteile aus beiden Ansätzen eventuell vereinen?
     
 ### Zeitplan
-
-* 29.04.22: UI-Entwurf in die Nutzerbefragung (Ende Befragung 03.05.)
-* 27.05.22: erste Implementierung in die Nutzerbefragung (Ende Befragung 31.05.)
-* 10.06.22: zweite Nutzerbefragung nach Einarbeitung des Feedbacks (Ende Befragung 13.06.)
-* Danach Umsetzung des letzten Feedbacks
