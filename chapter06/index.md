@@ -1,85 +1,37 @@
-# Software processes
+# Architectural Design
 
 **Autor:** Leon Brandt
 
-Nach dem Lesen des Kapitels sollten Sie einiges wissen und dann noch viel mehr und sehr viel mehr und weniger.
+---
 
-## Unterkapitel
+Status dieses Dokuments:
 
-* **Softwaresystem**:
-  Die *innere* Sicht des Informatikers nimmt Software als Softwaresystem wahr.
-* **Softwareprodukt**: Die *äußere* Sicht eines Auftraggeber nimmt ein Softwaresystem als Softwareprodukt wahr. 
+- [ ] Gesamtinhalt stichpunktartig wiedergeben (WIP, ~ 50 %, bis Sa, 30.04.)
+- [ ] Stichpunkte verdichten + strukturieren (bis So, 31.04.)
+- [ ] Fließtext erzeugen (bis Fr, 06.05.)
 
-### Tabelle
+---
 
-| A          |     B       |           C               | 
-|:----------:|:-----------:|:-------------------------:|
-| Eins | Zwei | Drei |
-| Vier | Fünf | Sechs |
+# Einleitung
 
-## Links
+# Architectural Design Decisions
 
-[Markdown] ist eine Sprache, die nach HTML konvertiert werden kann. 
+# Architectural Views
 
-[Markdown]: http://daringfireball.net/projects/markdown/
+# Architectural Patterns
 
-## Aufzählung
+## Layered Architecture
 
-Es unterteilt sich in:
+## Repository Architecture
 
-* A
-  * A1
-* B
-  * B1
-  * B2
-* C
+## Client-Server Architecture
 
+## Pipe and Filter Architecture
 
-# Überschrift
+# Application Architectures
 
-"...the **go to** statement should be abolished..." [1].
+## Transaction Processing Systems
 
-Dieser Link führt intern zu einem anderen [Thema](qualitaet/README)
+## Information Systems
 
-Dieser Link führt extern nach [Youtube](https://www.youtube.com/)
-
-> Dieser Text ist völlig sinnlos, aber steht trotzdem hier. Dieser Text geht über mehrere Zeilen.
-
-## Unterüberschrift
-
-* Eins
-  * eins.eins
-  * eins.zwei
-* Zwei
-  * Zwei.zwei
-* Drei
-
-### Code
-
-```javascript
-public class A {
-  Integer a;
-  public A() {
-    this.a = 1
-  }
-}
-```
-
-Syntax Highlighting für Javascript. Weitere Sprachen müssen konfiguriert werden.
-
-### Bilder
-
-![](media/image.jpg)
-
-### Audio
-
-[](media/sample.mp3 ':include')
-
-### Video
-
-[](media/sample.mp4 ':include')
-
-## Referenzen
-
-[1]: Dijkstra, E. W. (1968). Go to statement considered harmful. 
-Communications of the ACM, 11(3), 147-148.
+## Language Processing Systems
