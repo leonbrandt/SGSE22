@@ -262,6 +262,9 @@ Es gibt zwei Möglichkeiten, mit Veränderungen und allgemein mit Systemänderun
 
 ## 2.3.1 Prototyping 
 
+![](img/09.png)
+**Abbildung 2.9: Prototypenentwicklung**
+
 ## Referenzen
 
 [1]: Ian Sommerville. 2015. Software Engineering (10th. ed.), 43-71.
