@@ -81,7 +81,7 @@ Type Mutation {
 
 - Mit Hilfe des Schemas können alle möglichen Informationen über die Schnittstelle gewonnen werden.
 - Schemas können leicht als Graph visualisiert werden. Beispiele: [GraphQL Voyager](https://apis.guru/graphql-voyager/)
-- Aus den Schemas lässt sich Code für den Client (React, Vue, Angular, ...) und den Server(Node.js, .NET, Java, ...) generieren.
+- Aus den Schemas lässt sich Code für den Client (React, Vue, Angular, ...) und den Server(Node.js, .NET, Java, ...) generieren. [GraphQL Code Generator](https://www.graphql-code-generator.com/)
 
 ### Typ-System Schema
 
