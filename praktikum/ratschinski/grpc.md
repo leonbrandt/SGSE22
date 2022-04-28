@@ -1,5 +1,12 @@
 # gRPC
 
+## Inhalt
+
+- [Paradigma](#paradigma)
+- [Datenformat](#datenformat)
+- [Schnittstellenbeschreibung](#schnittstellenbeschreibung)
+- [Vorläufiges Fazit](#vorläufiges-fazit)
+
 ## Paradigma
 
 ![grpc](./assets/grpc/grpc.png)
@@ -69,6 +76,40 @@ Nachteile:
 Stückweise Übertragung ist mit etwas Mehraufwand möglich.
 
 - Stream Blöcke
+
+## Schnittstellenbeschreibung
+
+Die Schnittstelle wird in gRPC über proto Dateien beschrieben.
+
+_proto Datei_
+
+```protobuf
+service ProductService {
+  rpc Create(Product) returns (Id) {}
+  rpc Get(Id) returns (Product) {}
+}
+
+message Id {
+  int32 id = 1;
+}
+
+message Product {
+  int32 id = 1;
+  string name = 2;
+  float weight = 3;
+}
+```
+
+Der proto Compiler kann aus den Dateien verschiedene Vorlagen für Clients und Server erstellen.
+
+_Beispiel GO Client und JAVA Server_
+![proto](./assets/grpc/proto.png)
+
+Dadurch dass die Feldnummern in den proto Dateien nicht verändert werden dürfen entsteht eine gute Kompatibilität zwischen den verschiedenen Schnittstellenversionen.
+
+- Typen dürfen vertauscht werden solange kein **Overflow** entsteht
+- Namen dürfen geändert werden, da intern nur die Feldnummern benutzt werden
+- **Wichtig** Feldnummern dürfen gelöscht, aber später nicht wieder verwendet werden
 
 ## Vorläufiges Fazit
 

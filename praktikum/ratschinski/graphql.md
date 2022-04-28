@@ -1,5 +1,12 @@
 # GraphQL
 
+## Inhalt
+
+- [Paradigma](#paradigma)
+- [Datenformat](#datenformat)
+- [Schnittstellenbeschreibung](#schnittstellenbeschreibung)
+- [Vorläufiges Fazit](#vorläufiges-fazit)
+
 ## Paradigma
 
 ![graphql](./assets/graphql/graphql.png)
@@ -46,15 +53,68 @@ Content-Type: application/json
   - Nachteil: Base64 ist immer größer als die jeweilige Datei (ca. 30%)
   - Bilder können als Verweis(Link) versendet werden
 
+## Schnittstellenbeschreibung
+
+Die Schnittstelle wird in GraphQL mit einem Schema beschrieben.
+
+_graphql schema_
+
+```graphql
+type Product {
+  id: ID!
+  name: String!
+}
+
+input ProductIn {
+  name: String!
+}
+
+type Query {
+  product(id: ID!): Product
+  products: [Product!]!
+}
+
+Type Mutation {
+  createProduct(product: ProductIn!): Product!
+}
+```
+
+- Mit Hilfe des Schemas können alle möglichen Informationen über die Schnittstelle gewonnen werden.
+- Schemas können leicht als Graph visualisiert werden. Beispiele: [GraphQL Voyager](https://apis.guru/graphql-voyager/)
+- Aus den Schemas lässt sich Code für den Client (React, Vue, Angular, ...) und den Server(Node.js, .NET, Java, ...) generieren.
+
+### Typ-System Schema
+
+- Einfache Typen
+
+  - Int
+  - String
+  - Float
+  - Boolean
+  - ID
+
+- Zusammengesetzte
+  - Objekte
+  - Enumeration
+  - Interfaces
+  - Unions
+
+### Schemas und Microservices
+
+Die Schnittstellenbeschreibung mit Schemas, eignet sich sehr gut für Microservices
+
+![GraphQL Schema](./assets/graphql/graphql_schema.png)
+
 ## Vorläufiges Fazit
 
 Vorteile:
 
 - Format ist vorgegeben
 - Type - System
-- Schnittstellenbeschreibung
+- ausführliche Schnittstellenbeschreibung
+- Eignet sich gut für Microservices
 
 Nachteile:
 
-- Nur JSON
+- Nur JSON wird zurückgegeben
 - Fehlende Unterstützung für binäre Daten
