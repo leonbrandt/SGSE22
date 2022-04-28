@@ -7,7 +7,6 @@
 * [**Benjamin Krüger**](praktikum/krueger/index)
 * [**Finn Kuhn**](praktikum/kuhn/index)
 * [**Tim Lücking**](praktikum/luecking/index)
-* [**Christoph Raitzig**](praktikum/raitzig/index)
 * [**Kevin Ratschinski**](praktikum/ratschinski/index)
 * [**Marco Reineke**](praktikum/reineke/index)
 * [**Christop Raitzig & Malte Reinsch**](praktikum/reinsch_raitzig/index)
