@@ -124,6 +124,9 @@ Drei Arten von Softwarekomponenten werden häufig wiederverwendet:
 Die Abbildung 2.3 zeigt ein allgemeines Vorgehensmodell für die wiederverwendungsbasierte Entwicklung, wie z.B basierend auf
 Integration und Konfiguration. 
 
+![](img/03.png)
+**Abbildung 2.2: Wiederverwendungsorientiertes Software Engineering**
+
 Es sind folgende Phasen dargestellt:
 
 1.	**Anforderungsspezifikation.** Hier sind die anfänglichen Anforderungen an das System gestellt.bDiese müssen nicht im Detail ausgearbeitet werden, sollten aber kurz sein, wie Beschreibungen der wesentlichen Anforderungen und Systemmerkmale
