@@ -62,4 +62,4 @@ Der aktuelle Implementierungsfortschritt kann [HIER](https://github.com/mwithoef
 
 ## Aufgetretene Probleme
 
-- Bei der versuchten Implementierung eines WebTransport-Servers in NodeJS wurde festgestellt, das sich solcher nicht dort umsetzen lässt. Die begründete Wahl und die Dokumentation der Programmiersprache für das Backend lässt sich [HIER](./backendProgrammiersprache.md) finden.
+- Bei der versuchten Implementierung eines WebTransport-Servers in NodeJS wurde festgestellt, das sich solcher nicht dort umsetzen lässt. Die begründete Wahl und die Dokumentation der Programmiersprache für das Backend lässt sich [HIER](praktikum/withöft/backendProgrammiersprache) finden.

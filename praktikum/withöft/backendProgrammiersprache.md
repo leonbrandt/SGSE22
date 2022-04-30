@@ -50,13 +50,13 @@ s.ListenAndServeTLS("/etc/letsencrypt/live/webtransport.withoeft.nz/cert.pem", "
 
 Der Server wurde nun erfolgreich gestartet und auch Probleme mit den Zertifikaten gab es an dieser Stelle nicht mehr. Doch nun gab es das Problem, dass die *Methode* nicht unterstützt wurde. Auch nach zahlreichen Recherchen und ausprobierten Konfigurationen, konnte hierfür keine Lösung gefunden werden.
 
-<img src="./assets/methodNotSupported.png" style="border: 3px solid black; border-radius: 5px;" />
+<img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/methodNotSupported.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
 
-<img src="./assets/connectionFailed.png" style="border: 3px solid black; border-radius: 5px;" />
+<img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/connectionFailed.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
 
 Eine weitere Implementierung eines WebTransport-Servers wurde bereits mit Python durchgeführt, sodass diese Implementierung im weiteren am vielversprechendsten war. Zum Testen wurde an dieser Stelle die Beispielsimplementierung die Beispielimplementierung verwendet, um das Herstellen einer Verbindung ausprobieren zu können [[5]](#ref5). Dabei wird über WebTransport eine Verbindung hergestellt, bei der die vom Server empfangenen Daten einfach zurückgeschickt werden. Dieser Versuch verlief erfolgreich, sodass für die weitere Implementierung an die aktuelle Version in Python angeknüpft wird.
 
-<img src="./assets/connectionSuccessful.png" style="border: 3px solid black; border-radius: 5px;" />
+<img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/connectionSuccessful.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
 
 Bei der Implementierung von Websockets ist nicht von einer solchen Problematik auszugehen. Dieser Mechanismus existiert bereits eine ganze Zeit und ließ sich unproblematisch bereits in NodeJS umsetzen. Um beide Protokolle miteinander vergleichen zu können, muss die Implementierung des Websockets-Servers nun auch in Python erneut durchgeführt werden, damit eventuelle Unterschiede bei den Messungen nicht auf die verwendete Programmiersprache zurückzuführen sind.
 
