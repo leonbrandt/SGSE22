@@ -50,8 +50,8 @@ Der aktuelle Implementierungsfortschritt kann [HIER](https://github.com/mwithoef
 | Termin                                                   | Fortschritt                                                  |
 | -------------------------------------------------------- | ------------------------------------------------------------ |
 | 28.04.2022                                               | Fertigstellung der Ausarbeitung                              |
-| 05.05.2022                                               | Implementierung von Websockets und WebTransport im Backend   |
-| 12.05.2022                                               | Funktionierende Kommunikation mit dem Frontend               |
+| 05.05.2022                                               | Implementierung von Websockets und WebTransport im Backend, Arbeit an Präsentation |
+| 12.05.2022                                               | Funktionierende Kommunikation mit dem Frontend, Arbeit an Präsentation |
 | 19.05.2022                                               | Anfordern von Livedaten im Backend, Lieferung dieser Daten vom Backend zum Frontend |
 | 26.05.2022                                               | Darstellung erhaltener Daten im Frontend, inklusive Metadaten (wie Transferzeit) |
 | 02.06.2022                                               | Messung von Geschwindigkeit, in Abhängigkeit von verbundenen Clients, Dokumentation der Ergebnisse |
