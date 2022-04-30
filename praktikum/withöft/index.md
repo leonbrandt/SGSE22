@@ -47,27 +47,19 @@ Der aktuelle Implementierungsfortschritt kann [HIER](https://github.com/mwithoef
 
 ## Zeitplan
 
-| Termin                                                   | Fortschritt                     |
-| -------------------------------------------------------- | ------------------------------- |
-| 28.04.2022                                               | Fertigstellung der Ausarbeitung |
-| 05.05.2022                                               |                                 |
-| 12.05.2022                                               |                                 |
-| 19.05.2022                                               |                                 |
-| 26.05.2022                                               |                                 |
-| 02.06.2022                                               |                                 |
-| 09.06.2022                                               |                                 |
-| 16.06.2022                                               |                                 |
-| 23.06.2022                                               |                                 |
-| 30.07.2022 (letzter Termin vor Beginn der Prüfungsphase) |                                 |
+| Termin                                                   | Fortschritt                                                  |
+| -------------------------------------------------------- | ------------------------------------------------------------ |
+| 28.04.2022                                               | Fertigstellung der Ausarbeitung                              |
+| 05.05.2022                                               | Implementierung von Websockets und WebTransport im Backend   |
+| 12.05.2022                                               | Funktionierende Kommunikation mit dem Frontend               |
+| 19.05.2022                                               | Anfordern von Livedaten im Backend, Lieferung dieser Daten vom Backend zum Frontend |
+| 26.05.2022                                               | Darstellung erhaltener Daten im Frontend, inklusive Metadaten (wie Transferzeit) |
+| 02.06.2022                                               | Messung von Geschwindigkeit, in Abhängigkeit von verbundenen Clients, Dokumentation der Ergebnisse |
+| 09.06.2022                                               | Messung des maximalen Austauschs von Nachrichten pro Sekunde, Dokumentation der Ergebnisse |
+| 16.06.2022                                               | Messung der Performanz beim Austausch großer Datenmengen, Dokumentation der Ergebnisse |
+| 23.06.2022                                               | Dokumentation der Ergebnisse, Gegenlesen, Ausarbeitung optimieren |
+| 30.07.2022 (letzter Termin vor Beginn der Prüfungsphase) | Dokumentation der Ergebnisse, Gegenlesen, Ausarbeitung optimieren |
 
 ## Aufgetretene Probleme
 
-- Kein HTTP/3 Support in NodeJS
-  - https://github.com/nodejs/node/issues/38478
-  - https://github.com/expressjs/express/issues/4693
-  - https://www.reddit.com/r/node/comments/qbeo2n/node_v1700_current/
-
-Alternativen:
-
-- Server-Sent-Events
-- WebRTC (Nachteile: Verwendet oft Sockets under the hood)
+- Bei der versuchten Implementierung eines WebTransport-Servers in NodeJS wurde festgestellt, das sich solcher nicht dort umsetzen lässt. Die begründete Wahl und die Dokumentation der Programmiersprache für das Backend lässt sich [HIER](./backendProgrammiersprache.md) finden.
