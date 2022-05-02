@@ -6,12 +6,12 @@
 
 ## Inhalt
 - Welche Funktionaltäten bieten die einzelnen Tools und worin unterscheiden sich diese?
-- Wie unterscheidet sich die Buildzeit?
-- Welchen Performancegewinn kann durch die Verwendung von Webpack, esbuild oder Vite gewonnen werden?
-- Wie groß ist der Konfigurationsaufwand von Webpack, Vite und esbuild?
 - Welche Programmiersprachen werden unterstützt?
 - Welche Build-Module gibt es?
+- Wie groß ist der Konfigurationsaufwand von Webpack, Vite und esbuild?
+- Wie unterscheidet sich die Buildzeit?
 - Wie stark verändert sich die Größe des Deployments?
+- Welchen Performancegewinn kann durch die Verwendung von Webpack, esbuild oder Vite gewonnen werden?
 - Gibt es Anwendungsbereiche in den Vite, Webpack oder esbuild zu bevorzugen sind?
 
 ## Zeitplan
@@ -26,4 +26,9 @@
 - KW 25 Erstellen digitales Medium
 - KW 26 Abgabe
 
+## Beschreibung der Tätigkeit in Prosa
+Die JavaScript Bundler Vite, Webpack und esbuild werden evaluiert. Dabei wird die Funktionalitäten der einzelnen Tools miteinander verglichen. Des Weiteren werden die möglichen Programmiersprachen, in den diese eingesetzt werden können, ermittelt. Ein weiterer Punkt sind die verschiedenen Build-Module die diese mitbringen. <br>
+Vite, Webpack und esbuild sollen darauffolgend an einer bestehenden Node.JS Anwendung angewendet werden. Der Konfigurationaufwand, der benötigt wird um Vite, Webpack und esbuild zu verwenden, ist ebenfalls eine zu erfassende Metrik. Dabei wird die Buildzeit und die Größe des Deployments miteinander verglichen. Im Anschluss wird der Performancegewinn, der durch die Verwendung der einzelnen Tools erreicht wird, gemessen. <br>
+Des Weiteren wird erörter in welchen Anwendungsbereichen Vite, Webpack oder esbuild zu bevorzugen sind. <br>
+Am Ende der Evaluierung wird ein gesamtes Fazit gezogen. <br>
 

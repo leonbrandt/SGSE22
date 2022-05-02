@@ -2,20 +2,10 @@
 
 **Autor:** Kevin Ratschinski
 
-## Inhalt
+## Einführung
 
-- [**24 Einführung**](#_24-einführung)
-- [**24.1 Softwarequalität**](#_241-softwarequalität)
-- [**24.2 Software - Standards**](#_242-softwarestandards)
-- [**24.3 Reviews und Inspektionen**](#_243-reviews-und-inspektionen)
-- [**24.4 Qualitätsmanagement und agile Entwicklung**](#_244-qualitätsmanagement-und-agile-entwicklung)
-- [**24.5 Softwaremessung**](#_245-softwaremessung)
-- [**24.6 Zusammenfassung**](#_246-zusammenfassung)
-- [**24.7 Referenzen**](#_247-referenzen)
-
-## 24 Einführung
-
-Kapitel 24 befasst sich mit dem Qualitätsmanagement in der Softwareentwicklung.
+Das Kapitel befasst sich mit dem Qualitätsmanagement in der Softwareentwicklung.  
+Die beschriebenen Inhalte stammen aus dem Buch **Software Engineering** von **Ian Sommerville**[[1]](#ref_1) (S. 700-729).
 
 Softwaresysteme sollen "fit for purpose" sein. Das heißt den Bedürfnissen ihrer Benutzer entsprechen.
 Darunter zählen z.B.:
@@ -38,13 +28,11 @@ Damit wird sichergestellt, dass die zuvor festgelegten Standards und Ziele des U
 
 <figure style="text-align: center;">
   <!-- github -->
-  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.1_qm_und_softwareentwicklung.png?raw=true" alt="Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung"/> 
-  <!-- local -->
-  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.1_qm_und_softwareentwicklung.png" alt="Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung"/> -->
-  <figcaption>Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung</figcaption>
+  <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.1_qm_und_softwareentwicklung_de.png?raw=true" alt="Abbildung 1: Qualitätsmanagement und Softwareentwicklung"/> 
+  <figcaption>Abbildung 1: Qualitätsmanagement und Softwareentwicklung</figcaption>
 </figure>
 
-Abbildung 24.1 zeigt den Ablauf eines Softwareentwicklungsprozess. Bevor die Entwicklung beginnt, werden die Standards festgelegt und ein Qualitätsplan vom QM-Team erstellt. Das QM-team sollte stets unabhängig von der Entwicklergruppe sein, damit es die Qualität der Software objektiv beurteilen kann.
+Abbildung 1 zeigt den Ablauf eines Softwareentwicklungsprozess. Bevor die Entwicklung beginnt, werden die Standards festgelegt und ein Qualitätsplan vom QM-Team erstellt. Das QM-team sollte stets unabhängig von der Entwicklergruppe sein, damit es die Qualität der Software objektiv beurteilen kann.
 Die gewünschten Softwareeigenschaften, welche das Produkt später haben muss, sollten vor Projektbeginn in einem Qualitätsplan festgehalten werden.
 
 Nach Humphrey (1989) [[2]](#ref_2) könnte ein Qualitätsplan wie folgt aufgebaut werden:
@@ -57,7 +45,7 @@ Nach Humphrey (1989) [[2]](#ref_2) könnte ein Qualitätsplan wie folgt aufgebau
 
 Traditionelles Qualitätsmanagement ist ein formaler Prozess, der sich auf eine ausführliche Dokumentation der Tests und Systemvalidierungen, sowie auf die Einhaltung dieser Prozesse stützt.
 
-## 24.1 Softwarequalität
+## Softwarequalität
 
 Die Grundlagen für das Qualitätsmanagement kommen ursprünglich aus der Fertigungsindustrie. Mit Hilfe von QM kann in der Fertigung, die Qualität der produzierten Produkte verbessert werden. Die Produzierten Produkte können mit der Produktspezifikation verglichen werden. Liegt ein Produkt im Toleranzbereich der Spezifikation wird es als akzeptabel klassifiziert.
 
@@ -73,7 +61,7 @@ Aufgrund dieser Probleme handelt es sich beim Qualitätsmanagement in der Softwa
 Die subjektive Qualität eines Softwaresystems basiert größtenteils auf seinen nicht funktionalen Eigenschaften. Deshalb ist Softwarequalität nicht nur eine Frage der korrekten Implementierung, sondern hängt auch sehr stark von den nicht funktionalen Eigenschaften ab.  
 Folgende Tabelle zeigt einige nicht funktionale Eigenschaften, die bei der Ermittlung der Softwarequalität oft eine wichtige Rolle spielen.
 
-<p style="margin: 0 auto; width: fit-content;">Tabelle 24.1: Softwarequalitätsmerkmale</p>
+<p style="margin: 0 auto; width: fit-content;">Tabelle 1: Softwarequalitätsmerkmale</p>
 <table style="border: 4px solid rgba(0, 0, 0, 0.4); border-radius: 10px; margin: 0.5rem auto; width: fit-content;">
   <tr>
     <td>Betriebssicherheit</td>
@@ -109,17 +97,15 @@ Die folgende Abbildung zeigt einen prozessbasierten Qualitätsansatz.
 
 <figure style="text-align: center;">
   <!-- github -->
-  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.2_prozessbasierte_qualitaet.png?raw=true" alt="Abbildung 24.1: Qualitätsmanagement und Softwareentwicklung"/> 
-  <!-- local -->
-  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.2_prozessbasierte_qualitaet.png" alt="Abbildung 24.2 Prozessbasierte Qualität"/> -->
-  <figcaption>Abbildung 24.2 Prozessbasierte Qualität</figcaption>
+  <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.2_prozessbasierte_qualitaet_de.png?raw=true" alt="Abbildung 2 Prozessbasierte Qualität"/> 
+  <figcaption>Abbildung 2: Prozessbasierte Qualität</figcaption>
 </figure>
 
 Anders als in der Fertigung ist die Beziehung zwischen Prozess- und Produktqualität komplexer. Prozesse lassen sich schwieriger standardisieren und überwachen, als es in der Fertigung der Fall ist. Trotzdem hat der Prozess, der für die Entwicklung der Software verwendet wird, einen großen Einfluss auf die Qualität der Software. Gute Entwicklungsprozesse werden mit großer Wahrscheinlichkeit auch qualitativ bessere Software hervorbringen.
 
 Definierte Standards sind ebenfalls wichtig, aber zusätzlich sollte noch versucht werden eine "Qualitätskultur" zu entwickeln, in der jeder, der an der Produktentwicklung beteiligt ist, zum Erreichen einer hohen Produktqualität verpflichtet ist. Anders als in der Fertigung, wo die Qualität eines Produktes zu einem gewissen Teil von Maschinen und deren Konfiguration abhängt, wird die Softwarequalität direkt von jedem einzelnen Mitarbeiter beeinflusst.
 
-## 24.2 Softwarestandards
+## Softwarestandards
 
 Softwarestandards spielen eine wichtige Rolle im Softwarequalitätsmanagement. Die Wahl der Standards legt zum großen Teil die eingesetzten Werkzeuge und Methoden fest, die während des Entwicklungsprozesses verwendet werden.  
 Standards sind aus den folgenden drei Gründen wichtig:
@@ -139,7 +125,7 @@ Es gibt zwei verwandte Arten von Software-Engineering-Standards, die im Software
 Standards müssen sich immer positiv auf die Produktqualität auswirken. Produktstandards sollten dabei so entworfen werden, dass sie kosteneffizient angewendet und geprüft werden können. Prozessstandards sollten die Prozesse definieren, die prüfen, dass die Produktstandards eingehalten werden.  
 Folgende Tabelle zeigt mögliche Produkt- und Prozessstandards:
 
-<p style="margin: 0 auto; width: fit-content;">Tabelle 24.2: Produkt- und Prozessstandards</p>
+<p style="margin: 0 auto; width: fit-content;">Tabelle 2: Produkt- und Prozessstandards</p>
 <table style="border: 4px solid rgba(0, 0, 0, 0.4); border-radius: 10px; margin: 0.5rem auto; width: fit-content;">
   <tr>
     <th>Produktstandards</th>
@@ -181,7 +167,7 @@ Entwickler finden oft, dass die Standards einen zu starken Vorschriftencharakter
 
 - Sicherstellen, dass Werkzeugunterstützung für die standardbasierte Entwicklung zur Verfügung steht.
 
-### 24.2.1 ISO 9001
+### ISO 9001
 
 Mit der **ISO 9000** gibt es eine internationale Normenreihe, die in allen Branchen zur Entwicklung eines Qualitätsmanagementsystem eingesetzt werden kann. Die **ISO 9001** ist die allgemeinste dieser Normen und betrifft Firmen, die Produkte entwerfen, entwickeln und warten.
 
@@ -189,37 +175,33 @@ Alle Standards, die in diesem Abschnitte besprochen werden, gehen auf die **ISO 
 
 Die ISO 9001 ist kein Standard speziell für die Softwareentwicklung. Die Norm legt die allgemeinen Qualitätsgrundsätze fest und beschreibt generell die Qualitätsprozesse und skizziert die zu definierenden betrieblichen Standards und Verfahren.  
 Alle Unternehmen, die sich nach ISO 9001 zertifizieren lassen möchten, müssen dokumentieren, dass ihre Prozesse ISO 9001-konform sind. Darüber hinaus müssen Maßnahmen definiert und Protokolle erstellt werden, die nachweisen, dass die festgelegten Unternehmensprozesse eingehalten werden. Um dies zu realisieren, sollten in einem Qualitätshandbuch alle wichtigen Prozesse beschrieben werden.  
-Abbildung 24.3 zeigt die Kernprozesse eines Software- oder Systemherstellers nach ISO 9001.
+Abbildung 3 zeigt die Kernprozesse eines Software- oder Systemherstellers nach ISO 9001.
 
 <figure style="text-align: center;">
   <!-- github -->
-  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.3_kernprozesse_iso9001.png?raw=true" alt="Abbildung 24.3 Kernprozesse eines Software- oder Systemherstellers nach ISO 9001"/> 
-  <!-- local -->
-  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.3_kernprozesse_iso9001.png" alt="Abbildung 24.3 Kernprozesse eines Software- oder Systemherstellers nach ISO 9001"/> -->
-  <figcaption>Abbildung 24.3 Kernprozesse eines Software- oder Systemherstellers nach ISO 9001</figcaption>
+  <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.3_kernprozesse_iso9001_de.png?raw=true" alt="Abbildung 3 Kernprozesse eines Software- oder Systemherstellers nach ISO 9001"/> 
+  <figcaption>Abbildung 3: Kernprozesse eines Software- oder Systemherstellers nach ISO 9001</figcaption>
 </figure>
 
-In der Norm werden keine Qualitätsprozesse definiert oder vorgeschrieben welche Prozesse eingesetzt werden müssen. Um mit der ISO 9001 kompatibel zu sein, muss ein Unternehmen z.B. die verschiedenen Prozesse aus Abbildung 24.3 definieren und Verfahren entwickeln, die nachweisen, dass seine Qualitätsprozesse eingehalten werden. Diese gewährt den Unternehmen eine gewisse Flexibilität, bei der Umsetzung der Norm.
+In der Norm werden keine Qualitätsprozesse definiert oder vorgeschrieben welche Prozesse eingesetzt werden müssen. Um mit der ISO 9001 kompatibel zu sein, muss ein Unternehmen z.B. die verschiedenen Prozesse aus Abbildung 3 definieren und Verfahren entwickeln, die nachweisen, dass seine Qualitätsprozesse eingehalten werden. Diese gewährt den Unternehmen eine gewisse Flexibilität, bei der Umsetzung der Norm.
 
 Unabhängige Zertifizierungsbehörden prüfen die Qualitätsmanagementprozesse und deren Dokumentation und entscheiden, ob die Prozesse alle die in der ISO 9001 angegebenen Bereiche abdecken. Wenn ja, erfolgt eine Zertifizierung, dass alle Prozesse eines Unternehmens mit der ISO 9001 übereinstimmen.
 
-## 24.3 Reviews und Inspektionen
+## Reviews und Inspektionen
 
 Reviews und Inspektionen sind Teile der Qualitätssicherung, mit denen sich die Qualität von Projektlieferungen prüfen lässt. Dabei wird die Software, ihre Dokumentation sowie die Prozessprotokolle untersucht, um Fehler und Versäumnisse festzustellen und um zu sehen, ob die zuvor festgelegten Qualitätsstandards eingehalten wurden.
 
 Mit Hilfe von Reviews und Inspektionen, soll die Softwarequalität verbessert und nicht die Leistung der einzelnen Mitarbeiter bewertet werden.
 
-### 24.3.1 Reviews
+### Reviews
 
 Auch wenn Reviews sehr unterschiedlich ausfallen können, ist der Review-Prozess normalerweise in drei Phasen gegliedert.
-Abbildung 24.4 zeigt einen Review-Prozess in der Softwareentwicklung.
+Abbildung 4 zeigt einen Review-Prozess in der Softwareentwicklung.
 
 <figure style="text-align: center;">
   <!-- github -->
-  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.4_review_prozess.png?raw=true" alt="Abbildung 24.4 Der Review-Prozess in der Softwareentwicklung"/> 
-  <!-- local -->
-  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.4_review_prozess.png" alt="Abbildung 24.4 Der Review-Prozess in der Softwareentwicklung"/> -->
-  <figcaption>Abbildung 24.4 Der Review-Prozess in der Softwareentwicklung</figcaption>
+  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.4_review_prozess_de.png?raw=true" alt="Abbildung 4 Der Review-Prozess in der Softwareentwicklung"/> 
+  <figcaption>Abbildung 4: Der Review-Prozess in der Softwareentwicklung</figcaption>
 </figure>
 
 1. **Aktivitäten vor dem Review**:  
@@ -232,13 +214,13 @@ Abbildung 24.4 zeigt einen Review-Prozess in der Softwareentwicklung.
 3. **Aktivitäten nach dem Review**:  
    Nachdem Review, müssen Lösungen für die Fragen, die sich bei der Sitzung ergeben haben, gefunden werden. Eventuell müssen Softwarefehler behoben werden oder die Software muss umgestaltet werden, um den Qualitätsstandards zu entsprechen. Sind schwerwiegende Fehler während des Reviews festgestellt worden, kann zusätzlich ein Management-Review erforderlich sein, um zu entscheiden ob mehr Ressourcen zur Verfügung gestellt werden müssen. Nachdem sämtliche Änderungen vorgenommen wurden, kann der Verantwortliche prüfen, ob alle zuvor vereinbarten Punkte erledigt sind.
 
-### 24.3.2 Programminspektionen
+### Programminspektionen
 
 Programminspektionen sind "**Peer-Reviews**", bei denen Teammitglieder zusammen nach Fehlern in der Software suchen, die gerade entwickelt wird. Die Mitglieder sehen sich den Quelltext des Programms an und suchen nach Fehlern und Problemen. Bei den Fehlern kann es sich um logische Fehler, Anomalien im Code, die zu einen möglicherweise falschen Zustand führen oder um Funktionen, die im Code nicht verwendet werden handeln. Das Review-Team überprüft den Programmcode und hebt Probleme hervor, mit denen sich das Entwicklerteam noch einmal beschäftigen muss.
 
-Bei Inspektionen wird oft eine Checkliste häufiger Programmierfehler verwendet, um eine konzentrierte Suche nach den Fehlern zu ermöglichen. Mögliche Überprüfungen, die während eines Inspektionsprozesses vorgenommen werden können, sind in Tabelle 24.3 abgebildet.
+Bei Inspektionen wird oft eine Checkliste häufiger Programmierfehler verwendet, um eine konzentrierte Suche nach den Fehlern zu ermöglichen. Mögliche Überprüfungen, die während eines Inspektionsprozesses vorgenommen werden können, sind in Tabelle 3 abgebildet.
 
-<p style="margin: 0 auto; width: fit-content;">Tabelle 24.3: Produkt- und Prozessstandards</p>
+<p style="margin: 0 auto; width: fit-content;">Tabelle 3: Produkt- und Prozessstandards</p>
 <table style="border: 4px solid rgba(0, 0, 0, 0.4); border-radius: 10px; margin: 0.5rem auto; width: fit-content;">
   <tr>
     <th>Fehlerklasse</th>
@@ -320,7 +302,7 @@ Dies hat mitunter folgende Gründe:
 - Zusätzliche Kosten während der Entwicklungsphase.
 - Manager haben das Risiko dieser Zusatzkosten, welches sie oft nicht tragen wollen.
 
-## 24.4 Qualitätsmanagement und agile Entwicklung
+## Qualitätsmanagement und agile Entwicklung
 
 Qualitätsmanagement ist ein formaler Prozess, der sich auf eine ausführliche Dokumentation der Tests sowie auf die Einhaltung dieser Prozesse stützt. Diesem steht die agile Entwicklung gegenüber, die zum Ziel hat, so wenig Zeit wie möglich für das Schreiben von Dokumenten und dem Formalisieren der Entwicklungsarbeit aufzuwenden. Deshalb mussten QM-Techniken für den Einsatz von agilen Methoden entwickelt werden.
 
@@ -349,7 +331,7 @@ Dies kann folgende Gründe haben:
 
 Aus den folgenden Gründen muss der informelle Ansatz in agilen Methoden, bei größeren Projekten welche eine Dokumentation erfordern, angepasst werden. Anstatt Software zu entwickeln könnte zum Beispiel einer der Sprints sich auf die Erstellung der wichtigsten Softwaredokumentationen konzentrieren.
 
-## 24.5 Softwaremessung
+## Softwaremessung
 
 Bei der Softwaremessung geht es darum, Merkmale eines Softwaresystems zu quantifizieren. Die gemessenen Werte, ermöglichen ein Vergleich mit den unternehmensweiten Standards. Idealerweise könnte sich das Qualitätsmanagement auf die Messungen dieser Werte verlassen. Dann könnten sie objektiv bewerten, inwiefern Änderungen an den Prozessen sich auf die Softwarequalität auswirken.  
 Langfristig zielt Softwaremessung darauf ab, die Softwarequalität anhand von Messungen zu beurteilen.
@@ -372,17 +354,15 @@ Es gibt drei verschiedene Arten von Prozessmetriken:
 
 3. _Die Häufigkeit bestimmter Ereignisse:_ Beispiele für Ereignisse könnte die Zahl der geforderten Anforderungsänderungen oder die Anzahl der Fehlerberichte in einem ausgelieferten System sein.
 
-Viele der Qualitätsmerkmale aus _Tabelle 24.1_ lassen sich nur schwer direkt messen. Attribute wie Verständlichkeit und Benutzerfreundlichkeit, beziehen sich darauf, wie Entwickler und Benutzer die Software sehen. Sie unterliegen stark subjektiven Faktoren wie zum Beispiel Erfahrung und können deshalb objektiv nicht richtig gemessen werden. Um diese Attribute zu beurteilen, müssen zuerst einige interne Attribute (wie Codegröße, Komplexität, usw.) gemessen werden und diese danach mit den anderen Attributen in Verbindung gebracht werden. Ein Beispiel hierfür zeigt Abbildung 24.5.
+Viele der Qualitätsmerkmale aus _Tabelle 1_ lassen sich nur schwer direkt messen. Attribute wie Verständlichkeit und Benutzerfreundlichkeit, beziehen sich darauf, wie Entwickler und Benutzer die Software sehen. Sie unterliegen stark subjektiven Faktoren wie zum Beispiel Erfahrung und können deshalb objektiv nicht richtig gemessen werden. Um diese Attribute zu beurteilen, müssen zuerst einige interne Attribute (wie Codegröße, Komplexität, usw.) gemessen werden und diese danach mit den anderen Attributen in Verbindung gebracht werden. Ein Beispiel hierfür zeigt Abbildung 5.
 
 <figure style="text-align: center;">
   <!-- github -->
-  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.5_beziehungen_von_softwaremerkmalen.png?raw=true" alt="Abbildung 24.5 Beziehungen zwischen internen und externen Softwaremerkmalen"/> 
-  <!-- local -->
-  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.5_beziehungen_von_softwaremerkmalen.png" alt="Abbildung 24.5 Beziehungen zwischen internen und externen Softwaremerkmalen"/> -->
-  <figcaption>Abbildung 24.5 Beziehungen zwischen internen und externen Softwaremerkmalen</figcaption>
+  <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.5_beziehungen_von_softwaremerkmalen_de.png?raw=true" alt="Abbildung 5 Beziehungen zwischen internen und externen Softwaremerkmalen"/> 
+  <figcaption>Abbildung 5: Beziehungen zwischen internen und externen Softwaremerkmalen</figcaption>
 </figure>
 
-In der Abbildung 24.5 sind externe sowie interne Merkmale zueinander in Beziehung gesetzt. Es liegt nahe, dass es Beziehungen zwischen externen und internen Merkmalen geben könnte. Die Abbildung zeigt aber nicht wie sich die internen Merkmale auf die externen auswirken.  
+In der Abbildung 5 sind externe sowie interne Merkmale zueinander in Beziehung gesetzt. Es liegt nahe, dass es Beziehungen zwischen externen und internen Merkmalen geben könnte. Die Abbildung zeigt aber nicht wie sich die internen Merkmale auf die externen auswirken.  
 Soll ein Messwert eines internen Merkmals für die Vorhersage eines externen Merkmals nützlich sein, müssen laut Kitchenham (1990) [[5]](#ref_5) drei Bedingungen erfüllt sein:
 
 1. Das interne Merkmal muss korrekt gemessen werden.
@@ -400,18 +380,18 @@ Zudem gibt es mehrere Gründe, warum dies schwierig ist:
 
 - Die Softwaremessungen und -metriken haben den Schwerpunkt vornehmlich auf codebasierte oder plangesteuerte Entwicklungsprozesse gelegt. Heutzutage wird Software zunehmend durch Wiederverwenden und Konfigurieren bestehender Anwendungssysteme oder mit agilen Methoden entwickelt. Deshalb lässt sich schwer sagen, ob sich der bisherige Einsatz der Metriken auf diese Softwareentwicklungsmethoden übertragen lässt.
 
-### 24.5.1 Produktmetriken
+### Produktmetriken
 
 Produktmetriken sind Vorhersagemetriken, mit denen sich interne Attribute eines Systems quantifiziert messen lassen. Zu den Produktmetriken gehören zum Beispiel die Anzahl an Codezeilen oder die Anzahl der Methoden zu einer Klasse.  
 Produktmetriken lassen sich in zwei Gruppen einteilen:
 
 - _Dynamische Metriken:_ Lassen sich während der Programmausführung durch Messungen sammeln. Ein Beispiel wäre die Anzahl an Fehlerberichten oder die Zeit für die Ausführung von bestimmten Berechnungen.
 
-- _Statische Metriken:_ Werden aus dem Entwurf des Programms oder aus der Dokumentation gesammelt. Beispiele für statische Messgrößen sind in Tabelle 24.4 abgebildet.
+- _Statische Metriken:_ Werden aus dem Entwurf des Programms oder aus der Dokumentation gesammelt. Beispiele für statische Messgrößen sind in Tabelle 4 abgebildet.
 
 Dynamische Metriken sind für die Beurteilung der Zuverlässigkeit und Effizienz eines Programmes sehr hilfreich. Statische Metriken sind für die Beurteilung der Verständlichkeit, Komplexität und der Wartung eines Softwaresystems wichtig.
 
-<p style="margin: 0 auto; width: fit-content;">Tabelle 24.4: Statische Softwaremetriken</p>
+<p style="margin: 0 auto; width: fit-content;">Tabelle 4: Statische Softwaremetriken</p>
 <table style="border: 4px solid rgba(0, 0, 0, 0.4); border-radius: 10px; margin: 0.5rem auto; width: fit-content;">
   <tr>
     <th>Statische Softwaremetrik</th>
@@ -458,9 +438,9 @@ Dynamische Metriken sind für die Beurteilung der Zuverlässigkeit und Effizienz
 
 Viele Experimente zeigten, dass die Größe eines Programms und die Komplexität der Kontrollstrukturen die zuverlässigsten Vorhersagen für die Verständlichkeit und die Wartbarkeit liefern.
 
-Neben den Metriken aus Tabelle 24.4 für die statische Analyse, gibt es auch noch Metriken die sich speziell für die Objektorientierung eignen. Tabelle 24.5 ist eine Zusammenfassung der (Chidamber-Kemerer-Metriksuite) [[6]](#ref_6), die aus 6 objektorientierten Metriken besteht. Diese bereits in den frühen 90er Jahren entwickelten Metriken, sind immer noch die am weitesten verbreiteten objektorientierten Metriken.
+Neben den Metriken aus Tabelle 4 für die statische Analyse, gibt es auch noch Metriken die sich speziell für die Objektorientierung eignen. Tabelle 5 ist eine Zusammenfassung der (Chidamber-Kemerer-Metriksuite) [[6]](#ref_6), die aus 6 objektorientierten Metriken besteht. Diese bereits in den frühen 90er Jahren entwickelten Metriken, sind immer noch die am weitesten verbreiteten objektorientierten Metriken.
 
-<p style="margin: 0 auto; width: fit-content;">Tabelle 24.5: Objektorientierte CK-Metriksuite.</p>
+<p style="margin: 0 auto; width: fit-content;">Tabelle 5: Objektorientierte CK-Metriksuite.</p>
 <table style="border: 4px solid rgba(0, 0, 0, 0.4); border-radius: 10px; margin: 0.5rem auto; width: fit-content;">
   <tr>
     <th>Objektorientierte Metrik</th>
@@ -506,16 +486,14 @@ Neben den Metriken aus Tabelle 24.4 für die statische Analyse, gibt es auch noc
 
 El-Amam (2001) [[7]](#ref_7) beschreibt in einem Aufsatz die CK-Metriken sowie andere objektorientierte Metriken und kommt zu der Schlussfolgerung, dass noch nicht ausreichend Beweise vorliegen in welche Beziehung diese Metriken zur Softwarequalität stehen. Diese Situation hat sich seit der Analyse 2001 nicht verändert. Es ist immer noch nicht bekannt wie Messungen von objektorientierten Programmen, zuverlässige Schlüsse über die Qualität liefern können.
 
-### 24.5.2 Softwarekomponentenanalyse
+### Softwarekomponentenanalyse
 
-In der Softwarekomponentenanalyse werden einzelne Komponenten eines Systems, unter Verwendung verschiedener Metriken, separat analysiert. Ein Prozess, der die Messung einer Komponente zeigt, ist in Abbildung 24.6 dargestellt.
+In der Softwarekomponentenanalyse werden einzelne Komponenten eines Systems, unter Verwendung verschiedener Metriken, separat analysiert. Ein Prozess, der die Messung einer Komponente zeigt, ist in Abbildung 6 dargestellt.
 
 <figure style="text-align: center;">
   <!-- github -->
-  <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.6_komponentenanalyse.png?raw=true" alt="Abbildung 24.6 Prozess der Komponentenanalyse"/> 
-  <!-- local -->
-  <!-- <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="chapter24/assets/24.6_komponentenanalyse.png" alt="Abbildung 24.6 Prozess der Komponentenanalyse"/> -->
-  <figcaption>Abbildung 24.6 Prozess der Komponentenanalyse</figcaption>
+  <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.6_komponentenanalyse_de.png?raw=true" alt="Abbildung 6 Prozess der Komponentenanalyse"/> 
+  <figcaption>Abbildung 6: Prozess der Komponentenanalyse</figcaption>
 </figure>
 
 Der Prozess setzt sich wie folgt zusammen:
@@ -532,7 +510,7 @@ Der Prozess setzt sich wie folgt zusammen:
 
 Die gesammelten Daten sollten, protokolliert werden, damit sie für spätere Tests wieder zur Verfügung stehen. Wenn nach vielen Tests eine ausreichend große Datenbank vorhanden ist, kann die Softwarequalität verglichen und die Beziehung zwischen Komponenten und Qualitätsmerkmalen validiert werden.
 
-### 24.5.3 Softwareanalytik
+### Softwareanalytik
 
 In den letzten Jahren hat der Begriff **Big Data Analysis** immer mehr an Relevanz in der Softwareanalytik gewonnen. Durch _Data-Mining_ lassen sich sehr große Mengen an Daten sammeln und anschließend analysieren. Dadurch ist es möglich, die Beziehung von Daten herzustellen, die mit einer manuellen Datenanalyse nicht möglich ist. **Softwareanalytik** ist die Anwendung dieser Techniken auf Daten über Software und Prozesse.
 
@@ -561,7 +539,7 @@ Zhang et al. (2013) [[10]](#ref_10) beschreibt eine praktische Anwendung der Sof
 
 Harford (2013) [[11]](#ref_11) beschreibt in "Big Data: Are We Making a Big Mistake?" ein großes Problem der Softwareanalytik. Oft hängt unser Wissen immer von Daten ab, die bei großen Unternehmen gesammelt wurden. Diese Daten stammen hauptsächlich von den Softwareprodukten der Unternehmen und es ist noch nicht geklärt, ob sich die Techniken, die sich für die Produkte eigenen, auch für kundenspezifische Software verwendet werden kann. Hinzu kommt noch das kleine Unternehmen oft nicht die finanziellen Mittel haben, um in Datenerfassung zu investieren, die für eine automatische Analyse erforderlich wäre, sodass sie keine Möglichkeit haben, Softwareanalytik zu nutzen.
 
-## 24.6 Zusammenfassung
+## Zusammenfassung
 
 - Qualitätsmanagement soll sicherstellen, dass die Software so wenig Fehler wie möglich enthält, wartungsfreundlich ist und zuverlässig läuft. Zusätzlich stellt QM sicher, dass alle festgelegten Standards für Prozesse und Produkte eingehalten werden.
 
@@ -577,9 +555,9 @@ Harford (2013) [[11]](#ref_11) beschreibt in "Big Data: Are We Making a Big Mist
 
 - Softwareanalytik befasst sich mit der automatischen Analyse von großen Datenmengen, um Beziehungen festzustellen, die für Manager und Entwickler wichtig sein könnten.
 
-## 24.7 Referenzen
+## Referenzen
 
-<span id="ref_1">[1]: Sommerville Ian (2018). Software Engineering. Quality management. 700-729.</span>  
+<span id="ref_1">[1]: Sommerville Ian (2015). Software Engineering (10th. ed.), Quality management (700-729).</span>  
 <span id="ref_2">[2]: Humphrey, W. (1989). Managing the Software Process.</span>  
 <span id="ref_3">[3]: Fagan, M. E. (1986). Advances in Software Inspections. 744-751.</span>  
 <span id="ref_4">[4]: McConnell (2004). Code Complete: A Practical Handbook of Software Construction, 2nd ed.</span>  
@@ -589,4 +567,4 @@ Harford (2013) [[11]](#ref_11) beschreibt in "Big Data: Are We Making a Big Mist
 <span id="ref_8">[8]: Menzies, T., and T. Zimmermann. (2013). Software Analytics: So What?. 31-37.</span>  
 <span id="ref_9">[9]: Buse, R. P. L., and T. Zimmermann. (2012). Information Needs for Software Development Analytics. 987-996.</span>  
 <span id="ref_10">[10]: Zhang, D, S. Han, Y. Dang, J-G. Lou, H. Zhang, and T. Xie. (2013). Software Analytics in Practice. 30-37.</span>  
-<span id="ref_11">[11]: Harford, T. (2013). Big Data: Are We Making a Big Mistake?.</span>
+<span id="ref_11">[11]: Harford, T. (2013). Big Data: Are We Making a Big Mistake? Financial Times, March 28. http://timharford.com/2014/04/big-data-are-we-making-a-big-mistake/</span>
