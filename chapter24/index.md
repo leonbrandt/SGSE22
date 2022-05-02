@@ -30,6 +30,7 @@ Damit wird sichergestellt, dass die zuvor festgelegten Standards und Ziele des U
   <!-- github -->
   <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.1_qm_und_softwareentwicklung_de.png?raw=true" alt="Abbildung 1: Qualitätsmanagement und Softwareentwicklung"/> 
   <figcaption>Abbildung 1: Qualitätsmanagement und Softwareentwicklung</figcaption>
+  <figcaption>Quelle: In Anlehnung an Ian Sommerville <a href="#/chapter24/index?id=ref_1">[1]</a>, S. 702</figcaption>
 </figure>
 
 Abbildung 1 zeigt den Ablauf eines Softwareentwicklungsprozess. Bevor die Entwicklung beginnt, werden die Standards festgelegt und ein Qualitätsplan vom QM-Team erstellt. Das QM-team sollte stets unabhängig von der Entwicklergruppe sein, damit es die Qualität der Software objektiv beurteilen kann.
@@ -99,6 +100,7 @@ Die folgende Abbildung zeigt einen prozessbasierten Qualitätsansatz.
   <!-- github -->
   <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.2_prozessbasierte_qualitaet_de.png?raw=true" alt="Abbildung 2 Prozessbasierte Qualität"/> 
   <figcaption>Abbildung 2: Prozessbasierte Qualität</figcaption>
+  <figcaption>Quelle: In Anlehnung an Ian Sommerville <a href="#/chapter24/index?id=ref_1">[1]</a>, S. 705</figcaption>
 </figure>
 
 Anders als in der Fertigung ist die Beziehung zwischen Prozess- und Produktqualität komplexer. Prozesse lassen sich schwieriger standardisieren und überwachen, als es in der Fertigung der Fall ist. Trotzdem hat der Prozess, der für die Entwicklung der Software verwendet wird, einen großen Einfluss auf die Qualität der Software. Gute Entwicklungsprozesse werden mit großer Wahrscheinlichkeit auch qualitativ bessere Software hervorbringen.
@@ -181,6 +183,7 @@ Abbildung 3 zeigt die Kernprozesse eines Software- oder Systemherstellers nach I
   <!-- github -->
   <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.3_kernprozesse_iso9001_de.png?raw=true" alt="Abbildung 3 Kernprozesse eines Software- oder Systemherstellers nach ISO 9001"/> 
   <figcaption>Abbildung 3: Kernprozesse eines Software- oder Systemherstellers nach ISO 9001</figcaption>
+  <figcaption>Quelle: In Anlehnung an Ian Sommerville <a href="#/chapter24/index?id=ref_1">[1]</a>, S. 709</figcaption>
 </figure>
 
 In der Norm werden keine Qualitätsprozesse definiert oder vorgeschrieben welche Prozesse eingesetzt werden müssen. Um mit der ISO 9001 kompatibel zu sein, muss ein Unternehmen z.B. die verschiedenen Prozesse aus Abbildung 3 definieren und Verfahren entwickeln, die nachweisen, dass seine Qualitätsprozesse eingehalten werden. Diese gewährt den Unternehmen eine gewisse Flexibilität, bei der Umsetzung der Norm.
@@ -202,6 +205,7 @@ Abbildung 4 zeigt einen Review-Prozess in der Softwareentwicklung.
   <!-- github -->
   <img style="max-width: 80%; border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.4_review_prozess_de.png?raw=true" alt="Abbildung 4 Der Review-Prozess in der Softwareentwicklung"/> 
   <figcaption>Abbildung 4: Der Review-Prozess in der Softwareentwicklung</figcaption>
+  <figcaption>Quelle: In Anlehnung an Ian Sommerville <a href="#/chapter24/index?id=ref_1">[1]</a>, S. 711</figcaption>
 </figure>
 
 1. **Aktivitäten vor dem Review**:  
@@ -360,6 +364,7 @@ Viele der Qualitätsmerkmale aus _Tabelle 1_ lassen sich nur schwer direkt messe
   <!-- github -->
   <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.5_beziehungen_von_softwaremerkmalen_de.png?raw=true" alt="Abbildung 5 Beziehungen zwischen internen und externen Softwaremerkmalen"/> 
   <figcaption>Abbildung 5: Beziehungen zwischen internen und externen Softwaremerkmalen</figcaption>
+  <figcaption>Quelle: In Anlehnung an Ian Sommerville <a href="#/chapter24/index?id=ref_1">[1]</a>, S. 718</figcaption>
 </figure>
 
 In der Abbildung 5 sind externe sowie interne Merkmale zueinander in Beziehung gesetzt. Es liegt nahe, dass es Beziehungen zwischen externen und internen Merkmalen geben könnte. Die Abbildung zeigt aber nicht wie sich die internen Merkmale auf die externen auswirken.  
@@ -494,6 +499,7 @@ In der Softwarekomponentenanalyse werden einzelne Komponenten eines Systems, unt
   <!-- github -->
   <img style="border: 2px solid rgba(0, 0, 0, 0.4); border-radius: 10px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.6_komponentenanalyse_de.png?raw=true" alt="Abbildung 6 Prozess der Komponentenanalyse"/> 
   <figcaption>Abbildung 6: Prozess der Komponentenanalyse</figcaption>
+  <figcaption>Quelle: In Anlehnung an Ian Sommerville <a href="#/chapter24/index?id=ref_1">[1]</a>, S. 723</figcaption>
 </figure>
 
 Der Prozess setzt sich wie folgt zusammen:
