@@ -80,3 +80,10 @@ Die Ebenen sollen so aufgebaut werden, dass eine Ebene nur mit ihren direkten Na
 Beim Design der Software muss stets das gesamte System im Blick behalten werden. Um andere Komponenten des Systems vor Fehlern in der Software zu schützen. Ein Softwarefehler darf nie zum Systemausfall führen sondern muss innerhalb seiner Ebene isoliert werden.
 
 ## Redundanz und Diversität
+
+Obwohl viele Maßnahme getroffen werden, um Fehler im System zu vermeiden, können sie nie ausgeschlossen werden. Aus diesem Grund ist es wichtig, dass ein Fehler nicht zu einem Totalausfall des Systems führt. Methoden gegen einen Totalausfall im Fehlerfall beinhalten Redundanz (d. h. Komponenten werden in mehrfacher Ausführung eingesetzt) und Diversität (d. h. die redundanten Komponenten sind nicht dieselben). Bei der Verbindung von Redundanz und Diversität spricht man auch von diversitärer Redundanz. Als beispiel sollten persönliche Daten gesichert werden. Durch die Kopie der Daten erhält man eine Redundanz. Die Kopie sollte jedoch auf einem anderen Medium gesichert werden, wodurch man eine Diversität erreicht. Im gleichen Sinne sind Systeme, welche eine hohe Availability erreichen wollen oft mit mehreren Servern ausgestattet, welche unterschiedliche Hardware aufweisen.
+Redundanz und Diversität werden auch im Prozess der Softwareentwicklung eingesetzt. So werden Probleme beispielsweise auf verschiedene Arten gelöst und das Ergebnis verglichen oder dieselbe Aufgabe von verschiedenen Entwicklern gelöst und verglichen. Solche Methoden führen jedoch zu höheren Entwicklungskosten. 
+Neben höheren Kosten führen Redundanz und Diversität zudem zu komplexeren Systemen, wodurch die Möglichkeit, dass Fehler auftreten wieder steigt. Aus diesen Gründen sind manche Entwickler der Meinung, dass Software Redundanz und Diversität vermeiden sollte und besser so einfach wie Möglich gehalten wird und dafür mehr Ressourcen in die Verifikation und Validierung fließen sollen.
+
+## Zuverlässige Prozesse
+
