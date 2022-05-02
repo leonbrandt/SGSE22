@@ -118,11 +118,35 @@ Die Strukturmodellierung kann einerseits die grobe Systemarchitektur festhalten,
 
 ![Aggregation](C:\Users\Zolkin\Documents\Master Studium Informatik\1. Semester\Spezielle Gebiete zum Softwareengineering\SGSE22\chapter05\img\Aggregation.png)
 
+Es kommt in der Modellierung von Systemen häufig vor, dass einige Objekte sich aus weiteren Objekten zusammensetzen. Diese Art von Beziehung nennt sich Aggregation und wird in einem UML-Klassendiagramm anhand einer Diamantenform am Ende einer Verbindungsstelle zweier Klassen gekennzeichnet. In der Abbildung [?] erkennt man die Klasse *Patient record*, welche sich aus den Informationen aus *Patient*, sowie die der *Consulation* zusammensetzt.
+
+
+
 ## Verhaltensmodelle 
 
+Um das Verhalten eines laufenden Systems bei bestimmten Stimuli zu illustrieren, können Verhaltensmodelle herangezogen werden. Je nach System werden Abläufe durch Daten oder Ereignisse stimuliert, weshalb man anhand dessen die Art der Modellierung auswählt: **Datengesteuerte** bzw. **Ereignisgesteuerte** Modellierung. Prozesse innerhalb datengesteuerter Systeme werden hierbei durch vorhandene Daten initiiert, welche eine Reihe von Verarbeitungen durchlaufen, sodass anschließend eine Ausgabe vom System erfolgen kann. Dies ist beispielsweise häufig in Geschäftssystemen der Fall. Prozesse ereignisgesteuerter Systeme werden hingegen durch bestimmte Ereignisse ausgelöst, was häufig in Echtzeitsystemen der Fall ist. Basierend auf dieser Unterscheidung kann nun die entsprechende Modellierungsart und passende UML-Repräsentationen gewählt werden.
 
 
-## Modellbasiertes Engineering
+
+### Datengesteuerte (Data-Driven) Modellierung
+
+![Behaviour_ActivityModel](C:\Users\Zolkin\Documents\Master Studium Informatik\1. Semester\Spezielle Gebiete zum Softwareengineering\SGSE22\chapter05\img\Behaviour_ActivityModel.png)
+
+![Behaviour_SequenceDiagram](C:\Users\Zolkin\Documents\Master Studium Informatik\1. Semester\Spezielle Gebiete zum Softwareengineering\SGSE22\chapter05\img\Behaviour_SequenceDiagram.png)
+
+
+
+### Ereignisgesteuerte (Event-Driven) Modellierung
+
+![Behaviour_StateDiagram](C:\Users\Zolkin\Documents\Master Studium Informatik\1. Semester\Spezielle Gebiete zum Softwareengineering\SGSE22\chapter05\img\Behaviour_StateDiagram.png)
+
+
+
+### Modellbasierte Entwicklung
+
+
+
+## Modellbasierte Architektur
 
 
 
