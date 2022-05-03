@@ -254,8 +254,44 @@ Anzahl Clients, die diesen Server nutzen
 	- fat-client model: ein Teil oder die gesamte Applikationslogik ist auf dem Client
 	angelagert, Datenmanagement und Datenbank sind auf dem Server implementiert.
 	In diesem Fall ist die Client-Software eng mit der Server-Applikation integriert
+- Vorteil Thin-Client: Clients sind einfacher zu verwalten (wichtig
+wenn viele Clients aktiv sind) -> insbesondere problematisch,
+wenn auf Clients spezielle Software installiert werden muss
+- Nachteil Thin-Client: Hohe Rechenbelastung für Server und
+das Netzwerk -> Ein System so umzusetzen erfordert also evtl.
+Investitionen in Netzwerk und Server Infrastruktur
+- Fat Client: Nutzt die Rechenleistung des Clients, Server
+ist lediglich für Datenbank-Transaktionen zuständig
+	- erfordert die Installation und Wartung von Software auf
+	den Client-Systemen
+- Bsp für Fat-Client Systeme: Geldautomaten
+	- Geldautomaten selbst sind Client-Systeme
+	- Server ist die Datenbank in Form von Mainframes, die die
+	Kundenkontodaten verwalten -> spezifisch auf das Handling von
+	vielen Transaktionen ausgelegt
+	- In Beispiel: Client hat keine direkte Verbindung zur Datenbank
+	sondern zu TP Monitor Middleware (organisiert Kommunikation mit
+	Client-Systemen)
+- Nachteil Fat Client: Systemverwaltung wird komplexer
+	- Applikationslogik ist evtl. über mehrere Rechner verteilt
+	- Macht Updates komplexer, da evtl. alle Client-Systeme
+	geupdated werden müssen, um mit der Serverseite arbeiten zu können
+- Durch massiven Einsatz von mobilen Endgeräten sollte der
+Netzwerkverkehr möglichst gering gehalten werden
+- Da allerdings die mobilen Geräte auch performante Rechner sind,
+verschwimmt die Grenze zwischen Thin-Client und Fat-Client immer
+weiter
+	- Apps können eingebaute Funktionen haben, die lokale Berechnungen ausführen
+	- Webseiten können Javascript enthalten, welches auf dem Client-Rechner
+	ausgeführt wird
+	- Updateproblem bleibt bestehen
+- Zusammenfassend: das thin-/fat-client modell kann als
+Orientierung für den Systementwurf hilfreich sein, das Modell
+wird in dieser strikten Trennung allerdings nur selten eingesetzt
 
 ### mehrstufige client-server Architektur ###
+
+
 
 ### Peer-to-peer Architektur ###
 
