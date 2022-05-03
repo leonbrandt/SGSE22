@@ -106,3 +106,9 @@ Grundsätzlich ist das Ziel aller Aktivitäten des Prozesses zu vermeiden, dass 
 Neben Prozessen, welche sich auf das Entwickeln und Testen konzentrieren, werden auch Prozesse für das Qualitäts- und Änderungsmanagement benötigt.
 Durch die Notwendigkeit der frühen Anforderungsprüfung und dem Streben nach einer umfangreichen Dokuemtation stehen zuverlässige Prozesse im Konflikt mit der agilen Entwicklungsmethodik, bei der die Anforderungen parallel zum System entwickelt werden und Dokumentation minimal gehalten werden soll. Dadurch ist rein agile Entwicklung unpraktisch für die Entwicklung von zuverlässigen Systemen, jedoch können agile Prozesse definiert werden, welche den Kriterien der zuverlässigen Prozessen gerecht werden.
 
+## Formale Methoden und Dependability
+
+Formale Methoden sind mathematische Ansätze um Software zu Entwickeln. Dabei wird für die Software ein formales Modell definiert. Das definierte Modell kann anschließend auf Fehler und Inkonsistenzen analyisiert werden. Dabei kann bereits die Erstellung des Modells, ohne anschließenden Beweis helfen, um Fehler aufzudecken.
+In der Anfangszeit der Informatik wurden Modellen zu Beginn der Entwicklungszeit erstellt und mathematisch bewiesen. Da die Beweise mit einem hohen Aufwand verbunden sind, werden diese überwiegend automatisch durchgeführt.
+Alternativ zu der Erstellung der Beweise als eigenständige Aktivitäten neben der Entwicklung, gibt es den Ansatz des Refinement-Based Development. Dabei wird aus dem Modell durch Transformation die Software erstellt.
+Zudem gibt es die Methodik Model-Checking auf das Systemmodell anzuwenden. Dabei wird das Modell daraufhin analysiert, ob es die vorgegebenen Anforderungen erfüllt.
