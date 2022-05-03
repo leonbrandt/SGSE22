@@ -1,6 +1,6 @@
 # Programmiersprache im Backend
 
-Wie in der Sektion Implementierung zu lesen, sollte für im Backend ein NodeJS-Server verwendet werden. Nach erweiterter Recherche, stellte sich allerdings heraus, dass weder Quic noch HTTP/3 in NodeJS nicht unterstützt wird [[1]](#ref1).
+Wie in der Sektion Implementierung zu lesen, sollte für im Backend ein NodeJS-Server verwendet werden. Nach erweiterter Recherche, stellte sich allerdings heraus, dass weder Quic noch HTTP/3 in NodeJS unterstützt werden [[1]](#ref1).
 
 Eine Alternative bestand hierbei nun in der Verwendung einer älteren Node-Version, in der Quic bereits zuvor unterstützt wurde. Weil von WebTransport allerdings der zweite Entwurf mit einem abgeänderten Standard veröffentlicht wurde, dem nun HTTP/3 zu Grunde liegt und nicht mehr direkt Quic, ließ sich diese Alternative ebenfalls nicht umsetzen.
 

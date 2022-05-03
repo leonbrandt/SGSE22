@@ -33,3 +33,12 @@ TODOs:
 ## Recherche ##
 
 [Recherche zum MLGO Paper/Framework](praktikum/reinsch_raitzig/research.md)
+
+## Register Allocation Pass ##
+
+TODO: aus research.md zusammenfassen
+
+## experimentelle Toolchain ##
+
+TODO: siehe research
+TODO: validieren
