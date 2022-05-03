@@ -291,7 +291,46 @@ wird in dieser strikten Trennung allerdings nur selten eingesetzt
 
 ### mehrstufige client-server Architektur ###
 
-
+- Fundamentales Problem der zweistufigen client-server Architektur
+ist, dass die logischen Schichten des Systems (Anwendungslogik, etc.)
+auf zwei Rechnersysteme gemapped werden müssen
+- Das kann zu Problemen mit Skalierbarkeiet oder Performance führen
+(im Falle von Thin-Clienet) und Problemen mit Systemverwaltung (falls
+Fat-Client)
+- Lösungsidee: Logische Schichten können jeweils auf unterschiedlichen
+Prozessoren laufen
+- Beispiel Internet-Bankensystem:
+	- Kundendatenbank auf Mainframe gehostet -> Datenbankservices
+	- Web server: Data management services, z.B. Webseiten-Generierung
+	und Applikationsdienste
+	- Applikationsdienste, zum Beispiel Möglichkeit, Geld zu überweisen
+	sind im Webserver und als Skripte, die auf dem Client ausgeführt werden
+	implementiert
+	- skalierbar, da es relativ einfach ist, neue Server hinzuzufügen
+	um Applikationsdienste bereit zu stellen (scaling out), falls Anzahl
+	Kunden ansteigt
+	- Konkretes Beispiel ist also ein dreistufiges Modell
+	- Effiziente Middleware, die bspw. SQL-Abfragen unterstützt,
+	wird zur Informationsabfrage von der Datenbank verwendet
+- Tabelle übersetzen: TODO
+- dreistufiges Modell kann auch auf mehrstufiges ausgeweitet werden,
+indem mehr Server zum System hinzugefügt werden
+	- Aufteilung von Dienstbereitstellung auf verschiedene Rechner
+	- Auch dann anwendbar, wenn mehrere Datenbanken verwendet werden
+	- Bspw. Einsatz von Integrationsserver, der die verteilten Daten
+	sammelt und der übrigen Systemarchitektur über eine
+	gemeinsame Schnittstelel zur Verfügung stellt
+- Zusammenfassend:
+	- mehrstufige Modelle, die Berechnungen für die Applikation über
+	mehrere Rechner verteilen, sind besser skalierbar als zweistufige
+	client-server modelle
+	- Jede Stufe des Systems kann einzeln verwaltet werden (kein Monolit),
+	sodass es einfacher ist, Hardware für diese einzelne Schicht hinzuzufügen,
+	falls durch Systemänderungen der Bedarf des einzelnen Dienstes erhöht wird
+	- Applikationslogik und Datenbereitstellung / Verwaltung kann aufgeteilt
+	werden, was zu schnellerer Systemantwort führen kann
+	- Wahl der Systemarchitektur ist abhängig vom Szenario
+		- Siehe Tabelle
 
 ### Peer-to-peer Architektur ###
 
