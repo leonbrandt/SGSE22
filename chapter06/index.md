@@ -311,13 +311,340 @@ Status dieses Dokuments:
 
 # Architectural Patterns
 
+## Einleitung & Definition
+
+- Pattern als Art des Präsentierens, Teilens und Wiederverwendens von Wissen über Softwaresysteme ist in diversen Bereichen des Software Engineering üblich (Auslöser: Gamma 1995)
+- (Diverse weitere Sammlungen von Pattern existieren)
+
+---
+
+- Architectural Patterns wurden 1996 von Shawn & Garlan als "architectural styles" eingeführt (Shaw 1996)
+- (5 Handbücher zur "pattern-oriented software architecture")
+
+---
+
+- Pattern werden in standardisierten Wegen beschrieben
+	- Durch Nutzen von verbale Beschreibung und Diagramme
+
+---
+
+- Architectural pattern = "stylized, abstract description of good practice, which has been tried and tested in different systems and environments"
+- Ein Architectural pattern sollte die Organisation eines Systems beschreiben, die in bestehenden Systemen erfolgreich waren
+	- Auch: Stärken und Schwächen das Pattern
+
+---
+
+- (Hinweise zu Notation von Pattern)
+
+---
+
+- Es folgen ausgewählte Beispiele für weit verbreitete Pattern, die gute Prinzipen des Architectural Designs zeigen
+
+## MVC
+
+[Figure 6.4, 6.5, 6.6 (p. 176, 177)]
+
+### Beschreibung
+
+- Seperiert Präsentation und Interkation von Daten
+- System ist strukturiert in 3 logische Komponenten
+- Model: Verwaltet Daten und implementiert Operationen auf diesen
+- View: Definiert und verwaltet die Präsentation der Daten
+- Controller: Verwaltet Benutzerinteraktion und leitet diese an View und Model
+
+### Beispiel
+
+[Figure 6.6]
+
+### Verwendung
+
+- Wenn es mehrere Wege gibt Daten zu betrachten und mit diesen zu interagieren
+- Wenn zukünftige Anforderungen für Interkation von Präsentation von Daten unbekannt sind
+
+### Vorteile
+
+- Erlaubt Datenänderungen unabhängig von der Präsentation (sowie umgekehrt)
+- Erlaubt Präsentation der selben Daten auf unterschiedliche Weise (Änderungen der Daten in einer Präsentation sind in allen sichtbar)
+
+### Nachteile
+
+- Zusätzlicher Code sowie Code-Komplexität, auch wenn Datenmodell und Interaktion simpel sind
+
 ## Layered Architecture
+
+### Motivation und Beschreibung
+
+- "Seperation" + "Independence" sind fundamentale Prinzipien von Architectural design
+	- Erlauben Lokalität von Änderungen
+- MVC seperiert Elemente eines Systems und erlaubt unabhängige Änderungen dieser
+	- Bsp: Hinzufügen oder Ändern einer View kann ohne Änderungen im Model geschehen
+- Layered Architecture ist ein alternativer Weg um "seperation" und "independence" zu erreichen
+- Systemfunktionalität ist in Schichten organisiert
+- Jede Schicht erfordert nur die Schicht direkt unterhalb
+
+### Vorteile
+
+- Schichtung unterstützt inkrementelles Entwickeln von Systemen
+- Während der Entwicklung können Services eines Layers Benutzern bereitgestellt werden
+- Einzelne Layer sind austauschbar und portabel (solange sich Interfaces nicht ändern)
+- Bei Änderungen im Interface eines Layers sind nur die angrenzenden Layer betroffen
+- Layered Architectures halten Maschinenabhängigkeiten lokal
+	- Dies erleichtert Multi-Plattform Implementierungen
+		- Nur Maschinenabhängige Layer müssen neu implementiert werden
+
+---
+
+[Figure 6.7, 6.8, 6.9 (p. 178, 179)]
+
+### Beschreibung
+
+- Organisiert ein System in Schichten (mit zusammengehörigen Funktionalitäten)
+- Eine Schicht stellt der Schicht über ihr Services zur Verfügung
+- Die unterste Schicht repräsentiert Core-Funktionalitäten
+
+### Beispiel
+
+[Figure 6.9]
+
+### Verwendung
+
+- Wenn neue Funktionalitäten "on top of" zu existierenden Systemen hinzugefügt werden sollen
+- Wenn Entwicklung über mehrere Teams verteilt ist (Jedes Team hat Verantwortung für eine Schicht)
+- Wenn eine Anforderung an Multilevel Security besteht
+
+### Vorteile
+
+- Erlaubt Austauschen von ganzen Schichten (solange Interface erhalten bleibt)
+- Redundante Funktionalitäten (z.B. Authentifizierung) in jeder Schicht können Dependability eines Systems verbessern
+
+### Nachteile
+
+- In der Praxis ist eine saubere Seperierung von Schichten häufig schwierig
+- "hohe" Schichten müssen ggf. mit "niedrigen" Schichten direkt interagieren und nicht via. den Schichten dazwischen
+- Mehrere Level der Verarbeitung / Interpretation von Anfragen kann Performance negativ beeinträchtigen
+
+---
+
+- (Beschreibungen der Diagramme [Figure 6.8, 6.9])
 
 ## Repository Architecture
 
+### Klassifikation
+
+- Layered architecture und MVC sind Beispiele von Pattern, die die konzeptionelle Organisation von Systemen betrachten
+- Repository architecture beschreibt, wie eine Menge von interagierenden Komponenten Daten austauschen können
+
+### Beschreibung
+
+- Alle Daten innerhalb eines Systems sind in einem zentralen Repository verwaltet
+- Komponenten interagieren nur durch das Repository mit diesen, niemals direkt
+
+### Beispiel
+
+[Figure 6.11]
+
+### Verwendung
+
+- Bei Systemen, die große Mengen von Informationen erzeugen, die über einen "langen" Zeitraum persistiert werden müssen
+- Bei Data-driven systems, wo das Hinzufügen von Daten in ein Repository Aktionen auslöst
+
+### Vorteile
+
+- Komponenten sind unabhängig und müssen nicht von der Existenz anderer Komponenten wissen
+- Datenänderungen innerhalb einer Komponente wirken sich global auf alle Komponenten aus
+- Alle Daten sind konsistent durch Zentralisierung (gut für z.B. Backups)
+
+### Nachteile
+
+- Repository = single point of failure
+	- Probleme im Repository haben Auswirkungen auf das gesamte System
+- Organisation der gesamten Kommunikation durch ein Repository kann uneffizient sein
+- Verteilung des Systems (über mehrere Rechner) kann schwierig sein
+
+---
+
+[Figure 6.10, 6.11 (p. 179, 180)]
+
+### Anwendungsfälle
+
+- Die Mehrheit der Systeme, die große Mengen von Daten verarbeiten sind um geteilte Datenbanken oder Repositories organisiert
+- Dieses Modell ist geeignet für Anwendungen, bei deinen eine Komponente Daten generiert, die von einer anderen Komponente genutzt werden sollen
+- Bsp:
+	- Command and control systems
+	- Management information systems
+	- CAD
+	- Interactive development environments (for software)
+
+---
+
+- (Beispiel [Figure 6.11])
+
+### Vorteile / Nachteile
+
+- Die Organisation von Tools um ein Repository ist ein effizienter Weg um große Mengen von Daten zu teilen
+- Es müssen keine Daten explizit zwischen Komponenten ausgetauscht werden
+- Komponenten müssen jedoch auf Basis eines Repository-Datenmodells arbeiten
+	- Dieses ist ein Kompromiss zwischen spezifischen Anforderungen von Komponenten
+	- Es kann schwierig oder unmöglich sein neue Komponenten zu integrieren
+		- Das Datenmodell dieser kann mit dem des Repositories inkompatibel sein
+- In der Praxis kann es schwierig sein das Repository über mehrere Rechner zu verteilen
+	- Die (physische) Verteilung eines logischen zentralen Repositories erfordert das Verwalten mehrerer Kopien der Daten
+		- Das Herstellen von Konsistenz kann einen Overhead zum System hinzufügen
+
+### Passiv vs. Aktiv
+
+- Figure 6.11: Das Repository ist passiv und die Steuerung ist die Aufgabe der Komponenten, die das Repository nutzen
+- Alternative:
+	- Abgeleitet von AI-Systemen
+	- "Blackboard"-Modell
+	- Triggert Komponenten, wenn Daten verfügbar werden
+	- Geeignet, wenn Daten im Repository unstrukturiert sind
+	- ??? Wiederspruch (TODO, p. 180)
+
 ## Client-Server Architecture
 
+### Motivation und Beschreibung
+
+- Das Repository pattern beschäftigt sich mit der statischen Struktur eines Systems
+	- Es zeigt nicht die Organisation zur Laufzeit
+- Das Client-Server pattern ist eine weit verbreitet Organisation zur Laufzeit von verteilten Systemen
+- Ein System, das dem Client-Server pattern folgt, ist organisiert als eine Menge von
+	- Services und zugehörigen Servern
+	- Clients, die Services nutzen
+- Die Hauptkomponenten dieses Modells sind:
+
+#### Server
+
+- Eine Menge an Servern bieten Services für andere Komponenten
+- Bsp: Druckserver, Dateiserver, Compile-Server
+- Server sind Software-Komponenten
+	- Mehrere Server können auf dem selben Rechner laufen
+
+#### Clients
+
+- Eine Menge an Clients nutzt die durch Server bereitgestellten Services
+- Üblicherweise laufen viele Instanzen eines Client-Programms parallel auf vielen Computern
+
+#### Network
+
+- Ein Netzwerk erlaubt den Clients den Zugriff auf Services
+- Client-server systeme sind üblicherweise als verteilte Systeme implementiert
+
+### Beschreibung
+
+- Ein System ist repräsentiert durch eine Menge an Services, die von Servern zur Verfügung gestellt werden
+- Clients sind Nutzer dieser Services
+	- Sie greifen auf Server zu um diese zu nutzen
+
+### Beispiel
+
+[Figure 6.13]
+
+### Verwendung
+
+- Wenn Daten in einer geteilten Datenbank von verschiedenen Orten abgerufen werden muss
+- Wenn die Last auf ein System variablen ist (Server können repliziert werden)
+
+### Vorteile
+
+- Hauptvorteil: Verteilung von Servern über ein Netzwerk
+- Generelle Funktionalitäten können Clients zur Verfügung gestellt werden, ohne, dass alle Clients alle Services selbst implementieren müssen
+
+### Nachteile
+
+- Jeder Service ist ein single point of failure
+	- Anfällig bei DoS-Attaken, Server-Fehlern
+- Perfomance kann unvorhersehbar sein
+	- Diese hängt von System und Netzwerk ab
+- Management-Probleme, wenn Server verschiedenen Organisationen angehören
+
+### Lokale Implementierung
+
+- Client-server Architekturen werden üblicherweise als verteilte Systene verstanden
+- Das logische Modell von unabhängigen Services, die durch verschiedene Server angeboten werden, kann auf einem einzigen Rechner implementiert werden
+- Wichtige Vorteile: seperation, independence
+- Services und Server können ausgetauscht werden, ohne andere Teile des Systems zu beeinflussen
+
+### Kommunikation
+
+- Clients müssen verfügbare Server sowie deren Services kennen
+- Server müssen nicht die Identität bzw. die Anzahl der Clients kennen
+- Clients greifen auf Services via RPC (IPC) durch request-reply-Protokolle (http) zu
+	- Clients machen Anfragen zu Servern und warten auf Antworten
+
+---
+
+- (Beispiel [Figure 6.13])
+
+### Vorteile
+
+- Wichtigster Vorteil des Client-Server-Modells ist die Verteilung eines Systems
+- Vernetzte Systeme mit vielen verteilten Prozessoren können effektiv sein
+- Es ist einfach neue Server hinzuzufügen und diese mit dem restlichen System zu integrieren
+- Es ist einfach Server zu upgraden, ohne andere Teile eines Systems zu beeinflussen
+- (Mehr in Chapter 17)
+
 ## Pipe and Filter Architecture
+
+### Beschreibung
+
+- Pipe and filter pattern = Modell der Organisation von Systemen zur Laufzeit
+- Funktionen transformieren Inputs und erzeugen Outputs
+	- Daten fließen durch eine Sequenz dieser und werden nach und nach transformiert
+- Jede Bearbeitungsschritt ist als Transformation implementiert
+- Transformationen können sequentiell oder parallel ausgeführt werden
+- Daten können Elementweise oder in Batches verarbeitet werden
+
+---
+
+- Verarbeitung von Daten eines Systems ist so organisiert, dass jede Verarbeitungseinheit (filter) einen Typ der Datentransformation durchführt
+- Daten fließen (pipe) zur Verarbeitung von einer Komponente zur Nächsten
+
+### Beispiel
+
+- [Figure 6.15]
+
+### Verwendung
+
+- In Data-processing applications (batch-/transaction-based)
+- Wenn Inputs in seperaten Schritten zu Outputs verarbeitet werden
+
+### Vorteile
+
+- Einfach zu verstehen
+- Ermöglicht das Wiederverwenden von Transformations-Komponenten
+- Die Art der Verarbeitung entspricht die Art der Struktur vieler Businessprozesse
+- Weiterentwicklung durch Hinzufügen von Transformations-Komponenten ist simpel
+- Kann entweder als sequentielles oder paralleles System implementiert werden
+
+### Nachteile
+
+- Datenformate müssen zwischen kommunizierenden Transformations-Komponenten abgestimmt werden
+- Jede Transformation müss Input parsen und definierten Output erzeugen (unparsen)
+	- Erhöht System-Overhead
+- Wiederverwendung von Komponenten bei Inkompabilität von Datenformaten kann unmöglich sein
+
+### Ursprung
+
+- Bezeichnung "pipe und filter" entspringt originalem Unix-System (Linken von Prozessen durch pipes)
+
+### Anwendungsfälle
+
+- Varianten dieses Pattern sind in Benutzung seit Computer für automatisierte Datenverarbeitung eingesetzt werden
+- Batch sequentielle Variante ist üblich in Abrechnungssystemen (billing systems)
+- Embedded Systems können als Prozess-Pipeline organisiert werden (parallelle Prozesse; Chapter 21)
+
+---
+
+- (Beispiel [Figure 6.15])
+
+---
+
+- Pipe and filter Systeme sind am besten für batch processing und embedded systems geeignet, wo Benutzerinteraktion begrenzt ist
+- Interaktive Systeme sind schwierig als Pipe and filter System umzusetzen
+	- Weil Datenströme verarbeitet werden
+- Grafische UIs haben Steuerungsstrategien, die auf Events basieren
+	- Es ist schwierig dies als sequentieller Stream zu implementieren
 
 # Application Architectures
 
