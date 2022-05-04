@@ -1,85 +1,17 @@
-# Software processes
+# Reliability Engineering
 
 **Autor:** Frederic Birwe
 
-Nach dem Lesen des Kapitels sollten Sie einiges wissen und dann noch viel mehr und sehr viel mehr und weniger.
+## Einleitung
 
-## Unterkapitel
+Jedes Softwaresystem, dass in eine komplexe Umgebung eingebunden ist, wird zu einem Prozentsatz fehlerhafte Ausgaben verursachen.
 
-* **Softwaresystem**:
-  Die *innere* Sicht des Informatikers nimmt Software als Softwaresystem wahr.
-* **Softwareprodukt**: Die *äußere* Sicht eines Auftraggeber nimmt ein Softwaresystem als Softwareprodukt wahr. 
+## Definition Verfügbarkeit (availability) und Zuverlässigkeit (reliability)
 
-### Tabelle
+Um die Resiliz eines Softwaresystemes gegen fehlerhaftes Verhalten zu bewerten sind vor allem zwei Eigenschaften von Bedeutung:
 
-| A          |     B       |           C               | 
-|:----------:|:-----------:|:-------------------------:|
-| Eins | Zwei | Drei |
-| Vier | Fünf | Sechs |
+- Verfübarkeit (availability)
+- Zuverlässigkeit (reliability)
 
-## Links
-
-[Markdown] ist eine Sprache, die nach HTML konvertiert werden kann. 
-
-[Markdown]: http://daringfireball.net/projects/markdown/
-
-## Aufzählung
-
-Es unterteilt sich in:
-
-* A
-  * A1
-* B
-  * B1
-  * B2
-* C
-
-
-# Überschrift
-
-"...the **go to** statement should be abolished..." [1].
-
-Dieser Link führt intern zu einem anderen [Thema](qualitaet/README)
-
-Dieser Link führt extern nach [Youtube](https://www.youtube.com/)
-
-> Dieser Text ist völlig sinnlos, aber steht trotzdem hier. Dieser Text geht über mehrere Zeilen.
-
-## Unterüberschrift
-
-* Eins
-  * eins.eins
-  * eins.zwei
-* Zwei
-  * Zwei.zwei
-* Drei
-
-### Code
-
-```javascript
-public class A {
-  Integer a;
-  public A() {
-    this.a = 1
-  }
-}
-```
-
-Syntax Highlighting für Javascript. Weitere Sprachen müssen konfiguriert werden.
-
-### Bilder
-
-![](media/image.jpg)
-
-### Audio
-
-[](media/sample.mp3 ':include')
-
-### Video
-
-[](media/sample.mp4 ':include')
-
-## Referenzen
-
-[1]: Dijkstra, E. W. (1968). Go to statement considered harmful. 
-Communications of the ACM, 11(3), 147-148.
+Verfügbarkeit bezeichnet den Zeitraum, in dem ein Service beziehungsweise System für Anfragen zur Verfügung steht, im Verhältnis zum Gesamtzeitraum. Zuverlässigkeit hingegen bezeichnet den Anteil korrekter Ausgaben an allen Ausgaben.
+Je nach System und Einsatzgebiet stehen diese Werte in verschiedenem Maße im Fokus bei der Entwicklung eines einsatzfähigen Systems.
