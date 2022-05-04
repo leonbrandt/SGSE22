@@ -14,3 +14,16 @@ Im Unternehmen sollen automatisierte Tests für C++/Qt-Masken implementiert werd
 - Konzeptionierung der Systemstruktur/Softwarestruktur => Wie können die Tests implementiert werden?
 - Erste Testimplementierung => Validierung
 
+## Zeitplan
+| Termin     |     Meilenstein                      |
+|:----------:|:------------------------------------:|
+| 28.04.2022 | Finalisierung der Fragestellungen    |
+| 05.05.2022 | Vergleich GUI-Test-Frameworks        |
+| 12.05.2022 | Vergleich GUI-Test-Frameworks        |
+| 19.05.2022 | Anforderungsanalyse Testprojekt      |
+| 26.05.2022 | Konzeptionierung Testprojekt         |
+| 02.06.2022 | Konzeptionierung Testprojekt         |
+| 09.06.2022 | Implementierung                      |
+| 16.06.2022 | Validierung                          |
+| 23.06.2022 |                                      |
+| 30.06.2022 | Abgabe                               |
