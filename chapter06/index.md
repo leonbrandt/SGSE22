@@ -648,8 +648,172 @@ Status dieses Dokuments:
 
 # Application Architectures
 
+## Ursprung
+
+- Application systems sollen Anforderungen eines Business / einer Organisation erfüllen
+- Alle Unternehmen haben viel gemeinsam (Menschen einstellen, Rechnungen ausstellen, Buchhaltung, etc.)
+- Unternehmen in gleichen Branchen nutzen branchenspezifische Software
+- Neben generellen Businessfunktionen benötigen z.B. Telekommunikationsprovider Systeme um Anrufe zu verbinden und abzurechnen
+- Folglich haben die Application systems dieser Unternehmen viel gemeinsam
+
+## Application architectures
+
+- Diese Gemeinsamkeiten führten zur Entwicklung von Software Architekturen, die die Struktur und Organisation spezifischer Typen von Softwaresystemen beschreiben
+- Application architectures kapseln die Hauptcharakteristiken einer Klasse von Systemen
+- Bsp:
+	- In Echtzeit-Systemen können generische Architekturmodelle verschiedener Systemtypen vorhanden sein (Data collection systems, Monitoring systems)
+	- Instanzen dieser Systeme unterscheiden sich im Detail
+	- Die gemeinsame Struktur der Architektur kann jedoch wiederverwendet werden, wenn neue Systeme des selben Typs entwickelt werden
+
+## Generische Beispiele
+
+- Eine Application architecture wird möglicherweise reimplementiert
+	- Wenn neue Systeme entwickelt werden
+- Für viele Business-Systeme ist die Wiederverwendung einer Application architecture implizit
+	- Wenn generische Application systems konfiguriert werden, um eine neue Anwendung zu erzeugen
+	- Bsp: Enterprise Resource Planning (ERP) Systems, off-the-shelf configurable application systems (accounting, stock control)
+	- Diese Systeme besitzen eine Standard-Architektur und -Komponenten
+	- Komponenten werden so konfiguriert und adaptiert, sodass spezifische Businessanwendungen erzeugt werden
+	- Bsp: Systeme für supply chain management können für verschiedene Typen von Zulieferern, Waren, vertragliche Regelungen adaptiert werden
+
+## Arten der Nutzung
+
+- Modelle von Application architectures können auf verschiedene Wege genutzt werden:
+
+1. Als Startpunkt für den Designprozess von Architectural Design
+	- Bei unbekannten Applikationstypen können initiale Architekturdesigns auf generischen Application architectures basieren
+	- Diese kann dann für das spezifische System spezialisiert werden
+2. Als Checkliste
+	- Entwickelte Architekturdesigns können mir generischen Application architectures verglichen werden
+	- Designs können auf Konsistenz mit diesen geprüft werden
+3. Als Art der Organisation von Arbeit in einem Team
+	- Application architectures identifizieren stabile strukturelle Features von Systemarchitekturen
+	- In vielen Fällen können diese parallel entwickelt werden
+	- Arbeit kann so verteilt werden, dass Komponenten von einzelnen Personen entwickelt werden
+4. Als Mittel zur Bewertung von Komponenten zur Wiederverwendung
+	- Komponten können mit denen in generischen Strukturen verglichen werden
+	- Dies hilft zu erkennen, welche wiederverwendbar sind, sollten vergleichbare Komponenten in den generischen Architekturen existieren
+5. Als Vokabular zur Kommunikation über Anwendungen
+	- Konzepte aus generischen Architekturen können zur Kommunikation genutzt werden
+
+## Ähnlichkeit von Application systems
+
+- Es existieren viele Typen von Application systems
+- Diese erscheinen möglicherweise sehr unterschiedlich
+- Oberflächlich unterschiedliche Applikationen haben möglicherweise viel gemeinsam
+	- Möglicherweise teilen sie eine abstrakte Application architecture
+- Veranschaulichung anhand zwei Anwendungstypen:
+
+## Transaction processing applications
+
+- Transaction processing applications
+	- Datenbank-zentriert
+	- Verarbeiten Benutzeranfragen (retrival, update der DB)
+	- Häufigster Typ von interaktiven Business-Systemen
+	- Organisiert, sodass Benutzerinteraktionen sich nicht gegenseitig beeinträchtigen (interfere) können
+		- DB ist konsistent
+	- Bsp: banking systems, e-commerce systems, information systems, booking systems
+
+## Language processing systems
+
+- Language processing systems
+	- Absicht des Benutzers ist in formaler Sprache ausgedrückt (Programmiersprachen)
+	- System verarbeitet diese Sprache in ein internes Format und interpretiert diese Repräsentation
+	- Bsp: compilers
+	- Auch: DBs (SQL), information systems, XML
+
+---
+
+- Viele webbasierte Businesssystems sind Transaction processing applications
+- Jede Softwareentwicklung basiert auf Language processing systems
+
 ## Transaction Processing Systems
+
+### Beschreibung
+
+- Transaction processing systems sind konzipiert um Benutzeranfragen für Informationen aus einer DB oder Anfragen des Updatens einer DB zu verarbeiten (Lewis 2003)
+- DB-Transaktion = Atomare Sequenz von Operationen
+	- Alle Operationen einer Transaktion müssen abgeschlossen sein, bevor Änderungen persistiert werden
+	- Bei Fehlern in Operationen bleibt Konsistenz erhalten
+
+### Benutzerperspektive auf Transaktionen
+
+- Benutzerperspektive: Transaktion = jede kohärente Sequenz von Operationen, die ein Ziel erfüllen
+- Bsp: "Finde Flüge von X nach Y"
+- Sollte eine Benutzer-Transaktion keine Änderungen in der DB erfordern, sind technische DB-Transaktion möglicherweise überflüssig
+
+### Technische Perspekive auf Transaktionen
+
+- Bsp: DB-Transaktion: Geld abheben
+- Kontostand prüfen, Kontostand anpassen, Befehl an Geldautomat zum Aushändigen
+- Bis nicht alle Schritte abgeschlossen sind, ist die Transaktion nicht abgeschlossen (DB bleibt unverändert)
+
+### Interaktivität
+
+- Transaction processing systems = üblicherweise interaktiv
+- Benutzer machen asynchrone Anfragen an Services
+- [Figure 6.16]
+
+### Architektur
+
+- Transaction processing systems können als Pipe-and-filter-Architektur organisiert sein
+- Mit Komponenten für Input, Verarbeitung und Output
+- (Beispiel [Figure 6.17])
 
 ## Information Systems
 
+### Beschreibung
+
+- Alle Anwendungen, die Interaktion mit einer geteilten DB beinhalten, können als (transaction based) Information system betrachtet werden
+- Ein Information system erlaubt kontrollierten Zugriff auf eine große Informationsbasis
+	- Bsp: Büchereikatalog, Flugplan, Patientenakte
+- Information Systems sind nahezu immer webbasierte Systeme, wo UIs in Webbrowsern implementiert werden
+
+### Layering (Beispiel)
+
+- ([Figure 6.18])
+- Layered architecture
+- Layer: UI
+- Layer: User Communications (Handling IO von UI)
+- Layer: Information retrieval (anwendungsspezifische Logik zum DB-Zugriff)
+- Layer: DB
+
+### Beispiel
+
+- ([Figure 6.19])
+- Beispiel
+
+### Zusammenhänge
+
+- Information and resource management systems sind manchmal auch Transaction processing systems
+- Bsp:
+	- E-commerce systems sind Internetbasierte Resource management systems
+	- Diese akzeptieren Bestellungen von Waren / Dienstleistungen und veranlassen Lieferung
+	- "Shopping cart"-Funktionalität
+		- Platzieren von Waren in einzelnen Transaktionen
+		- Bezahlen dieser in einer Transaktion
+
+### Verteilung
+
+- Organisation von Servern in diesen Systemen üblicherweise in einem generischen 4-Layer-Modell [Figure 6.18]
+- Häufig implementiert als verteiltes System mit mehrstufiger Client-Server-Architektur:
+	- Web server für Benutzerkommunikation via UI im Webbrowser
+	- Application server für Implementierung von anwendungsspezifischer Logik (Informations-Speicherung / -Abruf)
+	- Database server für DB-Handling, Transaktionsmanagement
+- Nutzung mehrerer Server erlaubt hohen Throughput (Tausende Transaktionen pro Minute)
+	- Bei höherer Nachfrage können mehr Server hinzugefügt werden um dieser gerecht zu werden
+
 ## Language Processing Systems
+
+### Beschreibung
+
+- Language processing systems = Übersetzen eine Sprache in eine alternative Repräsentation dieser
+	- Bei Programmiersprachen werden resultierende Programme ggf. auch ausgeführt
+- Compiler übersetzen Programmiersprachen in Maschinencode
+- Andere Language processing systems übersetzen XML in Befehle zu Anfragen an eine DB oder in alternative XML-Repräsentationen
+- NLP-systeme übersetzen eine natürliche Sprache in eine Andere
+
+### Beispiele
+
+- Mögliche Architektur für Language processing systems von Programmiersprachen ([Figure 6.20])
+- (Beispiele)
