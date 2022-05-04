@@ -1,25 +1,31 @@
 # Frederic Birwe
 
-## Forschungsfrage: Vermittlung von fortgeschrittenen Konzepten der Softwareentwicklung am Beispiel Design Patterns
+# Projektzweck
 
-Untersucht werden soll, wie die Vermittlung von abstrakten Konzepten der Softwareentwicklung mit Methoden des exemplarischen Lernens vermittelt werden kann.
+Im Rahmen des Praktikums soll der Frage nachgegangen werden, inwiefern Gameificationelemente das Erlernen und Verstehen komplexerer Konzepte in der Softwareentwicklung unterstützen kann.
 
-am Beispiel des Konzeptes der Design Patterns,
+# Projektziel
 
-## Das Konzept der Design Patterns
+Ziel des Projektes ist es, Wege zu erarbeiten, mit denen die Vermittlung komplexerer Konzepte des Softwareengineerings durch Gameification unterstützt werden kann.
 
-Als komplexe Konzepte sollen ausgewählte Design Patterns aus den 23 ursprünglichen Patterns der Gang of Four verwendet werden.
-Die folgenden Pattern sollen vermittelt werden:
+Exemplarisch soll dies am Konzept der Design Patterns untersucht werden. Dafür wird ein Design Pattern ausgewählt und eine Übungseinheit entwickelt, welche verschiedene Methoden der Gameification einsetzt.
 
-- Factory Pattern
-- Decorator Pattern
-- Command Pattern
+Die Übungseinheit wird geplantermaßen in Form einer Software erstellt, die zum Selbststudium genutzt werden kann.
 
-( Die Auswahl/Anzahl der Pattern kann noch angepasst werden )
-Diese Pattern stammen aus den drei Gruppen von Pattern (creational, structural und behavioral pattern) und sollen so eine gewisse Repräsentativität sicherstellen.
+Alternativ dazu kann die Übungseinheit auch als eine “klassische Unterweisung” vorbereitet werden, die mit ins analoge umgesetzten Gameificationmechaniken arbeitet.
 
-## exemplarisches Lernen
+Als Kontrollmaßnahme wird ein weiteres Design Pattern ausgewählt, dass einen ähnlichen Ansatz wie das im vorhigen Schritt behandelte Pattern verfolgt. Für dieses Pattern wird ebenfalls eine Übungseinheit zur Ausführung im Selbsstudium entwickelt. Als Kontrolle sollen die Testpersonen, die sich zuvor das erste Pattern mithilfe der Übungssoftware beigebracht haben, das zweite Pattern mit diesen Unterlagen im Selbststudium erarbeiten.
 
-[exemplarisches lernen](https://service.zfl.uni-kl.de/wp/glossar/exemplarisches-lernen)
+## Abgabeleistung
 
-## Versuchsaufbau
+Die Abgabeleistung umfasst drei Teile:
+
+1. Ausarbeitung über den theoretischen Hintergrund, insbesondere über die Auswahl und Funktionsweise der Design Patterns und der Gameification Techniken
+2. Softwareprototyp zum Erlernen eines Design Patterns mit Feedback
+3. Beschreibung und Ergebnisse des Feldversuchs
+
+## fortgeschrittene Konzepte der Softwareentwicklung am Beispiel von Design Patterns
+
+Als Beispiel für fortgeschrittene Konzepte, die durch einen mit Gameficition gestützten Ansatz entwickelt werden sollen, sollen in dieser Arbeit Design Patterns dienen. Für die Praktikumsarbeit
+
+## Gameification
