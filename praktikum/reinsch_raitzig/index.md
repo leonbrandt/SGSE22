@@ -21,15 +21,24 @@ TODOs:
 		- Unity: nutzt "complex toolchain" aus IL2CPP, emscripten, binaryen
 - Welche Projekte zum trainieren nutzen?
 - Wie können MLGO und LLVM erweitert werden, sodass eigener Pass trainiert werden kann?
-	- feature-doc: https://github.com/google/ml-compiler-opt/blob/main/docs/adding_features.md
-	- demo-doc: https://github.com/google/ml-compiler-opt/blob/main/docs/demo/demo.md
-- welche Features sind für Training bzgl. ausgewähltem Pass wichtig?
+	- [feature-doc](https://github.com/google/ml-compiler-opt/blob/main/docs/adding_features.md)
+	- [demo-doc](https://github.com/google/ml-compiler-opt/blob/main/docs/demo/demo.md)
+- Welche Features sind für Training bzgl. ausgewähltem Pass wichtig?
 - Realisierung
 
 ## Projektplanung ##
 
-https://crocus-island-7de.notion.site/e698d92cbf0a476d8f044fe727f03ea3?v=29abe0d1019e4d908513bf765bc34eff
+[Meilensteinplan](https://crocus-island-7de.notion.site/e698d92cbf0a476d8f044fe727f03ea3?v=29abe0d1019e4d908513bf765bc34eff)
 
 ## Recherche ##
 
 [Recherche zum MLGO Paper/Framework](praktikum/reinsch_raitzig/research.md)
+
+## Register Allocation Pass ##
+
+TODO: aus research.md zusammenfassen
+
+## experimentelle Toolchain ##
+
+TODO: siehe research
+TODO: validieren

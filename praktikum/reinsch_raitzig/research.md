@@ -48,7 +48,61 @@ des CFG (control flow graph) an einer bestimmten Call Site zu einer optimalen L�
 - Welche dieser Pässe nutzen Heuristiken, die effektiv durch
 	ML-Modelle ausgetauscht werden können? (kritische Frage!)
 
+## Auswahl Pass ##
 
+Aus Paper:
+- Oz reduces the binary size as compared to O0
+- Major reduction of code size comes by the application of GF
+and G0
+- G1 further reduces the code size, but all the other groups
+increase te binary size
+	- Formulierung: G3 ist insbesondere mit Optimierung hinsichtlicht
+	Performance befasst -> klassischer Trade-Off zwischen Platz
+	und Geschwindigkeit
+	- Evtl. bietet das hier Möglichkeiten, wo individuell
+	entschieden werden muss und die Auswirkung nicht so
+	eindeutig vorhersagbar ist..
+	- `inline` zählt allerdings auch zu G0 und wird nicht weiter
+	erläutert -> wird allerdings von MLGO als Pilot-Pass verwendet
+- Conclusion: G0 does the major work of all shrinkage
+	- Enthaltene Pässe in G0:
+```
+-forceattrs -inferattrs -ipsccp -globalopt -mem2reg -deadargelim -instcombine -simplifycfg -
+prune-eh -inline -functionattrs
+```
+- G0 wird aber noch in weitere subgruppen aufgeteilt
+
+Betrachtung zu runtime:
+- GF gives the maximum reduction -> GF is very important for
+overall run time
+- G0 also helps for runtime
+
+LLVM Doku:
+- Evtl. kann mit Register Allokierung was gemacht werden
+	- https://llvm.org/doxygen/namespacellvm.html#a7a9820a919f39641bb331ebe3baed939
+- demangle nutzt auch Heuristiken
+- loop unrolling scheint auch Heuristiken zu nutzen
+- loop rotation auch
+- Doku zu struct EvictionCost: "Cost of evicting interference - used by default advisor, and the eviction chain heuristic in RegAllocGreedy."
+
+
+
+Weitere Papers:
+- https://link.springer.com/content/pdf/10.1007/s10766-010-0161-2.pdf
+- https://llvm.org/devmtg/2018-04/slides/Yatsina-LLVM%20Greedy%20Register%20Allocator.pdf
+	- Das sieht hier so aus, als ob Kosten für ein bestimmtes
+	Szenario ("Eviction") berechnet werden, teilweise diese Berechnung aber nicht
+	ganz passend ist (bzw. genau falschrum)
+	- Die Heuristik scheint im EvictionAdvisor umgesetzt
+	zu sein: https://github.com/llvm/llvm-project/blob/d4b1be20f6e52f4f966b7bd471f197c685a255e2/llvm/lib/CodeGen/RegAllocEvictionAdvisor.cpp
+	- Frage hierzu: wie sieht das mit "Registern" in wasm aus?
+	Kann man da evtl. irgendwas spezialisieren? Bzw. wie testet
+	man das korrekte Verhalten der erzeugten Register Allokation?
+
+WASM Codegen with LLVM:
+- https://v8.dev/blog/emscripten-llvm-wasm
+- build emscripten from source: https://emscripten.org/docs/building_from_source/index.html
+- C to wasm: https://surma.dev/things/c-to-webassembly/
 
 # LLVM Projects #
 
