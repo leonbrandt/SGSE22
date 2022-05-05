@@ -88,23 +88,25 @@ Eine wichtige Variante des Wasserfallmodells ist die formale Systementwicklung, 
 ## 2.1.2 Inkrementelle Entwicklung
 
 Die inkrementelle Entwicklung basiert auf der Idee, eine Implementierung zu entwickeln, Feedback von Benutzern und anderen einzuholen und die Software über mehrere Versionen hinweg weiterzuentwickeln, bis das erforderliche System entwickelt ist (Abbildung 2.2).
-Spezifikations-, Entwicklungs- und Validierungsaktivitäten sind verschachtelt und nicht getrennt, mit aktivitätenübergreifendem Feedback.
-
-![](img/02.png)
-**Abbildung 2.2: Inkrementelle Entwicklung**
 
 Die inkrementelle Entwicklung ist derzeit der am weitesten verbreitete Ansatz in der Softwareentwicklung. Dieser Ansatz kann geplant, flexibel oder meistens eine Kombination dieser Ansätze sein. Bei einem planmäßigen Vorgehen werden Systeminkremente im Voraus festgelegt; Wenn ein agiler Ansatz gewählt wird, werden frühe Inkremente identifiziert, aber die Entwicklung späterer Inkremente hängt von den Prioritäten des Kunden ab.
 
-Inkrementelle Softwareentwicklung, die ein grundlegender Bestandteil agiler Entwicklungsmethoden ist, ist besser als ein Wasserfallansatz für Systeme, deren Anforderungen sich wahrscheinlich während des Entwicklungsprozesses ändern. Dies ist bei den meisten Geschäftssystemen und Softwareprodukten der Fall. Indem die Software inkrementell entwickelt wird, ist es billiger und einfacher, Änderungen an der Software vorzunehmen, während sie entwickelt wird.
+![](img/02.png)
+**Abbildung 2.2: Die inkrementelle Softwareentwicklung**
 
-Jedes Inkrement oder jede Version des Systems enthält einige der Funktionen, die vom Kunden benötigt werden. Im Allgemeinen enthalten die frühen Inkremente des Systems die wichtigsten oder am dringendsten benötigten Funktionen. Das bedeutet, dass der Kunde oder Anwender das System in einem relativ frühen Stadium der Entwicklung dahingehend bewerten kann, ob es die Anforderungen erfüllt. Wenn nicht, muss nur das aktuelle Inkrement geändert und ggf. neue Funktionalität für spätere Inkremente definiert werden. Die inkrementelle Entwicklung hat gegenüber dem Wasserfallmodell drei wesentliche Vorteile:
-1. Die Kosten für die Implementierung von Anforderungsänderungen werden reduziert. Der erneute Analyse- und Dokumentationsaufwand ist deutlich geringer als beim Wasserfallmodell.
-2. Es ist einfacher, Kundenfeedback über die geleistete Entwicklungsarbeit einzuholen. Kunden können Demonstrationen der Software kommentieren und sehen, wie viel implementiert wurde. Kunden finden es schwierig, den Fortschritt anhand von Softwaredesigndokumenten zu beurteilen.
-3. Eine vorzeitige Lieferung und Bereitstellung nützlicher Software an den Kunden ist möglich, auch wenn nicht alle Funktionen enthalten sind. Kunden können die Software früher nutzen und daraus Nutzen ziehen, als dies mit einem Wasserfallprozess möglich ist.
+Inkrementelle Softwareentwicklung, die ein grundlegender Bestandteil von agilen 
+Entwicklungsmethoden ist. Es ist besser als ein Wasserfallansatz für Systeme, deren Anforderungen sich wahrscheinlich während des Entwicklungsprozesses ändern. Dies ist bei den meisten Geschäftssystemen und Softwareprodukten der Fall. Inkrementelle Entwicklung zeigt uns wie wir Probleme lösen können. Wir erarbeiten selten eine vollständige Problemlösung im Voraus, sondern bewegen uns in einer Reihe von Schritten auf eine Lösung zu und verfolgen sie zurück, wenn wir feststellen, dass wir einen Fehler gemacht haben. Durch die Entwicklung der Software inkrementell, ist es billiger und einfacher, Änderungen an der Software vorzunehmen, während sie entwickelt wird. Die frühen Inkremente des Systems beinhalten die wichtigsten Funktionen. Das heißt, dass der Kunde bzw. Anwender das System relativ früh evaluieren kann, um zu sehen, ob sie das liefert, was erforderlich ist. Wenn nicht, dann muss nur das aktuelle Inkrement geändert und ggf. neue Funktionalität definiert werden.
+
+Es gibt drei wesentliche Vorteile gegenüber dem Wasserfallmodell:
+1.	Die Kosten für die Implementierung von Anforderungsänderungen werden reduziert. Der erneute Analyse- und Dokumentationsaufwand ist deutlich geringer als beim Wasserfallmodell.
+2.	Es ist einfacher, Kundenfeedback über die geleistete Entwicklungsarbeit einzuholen. Sowie die Kunden können sich die Dokumente des Prozesses ansehen.
+3.	Eine vorzeitige Lieferung und Bereitstellung nützlicher Software an den Kunden ist möglich, auch wenn nicht alle Funktionen enthalten sind.
 
 Aus Managementsicht hat der inkrementelle Ansatz zwei Probleme:
-1. Der Prozess ist nicht sichtbar. Wenn Systeme schnell entwickelt werden, ist es nicht kosteneffektiv, Dokumente zu erstellen, die jede Version des Systems widerspiegeln.
-2. Die Systemstruktur verschlechtert sich, wenn neue Inkremente hinzugefügt werden. Regelmäßige Änderungen führen zu chaotischem Code, da neue Funktionen auf jede erdenkliche Weise hinzugefügt werden. Es wird immer schwieriger und kostspieliger, einem System neue Funktionen hinzuzufügen. Um die strukturelle Verschlechterung und allgemeine Code-Unordnung zu reduzieren, schlagen agile Methoden vor, dass Sie die Software regelmäßig umgestalten (verbessern und neu strukturieren) sollten.
+1.	Der Prozess ist nicht sichtbar: Manager brauchen in regelmäßigen Abständen Zwischenversionen, an denen sie den Fortschritt messen können. Wenn Systeme schnell entwickelt werden, ist es nicht kosteneffektiv, jede Version zu dokumentieren.
+2.	Die Systeme sind oft schlecht strukturiert: Stetige Veränderungen neigen dazu, die Struktur der Software zu beeinträchtigen. Die Integration von Softwareänderungen wird zunehmend schwerer und teurer.
+3.	Es könnten spezielle Werkzeuge und Techniken erforderlich werden: Diese können zwar eine schnelle Entwicklung unterstützen, sind aber vielleicht inkompatibel mit anderen Werkzeugen oder Techniken, und womöglich wissen nur relativ wenige Leute, wie man mit ihnen umgeht.
+
 
 Die Probleme der inkrementellen Entwicklung werden groß bei großen, komplexen Systemen mit langer Lebensdauer, bei denen verschiedene Teams verschiedene Teile des Systems entwickeln. Große Systeme benötigen ein stabiles Framework oder eine stabile Architektur, und die Verantwortlichkeiten der verschiedenen Teams, die an Teilen des Systems arbeiten, müssen in Bezug auf diese Architektur klar definiert werden. Dies muss im Voraus geplant und nicht schrittweise entwickelt werden.
 
