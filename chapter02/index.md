@@ -23,7 +23,7 @@ Obwohl es viele verschiedene Softwareprozesse gibt, gibt es einige grundlegende 
 Die komplexen Aktivitäten umfassen Anforderungsprüfung, Architekturdesign und Komponententests. Die Prozesse umfassen auch das Softwarekonfigurationsmanagement und die Projektplanung, die die Produktionsaktivitäten unterstützen.
 
 Wenn wir Prozesse beschreiben, sprechen wir normalerweise von Aktivitäten in diesen Prozessen. Bei der Beschreibung von Prozessen ist es aber auch wichtig zu beschreiben, wer beteiligt ist, was produziert wird und welche Bedingungen den Handlungsablauf beeinflussen:
-1. Produkte oder Leistungen sind **die Ergebnisse der Aktivitäten** des Prozesses.
+1. **Produkte oder Leistungen** sind **die Ergebnisse der Aktivitäten** des Prozesses.
 2. **Rollen spiegeln die Verantwortlichkeiten** der am Prozess beteiligten Personen wider.
 3. **Vor- und Nachbedingungen** sind die Bedingungen, die erfüllt sein müssen, bevor und nachdem die Prozesstätigkeit durchgeführt oder das Produkt hergestellt wurde. Beispielsweise kann eine Vorbedingung vor Beginn des architektonischen Entwurfs die Zustimmung des Kunden zu allen Anforderungen sein; Nachdem diese Aktion abgeschlossen ist, kann die Nachbedingung eine Validierung der UML-Modelle sein, die die Architektur beschreiben.
 
