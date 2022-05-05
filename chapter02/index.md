@@ -272,9 +272,29 @@ Es gibt zwei Möglichkeiten, mit Veränderungen und allgemein mit Systemänderun
 
 ## 2.3.1 Prototyping 
 
+Ein Prototyp ist eine frühe Version eines Softwaresystems, das wird oft bei Konzeption demonstriert. Dabei werden Designoptionen ausprobiert und mögliche Lösungen zu finden.
+
+Ein Softwareprototyp kann in einem Softwareentwicklungsprozess verwendet werden, um erforderliche Änderungen vorherzusehen: 
+1.	Im Requirements-Engineering-Prozess kann ein Prototyp bei der Erhebung und Validieren von Systemanforderungen unterstützen. 
+2.	Im Systemdesignprozess kann ein Prototyp auch angewendet werden, um Softwarelösungen zu finden und eine Schnittstelle für das System zu entwickeln. 
+
+Prototyping ist im Software Engineering eine Vorgehensweise bei der Softwareentwicklung, bei der nicht sofort ein endgültiges Softwaresystem, sondern zunächst ein oder mehrere Prototypen erstellt werden. 
+Außerdem kann es verwendet werden dem Designexperimente durchzuführen, um die Machbarkeit eines vorgeschlagenen Designs zu überprüfen.
+
+Zum Beispiel ein Datenbankdesign kann als Prototyp erstellt und getestet werden. Wir können dabei überprüfen, ob es einen effizienten Datenzugriff für die häufigsten Benutzerabfragen unterstützt. Um die Benutzerschnittstellen richtig zu entwickeln, wäre eine Rapid Prototyping mit Einbeziehung der Endanwender am sinnvollsten. Ein Vorgehensmodell für die Prototypenentwicklung ist in Abbildung 2.9 dargestellt. Die Ziele des Prototyping wie Entwicklung der Benutzerschnittstelle, die Entwicklung eines Systems zur Validieren funktionaler Systemanforderungen oder die Entwicklung eines Systems zur Demonstration der Anwendung für Manager sollten schon von Beginn des Prozesses genau eingeplant werden. 
+
 ![](img/09.png)
 
-**Abbildung 2.9: Prototypenentwicklung**
+**Abbildung 2.9: Prototyp Entwicklung**
+
+Ohne diese Ziele wird es schwer fallen die Funktionen richtig zu verstehen. Man hat eher davon die Nachteile. Die nächste Phase des Prozesses besteht darin, zu entscheiden, was in das Prototypsystem eingefügt werden soll und was weggelassen werden soll. Man kann somit auch die Kosten senken. Es wird entschieden, ob die nicht funktionale Anforderungen wie Antwortzeiten und Speicherauslastung nicht einfach gelockert werden soll oder nicht. Sowie die Fehlerbehandlung und- Verwaltung können auch ignoriert werden, es sei denn, das Ziel ist es eine Benutzerschnittstelle einzurichten. 
+
+Die letzte Phase des Prozesses ist die Evaluierung des Prototyps. In der Phase ist es wichtig Entscheidungen für Benutzerschulungen getroffen werden. Wichtig noch ist, dass die Ziele des Prototyps angewendet werden, um ein Evaluierungsplan abzuleiten. Ein allgemeines Problem beim Prototyping besteht darin, dass Benutzer den Prototyp nicht auf gleiche Weise verwenden wie sie das endgültige System verwenden. Wenn der Prototyp langsam ist, können die Evaluatoren ihre Arbeitsweise anpassen und die Systemfunktionen mit langsamen Reaktionszeiten vermeiden. Wenn sie im endgültigen System eine bessere Reaktion erhalten, können sie es auf andere Weise verwenden.
+
+## 2.3.2 Inkrementelle Lieferung
+
+Eine Inkrementelle Lieferung wie es in der Abbildung 2.10 auch zu sehen ist, ist ein Ansatz zur Softwareentwicklung, bei dem einige der entwickelten Inkremente an den Kunden geliefert und dort eingesetzt werden. Bei dem Prozess legen die Kunden fest, welche der Services für sie am wichtigsten und welche am wenigsten wichtig sind. Anschließend werden die Lieferinkremente definiert, wobei man drauf achten soll, dass jedes Inkrement eine Teilmenge der Systemfunktionalität bereitstellt. Die Zuordnung von Diensten zu Inkrementen hängt von der Dienstpriorität ab. Wichtig dabei ist, dass die Dienste mit der höchsten Priorität zuerst implementiert und geliefert werden. Nach der Identifizierung der Systeminkremente, werden die Anforderungen an die im ersten Inkrement zu erbringenden Services detailliert definiert und dieses Inkrement entwickelt. Bei der Entwicklung kann aber Während der Entwicklung kann eine weitere Anforderungsanalyse für spätere Inkremente stattfinden, aber Anforderungsänderungen für das aktuelle Inkrement werden nicht akzeptiert. 
+
 
 ## Referenzen
 
