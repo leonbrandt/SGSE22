@@ -138,7 +138,7 @@ Während der Plaungsphase müssen folgende Themen berücksichtig werden:
 
 ### Anforderungen Änderungsmanagement
 
-![](media/change_managemant.PNG)
+![](media/change_management.PNG)
 #### Abbildung 4.19 [1]
 In Abbildung 4.19 wird der Prozessablauf im Anforderungen Änderungsmanagemant gezeigt.
 
