@@ -3,30 +3,31 @@
 **Autor:** Artem Shipilov
 
 ## Ziele:
-* **die Konzepte von Softwareprozessen** und Softwareprozessmodellen verstehen;
-* wurden in **drei allgemeine Software-Prozessmodelle** eingeführt und wann sie verwendet werden könnten;
+* **die Konzepte von Softwareprozessen** und Softwareprozessmodellen verstehen; 
+* **die Einführung der drei allgemeinen Software-Prozessmodelle** und wann sie verwendet werden können;
 * **die grundlegenden Prozessaktivitäten** des Software Requirements Engineering, der Softwareentwicklung, des Testens und der Evolution kennen;
 * verstehen, **warum Prozesse organisiert werden sollten**, um mit Änderungen in den Softwareanforderungen und -designs fertig zu werden;
 * den Begriff der **Softwareprozessverbesserung** und die Faktoren verstehen, die die Softwareprozessqualität beeinflussen.
 
-Ein Softwareprozess ist eine Reihe zusammenhängender Aktivitäten, die zur Produktion eines Softwaresystems führen.
+**Ein Softwareprozess** ist eine Menge von Aktivitäten und damit zusammenhängenden Ergebnissen, die zur Herstellung eines Softwareprodukts führen. Dazu kann die Entwicklung von Software von Grund auf zählen, obwohl immer häufiger der Fall eintritt, dass neue Software entwickelt wird, indem bestehende Systeme erweitert und verändert werden. 
 
-Es gibt keinen allgemeingültigen Softwareprozess. Der in verschiedenen Unternehmen verwendete Prozess hängt von der Art der zu entwickelnden Software, den Anforderungen des Kunden und den Fähigkeiten der Personen ab, die die Software schreiben.
+Es gibt keinen idealen Softwareprozess, da in verschiedenen Unternehmen verwendete Prozesse von der Art der zu entwickelnden Software, den Anforderungen des Kunden und den Fähigkeiten der Personen ab, die die Software entwickeln abhängen.
 
-Es gibt jedoch viele verschiedene Softwareprozesse, die alle die vier grundlegenden Softwareentwicklungsaktivitäten umfassen müssen:
-1. Softwarespezifikation. Die Funktionalität der Software und Einschränkungen für ihren Betrieb müssen definiert werden.
-2. Softwareentwicklung. Die Software zur Erfüllung der Spezifikation muss erstellt werden.
-3. Softwarevalidierung. Die Software muss validiert werden, um sicherzustellen, dass sie das tut, was der Kunde will.
-4. Softwareentwicklung. Die Software muss sich weiterentwickeln, um den sich ändernden Kundenanforderungen gerecht zu werden.
+Obwohl es viele verschiedene Softwareprozesse gibt, gibt es einige grundlegende Abläufe, die alle Softwareprozesse gemeinsam haben:
+1. **Softwarespezifikation.** Die Funktionen der Software und die Beschränkungen ihrer Benutzung müssen definiert werden.
+2. **Softwareentwicklung.** Die Software, die diese Anforderungen erfüllen soll, muss erstellt werden.
+3. **Softwarevalidierung.** Die Software muss validiert werden, um sicherzustellen, dass sie das tut, was der Kunde will.
+4. **Weiterentwicklung von Software.** Die Software muss sich weiterentwickeln, um mit den sich veränderten Bedürfnissen des Kunden (Kundenanforderungen) gerecht zu werden.
 
-Diese komplexen Aktivitäten umfassen Anforderungsprüfung, Architekturdesign und Komponententests. Die Prozesse umfassen auch das Softwarekonfigurationsmanagement und die Projektplanung, die die Produktionsaktivitäten unterstützen.
 
-Wenn wir Prozesse beschreiben und diskutieren, sprechen wir normalerweise von Aktivitäten in diesen Prozessen. Bei der Beschreibung von Prozessen ist es aber auch wichtig zu beschreiben, wer beteiligt ist, was produziert wird und welche Bedingungen den Handlungsablauf beeinflussen:
-1. Produkte oder Ergebnisse sind die Ergebnisse der Aktivitäten des Prozesses.
-2. Rollen spiegeln die Verantwortlichkeiten der am Prozess beteiligten Personen wider.
-3. Vor- und Nachbedingungen sind die Bedingungen, die erfüllt sein müssen, bevor und nachdem die Prozesstätigkeit durchgeführt oder das Produkt hergestellt wurde. Beispielsweise kann eine Vorbedingung vor Beginn des architektonischen Entwurfs die Zustimmung des Kunden zu allen Anforderungen sein; Nachdem diese Aktion abgeschlossen ist, kann die Nachbedingung eine Validierung der UML-Modelle sein, die die Architektur beschreiben.
+Die komplexen Aktivitäten umfassen Anforderungsprüfung, Architekturdesign und Komponententests. Die Prozesse umfassen auch das Softwarekonfigurationsmanagement und die Projektplanung, die die Produktionsaktivitäten unterstützen.
 
-Softwareprozesse sind komplex und hängen von den Menschen ab, die die Entscheidungen treffen. Da es keinen einheitlichen Prozess gibt, haben die meisten Softwareunternehmen ihre eigenen Entwicklungsprozesse entwickelt. Prozesse entwickeln sich ständig weiter. Sicherheitskritische Systeme erfordern einen sehr strukturierten Entwicklungsprozess, der detaillierte Aufzeichnungen führt. Für Geschäftssysteme mit sich schnell ändernden Anforderungen ist ein flexiblerer Prozess wahrscheinlich am besten geeignet.
+Wenn wir Prozesse beschreiben, sprechen wir normalerweise von Aktivitäten in diesen Prozessen. Bei der Beschreibung von Prozessen ist es aber auch wichtig zu beschreiben, wer beteiligt ist, was produziert wird und welche Bedingungen den Handlungsablauf beeinflussen:
+1. **Produkte oder Leistungen** sind **die Ergebnisse der Aktivitäten** des Prozesses.
+2. **Rollen spiegeln die Verantwortlichkeiten** der am Prozess beteiligten Personen wider.
+3. **Vor- und Nachbedingungen** sind die Bedingungen, die erfüllt sein müssen, bevor und nachdem die Prozesstätigkeit durchgeführt oder das Produkt hergestellt wurde. Beispielsweise kann eine Vorbedingung vor Beginn des architektonischen Entwurfs die Zustimmung des Kunden zu allen Anforderungen sein; Nachdem diese Aktion abgeschlossen ist, kann die Nachbedingung eine Validierung der UML-Modelle sein, die die Architektur beschreiben.
+
+**Softwareprozesse** sind komplex und **hängen von den Menschen ab**, die die Entscheidungen treffen. Da es keinen einheitlichen Prozess gibt, haben die meisten Softwareunternehmen ihre eigenen Entwicklungsprozesse entwickelt. Prozesse entwickeln sich ständig weiter. Sicherheitskritische Systeme erfordern einen sehr strukturierten Entwicklungsprozess, der detaillierte Aufzeichnungen führt. Für Geschäftssysteme mit sich schnell ändernden Anforderungen ist ein flexiblerer Prozess wahrscheinlich am besten geeignet.
 
 Die Planung ist ein fester Bestandteil aller Prozesse. Plangesteuerte Prozesse sind Prozesse, bei denen alle Aktivitäten des Prozesses im Voraus geplant und der Fortschritt anhand dieses Plans gemessen wird. In agilen Prozessen erfolgt die Planung inkrementell und kontinuierlich mit der Entwicklung der Software. In der Regel muss bei großen Systemen eine Balance zwischen geplanten und flexiblen Prozessen gefunden werden.
 
@@ -34,75 +35,78 @@ Organisationen können ihre Prozesse verbessern, indem sie Praktiken wie UML-Mod
 
 
 ## 2.1 Software-Prozessmodelle
-Jedes Prozessmodell liefert nur teilweise Informationen über diesen Prozess. Das heißt, wir sehen die Struktur des Prozesses, aber nicht die Details seiner Aktivitäten.
-Diese Modelle sind abstrakte Prozessbeschreibungen, mit denen sich die Softwareentwicklung erklären lässt.
-Allgemeine Prozessmodelle:
+In diesem Abschnitt werde ich eine Anzahl sehr allgemeiner Prozessmodelle einführen und sie vom Standpunkt der Architektur vorstellen. Das heißt, wir sehen den Rahmen des Prozesses, aber keine Details über die speziellen Abläufe. Diese allgemeinen Modelle sind keine endgültigen Beschreibungen der Softwareprozesse, sondern vielmehr nützliche Abstraktionen, die benutzt werden können, um verschiedene Ansätze der Softwareentwicklung zu erläutern.
 
-1. Das Wasserfallmodell nimmt die Hauptaktivitäten des Spezifikations-, Entwicklungs-, Verifikations- und Evolutionsprozesses und stellt sie als separate Prozessschritte wie Anforderungsspezifikation, Softwaredesign, Implementierung und Test dar.
-2. Inkrementelle Entwicklung. Dieser Ansatz wechselt zwischen Spezifikation, Entwicklung und Verifikation. Das System wird in einer Reihe von Versionen (Inkremente) entwickelt, wobei die neue Version der vorherigen Version Funktionalität hinzufügt.
-3. Integration und Anpassung. Dieser Ansatz basiert auf wiederverwendbaren Komponenten oder Systemen. Der Entwicklungsprozess konzentriert sich darauf, diese Komponenten für den Einsatz in neuen Umgebungen anzupassen und in das System zu integrieren.
+Allgemeine Prozessmodelle sind: 
+1.	**Das Wasserfallmodell.** Dieses Modell stellt die grundlegenden Prozessabläufe wie Spezifikation, Entwicklung, Validierung und Weiterentwicklung als eigenständige Phasen des Prozesses dar, wie zum Beispiel als Spezifikation der Anforderungen, als Softwareentwurf, Implementierung, Tests usw.
+2. **Inkrementelle Entwicklung.** Dieser Ansatz wechselt zwischen Spezifikation, Entwicklung und Verifikation. Das System wird in einer Reihe von Versionen (Inkremente) entwickelt, wobei die neue Version der vorherigen Version Funktionalität hinzufügt.
+3. **Integration und Anpassung.** Dieser Ansatz basiert auf wiederverwendbaren Komponenten oder Systemen. Der Entwicklungsprozess konzentriert sich darauf, diese Komponenten für den Einsatz in neuen Umgebungen anzupassen und in das System zu integrieren.
 
-Der richtige Prozess hängt von den Anforderungen des Kunden und der Umgebung ab, in der die Software verwendet werden soll, sowie von der Art der zu entwickelnden Software. Beispielsweise wird sicherheitskritische Software normalerweise in einem (1.) Wasserfallprozess entwickelt, da viele Analysen und Dokumentationen erforderlich sind, bevor die Implementierung beginnen kann. Softwareprodukte werden heute immer nach dem (2.) inkrementellen Prozessmodell entwickelt. Geschäftssysteme werden oft entwickelt, indem bestehende Systeme (3.) angepasst und integriert werden, um ein neues System mit der gewünschten Funktionalität zu erstellen.
+**Der richtige Prozess hängt von den Anforderungen** des Kunden und der Umgebung ab, in der die Software verwendet werden soll, sowie von der Art der zu entwickelnden Software. 
 
-Bei großen Systemen ist es sinnvoll, einige der besten Eigenschaften aller gängigen Prozesse zu kombinieren. Subsysteme in einem größeren System können mit verschiedenen Ansätzen entwickelt werden. Teile des Systems, die gut verstanden sind, können mithilfe eines wasserfallbasierten Prozesses identifiziert und entwickelt werden. Andere Teile des Systems sollten immer in Inkrementen entwickelt werden. In beiden Fällen werden Softwarekomponenten wahrscheinlich wiederverwendet.
+Beispielsweise wird **sicherheitskritische Software** normalerweise in einem (1.) **Wasserfallprozess entwickelt**, da viele Analysen und Dokumentationen erforderlich sind, bevor die Implementierung beginnen kann. **Softwareprodukte** werden heute immer nach dem (2.) **inkrementellen Prozessmodell** entwickelt. **Geschäftssysteme** werden oft entwickelt, indem bestehende Systeme (3.) **angepasst und integriert** werden, um ein neues System mit der gewünschten Funktionalität zu erstellen.
 
-Es wurden verschiedene Versuche unternommen, „universelle“ Prozessmodelle zu entwickeln, die sich auf all diese allgemeinen Modelle stützen. Eines der bekanntesten dieser universellen Modelle ist der Rational Unified Process (RUP) (Krutchen 2003), der von Rational, einem US-amerikanischen Softwareentwicklungsunternehmen, entwickelt wurde. Das RUP ist ein flexibles Modell, das auf unterschiedliche Weise instanziiert werden kann, um Prozesse zu erstellen, die einem der hier besprochenen allgemeinen Prozessmodelle ähneln. Das RUP wurde von einigen großen Softwareunternehmen (insbesondere IBM) übernommen, hat jedoch keine breite Akzeptanz gefunden.
+Bei **großen Systemen** ist es sinnvoll, einige der besten Eigenschaften aller gängigen **Prozesse zu kombinieren.** Subsysteme in einem größeren System können mit verschiedenen Ansätzen entwickelt werden. Teile des Systems, die gut verstanden sind, können mithilfe eines wasserfallbasierten Prozesses identifiziert und entwickelt werden. Andere Teile des Systems sollten immer in Inkrementen entwickelt werden. In beiden Fällen werden Softwarekomponenten wahrscheinlich wiederverwendet.
+
 
 ### 2.1.1 Das Wasserfallmodell
 
-Das erste veröffentlichte Softwareentwicklungsprozessmodell wurde von technischen Prozessmodellen abgeleitet, die bei der Entwicklung großer militärischer Systeme verwendet wurden (Royce, 1970). Es stellt den Softwareentwicklungsprozess als eine Reihe von Schritten dar, wie in Abbildung 2.1 dargestellt. Aufgrund des kaskadierenden Übergangs von einer Phase zur nächsten wird dieses Modell als Wasserfallmodell bezeichnet. Das Wasserfallmodell ist ein Beispiel für einen plangesteuerten Prozess. Die Planung und Terminierung aller Prozessaktivitäten erfolgt vor der Softwareentwicklung.
+Das erste veröffentlichte Modell für die Softwareentwicklung wurde von anderen Entwicklungsprozessen abgeleitet (Royce, 1970). Es wird in Abbildung 2.1 dargestellt. Wegen der Kaskade von einer Phase zur Nächsten wird dieses Modell das „Wasserfall-Modell“ oder der Softwarelebenszyklus genannt. Das Wasserfallmodell ist ein Beispiel für einen plangesteuerten Prozess. Die Planung und Terminierung aller Prozessaktivitäten erfolgt von der Softwareentwicklung.
 
 ![](img/01.png)
 **Abbildung 2.1: Das Wasserfallmodell**
 
-Die Stufen des Wasserfallmodells spiegeln direkt die Hauptaktivitäten der Softwareentwicklung wider:
-1. Anforderungsdefinition. Die Dienste, Einschränkungen und Ziele des Systems werden durch Rücksprache mit Systembenutzern festgelegt. Anschließend werden sie detailliert definiert und dienen als Systemspezifikation.
-2. System- und Softwaredesign. Der Systemdesignprozess ordnet die Anforderungen entweder Hardware- oder Softwaresystemen zu. Es baut eine Gesamtsystemarchitektur auf. Softwaredesign beinhaltet die Identifizierung und Beschreibung der grundlegenden Abstraktionen von Softwaresystemen und ihrer Beziehungen.
-3. Implementierung und Unit-Tests. In dieser Phase wird das Softwaredesign als Satz von Programmen oder Programm Einheiten realisiert. Beim Unit-Test wird überprüft, ob jede Unit ihre Spezifikation erfüllt.
-4. Integrations- und Systemtests. Die einzelnen Programm Einheiten bzw. Programme werden als Gesamtsystem integriert und getestet, um sicherzustellen, dass die Softwarevoraussetzungen erfüllt sind. Nach dem Test wird das Softwaresystem an den Kunden geliefert.
-5. Betrieb und Wartung. Normalerweise ist dies die längste Lebenszyklusphase. Das System wird installiert und in den praktischen Einsatz gebracht. Die Wartung umfasst die Korrektur von Fehlern, die in früheren Phasen des Lebenszyklus nicht entdeckt wurden, die Verbesserung der Implementierung von Systemeinheiten und die Verbesserung der Systemdienste, wenn neue Anforderungen entdeckt werden.
+Die wichtigen Phasen dieses Modells lassen sich auf grundlegende Entwicklungsaktivitäten abbilden:
+1.	Anforderungsdefinition: Die Dienstleistungen, Einschränkungen und Ziele des Systems werden in Zusammenarbeit mit den Systembenutzern aufgestellt. Dann werden sie detaillierter definiert und dienen so als Systemspezifikationen. 
+2.	System- und Softwaredesign: Der Systemdesignprozess (Systementwurfsprozess) teilt die Anforderungen in Hard-und Softwaresysteme auf und legt eine allgemeine Systemarchitektur fest. Beim Softwareentwurf geht es um das Erkennen und Beschreiben der grundlegenden abstrakten Softwaresysteme und ihrer Beziehungen zueinander. 
+3.	Implementierung und Unit-Tests: In dieser Phase wird der Softwareentwurf in eine Reihe von Programmen oder Programmeinheiten umgesetzt. Das Testen der Einheiten stellt sicher, dass jede Einheit ihre Spezifikationen erfüllt. 
+4.	Integration und Systemtest: Die einzelnen Programme oder Programmeinheiten werden zusammengeführt bzw. integriert und als Ganzes getestet, um sicherzustellen, dass die Softwareanforderungen erfüllt werden. Nach den Tests wird das Softwaresystem an den Kunden ausgeliefert.
+5.	Betrieb und Instandhaltung: Normalerweise (aber nicht unbedingt) ist dies die längste Phase innerhalb des Lebenszyklus. Das System wird installiert und zum Gebrauch freigegeben. Zur Wartung gehörten das Korrigieren von Fehlern, die in den früheren Phasen nicht entdeckt wurden, die Verbesserung der Implementierung von Systemeinheiten und die Verbesserung des Systems, falls neue Anforderungen entdeckt werden.
 
-Das Ergebnis jeder Stufe des Wasserfallmodells sind ein oder mehrere genehmigte Dokumente. Die nächste Phase darf nicht beginnen, bevor die vorherige Phase abgeschlossen ist. Dies ist sinnvoll für die Hardwareentwicklung, bei der hohe Herstellungskosten erforderlich sind.
+Das Ergebnis jeder Stufe des Wasserfallsmodells sind ein oder mehrere genehmigte Dokumente.
+Die nächste Phase sollte nicht beginnen, bevor nicht die vorherige abgeschlossen wurde. Dies ist sinnvoll für die Hardwareentwicklung, bei der hohe Herstellungskosten erforderlich sind. Während des Entwurfs werden Probleme mit den Anforderungen entdeckt, während des Programmierens fallen Fehler im Entwurf auf usw. Der Softwareprozess ist nicht einfach ein linearer Prozess, sondern besteht aus einer Reihe sich wiederholender Entwicklungsaktivitäten. 
 
-Der Softwareprozess in der Praxis ist nie ein einfaches lineares Modell, sondern beinhaltet Rückkopplungen von einer Phase zur anderen.
-
-Wenn in einem Prozessschritt neue Informationen verfügbar werden, sollten die in den vorherigen Schritten erstellten Dokumente geändert werden, um die erforderlichen Systemänderungen widerzuspiegeln. Wenn beispielsweise festgestellt wird, dass die Implementierung einer Anforderung zu teuer ist, sollte das Anforderungsdokument geändert werden, um die Anforderung zu entfernen. Dies erfordert jedoch die Zustimmung des Kunden und verzögert den gesamten Entwicklungsprozess.
+Wegen der hohen Kosten bei der Herstellung und Abnahme von Dokumenten sind die Iterationen von Entwicklungsaktivitäten teuer und verlangen erhebliche Überarbeitungen.
 
 Infolgedessen können sowohl Kunden als auch Entwickler die Softwarespezifikation vorzeitig einfrieren, um weitere Änderungen zu verhindern. Leider bedeutet dies, dass Probleme später gelöst, ignoriert oder programmiert werden. Ein vorzeitiges Einfrieren von Anforderungen kann dazu führen, dass das System nicht das tut, was der Benutzer wünscht. Es kann auch zu schlecht strukturierten Systemen führen.
 
-In der Endphase des Lebenszyklus werden Fehler und Auslassungen in den anfänglichen Softwareanforderungen identifiziert. Es treten Softwarefehler auf, und es besteht Bedarf an neuen Funktionen.
+In der letzten Phase des Lebenszyklus (Betrieb und Wartung) wird die Software in Betrieb genommen. Dabei werden Fehler und Lücken in den ursprünglichen Anforderungen identifiziert.
 
-Daher muss sich das System weiterentwickeln, um nützlich zu bleiben. Das Vornehmen dieser Änderungen erfordert möglicherweise das Wiederholen vorheriger Schritte im Prozess.
+Das System muss sich also weiterentwickeln, um nützlich zu bleiben. Das Durchführen dieser Veränderungen (die Softwarewartung) kann zur Folge haben, dass einige oder alle der vorherigen Prozessphasen wiederholt werden müssen. 
+Das Problem beim Wasserfall-Modell ist seine starre Aufteilung des Projektes in die verschiedenen Phasen. Zu einem frühen Zeitpunkt müssen Verpflichtungen eingegangen werden und das bedeutet, dass es schwer ist, sich auf neue Anforderungen des Kunden einzustellen. Daher sollte das Wasserfall-Modell nur Verwendung finden, wenn die Anforderungen gut durchdacht sind.
 
-Tatsächlich sollte Software flexibel sein und sich während ihrer Entwicklung an Änderungen anpassen. Aufgrund der Notwendigkeit, das System bei Änderungen frühzeitig zu verfeinern, ist das Wasserfallmodell nur für einige Arten von Systemen geeignet:
-1. Eingebettete Systeme, bei denen Software mit Hardwaresystemen interagieren muss. Aufgrund der Inflexibilität von Hardware ist es in der Regel nicht möglich, Entscheidungen über Softwarefunktionen erst nach deren Implementierung zu treffen.
-2. Kritische Systeme, bei denen eine umfassende Sicherheitsanalyse der Softwarespezifikation und des Softwaredesigns erforderlich ist. Bei diesen Systemen müssen die Spezifikations- und Entwurfsdokumentation vollständig sein, damit diese Analyse möglich ist. Sicherheitsprobleme in der Spezifikation und im Design sind normalerweise sehr teuer, um sie während der Implementierungsphase zu beheben.
-3. Große Softwaresysteme, die Teil umfassenderer technischer Systeme sind, die von mehreren Partnerunternehmen entwickelt wurden. Hardware in Systemen kann nach einem ähnlichen Modell entworfen werden, und es ist für Unternehmen einfacher, ein gemeinsames Modell für Hardware und Software zu verwenden. Wenn mehrere Unternehmen beteiligt sind, können außerdem vollständige Spezifikationen erforderlich sein, um eine unabhängige Entwicklung der verschiedenen Subsysteme zu ermöglichen.
+Tatsächlich sollte Software flexibel sein und sich während ihrer Entwicklung an Änderungen anpassen. Aufgrund der Notwendigkeit, das System bei Änderungen frühzeitig zu verfeinern, ist **das Wasserfallmodell nur für einige Arten von Systemen geeignet:**
+1.	**Eingebettete Systeme,** bei denen Software mit Hardwaresystemen interagieren muss. Aufgrund der Inflexibilität von Hardware ist es in der Regel nicht möglich, Entscheidungen über Softwarefunktionen erst nach deren Implementierung zu treffen.
+2. **Kritische Systeme,** bei denen eine umfassende Sicherheitsanalyse der Softwarespezifikation und des Softwaredesigns erforderlich ist. Bei diesen Systemen müssen die Spezifikations- und Entwurfsdokumentation vollständig sein, damit diese Analyse möglich ist. Sicherheitsprobleme in der Spezifikation und im Design sind normalerweise sehr teuer, um sie während der Implementierungsphase zu beheben.
+3. **Große Softwaresysteme, die Teil umfassenderer technischer Systeme sind,** die von mehreren Partnerunternehmen entwickelt wurden. Hardware in Systemen kann nach einem ähnlichen Modell entworfen werden, und es ist für Unternehmen einfacher, ein gemeinsames Modell für Hardware und Software zu verwenden. Wenn mehrere Unternehmen beteiligt sind, können außerdem vollständige Spezifikationen erforderlich sein, um eine unabhängige Entwicklung der verschiedenen Subsysteme zu ermöglichen.
 
-Das Wasserfallmodell ist kein geeignetes Vorgehensmodell in Situationen, in denen eine informelle Teamkommunikation möglich ist und sich die Softwareanforderungen schnell ändern. Agile Methoden sind für diese Systeme besser geeignet.
+**Das Wasserfallmodell ist kein geeignetes Vorgehensmodell in Situationen**, in denen eine informelle Teamkommunikation möglich ist und sich **die Softwareanforderungen schnell ändern.** Agile Methoden sind für diese Systeme besser geeignet.
 
-Eine wichtige Variante des Wasserfallmodells ist die formale Systementwicklung, bei der ein mathematisches Modell der Systemspezifikation erstellt wird. Dieses Modell wird dann durch mathematische Transformationen in ausführbaren Code verfeinert. Formale Entwicklungsprozesse wie Methode B (Abrial 2005, 2010) werden hauptsächlich bei der Entwicklung von Softwaresystemen verwendet, die strenge Sicherheits-, Zuverlässigkeits- oder Sicherheitsanforderungen haben. Der formale Ansatz erleichtert das Schreiben eines Sicherheitsfalls. Aufgrund der hohen Kosten für die Entwicklung einer formalen Spezifikation wird dieses Entwicklungsmodell jedoch selten verwendet.
+Eine wichtige Variante des Wasserfallmodells ist die formale Systementwicklung, bei der ein mathematisches Modell der Systemspezifikation erstellt wird. Dieses Modell wird dann durch mathematische Transformationen in ausführbaren Code verfeinert. Formale Entwicklungsprozesse wie Methode B (Abrial 2005, 2010) werden hauptsächlich bei der Entwicklung von Softwaresystemen verwendet, die strenge Sicherheits-, Zuverlässigkeits- oder Sicherheitsanforderungen haben. Der formale Ansatz erleichtert das Schreiben eines Sicherheitsfalls. Aufgrund der **hohen Kosten für die Entwicklung** einer formalen Spezifikation wird dieses Entwicklungsmodell jedoch **selten verwendet.**
+
 
 ## 2.1.2 Inkrementelle Entwicklung
 
 Die inkrementelle Entwicklung basiert auf der Idee, eine Implementierung zu entwickeln, Feedback von Benutzern und anderen einzuholen und die Software über mehrere Versionen hinweg weiterzuentwickeln, bis das erforderliche System entwickelt ist (Abbildung 2.2).
-Spezifikations-, Entwicklungs- und Validierungsaktivitäten sind verschachtelt und nicht getrennt, mit aktivitätenübergreifendem Feedback.
-
-![](img/02.png)
-**Abbildung 2.2: Inkrementelle Entwicklung**
 
 Die inkrementelle Entwicklung ist derzeit der am weitesten verbreitete Ansatz in der Softwareentwicklung. Dieser Ansatz kann geplant, flexibel oder meistens eine Kombination dieser Ansätze sein. Bei einem planmäßigen Vorgehen werden Systeminkremente im Voraus festgelegt; Wenn ein agiler Ansatz gewählt wird, werden frühe Inkremente identifiziert, aber die Entwicklung späterer Inkremente hängt von den Prioritäten des Kunden ab.
 
-Inkrementelle Softwareentwicklung, die ein grundlegender Bestandteil agiler Entwicklungsmethoden ist, ist besser als ein Wasserfallansatz für Systeme, deren Anforderungen sich wahrscheinlich während des Entwicklungsprozesses ändern. Dies ist bei den meisten Geschäftssystemen und Softwareprodukten der Fall. Indem die Software inkrementell entwickelt wird, ist es billiger und einfacher, Änderungen an der Software vorzunehmen, während sie entwickelt wird.
+![](img/02.png)
+**Abbildung 2.2: Die inkrementelle Softwareentwicklung**
 
-Jedes Inkrement oder jede Version des Systems enthält einige der Funktionen, die vom Kunden benötigt werden. Im Allgemeinen enthalten die frühen Inkremente des Systems die wichtigsten oder am dringendsten benötigten Funktionen. Das bedeutet, dass der Kunde oder Anwender das System in einem relativ frühen Stadium der Entwicklung dahingehend bewerten kann, ob es die Anforderungen erfüllt. Wenn nicht, muss nur das aktuelle Inkrement geändert und ggf. neue Funktionalität für spätere Inkremente definiert werden. Die inkrementelle Entwicklung hat gegenüber dem Wasserfallmodell drei wesentliche Vorteile:
-1. Die Kosten für die Implementierung von Anforderungsänderungen werden reduziert. Der erneute Analyse- und Dokumentationsaufwand ist deutlich geringer als beim Wasserfallmodell.
-2. Es ist einfacher, Kundenfeedback über die geleistete Entwicklungsarbeit einzuholen. Kunden können Demonstrationen der Software kommentieren und sehen, wie viel implementiert wurde. Kunden finden es schwierig, den Fortschritt anhand von Softwaredesigndokumenten zu beurteilen.
-3. Eine vorzeitige Lieferung und Bereitstellung nützlicher Software an den Kunden ist möglich, auch wenn nicht alle Funktionen enthalten sind. Kunden können die Software früher nutzen und daraus Nutzen ziehen, als dies mit einem Wasserfallprozess möglich ist.
+Inkrementelle Softwareentwicklung, die ein grundlegender Bestandteil von agilen 
+Entwicklungsmethoden ist. Es ist besser als ein Wasserfallansatz für Systeme, deren Anforderungen sich wahrscheinlich während des Entwicklungsprozesses ändern. Dies ist bei den meisten Geschäftssystemen und Softwareprodukten der Fall. Inkrementelle Entwicklung zeigt uns wie wir Probleme lösen können. Wir erarbeiten selten eine vollständige Problemlösung im Voraus, sondern bewegen uns in einer Reihe von Schritten auf eine Lösung zu und verfolgen sie zurück, wenn wir feststellen, dass wir einen Fehler gemacht haben. Durch die Entwicklung der Software inkrementell, ist es billiger und einfacher, Änderungen an der Software vorzunehmen, während sie entwickelt wird. Die frühen Inkremente des Systems beinhalten die wichtigsten Funktionen. Das heißt, dass der Kunde bzw. Anwender das System relativ früh evaluieren kann, um zu sehen, ob sie das liefert, was erforderlich ist. Wenn nicht, dann muss nur das aktuelle Inkrement geändert und ggf. neue Funktionalität definiert werden.
+
+Es gibt drei wesentliche Vorteile gegenüber dem Wasserfallmodell:
+1.	Die Kosten für die Implementierung von Anforderungsänderungen werden reduziert. Der erneute Analyse- und Dokumentationsaufwand ist deutlich geringer als beim Wasserfallmodell.
+2.	Es ist einfacher, Kundenfeedback über die geleistete Entwicklungsarbeit einzuholen. Sowie die Kunden können sich die Dokumente des Prozesses ansehen.
+3.	Eine vorzeitige Lieferung und Bereitstellung nützlicher Software an den Kunden ist möglich, auch wenn nicht alle Funktionen enthalten sind.
 
 Aus Managementsicht hat der inkrementelle Ansatz zwei Probleme:
-1. Der Prozess ist nicht sichtbar. Wenn Systeme schnell entwickelt werden, ist es nicht kosteneffektiv, Dokumente zu erstellen, die jede Version des Systems widerspiegeln.
-2. Die Systemstruktur verschlechtert sich, wenn neue Inkremente hinzugefügt werden. Regelmäßige Änderungen führen zu chaotischem Code, da neue Funktionen auf jede erdenkliche Weise hinzugefügt werden. Es wird immer schwieriger und kostspieliger, einem System neue Funktionen hinzuzufügen. Um die strukturelle Verschlechterung und allgemeine Code-Unordnung zu reduzieren, schlagen agile Methoden vor, dass Sie die Software regelmäßig umgestalten (verbessern und neu strukturieren) sollten.
+1.	Der Prozess ist nicht sichtbar: Manager brauchen in regelmäßigen Abständen Zwischenversionen, an denen sie den Fortschritt messen können. Wenn Systeme schnell entwickelt werden, ist es nicht kosteneffektiv, jede Version zu dokumentieren.
+2.	Die Systeme sind oft schlecht strukturiert: Stetige Veränderungen neigen dazu, die Struktur der Software zu beeinträchtigen. Die Integration von Softwareänderungen wird zunehmend schwerer und teurer.
+3.	Es könnten spezielle Werkzeuge und Techniken erforderlich werden: Diese können zwar eine schnelle Entwicklung unterstützen, sind aber vielleicht inkompatibel mit anderen Werkzeugen oder Techniken, und womöglich wissen nur relativ wenige Leute, wie man mit ihnen umgeht.
+
 
 Die Probleme der inkrementellen Entwicklung werden groß bei großen, komplexen Systemen mit langer Lebensdauer, bei denen verschiedene Teams verschiedene Teile des Systems entwickeln. Große Systeme benötigen ein stabiles Framework oder eine stabile Architektur, und die Verantwortlichkeiten der verschiedenen Teams, die an Teilen des Systems arbeiten, müssen in Bezug auf diese Architektur klar definiert werden. Dies muss im Voraus geplant und nicht schrittweise entwickelt werden.
 
@@ -268,9 +272,88 @@ Es gibt zwei Möglichkeiten, mit Veränderungen und allgemein mit Systemänderun
 
 ## 2.3.1 Prototyping 
 
-![](img/09.png)
+Ein Prototyp ist eine frühe Version eines Softwaresystems, das wird oft bei Konzeption demonstriert. Dabei werden Designoptionen ausprobiert und mögliche Lösungen zu finden.
 
-**Abbildung 2.9: Prototypenentwicklung**
+Ein Softwareprototyp kann in einem Softwareentwicklungsprozess verwendet werden, um erforderliche Änderungen vorherzusehen: 
+1.	Im Requirements-Engineering-Prozess kann ein Prototyp bei der Erhebung und Validieren von Systemanforderungen unterstützen. 
+2.	Im Systemdesignprozess kann ein Prototyp auch angewendet werden, um Softwarelösungen zu finden und eine Schnittstelle für das System zu entwickeln. 
+
+Prototyping ist im Software Engineering eine Vorgehensweise bei der Softwareentwicklung, bei der nicht sofort ein endgültiges Softwaresystem, sondern zunächst ein oder mehrere Prototypen erstellt werden. 
+Außerdem kann es verwendet werden dem Designexperimente durchzuführen, um die Machbarkeit eines vorgeschlagenen Designs zu überprüfen.
+
+Zum Beispiel ein Datenbankdesign kann als Prototyp erstellt und getestet werden. Wir können dabei überprüfen, ob es einen effizienten Datenzugriff für die häufigsten Benutzerabfragen unterstützt. Um die Benutzerschnittstellen richtig zu entwickeln, wäre eine Rapid Prototyping mit Einbeziehung der Endanwender am sinnvollsten. Ein Vorgehensmodell für die Prototypenentwicklung ist in Abbildung 2.9 dargestellt. Die Ziele des Prototyping wie Entwicklung der Benutzerschnittstelle, die Entwicklung eines Systems zur Validieren funktionaler Systemanforderungen oder die Entwicklung eines Systems zur Demonstration der Anwendung für Manager sollten schon von Beginn des Prozesses genau eingeplant werden. 
+
+![](img/09.2.png)
+
+**Abbildung 2.9: Prototyp Entwicklung**
+
+Ohne diese Ziele wird es schwer fallen die Funktionen richtig zu verstehen. Man hat eher davon die Nachteile. Die nächste Phase des Prozesses besteht darin, zu entscheiden, was in das Prototypsystem eingefügt werden soll und was weggelassen werden soll. Man kann somit auch die Kosten senken. Es wird entschieden, ob die nicht funktionale Anforderungen wie Antwortzeiten und Speicherauslastung nicht einfach gelockert werden soll oder nicht. Sowie die Fehlerbehandlung und- Verwaltung können auch ignoriert werden, es sei denn, das Ziel ist es eine Benutzerschnittstelle einzurichten. 
+
+Die letzte Phase des Prozesses ist die Evaluierung des Prototyps. In der Phase ist es wichtig Entscheidungen für Benutzerschulungen getroffen werden. Wichtig noch ist, dass die Ziele des Prototyps angewendet werden, um ein Evaluierungsplan abzuleiten. Ein allgemeines Problem beim Prototyping besteht darin, dass Benutzer den Prototyp nicht auf gleiche Weise verwenden wie sie das endgültige System verwenden. Wenn der Prototyp langsam ist, können die Evaluatoren ihre Arbeitsweise anpassen und die Systemfunktionen mit langsamen Reaktionszeiten vermeiden. Wenn sie im endgültigen System eine bessere Reaktion erhalten, können sie es auf andere Weise verwenden.
+
+## 2.3.2 Inkrementelle Lieferung
+
+Eine Inkrementelle Lieferung wie es in der Abbildung 2.10 auch zu sehen ist, ist ein Ansatz zur Softwareentwicklung, bei dem einige der entwickelten Inkremente an den Kunden geliefert und dort eingesetzt werden. Bei dem Prozess legen die Kunden fest, welche der Services für sie am wichtigsten und welche am wenigsten wichtig sind. Anschließend werden die Lieferinkremente definiert, wobei man drauf achten soll, dass jedes Inkrement eine Teilmenge der Systemfunktionalität bereitstellt. Die Zuordnung von Diensten zu Inkrementen hängt von der Dienstpriorität ab. Wichtig dabei ist, dass die Dienste mit der höchsten Priorität zuerst implementiert und geliefert werden. Nach der Identifizierung der Systeminkremente, werden die Anforderungen an die im ersten Inkrement zu erbringenden Services detailliert definiert und dieses Inkrement entwickelt. Bei der Entwicklung kann aber Während der Entwicklung kann eine weitere Anforderungsanalyse für spätere Inkremente stattfinden, aber Anforderungsänderungen für das aktuelle Inkrement werden nicht akzeptiert. 
+
+![](img/10.png)
+
+**Abbildung 2.10: Inkrementelle Lieferung**
+
+Sobald ein Inkrement fertiggestellt und geliefert wurde, wird es bei dem Kunden installiert. Sie können mit dem System experimentieren, was ihnen hilft, ihre Anforderungen für spätere Systemerweiterungen zu klären. Wenn neue Inkremente fertiggestellt werden, werden sie mit bestehenden Inkrementen integriert, damit die Systemfunktionalität erhalten bleibt.
+
+Die inkrementelle Lieferung hat eine Reihe von Vorteilen:
+1. Kunden können die frühen Inkremente als Prototypen verwenden und Erfahrungen sammeln, die ihre Anforderungen für spätere Systeminkremente beeinflussen. Im Gegensatz zu Prototypen sind diese Teil des realen Systems, sodass kein Umlernen erforderlich ist, wenn das vollständige System verfügbar ist.
+2. Kunden müssen nicht warten, bis das gesamte System geliefert wird, bevor sie daraus Nutzen ziehen können. Das erste Inkrement erfüllt ihre wichtigsten Anforderungen, sodass sie die Software sofort verwenden können.
+3. Der Prozess behält die Vorteile der inkrementellen Entwicklung bei, da es relativ einfach sein sollte, Änderungen in das System zu integrieren
+4. Da die Dienste mit der höchsten Priorität zuerst bereitgestellt und später inkrementiert und dann integriert werden, werden die wichtigsten Systemdienste am meisten getestet. Das heißt, dass Kunden in den wichtigsten Teilen des Systems weniger wahrscheinlich auf Softwarefehler stoßen
+
+Es gibt jedoch auch Probleme mit der inkrementellen Lieferung. Das passiert aber oft, wenn ein neues System eingeführt wird und die Systementwickler Zeit haben, das System zu testen.
+Hauptprobleme bei dem Ansatz sind: 
+1.	Iterative Lieferung ist problematisch, wenn das bestehende System durch ein neues ersetzt werden soll. Die Benutzer brauchen dafür alle Funktionen des alten Systems und sie sind nicht bereit das neue unvollständige System zu testen und daran zu experimentieren.  Man sollte auch nicht das alte und das neue System nebeneinander verwenden, weil es unterschiedliche Datenbanken und Benutzeroberflächen gibt.
+2.	Die meisten Systeme erfordern eine Reihe von grundlegender Einrichtungen, die von verschiedenen Teilen des Systems verwendet werden. Da Anforderungen nicht im Detail definiert werden, bis ein Inkrement implementiert werden soll. Dabei kann es schwierig sein, gemeinsame Einrichtungen zu identifizieren, die von allen Inkrementen benötigt werden.
+3.	Bei den Prozessen ist es noch wichtig zu erwähnen ist, dass die Spezifikation zusammen mit der Software entwickelt wird. Es gibt jedoch bei dem Ansatz eine Problematik. Beim inkrementellen
+Ansatz gibt es keine vollständige Systemspezifikation, bis das endgültige Inkrement spezifiziert ist. Dies erfordert eine neue Vertragsform, die für Großkunden wie Regierungsbehörden möglicherweise schwierig zu handhaben ist.
+
+Für einige Arten von Systemen (am meisten bei großen Systemen) ist die inkrementelle Entwicklung und Bereitstellung kein bester Ansatz. Das sind meist große Systeme, bei denen die Software von der Hardwareentwicklung abhängt, und einige kritische Systeme, für die alle Anforderungen analysiert werden müssen. Diese großen Systeme leiden natürlich unter den gleichen Problemen unsicherer und sich ändernder Anforderungen. Um diese Probleme anzugehen und einige der Vorteile der inkrementellen Entwicklung zu nutzen, kann daher ein Systemprototyp entwickelt und als Plattform für Experimente mit den Systemanforderungen und dem Design verwendet werden.
+Somit kann man mit den Erfahrungen aus dem Prototypen dann endgültige Anforderungen vereinbart werden.
+
+## 2.4 Prozessverbesserung
+
+Heutzutage gibt es eine ständige Nachfrage der Industrie nach billigerer, besserer Software, die in immer kürzeren Fristen geliefert werden muss. Infolgedessen haben sich viele Softwareunternehmen der Verbesserung von Softwareprozessen zugewandt, um Qualität ihrer Software zu verbessern, auch Kosten zu senken oder ihre Entwicklungsprozesse zu beschleunigen. Prozessverbesserung bedeutet, bestehende Prozesse zu verstehen und die zu ändern. Insofern wird hier auch die Produktqualität erhöht und die Kosten und die Entwicklungszeit reduziert. 
+
+Dabei definiere ich zwei ganz unterschiedliche Ansätze zur Prozessverbesserung und-Veränderung:
+1.Der Prozessreifeansatz: Hier geht die Konzentration auf die Verbesserung von Prozess- und Projektmanagement sowie Einführung guter Software –Engineering Praktiken in eine Organisation. Die primären Ziele dieses Ansatzes sind eine verbesserte Produktqualität und Prozessvorhersagbarkeit.
+2. Der agile Ansatz, der sich auf die iterative Entwicklung und die Reduzierung von Gemeinkosten konzentriert. Die Hauptmerkmale bei dem Ansatz sind schnelle Bereitstellung von Funktionen und die Reaktionsfähigkeit auf sich ändernde Kundenanforderungen. Nur die besten Prozesse sind, die geringe Overhead und agile Ansätze haben. 
+
+Agile Ansätze konzentrieren sich auf den zu entwickelnden Code und reduzieren bewusst Formalität und Dokumentation.
+Der allgemeine Prozessverbesserungsprozess, der der Prozessreife zugrunde liegt
+Ansatz ist ein zyklischer Prozess, wie in Abbildung 2.11 dargestellt. 
+
+![](img/11.png)
+
+**Abbildung 2.11: Der Prozessverbesserungszyklus**
+
+Die Phasen in diesem Prozess sind:
+1.	Prozessmessung: In der Phase misst man ein oder mehrere Attribute des Softwareprozesses oder- Produkts. Diese Messungen bilden eine Grundlage, anhand derer Sie entscheiden können, ob Prozessverbesserungen wirksam waren. Wenn Sie Verbesserungen einführen, messen Sie dieselben Attribute erneut.
+2.	Prozessanalyse: Der aktuelle Prozess wird bewertet, dabei werden Prozessschwächen und Engpässe identifiziert. In dieser Phase können Prozessmodelle entwickelt werden, die den Prozess beschreiben. Die Analyse kann durch Berücksichtigung von Prozesseigenschaften wie Schnelligkeit und Robustheit fokussiert werden
+3.	Prozessänderung: Prozessänderungen werden vorgeschlagen, um einige der identifizierten Prozessschwächen zu beheben. Diese werden eingeführt, und der Zyklus wird fortgesetzt, um Daten über die Wirksamkeit der Änderungen zu sammeln.
+
+Ohne konkrete Daten zu einem Prozess oder der damit entwickelten Software ist es ist unmöglich, den Wert der Prozessverbesserung einzuschätzen.
+
+Es ist jedoch unwahrscheinlich, dass Unternehmen, die mit dem Prozessverbesserungsprozess beginnen, Prozessdaten als Grundlage für die Verbesserung zur Verfügung haben. Daher müssen Sie als Teil des ersten Änderungszyklus möglicherweise Daten über den Softwareprozess sammeln und die Merkmale des Softwareprodukts messen. Die Prozessverbesserungen ist auch eine kontinuierliche Aktivität, da sich das Geschäftsumfeld unabhängig von der Einführung neuer Prozesse ändern wird und die neuen Prozesse selbst weiterentwickelt werden müssen, um diese Änderungen zu berücksichtigen. Der Reifegrad der Prozesse eines Softwareunternehmens spiegelt das Prozessmanagement, die Messung und den Einsatz guter Software-Engineering-Praktiken im Unternehmen wider. Es wurden fünf Stufen der Prozessreife vorgeschlagen (Abbildung 2.12.) Diese haben sich in den letzten 25 Jahren weiterentwickelt, aber die grundlegenden Ideen in Humphreys Modell sind immer noch die Grundlage für die Reifegradbewertung von Softwareprozessen
+
+![](img/12.png)
+
+**Abbildung 2.12: Reifegrade der Fähigkeiten**
+
+Die Ebenen im Prozessreifemodell sind:
+1.	**Initialisierung.** Hierbei werden die mit dem Prozessbereich verbundenen Ziele erreicht, der Umgang der durchzuführenden Arbeit für alle Prozesse festgelegt und das den Teammitgliedern mitgeteilt. 
+2.	**Verwaltung.** Auf dieser Ebene werden ebenso die Ziele erreicht, die Organisationsrichtlinien definiert (wann jeder Prozess verwendet werden soll). Die Projektziele werden in sogenannten Projektplan definiert. Außerdem muss das Verfahren für das Ressourcenmanagement und die Prozessüberwachung in der gesamten Institution vorhanden sein.
+3.	**Definierung.** Diese Ebene konzentriert sich auf die organisatorische Standardisierung und den Einsatz von Abläufen. Jedes Projekt verfügt über einen verwalteten Prozess, der aus einem definierten Satz organisatorischer Prozesse an die Projektanforderungen angepasst ist. Prozess-Assets und -Prozess Messungen müssen gesammelt und für zukünftige Prozessverbesserungen verwendet werden.
+4.	**Quantitative Verwaltung.** Auf dieser Ebene besteht eine organisatorische Verantwortung, es werden hier statistische und andere quantitative Methodenangewendet, um Teilprozesse zu steuern. Das heißt, gesammelte Prozess- und Produktmessungen müssen im Prozessmanagement eingesetzt werden.
+5.	**Optimierung.** Auf dieser höchsten Ebene muss das Unternehmen die Prozess- und Produktmessungen nutzen, um die Prozessverbesserung voranzutreiben. Trends müssen analysiert und die Prozesse an sich ändernde Geschäftsanforderungen angepasst werden.
+
+Die Arbeit an Prozessreifegraden führt zu Verbesserungen der Software-Engineering-Fähigkeiten. Allerdings ist die formelle Prozessverbesserung für kleine Unternehmen mit zu viel Overhead verbunden, und die Reifegradabschätzung mit agilen Prozessen ist schwierig. Es ist eher für große geeignet.
 
 ## Referenzen
 
