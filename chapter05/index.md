@@ -130,6 +130,22 @@ Um das Verhalten eines laufenden Systems bei bestimmten Stimuli zu illustrieren,
 
 ### Datengesteuerte (Data-Driven) Modellierung
 
+Mithilfe von datengesteuerten Modellen können Abläufe der Verarbeitung der eingehenden Daten bis zu deren Ausgabe visualisiert werden. Dadurch können schnell Anforderungen identifiziert werden, da die gesamte Sequenz der Prozessaktivitäten abgebildet wird.
+
+Datengesteuerte Modelle waren bereits in den 1970er Jahren verbreitet, was sie zu einer der ersten grafischen Modelle macht, die in der Softwaremodellierung zum Einsatz kamen. Sogenannte *Data-Flow-Diagrams* (DFDs) stellten dabei einfache und intuitive Abbildungen dar, um den Datenfluss in Prozessen für alle Stakeholder verständlich erklären zu können. In UML können DFDs unter anderem als Aktivitätsdiagramm mithilfe der gegebenen Elemente umgesetzt werden:
+
+
+
+| Element               | Bedeutung                  |
+| --------------------- | -------------------------- |
+| Abgerundetes Rechteck | Aktivität (Prozessschritt) |
+| Rechteck              | Objekt (Daten)             |
+| Pfeil                 | Datenfluss                 |
+
+
+
+Doch auch mit Sequenzdiagrammen können DFDs dargestellt werden. Werden die Nachrichten zwischen Objekten ausschließlich von links nach rechts überliefert, wird so die sequentielle Abfolge des Datenflusses illustriert (siehe Abbildung).
+
 ![Behaviour_ActivityModel](C:\Users\Zolkin\Documents\Master Studium Informatik\1. Semester\Spezielle Gebiete zum Softwareengineering\SGSE22\chapter05\img\Behaviour_ActivityModel.png)
 
 ![Behaviour_SequenceDiagram](C:\Users\Zolkin\Documents\Master Studium Informatik\1. Semester\Spezielle Gebiete zum Softwareengineering\SGSE22\chapter05\img\Behaviour_SequenceDiagram.png)
