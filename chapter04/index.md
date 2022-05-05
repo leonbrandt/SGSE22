@@ -12,7 +12,7 @@ Bei der Erstellung von Anforderungen für ein Softwareprojekt gibt es zwei versc
 
 In Abbildung 4.1 kann man erkennen warum es Sinn macht verschiedene grade der detaillierung für die Spezifikationen der Anfroderungen zu wählen. Der Grund ist, dass viele verschiedene Leute die Anforderungen des Softwareprojektes kennen müssen und jeder von ihnen eine andere Perspektive hat oder anderes Fachwissen. Für Softwareentwickler sind die Systemanforderungen zum Beispiel sehr wichtig. Für Manager hingegen sind diese eher irrelevant.
 
-### Machbarkeitsttudie
+### Machbarkeitsstudie
 Zu beginn der Anforderungsanalyse sollte eine Machbarkeitsstudie durchgeführt werden. Dabei sollten die drei folgenden Fragen beantwortet werden
  * 1. Trägt das System zu den allgemeinen Zielen der Organisation bei ?
  * 2. Kann das System mit vorhandenem Budget und im geplanten Zeitraum implementiert werden ?
@@ -52,15 +52,98 @@ Im ersten Prozess des reuirements engineering arbeiten Softwareentwickler mit de
 
 Die Erhebung und das Verständnis der Anforderungen der Ergebnisbetroffenen ist schwierig wegen, da die Ergebnissbetroffenen nicht immer wissen, was genau sie vom System wollen. Die Ergebnissbetroffenen erläutern ihre Anforerungen mit impliziten Kenntnissen und Fachsprache, welche nicht so leicht zu verstehen ist. Anforderungsingenieur müssen potentielle Quellen, Gemeinsamkeiten und Konflikte der Anforderungen erkennen. Politische Einflüsse müssen erkannt werden, da Manager Anforderungen anfragen könnten, die ihren Einfluss auf die Organisation erhöhen. Außerdem können während des Analyseprozesses Änderungen durch ökonomische oder ökologische Faktoren auftreten auf die eingegangen werden sollte.
 
-Die Anforderungserhebung durchläuft vier Phasen und wiederholt sich für jede Anforderung die gefunden wird. Diese Phasen sind:
+Die Anforderungserhebung besteht aus vier Phasen:
 
 * **Anforderungen entdecken und verstehen**:
-  Anforederungen aus interaktion mit Ergebnisbetroffenen oder Dokumentatonen sammeln
-* **Klassifierung der Anforderungen**: Die *äußere* Sicht eines Auftraggeber nimmt ein Softwaresystem als Softwareprodukt wahr. 
+  Anforederungen aus interaktion mit Ergebnisbetroffenen oder Dokumentatonen sammeln.
+* **Klassifierung der Anforderungen**: 
+  Klassifizierung der unstrukturierten Anforderungen und Gruppierung oder erstellung von Clustern. 
 * **Anforderungen priorisieren und verhandeln**:
-  Die *innere* Sicht des Informatikers nimmt Software als Softwaresystem wahr.
-* **Anforderungen dokumenieren**: Die *äußere* Sicht eines Auftraggeber nimmt ein Softwaresystem als Softwareprodukt wahr. 
- 
+  Manche Anforderungen stehen im Konflikt zueinander, weshalb die Anforderungen priorisiert werden und Kompromisse gefunden werden müssen.
+* **Anforderungen dokumenieren**: 
+  Die Anforderungen müssen dokumentiert werden bevor sie erneut die Spirale durchlaufen.
+
+
+Um die Anforderungen zu erheben gibt es verschieden Techniken. Dei diesen Techniken werden die Ergebnissbetroffenen getroffen um zu verstehen wie diese arbeiten, was genau sie produzieren, wie das System genutzt wird und welche änderungen am System benötigt werden. Die drei Techniken die im Kapitel vorgestellt werden sind interviewen, Ethnographie, Stories und Szenarios.
+
+#### Interviewen
+Die Anforderungsingenieure interviewen die Ergebnissbetroffenen um aus deren Antworten Anforderungen abzuleiten. Dabei gibt es zwei Arten von Interviews. Die erste Art ist ein geschlossenes Interview, bei welchem vordefinierte Fragen beantwortet werden und ein offenes Interview, bei dem eine Menge von Themen abgehandelt wird um die Interssen der Ergebnisbetroffenen zu verstehen. In der Praxis wird meisten ein Mix aus den beiden Arten verwendet.
+
+Schwierigkeiten bei der Technik sind, dass die Ergebnisbetroffenen Fachsprache verwenden, oder dass manch Wissen für sie so fundamental ist, dass es nicht erwähnt wird. Außerdem eignen sich Intwerviews nicht um Organisationelle Anforderungen und Beschränkungen zu erheben, da Machtverhältniss innerhalb der Organisation diese beeinflussen können. Ein weiterer Schwachpunkt ist, dass die Interviewten die theoretischen anstatt die realen Strukturen im Unternehmen erläuten, da sie mit einem Fremden reden.
+
+Als Interviewer sollte man folgende Dinge im Hinterkopf behalten:
+* Man sollte unvoreingenommen in das Interview gehen und falls der Interviewte mit überraschenden Anforderungen kommmt, bereit sein die Vorstellung über das System zu ändern.
+* Man sollte Sprungbrettfragen benutzen oder einen Vorschlag für eine Anforderung machen anstatt direkt zu fragen "Was möchtest du für Anforderungen haben" ?
+
+Interviews sollten nicht alleine als Anforderungserhebungstechnik verwendet werden, sondern im Veerbund mit anderen Techniken.
+
+#### Ethnographie
+
+#### Stories und Szenarios
+
+
+### Anforderungsspezifikation
+Bei der Anf
+
+![](media/re_doc.PNG)
+#### Abbildung 4.16 [1]
+
+### Anforderungsvalidierung
+Bei der Anforderungsvalidierung wird geprüft, ob das die Anforderungen wirklich das System definieren, welches der Kunde haben möchte. Hier gibt es eine Überlappung mit der Anforderungserhebung. Die Anforderungsvalidierung ist wichtig, da ein Fehler in diesem Prozess später sehr hohe Kosten veursachen kann.
+
+Prüfungen im Valierungsprozess:
+* **Gültigkeitspüfung**:
+  Prüfen ob die Anforderungen die tatsächlichen Bedürfnisse der Benutzer erfüllt.
+* **Konsistenzprüfung**: 
+  Die Anforderungen im Dokument sollten nicht im Konflikt stehen. 
+* **Komplettheitsprüfung**: 
+  Das Dokument solle alle Funktionen und Beschränkungen beinhalten. 
+* **Realismusprüfung**:
+  Prüfen ob Anforderungen mit dem Budget und in der geplanten Zeit implementiert werden kann.
+* **Überprüfbarkeitsprüfung**: 
+  Eine Menge von Tests schreiben, welche demonstriert, dass alle spezifizierten Anforderungen erfüllt werden.
+
+Für die Validierung der Anforderungen empfehlen sich folgende Techniken:
+* **Anforderungsrezensionen**:
+ Systematische Analyse von Rezensionisten die nach Fehlern suchen.
+* **Prototyp erstellen**: 
+  Einen Prototyp erstellen mit dem die Ergebnisbetroffenen eperimentieren können und eine Rückmeldung geben können. 
+* **Testfallgenerierung**: 
+  Tests schreiben bevor man mit der implementierung des Systems beginnt.
+  
+Da es sehr schwer ist alle Anforderungen eines Systems zu finden, werden später Anforderungsänderungen benötigt.
+
+
+
+## Anforderungsänderungen
+Anforderungen ändern sich sehr häufig, vor allem bei großen Softwaresystemen. Große Softwareprojekte haben häufig "schwache Probleme", dass heißt die Probleme können nicht vollständig definiert werden und die Anforderungen sind unvollständig. Ein weiterer Grund für Anforderungsänderungen ist, dass das Verständnis des Problems der Ergebnissbetroffenen sich verändert. Außerdem treten sobald das System installiert ist neue Probleme auf, welche korrigiert werden müssen. Die meisten Anforderungsänderung sind allerdings notwendig, da sich etwas im Geschäftsumfeld ändert. Um Probleme zu bewältigen, die während des Entwicklungsprozesses entstehen, können agile Entwicklungsprozesse verwendet werden. In agilen Enticklungsprozessen können benutzer Änderungen vorschlagen, die dann ohne formales Änderungsmanagement durchgeführt werden. Dabei entscheidet der Nutzer, welche Priorität die zu entwickelnden Eigenschaften der nächsten Iteration haben. das Problem dabei ist, dass die meisten User nicht darauf achten, ob Änderungen Kosteneffizient sind.
+
+### Anforderungsmanagemant Planung
+Während der Plaungsphase müssen folgende Themen berücksichtig werden:
+* 1 Anforderungsidentifikation
+   * Identifizierung jeder Anforderung und Referenz zu anderen Anforderung
+* 2 Änderungsmanagemant Prozess
+   * Problem Analyse und Änderungsspezifikation
+   * Änderungsanalyse und Kostenanalyse
+   * Änderungsimplementierung
+* 3 Rückverfolgbarkeitsprozess
+  * Definieren von Bezieungen zwischen dem Systemdesign und der Anforderung
+* 4 Tool unterstützung(Für große Projekte sehr wichtig)
+  * um Anforderungen zuverlässig/sicher zu Speichern
+  * um die vorgeschlagenen Änderungen im Auge zu behalten
+  * um auf die vorgeschlagenen Änderungen reagieren zu können
+  * um verwandte Anforderungen zu entdecken
+  * manche Tools verwenden NLP Techniken um beziehungen zwischen Anforderungen zu entdecken
+
+
+### Anforderungen Änderungsmanagement
+
+![](media/change_managemant.PNG)
+#### Abbildung 4.19 [1]
+In Abbildung 4.19 wird der Prozessablauf im Anforderungen Änderungsmanagemant gezeigt.
+
+Anforderungen Änderungsmanagemant sollte für alle Änderungen, die nach der veröffentlichung des requirements document vorgeschlagenen werden durchgeführt werden.
+Änderungsmangement ist wichtig, damit entschieden werden kann ob die Vorteile der implementation von neuen Anforderungen, bei den aufkommenden Kosten gerechtfertigt werden kann. Nachdem Änderungen gemacht wurden, sollten diese in das requirement document aufgenommen werden, da es leicht is Änderungen zu vergessen. 
 
 ### Tabelle
 
