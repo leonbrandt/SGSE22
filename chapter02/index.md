@@ -317,6 +317,32 @@ Ansatz gibt es keine vollständige Systemspezifikation, bis das endgültige Inkr
 Für einige Arten von Systemen (am meisten bei großen Systemen) ist die inkrementelle Entwicklung und Bereitstellung kein bester Ansatz. Das sind meist große Systeme, bei denen die Software von der Hardwareentwicklung abhängt, und einige kritische Systeme, für die alle Anforderungen analysiert werden müssen. Diese großen Systeme leiden natürlich unter den gleichen Problemen unsicherer und sich ändernder Anforderungen. Um diese Probleme anzugehen und einige der Vorteile der inkrementellen Entwicklung zu nutzen, kann daher ein Systemprototyp entwickelt und als Plattform für Experimente mit den Systemanforderungen und dem Design verwendet werden.
 Somit kann man mit den Erfahrungen aus dem Prototypen dann endgültige Anforderungen vereinbart werden.
 
+## 2.4 Prozessverbesserung
+
+Heutzutage gibt es eine ständige Nachfrage der Industrie nach billigerer, besserer Software, die in immer kürzeren Fristen geliefert werden muss. Infolgedessen haben sich viele Softwareunternehmen der Verbesserung von Softwareprozessen zugewandt, um Qualität ihrer Software zu verbessern, auch Kosten zu senken oder ihre Entwicklungsprozesse zu beschleunigen. Prozessverbesserung bedeutet, bestehende Prozesse zu verstehen und die zu ändern. Insofern wird hier auch die Produktqualität erhöht und die Kosten und die Entwicklungszeit reduziert. 
+
+Dabei definiere ich zwei ganz unterschiedliche Ansätze zur Prozessverbesserung und-Veränderung:
+1.Der Prozessreifeansatz: Hier geht die Konzentration auf die Verbesserung von Prozess- und Projektmanagement sowie Einführung guter Software –Engineering Praktiken in eine Organisation. Die primären Ziele dieses Ansatzes sind eine verbesserte Produktqualität und Prozessvorhersagbarkeit.
+2. Der agile Ansatz, der sich auf die iterative Entwicklung und die Reduzierung von Gemeinkosten konzentriert. Die Hauptmerkmale bei dem Ansatz sind schnelle Bereitstellung von Funktionen und die Reaktionsfähigkeit auf sich ändernde Kundenanforderungen. Nur die besten Prozesse sind, die geringe Overhead und agile Ansätze haben. 
+
+Agile Ansätze konzentrieren sich auf den zu entwickelnden Code und reduzieren bewusst Formalität und Dokumentation.
+Der allgemeine Prozessverbesserungsprozess, der der Prozessreife zugrunde liegt
+Ansatz ist ein zyklischer Prozess, wie in Abbildung 2.11 dargestellt. 
+
+![](img/11.png)
+
+**Abbildung 2.11: Der Prozessverbesserungszyklus**
+
+Die Phasen in diesem Prozess sind:
+1.	Prozessmessung: In der Phase misst man ein oder mehrere Attribute des Softwareprozesses oder- Produkts. Diese Messungen bilden eine Grundlage, anhand derer Sie entscheiden können, ob Prozessverbesserungen wirksam waren. Wenn Sie Verbesserungen einführen, messen Sie dieselben Attribute erneut.
+2.	Prozessanalyse: Der aktuelle Prozess wird bewertet, dabei werden Prozessschwächen und Engpässe identifiziert. In dieser Phase können Prozessmodelle entwickelt werden, die den Prozess beschreiben. Die Analyse kann durch Berücksichtigung von Prozesseigenschaften wie Schnelligkeit und Robustheit fokussiert werden
+3.	Prozessänderung: Prozessänderungen werden vorgeschlagen, um einige der identifizierten Prozessschwächen zu beheben. Diese werden eingeführt, und der Zyklus wird fortgesetzt, um Daten über die Wirksamkeit der Änderungen zu sammeln.
+
+Ohne konkrete Daten zu einem Prozess oder der damit entwickelten Software ist es ist unmöglich, den Wert der Prozessverbesserung einzuschätzen.
+
+Es ist jedoch unwahrscheinlich, dass Unternehmen, die mit dem Prozessverbesserungsprozess beginnen, Prozessdaten als Grundlage für die Verbesserung zur Verfügung haben. Daher müssen Sie als Teil des ersten Änderungszyklus möglicherweise Daten über den Softwareprozess sammeln und die Merkmale des Softwareprodukts messen. Die Prozessverbesserungen ist auch eine kontinuierliche Aktivität, da sich das Geschäftsumfeld unabhängig von der Einführung neuer Prozesse ändern wird und die neuen Prozesse selbst weiterentwickelt werden müssen, um diese Änderungen zu berücksichtigen. Der Reifegrad der Prozesse eines Softwareunternehmens spiegelt das Prozessmanagement, die Messung und den Einsatz guter Software-Engineering-Praktiken im Unternehmen wider. Es wurden fünf Stufen der Prozessreife vorgeschlagen (Abbildung 2.12.) Diese haben sich in den letzten 25 Jahren weiterentwickelt, aber die grundlegenden Ideen in Humphreys Modell sind immer noch die Grundlage für die Reifegradbewertung von Softwareprozessen
+
+
 
 
 
