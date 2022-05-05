@@ -342,10 +342,18 @@ Ohne konkrete Daten zu einem Prozess oder der damit entwickelten Software ist es
 
 Es ist jedoch unwahrscheinlich, dass Unternehmen, die mit dem Prozessverbesserungsprozess beginnen, Prozessdaten als Grundlage für die Verbesserung zur Verfügung haben. Daher müssen Sie als Teil des ersten Änderungszyklus möglicherweise Daten über den Softwareprozess sammeln und die Merkmale des Softwareprodukts messen. Die Prozessverbesserungen ist auch eine kontinuierliche Aktivität, da sich das Geschäftsumfeld unabhängig von der Einführung neuer Prozesse ändern wird und die neuen Prozesse selbst weiterentwickelt werden müssen, um diese Änderungen zu berücksichtigen. Der Reifegrad der Prozesse eines Softwareunternehmens spiegelt das Prozessmanagement, die Messung und den Einsatz guter Software-Engineering-Praktiken im Unternehmen wider. Es wurden fünf Stufen der Prozessreife vorgeschlagen (Abbildung 2.12.) Diese haben sich in den letzten 25 Jahren weiterentwickelt, aber die grundlegenden Ideen in Humphreys Modell sind immer noch die Grundlage für die Reifegradbewertung von Softwareprozessen
 
+![](img/12.png)
 
+**Abbildung 2.12: Reifegrade der Fähigkeiten**
 
+Die Ebenen im Prozessreifemodell sind:
+1.	**Initialisierung.** Hierbei werden die mit dem Prozessbereich verbundenen Ziele erreicht, der Umgang der durchzuführenden Arbeit für alle Prozesse festgelegt und das den Teammitgliedern mitgeteilt. 
+2.	**Verwaltung.** Auf dieser Ebene werden ebenso die Ziele erreicht, die Organisationsrichtlinien definiert (wann jeder Prozess verwendet werden soll). Die Projektziele werden in sogenannten Projektplan definiert. Außerdem muss das Verfahren für das Ressourcenmanagement und die Prozessüberwachung in der gesamten Institution vorhanden sein.
+3.	**Definierung.** Diese Ebene konzentriert sich auf die organisatorische Standardisierung und den Einsatz von Abläufen. Jedes Projekt verfügt über einen verwalteten Prozess, der aus einem definierten Satz organisatorischer Prozesse an die Projektanforderungen angepasst ist. Prozess-Assets und -Prozess Messungen müssen gesammelt und für zukünftige Prozessverbesserungen verwendet werden.
+4.	**Quantitative Verwaltung.** Auf dieser Ebene besteht eine organisatorische Verantwortung, es werden hier statistische und andere quantitative Methodenangewendet, um Teilprozesse zu steuern. Das heißt, gesammelte Prozess- und Produktmessungen müssen im Prozessmanagement eingesetzt werden.
+5.	**Optimierung.** Auf dieser höchsten Ebene muss das Unternehmen die Prozess- und Produktmessungen nutzen, um die Prozessverbesserung voranzutreiben. Trends müssen analysiert und die Prozesse an sich ändernde Geschäftsanforderungen angepasst werden.
 
-
+Die Arbeit an Prozessreifegraden führt zu Verbesserungen der Software-Engineering-Fähigkeiten. Allerdings ist die formelle Prozessverbesserung für kleine Unternehmen mit zu viel Overhead verbunden, und die Reifegradabschätzung mit agilen Prozessen ist schwierig. Es ist eher für große geeignet.
 
 ## Referenzen
 
