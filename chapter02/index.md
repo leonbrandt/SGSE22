@@ -283,7 +283,7 @@ Außerdem kann es verwendet werden dem Designexperimente durchzuführen, um die 
 
 Zum Beispiel ein Datenbankdesign kann als Prototyp erstellt und getestet werden. Wir können dabei überprüfen, ob es einen effizienten Datenzugriff für die häufigsten Benutzerabfragen unterstützt. Um die Benutzerschnittstellen richtig zu entwickeln, wäre eine Rapid Prototyping mit Einbeziehung der Endanwender am sinnvollsten. Ein Vorgehensmodell für die Prototypenentwicklung ist in Abbildung 2.9 dargestellt. Die Ziele des Prototyping wie Entwicklung der Benutzerschnittstelle, die Entwicklung eines Systems zur Validieren funktionaler Systemanforderungen oder die Entwicklung eines Systems zur Demonstration der Anwendung für Manager sollten schon von Beginn des Prozesses genau eingeplant werden. 
 
-![](img/09.png)
+![](img/09.2.png)
 
 **Abbildung 2.9: Prototyp Entwicklung**
 
