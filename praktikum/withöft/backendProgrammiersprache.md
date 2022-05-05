@@ -40,7 +40,7 @@ An dieser Stelle fällt auf, dass der Server Zertifikate für die sichere Verbin
 chrome.exe --user-data-dir=G:\tmp --ignore-certificate-errors --allow-insecure-localhost --ignore-certificate-errors-spki-list=XeMRFXvHKN9KjA5LFlg4HD3EA8Bq1YZI0psRTxKhmSg=
 ```
 
-Doch weil diese Art Chrome zu starten trotzdem nicht funktionierte ``Certificate Unknown (46)``, habe ich mir für das weitere Vorgehen für die Verwendung meines eigenen, extern betriebenem RootServer (Ubuntu) entschieden. Dieser ist mit meiner Domain ``withoeft.nz`` verknüpft ist, sodass sich nach dem Anlegen eines A-Records für die Subdomain ``webtransport.withoeft.nz`` gültige Zertifikate über *Let's Encrypt* beziehen lassen. Der Code wurde dementsprechend angepasst:
+Doch weil diese Art Chrome zu starten trotzdem nicht funktionierte ``Certificate Unknown (46)``, habe ich mir für das weitere Vorgehen für die Verwendung meines eigenen, extern betriebenem RootServer (Ubuntu) entschieden. Dieser ist mit meiner Domain ``withoeft.nz`` verknüpft, sodass sich nach dem Anlegen eines A-Records für die Subdomain ``webtransport.withoeft.nz`` gültige Zertifikate über *Let's Encrypt* beziehen lassen. Der Code wurde dementsprechend angepasst:
 
 ```go
 Server: &http.Server{Addr: "webtransport.withoeft.nz:4433"},
@@ -54,11 +54,11 @@ Der Server wurde nun erfolgreich gestartet und auch Probleme mit den Zertifikate
 
 <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/connectionFailed.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
 
-Eine weitere Implementierung eines WebTransport-Servers wurde bereits mit Python durchgeführt, sodass diese Implementierung im weiteren am vielversprechendsten war. Zum Testen wurde an dieser Stelle die Beispielsimplementierung die Beispielimplementierung verwendet, um das Herstellen einer Verbindung ausprobieren zu können [[5]](#ref5). Dabei wird über WebTransport eine Verbindung hergestellt, bei der die vom Server empfangenen Daten einfach zurückgeschickt werden. Dieser Versuch verlief erfolgreich, sodass für die weitere Implementierung an die aktuelle Version in Python angeknüpft wird.
+Eine weitere Implementierung eines WebTransport-Servers wurde bereits mit Python durchgeführt, sodass diese Implementierung im weiteren am vielversprechendsten war. Zum Testen wurde an dieser Stelle die Beispielimplementierung verwendet, um das Herstellen einer Verbindung ausprobieren zu können [[5]](#ref5). Dabei wird über WebTransport eine Verbindung hergestellt, bei der die vom Server empfangenen Daten einfach zurückgeschickt werden. Dieser Versuch verlief erfolgreich, sodass für die weitere Implementierung an die aktuelle Version in Python angeknüpft wird.
 
 <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/connectionSuccessful.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
 
-Bei der Implementierung von Websockets ist nicht von einer solchen Problematik auszugehen. Dieser Mechanismus existiert bereits eine ganze Zeit und ließ sich unproblematisch bereits in NodeJS umsetzen. Um beide Protokolle miteinander vergleichen zu können, muss die Implementierung des Websockets-Servers nun auch in Python erneut durchgeführt werden, damit eventuelle Unterschiede bei den Messungen nicht auf die verwendete Programmiersprache zurückzuführen sind.
+Bei der Implementierung von Websockets ist nicht von einer solchen Problematik auszugehen. Dieser Mechanismus existiert bereits eine längere Zeit und ließ sich unproblematisch bereits in NodeJS umsetzen. Um beide Protokolle miteinander vergleichen zu können, muss die Implementierung des Websockets-Servers nun auch erneut in Python durchgeführt werden, damit eventuelle Unterschiede bei den Messungen nicht auf die verwendete Programmiersprache zurückzuführen sind.
 
 ## Referenzen
 
