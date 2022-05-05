@@ -295,6 +295,31 @@ Die letzte Phase des Prozesses ist die Evaluierung des Prototyps. In der Phase i
 
 Eine Inkrementelle Lieferung wie es in der Abbildung 2.10 auch zu sehen ist, ist ein Ansatz zur Softwareentwicklung, bei dem einige der entwickelten Inkremente an den Kunden geliefert und dort eingesetzt werden. Bei dem Prozess legen die Kunden fest, welche der Services für sie am wichtigsten und welche am wenigsten wichtig sind. Anschließend werden die Lieferinkremente definiert, wobei man drauf achten soll, dass jedes Inkrement eine Teilmenge der Systemfunktionalität bereitstellt. Die Zuordnung von Diensten zu Inkrementen hängt von der Dienstpriorität ab. Wichtig dabei ist, dass die Dienste mit der höchsten Priorität zuerst implementiert und geliefert werden. Nach der Identifizierung der Systeminkremente, werden die Anforderungen an die im ersten Inkrement zu erbringenden Services detailliert definiert und dieses Inkrement entwickelt. Bei der Entwicklung kann aber Während der Entwicklung kann eine weitere Anforderungsanalyse für spätere Inkremente stattfinden, aber Anforderungsänderungen für das aktuelle Inkrement werden nicht akzeptiert. 
 
+![](img/10.png)
+
+**Abbildung 2.10: Inkrementelle Lieferung**
+
+Sobald ein Inkrement fertiggestellt und geliefert wurde, wird es bei dem Kunden installiert. Sie können mit dem System experimentieren, was ihnen hilft, ihre Anforderungen für spätere Systemerweiterungen zu klären. Wenn neue Inkremente fertiggestellt werden, werden sie mit bestehenden Inkrementen integriert, damit die Systemfunktionalität erhalten bleibt.
+
+Die inkrementelle Lieferung hat eine Reihe von Vorteilen:
+1. Kunden können die frühen Inkremente als Prototypen verwenden und Erfahrungen sammeln, die ihre Anforderungen für spätere Systeminkremente beeinflussen. Im Gegensatz zu Prototypen sind diese Teil des realen Systems, sodass kein Umlernen erforderlich ist, wenn das vollständige System verfügbar ist.
+2. Kunden müssen nicht warten, bis das gesamte System geliefert wird, bevor sie daraus Nutzen ziehen können. Das erste Inkrement erfüllt ihre wichtigsten Anforderungen, sodass sie die Software sofort verwenden können.
+3. Der Prozess behält die Vorteile der inkrementellen Entwicklung bei, da es relativ einfach sein sollte, Änderungen in das System zu integrieren
+4. Da die Dienste mit der höchsten Priorität zuerst bereitgestellt und später inkrementiert und dann integriert werden, werden die wichtigsten Systemdienste am meisten getestet. Das heißt, dass Kunden in den wichtigsten Teilen des Systems weniger wahrscheinlich auf Softwarefehler stoßen
+
+Es gibt jedoch auch Probleme mit der inkrementellen Lieferung. Das passiert aber oft, wenn ein neues System eingeführt wird und die Systementwickler Zeit haben, das System zu testen.
+Hauptprobleme bei dem Ansatz sind: 
+1.	Iterative Lieferung ist problematisch, wenn das bestehende System durch ein neues ersetzt werden soll. Die Benutzer brauchen dafür alle Funktionen des alten Systems und sie sind nicht bereit das neue unvollständige System zu testen und daran zu experimentieren.  Man sollte auch nicht das alte und das neue System nebeneinander verwenden, weil es unterschiedliche Datenbanken und Benutzeroberflächen gibt.
+2.	Die meisten Systeme erfordern eine Reihe von grundlegender Einrichtungen, die von verschiedenen Teilen des Systems verwendet werden. Da Anforderungen nicht im Detail definiert werden, bis ein Inkrement implementiert werden soll. Dabei kann es schwierig sein, gemeinsame Einrichtungen zu identifizieren, die von allen Inkrementen benötigt werden.
+3.	Bei den Prozessen ist es noch wichtig zu erwähnen ist, dass die Spezifikation zusammen mit der Software entwickelt wird. Es gibt jedoch bei dem Ansatz eine Problematik. Beim inkrementellen
+Ansatz gibt es keine vollständige Systemspezifikation, bis das endgültige Inkrement spezifiziert ist. Dies erfordert eine neue Vertragsform, die für Großkunden wie Regierungsbehörden möglicherweise schwierig zu handhaben ist.
+
+Für einige Arten von Systemen (am meisten bei großen Systemen) ist die inkrementelle Entwicklung und Bereitstellung kein bester Ansatz. Das sind meist große Systeme, bei denen die Software von der Hardwareentwicklung abhängt, und einige kritische Systeme, für die alle Anforderungen analysiert werden müssen. Diese großen Systeme leiden natürlich unter den gleichen Problemen unsicherer und sich ändernder Anforderungen. Um diese Probleme anzugehen und einige der Vorteile der inkrementellen Entwicklung zu nutzen, kann daher ein Systemprototyp entwickelt und als Plattform für Experimente mit den Systemanforderungen und dem Design verwendet werden.
+Somit kann man mit den Erfahrungen aus dem Prototypen dann endgültige Anforderungen vereinbart werden.
+
+
+
+
 
 ## Referenzen
 
