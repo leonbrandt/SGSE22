@@ -143,6 +143,157 @@ Systeme zu kaufen, statt sie selbst neu zu entwickeln.
 Applikationen sind platformabhaengig (z.B. .NET). Somit koennen sie nur 
 auf gleichen Platformen wiederverwendet werden.
 
+- Grundsaetzlich ist es eher ein Problem des managements nicht des technischen
+  - Manager moechten nicht die Requirements anpassen um reuse zu ermoeglichen
+  - risiken der entwicklung neuer software ist hoeher
+    - manager bevorzugen bekannte risiken als neue risiken der wiederverwendung
+  - helfen koennte ein wiederverwendungs-programm 
+    - erstellun von reuse assets, prozessen zum erleichtern der wiederverwendung
+    -  (Jacobsen, Griss, and Jonsson 1997)
+
+## Application frameworks
+
+- Vorteil von OOP sei die wiederverwendung von objekten in anderen systemen
+- herausgestellt, dass objekte
+  - feingranular 
+  - und auf eine bestimme applikation angepasst sind
+- dauert laenger, vorhandene objekte zu verstehen und anzupassen, als diese neu zu implementieren
+- Object oriented wiedrverwendung am besten mit objekt orientierter entwicklungs prozess durch grobkörnigere Abstraktionen, die 
+  Frameworks genannt werden
+- framework ist eine generische struktur welche fuer ein spezifische subsystem oder eine applikation erweitert werden kann
+- Schmidt et al. 2004
+  - "ein integrierter Satz von Softwareartefakten (wie Klassen, Objekte und Komponenten), die
+zusammenarbeiten, um eine wiederverwendbare Architektur für eine Familie verwandter Anwendungen bereitzustellen."
+- frameworks bieten support fuer features, die sehr wahrscheinlich in applikationen aehnlicher art verwendet werde
+- user interface framework 
+  - interface event handling 
+    - einzelne widgets zum erstellen von anzeigen
+    - der entwickler spezialisiert diese widgets indem spezifische funktionalitaet hinzugefuegt wird 
+    - beispiel entwickler baut ein layout zusammen, welches den anforderungen der applikation entspricht 
+
+- frameworks liefern skelettartige architektur und die wiederverwendung von spezifische klassen im system
+- architektur wird durch objektklassen und deren interaktionen implementiert
+- klassen koennen wiederverwendet werden oder erweitert werden
+  - mit hilfe von vererbung und polymorphie 
+
+- frameworks sind als ansammlung von konkreten und abstrakten objektklassen in einer oop sprache implementiert
+- also sind diese sprachenabhaengig
+- verfuegbar in oop-sprachen wie java, c++ oder auch dynamische sprachen wie ruby und python
+- frameworks koennen selber frameworks beinhalten
+- frameworks koennen benutzt werden fuer komplette applikationen oder teile einer applikation (beispiel graphical user interface)
+
+- meisten applikationsframeworks sind web application framewoks (WAFs)
+  - erstellung dynamischer webseiten
+  - meist basierend auf model-view-controller (MVC) composite pattern
+    - BILD 15.5
+    - 1980 als ansatz von gui design, welches mehrere praesentationen von objekten und verschiedene styles der interaktion mit diesen praesentationen ermoeglicht
+    - grundsaetzlich wird der zustand einer praesentation seperiert, sodass dieser zustand von jeder praesentation geupdatet werden kann
+    - beim veraendern von daten durch eine praesentation wird das system model veraendert und die kontroller fuer die jeweilige anzeige updatet die presentation
+
+- frameworks benutzen sehr oft design patterns (siehe kapitel 7)
+  - mvc frameworks zum beispiel verwenden obsever, strategy composite pattern und mehr 
+  - die verwendung dient der erweiterbarkeit
+  - ohne pattern waren frameworks impraktikabel
+
+- frameworks bieten grundsaetzlich verschiedene funktionalitaeten
+- web applikations frameworks liefern komponenten und klassen, welche folgendes unterstuetzen:
+
+1. **Sicherheit** WAFs helfen bei der Authentifizierung von Bennutzern und bei der Zugriffskontrolle.
+2. **Dynamische Webseiten** Klassen helfen dabei webseiten templates zu definieren und diese dynamisch mit Daten aus der Datanbanl zu fuellen.
+3. **Datenbankintegration** Frameworks stellen eventuell Klassen zur verfuegung, welche eine abstrakte Schnittstelle zu verschiedenen Datenbanken bereitsellen.
+4. **Sitzungsverwaltung** Klassen, welche Sitzungen erstellen und verwalten, sind oft Teil einer WAF.
+5. **Benutzerinteraktionen** Web Frameworks liefern Supprt fuer AJAX (Holdener 2008) und/oder HTML5 (Sarris 2013) zur Erstellung interaktiver Webseiten. Darunter koennen sich Klassen zur Erstellung geraeteunabhaeniger Interfaces befinden, welche sich autimatisch an Mobiltelefone und Tablets anpassen.
+
+- Systemimplementierung mit Frameworks
+  - erstellen konkreter Klassen, welche Operationen von abstrakten Klassen des Frameworks erben
+  - zusaetzlich muessen "Callbacks" definiert werden
+    - Methoden, welche aufgerufen werden, wenn ein Event vom Framework erkannt wurde
+    - Framework objekte sind fuer die Kontrolle zustaendig
+    - nicht die applikationsspezifischen Objekte
+    - "Inversion of control" (Schmidt, Gokhale, and Natarajan 2004)
+  - Als Reaktion auf Events von der Benutzeroberflaeche oder von Datenbankframework Objekten werden so genannte "Hook-Methoden" aufgerufen
+    - diese werden mit vom Benutzer bereitgestellte Funktionen verknuepft
+    - die Benutzer bereitgestellte funktionalitaet entscheided wie die applikation bei einem Event reagieren soll
+    - BILD 15.6
+    - Beispiel Framework besitzt Methode zum handhaben von Mausklicken
+      - Diese Methode ist die "Hook-Methode"
+      - muss konfiguriert werden um die richtigen applikations methoden aufzurufen, welche das Klicken handhaben
+
+Fayad und Schmidt (Fayad und Schmidt 1997) diskutieren drei weitere Klassen von
+Rahmen:
+
+1. **Systeminfrastruktur-Frameworks** unterstuetzen die Entwicklung von Systeminfrastrukturen wie beispielsweise Kommunikationen, Benutzerschnittstellen und Compiler.
+2. **Frameworks für die Middleware-Integration** bestshen aus einer Menge an Standards und damit verbundenen Objektklassen, welche den Kommunikation und den Datenaustausch der Komponenten unterstuetzt. Beispiele sind Microsoft's .NET und Enterprise Java Beans (EJB)
+3. **Frameworks für Unternehmensanwendungen** behandeln konkrete Anwendungensgebiete wie Telekommunikations- und Finanzsysteme (Baumer et al. 1997). Diese beinhalten Wissen ueber Andwendungsbereiche und unterstuetzen die Entwicklung von Endbenutzeranwendungen. Heute sind sie nicht verbreitet und wurden weitgehend durch Software-Produktlinien ersetzt.
+
+- Applikationen mit Frameworks koenne die Basis fuer weitere Wiederverwendung darstelle
+  - Konzept der software-Produktlinien und Applikationsfamilien
+  - ERleichtert das Veraendern von "Familienmitgliedern" um Instanzen des Systems zu erstellen  
+
+- Frameworks sind sehr effektiv im Bezug auf Wiederverwendung
+  - Nachteile
+    - Teuer zu einzubauen aufgrund der Komplexitaet
+      - kann monate dauern, die funktionsweise zu erlenen
+    - schwierig und teuer, verschiedene frameworks gegeneinander abzuwiegen
+      - welches ist das geeignetste
+    - Debbugging kann schwierig sein  
+      - man weiss nicht wie zwingend, wie die Framework methoden untereinander interagieren
+      - Debugging tools koennen dabei jedoch helfen
+
+## Software-Produktlinien
+
+- bei aehnlichen aber nicht gleichen systemen eines unternehmens
+  - wiederverwendung durch software produktlinien
+- gerne bei Hardware Kontrollsystemen
+- ebenso wie in Gebietspezifischen applikationen in der logistik oder im medizinischen feld
+- beispiel drucker
+  - die software ist sehr aehnlich aber nie ganz gleich
+  - erstellen eines core produkt bzw. kernprodukt (produktlinie)
+    - anschliessendes anpassen an jeden druckertypen
+
+- software produktlinie
+  - sammlung von applikationen mit aehnlicher architekur und gemeinsamen komponenten
+  - jede applikation fuer kundenspezifische anforderungen
+- core produkt
+  - kann konfiguriert werden 
+  - an kundenwuensche oder equipment angepasst werden
+    - Konfigurieren von komponenten
+    - zusaetzliche komponenten entwickeln
+    - veraendern einiger komponenten
+  
+- eine grosse menge an applikationscode kann so wieder verwendet werden
+- testen wird vereinfacht
+  - tests fuer grosse parts der applikation koennen eventuell wiederverwendet werden
+  - senken der entwicklungszeit
+- Entwickler erlernen das applikationsgebiet mit der produktlinie
+  - koennen so spezialisten werden
+  - und effizient neue applikationen entwickeln
+
+- produktlinien entstehen meist aus vorhandener software
+  - ein produkt wurde entwickelt
+  - eine aehnliches produkt soll entwickelt werden
+  - wiederverwenden von teilen des ersten produkts
+  - gleicher prozess bei folgenden aehnlichen produkten
+  - wird immer schwieriger eine neue version zu erstellen
+  - generische produktlinie einsetzen
+    - gemeinsame funktionalitaeten feststellen
+    - eine basis applikation entwickeln fuer weitere entwicklungen
+
+Basisapplikation ist so entworfen, um wiederverwendung und die Neukonfiguration zu erleichtern.
+(BILD 15.7) Eine Basisapplikation besteht aus folgenden Teilen:
+
+1. Kernkomponenten, die Infrastrukturunterstuetzung bieten. Diese werden nicht bei der Erstellung einer neuen Instanz der Produktlinie veraendert.
+2. Konfigurierbare Komponenten, welche fuer bestimmte Anforderungen angepasst werden koennen. Diese Komponenten koennen teils auch ohne das Veraendern von Code mit Hilfe einer  Konfigurationssprache angepasst werden.
+3. Spezialisierte, gebietspezifische Komponenten werden entweder teils oder komplett bei der Erstellung einer neuen Instanz der Produktlinie ausgetauscht.
+
+Applikations Frameworks und Software Produktlinien haben einiges gemeinsam. Beide unterstuetzen eine gemeinsame Architektur und Komponenten. Zusaetzlich wird neue Entwicklungsaufwand benoetigt,
+um eine neue Version eines Systems zu erstellen. Die Unterschiede werden im Folgenden dargestellt:
+
+1. 
+2. 
+3. 
+4. 
+
 
 
 ## Links
