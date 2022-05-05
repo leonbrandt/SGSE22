@@ -78,6 +78,8 @@ Als Interviewer sollte man folgende Dinge im Hinterkopf behalten:
 Interviews sollten nicht alleine als Anforderungserhebungstechnik verwendet werden, sondern im Veerbund mit anderen Techniken.
 
 #### Ethnographie
+Softwaresysteme existieren nicht isolation, sie werden in organisationellen und sozialen Umgebugen verwendet und die Softwaresysteme könnten von dieser umgebung beschränkt werden. Ein Grund dafür, dass so viele Softwaresysteme entwickelt und nie benutzt werden ist, dass die Faktoren in der Anforderungsanalyse nicht berücksichtig werden. Deswegen ist es wichtig organisationelle und soziale Themen zu verstehen die das Softwaresystem beeinflussen könnten. Ethnographie ist eine Beobachtungstechnik, welche dabei hilft betriebliche Prozesse zu verstehen und anhand dieser Prozesse Anorderungen abzuleiten. Der Analyst "taucht" hierbei in die Arbeitsumgebung in der das System später genutzt wird ein und macht sich Notizen. Mit dieser Technik können implizite Systemanforderung gefunden werden, anstatt formal definierter Prozesse. Viele Menschen finden es schwierig Details zu erwähnen bei Dingen die jeden Tag erledigen und sie verstehen nicht immer die beziehung ihrer Arbeit zu anderen Prozessen, weshalb Ethnographie zur Anforderungserhebung sehr hilfreich sein kann. Der Fokus bei der Ethnographie ist auf dem Endutzer, weswegen sich die Methode nicht eignet breitere Organisationelle Anforderungen zu entdecken. Außerdem hilft Ethnographie nur um bestehende Systeme zu verstehen, aber nicht um neue Innovationen einzubringen. Daher sollte die Methode ebenfalls im Verbund mit anderen Anforderungserhebungstechniken verwendet werden.
+
 
 #### Stories und Szenarios
 
