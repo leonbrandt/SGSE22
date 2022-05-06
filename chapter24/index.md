@@ -9,7 +9,7 @@ Die beschriebenen Inhalte stammen aus dem Buch **Software Engineering** von **Ia
 
 Softwaresysteme sollen _"fit for purpose"_ sein!  
 Das heißt den Bedürfnissen ihrer Benutzer entsprechen.
-Darunter zählen z.B.:
+Darunter zählen z. B.:
 
 - **Effizienz**
 - **Zuverlässigkeit**
@@ -18,7 +18,7 @@ Darunter zählen z.B.:
 Softwarequalitätsmanagement hat sicherzustellen, dass diese Ziele erfüllt werden. Qualitätsmanagement hat einen hohen Stellenwert in der Softwareentwicklung und sorgt dafür, dass festgelegte
 Ziele während des Entwicklungsprozesses eingehalten werden und die Qualität des Produktes sich nicht verschlechtert.
 
-Die Techniken des Softwarequalitätsmanagement kommen ursprünglich aus der Fertigungsindustrie, wo die Begriffe wie "Qualitätssicherung" und "Qualitätslenkung" weit verbreitet sind.
+Die Techniken des Softwarequalitätsmanagements kommen ursprünglich aus der Fertigungsindustrie, wo die Begriffe wie _Qualitätssicherung_ und _Qualitätslenkung_ weit verbreitet sind.
 
 **Qualitätssicherung** ist die Definition von Prozessen und Standards, die zu qualitativ hochwertigen Produkten führen, und die Einführung dieser Qualitätsprozesse in den Fertigungsprozess.
 
@@ -42,12 +42,12 @@ Nach Humphrey (1989) [[2]](#ref_2) könnte ein Qualitätsplan wie folgt aufgebau
 1. _Produktvorstellung_: Eine Beschreibung des Produkts, des geplanten Absatzmarktes und der Qualitätserwartung an das Produkt.
 2. _Produktpläne_: Die wichtigsten Freigabetermine und Zuständigkeiten für das Produkt, sowie die Pläne für den Vertrieb und die Dienstleistungen.
 3. _Prozessbeschreibungen_: Die Entwicklungs- und Dienstleistungsprozesse und Standards, die für die Produktentwicklung und das Produktmanagement verwendet werden sollen.
-4. _Qualitätsziele_: Die Qualitätsziele und -pläne für das Produkt einschließlich einer begründeten Festlegung wesentlicher Produktattribute.
+4. _Qualitätsziele_: Die Qualitätsziele und -pläne für das Produkt, einschließlich einer begründeten Festlegung wesentlicher Produktattribute.
 5. _Risiken und Risikomanagement_: Die größten Risiken, welche die Produktqualität beeinträchtigen können, und Maßnahmen zu deren Beseitigung.
 
 Traditionelles Qualitätsmanagement ist ein formaler Prozess, der sich auf eine ausführliche Dokumentation der Tests und Systemvalidierungen, sowie auf die Einhaltung dieser Prozesse stützt.
 
-Die folgenden Abschnitte beschreiben wie sich diese formalen Prozesse des Qualitätsmanagement in die Entwicklung von Software mit einbringen lassen und dafür sorgen, dass die Qualität von Software festgelegten Standards entspricht.
+Die folgenden Abschnitte beschreiben, wie sich diese formalen Prozesse des Qualitätsmanagements in die Entwicklung von Software mit einbringen lassen und dafür sorgen, dass die Qualität von Software festgelegten Standards entspricht.
 
 ## Softwarequalität
 
@@ -58,7 +58,7 @@ Das liegt an folgenden Gründen:
 
 - Es ist schwierig, vollständige und eindeutige Systemanforderungen zu schreiben.
 - In die Spezifikation fließen oft die Anforderungen von mehreren Stakeholdern mit ein. Die Anforderungen sind oft ein Kompromiss und können nicht alle Stakeholder im gleichen Maße mit einbeziehen.
-- Qualitätsmerkmale wie (z.B. Wartbarkeit) lassen sich nicht direkt messen. Das hat zur Folge, dass sie nicht eindeutig spezifiziert werden können.
+- Qualitätsmerkmale wie (z. B. Wartbarkeit) lassen sich nicht direkt messen. Das hat zur Folge, dass sie nicht eindeutig spezifiziert werden können.
 
 Aufgrund dieser Probleme handelt es sich beim Qualitätsmanagement in der Softwareentwicklung um einen subjektiven Prozess, bei dem die Mitglieder des QM-Teams anhand ihrer Sachkenntnis und Erfahrung entscheiden müssen, ob eine Software als akzeptabel klassifiziert werden kann.
 
@@ -94,7 +94,7 @@ Folgende Tabelle zeigt einige nicht funktionale Eigenschaften, die bei der Ermit
   </tr>
 </table>
 
-Manche dieser Merkmale können sich gegenseitig beeinflussen. Zum Beispiel kann eine Verbesserung der Informationssicherheit zu einer geringeren Performanz führen. Deshalb ist es wichtig die Merkmale mit der größten Relevanz, vorab im Qualitätsplan festzuhalten. Das ermöglicht den Entwicklern sich schon während des Entwicklungsprozesses, auf die zuvor festlegten Merkmale zu konzentrieren.
+Manche dieser Merkmale können sich gegenseitig beeinflussen. Zum Beispiel kann eine Verbesserung der Informationssicherheit zu einer geringeren Performanz führen. Deshalb ist es wichtig die Merkmale mit der größten Relevanz, vorab im Qualitätsplan festzuhalten. Das ermöglicht den Entwicklern, sich schon während des Entwicklungsprozesses, auf die zuvor festlegten Merkmale zu konzentrieren.
 
 Traditionelles Softwarequalitätsmanagement geht grundsätzlich davon aus, dass die Qualität der Software in direktem Bezug zu der Qualität des Softwareentwicklungsprozesses steht.  
 Die folgende Abbildung zeigt einen prozessbasierten Qualitätsansatz.
@@ -108,7 +108,7 @@ Die folgende Abbildung zeigt einen prozessbasierten Qualitätsansatz.
 
 Anders als in der Fertigung ist die Beziehung zwischen Prozess- und Produktqualität komplexer. Prozesse lassen sich schwieriger standardisieren und überwachen, als es in der Fertigung der Fall ist. Trotzdem hat der Prozess, der für die Entwicklung der Software verwendet wird, einen großen Einfluss auf die Qualität der Software. Gute Entwicklungsprozesse werden mit großer Wahrscheinlichkeit auch qualitativ bessere Software hervorbringen.
 
-Definierte Standards sind ebenfalls wichtig, aber zusätzlich sollte noch versucht werden eine "Qualitätskultur" zu entwickeln, in der jeder, der an der Produktentwicklung beteiligt ist, zum Erreichen einer hohen Produktqualität verpflichtet ist. Anders als in der Fertigung, wo die Qualität eines Produktes zu einem gewissen Teil von Maschinen und deren Konfiguration abhängt, wird die Softwarequalität direkt von jedem einzelnen Mitarbeiter beeinflusst.
+Definierte Standards sind ebenfalls wichtig, aber zusätzlich sollte noch versucht werden eine _Qualitätskultur_ zu entwickeln, in der jeder, der an der Produktentwicklung beteiligt ist, zum Erreichen einer hohen Produktqualität verpflichtet ist. Anders als in der Fertigung, wo die Qualität eines Produktes zu einem gewissen Teil von Maschinen und deren Konfiguration abhängt, wird die Softwarequalität direkt von jedem einzelnen Mitarbeiter beeinflusst.
 
 ## Softwarestandards
 
@@ -117,7 +117,7 @@ Standards sind aus den folgenden drei Gründen wichtig:
 
 1. Standards basieren oft auf Erfahrung, die für das Unternehmen von großem Wert sind. Die Standardisierung trägt dazu bei, auf diese Erfahrung zurückzugreifen und frühere Fehler zu vermeiden.
 
-2. Standards bieten einen Rahmen für die Definition, was _"Qualität"_ innerhalb des Softwareentwicklungsprojekts bedeutet. Sie beschreiben vorab das Qualitätsniveau, welches erreicht werden muss.
+2. Standards bieten einen Rahmen für die Definition, was _Qualität_ innerhalb des Softwareentwicklungsprojekts bedeutet. Sie beschreiben vorab das Qualitätsniveau, welches erreicht werden muss.
 
 3. Standards tragen zur Kontinuität bei, sodass alle Entwickler nach denselben Verfahren arbeiten.
 
@@ -127,7 +127,9 @@ Es gibt zwei verwandte Arten von Software-Engineering-Standards, die im Software
 
 2. Prozessstandards: Diese definieren die Prozesse, die während des Entwicklungsprozesses zu befolgen sind.
 
-Standards müssen sich immer positiv auf die Produktqualität auswirken. Produktstandards sollten dabei so entworfen werden, dass sie kosteneffizient angewendet und geprüft werden können. Prozessstandards sollten die Prozesse definieren, die prüfen, dass die Produktstandards eingehalten werden.  
+Standards müssen sich immer positiv auf die Produktqualität auswirken.  
+Produktstandards sollten dabei so entworfen werden, dass sie kosteneffizient angewendet und geprüft werden können.  
+Prozessstandards sollten die Prozesse definieren, die prüfen, dass die Produktstandards eingehalten werden.  
 Folgende Tabelle zeigt mögliche Produkt- und Prozessstandards:
 
 <p style="margin: 0 auto; width: fit-content;">Tabelle 2: Produkt- und Prozessstandards</p>
@@ -162,7 +164,7 @@ Folgende Tabelle zeigt mögliche Produkt- und Prozessstandards:
   </tr>
 </table>
 
-Die eingesetzten Standards in Unternehmen basieren oft auf allgemeineren nationalen und internationalen Standards. So gibt es viele Standards, die festlegen wie die verwendete Technologie, Programmiersprache oder Dokumentation eingesetzt werden sollte.
+Die eingesetzten Standards in Unternehmen basieren oft auf allgemeineren nationalen und internationalen Standards. So gibt es viele Standards, die festlegen, wie die verwendete Technologie, Programmiersprache oder Dokumentation eingesetzt werden sollte.
 
 Entwickler finden oft, dass die Standards einen zu starken Vorschriftcharakter haben und die Entwicklung zum Teil ausbremsen. Um die Entwickler von den Standards zu überzeugen und deren positiven Aspekte hervorzuheben, sollten während der Entwicklung folgende Punkte berücksichtigt werden:
 
@@ -176,7 +178,7 @@ Entwickler finden oft, dass die Standards einen zu starken Vorschriftcharakter h
 
 Mit der **ISO 9000** gibt es eine internationale Normenreihe, die in allen Branchen zur Entwicklung eines Qualitätsmanagementsystems eingesetzt werden kann. Die **ISO 9001** ist die allgemeinste dieser Normen und betrifft Firmen, die Produkte entwerfen, entwickeln und warten.
 
-Alle Standards, die in diesem Abschnitt besprochen werden, gehen auf die **ISO 9001** ein welche im Jahr **2008** veröffentlicht worden ist.
+Alle Standards, die in diesem Abschnitt besprochen werden, gehen auf die **ISO 9001** ein, welche im Jahr **2008** veröffentlicht worden ist.
 
 Die ISO 9001 ist kein Standard speziell für die Softwareentwicklung. Die Norm legt die allgemeinen Qualitätsgrundsätze fest und beschreibt generell die Qualitätsprozesse und skizziert die zu definierenden betrieblichen Standards und Verfahren.  
 Alle Unternehmen, die sich nach ISO 9001 zertifizieren lassen möchten, müssen dokumentieren, dass ihre Prozesse ISO 9001-konform sind. Darüber hinaus müssen Maßnahmen definiert und Protokolle erstellt werden, die nachweisen, dass die festgelegten Unternehmensprozesse eingehalten werden. Um dies zu realisieren, sollten in einem Qualitätshandbuch alle wichtigen Prozesse beschrieben werden.
@@ -189,7 +191,7 @@ Abbildung 3 zeigt die Kernprozesse eines Software- oder Systemherstellers nach I
   <figcaption>Quelle: In Anlehnung an Ian Sommerville <a href="#/chapter24/index?id=ref_1">[1]</a>, S. 709</figcaption>
 </figure>
 
-In der Norm werden keine Qualitätsprozesse definiert oder vorgeschrieben, welche Prozesse eingesetzt werden müssen. Um mit der ISO 9001 kompatibel zu sein, muss ein Unternehmen z.B. die verschiedenen Prozesse aus Abbildung 3 definieren und Verfahren entwickeln, die nachweisen, dass seine Qualitätsprozesse eingehalten werden. Diese gewährt den Unternehmen eine gewisse Flexibilität, bei der Umsetzung der Norm.
+In der Norm werden keine Qualitätsprozesse definiert oder vorgeschrieben, welche Prozesse eingesetzt werden müssen. Um mit der ISO 9001 kompatibel zu sein, muss ein Unternehmen z. B. die verschiedenen Prozesse aus Abbildung 3 definieren und Verfahren entwickeln, die nachweisen, dass seine Qualitätsprozesse eingehalten werden. Diese gewährt den Unternehmen eine gewisse Flexibilität, bei der Umsetzung der Norm.
 
 Unabhängige Zertifizierungsbehörden prüfen die Qualitätsmanagementprozesse und deren Dokumentation und entscheiden, ob die Prozesse alle die in der ISO 9001 angegebenen Bereiche abdecken. Wenn ja, erfolgt eine Zertifizierung, dass alle Prozesse eines Unternehmens mit der ISO 9001 übereinstimmen.
 
@@ -216,14 +218,15 @@ Abbildung 4 zeigt einen Review-Prozess in der Softwareentwicklung.
    Ein Review-Team sollte normalerweise eine Kernmannschaft von drei bis vier Personen aufweisen. Einer davon sollte ein erfahrener Entwickler sein, der die Verantwortung für wichtige technische Entscheidungen übernehmen kann.
 
 2. **Review-Sitzung**:  
-   Während des Reviews sollte der Verantwortliche der geprüften Dokumente oder Programms das ganze gemeinsam mit dem Review-Team "durchgehen". Eine Sitzung sollte dabei nicht zu lange dauern (maximal 2 Stunden). Alle Entscheidungen, die während der Sitzung getroffen werden, sollten formell festgehalten werden. Abschließend sollte auf Basis der getroffenen Entscheidungen ein Abschlussprotokoll erstellt werden, in dem alle Maßnahmen festgehalten werden, auf die man sich während des Reviews geeinigt hat.
+   Während des Reviews sollte der Verantwortliche der geprüften Dokumente oder Programms das ganze gemeinsam mit dem Review-Team durchgehen. Eine Sitzung sollte dabei nicht zu lange dauern (maximal 2 Stunden). Alle Entscheidungen, die während der Sitzung getroffen werden, sollten formell festgehalten werden. Abschließend sollte auf Basis der getroffenen Entscheidungen ein Abschlussprotokoll erstellt werden, in dem alle Maßnahmen festgehalten werden, auf die man sich während des Reviews geeinigt hat.
 
 3. **Aktivitäten nach dem Review**:  
-   Nachdem Review, müssen Lösungen für die Fragen, die sich bei der Sitzung ergeben haben, gefunden werden. Eventuell müssen Softwarefehler behoben werden oder die Software muss umgestaltet werden, um den Qualitätsstandards zu entsprechen. Sind schwerwiegende Fehler während des Reviews festgestellt worden, kann zusätzlich ein Management-Review erforderlich sein, um zu entscheiden ob mehr Ressourcen zur Verfügung gestellt werden müssen. Nachdem sämtliche Änderungen vorgenommen wurden, kann der Verantwortliche prüfen, ob alle zuvor vereinbarten Punkte erledigt sind.
+   Nachdem Review, müssen Lösungen für die Fragen, die sich bei der Sitzung ergeben haben, gefunden werden. Eventuell müssen Softwarefehler behoben werden oder die Software muss umgestaltet werden, um den Qualitätsstandards zu entsprechen.  
+   Sind schwerwiegende Fehler während des Reviews festgestellt worden, kann zusätzlich ein Management-Review erforderlich sein, um zu entscheiden ob mehr Ressourcen zur Verfügung gestellt werden müssen. Nachdem sämtliche Änderungen vorgenommen wurden, kann der Verantwortliche prüfen, ob alle zuvor vereinbarten Punkte erledigt sind.
 
 ### Inspektionen
 
-Inspektionen sind "**Peer-Reviews**", bei denen Teammitglieder zusammen nach Fehlern in der Software suchen, die gerade entwickelt wird. Die Mitglieder sehen sich den Quelltext des Programms an und suchen nach Fehlern und Problemen. Bei den Fehlern kann es sich um logische Fehler, Anomalien im Code, die zu einem möglicherweise falschen Zustand führen oder um Funktionen, die im Code nicht verwendet werden handeln. Das Review-Team überprüft den Programmcode und hebt Probleme hervor, mit denen sich das Entwicklerteam noch einmal beschäftigen muss.
+Inspektionen sind **Peer-Reviews**, bei denen Teammitglieder zusammen nach Fehlern in der Software suchen, die gerade entwickelt wird. Die Mitglieder sehen sich den Quelltext des Programms an und suchen nach Fehlern und Problemen. Bei den Fehlern kann es sich um logische Fehler, Anomalien im Code, die zu einem möglicherweise falschen Zustand führen oder um Funktionen, die im Code nicht verwendet werden handeln. Das Review-Team überprüft den Programmcode und hebt Probleme hervor, mit denen sich das Entwicklerteam noch einmal beschäftigen muss.
 
 Bei Inspektionen wird oft eine Checkliste häufiger Programmierfehler verwendet, um eine konzentrierte Suche nach den Fehlern zu ermöglichen. Mögliche Überprüfungen, die während eines Inspektionsprozesses vorgenommen werden können, sind in Tabelle 3 abgebildet.
 
@@ -298,11 +301,11 @@ Bei Inspektionen wird oft eine Checkliste häufiger Programmierfehler verwendet,
   </tr>
 </table>
 
-Jedes Unternehmen sollte eigene Checklisten auf der Grundlage ihrer Standards erstellen und diese Checklisten in regelmäßigen Abständen aktualisieren, sobald neue Fehler bekannt werden. Firmen die Inspektionen einsetzen, können damit sehr effektiv Fehler finden.  
+Jedes Unternehmen sollte eigene Checklisten auf der Grundlage ihrer Standards erstellen und diese Checklisten in regelmäßigen Abständen aktualisieren, sobald neue Fehler bekannt werden. Firmen, die Inspektionen einsetzen, können damit sehr effektiv Fehler finden.  
 Fagan (1986) [[3]](#ref_3) berichtete, dass mehr als 60 % der Fehler in einem Programm durch die Inspektion eines Programms entdeckt werden können.  
 McConnell (2004) [[4]](#ref_4) vergleicht Modultests, die eine ungefähre Fehlererkennungsrate von 25 % aufweisen, mit Inspektionen, deren Fehlererkennungsrate bei 60 % lag. Zu berücksichtigen ist, dass diese Vergleiche angestellt wurden, bevor automatische Tests eine weite Verbreitung fanden. Es ist nicht bekannt, wie Inspektionen im Vergleich mit diesem Ansatz aussehen.
 
-Obwohl bekannt ist wie erfolgversprechend Inspektionen sind, werden sie von den Firmen nur zögerlich eingesetzt.
+Obwohl bekannt ist, wie erfolgversprechend Inspektionen sind, werden sie von den Firmen nur zögerlich eingesetzt.
 Dies hat mitunter folgende Gründe:
 
 - Im Testen erfahrene Entwickler werden eventuell sich nur ungern eingestehen, dass Inspektionen effektiver sind als Tests.
@@ -322,7 +325,7 @@ Einige Beispiele für agile Entwicklungsmethoden sind folgende:
 
 - _Niemals die aktuelle Version zerstören:_ Bevor Codeänderungen übernommen werden, müssen sie gegen das ganze System getestet werden. Falls die aktuelle Version fehlerhaft ist, muss der Behebung des Problems die höchste Priorität eingeräumt werden.
 
-- _Probleme beheben, sobald sie auftreten:_ Probleme sollten sofort behoben werden wenn sie entdeckt werden, auch wenn der Code von anderen Entwicklern stammt.
+- _Probleme beheben, sobald sie auftreten:_ Probleme sollten sofort behoben werden, wenn sie entdeckt werden, auch wenn der Code von anderen Entwicklern stammt.
 
 Reviews oder Inspektionen, die in den vorherigen Kapiteln beschrieben wurden, kommen in der agilen Softwareentwicklung normalerweise nicht zum Einsatz.  
 In Scrum beispielsweise gibt es nach Abschluss einer Softwareiteration ein Review des gesamten Teams, in der Qualitätsfragen und Probleme diskutiert werden.
@@ -336,15 +339,15 @@ Dies kann folgende Gründe haben:
 
 - Bei Systemen mit einer langen Laufzeit, ändert sich häufig das Entwicklungsteam. Wenn es bei solchen Projekten keine Dokumentation gibt, können neue Entwickler schlecht nachvollziehen, warum bestimmte Entscheidungen getroffen wurden.
 
-Aus den folgenden Gründen muss der informelle Ansatz in agilen Methoden, bei größeren Projekten welche eine Dokumentation erfordern, angepasst werden. Anstatt Software zu entwickeln könnte zum Beispiel einer der Sprints sich auf die Erstellung der wichtigsten Softwaredokumentationen konzentrieren.
+Aus den folgenden Gründen muss der informelle Ansatz in agilen Methoden, bei größeren Projekten, welche eine Dokumentation erfordern, angepasst werden. Anstatt Software zu entwickeln, könnte zum Beispiel einer der Sprints sich auf die Erstellung der wichtigsten Softwaredokumentationen konzentrieren.
 
 ## Softwaremessung
 
-Bei der Softwaremessung geht es darum, Merkmale eines Softwaresystems zu quantifizieren. Die gemessenen Werte, ermöglichen ein Vergleich mit den unternehmensweiten Standards. Idealerweise könnte sich das Qualitätsmanagement auf die Messungen dieser Werte verlassen. Dann könnten sie objektiv bewerten, inwiefern Änderungen an den Prozessen sich auf die Softwarequalität auswirken.  
+Bei der Softwaremessung geht es darum, Merkmale eines Softwaresystems zu quantifizieren. Die gemessenen Werte ermöglichen ein Vergleich mit den unternehmensweiten Standards. Idealerweise könnte sich das Qualitätsmanagement auf die Messungen dieser Werte verlassen. Dann könnten sie objektiv bewerten, inwiefern Änderungen an den Prozessen sich auf die Softwarequalität auswirken.  
 Langfristig zielt Softwaremessung darauf ab, die Softwarequalität anhand von Messungen zu beurteilen.
 
 **Softwaremetriken** dienen zur objektiven Bewertung von Systemen, Dokumentationen oder Entwicklungsprozessen.  
-Metriken sind z.B.:
+Metriken sind z. B.:
 
 - Anzahl der Codezeilen
 - Fog-Index (Lesbarkeit eines Textes)
@@ -446,7 +449,7 @@ Dynamische Metriken sind für die Beurteilung der Zuverlässigkeit und Effizienz
 
 Viele Experimente zeigten, dass die Größe eines Programms und die Komplexität der Kontrollstrukturen die zuverlässigsten Vorhersagen für die Verständlichkeit und die Wartbarkeit liefern.
 
-Neben den Metriken aus Tabelle 4 für die statische Analyse, gibt es auch noch Metriken die sich speziell für die Objektorientierung eignen. Tabelle 5 ist eine Zusammenfassung der (Chidamber-Kemerer-Metriksuite) [[6]](#ref_6), die aus 6 objektorientierten Metriken besteht. Diese bereits in den frühen 90er Jahren entwickelten Metriken, sind immer noch die am weitesten verbreiteten objektorientierten Metriken.
+Neben den Metriken aus Tabelle 4 für die statische Analyse, gibt es auch noch Metriken, die sich speziell für die Objektorientierung eignen. Tabelle 5 ist eine Zusammenfassung der (Chidamber-Kemerer-Metriksuite) [[6]](#ref_6), die aus 6 objektorientierten Metriken besteht. Diese bereits in den frühen 90er Jahren entwickelten Metriken, sind immer noch die am weitesten verbreiteten objektorientierten Metriken.
 
 <p style="margin: 0 auto; width: fit-content;">Tabelle 5: Objektorientierte CK-Metriksuite.</p>
 <table style="border: 4px solid rgba(0, 0, 0, 0.4); border-radius: 10px; margin: 0.5rem auto; width: fit-content;">
@@ -492,7 +495,7 @@ Neben den Metriken aus Tabelle 4 für die statische Analyse, gibt es auch noch M
   </tr>
 </table>
 
-El-Amam (2001) [[7]](#ref_7) beschreibt in einem Aufsatz die CK-Metriken sowie andere objektorientierte Metriken und kommt zu der Schlussfolgerung, dass noch nicht ausreichend Beweise vorliegen in welche Beziehung diese Metriken zur Softwarequalität stehen. Diese Situation hat sich seit der Analyse 2001 nicht verändert. Es ist immer noch nicht bekannt wie Messungen von objektorientierten Programmen, zuverlässige Schlüsse über die Qualität liefern können.
+El-Amam (2001) [[7]](#ref_7) beschreibt in einem Aufsatz die CK-Metriken sowie andere objektorientierte Metriken und kommt zu der Schlussfolgerung, dass noch nicht ausreichend Beweise vorliegen, in welche Beziehung diese Metriken zur Softwarequalität stehen. Diese Situation hat sich seit der Analyse 2001 nicht verändert. Es ist immer noch nicht bekannt, wie Messungen von objektorientierten Programmen, zuverlässige Schlüsse über die Qualität liefern können.
 
 ### Softwarekomponentenanalyse
 
@@ -509,7 +512,7 @@ Der Prozess setzt sich wie folgt zusammen:
 
 1. _Durchzuführende Messung auswählen:_ Welche Fragen sollen beantwortet werden und dafür die entsprechenden Messungen auswählen.
 
-2. _Komponente auswählen:_ Alle Komponenten auswählen die benötigt werden, um die Analyse durchzuführen.
+2. _Komponente auswählen:_ Alle Komponenten auswählen, die benötigt werden, um die Analyse durchzuführen.
 
 3. _Komponenteneigenschaften messen:_ Die zuvor ausgewählten Komponenten messen und die Werte für die Metrik errechnen.
 
@@ -544,7 +547,7 @@ Im Allgemeinen lässt sich nicht sagen, welche das beste Analysewerkzeug für ei
 
 - Die Tools sollten Managern und Entwicklern ermöglichen, die Analysen zu untersuchen.
 
-Zhang et al. (2013) [[10]](#ref_10) beschreibt eine praktische Anwendung der Softwareanalytik. Dabei wurde die benutzte Software mit Funktionalität ausgestattet, die es ermöglicht ,die Antwortzeiten und den damit verbundenen Systemzustand zu ermitteln. Sobald die Antwortzeit größer als erwartet ausfiel, wurden die Daten weitergeleitet und analysiert. Die automatische Analyse zeigte dann die Leistungsengpässe in der Software. Auf der Grundlage dieser Daten konnten die Entwickler ihre Algorithmen verbessern und die Engpässe damit beseitigen.
+Zhang et al. (2013) [[10]](#ref_10) beschreibt eine praktische Anwendung der Softwareanalytik. Dabei wurde die benutzte Software mit Funktionalität ausgestattet, die es ermöglicht, die Antwortzeiten und den damit verbundenen Systemzustand zu ermitteln. Sobald die Antwortzeit größer als erwartet ausfiel, wurden die Daten weitergeleitet und analysiert. Die automatische Analyse zeigte dann die Leistungsengpässe in der Software. Auf der Grundlage dieser Daten konnten die Entwickler ihre Algorithmen verbessern und die Engpässe damit beseitigen.
 
 Harford (2013) [[11]](#ref_11) beschreibt in "Big Data: Are We Making a Big Mistake?" ein großes Problem der Softwareanalytik. Oft hängt unser Wissen immer von Daten ab, die bei großen Unternehmen gesammelt wurden. Diese Daten stammen hauptsächlich von den Softwareprodukten der Unternehmen und es ist noch nicht geklärt, ob sich die Techniken, die sich für die Produkte eigenen, auch für kundenspezifische Software verwendet werden kann. Hinzu kommt noch, dass kleine Unternehmen oft nicht die finanziellen Mittel haben, um in Datenerfassung zu investieren, die für eine automatische Analyse erforderlich wäre, sodass sie keine Möglichkeit haben, Softwareanalytik zu nutzen.
 
