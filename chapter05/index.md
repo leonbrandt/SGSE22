@@ -73,7 +73,7 @@ UML-Use-Case-Diagramme bieten eine einfache und übersichtliche Notation, um die
 
 
 
-![UseCases](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/UseCases.png?raw=true)
+<img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/UseCases.png?raw=true" alt="UseCases" style="zoom:80%;" />
 
 Die Abbildung [?] zeigt ein Beispiel für eines Use-Case-Diagrammes, welches mehrere Use-Cases aufweist. Der Aktor ist medizinischer Rezeptionist, welche in Interaktion mit dem System die aufgezeigten Aufgaben bewältigen kann. Die Verbindungen zu den einzelnen Use-Cases stellen dabei einen Nachrichtenfluss in beide Richtungen dar - von Aktor zu System und von System zu Aktor.
 
@@ -104,19 +104,39 @@ Die Strukturmodellierung kann einerseits die grobe Systemarchitektur festhalten,
 
 ### Klassendiagramme
 
+Die in einem System vorhandenen Objekte und ihre Beziehungen zu anderen Objekten lassen sich mithilfe von Klassendiagrammen widerspiegeln. Demnach kann man lediglich Gebrauch davon machen, wenn es sich hierbei um ein objektorientiertes Systemmodell handelt.
+
+In den frühen Phasen der Systemmodellierung stellen diese Objektklassen zunächst Elemente aus der Realität dar. Es wird versucht, die wesentlichen Komponenten innerhalb eines Systems zu identifizieren und diese in Relation zu bringen. Dies erfolgt zunächst grobgranular, indem die Objekte als Rechteck mit dem entsprechenden repräsentiert werden. Mit Verbindungslinien werden nun Beziehungen kenntlich gemacht, wobei diese anhand von Beschreibungen und Multiplizitäten spezifiziert werden können. Diese Art der Modellierung erinnert an semantische Datenmodelle, in denen Entitäten, dessen Attribute und Relationen zueinander aufgeführt sind. Mit einer solchen Abbildung kann die Grundstruktur von Systemobjekten übersichtlich erfasst werden.
+
 ![ClassesAndAssociations](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/ClassesAndAssociations.png?raw=true)
 
-![Class](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Class.png?raw=true)
+
+
+Allerdings ist es ebenso sinnvoll, die Eigenschaften und Funktionen der einzelnen Klassenobjekte zu beschreiben. Dazu wird das Rechteck der Klasse in drei Abschnitte unterteilt:
+
+1. Der obere Abschnitt enthält den Namen der Klasse
+2. Der mittlere Abschnitt enthält die Attribute der Klasse
+3. Der untere Abschnitt enthält die Funktionen/Operationen der Klasse
+
+
+
+<img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Class.png?raw=true" alt="Class" style="zoom:80%;" />
 
 ### Generalisierung
 
-![HierarchicalClasses](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/HierarchicalClasses.png?raw=true)
+In der Realität kommt es häufig vor, dass unterschiedliche Objekte gleichsame Eigenschaften aufweisen. Um die Komplexität zu verringern und reduntante Informationen zu vermeiden, werden derartige Objekte einer Klasse untergeordnet, und somit die Eigenschaften der übergeordneten Klasse erben. 
 
-![DetailedHierarchicalClasses](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/DetailedHierarchicalClasses.png?raw=true)
+In dem praktischen Beispiel in der Abbildung [?] lässt sich erkennen, dass es sich sowohl bei dem 'Hospital doctor' als auch dem 'General practitioner' um einen 'Doctor' handelt. Sie weisen also die Eigenschaften und Funktionen eines Doktors auf und können ebenso zusätzliche Informationen enthalten.
+
+Für die Modellierung des Systems ist es notwendig, solche Generalisierungen zu identifizieren und entsprechend grafisch zu erfassen. Dies reduziert redundante Informationen und kapselt die Daten sinnvoll, sodass Änderungen an diesen nur an einer Stelle zu unternehmen sind. Für diesen Fall bietet das UML-Klassendiagramm eine Generalisierungsassoziation, welche mit einem unausgefüllten Pfeil am Ende einer Verbindungslinie dargestellt wird. Überlicherweise werden erbende Klassen unterhalb der vererbenden Klasse dargestellt. Der Pfeil zeigt in die Richtung des Klassenelements, welche seine Eigenschaften und Operationen an die unterliegende Klasse vererbt.
+
+<img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/HierarchicalClasses.png?raw=true" alt="HierarchicalClasses" style="zoom:80%;" />
+
+<img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/DetailedHierarchicalClasses.png?raw=true" alt="DetailedHierarchicalClasses" style="zoom:80%;" />
 
 ### Aggregation
 
-![Aggregation](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Aggregation.png?raw=true)
+<img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Aggregation.png?raw=true" alt="Aggregation" style="zoom:80%;" />
 
 Es kommt in der Modellierung von Systemen häufig vor, dass einige Objekte sich aus weiteren Objekten zusammensetzen. Diese Art von Beziehung nennt sich Aggregation und wird in einem UML-Klassendiagramm anhand einer Diamantenform am Ende einer Verbindungsstelle zweier Klassen gekennzeichnet. In der Abbildung [?] erkennt man die Klasse *Patient record*, welche sich aus den Informationen aus *Patient*, sowie die der *Consulation* zusammensetzt.
 
