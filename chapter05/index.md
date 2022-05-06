@@ -33,7 +33,7 @@ Um ein System zu entwerfen, ist es wichtig frühzeitig festzulegen, welche Proze
 
 Was in dieser Phase der Systemmodellierung also angestrebt wird, ist die Definition des Systemkontextes. Abhängigkeiten oder Beziehungen innerhalb dieser Umgebung können mithilfe eines Kontextmodells erfasst werden. Dieses bietet einen guten Überblick über alle Komponenten der Umgebung, jedoch wird die jeweilige Art der Beziehung zwischen zwei Systemen nicht ersichtlich. Für die Ermittlung der Anforderungen und das Design des Systems ist es aber notwendig, die spezifischen Interaktionen und Beziehungen zu kennen. Aus diesem Grund werden häufig weitere Modelle herangezogen, welche die Prozesse abbilden können. 
 
-![ActivityDiagram](https://github.com/mwithoeft/SGSE22/tree/czolkin/chapter05/chapter05/img/ActivityDiagram.png)
+![ActivityDiagram](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/ActivityDiagram.png?raw=true)
 
 UML Aktivitätsdiagramme bieten einen guten Rahmen, um Beziehungen zwischen Systemen, Prozesse und Aktivitäten zu abstrahieren. Dazu wird Gebrauch von folgenden Elementen gemacht:
 
@@ -73,7 +73,7 @@ UML-Use-Case-Diagramme bieten eine einfache und übersichtliche Notation, um die
 
 
 
-![UseCases](https://github.com/mwithoeft/SGSE22/tree/czolkin/chapter05/chapter05/img/UseCases.png)
+![UseCases](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/UseCases.png?raw=true)
 
 Die Abbildung [?] zeigt ein Beispiel für eines Use-Case-Diagrammes, welches mehrere Use-Cases aufweist. Der Aktor ist medizinischer Rezeptionist, welche in Interaktion mit dem System die aufgezeigten Aufgaben bewältigen kann. Die Verbindungen zu den einzelnen Use-Cases stellen dabei einen Nachrichtenfluss in beide Richtungen dar - von Aktor zu System und von System zu Aktor.
 
@@ -94,7 +94,7 @@ Sequenzdiagramme werden dazu genutzt, Interaktionen zwischen Aktoren und Systemo
 
 
 
-![SequenceDiagram](https://github.com/mwithoeft/SGSE22/tree/czolkin/chapter05/chapter05/img/SequenceDiagram.png)
+![SequenceDiagram](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/SequenceDiagram.png?raw=true)
 
 ## Strukturmodelle
 
@@ -104,19 +104,19 @@ Die Strukturmodellierung kann einerseits die grobe Systemarchitektur festhalten,
 
 ### Klassendiagramme
 
-![ClassesAndAssociations](https://github.com/mwithoeft/SGSE22/tree/czolkin/chapter05/chapter05/img/ClassesAndAssociations.png)
+![ClassesAndAssociations](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/ClassesAndAssociations.png?raw=true)
 
-![Class](https://github.com/mwithoeft/SGSE22/tree/czolkin/chapter05/chapter05/img/Class.png)
+![Class](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Class.png?raw=true)
 
 ### Generalisierung
 
-![HierarchicalClasses](C:\Users\Zolkin\Documents\Master Studium Informatik\1. Semester\Spezielle Gebiete zum Softwareengineering\SGSE22\chapter05\img\HierarchicalClasses.png)
+![HierarchicalClasses](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/HierarchicalClasses.png?raw=true)
 
-![DetailedHierarchicalClasses](https://github.com/mwithoeft/SGSE22/tree/czolkin/chapter05/chapter05/img/DetailedHierarchicalClasses.png)
+![DetailedHierarchicalClasses](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/DetailedHierarchicalClasses.png?raw=true)
 
 ### Aggregation
 
-![Aggregation](https://github.com/mwithoeft/SGSE22/tree/czolkin/chapter05/chapter05/img/Aggregation.png)
+![Aggregation](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Aggregation.png?raw=true)
 
 Es kommt in der Modellierung von Systemen häufig vor, dass einige Objekte sich aus weiteren Objekten zusammensetzen. Diese Art von Beziehung nennt sich Aggregation und wird in einem UML-Klassendiagramm anhand einer Diamantenform am Ende einer Verbindungsstelle zweier Klassen gekennzeichnet. In der Abbildung [?] erkennt man die Klasse *Patient record*, welche sich aus den Informationen aus *Patient*, sowie die der *Consulation* zusammensetzt.
 
@@ -146,15 +146,15 @@ Datengesteuerte Modelle waren bereits in den 1970er Jahren verbreitet, was sie z
 
 Doch auch mit Sequenzdiagrammen können DFDs dargestellt werden. Werden die Nachrichten zwischen Objekten ausschließlich von links nach rechts überliefert, wird so die sequentielle Abfolge des Datenflusses illustriert (siehe Abbildung).
 
-![Behaviour_ActivityModel](https://github.com/mwithoeft/SGSE22/tree/czolkin/chapter05/chapter05/img/Behaviour_ActivityModel.png)
+![Behaviour_ActivityModel](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Behaviour_ActivityModel.png?raw=true)
 
-![Behaviour_SequenceDiagram](https://github.com/mwithoeft/SGSE22/tree/czolkin/chapter05/chapter05/img/Behaviour_SequenceDiagram.png)
+![Behaviour_SequenceDiagram](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Behaviour_SequenceDiagram.png?raw=true)
 
 
 
 ### Ereignisgesteuerte (Event-Driven) Modellierung
 
-![Behaviour_StateDiagram](https://github.com/mwithoeft/SGSE22/tree/czolkin/chapter05/chapter05/img/Behaviour_StateDiagram.png)
+![Behaviour_StateDiagram](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Behaviour_StateDiagram.png?raw=true)
 
 
 
