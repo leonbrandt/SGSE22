@@ -29,7 +29,7 @@ Unterschieden wird zwischen der Modellierung bereits existierender oder angestre
 
 Um ein System zu entwerfen, ist es wichtig frühzeitig festzulegen, welche Prozesse und Operationen innerhalb der Systemumgebung auszuführen sind. Dazu sollten auch bereits vorhandene Systeme betrachtet werden, um redundante Funktionalitäten auszuschließen und mögliche Verbindungspunkte zu schaffen. Die Grenzen des Systems innerhalb der Umgebung sollen daher definiert werden. Dabei kann es sich um eine klare Abgrenzung handeln, allerdings kann es oftmals vorkommen, dass flexible Grenzen anzustreben sind, welche die Möglichkeit der Anpassung auf die Bedürfnisse der Nutzer bieten.
 
-![ContextModel](https://github.com/mwithoeft/SGSE22/tree/czolkin/chapter05/chapter05/img/ContextModel.png?raw=true)
+![ContextModel](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/ContextModel.png?raw=true)
 
 Was in dieser Phase der Systemmodellierung also angestrebt wird, ist die Definition des Systemkontextes. Abhängigkeiten oder Beziehungen innerhalb dieser Umgebung können mithilfe eines Kontextmodells erfasst werden. Dieses bietet einen guten Überblick über alle Komponenten der Umgebung, jedoch wird die jeweilige Art der Beziehung zwischen zwei Systemen nicht ersichtlich. Für die Ermittlung der Anforderungen und das Design des Systems ist es aber notwendig, die spezifischen Interaktionen und Beziehungen zu kennen. Aus diesem Grund werden häufig weitere Modelle herangezogen, welche die Prozesse abbilden können. 
 
