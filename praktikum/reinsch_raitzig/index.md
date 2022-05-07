@@ -1,46 +1,57 @@
 # Christoph Raitzig & Malte Reinsch #
 
-## Wasm mit compilerbau ##
+## Evaluierung der Anwendungsmöglichkeiten von Machine Learning gestützten Compiler-Optimierungsverfahren bezüglich WebAssembly ##
 
-- Verbindung wasm und compilerbau
-	- Optimierung speziell für wasm
-	- KI Optimierung für wasm
-		- Nutzung / Erweiterung von [MLGO](https://arxiv.org/pdf/2101.04808.pdf)
-		- Potentielles Ziel: Optimierung hinsichtlich Codegröße (.wasm muss immer
-		an Client geschickt werden)
-		- wie kommt man da an Daten und wie verwendet man die (Praxisbeispiele)?
-	- von LLVM nach wasm?
+Ziel:
+- Untersuchung zweier Fälle:
+	- Optimierung hinsichtlich Codegröße (Begründung: .wasm muss immer an Client geschickt werden)
+	- Optimierung hinsichtlich Performance (Begründung: Kernidee von WebAssembly ist das Versprechen von Performance)
+- Mögliche Ausprägungen:
+	- Anwendung von MLGO mit .wasm und beobachten, wie sich Codegröße ändert
+	- Erweiterung von MLGO mit weiterem Modell für weiteren Pass
+	und Effekt auf Codegröße beobachten
+		- Annahme eines Passes, der analysiert werden soll
+- kein wissenschaftliches Paper
+- Nutzung / Erweiterung von [MLGO](https://arxiv.org/pdf/2101.04808.pdf)
 
--------------
+TODOs:
+- Pass festlegen, der hinsichtlich Codegröße und Performance relevant ist und Ergebnisse verspricht
+- Benchmark-Projekt finden
+	- Wie integriert man custom-LLVM mit KI-Modell in die Toolchain?
+		- Unity: nutzt "complex toolchain" aus IL2CPP, emscripten, binaryen
+- Welche Projekte zum trainieren nutzen?
+- Wie können MLGO und LLVM erweitert werden, sodass eigener Pass trainiert werden kann?
+	- [feature-doc](https://github.com/google/ml-compiler-opt/blob/main/docs/adding_features.md)
+	- [demo-doc](https://github.com/google/ml-compiler-opt/blob/main/docs/demo/demo.md)
+- Welche Features sind für Training bzgl. ausgewähltem Pass wichtig?
+- Realisierung
 
-## Backup: Fragestellung ##
+## Projektplanung ##
 
-Vergleich verschiedener Rust-Frameworks zur Erzeugung von WebAssembly im
-Hinblick auf architektonische Unterscheide, Performance und Größe des erzeugten WebAssembly-Codes
+[Meilensteinplan](https://crocus-island-7de.notion.site/e698d92cbf0a476d8f044fe727f03ea3?v=29abe0d1019e4d908513bf765bc34eff)
 
-### Frameworks ###
+## Recherche ##
 
-- yew
-- seed
-- percy
-- perseus
-- sycamore
-- ...
+[Recherche zum MLGO Paper/Framework](praktikum/reinsch_raitzig/research.md)
 
-### Zu vergleichende Parameter ###
+## Nächste Aufgaben ##
 
-- Denkansätze / architektonische Ansätze
-- Entwicklererfahrung
-- Größe des erzeugten WebAssembly-Codes (des Deployments)
-- Performance
+### LLVM-Seite ###
 
-### "Testaufbau" ###
+- Integration von KI-Modell in RegAllocAdvisor
+- Wrapper (z.B. Adapter-Pattern) um KI-Modell mit gemeinsamem Interface
 
-- Umsetzung einer kleinen Webanwendung (z.B. einfaches soziales Netzwerk)
-- Datenbank & Backend bleiben konstant
+### KI-Seite ###
 
-## Ziel der Arbeit ##
+- Reinforcement Learning
+	- Feature-Engineering
+- Training und Bauen mit fuchsia
 
-- Ermittlung des "besten" Frameworks im Hinblick auf oben genannte Parameter
+## Register Allocation Pass ##
 
+TODO: aus research.md zusammenfassen
 
+## experimentelle Toolchain ##
+
+TODO: siehe research
+TODO: validieren

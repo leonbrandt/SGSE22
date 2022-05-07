@@ -1,57 +1,741 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Kapitel 01: Einleitung</title>
+    <title>Qualitätsmanagement</title>
     <meta charset="utf-8">
     <style>
       body { 
-        font-family: 'Droid Serif';
+        font-family: Verdana, sans-serif;
+        /* color: rgb(68, 114, 196); */
       }
       h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
+        font-family: Helvetica, sans-serif;
         font-weight: normal;
+        margin-bottom: 20px;
+      }
+      img {
+        max-width: 100%;
+        border: 2px solid rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+      }
+      table {
+        border-collapse: collapse;
+        margin: 20px auto;
+      }
+      td, th {
+        border: 1px solid rgba(0, 0, 0, 0.6);
+        padding: 0.5rem;
+        text-align: left;
+      }
+      tr:nth-child(2n) {
+        background-color: rgba(0, 0, 0, 0.08);
+        /* background-color: rgba(68, 114, 196, 0.08); */
       }
       .remark-code, .remark-inline-code { 
-        font-family:Courier New;
+        font-family: 'Courier New', monospace;
       }
-      @page {
-        size: 908px 681px;
-        margin: 0;
+      .underline{
+        border-bottom: 2px solid rgba(0, 0, 0, 0.8); 
+       /*  border-bottom: 2px solid rgb(68, 114, 196); */
+        width: 100%;
+        display: block;
       }
     </style>
   </head>
   <body>
     <textarea id="source">
 
+class: center, middle
+
+# Qualitätsmanagement
+
+Kevin Ratschinski
+
+---
+# Inhalte
+<div class="underline"></div>
+
+1. Einführung
+2. Softwarequalität
+3. Standards
+4. Reviews und Inspektionen
+5. Qualitätsmanagement und agile Entwicklung
+6. Softwaremessung
+7. Zusammenfassung
+
+---
+
+# 1. Einführung
+<div class="underline"></div>
+
+Softwaresysteme sollen "**_fit for purpose_**" sein.
+
+- Effizient
+- Zuverlässig
+- Fertigstellung innerhalb eines Zeit- und Kostenrahmens
+
+**Qualitätsmanagement hat sicherzustellen, dass alle Ziele und festgelegten Standards erfüllt werden!**
+
+---
+
+# 1. Einführung
+<div class="underline"></div>
+
+Die Techniken des Softwarequalitätsmanagement kommen ursprünglich aus der Fertigungsindustrie.
+
+**Qualitätssicherung** ist die Definition von Prozessen und Standards, die zu qualitativ hochwertigen Produkten führen, und die Einführung dieser Qualitätsprozesse in den Fertigungsprozess.
+
+**Qualitätslenkung** ist die Anwendung dieser Qualitätsprozesse, um Produkte auszusieben, die dem geforderten Qualitätsniveau nicht entsprechen.
+
+---
+
+# 1. Einführung
+<div class="underline"></div>
+
+Um die Prozesse in der Softwareentwicklung umzusetzen, werden oft QM-Teams eingesetzt.
+
+Die Teams stellen sicher, dass die zuvor festgelegten Standards und Ziele des Unternehmens mit dem Produkt übereinstimmen.
+
+<figure style="text-align: center;">
+  <img style="margin-top: 20px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.1_qm_und_softwareentwicklung_de.png?raw=true" alt="Qualitätsmanagement und Softwareentwicklung"/>
+</figure>
+
+---
+
+# 2. Softwarequalität
+<div class="underline"></div>
+
+Softwarequalität lässt sich nur schwer objektiv beurteilen.
+
+- Kunden haben andere Anforderungen (Effizienz, Zuverlässigkeit)  
+als Entwickler (Wartbarkeit, Wiederverwendbarkeit).
+
+- In die Spezifikation fließen oft die Anforderungen von mehreren Stakeholdern mit ein.
+
+- Qualitätsmerkmale wie (z.B. Wartbarkeit) lassen sich nicht direkt messen.
+
+---
+
+# 2. Softwarequalität
+<div class="underline"></div>
+
+Qualitätsmanagement in der Softwareentwicklung ist ein **subjektiver** Prozess, bei dem QM-Teams anhand ihrer Sachkenntnis und Erfahrung die Qualität eines Produktes beurteilen.
+
+- Wurde die Software ordentlich getestet?
+
+- Ist die Software verlässlich genug, um eingesetzt zu werden?
+
+- Ist die Performanz der Software bei normalen Gebrauch akzeptabel?
+
+- Ist die Software gut strukturiert und verständlich?
+
+- Hat man sich im Entwicklungsprozess an Standards gehalten?
+
+---
+
+# 2. Softwarequalität
+<div class="underline"></div>
+
+Die Qualität eines Systems basiert oft auf den **nicht funktionalen Eigenschaften**.
+
+<table style="margin-top: 40px;">
+  <tr>
+    <td>Betriebssicherheit</td>
+    <td>Verständlichkeit</td>
+    <td>Portierbarkeit</td>
+  </tr>
+  <tr>
+    <td>Informationssicherheit</td>
+    <td>Testbarkeit</td>
+    <td>Benutzerfreundlichkeit</td>
+  </tr>
+  <tr>
+    <td>Zuverlässigkeit</td>
+    <td>Anpassbarkeit</td>
+    <td>Wiederverwendbarkeit</td>
+  </tr>
+  <tr>
+    <td>Skalierbarkeit</td>
+    <td>Modularität</td>
+    <td>Effizienz</td>
+  </tr>
+  <tr>
+    <td>Stabilität</td>
+    <td>Komplexität</td>
+    <td>Erlernbarkeit</td>
+  </tr>
+</table>
+
+---
+
+# 2. Softwarequalität
+<div class="underline"></div>
+
+Traditionelles Qualitätsmanagement geht grundsätzlich davon aus, dass die Qualität der Software in direktem Bezug zu der Qualität des Entwicklungsprozesses steht.
+
+<figure>
+  <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.2_prozessbasierte_qualitaet_de.png?raw=true" alt="Qualitätsmanagement und Softwareentwicklung"/>
+</figure>
+
+Anders als in der Fertigung ist die Beziehung zwischen Prozess- und Produktqualität komplexer.
+Prozesse lassen sich schwieriger standardisieren und überwachen, als es in der Fertigung der Fall ist.
+
+Deshalb sollte versucht werden eine "Qualitätskultur" zu entwickeln, in der jeder zum Erreichen einer hohen Produktqualität verpflichtet ist.
+
+---
+
+# 3. Standards
+<div class="underline"></div>
+
+Softwarestandards spielen eine wichtige Rolle im Qualitätsmanagement.
+
+1. Standards kapseln Erfahrungen, die für das Unternehmen von großen Wert sind.
+
+2. Standards bieten einen Rahmen für die Definition, was "Qualität" innerhalb des Softwareentwicklungsprojekt bedeutet.
+
+3. Standards tragen zur Kontinuität bei, sodass alle Entwickler nach denselben Verfahren arbeiten.
+
+---
+
+# 3. Standards
+<div class="underline"></div>
+
+Es gibt zwei verwandte Arten von Software-Engineering-Standards, die im Softwarequalitätsmanagement definiert werden:
+
+- Produktstandards: Diese gelten für das zu entwickelnde Produkt.
+
+- Prozessstandards: Diese definieren die Prozesse, die während des Entwicklungsprozesses zu befolgen sind.
+
+--
+
+Standards müssen sich immer positiv auf die Produktqualität auswirken.
+
+Produktstandards sollten dabei so entworfen werden, dass sie kosteneffizient angewendet und geprüft werden können.
+
+Prozessstandards sollten die Prozesse definieren, die prüfen, dass die Produktstandards eingehalten werden.  
+
+---
+
+# 3. Standards
+<div class="underline"></div>
+
+<table>
+  <tr>
+    <th>Produktstandards</th>
+    <th>Prozessstandards</th>
+  </tr>
+  <tr>
+    <td>Formular für Entwurfsprüfung</td>
+    <td>Durchführung des Entwurfs-Reviews</td>
+  </tr>
+  <tr>
+    <td>Struktur des Anforderungsdokuments</td>
+    <td>Einreichung des neuen Codes für die Systemerstellung</td>
+  </tr>
+  <tr>
+    <td>Headerformat für Methoden</td>
+    <td>Prozess der Versionsfreigabe</td>
+  </tr>
+  <tr>
+    <td>Java-Programmierstil</td>
+    <td>Genehmigungsprozess für den Projektplan</td>
+  </tr>
+  <tr>
+    <td>Format des Projektplans</td>
+    <td>Prozess für die Änderungskontrolle</td>
+  </tr>
+  <tr>
+    <td>Formular für Änderungsanträge</td>
+    <td>Prozess für die Testprotokollierung</td>
+  </tr>
+</table>
+
+---
+
+# 3.1 ISO 9001
+<div class="underline"></div>
+
+Mit der **ISO 9000** gibt es eine internationale Normenreihe.  
+
+Die **ISO 9001** ist die allgemeinste dieser Normen und betrifft Firmen, die Produkte entwerfen, entwickeln und warten.
+
+- Die ISO 9001 ist kein Standard speziell für die Softwareentwicklung.
+
+- Die Norm legt die allgemeinen Qualitätsgrundsätze fest.
+
+- Beschreibt die Qualitätsprozesse und skizziert die zu definierenden betrieblichen Standards und Verfahren.
+
+- Alle Unternehmen, die sich nach ISO 9001 zertifizieren lassen möchten, müssen dokumentieren, dass ihre Prozesse ISO 9001-konform sind.
+
+---
+
+# 3.1 ISO 9001
+<div class="underline"></div>
+
+Kernprozesse eines Software- oder Systemherstellers nach ISO 9001.
+
+<figure>
+  <img style="margin-top: 20px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.3_kernprozesse_iso9001_de.png?raw=true" alt="Kernprozesse eines Software- oder Systemherstellers nach ISO 9001"/> 
+</figure>
+
+---
+
+# 3.1 ISO 9001
+<div class="underline"></div>
+
+In der Norm werden keine Qualitätsprozesse definiert oder vorgeschrieben welche Prozesse eingesetzt werden müssen.
+ 
+Um mit der ISO 9001 kompatibel zu sein, muss ein Unternehmen z.B. die verschiedenen Prozesse definieren und Verfahren entwickeln, die nachweisen, dass seine Qualitätsprozesse eingehalten werden.
+
+Diese gewährt den Unternehmen eine gewisse Flexibilität, bei der Umsetzung der Norm.
+
+Unabhängige Zertifizierungsbehörden prüfen die Qualitätsmanagementprozesse und deren Dokumentation und entscheiden, ob die Prozesse alle die in der ISO 9001 angegebenen Bereiche abdecken.
+
+---
+
+# 4. Reviews und Inspektionen
+<div class="underline"></div>
+
+Reviews und Inspektionen sind Teile der Qualitätssicherung.
+
+Dabei wird die Software, ihre Dokumentation sowie die Prozessprotokolle untersucht, um Fehler und Versäumnisse festzustellen.
+
+Es wird festgestellt, ob die zuvor festgelegten Qualitätsstandards eingehalten wurden.
+
+Mit Hilfe von Reviews und Inspektionen, soll die Softwarequalität verbessert werden.
+
+---
+
+# 4.1 Reviews
+<div class="underline"></div>
+
+Eine Gruppe von Personen untersucht sorgfältig einen Teil oder das gesamte Softwaresystem und die dazugehörige Dokumentation.
+
+Code, Entwürfe, Spezifikationen, Testpläne, Standards usw. können alle überprüft werden.
+
+Auch wenn Reviews sehr unterschiedlich ausfallen können, ist der Review-Prozess normalerweise in drei Phasen gegliedert.
+
+---
+
+# 4.1 Reviews
+<div class="underline"></div>
+
+1. Aktivitäten vor dem Review
+
+2. Review-Sitzung
+
+3. Aktivitäten nach dem Review
+
+<figure>
+  <img style="margin-top: 20px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.4_review_prozess_de.png?raw=true" alt="Der Review-Prozess in der Softwareentwicklung"/>
+</figure>
+
+---
+
+# 4.2 Programminspektionen
+<div class="underline"></div>
+
+Bei Programminspektionen suchen Teammitglieder nach Fehlern in der Software, die gerade entwickelt wird.
+
+Bei den Fehlern kann es sich um logische Fehler, Anomalien im Code, die zu einen möglicherweise falschen Zustand führen oder um Funktionen, die im Code nicht verwendet werden handeln.
+
+Das Team überprüft den Programmcode und hebt Probleme hervor, mit denen sich das Entwicklerteam noch einmal beschäftigen muss.
+
+---
+
+<table>
+  <tr>
+    <th>Fehlerklasse</th>
+    <th>Überprüfung während der Inspektion</th>
+  </tr>
+  <tr>
+    <td>Datenfehler </td>
+    <td>
+      <ul>
+        <li>Sind alle Programmvariablen initialisiert, bevor sie verwendet werden?</li>
+        <li>Sind alle Konstanten benannt?</li>
+        <li>Besteht die Möglichkeit eines Speicherüberlaufs?</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Kontrollstrukturfehler </td>
+    <td>
+      <ul>
+        <li>Sind die Bedingungen jeder bedingten Anweisung korrekt?</li>
+        <li>Wird jede Schleife mit Sicherheit beendet?</li>
+        <li>Sind zusammengesetzte Anweisungen richtig geklammert?</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Ein-/Ausgabefehler</td>
+    <td>
+      <ul>
+        <li> Werden alle Eingabevariablen benutzt?</li>
+        <li> Können unerwartete Eingaben zu Fehlern führen?</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+---
+
+<table>
+  <tr>
+    <th>Fehlerklasse</th>
+    <th>Überprüfung während der Inspektion</th>
+  </tr>
+  <tr>
+    <td>Schnittstellenfehler</td>
+    <td>
+      <ul>
+        <li>Haben alle Aufrufe von Funktionen, die richtige Anzahl an Parameter?</li>
+        <li>Stimmt die Reihenfolge von Parametern?</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Speicherverwaltungsfehler</td>
+    <td>
+      <ul>
+        <li>Fall eine dynamische Speicherung erfolgt, wurde der Speicherplatz korrekt zugeteilt?</li>
+        <li>Wird der Speicherplatz explizit wieder freigegeben, nachdem er nicht mehr genutzt wird?</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Ausnahmeverwaltungsfehler</td>
+    <td>
+      <ul>
+        <li>Werden alle möglichen Fehlerzustände abgefangen?</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+---
+
+# 4.2 Programminspektionen
+<div class="underline"></div>
+
+Obwohl bekannt ist wie erfolgversprechend Inspektionen sind, werden sie von den Firmen nur zögerliche eingesetzt.
+
+Dies hat mitunter folgende Gründe:
+
+- Im Testen erfahrene Entwickler werden eventuell sich nur ungern eingestehen, dass Inspektionen effektiver sind als Tests.
+
+- Zusätzliche Kosten während der Entwicklungsphase.
+
+- Manager haben das Risiko dieser Zusatzkosten, welches sie oft nicht tragen wollen.
+
+---
+
+# 5. QM und agile Entwicklung
+<div class="underline"></div>
+
+Qualitätsmanagement ist ein formaler Prozess, der sich auf eine ausführliche Dokumentation und auf die Einhaltung dieser Prozesse stützt.
+
+Diesem steht die agile Entwicklung gegenüber, die zum Ziel hat, so wenig Zeit wie möglich für das Schreiben von Dokumenten aufzuwenden.
+
+Agile Methoden stellen die Codeentwicklung in den Mittelpunkt und minimieren die Dokumentation.
+
+Der Schwerpunkt wird auf die Kommunikation zwischen den Teammitgliedern gelegt.
+
+---
+
+# 5. QM und agile Entwicklung
+<div class="underline"></div>
+
+Beispiele für agile Entwicklungsmethoden sind folgende:
+
+- _Prüfen von Code bevor er eingefügt wird:_  
+  Entwickler prüfen den Code ihrer Teammitglieder, bevor der Code in die aktuelle Version eingebracht wird.
+
+- _Niemals die aktuellste Version zerstören:_  
+  Bevor Codeänderungen übernommen werden, müssen sie gegen das ganze System getestet werden. Falls die aktuelle Version fehlerhaft ist, muss der Behebung des Problems die höchste Priorität eingeräumt werden.
+
+- _Probleme beheben, sobald sie auftreten:_  
+  Probleme sollten sofort behoben werden wenn sie entdeckt werden, auch wenn der Code von anderen Entwicklern stammt.
+
+---
+
+# 5. QM und agile Entwicklung
+<div class="underline"></div>
+
+Wenn große Systeme entwickelt werden, können sich agile Ansätze des Qualitätsmanagements mit minimaler Dokumentation als ungeeignet erweisen:
+
+- Der Kunde hat meist eigene Qualitätsstandards und erwartet, dass die Qualitätsstandards mit den firmeninternen Prozessen kompatibel sind.
+
+- Wenn geografisch verteilte Teams an der Entwicklung beteiligt sind. Ist eine informelle Kommunikation oft nicht ausreichend.
+
+- Bei Systemen mit einer langen Laufzeit, ändert sich häufig das Entwicklungsteam.
+
+Aus den folgenden Gründen muss der informelle Ansatz in agilen Methoden, bei größeren Projekten welche eine Dokumentation erfordern, angepasst werden.
+
+---
+
+# 6. Softwaremessung
+<div class="underline"></div>
+
+Bei der Softwaremessung geht es darum, Merkmale eines Softwaresystems zu quantifizieren.
+
+- Die gemessenen Werte, ermöglichen ein Vergleich mit den unternehmensweiten Standards.
+
+- Idealerweise könnte sich das Qualitätsmanagement auf die Messungen dieser Werte verlassen.
+
+- Dann könnten sie objektiv bewerten, inwiefern Änderungen an den Prozessen sich auf die Softwarequalität auswirken.  
+
+- Langfristig zielt Softwaremessung darauf ab, die Softwarequalität anhand von Messungen zu beurteilen.
+
+---
+
+# 6. Softwaremessung
+<div class="underline"></div>
+
+**Softwaremetriken** dienen zur objektiven Bewertung von Systemen, Dokumentationen oder Entwicklungsprozessen.
+
+Metriken sind z.B.:
+
+- Anzahl der Codezeilen
+- Fog-Index (Lesbarkeit eines Textes)
+- Anzahl der Fehler, in der ausgelieferten Software
+- Arbeitsaufwand (Tage) für die Entwicklung neuer Softwarekomponenten
+
+---
+
+# 6. Softwaremessung
+<div class="underline"></div>
+
+Steuermetriken unterstützen das Prozessmanagement.
+
+Es gibt drei verschiedene Arten von Steuermetriken:
+
+1. _Die benötigte Zeit zur Fertigstellung eines Prozesses:_ Dies kann die Gesamtzeit sein oder die Arbeitszeit bestimmter Entwickler.
+
+2. _Die für einen Prozess erforderlichen Ressourcen:_ Dies kann der Gesamtaufwand in Personentagen, Reisekosten oder Computerressourcen sein.
+
+3. _Die Häufigkeit bestimmter Ereignisse:_ Beispiele für Ereignisse könnte die Zahl der geforderten Anforderungsänderungen oder die Anzahl der Fehlerberichte in einem ausgelieferten System sein.
+
+---
+
+# 6. Softwaremessung
+<div class="underline"></div>
+
+Viele der Qualitätsmerkmale lassen sich nur schwer direkt messen.
+
+Attribute wie Verständlichkeit und Benutzerfreundlichkeit, beziehen sich darauf, wie Entwickler und Benutzer die Software sehen.
+
+Sie unterliegen stark subjektiven Faktoren wie zum Beispiel Erfahrung und können deshalb objektiv nicht richtig gemessen werden.
+
+Um diese Attribute zu beurteilen, müssen zuerst einige interne Attribute (wie Codegröße, Komplexität, usw.) gemessen werden und diese danach mit den anderen Attributen in Verbindung gebracht werden.
+
+---
+
+# 6. Softwaremessung
+<div class="underline"></div>
+
+<figure style="text-align: center;">
+  <img style="width: 70%; height: 70%;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.5_beziehungen_von_softwaremerkmalen_de.png?raw=true" alt="Beziehungen zwischen internen und externen Softwaremerkmalen"/>
+</figure>
+
+---
+
+# 6. Softwaremessung
+<div class="underline"></div>
+
+Es liegt nahe, dass es Beziehungen zwischen externen und internen Merkmalen geben könnte. 
+
+Soll ein Messwert eines internen Merkmals für die Vorhersage eines externen Merkmals nützlich sein, müssen drei Bedingungen erfüllt sein:
+
+1. Das interne Merkmal muss korrekt gemessen werden.
+
+2. Zwischen den internen und den externen Merkmalen muss eine Beziehung bestehen.
+
+3. Die Beziehung zwischen den internen und den externen Merkmal muss sich als Formel oder als Modell ausdrücken lassen.
+
+---
+
+# 6.1 Vorhersage-Metriken
+<div class="underline"></div>
+
+Mit Vorhersage-Metriken können sich interne Attribute eines Systems quantifiziert messen lassen.
+
+Vorhersage-Metriken lassen sich in zwei Gruppen einteilen:
+
+- _Dynamische Metriken:_ Lassen sich während der Programmausführung durch Messungen sammeln.
+
+- _Statische Metriken:_ Werden aus dem Entwurf des Programms oder aus der Dokumentation gesammelt.
+
+Dynamische Metriken sind für die Beurteilung der Zuverlässigkeit und Effizienz eines Programmes sehr hilfreich.
+
+Statische Metriken sind für die Beurteilung der Verständlichkeit, Komplexität und der Wartung eines Softwaresystems wichtig.
+
+---
+
+# 6.1 Vorhersage-Metriken
+<div class="underline"></div>
+
+<table>
+  <tr>
+    <th>Statische Softwaremetrik</th>
+    <th>Beschreibung</th>
+  </tr>
+  <tr>
+    <td>Codelänge</td>
+    <td>
+      Umso länger der Code einer Komponente ist, desto komplexer und fehleranfälliger ist sie "wahrscheinlich".
+    </td>
+  </tr>
+  <tr>
+    <td>Länge der Bezeichner</td>
+    <td>
+      Umso länger Bezeichner sind, desto wahrscheinlicher ist es, dass sie eine gewisse Aussagekraft haben.
+    </td>
+  </tr>
+  <tr>
+    <td>Tiefe von Verzweigungen</td>
+    <td>
+      Ein Maß für die Tiefe von if-Anweisungen in einem Programm. Tief verschachtelte if-Anweisungen sind schwerer zu verstehen und möglicherweise fehlerbehaftet.
+    </td>
+  </tr>
+  <tr>
+    <td>Fog-Index</td>
+    <td>
+      Maß für die Länge der Wörter und Sätze in Dokumenten. Umso höher der Fog-Index eines Dokumentes ist, desto schwerer ist das Dokument zu verstehen.
+    </td>
+  </tr>
+</table>
+
+---
+
+# 6.1 Vorhersage-Metriken
+<div class="underline"></div>
+
+Die Größe eines Programms und die Komplexität der Kontrollstrukturen scheinen die zuverlässigsten Vorhersagen für die Verständlichkeit und die Wartbarkeit liefern.
+
+Neben den Metriken für die statische Analyse, gibt es auch noch Metriken die sich speziell für die Objektorientierung eignen.
+
+---
+
+# 6.1 Vorhersage-Metriken
+<div class="underline"></div>
+
+<table>
+  <tr>
+    <th>Objektorientierte Metrik</th>
+    <th>Beschreibung</th>
+  </tr>
+  <tr>
+    <td>Gewichtete Methoden pro Klasse</td>
+    <td>
+      Hierbei werden die Methoden einer Klasse, nach ihrer Komplexität gewichtet. Je größer der Wert ist, desto komplexer ist die Klasse.
+    </td>
+  </tr>
+  <tr>
+    <td>Tiefe des Vererbungsbaums</td>
+    <td>
+      Zählt die Anzahl der Ebenen im Vererbungsbaum. Je tiefer der Vererbungsbaum ist, desto komplexer ist der Entwurf, da viele Oberklassen verstanden werden müssen, um die Klasse auf der tiefsten Ebene zu verstehen.
+    </td>
+  </tr>
+  <tr>
+    <td>Anzahl der Subklassen</td>
+    <td>
+      Gibt die Anzahl der direkten Subklassen einer Klasse an. Im Gegensatz der zuvor betrachteten Tiefe, wird hier die Breite einer Klasse betrachtet. Bei einem hohen Wert sollte der Basisklasse größere Aufmerksamkeit geschenkt werden, weil viele untergeordnete Klassen davon abhängen.
+    </td>
+  </tr>
+</table>
+
+---
+
+# 6.1 Vorhersage-Metriken
+<div class="underline"></div>
+
+<table>
+  <tr>
+    <th>Objektorientierte Metrik</th>
+    <th>Beschreibung</th>
+  </tr>
+  <tr>
+    <td>Kopplung zwischen Objektklassen</td>
+    <td>
+     Klassen sind gekoppelt, wenn Methoden oder Variablen der einen Klasse in Methoden einer anderen Klasse verwendet werden.
+    </td>
+  </tr>
+  <tr>
+    <td>Antwort für eine Klasse</td>
+    <td>
+      Gibt die Anzahl an Methoden an, die als Antwort auf eine Nachricht von einem Objekt dieser Klasse ausgeführt werden können. Umso höher der RFC-Wert (Response For a Class), desto komplexer ist wahrscheinlich eine Klasse.
+    </td>
+  </tr>
+  <tr>
+    <td>Fehlende Kohäsion unter den Methoden</td>
+    <td>
+      Der Wert gibt die Differenz zwischen der Zahl der Methoden ohne gemeinsame Attribute und der Zahl der Methoden mit gemeinsamen Attributen an. Der Wert ist umstritten und es ist nicht klar, ob er wirklich neue Informationen liefert, welche nicht schon von anderen Metriken abgedeckt wird.
+    </td>
+  </tr>
+</table>
+
+---
+
+# 6.2 Komponentenanalyse
+<div class="underline"></div>
+
+In der Softwarekomponentenanalyse werden einzelne Komponenten eines Systems, unter Verwendung verschiedener Metriken, separat analysiert.
+
+<figure>
+  <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.6_komponentenanalyse_de.png?raw=true" alt="Prozess der Komponentenanalyse"/> 
+</figure>
+
+1. Welche Fragen sollen beantwortet werden?
+
+2. Alle Komponenten auswählen die benötigt werden.
+
+3. Die zuvor ausgewählten Komponenten Messen und die Werte für die Metrik errechnen.
+
+4. Nach der Messung können die Messwerte mit den früheren Messungen verglichen werden.
+
+5. Auffällige Komponenten überprüfen und ermitteln ob sich die Qualität der Komponente verschlechtert hat.
+
+---
+
+# 6.3 Softwareanalytik
+<div class="underline"></div>
+
+Durch _Data-Mining_ lassen sich sehr große Mengen an Daten sammeln und anschließend analysieren.
+Dadurch ist es möglich, die Beziehung von Daten herzustellen, die mit einer manuellen Datenanalyse nicht möglich ist.
+
+**Softwareanalytik** ist die Anwendung dieser Techniken auf Daten über Software und Prozesse.
+
+Zwei wichtige Faktoren haben die Softwareanalytik erst möglich gemacht:
+
+1. Das automatisierte sammeln von Nutzerdaten durch Softwareunternehmen, während der Benutzung der eigenen Software.
+
+2. Die Verwendung von Open-Source-Software, angeboten auf Plattformen wie zum Beispiel Github.
+Der Quellcode von solcher Software steht frei für die Analyse zur Verfügung.
+
+---
+
+# 7. Zusammenfassung
+<div class="underline"></div>
+
+- Qualitätsmanagement soll sicherstellen, dass die Software so wenig Fehler wie möglich enthält, wartungsfreundlich ist und zuverlässig läuft.
+
+- Dafür werden festgelegte Standards für Prozesse und Produkte definiert.
+
+- Mit Reviews oder Inspektionen kann überprüft werden, ob die definierten Qualitätsstandards eingehalten werden.
+
+- Softwaremessungen können zum Sammeln quantitativer Daten über die verwendete Software eingesetzt werden.
+
+- Metriken sind besonders nützlich, um auf Komponenten zu stoßen, die Qualitätsprobleme aufweisen könnten.
+
+- Softwareanalytik befasst sich mit der automatischen Analyse von großen Datenmengen, um Beziehungen festzustellen, die für Manager und Entwickler wichtig sein könnten.
+
+---
 
 class: center, middle
 
-
-
-
-# Kapitel 01: Einleitung
-
-Max Mustermann
-
----
-# Voraussetzungen
-
-```java
-public class A {
-  public int a() {
-    return 42;
-  }
-}
-```
-
----
-
-## Inhalte 
-
-* A
-* B
-
-![](media/image.jpg)
+# Ende
 
 
     </textarea>
@@ -70,7 +754,7 @@ public class A {
     // Enable or disable navigating using scroll
     // Default: true
     // Alternatives: false
-    scroll: true,
+    scroll: false,
 
     // Enable or disable navigation using touch
     // Default: true

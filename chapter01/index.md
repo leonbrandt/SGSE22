@@ -2,7 +2,42 @@
 
 **Autor:** Sebastian Sossna
 
-Nach dem Lesen des Kapitels sollten Sie einiges wissen und dann noch viel mehr und sehr viel mehr und weniger.
+Some Text, that has to be rewritten, corrected and sorted:
+
+----------
+
+Die moderne Welt benötigt Software, um zu funktionieren. 
+Vielen industrielle Bereichen sind Software-intensiv und die meisten elektrischen Produkte beinhalten einen Computer und werden durch Software gesteuert.
+Softwaresysteme sind nicht physisch, daher auch nicht beschränkt durch die physischen Gesetze. 
+Softwaresysteme sind abstrakt und aufgrund der fehlenden physischen Beschränkungen kann ein Softwaresystem schnell sehr komplex werden. 
+Auch kann das Softwaresystem schwer zu verstehen und teuer bei Änderungen sein.
+Es existieren viele verschiedene Arten von Softwaresystemen, welche unterschiedliche Ansätze benötigen.
+Daher existiert keine einheitliche Notation, Methode oder Technik beim Softwareengineering.
+
+Softwareengineering bietet Techniken, um komplexe Software entwickeln zu können.
+Die Komplexität der Software steigt, da immer größere Software schneller umgesetzt werden muss.
+Softwareengineering adressiert das Problem der steigenden Komplexität der Software fortlaufend, allerdings nicht schnell genug. 
+Deswegen ist die steigende Komplexität der Systeme eine Ursache für die Kritik am Softwareengineering für gescheiterte Software.
+Eine weitere Ursache dafür ist das Scheitern, die Software Engineering Methoden beim Entwickeln von Software zu nutzen.
+Dieses Problem kann mit einer besseren Bildung und einem besseren Training im Bereich Software Engineering adressiert werden.
+
+
+---------------------
+
+Die Techniken des Softwareengineerings umfassen die Weiterentwicklung von Software, das Design der Software und die Programmspezifizierung. 
+Diese Techniken sind nicht für die private Nutzung der Software entwickelt worden, sondern mit der Intention diese Software für eine Vielzahl an Nutzer zu entwickeln. 
+Im Softwareengineering umfasst der Begriff Software jegliche Programme, Dateien oder Informationen, welche dazu benötigt werden, um die Software nutzbar zu machen. 
+Dies inkludiert auch jegliche Dokumentation, welche für die Wartung oder Weiterentwicklung benötigt wird.
+
+Es gibt zwei Arten von Softwareprodukten. 
+Zum einen gibt es Softwareprodukte, die nach Kundenwünschen angepasst werden und vom Kunden selbst bestellt wurden und zum anderen gibt es nicht spezifische, allgemeine Softwareprodukte. 
+Der Hauptunterschied liegt darin, dass bei allgemeiner Software der Hersteller des Softwareprodukts über die Entwicklung des Softwareprodukts entscheidet und bei spezifischer Software entscheidet der Kunde über die Entwicklung des Softwareprodukts.
+Der Begriff der Qualität, bezogen auf professionelle Software, bezieht mit ein, dass die Software für andere Entwickler angemessen änderbar ist und auch andere Nutzer die Software angemessen nutzen können.
+Beispielsweise wären ein verständlicher Programmcode oder eine übersichtlich und transparent Benutzeroberfläche Kriterien, welche zur Beurteilung der Qualität der Software herangezogen werden würden.
+
+--------------------
+
+
 
 ## Unterkapitel
 

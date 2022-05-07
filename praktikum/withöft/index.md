@@ -28,6 +28,15 @@ Ist die Kommunikation implementiert, sollen gewisse Tests für die Evaluierung i
 - Messung des maximalen Austauschs von Nachrichten pro Sekunde
 - Messung der Performanz beim Austausch großer Datenmengen
 
+Anhand der oben gemessenen Faktoren soll ein Entscheidungsdiagramm aufgestellt werden, anhand dessen potentielle Anwender sich nach ihren Bedürfnissen für die passenden Technologie entscheiden können.
+
+## Weiteres
+
+- Überlegung die Schnittstelle für WebTransport so offen zu gestalten, dass hinterher eine Bibliothek daraus geformt werden kann
+- Bericht über Implementierung mit einschließen
+  - Was war einfach umzusetzen, was war schwierig
+  - Implementierung über Entwurfsmuster darstellen
+
 ## Titel der Arbeit
 
 Die bereits genannten Fragen sollen unter folgendem Arbeitstitel untersucht werden:
@@ -36,3 +45,21 @@ Die bereits genannten Fragen sollen unter folgendem Arbeitstitel untersucht werd
 
 Der aktuelle Implementierungsfortschritt kann [HIER](https://github.com/mwithoeft/Spezielle-Gebiete-zum-Softwareengineering) eingesehen werden.
 
+## Zeitplan
+
+| Termin                                                   | Fortschritt                                                  |
+| -------------------------------------------------------- | ------------------------------------------------------------ |
+| 28.04.2022                                               | Fertigstellung der Ausarbeitung                              |
+| 05.05.2022                                               | Implementierung von Websockets und WebTransport im Backend, Arbeit an Präsentation |
+| 12.05.2022                                               | Funktionierende Kommunikation mit dem Frontend, Arbeit an Präsentation |
+| 19.05.2022                                               | Anfordern von Livedaten im Backend, Lieferung dieser Daten vom Backend zum Frontend |
+| 26.05.2022                                               | Darstellung erhaltener Daten im Frontend, inklusive Metadaten (wie Transferzeit) |
+| 02.06.2022                                               | Messung von Geschwindigkeit, in Abhängigkeit von verbundenen Clients, Dokumentation der Ergebnisse |
+| 09.06.2022                                               | Messung des maximalen Austauschs von Nachrichten pro Sekunde, Dokumentation der Ergebnisse |
+| 16.06.2022                                               | Messung der Performanz beim Austausch großer Datenmengen, Dokumentation der Ergebnisse |
+| 23.06.2022                                               | Dokumentation der Ergebnisse, Gegenlesen, Ausarbeitung optimieren |
+| 30.07.2022 (letzter Termin vor Beginn der Prüfungsphase) | Dokumentation der Ergebnisse, Gegenlesen, Ausarbeitung optimieren |
+
+## Aufgetretene Probleme
+
+- Bei der versuchten Implementierung eines WebTransport-Servers in NodeJS wurde festgestellt, das sich solcher nicht dort umsetzen lässt. Die begründete Wahl und die Dokumentation der Programmiersprache für das Backend lässt sich [HIER](praktikum/withöft/backendProgrammiersprache) finden.
