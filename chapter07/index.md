@@ -44,7 +44,7 @@ Der objektorientierte Softwareentwurf wird in diesem Kapitel anhand der Entwickl
 Der erste Schritt in jedem Softwareentwicklungsprozess besteht darin, ein Verständnis für die Beziehungen zwischen der zu entwickelnden Software und ihrer externen Umgebung zu entwickeln. Dies ist wichtig für die Entscheidung, wie die erforderliche Systemfunktionalität bereitgestellt und wie das System für die Kommunikation mit seiner Umgebung strukturiert werden soll.
 Ein Systemkontextmodell ist ein Strukturmodell, das die anderen Systeme in der Umgebung des zu entwickelnden Systems darstellt. Es kann mit Hilfe von Assoziationen dargestellt werden, die zeigen, dass es einige Beziehungen zwischen den an der Assoziation beteiligten Entitäten gibt.
 
-![image](https://user-images.githubusercontent.com/58107983/163242011-39596cc7-e94c-4597-b1d8-af4ff9fcd91a.png)
+![image](https://user-images.githubusercontent.com/58107983/167261207-2b9c3be3-9af1-420e-9356-064b3ccfbdfd.png)
 
 **Abbildung 7.1 - Systemkontext für die Wetterstation [1]**
 
