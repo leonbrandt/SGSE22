@@ -150,11 +150,6 @@ Status dieses Dokuments:
 	- Es sollten die Views genutzt werden, die zur Kommunikation nützlich sind
 	- Es sollte sich nicht um die Vollständigkeit der Dokumentation einer Architektur gesorgt werden
 
----
-**Bis hier strukturiert**
-
----
-
 # Architectural Views
 
 ## Perspektiven auf Architektur
@@ -231,38 +226,29 @@ Status dieses Dokuments:
 
 ## Fragestellungen
 
-- Is there a generic application architecture that can act as a template for the system that is being designed?
-- How will the system be distributed across hardware cores or processors?
-- What Architectural patterns or styles might be used?
-- What strategy will be used to control the operation of the components in the system?
-- How should the architecture of the system by documented?
-- What architectural organization is best for delivering the non-functional requirements of the system?
-- How will the structural components in the system be decomposed into sub-components?
-- What will be the fundamental approach used to structure the system?
+![](media/6_02.png)
 
----
+// Template
 
 - Systeme in der selben Anwendungsdomäne besitzen häufig eine ähnliche Architektur
 	- Diese reflektiert die fundamentalen Konzepte der Anwendungsdomäne
 - Beim Design von Systemarchitekturen ist zu Entscheiden, was das System mit breiteren Klassen an Anwendungen gemeinsam hat
 	- "Wie viel Wissen kann aus diesen Anwendungen wiederverwendet werden?"
 
----
+// Distribution
 
 - Die meisten großen Systeme sind verteilt (Software ist verteilt über viele verschiedene Computer)
 	- Die Auswahl einer Verteilungsarchitektur hat wesentliche Auswirkungen auf Performance und Reliability des Systems (Chapter 17)
 
----
+// Patterns / Style
 
 - Die Architektur eines Systems basiert möglicherweise auf einem Pattern oder Style
 - Ein Architectural pattern ist die Beschreibung der Organisation eines Systems, wie Client-Server oder Layered architecture (Garlan 1993)
-- Architectural pattern beschreiben die wesentlichen Eigenschaften einer Architektur, welche in verschiedenen Softwaresystemen wiederverwendet wird
+- Architectural pattern beschreiben die wesentlichen Eigenschaften einer Architektur, welche in verschiedenen Softwaresystemen wiederverwendet wir
 
----
+// Keine weiteren Erläuterungen
 
-- Architectural style = Fragen 4-6
-- ...
-
+![](media/6_02_mod_full.png)
 
 ## Nicht-funktionale Anforderungen an Systeme
 
@@ -346,6 +332,8 @@ Status dieses Dokuments:
 
 [Figure 6.4, 6.5, 6.6 (p. 176, 177)]
 
+![](media/6_05.png)
+
 ### Beschreibung
 
 - Seperiert Präsentation und Interkation von Daten
@@ -373,6 +361,8 @@ Status dieses Dokuments:
 - Zusätzlicher Code sowie Code-Komplexität, auch wenn Datenmodell und Interaktion simpel sind
 
 ## Layered Architecture
+
+![](media/6_08.png)
 
 ### Motivation und Beschreibung
 
@@ -430,6 +420,8 @@ Status dieses Dokuments:
 - (Beschreibungen der Diagramme [Figure 6.8, 6.9])
 
 ## Repository Architecture
+
+![](media/6_11.png)
 
 ### Klassifikation
 
@@ -504,6 +496,8 @@ Status dieses Dokuments:
 	- ??? Wiederspruch (TODO, p. 180)
 
 ## Client-Server Architecture
+
+![](media/6_13.png)
 
 ### Motivation und Beschreibung
 
@@ -587,6 +581,8 @@ Status dieses Dokuments:
 - (Mehr in Chapter 17)
 
 ## Pipe and Filter Architecture
+
+![](media/6_15.png)
 
 ### Beschreibung
 
@@ -731,6 +727,8 @@ Status dieses Dokuments:
 
 ## Transaction Processing Systems
 
+![](media/6_16.png)
+
 ### Beschreibung
 
 - Transaction processing systems sind konzipiert um Benutzeranfragen für Informationen aus einer DB oder Anfragen des Updatens einer DB zu verarbeiten (Lewis 2003)
@@ -763,6 +761,8 @@ Status dieses Dokuments:
 - (Beispiel [Figure 6.17])
 
 ## Information Systems
+
+![](media/6_18.png)
 
 ### Beschreibung
 
@@ -804,6 +804,11 @@ Status dieses Dokuments:
 	- Database server für DB-Handling, Transaktionsmanagement
 - Nutzung mehrerer Server erlaubt hohen Throughput (Tausende Transaktionen pro Minute)
 	- Bei höherer Nachfrage können mehr Server hinzugefügt werden um dieser gerecht zu werden
+
+---
+**Bis hier strukturiert**
+
+---
 
 ## Language Processing Systems
 
