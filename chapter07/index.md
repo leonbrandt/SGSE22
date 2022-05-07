@@ -45,6 +45,7 @@ Der erste Schritt in jedem Softwareentwicklungsprozess besteht darin, ein Verst�
 Ein Systemkontextmodell ist ein Strukturmodell, das die anderen Systeme in der Umgebung des zu entwickelnden Systems darstellt. Es kann mit Hilfe von Assoziationen dargestellt werden, die zeigen, dass es einige Beziehungen zwischen den an der Assoziation beteiligten Entitäten gibt.
 
 ![image](https://user-images.githubusercontent.com/58107983/163242011-39596cc7-e94c-4597-b1d8-af4ff9fcd91a.png)
+
 **Abbildung 7.1 - Systemkontext für die Wetterstation [1]**
 
 Abbildung 7.1 zeigt, dass es sich bei den Systemen in der Umgebung jeder Wetterstation um ein Wetterinformationssystem, ein Satellitensystem an Bord und ein Steuerungssystem handelt. Die Kardinalitätsinformation auf dem Link zeigt, dass es ein einziges Steuerungssystem gibt, aber mehrere Wetterstationen, einen Satelliten und ein allgemeines Wetterinformationssystem.
@@ -124,3 +125,24 @@ Ein Interaktionsmodell ist ein dynamisches Modell, das zeigt, wie das System mit
 ---
 
 [1]: Ian Sommerville. 2015. Software Engineering (10th. ed.), 196-225.
+
+![image](https://user-images.githubusercontent.com/58107983/167260952-33113a41-efbb-4ecf-9ed7-aaf0449971c5.png)
+![image](https://user-images.githubusercontent.com/58107983/167261006-3bcb06c2-f2df-4f56-8259-6cce6eef5d39.png)
+![image](https://user-images.githubusercontent.com/58107983/167260961-bd27bd0a-eef7-4bb0-8979-f5953966f02b.png)
+![image](https://user-images.githubusercontent.com/58107983/167260966-c8b2549f-f164-4b03-b35e-c87295d3db54.png)
+![image](https://user-images.githubusercontent.com/58107983/167260979-2b0e13db-d152-4698-a0ea-681149526471.png)
+![image](https://user-images.githubusercontent.com/58107983/167260983-5dab512d-16b4-4275-89c4-4aafdc563604.png)
+![image](https://user-images.githubusercontent.com/58107983/167260989-3e6e1b02-a50a-4db3-96ec-61b8c4aaf3c9.png)
+![image](https://user-images.githubusercontent.com/58107983/167260995-d55d1125-5ebb-4ce7-abd0-89662f020f09.png)
+![image](https://user-images.githubusercontent.com/58107983/167261020-b065123f-ed61-4d23-acf2-a28c5ce24816.png)
+![image](https://user-images.githubusercontent.com/58107983/167261025-e16fee4b-53f7-4f1d-a644-16c99f16ff6e.png)
+![image](https://user-images.githubusercontent.com/58107983/167261038-bef996e9-c935-4e6f-8079-a6289987b3b6.png)
+![image](https://user-images.githubusercontent.com/58107983/167261084-9ae5488e-bb6c-405f-8677-79ef6cc1cde8.png)
+![image](https://user-images.githubusercontent.com/58107983/167261103-e27572f4-b05a-4173-abf9-c858156e4626.png)
+![image](https://user-images.githubusercontent.com/58107983/167261113-09b289ba-fdad-45fe-aae6-df37b275df4d.png)
+
+
+
+
+
+
