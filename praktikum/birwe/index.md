@@ -32,22 +32,29 @@ Als Beispiel für fortgeschrittene Konzepte, die durch einen mit Gameficition ge
 Design Patterns bieten sich als exemplarische fortgeschrittene Konzepte an, da sie auf der einen Seite als sehr elementar für fortgeschrittene Softwareentwickler gelten. Auf der anderen Seite sind Design Patterns vergleichsweise abstrakte Konzepte und so häufig schwer zu verstehen und zu verinnerlichen.
 
 ### Gameification
+
 Als Gameification bezeichnet man die Übernahme von Konzepten und Techniken aus dem Game Design in andere Bereiche. In der Regel werden diese Designelemtene und Feedbackstrukturen eingesetzt, um bei den Teilnehmenden das Engagement zu erhöhen und zusätzliche Anreize zur Investition von Zeit und Mühe zu geben, die über das Erlernen er Konzepte hinausgehen.
 Typischerweise wird bei Gameification mit Belohnungen und Konkurrenzdruck gearbeitet. Typische Designkonzepte, die in Gameificationkontexten verwendet sind zum Beispiel:
-* Bades
-* Ranglisten
-* Punktestände
-* Belohnungen
+
+- Bades
+- Ranglisten
+- Punktestände
+- Belohnungen
 
 ## Softwareprototyp
+
 Im Rahmen der Praktikumsarbeit soll ein Softwareprototyp erstellt werden, der eine Übungseinheit zum Erlernen des Composite Patterns enthält. Dieser Softwareprototyp wird über ein Webinterface bedient.
 
 ## Feldversuch
+
 Für einen kleinen Feldversuch konnte ich zwei Testpersonen mit grundlegenden Kenntnissen in der Softwareentwicklung gewinnen. Für den Feldversuch werden die beiden Testpersonen gebeten, sich innerhalb einer Woche mit Hilfe des Softwareprototypen Kenntnisse über das Composite Pattern anzueignen. Danach wird der Lernerfolg anhand eines Tests gemessen. Als Kontrolle kann eventuell in einem zweiten Schritt als weiteres Pattern das Decorator Pattern selbstständig erlernt werden. Zur Kontrolle wird es hier keine Übungsumgebung mit Gameificationelementen geben, sondern nur eine Anleitung in Textform.
 
 ## Anpassungmöglichkeiten
-* Wegfallen des Feldversuchs, es bleibt die theoretische Ausarbeitung und der Prototyp.
+
+- Wegfallen des Feldversuchs, es bleibt die theoretische Ausarbeitung und der Prototyp.
+- Ausarbeiten einer Übungseinheit in Hinblick auf Inhalt und didaktische Umsetzung (ohne Prototyp und Fokus auf Gameification)
 
 # Alternativen
-* nur Design Patterns
-* richtiges Dokumentieren im Code
+
+- nur Design Patterns
+- richtiges Dokumentieren im Code
