@@ -179,6 +179,7 @@ Einige Aspekte der Implementierung, die für die Softwaretechnik besonders wicht
 Ein auf Wiederverwendung basierender Ansatz ist heute bei webbasierten Systemen aller Art, wissenschaftlicher Software und zunehmend auch bei der Entwicklung eingebetteter Systeme weit verbreitet. Die Wiederverwendung von Software ist auf verschiedenen Ebenen möglich, wie in Abbildung 7.10 dargestellt:
 
 ![image](https://user-images.githubusercontent.com/58107983/167261084-9ae5488e-bb6c-405f-8677-79ef6cc1cde8.png)
+
 **Abbildung 7.10** - Wiederverwendung von Software[1]
 
 1. **Die Abstraktionsebene:** Auf dieser Ebene wird Software nicht direkt wiederverwendet, sondern man nutzt das Wissen über erfolgreiche Abstraktionen bei der Entwicklung der eigenen Software.
@@ -209,6 +210,7 @@ Software-Konfigurationsmanagement-Tools unterstützen jede der oben genannten Ak
 Die meisten professionellen Softwareentwicklungen basieren auf einem Host-Target-Modell (Abbildung 7.15). Die Software wird auf einem Computer (dem Host) entwickelt, aber auf einem anderen Rechner (dem Target) ausgeführt. Allgemeiner ausgedrückt, kann man von einer Entwicklungsplattform (Host) und einer Ausführungsplattform (Target) sprechen.
 
 ![image](https://user-images.githubusercontent.com/58107983/167261113-09b289ba-fdad-45fe-aae6-df37b275df4d.png)
+
 **Abbildung 7.11** - Host-Target-Entwicklung[1]
 
 Manchmal sind Entwicklungs- und Ausführungsplattform identisch, so dass die Software auf demselben Rechner entwickelt und getestet werden kann. Insbesondere bei eingebetteten Systemen und mobilen Systemen sind die Entwicklungs- und die Ausführungsplattform jedoch unterschiedlich. Man muss entweder die entwickelte Software zum Testen auf die Ausführungsplattform verschieben oder einen Simulator auf dem Entwicklungsrechner laufen lassen.
@@ -256,5 +258,7 @@ Die meisten Open-Source-Lizenzen (Chapman 2010) sind Varianten eines von drei al
 ## Referenzen
 
 [1]: Ian Sommerville. 2015. Software Engineering (10th. ed.), 196-225.
+
 [2]: Raymond, E. S. 2001. The Cathedral and the Bazaar: Musings on Linux and Open Source by an Accidental Revolutionary. Sebastopol. CA: O’Reilly & Associates.
+
 [3]: St. Laurent, A. 2004. Understanding Open Source and Free Software Licensing. Sebastopol, CA: O’Reilly & Associates.
