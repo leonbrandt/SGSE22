@@ -567,50 +567,30 @@ Um ein integriertes Applikationssystem zu entwickeln, muessen eine Menge an Desi
       - wurde in einer grossen firma in neun monaten eingefuehrt
       - vorher wurde gesagt,es dauert 3 jahre ein eigenes system zu entwicklen, welches mit dem alten system verknuepft werden kann
 
+- Applikationssystem-Integration
+  - kann mit sevice-oriented approach vereinfacht werden
+  - heisst
+    - Zugriff auf die funktionalitaet des applikationssystems durch Standard-Serviceschnittstellen
+    - ein service fuer jede diskrete einheit der funktionalitaet
+  - eventuell muss ein wrapper implementiert werden
+    - der die applikation versteckt
+    - aber extern sichtbare sevices anbietet 
+    - BILD 15.15
+    - sehr gut bei alten system die in ein neues system integriert werden soll
+- wie auch bei anderen komponenten
+  - verstehen der systemschnittstelle ueber die kommuniziert wird
+  - anforderungen gegen schnelle entwicklung und wiederverwendung abwiegen
+  - design von systemarchitektur welche es ermoeglicht dass die applikationssysteme miteinander arbeiten koennen
 
+Die Tatsache, dass diese Produkte in der Regel eigenständige große Systeme sind und
+oft als separate eigenständige Systeme verkauft werden, bringt zusätzliche Probleme mit sich. Böhm
+und Abts (Boehm und Abts 1999) heben vier wichtige Systemintegrationsprobleme hervor:
 
-
-## Links
-
-[Markdown] ist eine Sprache, die nach HTML konvertiert werden kann. 
-
-[Markdown]: http://daringfireball.net/projects/markdown/
-
-# Überschrift
-
-"...the **go to** statement should be abolished..." [1].
-
-Dieser Link führt intern zu einem anderen [Thema](qualitaet/README)
-
-Dieser Link führt extern nach [Youtube](https://www.youtube.com/)
-
-> Dieser Text ist völlig sinnlos, aber steht trotzdem hier. Dieser Text geht über mehrere Zeilen.
-
-
-### Code
-
-```javascript
-public class A {
-  Integer a;
-  public A() {
-    this.a = 1
-  }
-}
-```
-
-Syntax Highlighting für Javascript. Weitere Sprachen müssen konfiguriert werden.
+1. 
 
 ### Bilder
 
 ![](media/image.jpg)
-
-### Audio
-
-[](media/sample.mp3 ':include')
-
-### Video
-
-[](media/sample.mp4 ':include')
 
 ## Referenzen
 
