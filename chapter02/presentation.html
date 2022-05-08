@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Kapitel 01: Einleitung</title>
+    <title>Software processes</title>
     <meta charset="utf-8">
     <style>
       body { 
@@ -29,30 +29,88 @@ class: center, middle
 
 
 
-# Kapitel 01: Einleitung
+# Kapitel 02: Software processes
 
-Max Mustermann
-
----
-# Voraussetzungen
-
-```java
-public class A {
-  public int a() {
-    return 42;
-  }
-}
-```
+Artem Shipilov
 
 ---
 
-## Inhalte 
+## Agenda
+  <br><br><br>
+* Ziele
+* Einführung
+* Software-Prozessmodelle
+* 
+      
+---
+      
+# Ziele:
+<br>
+* die Konzepte von Softwareprozessen und Softwareprozessmodellen verstehen;
+* die Einführung der drei allgemeinen Software-Prozessmodelle und wann sie verwendet werden können;
+* die grundlegenden Prozessaktivitäten des Software Requirements Engineering, der Softwareentwicklung, des Testens und der Evolution kennen;
+verstehen, warum Prozesse organisiert werden sollten, um mit Änderungen in den Softwareanforderungen und -designs fertig zu werden;
+* den Begriff der Softwareprozessverbesserung und die Faktoren verstehen, die die Softwareprozessqualität beeinflussen.
 
-* A
-* B
+---
+      
+# Einführung    
 
-![](media/image.jpg)
+Software Process - Menge von Aktivitäten zur Softwareproduktion
+<br>
+die verschiedenen Software Systeme zu unterschiedlich sind <br>
+=> Es gibt keine allgemeingültige Software Engineering Methode <br>
+=> Es gibt keinen ideallen Software Prozess
+     
+---    
+Trotzdem gibt es grundlegende Abläufe, die alle Softwareprozesse haben:
+<br>
+* **1. Softwarespezifikation.** - Anforderungen aufnehmen.
+* **2. Softwareentwicklung.** - Anforderungen umsetzen.
+* **3. Softwarevalidierung.** - Überprüfen, ob der Kund zufrieden ist.
+* **4. Weiterentwicklung von Software.** Mit den sich veränderten Bedürfnissen des Kunden gerecht werden.
 
+---     
+Aktivität setzt sich zusammen aus:
+      <br>
+1. **Produkte oder Leistungen** - die Ergebnisse einer Prozessaktivität.
+2. **Rollen** welche die Verantwortlickeit festlegen.
+3. **Vor- und Nachbedingungen** - sind die Bedingungen, die erfüllt sein müssen, bevor und nachdem die Prozesstätigkeit durchgeführt wird. 
+      (bspw. eine Vorbedingung - die Zustimmung des Kunden zu allen Anforderungen; <br>
+      Nachbedingung - eine Validierung der UML-Modelle, die die Architektur beschreiben.)
+      
+---   
+      
+**Abhängig von der zu entwickelnden Software können unterschiedliche Prozesse geeignet sein:**
+- Sicherheitskritische Systeme
+ - Stark Strukturierter Prozess nötig
+-	Geschäftsanwendungen mit hoher Frequenz bei neuen/veränderten Anforderungen
+ -	flexibler, agiler Prozess
+- Bei großen Systemen 
+ - ein Gleichgewicht zwischen geplanter und agiler Entwicklung
+<br>
+Unternehmen können der Software Prozess durch die Nutzung moderner Software Engineering Methodik optimieren.
+      
+---
+      
+**Software-Prozessmodelle**
+      <br><br>
+Allgemeine Prozessmodelle (abstrakte Beschreibungen, ohne Details über einzelne Aktivitäten im Prozess): <br>
+-	Wasserfallmodell
+ -Darstellung aller Prozessaktivitäten als seperate Phasen
+-	Inkrementelles Modell
+ - Verknüpfung aller Aktivitäten und inkrementelle Entwicklung der Software (Reihe von Software Versionen, welche aufeinander aufbauen)
+-	Integration & Configuration
+ -	Entwicklung von wiederverwendbaren, konfigurierbaren Softwaremodulen
+ -	Fokus auf Konfigurierung der Module in der neuen Umgebung
+
+
+      
+---
+      
+![Das Wasserfallmodell](img/01.png)
+
+      
 
     </textarea>
     <script src="../_assets/js/remark-latest.min.js">

@@ -33,3 +33,25 @@ TODOs:
 ## Recherche ##
 
 [Recherche zum MLGO Paper/Framework](praktikum/reinsch_raitzig/research.md)
+
+## Nächste Aufgaben ##
+
+### LLVM-Seite ###
+
+- Integration von KI-Modell in RegAllocAdvisor
+- Wrapper (z.B. Adapter-Pattern) um KI-Modell mit gemeinsamem Interface
+
+### KI-Seite ###
+
+- Reinforcement Learning
+	- Feature-Engineering
+- Training und Bauen mit fuchsia
+
+## Register Allocation Pass ##
+
+TODO: aus research.md zusammenfassen
+
+## experimentelle Toolchain ##
+
+TODO: siehe research
+TODO: validieren
