@@ -42,9 +42,7 @@ Die reliability eines Systems setzt sich zusammen aus:
 - software reliability
 - operator reliability
 
-**<ergänzen>**
-
-## Methoden zur Verbesserung der Reliability
+## 4 Methoden zur Verbesserung der Reliability
 
 Zur Verbesserung der Reliability eines Systems kommen vor allem drei Ansätze zur Anwendung:
 
@@ -56,7 +54,7 @@ Die Erreichung einer hohen reliability durch die genannten Techniken ist häufig
 
 ![Abb. 11.1 - Entwicklung der Kosten pro gefundenem Fault](./assets/fig_11-1.png)
 
-## Reliability Metriken
+## 5 Reliability Metriken
 
 Zur Messung der Reliability stehen die folgenden Metriken zur Verfügung
 
@@ -70,19 +68,42 @@ POFOD eignet sich für Systeme, bei denen es zwar wenig Anfragen gibt, bei dem a
 ROCOF hingegen eignet sich für Systeme, die eine regelmäßige Anzahl an Zugriffen haben.
 MTTF eignet sich für Systeme, bei denen eine Transaktion sehr lange in Bearbeitung ist. Typische Beispiele hierfür sind Programme, in denen an geöffneten und geladenen Dateien gearbeitet wird. Das können zum Beispiel CAD-Programme, Bildbearbeitungsprogramme oder Officeprograme sein. Da hier im schlimmsten Fall die Arbeit von mehreren Stunden durch einen einzelnen Programmabsturz verloren ist, ist die entscheidende Metrik für diese Gruppe von Programme die durchschnittliche Zeit zwischen zwei Failures.
 
-## Fault-tolerante Architekturen
+## 6 nicht funktionale/quantitative reliability Anforderungen
+
+Im Bereich der sicherheitsrelevanten Systeme ist es seit vielen Jahren Standard, dass im Rahmen der nicht funktionale Anforderungen auch die reliability eines Systems definiert. Die Definition dieser Anforderungen erfolgt in einer der zuvor beschriebenen Metriken.
+Durch eine explizite Definition der reliability in den Anfoderungen an ein System kann der Entwicklungs- und Abnahmeprozess vereinfacht werden. Gründe hierfür sind unter anderem, dass Werkzeuge und Entwicklungskonzepte bereits in Hinblick auf die reliability gewählt werden können, dass ein explizites Ziel definiert ist, an dem Tests und Verbesserung des Systems beendet werden kann und dass sich Auftraggeber und Stakeholder bereits zu einem frühen Zeitpunkt Gedanken über die reliability des Systems machen müssen.
+
+Bei der Definition der Anforderungen sollte darauf geachtet werden, dass die reliability nur so streng definiert wird wie notwendig. Eine sehr hohe reliability ist, wie in Abs 4 und 8 beschrieben, häufig mit hohem Aufwand und hohen Kosten verbunden. Um reliability Anforderungen angemessen zu definieren, kann sich an den folgenden Guidelines orientiert werden.
+
+1. Spezifikation von availability und reliability für verschiedene mögliche failures. Die Anforderungen sollten strenger sein für schwerwiegende Fehler als für Fehler mit geringen Folgen.
+2. Spezifikation von availability und reliability für verschiedene Services. Kritischere Systeme sollten hohere Werte haben als weniger kritische Systeme. In diesem Schritt kann auch festgelegt werden, dass explizite Anforderungen an reliability nur für die kritischten Systeme notwendig sind.
+3. Überprüfung, ob eine hohe reliability wirklich benötigt wird. Häufig können Fehler des Systems erkannt und behandelt werden, ohne dass eine hohe reliability mit hohem Aufwand erarbeitet werden muss.
+
+# 7 funktionale reliability Anforderungen
+
+Um spezifische Fehler im System auszuschließen können auch funktionale Anforderungen in eine Softwarespezifikation eingebracht werden, welche die reliability des Systems erhöhen sollen.
+Diese Anforderungen lassen sich in vier Gruppen unterteilen:
+
+1. _Check Anforderungen_ In diese Kategorie fallen Anforderungen, die bestimmte Prüfungen auf Eigenschaften im System voraussetzen.
+2. _Wiederherstellungsanforderungen_ Diese Gruppe spezifiziert Anforderungen an das System, wie das System nach einem Failure wiederhergestellt werden soll. Das beinhaltet vor allem Anforderungen an die Wiederherstellung von Daten und Zuständen im System.
+3. _Redundanzanforderungen_ Diese definieren, in welcher Form einzelne Komponenten und Fähigkeiten im System redundant vorhanden sein müssen, um die Ausführbarkeit des Systems aus bei einzelnen Ausfällen sicherstellen zu können.
+4. _Prozessanforderungen_ In dieser Kategorien werden Anforderungen an den Prozess der Softwareentwicklung gestellt. Diese Anforderungen die Anzahl der ins System eingeschleusten faults reduzieren und lassen sich daher der Gruppe der fault avoidance (siehe: Abs. 4) zuordnen.
+
+Es gibt keine allgemeingültigen Richtlinen zur Erstellung geeigneter funktionaler reliability Anforderungen, da diese sehr stark vom jeweiligen Kontext abhängen. Allerdings lassen sich Anforderungen häufig von jeweils vergleichbaren oder Vorgängersystemen ableiten.
+
+## 8 Fault-tolerante Architekturen
 
 Fault-tolerante Architekturen sind so gestaltet, dass sie auch dann noch funktionieren und keinen Failure produzieren, auch wenn sie durch einen error in einen error state gelangen.
 Derartige Mechanismen sind vor allem in sicherheitskritischen Architekturen notwendig, beispielsweise in Notfallsystemen von Fabriken, Kraftwerken oder auch Flugzeugen.
 Fault-Toleranz kann durch verschiedene Maßnahmen erreicht werden. Diese Maßnahmen sollen dabei sowohl redundant als auch divers sein. Redundant bedeutet, dass zur Lösung bestimmter Aufgaben immer mehrere Systeme bereitstehen. Diversität bedeutet in diesem Kontext, dass die verwendete Hard- und Software möglichst heterogen ist. Dies kann durch unterschiedliche Hardware, Software, verwendete Programmiersprachen und so weiter erreicht werden.
 
-### Replicated servers
+### 8.1 Replicated servers
 
 Die einfachste Methode für Ausfallsicherheit zu sorgen, ist die Verwendung von redundanten Servern. Dafür werden mehrere gleich konfigurierte Server vorgehalten. Ein vorgeschaltetes Managementsystem verteilt die eingehenden Transaktionen gleichmäßig auf die zur Verfügung stehenden Systeme. Geht eines der Systeme in einen Error-Zustand, wird dieses System aus dem Verbund gelöst und der Zustand behoben. Die anderen Systeme übernehmen die Aufgaben des ausgefallenen Systems.
 Bei einer Variante dieser Herangehensweise existiert ein Primärserver, der die Hauptlast trägt. Dazu gibt es einen sekundären Server, der Aufgaben von niedriger Priorität übernimmt und nur dann einspringt, wenn das Primärsystem ausfällt.
 Dieser Ansatz ist zwar recht simpel, aber kann die reliability nur in begrenztem Rahmen erhöhen, da dieser Aufbau nur bei Faults greift, die auf ein lokales System beschränkt sind, da dieser Aufbau zwar redundant aber nicht divers ist.
 
-### Protection Systems
+### 8.2 Protection Systems
 
 Ein Protection System ist ein separates System, dass die Aufgabe hat, die korrekte Funktion eines anderen, primären Systems zu überwachen und im Notfall einzugreifen.
 Ein Protection System sollte dabei mindestens gleiche Sensoren wie das Primärsystem haben, idealerweise auch gleiche Aktoren. Während des laufenden Betriebs überwacht das Protection System die Tätigkeit des Primärsystems. Bemerkt es dabei, dass eine Tätigkeit durch den Primärserver ausgeführt werden sollte, dies aber nicht geschieht, greift das Protection System ein und führt Notfallmaßnahmen durch. Beispielsweise kann das die Abschaltung einer Industrieanlage oder die Notfalllandung eines Flugzeugs sein.
@@ -90,14 +111,14 @@ Das Protection System enthält nur Fähigkeiten zur Überwachung des Primärsyst
 
 [abb 11.6]
 
-### Self-monitoring architectures
+### 8.3 Self-monitoring architectures
 
 In Self-monitoring architectures wird eine eingehende Anfrage aufgeteilt und über mindestens zwei separate Channels weitergeleitet. Jeder dieser Channels führt die selbe Operation durch. Nach Berechnung der Ergebnisse werden diese zusammengeführt. Haben alle System das selbe Ergebnis berechnet, gilt dieses als validiert.
 Bei den parallelen Systemen müssen dabei sowohl Hard- als auch Software divers sein. Das bedeutet, dass Hardwareseitig vor allem unterschiedliche Prozessoren als auch generell diverse Hardware benutzt werden muss. Wie Diversität bei Software hergestellt werden kann, wird im Abschnitt _software diversity_ beschrieben.
 In reiner Form kann ein self-monitoring system eingesetzt werden, wenn eine hohe reliability aber keine hohe availability notwendig ist. So ist es zum Beispiel in der Regel besser, dass sich ein System, dass Dosierungen von Medizin für Patienten in einem Krankenhaus steuert, einen Fehler meldet, anstatt den Patienten falsche Dosierungen zu verabreichen.
 Sollen sowohl eine hohe availability als auch eine hohe reliability erreicht werden, muss eine self-monitoring architecture mit anderen Methoden kombiniert werden. So können beispielsweise mehrere Self-monitoring Systeme parallel betrieben werden, die sich gegenseitig vertreten können.
 
-### N-Version programming
+### 8.4 N-Version programming
 
 Beim n-Version programming werden mehrere Systeme mit dem gleichen Funktionsspektrum parallel betrieben. Diese Systeme sind divers. Das betrifft sowohl die Hardware als auch die Software. Die Ergebnisse dieser Systeme werden aufgefangen und validiert. Üblicherweise geht man zum Beispiel davon aus, wenn zwei oder mehr der Teilergebnisse identisch sind, dass damit das korrekte Ergebnis errechnet wurde.
 Eine häufige Form der Implementierung ist die der Triple modular redundancy (TMR). Dabei wird das Programm in drei Versionen implementiert. Drei ist dabei das sinnvolle Minimum der redundanten Systeme, damit auch beim Ausfall eines der Systeme mindestens zwei unabhängig gleich errechnete Ergebnise übrig bleiben.
@@ -107,7 +128,7 @@ Eine häufige Form der Implementierung ist die der Triple modular redundancy (TM
 Die Implementierung einer fault-tolerant architecture nach diesem Modell ist, wenn eine hohe availability vorausgesetzt wird, günstiger umzusetzen als ein vergleichbares System nach dem Modell der self-monitoring architecture.
 Nichtsdestotrotz bleibt die Implementierung teuer und aufwendig, da Software mit gleicher Spezifikation n-mal entwickelt werden muss
 
-## Software Diversität
+## 9 Softwarediversität
 
 Die beschriebenen Lösungen für fault-tolerante Architekturen basieren alle auf Diversität in der Software. Dieser Ansatz folgt der Annahme, dass diverse Implementierungen der selben Spezifikationen zu unterschiedlichen Fehlern führen und daher gegenseitig ihre Schwächen ausgleichen können.
 Um sicherzustellen, dass die erstellte Software divers ist, sollten die verschiedenen Teams unabhängig voneinander und ohne Kommunikation miteinander die Software entwickeln. Zudem sollten die folgenden Vorgaben beachtet werden:
@@ -127,7 +148,7 @@ Für Missverständnisse gibt es verschiedene Gründe, so zum Beispiel:
 
 Die Lösung für dieses Problem ist, dass auch die Implementierung redundant und divers erstellt wird.
 
-## Programmiertechniken zur Erhöhung der reliability
+## 10 Programmiertechniken zur Erhöhung der reliability
 
 Um beim Programmieren bereits eine möglichst hohe reliability zu erreichen gibt es eine Anzahl an best practices:
 
@@ -142,11 +163,11 @@ Um beim Programmieren bereits eine möglichst hohe reliability zu erreichen gibt
 
 Diese Best-Practices werden nachfolgend vorgestellt:
 
-### 1. Kontrolle über die Sichtbarkeit von Informationen im Programm
+### 10.1 Kontrolle über die Sichtbarkeit von Informationen im Programm
 
 Jeder Teil eines Programmes sollte nur die Informationen bekommen, die in diesem Teil auch benötigt werden. Informationen, die versteckt sind, können nicht durch unerwünschte Effekte korrumpiert werden. Um dies zu erreichen sollte im Programm mit abstrakten Datentypen gearbeitet werden. Das bedeutet, dass die interne Struktur des Datentyps versteckt ist. Zugriff von außen gibt es nur durch Interfaces auf definierten Wegen.
 
-### 2. Alle Eingaben auf Validität prüfen
+### 10.2 Alle Eingaben auf Validität prüfen
 
 Alle Eingaben sollten möglichst direkt nach ihrer Eingabe auf Validität geprüft werden.
 Möglich sind zum Beispiel die folgenden Prüfungen:
@@ -157,7 +178,7 @@ Möglich sind zum Beispiel die folgenden Prüfungen:
 4. reasonableness checks: Liegt der eingegebene Wert in einem erwarteten Wertebereich?
    Sinnvolle Strategien zum Umgang mit nicht validen Eingaben richten sich nach dem Szenario. Bei Usereingaben kann man den User zur erneuten Eingabe auffordern. Bei Sensoren kann man die Werte interpolieren oder die Fehler an eine zentrale Stelle melden.
 
-### 3: Exceptionhandler für alle Exceptions vorhalten
+### 10.3 Exceptionhandler für alle Exceptions vorhalten
 
 Alle sinnvollen Stellen sollten mit Exception Handlern ausgestattet sein, um so den Abbruch des Prozesses zu verhindern.
 Ein Exception Handler tut in der Regel eines dieser drei Dinge:
@@ -166,30 +187,30 @@ Ein Exception Handler tut in der Regel eines dieser drei Dinge:
 2. Löst das Problem in einer Weise, dass die Verarbeitung forgesetzt werden kann.
 3. Den Fehler durch das Management der Programmiersprache lösen lassen
 
-### 4: Minimaler Einsatz von fehleranfälligen Komponenten
+### 10.4 Minimaler Einsatz von fehleranfälligen Komponenten
 
 Einige Konzepte in der Softwareentwicklung sind inherent fehleranfällig. Beispielsweise ist der Vergleich von zwei Kommazahlen nicht immer zu 100% verlässlich oder das manuelle Verwalten von Arbeitsspeicher kann zu Fehlern führen. Diese Konzepte sollten so weit wie möglich vermieden werden. Wenn sie verwendet werden, sollten sie in abstrakte Datentypen eingebettet werden, um so den potenziellen Schaden zu begrenzen.
 
-### 5: Checkpoints für eventuell Neustarts ablegen
+### 10.5 Checkpoints für eventuell Neustarts ablegen
 
 Bei längeren Transaktionen sollten an bestimmten Checkpoints Backups des Systemzustand abgelegt werden. Das bedeutet, dass offene Dateien in CAD-Programmen alle paar Minuten automatisch abgespeichert werden oder die Eingaben in ein Formular abgelegt werden. Wenn ein Fehler vorkommt, kann von diesem Zustand wieder gestartet werden.
 
-### 6: Array-Dimensionen prüfen
+### 10.6 Array-Dimensionen prüfen
 
 Die meisten Sprachen, wie Python oder Java, bringen eingebaute Mechanismen mit, die prüfen, ob ein Array-Index angefragt wird, der nicht vorhanden ist. In anderen Sprachen, wie C und C++, sind solche Mechanismen nicht integriert um so für eine schnellere Ausführung zu sorgen. In diesen Programmiersprachen wird einfach eine Position im Arbeitsspeicher ausgelesen oder überschrieben, die den entsprechenden Abstand vom Beginn des Arrays hat. Dies kann natürlich eine Position sein, die einen völlig anderen Wert enthält. Um dieses Verhalten zu verhindern sollten bei Zugriffen auf einen Array immer die Array-Dimensionen geprüft werden.
 
-### 7: Timeouts definieren, wenn externe Komponenten genutzt werden
+### 10.7 Timeouts definieren, wenn externe Komponenten genutzt werden
 
 Wenn man eine externe Komponente über das Netzwerk anfragt, sollte man immer einen Timeoutzeitraum festlegen. Falls die externe Komponente während der Berechnung in einen Error-Status wechselt, wird diese eventuell keine Antwort mehr an die anfragende Komponente schicken. Ist für diese kein Timeoutzeitraum definiert, wartet der Prozess unendlich auf eine Antwort, die nie kommen wird und man hat keine andere Wahl, als den Prozess zu killen und neuzustarten.
 
-### 8: Alle Konstanten, die reale Werte darstellen, werden benannt
+### 10.8 Alle Konstanten, die reale Werte darstellen, werden benannt
 
 Konstante Werte aus der realen Welt (Umrechnung Inch zu cm, Geschwindigkeit von Licht, etc.) sollten an zentraler Stelle als Variablen angelegt werden. Im Programm sollten diese Werte nur in Form dieser Variablen verwendet werden, nicht als Zahl.
 Dadurch wird verhindert, dass man an verschiedenen Stellen im Programm mit verschiedenen Werten für ein und die selbe Konstante arbeitet. Dies kann zum Beispiel passieren, weil man für die Umrechnung von Inch zu cm verschieden viele Nachkommastellen nutzt. Zudem kann so ein solcher Wert einfach für das gesamte Programm geupdatet werden.
 
-## Reliability messen
+## 11 Reliability messen
 
-Um Die Verlässlichkeit des Systems zu messen, können die in Abschnitt **XX** beschriebenen Metriken genutzt werden.
+Um Die Verlässlichkeit des Systems zu messen, können die in Abs 5 beschriebenen Metriken genutzt werden.
 Je nach Art des Systems kann es sinnvoller sein, Fehler/Zeitraum (zum Beispiel Fehler/Tag oder Fehler/Monat) zu messen oder Fehler/N-Ausführungen.
 Bei Systemen, die fortlaufend in Betrieb sind (Monitoringsysteme, Prozesskontrolle, etc.) ist die Messung nach Zeiteinheiten sinnvoll. Ist die Last eines Systems variabel (Webshop, Bankverwaltungssysteme, etc.) ist eine Messung nach Ausführungen sinnvoller.
 Die Tests werden als statistische Tests durchgeführt.
@@ -213,7 +234,7 @@ Dies ist eine Software, die automatisiert entsprechende Ausgaben erstellt. Aller
 Mit der Nutzung von Fault Injection wird werden bewusst fehlerhafte Eingaben in das System erzeugt. Wenn X% der eingegebenen Faults zu Fehlern im System führen, so wird davon ausgegangen, dass auch X% der Realweltdaten zu Fehlern führen (oder weniger)
 Fault Injection kann gut Programmierfehler aufdecken, aber nur schlecht die volle Banbreite “realer” Fehlermöglichkeiten abbilden.
 
-## operational profiles/Nutzungsprofile
+## 12 operational profiles/Nutzungsprofile
 
 Ein Nutzungsprofil beschreibt die Arten von Inputs, die ein System bekommt.
 Üblicherweise fällt die große Mehrheit der Inputs in wenige Klassen, die Verteilung ähnelt der Paretoverteilung.
