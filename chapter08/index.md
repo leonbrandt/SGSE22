@@ -92,5 +92,4 @@ Diese Testart ist wichtig um einen einblick zuerhalte ob das Produkt bei Veröff
 
 ## Referenzen
 
-[1]: Dijkstra, E. W. (1968). Go to statement considered harmful. 
-Communications of the ACM, 11(3), 147-148.
+[1]: Ian Sommerville, Software Engineering, 10. Aufl., Kapitel 08 226-254. <br>
