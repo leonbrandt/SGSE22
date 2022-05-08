@@ -17,7 +17,9 @@ Je nach Systemen ist die Evolution aufwändiger und teurer. Besonders aufwändig
 Systems" sein. Also Software die aus mehreren Teilen besteht, die sich gegenseitig beeinflussen. Hohe Kosten können dann
 Änderungen verursachen, die Anpassungen in anderen Teilen benötigen.
 
-![](assets/Bild1.png )[Abbildung 1]
+![](assets/Bild1.png )
+
+[Abbildung 1]
 *Veröffentlichungszyklus*
 
 Da stetig neue Anforderung für ein Softwaresystem aufkommen, müssen immer wieder neue Versionen veröffentlicht werden.
@@ -35,7 +37,9 @@ aufkommen. Es passieren, dass Anforderungs- oder Designdokument nicht weitergege
 läuft man in die Gefahr einer unterbrechung der Evolution, da die externe Software integriert und angepasst werden muss.
 Bei so einer Trennung von Entwicklung und Evolution, wird der Prozess der Anpassungen Softwarewartung genannt.
 
-![](assets/Bild2.png )[Abbildung 2]
+![](assets/Bild2.png)
+
+[Abbildung 2]
 *Evolution und Service*
 
 Eine Alternative zum Modell der Zyklen ist in [Abbildung 2] zu erkennen. Hier wird der Prozess in mehrere Phasen
@@ -60,7 +64,9 @@ Genauso kommen häufig neue Anforderungen hinzu, die die Funktionalität der Sof
 Änderungen das Ziel haben das System zu optimieren. Eine Optimierung kann entweder durch das Beheben eines Fehlers
 passieren oder indem die Software intern verbessert wird.
 
-![](assets/Bild3.png )[Abbildung 3]
+![](assets/Bild3.png )
+
+[Abbildung 3]
 *Zyklischer Prozess aus Vorschlägen und Evolution*
 
 In [Abbildung 3] ist der zyklische Prozess von einem Vorschlag zur Evolution zu sehen. Bevor ein Änderungsvorschlag
@@ -74,7 +80,9 @@ In [Abbildung 4] wird der Evolutionsprozess in seine Einzelteile zerlegt. Nach d
 Einfluss analysiert. Wenn die Änderung dann akzeptiert wird, wird eine neue Version geplant, die alle umzusetzenden
 Anforderungen enthält. Nach der Implementierung wird die neue Version veröffentlicht.
 
-![](assets/Bild4.png )[Abbildung 4]
+![](assets/Bild4.png )
+
+[Abbildung 4]
 *Aktivitäten in der Softwareevolution*
 
 ### Evolutionsteam
@@ -103,7 +111,9 @@ vorherige Änderung unerwartet Effekte hat, die behoben werden müssen oder dass
 durch zum Beispiel eine rechtliche Änderung oder eine Neuentwicklung eines Konkurrenten. Diese Änderungen müssen sofort
 umsetzt werden, was zu einem verändertem Prozess führt, der in [Abbildung 5] zu sehen ist.
 
-![](assets/Bild6.png )[Abbildung 5]
+![](assets/Bild6.png )
+
+[Abbildung 5]
 *Prozess für dringende Änderungen*
 
 Hier wird auf eine Änderung der Dokumentation und Anforderung verzichtet. Außerdem wird häufig die schnellste Lösung
@@ -125,7 +135,9 @@ Altsysteme bestehen nicht nur aus der eigentlich Software, sondern umfassen eben
 anderes Softwareabhängigkeiten und Geschäftsprozesse. Deshalb spricht man auch von sozialtechnologische Systemen. Diese
 Elemente und ihre Abhängigkeiten sind in [Abbildung 6] visualisiert.
 
-![](assets/Bild7.png )[Abbildung 6]
+![](assets/Bild7.png )
+
+[Abbildung 6]
 *Elemente eines Altsystems*
 
 * Systemhardware: Altsysteme wurden für alte hardware entwickelt, die nicht mehr verfügbar und kompatibel ist teuer zu
@@ -136,7 +148,40 @@ Elemente und ihre Abhängigkeiten sind in [Abbildung 6] visualisiert.
 * Anwendungsdaten: Altsystem sammeln häufig viele Daten an, die inkonsistent, redundant oder über viele Datenbanken
   verteilt sind.
 * Geschäftsabläufe: Abläufe können um ein Altsystem konstruiert und an die Funktionalitäten gebunden sein.
-* Firmenpolitik- und regeln: Ein System kann in die Firmenregeln eingebettet sein, die nicht gebrochen werden dürfen 
+* Firmenpolitik- und regeln: Ein System kann in die Firmenregeln eingebettet sein, die nicht gebrochen werden dürfen
+
+![](assets/Bild8.png)
+
+[Abbildung 7] *Altsystem als Schichtmodell*
+
+Eine alternative perspektive auf ein Altsystem bietet das Schichtmodell, wie es in [Abbildung 7] zu sehen is. Jede
+Schicht ist abhängig von der darunter liegenden und ist über eine Schnittstelle mit ihr verbunden. Wenn eine Schicht
+geändert wird, muss nur die Schnittstelle angepasst werden, damit keine weiteren Schnittstellen beeinflusst werden. Dies
+ist allerdings eine Vereinfachung, da neue Möglichkeiten in unteren Schichten häufig Änderungen in den anderen Schichten
+bedingen, um sie auch zu nutzen. Bei Änderungen in den oberen Schichten kann es sein, dass die performance nicht mehr
+reicht und neue hardware benötigt wird.
+
+### Probleme und Gründe für Weiterbetreiben
+
+Es ist davon auszugehen, dass noch viele Altsysteme in Betrieb sind. Auch wenn es keinen genauen Zahlen gibt, kann als
+Beispiel die Verwendung von COBOL herangezogen werden. Es sind weiterhin ca. 200 Milliarden Zeilen COBOl in
+Produktivsystemen verbaut, obwohl die Sprache bereits seit 1990 nicht mehr in benutzung ist. Daraus resultiert das große
+Problem, dass es schwierig ist Fachpersonal für diese Systeme zu finden, da COBOL nicht mehr gelehrt wird. Ein weiteres
+Problem bei Altsystemen ist die Sicherheit. Viele Systeme wurden vor der Verbreitung des Internets entwickelt und sind
+dementsprechend nicht gegen die entsprechenden Gefahren abgesichert.
+
+Das Ersetzen der Software ist, trotz der Probleme, häufig zu teuer und zu risikoreich. Dies liegt unter anderem daran,
+dass Spezifikationen veraltet und unvollständig sind und die Planung eines neuen Systems nicht darauf basieren kann. Des
+Weiteren können Geschäftsprozesse um das Altsystem gebaut sein, für ein neues System müssten also auch die Prozesse
+angepasst werden. Geschäftsregeln können in das Altsystem eingebunden sein, ohne dass es dokumentiert ist. Das kann
+schwere Folgen bei der Verletzung der regeln im neuen System haben. Zusätzlich hält eine neue Software immer das Risiko
+unerwartete Probleme aufzuwerfen.
+
+Allerdings werden die Kosten, um ein Altsystem am Laufen zu halten oder zu ändern immer teurer, so dass ein Ersatz mit
+einem neuen System unumgänglich wird. Dazu tragen die vorangegangen Änderungen bei, die weitere Änderungen schwieriger
+machen. Die Dokumentation des Systems kann veraltet oder gar nicht vorhanden sein. Außerdem sorgen
+Performanceoptimierungen für alte Software häufig zu schwieriger verständlichen Code, der Änderungen wieder schwieriger
+macht. 
 
 ## Softwarewartung
 
@@ -152,6 +197,7 @@ Elemente und ihre Abhängigkeiten sind in [Abbildung 6] visualisiert.
 
 [Abbildung 6]: chapter09/assets/Bild7.png
 
+[Abbildung 7]: chapter09/assets/Bild8.png
 
 Nach dem Lesen des Kapitels sollten Sie einiges wissen und dann noch viel mehr und sehr viel mehr und weniger.
 
@@ -207,7 +253,6 @@ Dieser Link führt extern nach [Youtube](https://www.youtube.com/)
 ### Code
 
 ```javascript
-public
 
 class A {
     Integer
