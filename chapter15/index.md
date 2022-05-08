@@ -289,10 +289,284 @@ Basisapplikation ist so entworfen, um wiederverwendung und die Neukonfiguration 
 Applikations Frameworks und Software Produktlinien haben einiges gemeinsam. Beide unterstuetzen eine gemeinsame Architektur und Komponenten. Zusaetzlich wird neue Entwicklungsaufwand benoetigt,
 um eine neue Version eines Systems zu erstellen. Die Unterschiede werden im Folgenden dargestellt:
 
-1. 
-2. 
-3. 
-4. 
+1. Applikations Frameworks bauen auf objektorientierte Features wie Vererbung und Polimorphismus auf, um die Frameworks zu erweitern. Dabei wird der Code des Frameworks nicht veraendert und die moeglichen Modifizierungen sind limitiert. Software Produktlinien hingegen muessen nicht mit einem objektorientierten Ansatz inplementiert werden. Komponenten koennen veraendert, geloescht und neu geschrieben werden. 
+2. Die meisten Frameworks bieten eine generelle Unterstützung und nicht eine gebietspezifische Unterstützung (z.B. Framework fuer webbasierte Anwendungen). Eine Software Produktlinie ist in der Regel in einem bestimmten Anwendungsgebiet angesiedelt (z.B. webbasierte Anwendung fuer das Verwalten von Krankenakten). 
+3. Software Produktlinien sind meist Steueranwendungen fuer bestimmtes Equipment (z.B. Drucker). Das bedeutet, dass Produktlinien Hardwareschnittstellen unterstuetzen muss. Applikations Frameworks hingegen sind softwareorientiert und besitzen grundsaetzlich keine Komponenten zur Kommunikation mit Hardware.
+4. Software Produktlinien bestehen aus einer Familie verwandter Anwendungen, die Eigentum von derselben Organisation sind. Wenn eine neue Anwendung erstellt wird, ist der Ausgangspunkt oft das engste Mitglied der Anwendungsfamilie und nicht die generische Kernanwendung.
+
+- bei der erstellung einer produktlinie
+  - verwendung von objektorientierter sprache 
+  - eventuell ein framework als basis nehmen
+  - kernanwendung dann aus der Erweiterung des frameworks mit gebietspezifischen komponenten 
+  - in zweiter phase wird anschliessend das system fuer verschiedene kunden verfeinert.
+  - beispiel
+    - web-based framework als kern fuer ein webbasierte beratungsstelle
+    - produktlinie dann weiter spezialisiert auf verschiedene arten von beratungsstellen
+
+- Architektur einer produktlinie spiegelt oft einen allgemeinen, anwendungsspezifischen Architekturstil oder ein Muster wider
+- Beispiel 
+  - produktlinie um die Fahrzeugaufteilung für Rettungsdienste abzuwickeln
+  - telefonat annehmen 
+  - passendes fahrzeug finden
+  - und das fahrzeug passend zum Unfall etc. losschicken
+  - kann also an polizei, feuerwehr und krankenhaeuser verkauft werden
+- fahrzeugaufteilung gutes beispiel fuer generic resource allocation and management architectur
+  - BILD 15.8 
+  - Datenbank mit verfuegbaren ressourcen
+  - Komponenten die die Ressourcen Zuteilungspolitik beinhalten
+    - vom unternehmen festegelegt
+  - Benutzer interagieren mit dem system
+    - ressourcen anfragen
+    - freigeben 
+    - Fragen stellen bzgl. ressourcen und deren Verfuegbarkeit
+- fuer so ein Fahrzeugaufteilungs system koennen folgende komponenten implementiert sein
+  - BILD 15.9
+Die Komponenten auf jeder Ebene sind im Folgenden weiter erlaeutert:
+
+1. Auf der Interaktionsebene stellen Komponenten eine Bedieneranzeigeschnittstelle bereit und eine Schnittstelle zu den verwendeten Kommunikationssystemen.
+2. Auf der E/A Ebene (Ebene 2) uebernehmen Komponenten die Benutzerautentifizierung, das Generieren von Berichten ueber Vorfaelle und abgefertigte Fahrzeuge. Des Weiteren werden Kartenausgabe und Routenplanung unterstuetzt, sowie Mechanismes fuer Operatoren zur Abfrage der Systemdatenbank bereitgestellt.
+3. Auf der Ressourcen-Management-Ebene (Ebene 3) ermoeglichen Komponenten, Fahrzeuge zu lokalisieren, den Status von Fahrzeugen und Ausruestung zu aktualisieren und Imformationen zu Vorfaellen zu protokollieren.
+4. Auf der Datenbankebene gibt es seperate Datenbanken fuer Fahrzeuge, Ausruestung und Karten.
+
+- neue intanzen fuer das system   
+  - veraender der komponenten
+  - beispiel
+    - polizei
+      - viele autos 
+      - wenige verschiedene autos
+    - feuerweher 
+      - wenig autos
+      - sehr viele verschiedene und spezialisierte fahrzeuge
+    - anpassen der datenbankstruktur notwendig
+
+
+Es können verschiedene Arten der Spezialisierung einer Softwareproduktlinie entwickelt werden:
+
+1. **Platform-Spezialisierung** Versionen der Anwendung koennen fuer verschiedene Platformen (z.B. Windows, Mac OS, Linux) existieren. Die Funktionalitaet bleibt gleich und nur Teile, die eine Schnittstelle mit Hardware oder Betriebssystem darstellen, werden modifiziert.
+2. **Umgebungs-Spezialisierung** Versionen der Anwendung koennen in verschiedenen Betriebsumgebungen mit verschiedenen Peripheriegeraeten benoetigt werden. Beispielsweise kann ein System fuer Rettungsdienste in verschiedenen Versionen, abhaengig von benutzter Hardware, exisitieren. Polizeistationen kommunizieren eventuell mit eingebaueter Verschluesslung. Die Produktlinien-Komponenten werden der Funktionalitaet der verwendeten Ausruestung angepasst.
+3. **Funktionelle Spezialisierung** Versionen der Anwendung sind fuer verschiedene Kunden mit verschiedenen Anforderungen. Beispielsweise muss ein Bibliothek-Automatisierungs-System angepasst werden, wenn es sich um eine oeffentliche Bibliothek oder eine Universiaetsbibliothek handelt. Komponenten mit Funktionalitaet muessen eventuell ueberarbeitet oder neu geschrieben werden.
+4. **Prozess-Spezialisierung** Systeme muessen eventuell mit verschiedenen Business Prozessen funktionieren. Ein Bestellsystem muss zum Beispiel einen zentralen Bestellprozess in einem Unternehmen und einen verteilten Bestellprozess in einem anderen bewaeltigen.
+
+Das folgende Bild zeigt den Prozess der Erweiterung einer Software Produktlinie zum Erstellen einer neuen Anwendung.
+
+BILD 15.10
+
+Die Aktivitäten in diesem Prozess sind:
+
+1. **Stakeholder-Anforderungen herausfinden** Es wird mit einer normalen Anforderungsanalyse begonnen. Da aehnliche Systeme bereits vorhanden sind, koennen diese vorgefuehrt werden. Der Kunde kann so seine Aenderungsvorschlaege darstellen.
+2. **Auswaehlen eines vorhandenen Systems, das den Anforderungen am besten entspricht** Die Anforderungen werden analysiert und ein Produktlinien-Mitglied, welches am naehsten an die neuen Anforderungen herankommt, zur Modifikation ausgewaehlt.
+3. **Anforderungen neu verhandeln** Waehrend der Projektplanung werden die zu modifizierten Stellen der Software erarbeitet. Um die noetigen Veraenderungen der Basisanwendung zu minimieren, muessen manche Anforderungen mit dem Kunden erneut verhandelt werden.
+4. **Bestehendes System anpassen** Neue Module fuer das existierende System werden entwickelt und vorhandene Module werden den Anforderungen entsprechen angepasst.
+5. **Ausliefern des neuen Produktlinien-Mitglied** Die neue Instanz wird dem Kunden ausgeliefert. Hier sollten die wichtigsten Funktionen dokumentiert werden, damit das neue System als Basis fuer weitere Entwicklungen dienen kann.
+
+- Kompromiss finden zwischen moeglichst viel wiederverwenden und den anforderungen des kunden
+  - je detailierter die anforderungen, desto geringer ist die wahrscheinlichkeit, dass aehnliche systeme bereits existieren
+  - wenn kunden jedoch flexibel sind
+    - limitieren der system modifizierungen
+    - schnelleres ausliefern von systemen und guenstigere entwicklung
+
+- Software-Produktlinien sind zum rekonfigurieren entwickelt
+  - hinzufuegen und loeschen von komponenten
+  - parameter definieren
+  - Einschraenkungen definieren
+  - einbauen von Wissen ueber business prozesse
+- kann in verschiedenen STufen des entwicklungsprozesses stattfinden:
+
+1. **Konfiguration zur Entwurfszeit** Die Organisation, die die Software entwickelt, modifiziert einen gemeinsamen Produktlinienkern durch Entwicklung, Auswahl oder Anpassung von Komponenten, um ein neues System für einen Kunden zu erstellen.
+2. **Konfiguration zur Bereitstellungszeit** Ein generisches System wird fuer die Konfiguration durch den Kunden entworfen. Kenntnisse der kundenspezifischen Anforderungen und der Betriebsumgebung des Systems sind in die vom generischen System verwendeten Konfigurationsdaten eingebettet.
+
+- Konfiguration zur Entwurfszeit
+  - generisches system oder mit vorhandenem system starten 
+  - modifizieren des systems und anpassen an kundenwuensche
+  - veraendern und erweitern des source codes 
+    - bessere flexibiliaet als bei Konfiguration zur bereistellungszeit
+  - wird verwendet
+    - wenn es nicht moeglich ist die bestehenden bereitsstellungszeit configurations Einrichtungen (?) verwendet werden kann
+  - Ueber zeit werden Produktlinien mitglieder mit gleicher funktionalitaet erstellt
+    - refactoring dieser funktionalitaet in die kernanwendung
+    - anschliessend wird diese funktionalitaet zur auslieferungszeit konfigurierbar gemacht
+- Konfiguration zur Bereitstellungszeit
+  - benutzen von configurations tools um ein spezifische systen konfiguration zu erhalten
+    - in konfigurations datenbanken gespeichert
+    - oder als ansammlung von konfigurations dateien
+    - BILD 15.11
+    - das system (auf server oder auf einem pc) holt sich die informationen aus der datenbank
+
+Mehrere Ebenen der Konfiguration zur Bereitstellungszeit werden in einem system bereitgestellt:
+
+1. **Komponentenauswahl**, in welcher passende Module fuer das System ausgesucht werden. Beispielsweise kann in einem System fuer die Speicherung von Patientendaten eine Komponente fuer das Verwalten von Bildern hinzugefuegt werden. So koennen medizinische Bilder mit der Patientenakte verknuepft werden.
+2. **Workflow- und Regeldefinition**, in welcher Workflows (wie Informationen verarbeitet werden) und Validierungsregeln (fuer Benutzereingaben und vom System generierte Daten) definiert werden.
+3. **Parameterdefinition**, in welcher bestimmte Werte fuer systemspezifische Parameter spezifiziert werden. Zum Beispiel kann die maximale Laenge von Eingabefeldern oder die Characteristiken bestimmter Hardware definiert werden.
+
+- kann sehr komplex sein
+- grosse systeme kann es mehrere monate dauern, das system zu konfigurieren und zu testen
+- grosse konfigurierbare systeme koennen software tools wie planungstools bereistellen
+
+## Wiederverwendung Applikationssysteme
+
+- applikationssystem
+  - koennen angepasst werden an die anforderungen an kunden
+  - ohne das aendern von source code
+  - fuer einen generellen markt entwickelt
+  - nicht speziell fuer einzelne kunden entwickelt
+  - cots (commercial off-the shelf system)
+    - haeufig in militaer systemen so genannt 
+    - im folgenden also applikationssysteme
+
+- jede desktop software fuer unternehmen
+- viele server-basierte systeme sind applikationssysteme 
+- kann also in verschiedenen environments und als teil verschiedener systeme wiederverwendet werden
+- Torchiano and Morisio (Torchiano and Morisio 2004)
+  - open source produkte werden oft ohne veraenderung verwendet 
+  - code wird nichtmal angeguckt 
+
+- Applikationssysteme 
+  - eingebaute configurations mechanismen zum einstellen fuer kunden
+  - beispiel 
+    - krankenakten system
+      - verschiedene eingabe und ausgabe formen abhaengig vom patienten
+    - andere konfigurations features erlauben eventuell plug ins zu erlauben
+
+Dieser Ansatz zur Wiederverwendung von Software wird seit Ende der 1990er Jahre von großen Unternehmen sehr häufig übernommen, da er erhebliche Vorteile gegenüber der kundenspezifischen Softwareentwicklung bietet:
+
+1. Schnellere Herausbringen von zuverlaessigen Systemen ist moeglich.
+2. Es ist moeglich zu sehen, welche Funktionalitaet von der Applikation gegeben ist. Das Einschaetzen ob die Software passt wird vereinfacht. Andere Unternehmen verwenden eventuell besagte Software und Erfahrungen mit dem System liegen vor.
+3. Manche Entwicklungsrisiken beim verwenden vorhandener Software minimiert.
+4. Unternehmen koennen sich auf Kernaktivitaeten konzentrieren, ohne viele Ressourcen fuer die Entwicklung von IT Systemen zu benoetigen.
+5. Wenn sich Opeationsplatformen veraendern ist das updaten vereinfacht, da die Verantwortung dafuer bei dem Applikationssystem-Anbieter liegt.
+
+Dennoch bringt diese Ansatz der Wiederverwendung Probleme:
+
+1. Anforderungen muessen angepasst werden, um die Funktionalitaet und die Arbeitsweise der Off-the-shelf Applikationssystem zu reflektieren. Das kann zu stoerenden Aenderungen in vorhandenen Unternehmensprozessen fuehren.
+2. Das Applikationssystem kann auf Annahmen basieren, welche nicht geaendert werden koennen. Der Kunde muss also sein Geschaeft so aendern, um diese Annahmen zu reflektieren
+3. Das passende Applikationssytem auszusuchen kann ein schwieriger Prozess sein, da diese oft nicht gut dokumentiert sind. Bei falschen Entscheidungen kann es unmoeglich sein, das neue System nach den Anforderungen umzusetzen.
+4. Es kann einen Mangel an lokaler Expertise zur Systementwicklung geben. Der Kunde muss sich also auf den Hersteller des Applikationssystems oder auf externe Berater verlassen. Die Beratung kann dabei zum Verkaufen von weiteren Produkten oder Dienstleistungen verwendet werden, ohne passend auf die Kundenbeduerfnisse einzugehen.
+5. Der Systemanbieter steuert die Systemunterstützung und -entwicklung. Dieser kann sein Geschaeft aufgeben, uebernommen werden, oder Aenderungen vornehmen, die dem Kunden Schwierigkeiten bereiten.
+
+TABELLE UND BESCHREIBUNG
+
+### Konfigurierbare Applikationssysteme
+
+- Konfigurierbare Applikationssysteme 
+  - generische applikationssystem
+  - designed fuer einen bestimmten unternehmenstypen
+    - unternehmensaktivitaeten
+    - oder manchmal eine komplette business enterprise
+  - beispiel
+    - system fuer zahnaerzte 
+      - termine
+      - erinnerungen
+      - patientenakten
+      - patientenrueckruf
+      - rechnungen
+    - groesser kann ein enterprise resource planning (erp) system
+      - herstellung 
+      - einkauf 
+      - Kundenbeziehungs management in grossen firmen
+- Gebietspezifische applikationssysteme
+  - funktionalitaet die von einer vielzahl an kunden benoetigt wird
+  - aber es werden annahmen getroffen, welche in bestimmten situationen probleme bereiten
+    - beispiel
+      - system zum anmelden von studenten an einer universiaet
+      - annahme, dass studenten sich fuer einen abschluss an einer uni einschreiben
+      - bei kollaborationen mit zwei universitaeten fuer gemeinsame abschluesse
+      - koennen im system nicht dargestellt werden
+- ERP systeme (produziert von sap und oracle)
+    - grosse integrierte systeme
+    - Bestellungen 
+    - Rechnungsstellung
+    - Bestandsverwaltung
+    - Fertigungsplanung
+    - (Monk and Wagner 2013)
+    - Konfigurationsprozess
+      - sammeln von detailierten infos ueber unternehmen des kunden und deren unternehmensprozesse 
+      - speichern in configurations datenbank
+      - expertise ueber konfigurationsnotationen und tools
+      - meist durch Berater, die mit dem Systemkunden zusammenarbeiten
+
+- Generisches ERP System besteht aus mehreren Modulen
+  - Konfigurationsprozess
+    - module auswaehlen
+    - diese konfigurieren
+    - unternehmensprozesse definieren
+    - unternehmensregeln definineren
+    - struktur und organisierung der system datenbank definieren
+    - BILD 15.13
+  
+Die Hauptmerkmale dieser Architektur sind wie folgt:
+
+1. Eine Menge von Modulen, um verschieden Unternehmensfunktionen zu unterstuetzen. Diese sind grosse Module, die ganze Abteilungen oder Unternehmenbereiche unterstuetzen koennen. Dargestellt ist ein Modul zum unterstuetzen des Einkaufs; ein Modul fuer das Lieferketten Management; ein Logistikmodul fuer die Lieferung von Waren; und ein Kundenbeziehungs Management (engl.: customer relationship management (CRM)).
+2. Eine definierte Menge an Unternehmensprozess-Modellen, jedem Modul zugeordnet, welche sich auf die Aktivitaeten in diesem Modul beziehen. Zum Beispiel wird im Bestellungsprozess-Modell festegelegt, wie Bestellungen erstellt und angenommen werden. Dies spezifiziert die Rollen und Aktivitaeten im Zusammenhang mit der Auftragserstellung.
+3. Eine gemeinsame Datenbank, welche Informationen ueber die Unternehmensfunktionen plegt. So ist es nicht notwendig Informationen, wie zum Beispiel Kundendaten, an verschiedenen Teilen des Unternehmens zu speichern.
+4. Eine Menge an Unternehmensregeln, die fuer alle Daten in der Datenbank gelten. Bei der Eingabe von Daten, muessen die Regeln eine Konsistenz innerhalb der Datenbank erhalten. Beispielsweise kann eine Geschaeftsregel verlangen, dass alle Spesenabrechnungen von einer hoeheren Person genehmigt werden muessen als die Person, die den Anspruch geltend macht.
+
+- ERP Systeme werden in allen grossen Unternehmen benutzt
+  - fuer einige oder alle ihrer funktionen
+  - Viel benutzte form der Wiederverwerndung 
+  - Limitierungen
+    - funktionalitaet des kunden ist an die funktionalitaet des erp systems gebunden
+    - falls eine zusaetliche funktionalitaet benoetigt wird, muss ein seperates add-on implementiert und eingebaut werden.
+- Unternehmensprozesse und -operationen muessen in der ERP system eigenen konfigurationssprache definiert werden
+  - bei der Ersellung koennen Nichtuebereinstimmungen entstehen
+    - zischen annahmen des systemanbieters und dem Kunden
+    - bezueglich der Konzepte und Prozesse im Unternehmen
+  - Eine grosse abweichung
+    - zwischen kunden unternehmensmodell und dem system model benutzt vom erp system
+    - erp system wird nicht den anforderungen des kunden entsprechen
+
+ERP Systeme benoetigen grundsaetzlich eine umfangreiche Konfiguration, um an die Anforderungen des Kunden angepasst zu werden. Diese Konfiguration enthealt:
+
+1. Auswahl der benötigten Funktionaliaet aus dem System, z. B. durch das Entscheiden, welche Module enthalten sein sollen.
+2. Erstellen eines Datenmodells, das definiert, wie die Daten der Organisation in der Systemdatenbank strukturiert werden.
+3. Definieren von Geschäftsregeln, die für diese Daten gelten.
+4. Definition der erwarteten Interaktionen mit externen Systemen.
+5. Gestaltung der Eingabeformulare und der vom System generierten Ausgabeberichte.
+6. Entwerfen neuer Geschäftsprozesse, die dem zugrunde liegenden Prozessmodell, welches vom System unterstuetzt wird, entsprechen.
+7. Festlegen von Parametern, die definieren, wie das System auf seiner Plattform bereitgestellt wird.
+
+Nach der Konfiguration, kann das System getestet werden. Das Testen eines Systems, welches konfiguriert und nicht in einer konventionellen Programmiersprache entwickelt wird, stellt ein Prorblem dar. Es gibt zwei Gruende hierfuer:
+
+1. Testautomatisierung ist schwierig oder sogar unmoeglich. Möglicherweise gibt es keinen einfachen Zugang zueine API, die zum Testen von Frameworks wie JUnit verwendet werden kann. Die Systeme muessen per Hand getestet werden, indem manuell Testdaten eingefuegt werden. Desweiteren sind die Systeme informell spezifiziert. Testfaelle ohne die Hilfe vom Enfbenutzer zu definieren, erweist sich als schwierig.
+2. Systemfehler sind oft subtil und spezifisch fuer Geschaeftsprozesse. Die meisten Fehler passieren, weil es Missverstaendnisse zwischen denen, die das System konfigurieren, und den Benutzerinteressesnten. Systemtester, ohne detailierte Kenntnisse der Endbenutzerprozesse koennen solche Fehler nicht erkennen.
+
+### Integrierte Applikationssysteme
+
+- Integrierte Applikationssysteme beinhalten zwei oder mehr Applikationssysteme oder manchmal auch Legacy-Systeme.
+- Wenn keine einzelne Applikationssystem alle Anforderungen entspricht
+- oder wenn ein neues applikatoonssystem mut einem system, welches bereits benutzt wird, integriert werden soll
+- Interaktion moeglich durch deren APIs
+  - sevice-schnittstellen
+  - verbindung indem output des einen systems eingabe des anderen wird
+  - oder updaten der datenbank welche von der applikation verwendet wird
+
+Um ein integriertes Applikationssystem zu entwickeln, muessen eine Menge an Designentscheidungen getroffen werden:
+
+1. **Welche individuelle Applikation liefert die am besten geeignete Funktion?** Grundsaetzlich gibt es mehrere verfuegbare Produkte, welche in verschiedenen Wegen verknuepft werden koennen. Liegt nicht viel Erfahrung mit einem Applikationssystem vor, so kann es schwierig sein, sich fuer ein Produkt zu entscheiden.
+2. **wie werden Daten ausgetauscht?** Verschiedene Systeme benutzen eigene Strukturen und Datenttypen. Eventuell muessen Adapter implementiert werden, um zwischen den Repraesentationen konvertieren zu koennen. 
+3. **Welche Features werden vom Produkt letzendlich verwendet?** Applikationssysteme liefern eventuell mehr Funktionalitaet als benoetigt wird. Es muss entschieden werden, welches Feature aus welchem Produkt sich am besten fuer die Anforderungen anbietet. Falls moeglich, sollten nicht benoetigte Features ebenfalls deaktiviert werden, um den Normalsystembetrieb nicht zu stoeren.
+
+- Riesenbeispiel
+  - procurement System zum Bestellungen von ihrem Schreibtisch aus aufgeben
+  - 5 millin dollar pro jahr einsparung erhofft
+  - zentralisieren des kaufens
+    - system kann so garantieren, dass bestellungen sind immer von Lieferanten die die besten preise liefern
+    - sollte notwendige administration bei bestellungen reduzieren
+  - manuelles system
+    - verfuegbare ware auswaehlen
+    - bestellung erstellen
+    - bestellung genehmigen lassen
+    - bestellung an haendler schicken
+    - ware erhalten
+    - Bestaetigung dass die Zahlung erfolgen soll
+  - Das unternehmen hat ein altes bestellungssystem welches von einer zentralen Beschaffung verwendet wird
+    - Diese Auftragsabwicklungssoftware ist in die existierenden Rechnungsstellen- und Liefersysteme eingebaut
+    - fuer das neue system, wird das altes system in eine webbasierte E-Commerce-Platform und einem email system, welches die kommunikation mit den benutzern abwickelt, eingebaut
+    - BILD 15.14
+  - Monate oder sogar jahre entwicklungszeit koennen eingesparrt werden
+    - aus dem beispiel
+      - wurde in einer grossen firma in neun monaten eingefuehrt
+      - vorher wurde gesagt,es dauert 3 jahre ein eigenes system zu entwicklen, welches mit dem alten system verknuepft werden kann
+
 
 
 
