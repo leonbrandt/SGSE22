@@ -2,6 +2,8 @@
 
 **Autor:** Rei Berberi
 
+**Anmerkung des Autors:** Dieses Kapitel ist eine ins Deutsche übersetzte Zusammenfassung von Kapitel 7 "Design and implementation" aus der 10. Auflage des Buches Software Engineering von Sommerville. Ich habe versucht, jedes Unterkapitel zusammenzufassen, indem ich die wichtigsten Punkte beibehalten und das Material so leicht verständlich wie möglich gemacht habe.
+
 ## Kurzbeschreibung und Ziele
 
 Software-Design und -Implementierung ist die Phase im Software-Engineering-Prozess, in der ein ausführbares Softwaresystem entwickelt wird. Diese beiden Prozesse sind untrennbar miteinander verknüpft, so dass bei der Entwicklung eines Entwurfs normalerweise auch Implementierungsfragen berücksichtigt werden sollten.
@@ -152,33 +154,107 @@ Abbildung 7.9 zeigt zwei Schnittstellen, die für die Wetterstation definiert we
 
 ## 7.2 Entwurfsmuster
 
+Entwurfsmuster stellen die besten Praktiken dar, die von erfahrenen objektorientierten Softwareentwicklern verwendet werden. Entwurfsmuster sind Lösungen für allgemeine Probleme, mit denen Softwareentwickler während der Softwareentwicklung konfrontiert sind. Diese Lösungen wurden durch Versuch und Irrtum von zahlreichen Softwareentwicklern über einen längeren Zeitraum hinweg erarbeitet. 1994 veröffentlichten die vier Autoren Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides ein Buch mit dem Titel Design Patterns - Elements of Reusable Object-Oriented Software (Entwurfsmuster - Elemente wiederverwendbarer objektorientierter Software), das das Konzept der Entwurfsmuster in der Softwareentwicklung einführte.
+
+Diese Autoren sind gemeinsam als Gang of Four (GOF) bekannt. In ihrem Buch über Patterns definierten sie die vier wesentlichen Elemente von Design Patterns:
+
+1. Ein Name, der einen aussagekräftigen Verweis auf das Muster darstellt.
+2. Eine Beschreibung des Problembereichs, die erklärt, wann das Muster angewendet werden kann.
+3. Eine Lösungsbeschreibung der Teile der Entwurfslösung, ihrer Beziehungen und ihrer Verantwortlichkeiten.
+4. Eine Aussage über die Konsequenzen - die Ergebnisse und Kompromisse - der Anwendung des Musters. Dies kann Designern helfen zu verstehen, ob ein Muster in einer bestimmten Situation verwendet werden kann oder nicht.
+
+Patterns unterstützen die Wiederverwendung von Konzepten auf hoher Ebene. Wenn man versucht, ausführbare Komponenten wiederzuverwenden, wird man unweigerlich durch detaillierte Designentscheidungen eingeschränkt, die von den Implementierern dieser Komponenten getroffen wurden. Wenn man mit dem Entwurf eines Systems beginnt, kann es schwierig sein, im Voraus zu wissen, ob man ein bestimmtes Muster benötigen wird. Die Verwendung von Mustern in einem Entwurfsprozess beinhaltet daher oft die Entwicklung eines Entwurfs, das Auftreten eines Problems und die anschließende Erkenntnis, dass ein Muster verwendet werden kann.
+
 ## 7.3 Implementierungsfragen
+
+Eine entscheidende Phase der Softwareentwicklung ist die Systemimplementierung, bei der eine ausführbare Version der Software erstellt wird. Die Implementierung kann die Entwicklung von Programmen in High-Level- oder Low-Level-Programmiersprachen oder die Anpassung allgemeiner, handelsüblicher Systeme an die spezifischen Anforderungen eines Unternehmens umfassen.
+Einige Aspekte der Implementierung, die für die Softwaretechnik besonders wichtig sind, sind:
+
+1. **Wiederverwendung:** Die meiste moderne Software wird durch die Wiederverwendung bestehender Komponenten oder Systeme erstellt.
+2. **Konfigurationsmanagement:** Während des Entwicklungsprozesses werden viele verschiedene Versionen der einzelnen Softwarekomponenten erstellt. Wenn man diese Versionen nicht in einem Konfigurationsmanagementsystem verfolgt, besteht die Gefahr, dass man die falschen Versionen dieser Komponenten in das System aufnimmt.
+3. **Host-Target-Entwicklung:** Produktionssoftware wird in der Regel nicht auf demselben Computer ausgeführt wie die Softwareentwicklungsumgebung. Vielmehr wird sie auf einem Computer (dem Host-System) entwickelt und auf einem anderen Computer (dem Zielsystem) ausgeführt.
 
 ### 7.3.1 Wiederverwendung
 
+Ein auf Wiederverwendung basierender Ansatz ist heute bei webbasierten Systemen aller Art, wissenschaftlicher Software und zunehmend auch bei der Entwicklung eingebetteter Systeme weit verbreitet. Die Wiederverwendung von Software ist auf verschiedenen Ebenen möglich, wie in Abbildung 7.10 dargestellt:
+
+![image](https://user-images.githubusercontent.com/58107983/167261084-9ae5488e-bb6c-405f-8677-79ef6cc1cde8.png)
+**Abbildung 7.10** - Wiederverwendung von Software[1]
+
+1. **Die Abstraktionsebene:** Auf dieser Ebene wird Software nicht direkt wiederverwendet, sondern man nutzt das Wissen über erfolgreiche Abstraktionen bei der Entwicklung der eigenen Software.
+2. **Die Objektebene:** Auf dieser Ebene werden Objekte aus einer Bibliothek direkt wiederverwendet, anstatt den Code selbst zu schreiben. Um diese Art der Wiederverwendung zu realisieren, muss man geeignete Bibliotheken finden und herausfinden, ob die Objekte und Methoden die benötigte Funktionalität bieten.
+3. **Die Komponentenebene:** Komponenten sind Sammlungen von Objekten und Objektklassen, die zusammenarbeiten, um verwandte Funktionen und Dienste bereitzustellen. Oft muss man die Komponente durch Hinzufügen von eigenem Code anpassen und erweitern.
+4. **Die Systemebene:** Auf dieser Ebene werden ganze Anwendungssysteme wiederverwendet. Diese Funktion beinhaltet in der Regel eine Art von Konfiguration dieser Systeme. Dies kann durch Hinzufügen und Ändern von Code oder durch Verwendung der systemeigenen Konfigurationsschnittstelle geschehen.
+
+Durch die Wiederverwendung vorhandener Software können neue Systeme schneller, mit weniger Entwicklungsrisiken und zu geringeren Kosten entwickelt werden. Da die wiederverwendete Software bereits in anderen Anwendungen getestet wurde, sollte sie zuverlässiger sein als neue Software. Die Wiederverwendung ist jedoch mit Kosten verbunden:
+
+1. Die Kosten für die Zeit, die für die Suche nach wiederverwendbarer Software und die Bewertung, ob sie den eigenen Anforderungen entspricht, aufgewendet wird.
+2. Gegebenenfalls die Kosten für den Kauf der wiederverwendbaren Software. Bei großen Systemen, die gebrauchsfertig kommen, können diese Kosten sehr hoch sein.
+3. Die Kosten für die Anpassung und Konfiguration der wiederverwendbaren Softwarekomponenten oder -systeme, um die Anforderungen des zu entwickelnden Systems zu erfüllen.
+4. Die Kosten für die Integration wiederverwendbarer Softwareelemente untereinander und mit dem neu entwickelten Code.
+
 ### 7.3.2 Konfigurationsmanagement
+
+Es gibt vier grundlegende Aktivitäten des Konfigurationsmanagements:
+
+1. Versionsmanagement, bei dem es darum geht, die verschiedenen Versionen von Softwarekomponenten im Auge zu behalten. Dadurch wird verhindert, dass ein Entwickler Code überschreibt, der von einem anderen an das System übermittelt wurde.
+2. Systemintegration: Hier wird Unterstützung geboten, um den Entwicklern zu helfen, zu definieren, welche Versionen von Komponenten verwendet werden, um jede Version eines Systems zu erstellen. Diese Beschreibung wird dann verwendet, um ein System automatisch durch Kompilieren und Verknüpfen der erforderlichen Komponenten zu erstellen.
+3. Problemverfolgung, bei der die Benutzer Fehler und andere Probleme melden können und alle Entwickler sehen können, wer an diesen Problemen arbeitet und wann sie behoben werden.
+4. Release Management, bei dem neue Versionen eines Softwaresystems für Kunden freigegeben werden.
+
+Software-Konfigurationsmanagement-Tools unterstützen jede der oben genannten Aktivitäten. Diese Werkzeuge werden normalerweise in einer integrierten Entwicklungsumgebung installiert. Die Versionsverwaltung kann durch ein Versionsverwaltungssystem wie z.B. Git unterstützt werden, das die Entwicklung an mehreren Standorten und in mehreren Teams unterstützen kann.
 
 ### 7.3.4 Host-Target-Entwicklung
 
+Die meisten professionellen Softwareentwicklungen basieren auf einem Host-Target-Modell (Abbildung 7.15). Die Software wird auf einem Computer (dem Host) entwickelt, aber auf einem anderen Rechner (dem Target) ausgeführt. Allgemeiner ausgedrückt, kann man von einer Entwicklungsplattform (Host) und einer Ausführungsplattform (Target) sprechen.
+
+![image](https://user-images.githubusercontent.com/58107983/167261113-09b289ba-fdad-45fe-aae6-df37b275df4d.png)
+**Abbildung 7.11** - Host-Target-Entwicklung[1]
+
+Manchmal sind Entwicklungs- und Ausführungsplattform identisch, so dass die Software auf demselben Rechner entwickelt und getestet werden kann. Insbesondere bei eingebetteten Systemen und mobilen Systemen sind die Entwicklungs- und die Ausführungsplattform jedoch unterschiedlich. Man muss entweder die entwickelte Software zum Testen auf die Ausführungsplattform verschieben oder einen Simulator auf dem Entwicklungsrechner laufen lassen.
+
+Eine Softwareentwicklungsplattform sollte eine Reihe von Werkzeugen zur Unterstützung der Softwareentwicklungsprozesse bieten. Dazu können gehören:
+
+1. Ein integrierter Compiler und ein syntaxgesteuertes Editiersystem, mit dem Sie Code erstellen, bearbeiten und kompilieren können.
+2. Ein System zum Debuggen von Sprachen.
+3. Grafische Bearbeitungswerkzeuge, wie z.B. Werkzeuge zur Bearbeitung von UML-Modellen.
+4. Testwerkzeuge, wie z. B. JUnit, die automatisch eine Reihe von Tests für eine neue Version eines Programms ausführen können.
+5. Werkzeuge zur Unterstützung von Refactoring und Programmvisualisierung.
+6. Konfigurationsmanagement-Tools zur Verwaltung von Quellcode-Versionen und zur Integration und Erstellung von Systemen.
+
+Normalerweise umfassen Entwicklungsumgebungen für Teams auch einen gemeinsamen Server, auf dem ein System zur Änderungs- und Konfigurationsverwaltung läuft, und vielleicht ein System zur Unterstützung des Anforderungsmanagements. Software-Entwicklungstools werden heute in der Regel innerhalb einer integrierten Entwicklungsumgebung (IDE) installiert.
+
+Im Rahmen des Entwicklungsprozesses müssen Entscheidungen darüber getroffen werden, wie die entwickelte Software auf der Zielplattform eingesetzt werden soll. Bei diesen Entscheidungen sind folgende Punkte zu berücksichtigen:
+
+1. Die Hardware- und Software-Anforderungen einer Komponente: Wenn eine Komponente für eine bestimmte Hardware-Architektur konzipiert ist oder von einem anderen Softwaresystem abhängt, muss sie natürlich auf einer Plattform eingesetzt werden, die die erforderliche Hardware- und Software-Unterstützung bietet.
+2. Die Verfügbarkeitsanforderungen des Systems: Bei hochverfügbaren Systemen kann es erforderlich sein, dass die Komponenten auf mehr als einer Plattform eingesetzt werden. Dies bedeutet, dass im Falle eines Plattformausfalls eine alternative Implementierung der Komponente verfügbar ist.
+3. Komponentenkommunikation: Wenn viele Komponenten miteinander kommunizieren, ist es in der Regel am besten, sie auf derselben Plattform oder auf räumlich nahe beieinander liegenden Plattformen einzusetzen. Dies verringert die Kommunikationslatenz.
+
 ## 7.5 Open-Source-Entwicklung
 
+Open-Source-Entwicklung ist ein Ansatz zur Softwareentwicklung, bei dem der Quellcode eines Softwaresystems veröffentlicht wird und Freiwillige eingeladen werden, sich am Entwicklungsprozess zu beteiligen [2].
+
+Open-Source-Software ist in der Regel kostengünstig oder sogar kostenlos zu erwerben. Normalerweise kann man Open-Source-Software kostenlos herunterladen. Wenn man jedoch Dokumentation und Unterstützung wünscht, muss man dafür bezahlen, aber die Kosten sind in der Regel recht gering. Ein weiterer wichtiger Vorteil der Verwendung von Open-Source-Produkten ist, dass weit verbreitete Open-Source-Systeme sehr zuverlässig sind. Sie haben eine große Zahl von Benutzern, die bereit sind, Probleme selbst zu beheben, anstatt diese Probleme dem Entwickler zu melden und auf eine neue Version des Systems zu warten. Fehler werden schneller entdeckt und behoben, als dies bei proprietärer Software normalerweise möglich ist.
+
+Für ein Unternehmen, das in der Softwareentwicklung tätig ist, gibt es zwei Aspekte von Open-Source, die berücksichtigt werden müssen:
+
+1. Soll das zu entwickelnde Produkt auf Open-Source-Komponenten zurückgreifen?
+2. Soll ein Open-Source-Ansatz für die eigene Softwareentwicklung verwendet werden?
+
+Wenn man ein Softwareprodukt für den Verkauf entwickelt, sind die Markteinführungszeit und die Kostenreduzierung entscheidend. Wenn man Software in einem Bereich entwickelt, in dem hochwertige Open-Source-Systeme zur Verfügung stehen, kann man durch die Verwendung dieser Systeme Zeit und Geld sparen. Entwickelt man jedoch Software für bestimmte organisatorische Anforderungen, kommt die Verwendung von Open-Source-Komponenten möglicherweise nicht in Frage.
+
 ### 7.5.1 Open-Source-Lizenzierung
+
+Obwohl ein Grundprinzip der Open-Source-Entwicklung darin besteht, dass der Quellcode frei verfügbar sein sollte, kann der Eigentümer oder der Entwickler des Codes dessen Verwendung einschränken, indem er rechtsverbindliche Bedingungen in eine Open-Source-Softwarelizenz aufnimmt[3]. Einige Open-Source-Entwickler sind der Meinung, dass, wenn eine Open-Source-Komponente zur Entwicklung eines neuen Systems verwendet wird, dieses System auch Open Source sein sollte. Andere sind bereit, die Verwendung ihres Codes ohne diese Einschränkung zuzulassen. Die entwickelten Systeme können proprietär sein und als Closed-Source-Systeme verkauft werden.
+
+Die meisten Open-Source-Lizenzen (Chapman 2010) sind Varianten eines von drei allgemeinen Modellen:
+
+1. Die GNU General Public License (GPL). Dabei handelt es sich um eine so genannte reziproke Lizenz, die vereinfacht ausgedrückt bedeutet, dass Sie, wenn Sie Open-Source-Software verwenden, die unter der GPL-Lizenz lizenziert ist, diese Software als Open Source zur Verfügung stellen müssen.
+2. Die GNU Lesser General Public License (LGPL). Dies ist eine Variante der GPL-Lizenz, bei der Sie Komponenten schreiben können, die auf Open-Source-Code verweisen, ohne den Quellcode dieser Komponenten veröffentlichen zu müssen. Wenn Sie jedoch die lizenzierte Komponente ändern, müssen Sie diese als Open Source veröffentlichen.
+3. Die Berkley Standard Distribution (BSD) Lizenz. Dies ist eine nicht-reziproke Lizenz, was bedeutet, dass Sie nicht verpflichtet sind, alle Änderungen oder Modifikationen, die Sie am Open-Source-Code zu veröffentlichen. Sie können den Code in proprietäre Systeme integrieren, die verkauft werden. Wenn Sie Open-Source-Komponenten verwenden, müssen Sie den ursprünglichen Ersteller des Codes anerkennen.
 
 ## Referenzen
 
 [1]: Ian Sommerville. 2015. Software Engineering (10th. ed.), 196-225.
-
-![image](https://user-images.githubusercontent.com/58107983/167260952-33113a41-efbb-4ecf-9ed7-aaf0449971c5.png) - usecase
-![image](https://user-images.githubusercontent.com/58107983/167261006-3bcb06c2-f2df-4f56-8259-6cce6eef5d39.png) - usecase desc
-![image](https://user-images.githubusercontent.com/58107983/167260961-bd27bd0a-eef7-4bb0-8979-f5953966f02b.png) - arch fo weath
-![image](https://user-images.githubusercontent.com/58107983/167260966-c8b2549f-f164-4b03-b35e-c87295d3db54.png) - arch of data
-![image](https://user-images.githubusercontent.com/58107983/167260979-2b0e13db-d152-4698-a0ea-681149526471.png) - weather station objects
-![image](https://user-images.githubusercontent.com/58107983/167260983-5dab512d-16b4-4275-89c4-4aafdc563604.png) - sequence diagramm
-![image](https://user-images.githubusercontent.com/58107983/167260989-3e6e1b02-a50a-4db3-96ec-61b8c4aaf3c9.png) - station state diag
-![image](https://user-images.githubusercontent.com/58107983/167260995-d55d1125-5ebb-4ce7-abd0-89662f020f09.png) - interfaces
-![image](https://user-images.githubusercontent.com/58107983/167261020-b065123f-ed61-4d23-acf2-a28c5ce24816.png)
-![image](https://user-images.githubusercontent.com/58107983/167261025-e16fee4b-53f7-4f1d-a644-16c99f16ff6e.png)
-![image](https://user-images.githubusercontent.com/58107983/167261038-bef996e9-c935-4e6f-8079-a6289987b3b6.png)
-![image](https://user-images.githubusercontent.com/58107983/167261084-9ae5488e-bb6c-405f-8677-79ef6cc1cde8.png)
-![image](https://user-images.githubusercontent.com/58107983/167261103-e27572f4-b05a-4173-abf9-c858156e4626.png)
-![image](https://user-images.githubusercontent.com/58107983/167261113-09b289ba-fdad-45fe-aae6-df37b275df4d.png)
+[2]: Raymond, E. S. 2001. The Cathedral and the Bazaar: Musings on Linux and Open Source by an Accidental Revolutionary. Sebastopol. CA: O’Reilly & Associates.
+[3]: St. Laurent, A. 2004. Understanding Open Source and Free Software Licensing. Sebastopol, CA: O’Reilly & Associates.
