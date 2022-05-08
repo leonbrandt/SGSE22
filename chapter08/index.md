@@ -1,85 +1,95 @@
-# Software processes
+# Software Testing
 
 **Autor:** Marco Schwier
 
-Nach dem Lesen des Kapitels sollten Sie einiges wissen und dann noch viel mehr und sehr viel mehr und weniger.
+Sofwaretesten hat das Ziel zu zeigen das die Software für ihren angedachten Einsatzzweck geeigent ist. Dabei werden mittels des Testen defekte inerhalb der Software aufgedeckt. Dafür werden Testdaten verwendet die vorher für diesen Zweck erabeitet worden sind. Das Ergbnis das durch die Verwendung dieser mit der Software erhalten wird, wird nach Fehlern oder Anomalien überprüft. Dadurch können Fehler aufgedeckt werden. Softwaretests sind jedoch nicht in der Lage das fehlen von Fehlern oder Defekten aufzudecken.
 
-## Unterkapitel
+Es gibt zwei Ansätze beim Softwaretesten, erfüllt die Software den erwartungen das sogenannte Validationtesting und die altive Suche nach Fehlern das Defecttesting.
 
-* **Softwaresystem**:
-  Die *innere* Sicht des Informatikers nimmt Software als Softwaresystem wahr.
-* **Softwareprodukt**: Die *äußere* Sicht eines Auftraggeber nimmt ein Softwaresystem als Softwareprodukt wahr. 
+Beim Validationtesting werden Testcase erstellt die möglichest ein reales verwenden der Software wiederspiegeln sollen. Dabei wird überprüft ob dies Software den Vorher aufgestellten Anforderungen genügt. Ein Erfolg inerhalb dieser Testmetodik ist dadurch definiert das die Software wie erwartet funktioniert.
 
-### Tabelle
+Beim Defecttesting sollen Fehler innerhalb der Software aufgedeckt werden. Dafür werden Testcase erstellt die nicht dem normalen Nutzerverhalten wieder spiegeln müssen. Ein Erfolg ist dadruch definiert das die Software nicht wie erwartet funktioniert.
 
-| A          |     B       |           C               | 
-|:----------:|:-----------:|:-------------------------:|
-| Eins | Zwei | Drei |
-| Vier | Fünf | Sechs |
+![Testen allgemein](./media/Picture1.png)
 
-## Links
+## Verifikation und Validation
+Testen ist teil des Verifikation und Validationprozesses. Dabei wird durch die Verfikikation ermittelt ob die Software den Spezifikationen enspircht und inherlab der Validation ob die Software das umsetzt was sie soll. Dabei wird eine Aussage darüber erhalten ob die Software für den Gebrauch, für den sie bestimmt ist, auch geeigent ist.
 
-[Markdown] ist eine Sprache, die nach HTML konvertiert werden kann. 
+## Inspektion und Testen
+Die Inspektion von Softwarecode ist eine Testmöglichkeit bei dem ein Inspektor den Programmcode der Software analysiert. Dabei hat diese art des Testens das Ziel Fehler und Anomalien zu finden. Um diese Ziel zu ereichen ist keine Ausführung des Programmes notwendig und kann schon vor der vollstandigen implementierung verwendet werden. Dabei werden alle Komponenten des Softwaresystems überprüft.
 
-[Markdown]: http://daringfireball.net/projects/markdown/
+Die Vorteil dieser vorangehensweise ist die das keine Fehlermaskierung stattfinden kann. Des Weitern können unvollständige Abschnitte der Software ohne Mehrkosten überprüft werden, da keine Mockobjekte erstellt werden müssen um diesen Teil des Systems zu simuliernen. Ebenfalls wird die Progammierweise dabei überprüft.
 
-## Aufzählung
+Wichtig ist das Testen und Inspektion sich nicht ausschließen bei de sollten verwendet werden bei dem Testen von Software. Den Inpektionen können nicht die nicht Funktionalenanforderungen eines Softwaresystem testen.
 
-Es unterteilt sich in:
+Software sollte inerhalb des Testens drei Schritte durchlaufen das Developmenttesten, das Realestesten und das Usertesten.
 
-* A
-  * A1
-* B
-  * B1
-  * B2
-* C
+## Developmenttest
+Das Developmenttesten wird vom Entwickerteam durchgeführt. Dabei unterteilt es sich in drei Abschnitte dem Unittesten, dem Komponententesten und dem Systemtesten.
 
+### Unittest
+Beim Unittesten werden einzelne Funktion oder Klassen getestet. Bei dem Testen von Klassen sollte alle operation durchgeführt werden, sowie jedes Atributet inerhalb der Klasse gesetzt werden. Dabei sollte darauf geachtet werden das die Klasse inerhalber der Tests jeden möglichen Zustand annimmt den diese haben kann.
 
-# Überschrift
+Die Tests können mittels Frameworks wie Junit erstellte werden. Dabei stellt Junit generische Klassen zurverfügung mit den sich Testfälle modelieren lassen. Die Test verweden dabei automatiesiert durchgeführt und das Ergbenis meist mittels einer GUI dem Tester präsentiert. Dabei findet der ablauf einer solchen Testklasse in drei Schritten ab. Der erste Schritt ist das Setup hier werden die vorbedingungen für den Testfall hergestellt. Im folgenden wird der Testfall durchgeführt. Der letzte Schritt ist das vergleichen des Testergebnis mit einm vorher definierte Erwartungswert.
 
-"...the **go to** statement should be abolished..." [1].
+Das Zeil diese Testen ist das aufgezeigt wird das die Klasse den erwartungen entspricht und die Funktion ausführt wie sie gedacht sind. Dabei sollen Fehler aufgedeckt werden.
 
-Dieser Link führt intern zu einem anderen [Thema](qualitaet/README)
+Für das erstellen von Testdaten gibt es zwei Klassen. Zum ersten die normalen Eingaben die auch inerhalb der Nutzung dieser Klasse oder Funktion auftretten können. Die ander Klasse sind abnormale Daten die nicht dem normalen Nutzerverhalten entsprechen. Dabei soll überprüft werden ob die Klasse oder Funkiton sich im Fehlerfall richtig verhält.
 
-Dieser Link führt extern nach [Youtube](https://www.youtube.com/)
+### Componententest
+Bei dem Komponententesten werden einzelnen Komponenten die sich aus Klassen zusammensetzen getestet. Dabei besitzten dies ein gemeinsames Interface mit dem die Komponente gesteuert wird. Daher ist das Ziel dieses Testabschnittes sicherzustellen dass das Interface korrekt funktioniert und das finden von Fehler inerhalb diesem.
 
-> Dieser Text ist völlig sinnlos, aber steht trotzdem hier. Dieser Text geht über mehrere Zeilen.
+Dabei gibt es verschieden Arten von Interfaces die unterschiedliche Fehler erzeugen können
 
-## Unterüberschrift
+Typen
+- Parameterinterface
+- Shared Memory Interface
+- Procedrual Interface
+- Messagepassing Interface
 
-* Eins
-  * eins.eins
-  * eins.zwei
-* Zwei
-  * Zwei.zwei
-* Drei
+Fehler
+- Missuse
+- Misunderstanding
+- Timeing
 
-### Code
+Bei deisen Test sollten Parameter gewählt werden die am Rande ihrer Äquivalenklassen leigen. Des Weitern sollte bei Pointer immer der NULL-Pointer getestet werden. Ebenfalls Designtest und Stresstests sollten durchgeführt werden, sowie Test gegenüber den geteilte Speicher wordurch test in anderer Reihenfolge durchgeführt werden.
 
-```javascript
-public class A {
-  Integer a;
-  public A() {
-    this.a = 1
-  }
-}
-```
+### Systemtest
+Bei dem Systemtest wird das vollständige System gestest. Hierfür sind Use-Cases als Basis zu verwenden und für jeden Use-Case mindesten ein Testfall zu erstellen. Der Systemtest überprüft die Zusammenarbeit aller Komponenten inerhalb des System und ob diese kompatible sind.
 
-Syntax Highlighting für Javascript. Weitere Sprachen müssen konfiguriert werden.
+## Test-Driven Development
+Test-Driven Development ist eine Agile-Entwicklungsart. Dabei wird der Fokus auf die Anforderungen der Software gesetzt.
 
-### Bilder
+Das Ziel dies Entwicklungsmethode ist es Funktionierende Software einfach zu entwickeln und Dublikate inerhalb der Software zu vermeiden. So wird die Entwicklung erst weitergeführt wenn alle Test erfolgreich sind.
 
-![](media/image.jpg)
+Der Ablauf beginnt mit dem identifiziern von neunen benötigten Funktionalieten. Darauf folgened werden dafür testgeschrieben und dies durchgeführt. Sollte der Testfehlschalgen, was beim ersten durchführen immer der Fall ist, wird die funktionaltiet weiter imlementiert und gerefektort. Darauf hin werden die Tests erneut ausgeführt. Sollten die Test keinen Fehler aufzeigen wird der Prozess von neuem begonnen.
 
-### Audio
+![Testen allgemein](./media/Picture2.png)
 
-[](media/sample.mp3 ':include')
+Die Vorteil dies vorgehen ist das ein größe Test-Codecoverage erhalte wird da für jede neu Funktionaliet zunächst Test entwickelt werden. Ausserdem lassen sich Codeabschnitt besser Debugen. Des Weitern wird bei jedem neuen Testdurchlauf alle andern Test mit durchgeführt. So können Fehler in andern Programmabschnitten durch neu implemnetierte Funktionalitäten schnell gefunden werden.
 
-### Video
+## Veröffentlichungstesten
+Bei dem Veröffentlichungstest werden geplante Veröffentlichung der Software gestest. Dabei wird ein seperates Team verwendet das nicht mit der Entwicklung der Software vertraut ist.
 
-[](media/sample.mp4 ':include')
+Bei deisem Test handelt es sich um einen Black Box Test. Diese bedeut das das Testteam keine informationen über die Vorgange inerhalb der Software hat und nur die Wirkung nach außen testen kann.
+ 
+Dabei sollen durch diese Test der Kunde davon überzeugt werden das die Software für seine Anforderung verwendbar ist, sowie das die Software im normalen gebrauch verlässlich ist. Dafür werden Anforderungen an das System ermittelt und möglcihe Bentutzer erstellt die ein möglichst reales umgegehen mit der Software simulliern sollen. Diese Anforerungen und Nutzer werden inerhalb von Scenarien zusammengestellt. Für jedes Scenario wir dien eigener Testfall entwickelt. Dabei soll der Endnutzer verstehen was inerhalb des Testfalls getestet wird. Durch diese Vorgen benötigten Veröffentlichungstest viel Plannung.
+
+Des Weitern werden Stresstest in diesem Abschnitt durchgeführt und Performancetest. Bei einem Stresstest wird die Software einer immer größen lasst an zum Beispiel Anfragen ausgesetzt bis diese nicht mehr reagiert.
+
+## Nutzertest
+Bei Nutzertest wird der Bentuzer der Software aktiv in den Testprozess miteinbezogen. So sind die Testfälle zuvor von den Nutzer erstellt worden. Diese Test sind bieten ein wichtig grundlage um einzuschätzten ob die Software bei Realses von den Kunden angenommen wird.
+
+Inerhalb des Nutzertest gibt es drei Phasen Alpha, Beta und Akzeptanz.
+
+In der Alpha-Phase arbeiten die Entwicker eng mit den Nutzer zusammen um die Software den Erwartungen der Nutzer anzupassen.
+
+In der Beta-Phase wird ein vorab Version dem Nutzer zuverfügung gestellt. Diese können dann selbst die Software für sich testen.
+
+In der Acceptance-Phase ist das Produkt fertig und wird mehr Nutzern zuverfügung gestellt.
+
+Diese Testart ist wichtig um einen einblick zuerhalte ob das Produkt bei Veröffentlichung von den Nutzern angenommen wird. Jedoch ist es unsicher ob die Nutzer die in den Testprozess involviert sind eine repräsentive Nutzerschaft abdecken.
 
 ## Referenzen
 
-[1]: Dijkstra, E. W. (1968). Go to statement considered harmful. 
-Communications of the ACM, 11(3), 147-148.
+[1]: Ian Sommerville, Software Engineering, 10. Aufl., Kapitel 08 226-254. <br>

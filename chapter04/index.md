@@ -136,19 +136,19 @@ Anforderungen ändern sich sehr häufig, vor allem bei großen Softwaresystemen.
 ### Anforderungsmanagement Planung
 Während der Planungsphase müssen folgende Themen berücksichtigt werden:
 * 1 Anforderungsidentifikation
-* Identifizierung jeder Anforderung und Referenz zu anderen Anforderung
+  * Identifizierung jeder Anforderung und Referenz zu anderen Anforderung
 * 2 Änderungsmanagement Prozess
-* Problemanalyse und Änderungsspezifikation
-* Änderungsanalyse und Kostenanalyse
-* Änderungsimplementierung
+  * Problemanalyse und Änderungsspezifikation
+  * Änderungsanalyse und Kostenanalyse
+  * Änderungsimplementierung
 * 3 Rückverfolgbarkeitsprozess
-* Definieren von Beziehungen zwischen dem Systemdesign und der Anforderung
+  * Definieren von Beziehungen zwischen dem Systemdesign und der Anforderung
 * 4 Tool Unterstützung(Für große Projekte sehr wichtig)
-* um Anforderungen zuverlässig/sicher zu Speichern
-* um die vorgeschlagenen Änderungen im Auge zu behalten
-* um auf die vorgeschlagenen Änderungen reagieren zu können
-* um verwandte Anforderungen zu entdecken
-* manche Tools verwenden NLP Techniken, um Beziehungen zwischen Anforderungen zu entdecken
+  * um Anforderungen zuverlässig/sicher zu Speichern
+  * um die vorgeschlagenen Änderungen im Auge zu behalten
+  * um auf die vorgeschlagenen Änderungen reagieren zu können
+  * um verwandte Anforderungen zu entdecken
+  * manche Tools verwenden NLP Techniken, um Beziehungen zwischen Anforderungen zu entdecken
 
 
 ### Anforderungen Änderungsmanagement
