@@ -113,6 +113,31 @@ immer schwieriger macht.
 
 ## Altsysteme
 
+Softwaresystem gibt es inzwischen seit ca. 60 Jahren. Über diese Zeit wurden manche Softwaresysteme ersetzt, andere
+werden über eine lange Zeit genutzt. Alte Softwaresysteme, die auf Technologien oder Sprachen basieren, die nicht mehr
+benutzt werden, heißen Altsysteme. Diese werden entsprechend bereits seit einer langen Seit gewartet, was dazu führen
+kann, dass die Struktur der Software durch Änderungen schlechter geworden ist. Außerdem ist es möglich, dass das System
+auf veralteter Hardware basiert. Dadurch ist es teilweise nicht mehr möglich die Software anzupassen und zu optimieren.
+
+### Altsysteme als sozialtechnologische Systeme
+
+Altsysteme bestehen nicht nur aus der eigentlich Software, sondern umfassen ebenfalls die Hardware, Bibliotheken,
+anderes Softwareabhängigkeiten und Geschäftsprozesse. Deshalb spricht man auch von sozialtechnologische Systemen. Diese
+Elemente und ihre Abhängigkeiten sind in [Abbildung 6] visualisiert.
+
+![](assets/Bild7.png )[Abbildung 6]
+*Elemente eines Altsystems*
+
+* Systemhardware: Altsysteme wurden für alte hardware entwickelt, die nicht mehr verfügbar und kompatibel ist teuer zu
+  warten.
+* Softwareabhängigkeiten: Abhängig von Software, zum Beispiel dem betriebssystem, die nicht mehr weiterentwickelt wird.
+* Anwendungssoftware: Ein System kann aus mehreren Teilen bestehen, die zu unterschiedlichen Zeiten entwickelt wurden.
+  Dadurch entsteht ein System mit verschiedenen Programmieransätzen oder Programmiersprachen.
+* Anwendungsdaten: Altsystem sammeln häufig viele Daten an, die inkonsistent, redundant oder über viele Datenbanken
+  verteilt sind.
+* Geschäftsabläufe: Abläufe können um ein Altsystem konstruiert und an die Funktionalitäten gebunden sein.
+* Firmenpolitik- und regeln: Ein System kann in die Firmenregeln eingebettet sein, die nicht gebrochen werden dürfen 
+
 ## Softwarewartung
 
 [Abbildung 1]: chapter09/assets/Bild1.png
@@ -124,6 +149,8 @@ immer schwieriger macht.
 [Abbildung 4]: chapter09/assets/Bild4.png
 
 [Abbildung 5]: chapter09/assets/Bild6.png
+
+[Abbildung 6]: chapter09/assets/Bild7.png
 
 
 Nach dem Lesen des Kapitels sollten Sie einiges wissen und dann noch viel mehr und sehr viel mehr und weniger.
