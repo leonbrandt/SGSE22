@@ -33,7 +33,7 @@ Ein explizites Designen und Dokumentieren von Softwarearchitekturen hat diverse 
 Das Ergebnis von Architectural Design ist ein Architectural Model. Hierbei werden zur Modellierung von Systemarchitekturen häufig einfache Blockdiagramme auf eine informelle Art genutzt. Hierbei repräsentieren Kästen einzelne Komponenten, Kästen in Kästen Komponenten, die in Subkomponenten zerlegt werden und Pfeile repräsentieren den Fluss von Daten oder Kontrollsignalen. Abbildung 1 zeigt an einem Beispiel ein solches informelles Blockdiagramm.
 
 ![](media/6_01.png)
-(Abbildung 1: Beispiel für ein Architectural Model als Blockdiagramm [Fig. 6.1])
+Abbildung 1: Beispiel für ein Architectural Model als Blockdiagramm [Fig. 6.1]
 
 // Formalität
 
@@ -162,7 +162,7 @@ In der Praxis ist eine saubere Seperation von Schichten häufig schwierig. Auße
 Bei Systemen, die nach dem Pattern Repository Architecture organisiert sind, werden alle Daten innerhalb des Systems in einem zentralen Repository verwaltet. Komponenten interagieren nur durch das Repository mit diesen und niemals direkt.
 
 ![](media/6_11.png)
-Abbildung 6: Pattern Repository Architecture als Blockdiagramm
+Abbildung 6: Pattern Repository Architecture als Blockdiagramm [Fig. 6.11]
 
 Abbildung 6 zeigt das Pattern Repository Architecture als Blockdiagramm. Dargestellt werden verschiedene Komponenten, die mit einem zentralen Repository interagieren.
 
@@ -184,18 +184,18 @@ Repositories sind zentrale Schwachpunkte für Fehler (single point of failure). 
 
 Zuletzt müssen Komponenten auf Basis eines zentralen Repository-Datenmodells arbeiten. Dieses stellt meist einen Kompromiss zwischen spezifischen Anforderungen von Komponenten dar. Eine Integration neuer Komponenten kann somit schwierig oder gar unmöglich sein, wenn das interne Datenmodell inkompatibel zu dem des Repositories ist.
 
-## Client-Server Architecture
+## Client-Server-Architecture
 
 ### Beschreibung
 
-In einer Client-Server Architecture werden Repräsentiert durch eine Menge an Services, die von Servern zur Verfügung gestellt werden sowie Clients, also Nutzer dieser Services. Diese greifen über ein Netzwerk auf Server zu um Services zu nutzen.
+In einer Client-Server-Architecture werden Repräsentiert durch eine Menge an Services, die von Servern zur Verfügung gestellt werden sowie Clients, also Nutzer dieser Services. Diese greifen über ein Netzwerk auf Server zu um Services zu nutzen.
 
 Server sind hierbei Softwarekomponenten, die Services anbieten, wobei mehrere Server auf dem selben Recher ausgeführt werden können. Üblicherweise laufen viele Instanzen von Client-Programmen parallel auf vielen Computern. Client-Server-Systeme sind klassischerweise als verteilte Systeme implementiert. Das logische Modell von unabhängigen Services, die durch verschiedene Server angeboten werden, kann jedoch auf einem einzigen Rechner implementiert werden. Die wesentlichen Eigenschaften dieser Architektur gehen dabei nicht verloren.
 
 Clients müssen innerhalb von Client-Server-Architekturen verfügbare Server sowie deren Services kennen. Server hingegen müssen weder die Identitäten noch die Anzahl der Clients kennen.
 
 ![](media/6_13.png)
-Abbildung 7: Client-Server-Architektur als Blockdiagramm
+Abbildung 7: Client-Server-Architektur als Blockdiagramm [Fig. 6.13]
 
 Abbildung 7 zeigt eine Client-Server-Architektur als Blockdiagramm. Im oberen Bereich sind mehrere Clients, darunter das genutzte Netzwerk (hier das Internet) dargestellt. Beispielhaft werden im unteren Bereich verschiedene Server sowie deren Services als Komponenten abgebildet.
 
@@ -213,11 +213,14 @@ Innerhalb von Client-Server-Architekturen ist jeder Service eine Fehlerquelle (s
 
 ## Pipe-and-Filter-Architecture
 
-![](media/6_15.png)
-
 ### Beschreibung
 
 In Pipe-and-Filter-Architekturen ist die Verarbeitung von Daten so organisiert, dass Verarbeitungseinheiten (Filter) einen Typ von Datentransformationen durchführen. Jeder Bearbeitungsschritt wird als Transformation auf Daten implementiert. Daten fließen in "Pipes" zur Verarbeitung von einer Komponente zur Nächsten und werden nach und nach transformiert. Transformationen können sequentiell oder parallel ausgeführt sowie Elementweise oder in Batches ausgeführt werden.
+
+![](media/6_15.png)
+Abbildung 8: Client-and-Filter-Architecture als Blockdiagramm [Fig. 6.15]
+
+Abbildung 8 zeigt eine Client-and-Filter-Architecture als Blockdiagramm. Abgerundete Blöcke repräsentieren Transformationen. Diese hängen mit durch Pfeile gekennzeichnete Pipes zusammen. Transformationen werden hier sowohl sequentiell als auch parallel ausgeführt.
 
 ### Verwendung
 
@@ -268,9 +271,9 @@ Zuletzt können Application Architectures als Vokabular zur Kommunikation über 
 Transaction-Processing-Systems verarbeiten Anfragen von Benutzern zum Abruf beziehungsweise der Aktualisierung von Daten in einer Datenbank. Diese Anfragen sind Transaktionen. Aus Perspekive von Benutzern ist eine Transaktion eine kohärente Sequenz von Operationen, die ein Ziel erfüllt. Aus der technischen Perspekive sind Transaktionen innerhalb einer Datenbank atomare Sequenzen von Operationen. Alle Operationen einer Transaktion müssen erfolgreich abgeschlossen sein, bevor Änderungen persistiert werden. So bleibt bei Fehlern in Operationen die Konsistenz erhalten. Operationssequenzen, die aus Benutzerperspektive eine Transaktion sind, müssen auf technischer Ebene keine Transaktion darstellen, wenn diese keine Änderungen in der Datenbank erfordern.
 
 ![](media/6_16.png)
-Abbildung 8: Abstrakte Struktur von Transaction-Processing-Systems als Blockdiagramm
+Abbildung 9: Abstrakte Struktur von Transaction-Processing-Systems als Blockdiagramm [Fig. 6.16]
 
-Abbildung 8 zeigt die abstrakte Struktur von Transaktion-Processing-Systems als Blockdiagramm. Eine I/O-Processing-Komponente stellt die Schnittstelle zum Benutzer dar. Sie verarbeitet Anfragen und stellt Antworten auf diese dar. Eine weitere Komponente implementiert spezifische Applikationslogik, die Anfragen interpretiert. Transaktionen werden von einer weiteren Komponente verwaltet. Eine Datenbank hält die persistenten Daten, die Subjekt der Verabeitung innerhalb solcher Systeme sind. Wie bereits deutlich wird, sind Transaction-Processing-Systems üblicherweise interaktiv.
+Abbildung 9 zeigt die abstrakte Struktur von Transaktion-Processing-Systems als Blockdiagramm. Eine I/O-Processing-Komponente stellt die Schnittstelle zum Benutzer dar. Sie verarbeitet Anfragen und stellt Antworten auf diese dar. Eine weitere Komponente implementiert spezifische Applikationslogik, die Anfragen interpretiert. Transaktionen werden von einer weiteren Komponente verwaltet. Eine Datenbank hält die persistenten Daten, die Subjekt der Verabeitung innerhalb solcher Systeme sind. Wie bereits deutlich wird, sind Transaction-Processing-Systems üblicherweise interaktiv.
 
 Transaction-Processing-Systems können als Pipe-and-Filter-Architektur organisiert sein. Hierbei existieren Komponenten für Input, Verarbeitung und Output.
 
@@ -279,9 +282,9 @@ Transaction-Processing-Systems können als Pipe-and-Filter-Architektur organisie
 Alle Anwendungen, die Interaktion mit einer geteilten Datenbank beinhalten, können als (transaktionsbasierte) Information Systems betrachtet werden. Diese erlauben kontrollierten Zugriff auf eine große Informationsbasis. Information Systems sind nahezu immer webbasierte Systemen, wobei Benutzeroberflächen in Webbrowsern implementiert werden.
 
 ![](media/6_18.png)
-Abbildung 9: Abstrakte Struktur von Information Systems als Blockdiagramm
+Abbildung 10: Abstrakte Struktur von Information Systems als Blockdiagramm [Fig. 6.18]
 
-Abbildung 9 zeigt die abstrakte Struktur von Information Systems als Blockdiagramm. In diesem Fall ist dieses als Layered Architecture organisiert. Eine äußere Schicht stellt eine meist grafische Benutzeroberflächen zur Interaktion mit Benutzern zur Verfügung. Eine weitere Schicht verarbeitet Anfragen von Benutzern und implementiert Mechanismen zur Authentifizierung sowie zur Autorisierung. Die dritte Schicht implementiert anwendungsspezifische Logik zum Zugriff auf die Datenbank. Diese stellt inklusive Transaktionsmanagement die vierte und innere Schicht.
+Abbildung 10 zeigt die abstrakte Struktur von Information Systems als Blockdiagramm. In diesem Fall ist dieses als Layered Architecture organisiert. Eine äußere Schicht stellt eine meist grafische Benutzeroberflächen zur Interaktion mit Benutzern zur Verfügung. Eine weitere Schicht verarbeitet Anfragen von Benutzern und implementiert Mechanismen zur Authentifizierung sowie zur Autorisierung. Die dritte Schicht implementiert anwendungsspezifische Logik zum Zugriff auf die Datenbank. Diese stellt inklusive Transaktionsmanagement die vierte und innere Schicht.
 
 Information Systems sind häufig auch Transaction-Processing-Systems. So sind zum Beispiel E-Commerce-Systeme internetbasierte Information Systems. Diese akzeptieren Bestellungen von Waren und veranlassen eine Lieferung. Es wird Kunden ein Produktkatalog zur Verfügung gestellt und Bezahlungen erfolgen innerhalb von Transaktionen.
 
@@ -294,9 +297,9 @@ Häufig sind Information Systems als verteiltes System mit einer mehrstufigen Cl
 Language-Processing-Systems übersetzen eine Sprache in einer alternative Repräsentation dieser. Bei Programmiersprachen werden resultierende Programme gegebenenfalls auch ausgeführt. Beispielsweise übersetzen Compiler Programmiersprachen in Maschinencode. NLP-Systeme übersetzen natürliche Sprache in eine Andere. Weitere Systeme können XML in Befehle zu Anfragen einer Datenbank oder in andere XML-Repräsentationen übersetzen.
 
 ![](media/6_21.png)
-Abbildung 10: Beispiel eines Language-Processing-Systems als Repository Architecture
+Abbildung 11: Beispiel eines Language-Processing-Systems als Repository Architecture [Fig. 6.21]
 
 ![](media/6_22.png)
-Abbildung 11: Beispiel eines Language-Processing-Systems als Pipe-and-Filter-Architecture
+Abbildung 12: Beispiel eines Language-Processing-Systems als Pipe-and-Filter-Architecture [Fig. 6.22]
 
-Abbildung 10 zeigt ein als Repository Architecture organisiertes Language-Processing-System als Blockdiagramm. Konkret wird hier eine Entwicklungsumgebung zum Umgang mit Programmiersprachen dargestellt. Ein Teil desselben Systems wird in Abbildung 11 als Pipe-and-Filter-Architecture dargstellt. Die Variante der Repository Architecture zentralisiert interne Repräsentationen der Sprache sowie weitere Definitionen in einem Repository. Diese Form der Organisation ermöglicht ein einfaches Ergänzen von Modulen zur Formatierung von Optimierung durch Anbindung an das Repository. Die Variante der Pipe-and-Filter-Architecture besitzt bei Batch-Verarbeitung positive Performanzeigenschaften, wenn Programme ohne Benutzerinteraktion kompiliert werden sollen. Eine Integration von weiteren Komponenten wie in der ersten Variante ist hier mit einem höheren Aufwand verbunden.
+Abbildung 11 zeigt ein als Repository Architecture organisiertes Language-Processing-System als Blockdiagramm. Konkret wird hier eine Entwicklungsumgebung zum Umgang mit Programmiersprachen dargestellt. Ein Teil desselben Systems wird in Abbildung 12 als Pipe-and-Filter-Architecture dargstellt. Die Variante der Repository Architecture zentralisiert interne Repräsentationen der Sprache sowie weitere Definitionen in einem Repository. Diese Form der Organisation ermöglicht ein einfaches Ergänzen von Modulen zur Formatierung von Optimierung durch Anbindung an das Repository. Die Variante der Pipe-and-Filter-Architecture besitzt bei Batch-Verarbeitung positive Performanzeigenschaften, wenn Programme ohne Benutzerinteraktion kompiliert werden sollen. Eine Integration von weiteren Komponenten wie in der ersten Variante ist hier mit einem höheren Aufwand verbunden.
