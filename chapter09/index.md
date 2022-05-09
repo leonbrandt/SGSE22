@@ -181,7 +181,80 @@ Allerdings werden die Kosten, um ein Altsystem am Laufen zu halten oder zu ände
 einem neuen System unumgänglich wird. Dazu tragen die vorangegangen Änderungen bei, die weitere Änderungen schwieriger
 machen. Die Dokumentation des Systems kann veraltet oder gar nicht vorhanden sein. Außerdem sorgen
 Performanceoptimierungen für alte Software häufig zu schwieriger verständlichen Code, der Änderungen wieder schwieriger
-macht. 
+macht.
+
+### Altsystemverwaltung
+
+Da Projekte an ein limitiertes Budget gebunden sind, muss entschieden werden welche Evolution von Altsystemen Sinn
+ergibt und welche verzichtbar sind. Dabei gibt es verschiedene Strategien wie mit einem Altsystem umgegangen wird. Die
+erste Möglichkeit ist es das System komplett zu entfernen, weil es nicht mehr zum geschäft beiträgt. Im Gegensatz dazu
+kann ein System unberührt bleiben, wenn es stabil läuft und einen großen Mehrwert für die Firma hat. Als dritte
+Strategie kann das System überarbeitet werden, um die Wartbarkeit zu verbessern. Das ergibt vor allem dann Sinn, wenn in
+der Zukunft noch Änderungen vonnöten sind, die dadurch einfacher umzusetzen sind. Als letzte Möglichkeit kann man das
+komplette System ersetzen. Das wird nötig, wenn das System aufgrund von bestimmten Faktoren nicht mehr lauffähig ist, z.
+B. wenn neue Hardware mit dem alten System nicht mehr kompatibel ist.
+
+![](assets/Bild9.png)
+
+[Abbildung 8] *10 Altsysteme bewertet*
+
+Für die Bewertung, welche Strategie gefahren werden soll, muss sowohl die technische als auch die wirtschaftliche Seite
+eines Projekts bewertet werden. In [Abbildung 8] werden beispielhaft zehn Altsystem nach diesen beiden Aspekten
+bewertet. Dabei ergeben sich vier Kategorien.
+
+1. Schlechte Qualität und kleiner Marktwert: System ist teuer und ohne großen mehrwert, es kann also entfernt werden.
+2. Schlechte Qualität und großer Marktwert: Da das System noch wichtig für das Unternehmen ist, sollte hier eine
+   Überarbeitung in Betracht gezogen werden.
+3. Gute Qualität und kleiner Marktwert: Diese Systeme sollten unverändert bestehen bleiben bis eine teure Änderung
+   aufkommt. Wenn das passiert, ist Abschalten die richtige Wahl.
+4. Gute Qualität und großer Marktwert: System ist wichtig für das Geschäft, deshalb sollte es weiter gewartet werden.
+
+Der Marktwert der Systeme wird dadurch bestimmt, dass die Zeit und Aufwand, den das System benötigt, mit den
+Alternativen abgewägt wird. Diese Abwägung kann anhand diverser Merkmale passieren, wie der Nutzung des Systems. Her
+können wenige und Gelegenheitsnutzer auf einen geringen Marktwert hinweisen. Einen weiteren Hinweis bringt ein Blick auf
+die unterstützen Geschäftsprozesse. Wenn das System nur veraltete Prozesse unterstützt, sorgt das für einen geringeren
+Marktwert. Wichtig ist außerdem, dass ein System zuverlässig ist, viele Ausfälle sorgen für einen kleinen Wert.
+Abschließend spielt auch die Systemausgabe eine große Rolle, wenn ein Geschäft auf die Ausgabe des Systems angewiesen
+ist, steigert das natürlich den Marktwert.
+
+Neben der Bewertung des wirtschaftlichen Marktwerts, ist es auch wichtig die technische Perspektive zu betrachten. Diese
+beinhaltet neben der eigentlichen Anwendung auch das Umfeld der Software. Das Umfeld beinhaltet beispielsweise die
+Hardware und verbundene Unterstützungssoftware. Um diese technische Perspektive einzunehmen, helfen die Fragen aus
+*Tabelle 1*.
+
+|Faktor|     Fragen| 
+|:---:|:---:|
+| Lieferstabilität| Existiert der Lieferant noch? Ist er finanziell stabil und wird weiter existieren? Wenn er nicht mehr existiert, wer wartet das System? | 
+| Ausfallrate| Fällt die Hardware häufig aus? Muss häufig neugestartet werden, weil Unterstützungssoftware abstürzt? | 
+| Alter| Wie alt sind Software und Hardware?  | 
+| Performance| Ist die Performance des Systems angemessen? Haben Performanzprobleme große Auswirkung auf die Nutzer?| 
+| Supportanforderungen| Welcher lokaler Support ist für die hard- und software nötig?  | 
+| Wartungskosten| Was sind die Kosten von Hardwarepflege und Softwarelizenzen? |
+| Interoperabilität| Gibt es Probleme bei Schnittstellen zu anderen Systemen? |
+
+*Tabelle 1: Faktoren zur Analyse des Umfelds*
+
+Um diese Fragen korrekt beantworten zu können, müssen Daten über die Kosten der Wartung oder Systemausfälle gesammelt
+werden. Neben der Umgebung ist natürlich die technische Qualität der Anwendung elementar. Um diese sinnvoll bewerten zu
+können, sollten Daten über die Anzahl der Systemänderungsanfragen, Anzahl der Nutzerschnittstellen und die Größe der
+Daten gesammelt werden. Mit diesen Daten lassen sich dann die Fragen aus *Tabelle 2* beantworten.
+
+| Faktor | Fragen | 
+|:---:|:---:|
+| Verständlichkeit | Wie verständlich ist der aktuelle Code? Wie komplex ist die Struktur? | 
+| Dokumentation | Was für eine Systemdokumentation ist vorhanden? ist diese vollständig, konsistent und aktuell? | 
+| Daten | Gibt es ein explizites Datenmodell für das System? Sind Daten aktuell und konsistent? | 
+| Performance | Ist die performance angemessen? Haben Performanzprobleme einen Einfluss auf den nutzer?| 
+| Programmiersprache | Wird die Programmiersprache noch genutzt? Wenn nicht gibt es trotzdem aktuelle Compiler? |
+| Konfigurationsmanagement | Sind die Versionen aller Teile durch ein Tool kontrolliert? Gibt es eine Beschreibung über alle Versionen? |
+| Testdaten | Existieren Testdaten für das System? Gibt es protokolle über Regressionstest bei neuen Funktionen? | 
+| Personalfähigkeiten | Ist Personal verfügbar mit Wissen über das System und Fähigkeiten es zu warten? |
+
+*Tabelle 2: Faktoren zur Analyse der Anwendung*
+
+Bei dieser Vorgehensweise handelt es sich um ein idealisiertes Vorgehen. Häufig beeinflussen weitere Faktoren eine große
+Rolle bei der Entscheidung. Dabei kann es sich um Firmenübernahmen, das Budget oder Entscheidungen der Geschäftsführung
+handeln.
 
 ## Softwarewartung
 
@@ -198,6 +271,8 @@ macht.
 [Abbildung 6]: chapter09/assets/Bild7.png
 
 [Abbildung 7]: chapter09/assets/Bild8.png
+
+[Abbildung 8]: chapter09/assets/Bild9.png
 
 Nach dem Lesen des Kapitels sollten Sie einiges wissen und dann noch viel mehr und sehr viel mehr und weniger.
 
