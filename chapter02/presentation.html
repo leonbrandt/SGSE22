@@ -120,7 +120,7 @@ Allgemeine Prozessmodelle (abstrakte Beschreibungen, ohne Details über einzelne
 
 ---
       
-## Das Wasserfallmodell - Modellbeschreibung     
+## Das Wasserfallmodell - Beschreibung     
 
 -	Anforderungsdefinition:
  -	grundliegende Anforderungen --> Systemspezifikation
@@ -143,7 +143,7 @@ Allgemeine Prozessmodelle (abstrakte Beschreibungen, ohne Details über einzelne
       
 ---
       
-## Das Wasserfallmodell - Modellbeschreibung 
+## Das Wasserfallmodell - Beschreibung 
       
 - 1. Das Ergebnis jeder Stufe --> genehmigte Dokumente.
 - 2. Die nächste Phase beginnt nicht, bevor die vorherige abgeschlossen wurde.
@@ -155,7 +155,7 @@ Im Vergleich zu Hardwareentwicklung, wo Phasen klar abgegrenzt werden können, �
       
 ---
       
-## Das Wasserfallmodell - Modellbeschreibung       
+## Das Wasserfallmodell - Beschreibung       
 
 Veränderungen an den Anforderungen --> erheblichen Verlangsamung des Prozesses. <br>      
 Kunden/Entwickler können die Softwarespezifikation einfrieren --> um weitere Änderungen zu verhindern.
@@ -165,10 +165,21 @@ Das bedeutet, dass:
 
 die Softwarewartung kann zur Folge haben:
 - dass einige oder alle der vorherigen Prozessphasen wiederholt werden müssen.
- - Daher sollte das Wasserfall-Modell nur Verwendung finden, wenn die Anforderungen gut durchdacht sind.      
-
-     
+ - Daher sollte das Wasserfall-Modell nur Verwendung finden, wenn die Anforderungen gut durchdacht sind.   
       
+---
+
+## Das Wasserfallmodell - Anwendung      
+
+Aufgrund der Notwendigkeit, das System bei Änderungen frühzeitig zu verfeinern,
+      ist das Wasserfallmodell nur für einige Arten von Systemen geeignet:
+- Eingebettete Systeme (Software interagiert mit Hardwaresystemen).      
+- Kritische Systeme. (umfängliche Sicherheitsanalyse der Softwarespezifikation/Softwareentwurfs nötig ist, 
+      erst danach entwickelt werden).     
+- Große Softwaresysteme, die Teil umfassenderer technischer Systeme sind, die von mehreren Partnerunternehmen entwickelt wurden. <br>
+      Hardware in Systemen kann nach einem ähnlichen Modell entworfen werden. <br>
+      -> gemeinsames Modell für Hardware und Software. <br>
+      --> eine unabhängige Entwicklung der verschiedenen Subsysteme möglich. <br>     
 
     </textarea>
     <script src="../_assets/js/remark-latest.min.js">
