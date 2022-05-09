@@ -108,7 +108,7 @@ Allgemeine Prozessmodelle (abstrakte Beschreibungen, ohne Details über einzelne
       
 ---
       
-## Das Wasserfallmodell
+## Das Wasserfallmodell - Einführung
       
 *	Abgeleitet aus einem Entwiclungsprozessen für große militärische Projekte
 *	Prozess als stufenweise abfolge von Aktivitäten
@@ -120,7 +120,7 @@ Allgemeine Prozessmodelle (abstrakte Beschreibungen, ohne Details über einzelne
 
 ---
       
-## Das Wasserfallmodell      
+## Das Wasserfallmodell - Modellbeschreibung     
 
 -	Anforderungsdefinition:
  -	grundliegende Anforderungen --> Systemspezifikation
@@ -128,7 +128,7 @@ Allgemeine Prozessmodelle (abstrakte Beschreibungen, ohne Details über einzelne
  -	Softwarespezifikation --> Softwareentwurf (grundlegende Bestandteile und Beziehungen)
 -	Implementierung und Unit-Tests:
  -	Softwareentwurf --> eine Menge an Programmen
- -	Test der Software auf Unit Ebene --> Lieferung von funktionsfähigen Softwaremodulen
+ -	Test der Software auf Unit Ebene --> funktionsfähige Softwaremodulen
 -	Integration- und Systemtest:
  -	Test des Gesamtsystems (bestehend aus den Softwaremodulen) --> betriebsbereite Software
 -	Betrieb und Instandhaltung:
@@ -140,6 +140,26 @@ Allgemeine Prozessmodelle (abstrakte Beschreibungen, ohne Details über einzelne
   <img style="width:100%;" src="img/01.png"/>
 </div>  
 <br>
+      
+---
+      
+## Das Wasserfallmodell - Modellbeschreibung 
+      
+* Das Ergebnis jeder Stufe --> genehmigte Dokumente. <br>
+Die nächste Phase beginnt nicht, bevor die vorherige abgeschlossen wurde. <br>
+Sinnvoll für die Hardwareentwicklung mit der hohe Herstellungskosten. <br>
+Im Vergleich zu Hardwareentwicklung, wo Phasen klar abgegrenzt werden können, überschneiden sich bei Softwareentwicklung die Phasen. <br>
+(Bspw. werden bei der Implementierung möglicherweise Fehler im Softwareentwurf gefunden)
+
+Wegen der hohen Kosten bei der Herstellung und Abnahme von Dokumenten sind die Iterationen von Entwicklungsaktivitäten teuer und verlangen erhebliche Überarbeitungen.
+
+Infolgedessen können sowohl Kunden als auch Entwickler die Softwarespezifikation vorzeitig einfrieren, um weitere Änderungen zu verhindern. Leider bedeutet dies, dass Probleme später gelöst, ignoriert oder programmiert werden. Ein vorzeitiges Einfrieren von Anforderungen kann dazu führen, dass das System nicht das tut, was der Benutzer wünscht. Es kann auch zu schlecht strukturierten Systemen führen.
+
+In der letzten Phase des Lebenszyklus (Betrieb und Wartung) wird die Software in Betrieb genommen. Dabei werden Fehler und Lücken in den ursprünglichen Anforderungen identifiziert.
+
+Das System muss sich also weiterentwickeln, um nützlich zu bleiben. Das Durchführen dieser Veränderungen (die Softwarewartung) kann zur Folge haben, dass einige oder alle der vorherigen Prozessphasen wiederholt werden müssen. Das Problem beim Wasserfall-Modell ist seine starre Aufteilung des Projektes in die verschiedenen Phasen. Zu einem frühen Zeitpunkt müssen Verpflichtungen eingegangen werden und das bedeutet, dass es schwer ist, sich auf neue Anforderungen des Kunden einzustellen. Daher sollte das Wasserfall-Modell nur Verwendung finden, wenn die Anforderungen gut durchdacht sind.      
+
+     
       
 
     </textarea>
