@@ -19,7 +19,7 @@ Konfigurationsmanagent setzt sich aus folgenden vier Aktivitäten zusammen:
 
 ![25.1](assets/25.1-CM_activities.png)
 
-Die obere Abbildung 25.1 zeigt die Aktivitäten und deren Abhängigkeiten untereinander. Die einzelnen Bestandteile umfassen den gesamten Änderungsprozess eines Software Systems und werden in den kommenden Kapiteln genauer erklärt. 
+Die obere Abbildung 25.1 zeigt die Aktivitäten und deren Abhängigkeiten untereinander. Die einzelnen Bestandteile umfassen den gesamten Änderungsprozess eines Software Systems und werden in den kommenden Abschnitten genauer erklärt. 
 
 ### Nutzung von Konfigurationsmanagement-Tools in der Softwareentwicklung
 
@@ -42,92 +42,76 @@ Es gibt standardisierte Definitionen durch IEEE (z.B. IEEE 828-2012), aber diese
 
 Die Terminologie nach Sommerville folgt nach der hier aufgeführten Tabelle (alphabetisch sortiert). Eine Reihe Der Begriffe ist ähnlich zu den Begriffen bei der Nutzung von Versionskontrollsystemen wie Git, werden aber unabhängig davon betrachtet.
 
-| Begriff | Beschreibung |
-| ------- | ------------ |
-| Baseline | Eine Sammlung von Komponenten, welche zusammen ein System ergeben. Die Versionen der Komponenten einer Baseline können nicht verändert werden und es ist immer möglich, eine Baseline aus den versionierten Komponenten wiederherzustellen. |
-| Branching | Das Erstellen einer neuen Codeline basierend auf einer bestehenden Codeline |
-| Codeline | Das Zusammenfassen einer Version einer Softwarekomponente und deren Abhängigkeiten (z.B. die Branches bei Git) |
-| Configuration (version) control | Der Prozess zur Dokumentation von Änderungen am System und Komponenten über die Lebensspanne des Systems. |
-| Configuration item / software configuration item (SCI) | Jeder Bestandteil eines Softwareprojekts, welcher unter Versionskontrolle steht (z.B. Code, Dokumentation).|
-| Mainline | Eine Reihe von Baselines, die unterschiedliche Versionen des gleichen Systems darstellen. |
-| Merging | Das Erstellen einer neuen Version durch Zusammenbringen unterschiedlicher Codelines. |
-| Release | Eine Version der Software, welche für Endnutzer veröffentlicht wurde. |
-| Repository | Eine geteilte Datenbank mit Versionen und Metainformationen von Software. |
-| System building | Die Erstellung eines ausführbaren Systems durch Kompilierung und Verlinkung der Bestandteile in den richtigen Versionen. |
-| Version | Eine Instanz eines Configuration Items, die sich in irgendeiner Form von der letzten Form unterscheidet. Versionen sollten durch ein einzigartiges Kennzeichen markiert werden. | 
-| Workspace | Eine private Arbeitsumgebung, worin die Software ohne die Beeinträchtigung anderer Entwickler verändert werden kann. |
+| Begriff                                                | Beschreibung                                                                                                                                                                                                                                |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Baseline                                               | Eine Sammlung von Komponenten, welche zusammen ein System ergeben. Die Versionen der Komponenten einer Baseline können nicht verändert werden und es ist immer möglich, eine Baseline aus den versionierten Komponenten wiederherzustellen. |
+| Branching                                              | Das Erstellen einer neuen Codeline basierend auf einer bestehenden Codeline                                                                                                                                                                 |
+| Codeline                                               | Das Zusammenfassen einer Version einer Softwarekomponente und deren Abhängigkeiten (z.B. die Branches bei Git)                                                                                                                              |
+| Configuration (version) control                        | Der Prozess zur Dokumentation von Änderungen am System und Komponenten über die Lebensspanne des Systems.                                                                                                                                   |
+| Configuration item / software configuration item (SCI) | Jeder Bestandteil eines Softwareprojekts, welcher unter Versionskontrolle steht (z.B. Code, Dokumentation).                                                                                                                                 |
+| Mainline                                               | Eine Reihe von Baselines, die unterschiedliche Versionen des gleichen Systems darstellen.                                                                                                                                                   |
+| Merging                                                | Das Erstellen einer neuen Version durch Zusammenbringen unterschiedlicher Codelines.                                                                                                                                                        |
+| Release                                                | Eine Version der Software, welche für Endnutzer veröffentlicht wurde.                                                                                                                                                                       |
+| Repository                                             | Eine geteilte Datenbank mit Versionen und Metainformationen von Software.                                                                                                                                                                   |
+| System building                                        | Die Erstellung eines ausführbaren Systems durch Kompilierung und Verlinkung der Bestandteile in den richtigen Versionen.                                                                                                                    |
+| Version                                                | Eine Instanz eines Configuration Items, die sich in irgendeiner Form von der letzten Form unterscheidet. Versionen sollten durch ein einzigartiges Kennzeichen markiert werden.                                                             |
+| Workspace                                              | Eine private Arbeitsumgebung, worin die Software ohne die Beeinträchtigung anderer Entwickler verändert werden kann.                                                                                                                        |
 
 ## Version Management
+
+Versionsmanagement bechreibt den Prozess der Versionierung von Software Komponenten und deren Nutzung in Systemen. Ein weiterer Bestandteil ist di Sicherstellung, dass sich Änderungen unterschiedlicher Entwickler nicht gegeneinander stören. In dem Prozess werden Baselines und Codelines verwaltet.
+
+![25.4 Codelines und Baselines](assets/25.4-Codelines_and_baselines.png)
+
+Die Abbildung 25.4 zeigt den Unterschied zwischen Code-, Base- und Mainlines. **Codelines** sind Sequenzen des Quellcodes in unterschiedlichen Versionen. Eine **Baseline** ist eien Zusammenstellung unterschiedlicher Versionen aus mehreren Codelines. Die Sequenz der unterschiedlichen Baselines nennt sich **Mainline**.
+
+### Versionskontrollsysteme
+
+Für die Nutzung von Versionsmanagement gitb es zwei Arten von Versionskontrollsystemen (engl. version control system; VC), in denen die Versionen der Code- und Baselines gespeichert werden.
+
+In zentralisierten Systemen, z.B. Subversion, gibt es ein einziges Repository, welches alle Versionen der Software anthält. In verteilten Systemen, wie z.B. Git, gibt es verschiedene Versionen des Repositories gleichzeitig (Bei GitHub = Forking). 
+Die beiden Arten an Systemen unterscheiden sich in einigen Punkten, bieten aber insgesamt folgende Funktionalität:
+
+- Identifizierung von Versionen und Releases anhand von einzigartigen Kennzeichen (z.B. v1.1.0)
+- Aufzeichnen der Änderungshistorie
+- Unabhängige Entwicklung mehrerer Personen
+- Unterstützung für widerverwendbare Komponenten und Projekte (z.B. Aufteilung in mehrere Repositories)
+- Effiziente Speicherung und Komprimierung von Dateien
+
+Damit mehrere Entwickler gleichzeitig unabhägig voneinander arbeiten können, gibt es das Konzept eines Projektrepositories und privatern Repositories. Das Projektrepository ist eine zentrale Version des Entwicklungsstandes, welches von den Entwicklern mit einem check-out heruntergeladen werden kann. Der Entwickler erhält dabei eine lokale Kopies des Repositories, das sogenannte private Repository. Daran können Änderungen vorgenommmen werden und per check-in wirder an das Projektrepository gesendet werden. Bei verteilten Versionskontrollsystemen wird statt einem check-in und check-out jeweils das gesamte Repository dupliziert (cloning).
+
+Der allgemeine Ablauf der Arbeit mit Versionskontrollsystemen ist wie auf den folgenden Abbildungen beschrieben:
+
+Repository check-in und check-out bei zentralisierten Versionskontrollsystemen
+![Repository check-in und check-out](assets/25.5-Check-in_check-out.png)
+
+Repository cloning bei verteilten Versionskontrollsystemen
+![](assets/25.5-Repository_cloning.png)
+
+
+Die Nutzung von Versionskontrollsystemen bietet folgende Vorteile:
+
+- Backup der Dateien/Repositories und Wiederherstellung aus lokalen Kopien
+- Arbeit ohne Internetzugriff
+- Entwicklung und Tests auf der lokalen Umgebung des Entwicklers
+
+### Entwicklung von Open Source Projekten
+
+Bei der Entwicklung von Open Source Projekten ist die Verwendung von verteilten Versionskontrollsystemen notwendig. Durch die Existenz eines zentralen Projektrepositories können die Entwickler das Repository clonen, Änderungen daran vornehmen und danach eine Anfrage an das Projektrepository stellen, die Änderungen zu übernehmen. Die Änderungen können dann durch eine befugte Person des Open Source Projekts freigegeben werden.
+
+### Branching un Merging
+
+Die Entwicklung des Software Systems erfolgt nicht nur in einer Codeline, sondern es können verschiedene Codelines durch **Branching** aufgespalten werden und unabhängig voneinander entwickelt werden. Bei einer Zusammenführung zweier unterschiedlicher Codelines werden diese durch **Merging** zusammengeführt.
+
+![Merging und Branching](assets/25.8-Merging_branching.png)
+
+### Speicherung von Dateien
+
+Wie bereits erwähnt, ist ein Vorteil der Nutzung von Versionskontrollsystemen die Komprimierung und Speicherung von unterschiedlichen Versionen der gleichen Datei/Komponente. Anstatt dass jede neue Version separat gespeichert wird, werden in einem Versionskontrollsystem nur die Änderungen zwischen zwei Versionsständen gespeichert (z.B. die bearbeiteten Zeilen bei Textdateien oder veränderten Bytes bei Binärdateien). Bei einem Checkout wird aus der Änderungshistorie der aktuelle Stand der Datei zusammengebaut.
+Dazu kommen noch mögliche Erweiterungen, um die Schnelligkeit zu verbessern. Dazu gehören beispielsweise die vollständige Speicherung der aktuellesten Version einer Datei und die Zusammenfassung mehrerer kleiner Dateien zu einer Änderungshistorie.
 
 ## System building
 
 ## Change Management
 
 ## Release Management
-
-## Links
-
-[Markdown] ist eine Sprache, die nach HTML konvertiert werden kann. 
-
-[Markdown]: http://daringfireball.net/projects/markdown/
-
-## Aufzählung
-
-Es unterteilt sich in:
-
-* A
-  * A1
-* B
-  * B1
-  * B2
-* C
-
-
-# Überschrift
-
-"...the **go to** statement should be abolished..." [1].
-
-Dieser Link führt intern zu einem anderen [Thema](qualitaet/README)
-
-Dieser Link führt extern nach [Youtube](https://www.youtube.com/)
-
-> Dieser Text ist völlig sinnlos, aber steht trotzdem hier. Dieser Text geht über mehrere Zeilen.
-
-## Unterüberschrift
-
-* Eins
-  * eins.eins
-  * eins.zwei
-* Zwei
-  * Zwei.zwei
-* Drei
-
-### Code
-
-```javascript
-public class A {
-  Integer a;
-  public A() {
-    this.a = 1
-  }
-}
-```
-
-Syntax Highlighting für Javascript. Weitere Sprachen müssen konfiguriert werden.
-
-### Bilder
-
-![](media/image.jpg)
-
-### Audio
-
-[](media/sample.mp3 ':include')
-
-### Video
-
-[](media/sample.mp4 ':include')
-
-## Referenzen
-
-[1]: Dijkstra, E. W. (1968). Go to statement considered harmful. 
-Communications of the ACM, 11(3), 147-148.
