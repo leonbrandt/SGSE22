@@ -52,16 +52,8 @@ Laut Perrow [2] lassen sich fast alle Unfälle auf die Kombination von Fehlern a
 
 ## Sicherheitsanforderungen
 
-Bei Sicherheitsanforderungen handelt es sich zum einen um funktionale Anforderungen, die zusätzlich im System implementiert werden müssen. Zusätzlich kann es sich um Funktionen handeln, die einen Schutz vor Systemausfällen und Angriffen von außen bieten. Im Gegensatz zu den standardmäßigen funktionalien Anforderungen, die definieren wie das System sich verhalten soll, werden bei den Sicherheitsanforderungen sogenannte "soll nicht" Anforderungen definiert. Dabei handelt es sich um Anforderungen die nicht eintreten dürfen und auch nicht direkt in das System implementiert werden können. Bei dem Prozess der Sicherheitsspezifikation werden wir Schritte durchgeführt.
-![test](./media/Gefahrenorientierte-Analyse.png)
-
-1. Gefährdungsermittlung
-   * In diesem Schritt werden mögliche Gefahren für das System identifiziert und die Ergebnisse in einem Gefahrenkataster dokumentiert.
-   * Das Gefahrenkataster ist ein wichtiges Rechtsdokument, welches die sicherheitsrelevanten Entscheidung beinhaltet und im Falle einer auftretenden Gefahr hinbeigezogen werden kann.
-2. Gefährdungsbeurteilung
-   * Im nächsten Schritt werden die erfassten Gefahren bewertet. Jede Gefahr kann zu eine von drei Risikokategorien zugeordnet werden. Diese Kategorien lauten **nicht tolerierbar**(darf unter keinen Umständen zu einem Unfall führen), **so gering wie vernünftigerweise praktikabel – ALARP
-3. Gefahrenanalyse
-4. Risikominderung
+Bei Sicherheitsanforderungen handelt es sich zum einen um funktionale Anforderungen, die zusätzlich im System implementiert werden müssen. Zusätzlich kann es sich um Funktionen handeln, die einen Schutz vor Systemausfällen und Angriffen von außen bieten. Im Gegensatz zu den standardmäßigen funktionalien Anforderungen, die definieren wie das System sich verhalten soll, werden bei den Sicherheitsanforderungen sogenannte "soll nicht" Anforderungen definiert. Dabei handelt es sich um Anforderungen die nicht eintreten dürfen und auch nicht direkt in das System implementiert werden können. Bei dem Prozess der Sicherheitsspezifikation werden vier Schritte durchgeführt.
+![Prozess Sicherheitsspezifikation](./media/Gefahrenorientierte-Analyse.png)
 
 ### Gefährdungsermittlung
 
@@ -118,13 +110,47 @@ Für die sicherheitskritische Systementwicklung sind agile Prozesse nicht zum em
 
 ### Sicherheitsgewährleistungsprozesse
 
-In jeder Phase beim entwickeln einer Software muss gewährleistet werden, dass das System sicher ist. Dafür gibt es eine Reihe von Aktivitäten die das überprüfen. Zusätzlich zu den Tätigkeiten muss die dafür verantwortliche Person dokumentiert werden. Die Dokumentation der zuständigen Person ist wichtig, da zum einen diese verantwortungsvoller mit der Aufgabe umgeht und im Falle von einer rechtlichen Auseinandersetzung bei einem Unfall sich verteidigen kann.
+In jeder Phase beim entwickeln einer Software muss gewährleistet werden, dass das System sicher ist. Dafür gibt es eine Reihe von Aktivitäten die das überprüfen. Zusätzlich zu den Tätigkeiten muss die dafür verantwortliche Person dokumentiert werden. Die Dokumentation der zuständigen Person ist wichtig, da zum einen diese verantwortungsvoller mit der Aufgabe umgeht und im Falle von einer rechtlichen Auseinandersetzung, bei einem Unfall, sich verteidigen kann. Bei dem entwickeln von sicherheitskritischen Systemen ist zu beachten, dass häufiger externe Komponenten verwendet werden und diese unter Umständen mit anderen Standards umgesetzt wurden. Daher müssen diese ebenfalls kontrolliert und zertifiziert werden. Somit ist die Prozesssicherung ein wichtiger Bestandteil bei der Entwicklung dieser Systeme. Mit Testen können unter Umstände nicht alle Probleme gefunden werden, die in seltenen Fällen zu einen Unfall führen. Das liegt an den "soll nicht"-Anforderungen, da diese nur schwer mit einem Test zu überprüfen sind. Aus diesem Grund werden Aktivitäten zum gewährleisten der Sicherheit durchgeführt. Darunter zählen:
+
+1. Entwicklung von Gefahrenerfassung- und Überwachungssysteme.
+2. Es werden Personen ernannt, die für die Gewährleistung der Sicherheit verantwortlich sind.
+3. Häufige Überprüfung der Sicherheit.
+4. Detailliertes Konfigurationsmanagement.
 
 ### Formale Verifizierung
 
+Formale Methoden dienen hauptsächlich für die mathematische Analyse der Spezifikation. Diese wurden vorallem entwickelt aufgrund des hohen Bedarfes an Zusicherung in sicherheitskritischen Systemen. Denn umfangreiche Systemtests sind sehr kostspielig und decken trotzdem nicht alle Fehler auf. Es gibt mehrere Phasen des V&V-Prozesses, wo formale Methoden eingesetzt werden können. Zum Beispiel wenn eine mathematische Spezifikation des Systems erstellt wird. Dabei kann diese mathematisch auf Konsistenz analysiert werden. Dadurch können Unterschiede zwischen der Spezifikation und der Umsetzung erkannt werden. Formale Methoden haben sowohl Vorteile als auch Nachteile
+
+* Vorteile
+  * Aufgrund der Erstellung einer mathematischen Spezifikation muss sich intensiv mit den Anforderungen beschäftigt werden, wodurch die ersten Fehler erkannt werden können.
+  * Findet heraus wenn mehrere Systeme auf die gleichen geschützten Ressourcen zugreifen, wodurch ein Deadlock entstehen kann.
+* Nachteile
+  * Bei der Formulierung müssen spezielle Notationen eingehalten werden, die nicht jeder verstehen kann.
+  * Es kann sehr teuer werden, da sowohl die Entwicklung einer Spezifikation als auch der Nachweise für die Spezifikation sehr kostspielig ist.
+
 ### Modellprüfung
 
+Die Modellprüfung ist eine Alternative zur formalen Analyse. In der nachfolgenden Abbildung ist der Ablauf dargestellt.
+
+![Modellprüfung](./media/Model_ckecking.png)
+
+Zu Beginn wird ein Endlicher Automat für das System entwickelt und das Model auf Fehler bei der Verwendung eines weiteren Systems überprüft. Dieses zusätzliche System wird Modellprüfer genannt. Dieser untersucht alle möglichen Pfade durch das Modell und kontrolliert dabei, ob die Eigenschaft für jeden Pfad gilt. Wenn die Eigenschaft korrekt ist, wird dieses durch den Modellprüfer bestätigt. Ansonsten wird die überprüfte und fehlgeschlagene Eigenschaft ausgegeben. Die Modellprüfung kann gut bei kleinen und mittel großen Systemen eingesetzt werden. Denn bei großen Systeme gibt es viele verschiedene Zustände, wodurch die Rechenzeit deutlich erhöht wird.
+
 ### Statische Programmanalyse
+
+Bei der statischen Programmanalyse wird der Quelltext überprüft, um mögliche Fehler oder Anomalien zu erkennen. Dabei wird der Code geparst, wodurch verschiedene Arten von Anweisungen und Rückschlüsse auf den Kontrollfluss im Programm möglich ist. Dadurch kann erkannnt werden, ob eine Variable ohne Initialisierung verwendet wird oder der Wert von Daten außerhalb des Gültigkeitbereiches liegt. Wichtig hierbei ist, dass dies lediglich als Ergänzung zu einer Inspektion eingesetzt werden kann und diese nicht vollständig ablöst. Es existieren insgesamt drei Ebenen der statischen Programmanalyse:
+
+1. Charakteristische Fehlerprüfung
+   * Dabei werden häufige Fehler aufgedeckt, die von den Programmierern gemacht wurden.
+   * Es werden Muster erkannt, die für das Problem üblich sind.
+   * Gefundene Fehler werden hervorgehoben.
+2. Benutzerdefinierte Fehlerprüfung
+   * Dabei werden Fehlermuster einer Programmiersprache definiert, wodurch die erkennbaren Fehlerarten erweitert werden.
+   * Der Benutzer legt dabei bestimmte Regeln fest, die im Programm eingehalten werden.
+3. Behauptungsprüfung
+   * Dabei nehmen die Entwickler formelle Zusicherungen auf, die Beziehungen angeben, die im Programm gelten.
+
+Die statische Programmanalyse hat den Vorteil, dass viele Fehler entdecken werden. Der Nachteil ist jedoch, dass eine hohe Anzahl an falsch positiven Ergebnisse ebenfalls vorliegen. Die Anzahl kann aber durch zusätzliche Behauptungen im Programm reduziert werden. Trotzdem wird häufig diese Methode, vorallem bei der Überprüfung von Pufferüberläufe, eingesetzt. Außerdem ist sie relativ kostengünstig, um Schwachstellen im System zu finden.
 
 ## Sicherheitsfälle
 
