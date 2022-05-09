@@ -17,22 +17,10 @@ und Wiederverwenden von Software.
 existierender Software zu maximieren. Die Softwareeinheiten koennen
 dabei von unterschiedlicher Groesse sein:
 
-1. *System-Wiederverwendung* Komplette Systeme, welche aus einer Anzahl an
-Applikationsprogrammen besteht, koennen als Teil eines Systems bestehend aus Systemen
-wiederverwendet werden (Kapitel 20)
-2. *Applikations-Wiederverwendung* Eine Applikation kann unveraendert oder nach Anpassung
-an Wuenschen vom Kunden in einem System wiederverwendet werden. Applikations-Familien oder Applikationen 
-mit gleicher Architektur, welche an individuelle Kunden angepasst sind, koennen
-ebenfalls auch zur Entwicklung neuer Systeme verwendet werden. 
-3. *Komponenten-Wiederverwendung* Komponenten (von Subsystemen bis hin zu einzelnen Objekten)eines Systems koennen wiederverwendet werden.
-Komponenten koennen dabei in der Cloud oder auf einem privaten Server gehostet werden und eventuell mit Hilfe
-eines "Application programming interfaces" (API) als Service erreichbar sein.
-4. *Objekt- und Funktions-Wiederverwendung* Softwarekomponenten, welche eine einzelne Funktion
-(zum Beispiel eine mathematische Funktion) oder eine Objektklasse implementieren, kann 
-wiederverwendet werden. Standard Bibliotheken verwenden diese Art der Wiederverwendung.
-In Bereichen von mathematischen Alorithmen und Grafiken, wird teure Expertise 
-fuer die Entwicklung effizienter Objekte und Funktionen benoetigt. Die Wiederverwendung von 
-Standard Bibliotheken ist deshalb besonders Kosteneffizient.
+1. *System-Wiederverwendung* Komplette Systeme, welche aus einer Anzahl an Applikationsprogrammen bestehen, koennen als Teil eines Systems bestehend aus Systemen wiederverwendet werden (Kapitel 20)
+2. *Applikations-Wiederverwendung* Eine Applikation kann unveraendert oder nach Anpassung an Wuenschen vom Kunden in einem System wiederverwendet werden. Applikations-Familien oder Applikationen mit gleicher Architektur, welche an individuelle Kunden angepasst sind, koennen ebenfalls auch zur Entwicklung neurer Systeme verwendet werden. 
+3. *Komponenten-Wiederverwendung* Komponenten (von Subsystemen bis hin zu einzelnen Objekten)eines Systems koennen wiederverwendet werden. Komponenten koennen dabei in der Cloud oder auf einem privaten Server gehostet werden und eventuell mit Hilfe eines "Application programming interfaces" (API) als Service erreichbar sein.
+4. *Objekt- und Funktions-Wiederverwendung* Softwarekomponenten, welche eine einzelne Funktion (zum Beispiel eine mathematische Funktion) oder eine Objektklasse implementieren, koennen  wiederverwendet werden. Standard Bibliotheken verwenden diese Art der Wiederverwendung. In Bereichen von mathematischen Algorithmen und Grafiken, wird teure Expertise fuer die Entwicklung effizienter Objekte und Funktionen benoetigt. Die Wiederverwendung von Standardbibliotheken ist deshalb besonders kosteneffizient.
 
 Grundsaetzlich sind alle Softwaresysteme mit generischer Funktionalitaet 
 wiederverwendbar. Dennoch koennen diese Systeme oder Komponenten so
@@ -42,7 +30,7 @@ ebenfalls die Ideen, welche der Software zu Grunde liegen, wiederverwendet werde
 Das Konzept wird "Konzept-Wiederverwendung" genannt. Es werden also 
 eine Idee, eine Art zu arbeiten oder Algorithmen wiederverwendet. Dieses 
 Konzept ist dabei abstrakt ohne Implementierungsdetails aufgeschrieben
-und kann so fuer jedes neues Problem angepasst werden. Die Konzept-Wiederverwendung wird in Design Pattern (Kapitel 7) konfigurierbaren 
+und kann so fuer jedes neues Problem angepasst werden. Die Konzept-Wiederverwendung wird in Design Pattern (Kapitel 7), konfigurierbaren 
 Systemen und Programmgeneratoren verkoerpert.
 
 Im Folgenden werden die Vorteile der Software-Wiederverwendung dargestellt.
@@ -75,7 +63,7 @@ Fehlende Werkzeugunterstützung
 In den letzten 20 Jahren wurden einige Techniken entwickelt, um die Wiederverwendung
 von Software zu ermoeglichen. Diese Techniken basieren darauf, dass Software 
 in gleichen Anwendungsbereichen aehnlich ist und somit wiederverwendet werden
-kann. Es koennen dabei simple Funktionen oder ganze Applikationen wiederverwendet werde. 
+kann. Es koennen dabei simple Funktionen oder ganze Applikationen wiederverwendet werden. 
 Zusaetzlich helfen Standards bei der Wiederverwendung. Im Folgenden 
 wird die Wiederverwendungslandschaft dargestellt (verschiedene Arten
 der Wiederverwendung) und anschliessend kurz erlaeutert.
@@ -84,125 +72,87 @@ BILD
 
 | A          |     B       |
 |:----------:|:----------------:|
-Anwendungsframeworks Sammlungen von abstrakten und konkreten Klassen werden angepasst und
-erweitert um Anwendungssysteme zu erstellen.
-Integration von Anwendungssystemen Zwei oder mehr Anwendungssysteme werden integriert, um eine erweiterte Funktionalitaet bereitzustellen.
-Architekturmuster Standardsoftwarearchitekturen, die gängige Arten von 
-Anwendungssystem unterstützen, dienen als Basis von Anwendungen. Siehe 
-Kapitel 6, 11 und 17.
-Aspektorientierte Software-Entwicklung
-Gemeinsame Komponenten werden an verschiedenen Stellen in eine Anwendung eingewoben
-wenn das Programm kompiliert wird.
-Komponentenbasierte Softwareentwicklung
-Systeme werden entwickelt, indem Komponenten integriert werden (Sammlungen von
-Objekten), die den Komponentenmodellstandards entsprechen. Siehe Kapitel 16.
-Konfigurierbare Anwendungssysteme Domänenspezifische Systeme sind so konzipiert, dass sie auf die Bedürfnisse bestimmter Systemkunden konfiguriert werden können.
-Design Patterns Generische Abstraktionen, die anwendungsübergreifend auftreten, werden als Entwurfsmuster dargestellt, welche abstrakte und konkrete Objekte und Interaktionen zeigen. Siehe Kapitel 7.
-ERP-Systeme Große Systeme, die generische Geschäftsfunktionen und Regeln kapseln, werden für eine Organisation konfiguriert.
-Legacy-Systemumhüllung Legacy-Systeme (Kapitel 9) werden „umhüllt“, indem eine Menge von Interfaces definiert werden. So wird der Zugriff
-auf diese Legacy-Systeme ueber beschriebene Interfaces bereitgestellt.
-Modellgetrieben Entwicklung Software wird als Domänenmodelle und als
-implementierungsunabhaengige Modelle dargestellt. Aus diesen Modellen wird Code generiert.
-Siehe Kapitel 5.
-Programmgeneratoren Ein Generatorsystem bettet Wissen über eine Art von Anwendung ein und
-wird verwendet, um Systeme aus diesem Gebiet aus einem vom Benutzer bereitgestelltem Systemmodell zu generieren.
-Programmbibliotheken Klassen- und Funktionsbibliotheken, die häufig verwendete Abstraktionen implementieren, stehen zur Wiederverwendung zur Verfügung.
-Serviceorientierte Systeme Systeme werden durch die Verknüpfung gemeinsam genutzter Dienste entwickelt, die ggf.
-extern bereitgestellt werden. Siehe Kapitel 18.
-Software-Produktlinien Ein Anwendungstyp wird in einer gemeinsamen Architektur verallgemeinert, sodass dieser für verschiedene Kunden angepasst werden kann.
-Systeme von Systemen Zwei oder mehr verteilte Systeme werden integriert, um ein neues System zu erstellen. Siehe Kapitel 20.
+|Anwendungsframeworks | Sammlungen von abstrakten und konkreten Klassen werden angepasst und erweitert um Anwendungssysteme zu erstellen. |
+|Integration von Anwendungssystemen | Zwei oder mehr Anwendungssysteme werden integriert, um eine erweiterte Funktionalitaet bereitzustellen. |
+|Architekturmuster | Standardsoftwarearchitekturen, die gängige Arten von Anwendungssystem unterstützen, dienen als Basis von Anwendungen. Siehe Kapitel 6, 11 und 17. |
+|Aspektorientierte Software-Entwicklung | Gemeinsame Komponenten werden an verschiedenen Stellen in eine Anwendung eingewobenwenn das Programm kompiliert wird. |
+|Komponentenbasierte Softwareentwicklung | Systeme werden entwickelt, indem Komponenten integriert werden (Sammlungen von Objekten), die den Komponentenmodellstandards entsprechen. Siehe Kapitel 16. |
+|Konfigurierbare Anwendungssysteme | Domänenspezifische Systeme sind so konzipiert, dass sie auf die Bedürfnisse bestimmter Systemkunden konfiguriert werden können. |
+|Design Patterns | Generische Abstraktionen, die anwendungsübergreifend auftreten, werden als Entwurfsmuster dargestellt, welche abstrakte und konkrete Objekte und Interaktionen zeigen. Siehe Kapitel 7. |
+|ERP-Systeme | Große Systeme, die generische Geschäftsfunktionen und Regeln kapseln, werden für eine Organisation konfiguriert. |
+|Legacy-Systemumhüllung | Legacy-Systeme (Kapitel 9) werden „umhüllt“, indem eine Menge von Interfaces definiert werden. So wird der Zugriff auf diese Legacy-Systeme ueber beschriebene Interfaces bereitgestellt. |
+|Modellgetrieben Entwicklung | Software wird als Domänenmodelle und als implementierungsunabhaengige Modelle dargestellt. Aus diesen Modellen wird Code generiert. Siehe Kapitel 5. |
+|Programmgeneratoren | Ein Generatorsystem bettet Wissen über eine Art von Anwendung ein und wird verwendet, um Systeme aus diesem Gebiet aus einem vom Benutzer bereitgestelltem Systemmodell zu generieren. |
+|Programmbibliotheken | Klassen- und Funktionsbibliotheken, die häufig verwendete Abstraktionen implementieren, stehen zur Wiederverwendung zur Verfügung. |
+|Serviceorientierte Systeme | Systeme werden durch die Verknüpfung gemeinsam genutzter Dienste entwickelt, die ggf. extern bereitgestellt werden. Siehe Kapitel 18. |
+|Software-Produktlinien | Ein Anwendungstyp wird in einer gemeinsamen Architektur verallgemeinert, sodass dieser für verschiedene Kunden angepasst werden kann. |
+|Systeme von Systemen | Zwei oder mehr verteilte Systeme werden integriert, um ein neues System zu erstellen. Siehe Kapitel 20. |
 
 Im Folgenden werden die Hauptfaktoren beschrieben, welche beachtet werden sollten,
 wenn die Wiederverwendbarkeit von Softeware geplant ist.
 
-1. **Entwicklungszeitplan der Software** Wenn die Software schnell 
-entwickelt werden soll, bietet es sich an, ganze Systeme statt einzelner
-Komponenten wieder zu verwenden. Es wird zwar nicht perfekt auf die
-Anforderungen passen, dennoch wird die Entwicklungszeit stark reduziert.
-2. **Erwartete Lebensdauer der Software** Bei einer langen Lebensdauer 
-sollte das Augenmerk auf die Wartbarkeit der Software gelegt werden.
-Bei solcher Software sollte auf gekaufte Komponenten externer Unternehmen
-verzichtet werden. Diese koennen beispielsweise den Support einstellen. 
-Das Verwenden von Open-Source Systemen und Komponenten kann ermoeglichen,
-auf den Quellcode zugreifen zu koennen und eine Kopie von diesem zu speichern.
-3. **Hintergrund, Fähigkeiten und Erfahrung des Entwicklungsteams** 
-Wiederverwendbare Technologien sind komplex und benoetigen Erfahrung 
-in dem jeweiligen Bereich. Wiederverwendbare Technologien sollten dort
-eingesetzt werden, wo das Entwicklungsteam ueber Expertise verfuegt.
-4. **Kritikalitaet der Software und ihre nicht funktionalen Anforderungen** 
-Fuer ein kritisches System, welches durch einen externen Regulator 
-zertifiziert werden muss, muessen eventuell Sicherheitsfaelle fuer das 
-System aufgestellt werden (Siehe Kapitel 12). Dies ist schwer, falls der 
-Quellcode nicht komplett einsehbar ist.
-5. **Applikationsgebiet** In vielen Applikationsgebieten, wie z.B. in 
-der Herstellung und in medizinischen Informationssystemen, existieren
-generische Produkte, welche nach Anpassung an lokale Situationen wiederverwendet werden koennen. Dies ist eine der effektivsten Ansaetze
-der Wiederverwendung von Software. Grundsaetzlich ist es meist guenstiger
-Systeme zu kaufen, statt sie selbst neu zu entwickeln.
-6. **Platform, auf welcher das System ausgefuehrt wird** Viele generische
-Applikationen sind platformabhaengig (z.B. .NET). Somit koennen sie nur 
-auf gleichen Platformen wiederverwendet werden.
+1. **Entwicklungszeitplan der Software** Wenn die Software schnell entwickelt werden soll, bietet es sich an, ganze Systeme statt einzelner Komponenten wieder zu verwenden. Es wird zwar nicht perfekt auf die Anforderungen passen, dennoch wird die Entwicklungszeit stark reduziert.
+2. **Erwartete Lebensdauer der Software** Bei einer langen Lebensdauer sollte das Augenmerk auf die Wartbarkeit der Software gelegt werden. Bei solcher Software sollte auf gekaufte Komponenten externer Unternehmen verzichtet werden. Diese koennen beispielsweise den Support einstellen. Das Verwenden von Open-Source Systemen und Komponenten kann ermoeglichen, auf den Quellcode zugreifen zu koennen und eine Kopie von diesem zu speichern.
+3. **Hintergrund, Fähigkeiten und Erfahrung des Entwicklungsteams**  Wiederverwendbare Technologien sind komplex und benoetigen Erfahrung in dem jeweiligen Bereich. Wiederverwendbare Technologien sollten dort eingesetzt werden, wo das Entwicklungsteam ueber Expertise verfuegt.
+4. **Kritikalitaet der Software und ihre nicht funktionalen Anforderungen** Fuer ein kritisches System, welches durch einen externen Regulator zertifiziert werden muss, muessen eventuell Sicherheitsfaelle fuer das System aufgestellt werden (Siehe Kapitel 12). Dies ist schwer, falls der Quellcode nicht komplett einsehbar ist.
+5. **Applikationsgebiet** In vielen Applikationsgebieten, wie z.B. in der Herstellung und in medizinischen Informationssystemen, existieren generische Produkte, welche nach Anpassung an lokale Situationen wiederverwendet werden koennen. Dies ist eine der effektivsten Ansaetze der Wiederverwendung von Software. Grundsaetzlich ist es meist guenstiger Systeme zu kaufen, statt sie selbst neu zu entwickeln.
+6. **Platform, auf welcher das System ausgefuehrt wird** Viele generische Applikationen sind platformabhaengig (z.B. .NET). Somit koennen sie nur auf gleichen Platformen wiederverwendet werden.
 
-- Grundsaetzlich ist es eher ein Problem des managements nicht des technischen
-  - Manager moechten nicht die Requirements anpassen um reuse zu ermoeglichen
-  - risiken der entwicklung neuer software ist hoeher
-    - manager bevorzugen bekannte risiken als neue risiken der wiederverwendung
-  - helfen koennte ein wiederverwendungs-programm 
-    - erstellun von reuse assets, prozessen zum erleichtern der wiederverwendung
-    -  (Jacobsen, Griss, and Jonsson 1997)
+Gundsaetzlich ist die Wiederverwendung von Software kein technisches Problem, sondern ein Problem des Managements. 
+Manager moechten eventuell die Anforderungen nicht so anpassen, dass eine Wiederverwendung moeglich ist. Auch wenn die Risiken
+einer neu implementierten Software hoeher sind, bevorzugen manche Manager eher die bekannte Risiken als die Risiken der
+Wiederverwendung. Es koennte helfen, ein Wiederverwendungsprogramm aufzubauen, welches sich auf die Erstellung von
+wiederverwendbaren Teilen und Prozessen fuers Erleichtern der Wiederverwendung konzentriert (Jacobsen, Griss, and Jonsson 1997).
 
 ## Application frameworks
 
-- Vorteil von OOP sei die wiederverwendung von objekten in anderen systemen
-- herausgestellt, dass objekte
-  - feingranular 
-  - und auf eine bestimme applikation angepasst sind
-- dauert laenger, vorhandene objekte zu verstehen und anzupassen, als diese neu zu implementieren
-- Object oriented wiedrverwendung am besten mit objekt orientierter entwicklungs prozess durch grobkörnigere Abstraktionen, die 
-  Frameworks genannt werden
-- framework ist eine generische struktur welche fuer ein spezifische subsystem oder eine applikation erweitert werden kann
-- Schmidt et al. 2004
-  - "ein integrierter Satz von Softwareartefakten (wie Klassen, Objekte und Komponenten), die
+Viele Entwickler sagen, dass der groesste Vorteil von Obkekorientierten Programmiersprachen die Wiederverwendung von Objekten in
+anderen Systemen sei. Dennoch hat sich herausgestellt, dass die meisten Objekte zu feingranular sind und nur auf eine bestimmte 
+Applikation angepasst sind. Meist dauert es laenger, vorhanfene Objekte zu verstehen und anzupassen, als diese neu zu implementieren.
+Mittlerweile ist klar, dass die objektorientierte Wiederverwendung in einem objektorientierten Entwicklungsprozess am besten durch
+grobkoernige Abstraktionen, die Frameworks genannt werden, unterstuetzt wird.
+
+Ein Framework ist eine generische Struktur welche fuer ein spezifisches Subsystem oder eine Applikation erweitert werden kann. 
+Schmidt et al. (Schmidt et al. 2004) definiert ein Framework als 
+
+"einn integrierten Satz von Softwareartefakten (wie Klassen, Objekte und Komponenten), die
 zusammenarbeiten, um eine wiederverwendbare Architektur für eine Familie verwandter Anwendungen bereitzustellen."
-- frameworks bieten support fuer features, die sehr wahrscheinlich in applikationen aehnlicher art verwendet werde
-- user interface framework 
-  - interface event handling 
-    - einzelne widgets zum erstellen von anzeigen
-    - der entwickler spezialisiert diese widgets indem spezifische funktionalitaet hinzugefuegt wird 
-    - beispiel entwickler baut ein layout zusammen, welches den anforderungen der applikation entspricht 
 
-- frameworks liefern skelettartige architektur und die wiederverwendung von spezifische klassen im system
-- architektur wird durch objektklassen und deren interaktionen implementiert
-- klassen koennen wiederverwendet werden oder erweitert werden
-  - mit hilfe von vererbung und polymorphie 
+Frameworks bieten Support fuer Features, die sehr wahrscheinlich in Applikationen aehnlicher Art verwendet werden.
+Ein User-Interface Framework beispielsweise unterstuetzt das Event-Handling und beinhaltet einzelne Widgets fuer das Erstellen
+von Anzeigen. Der Entwickler spezialisiert diese Widgets, indem spezifische Funktionalitaet hinzugefuegt wird. So kann 
+ein Entwickler ein Layout fuer ein Display zusammenbauen, welches den Anforderungen der Applikation entspricht.
 
-- frameworks sind als ansammlung von konkreten und abstrakten objektklassen in einer oop sprache implementiert
-- also sind diese sprachenabhaengig
-- verfuegbar in oop-sprachen wie java, c++ oder auch dynamische sprachen wie ruby und python
-- frameworks koennen selber frameworks beinhalten
-- frameworks koennen benutzt werden fuer komplette applikationen oder teile einer applikation (beispiel graphical user interface)
+Frameworks liefern eine skelettartige Architektur und ermoeglichen die Wiederverwendung spezifischer Klassen im System. 
+Die Architektur wird durch Objektklassen und deren Interaktionen implementiert. Dabei koennen die Klassen wiederverwendet
+oder erweitert werden. Frameworks bedienen sich dabei an Konzepten wie Vererbung und Polymorphie.
 
-- meisten applikationsframeworks sind web application framewoks (WAFs)
-  - erstellung dynamischer webseiten
-  - meist basierend auf model-view-controller (MVC) composite pattern
-    - BILD 15.5
-    - 1980 als ansatz von gui design, welches mehrere praesentationen von objekten und verschiedene styles der interaktion mit diesen praesentationen ermoeglicht
-    - grundsaetzlich wird der zustand einer praesentation seperiert, sodass dieser zustand von jeder praesentation geupdatet werden kann
-    - beim veraendern von daten durch eine praesentation wird das system model veraendert und die kontroller fuer die jeweilige anzeige updatet die presentation
+Frameworks sind als Ansammlung von konkreten und abstrakten Objektklassen in einer objektorientierten Sprache implementiert.
+Aus diesem Grund sind Frameworks spachabhaengig. Frameworks sind in OOP-Sprachen wie Java, C++ und dynamischen Sprachen wie 
+Ruby und Python verfuegbar. Frameworks keonnen selber Frameworks beinhalten. Sie koennen fuer komplette Applikationen oder Teile
+einer Applikation (z. B. GUI) verwendet werden.
 
-- frameworks benutzen sehr oft design patterns (siehe kapitel 7)
-  - mvc frameworks zum beispiel verwenden obsever, strategy composite pattern und mehr 
-  - die verwendung dient der erweiterbarkeit
-  - ohne pattern waren frameworks impraktikabel
+Die meisten Applikationsframeworks sind "Web Application Frameworks" (WAFs). Sie werden zur Erstellung von dynamischen Webseiten
+verwendet und basieren dabei meist auf dem "Model-View-Controller (MVC) Pattern" (BILD 15.5). Das Pattern wurde 1980 als Ansatz
+von GUI Design dargestellt, welches mehrere Praesentationen von Objekten und verschiedenen Stilen der Interaktion mit diesen
+Praesentationen ermoeglicht. Grundsaetzlich wird der Zustand einer Praesentation seperiert, sodass dieser Zustand von jeder
+Praesentation aktualisiert werden kann. Beim Veraendern von Daten durch eine Praesentation wird das System Modell veraendert und
+die Controller fuer die jeweiligen Anzeigen aktualisiert die Praesentation.
 
-- frameworks bieten grundsaetzlich verschiedene funktionalitaeten
-- web applikations frameworks liefern komponenten und klassen, welche folgendes unterstuetzen:
+Frameworks verwenden sehr oft Design Pattern (siehe Kapitel 7). MVC-Frameworks verwenden beispielsweise das Observer-Pattern, das 
+Strategy-Composite-Pattern und weitere. Pattern werden verwendet um die notwendige Erweitbarkeit von Frameworks zu gewaehrleisten.
+Ohne Programmierpattern waeren Frameworks impraktikabel.
 
-1. **Sicherheit** WAFs helfen bei der Authentifizierung von Bennutzern und bei der Zugriffskontrolle.
-2. **Dynamische Webseiten** Klassen helfen dabei webseiten templates zu definieren und diese dynamisch mit Daten aus der Datanbanl zu fuellen.
-3. **Datenbankintegration** Frameworks stellen eventuell Klassen zur verfuegung, welche eine abstrakte Schnittstelle zu verschiedenen Datenbanken bereitsellen.
+Frameworks bieten grundsaetzlich verschiedene Funktionalitaeten. Web-Applikations Frameworks liefern Komponenten und Klassen, welche
+folgendes unterstuetzen:
+
+1. **Sicherheit** WAFs helfen bei der Authentifizierung von Benutzern und bei der Zugriffskontrolle.
+2. **Dynamische Webseiten** Klassen helfen dabei Webseitenvorlagen zu definieren und diese dynamisch mit Daten aus der Datanbanlnk zu fuellen.
+3. **Datenbankintegration** Frameworks stellen eventuell Klassen zur Verfuegung, welche eine abstrakte Schnittstelle zu verschiedenen Datenbanken bereitsellen.
 4. **Sitzungsverwaltung** Klassen, welche Sitzungen erstellen und verwalten, sind oft Teil einer WAF.
-5. **Benutzerinteraktionen** Web Frameworks liefern Supprt fuer AJAX (Holdener 2008) und/oder HTML5 (Sarris 2013) zur Erstellung interaktiver Webseiten. Darunter koennen sich Klassen zur Erstellung geraeteunabhaeniger Interfaces befinden, welche sich autimatisch an Mobiltelefone und Tablets anpassen.
+5. **Benutzerinteraktionen** Web Frameworks liefern Supprt fuer AJAX (Holdener 2008) und/oder HTML5 (Sarris 2013) zur Erstellung interaktiver Webseiten. Darunter koennen sich Klassen zur Erstellung geraeteunabhaeniger Interfaces befinden, welche sich automatisch an Mobiltelefone und Tablets anpassen.
+
+
 
 - Systemimplementierung mit Frameworks
   - erstellen konkreter Klassen, welche Operationen von abstrakten Klassen des Frameworks erben
@@ -220,9 +170,10 @@ zusammenarbeiten, um eine wiederverwendbare Architektur für eine Familie verwan
       - muss konfiguriert werden um die richtigen applikations methoden aufzurufen, welche das Klicken handhaben
 
 Fayad und Schmidt (Fayad und Schmidt 1997) diskutieren drei weitere Klassen von
-Rahmen:
+Frameworks:
 
 1. **Systeminfrastruktur-Frameworks** unterstuetzen die Entwicklung von Systeminfrastrukturen wie beispielsweise Kommunikationen, Benutzerschnittstellen und Compiler.
+
 2. **Frameworks für die Middleware-Integration** bestshen aus einer Menge an Standards und damit verbundenen Objektklassen, welche den Kommunikation und den Datenaustausch der Komponenten unterstuetzt. Beispiele sind Microsoft's .NET und Enterprise Java Beans (EJB)
 3. **Frameworks für Unternehmensanwendungen** behandeln konkrete Anwendungensgebiete wie Telekommunikations- und Finanzsysteme (Baumer et al. 1997). Diese beinhalten Wissen ueber Andwendungsbereiche und unterstuetzen die Entwicklung von Endbenutzeranwendungen. Heute sind sie nicht verbreitet und wurden weitgehend durch Software-Produktlinien ersetzt.
 
