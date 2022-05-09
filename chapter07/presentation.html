@@ -2,17 +2,20 @@
 <html>
   <head>
     <title>Kapitel 01: Einleitung</title>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <style>
-      body { 
-        font-family: 'Droid Serif';
+      body {
+        font-family: "Droid Serif";
       }
-      h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
+      h1,
+      h2,
+      h3 {
+        font-family: "Yanone Kaffeesatz";
         font-weight: normal;
       }
-      .remark-code, .remark-inline-code { 
-        font-family:Courier New;
+      .remark-code,
+      .remark-inline-code {
+        font-family: Courier New;
       }
       @page {
         size: 908px 681px;
@@ -29,73 +32,77 @@ class: center, middle
 
 
 
-# Kapitel 01: Einleitung
+# Kapitel 07: Design and implementation
 
-Max Mustermann
-
----
-# Voraussetzungen
-
-```java
-public class A {
-  public int a() {
-    return 42;
-  }
-}
-```
+Rei Berberi
 
 ---
 
-## Inhalte 
+# Agenda
 
-* A
-* B
+1. Einleitung und Ziele
+2. Objektorientiertes Design unter Verwendung der UML
+3. Entwurfsmuster
+4. Implementierungsfragen
+5. Open-Source-Entwicklung
 
+---
+
+## 1. Einleitung und Ziele
+
+* Software-Design und -Implementierung
+- Phasen der Softwareentwicklungsprozesses, in der ein Softwaresystem entwickelt wird.
+- Der Softwareentwurf ist eine kreative Tätigkeit.
+- Die Implementierung ist der Prozess der Umsetzung des Entwurfs.
+
+* Ziele
+- die Aktivitäten in einem objektorientierten Entwurfsprozess zu verstehen;
+- einige der Modelle zu verstehen, die zur Dokumentation eines Entwurfs verwendet werden können;
+- die Idee der Entwurfsmuster kennenzulernen;
+- sich einen Überblick zu verschaffen, was bei der Implementierung von Software zu berücksichtigen ist;
+- die Wiederverwendung von Software und die Open-Source-Entwicklung zu verstehen;
+
+---
 ![](media/image.jpg)
 
 
     </textarea>
-    <script src="../_assets/js/remark-latest.min.js">
-    </script>
+    <script src="../_assets/js/remark-latest.min.js"></script>
     <script>
-    
-    var slideshow = remark.create({
-  // Set the slideshow display ratio
-  // Default: '4:3'
-  // Alternatives: '16:9', ...
-  ratio: '4:3',
+      var slideshow = remark.create({
+        // Set the slideshow display ratio
+        // Default: '4:3'
+        // Alternatives: '16:9', ...
+        ratio: "4:3",
 
-  // Navigation options
-  navigation: {
-    // Enable or disable navigating using scroll
-    // Default: true
-    // Alternatives: false
-    scroll: true,
+        // Navigation options
+        navigation: {
+          // Enable or disable navigating using scroll
+          // Default: true
+          // Alternatives: false
+          scroll: true,
 
-    // Enable or disable navigation using touch
-    // Default: true
-    // Alternatives: false
-    touch: true,
+          // Enable or disable navigation using touch
+          // Default: true
+          // Alternatives: false
+          touch: true,
 
-    // Enable or disable navigation using click
-    // Default: false
-    // Alternatives: true
-    click: false
-  },
+          // Enable or disable navigation using click
+          // Default: false
+          // Alternatives: true
+          click: false,
+        },
 
-  // Customize slide number label, either using a format string..
-  slideNumberFormat: 'Slide %current% of %total%',
-  // .. or by using a format function
-  slideNumberFormat: function (current, total) {
-    return '' + current + '/' + total;
-  },
+        // Customize slide number label, either using a format string..
+        slideNumberFormat: "Slide %current% of %total%",
+        // .. or by using a format function
+        slideNumberFormat: function (current, total) {
+          return "" + current + "/" + total;
+        },
 
-  // Enable or disable counting of incremental slides in the slide counting
-  countIncrementalSlides: true
-}); 
-    
-    
-      
+        // Enable or disable counting of incremental slides in the slide counting
+        countIncrementalSlides: true,
+      });
     </script>
   </body>
 </html>
