@@ -39,18 +39,7 @@ Für das erstellen von Testdaten gibt es zwei Möglichkeiten. Zum ersten die nor
 ### Komponententest
 Bei dem Komponententesten werden einzelnen Komponenten die sich aus Klassen zusammensetzen getestet. Dabei besitzten dies ein gemeinsames Interface mit dem die Komponente gesteuert wird. Daher ist das Ziel dieses Testabschnittes sicherzustellen dass das Interface korrekt funktioniert und das finden von Fehler inerhalb diesem.
 
-Dabei gibt es verschieden Arten von Interfaces die unterschiedliche Fehler erzeugen können
-
-Typen
-- Parameterinterface
-- Shared Memory Interface
-- Procedrual Interface
-- Messagepassing Interface
-
-Fehler
-- Missuse
-- Misunderstanding
-- Timeing
+Dabei gibt es verschieden Arten von Interfaces die unterschiedliche Fehler erzeugen können. So kann das Interface falsch verwendet werden, die gesendete erwartetet Anfrage nicht verstanden werden oder zeitliche Fehler entstehen.
 
 Bei deisen Test sollten Parameter gewählt werden die am Rande ihrer Äquivalenklassen leigen. Des Weitern sollte bei Pointer immer der NULL-Pointer getestet werden. Ebenfalls Designtest und Stresstests sollten durchgeführt werden, sowie Test gegenüber den geteilte Speicher wordurch Test in anderer Reihenfolge durchgeführt werden.
 
