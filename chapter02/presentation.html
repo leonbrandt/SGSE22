@@ -160,12 +160,12 @@ Im Vergleich zu Hardwareentwicklung, wo Phasen klar abgegrenzt werden können, �
 Veränderungen an den Anforderungen --> erheblichen Verlangsamung des Prozesses. <br>      
 Kunden/Entwickler können die Softwarespezifikation einfrieren --> um weitere Änderungen zu verhindern.
 Das bedeutet, dass:
-* Probleme später gelöst/ignoriert/programmiert werden --> es kann zu schlecht strukturierten Systemen führen
+* Probleme später gelöst/ignoriert/programmiert werden --> schlecht strukturierte Systemen
 * kann dazu führen, dass das System nicht das tut, was der Benutzer wünscht. 
 
 die Softwarewartung kann zur Folge haben:
 - dass einige oder alle der vorherigen Prozessphasen wiederholt werden müssen.
- - Daher sollte das Wasserfall-Modell nur Verwendung finden, wenn die Anforderungen gut durchdacht sind.   
+ - Daher die Anforderungen sollen gut durchdacht sein.   
       
 ---
 
@@ -189,7 +189,7 @@ Das Wasserfallmodell ist kein geeignetes Vorgehensmodell wenn:
 - eine informelle Teamkommunikation möglich ist --> die Softwareanforderungen schnell ändern sich. 
 - Systementwicklung mit kleinem Budget
     
-**hohe Kosten für die Entwicklung** einer formalen Spezifikation --> Entwicklungsmodell **selten verwendet.**
+**Hohe Kosten für die Entwicklung** einer formalen Spezifikation --> Entwicklungsmodell **selten verwendet.**
       
 ---
       
@@ -199,31 +199,35 @@ Software wird über mehrere Versionen entwickelt.
 -	Erste Implementierung --> Feedback des Kunden --> Weiterentwicklung
 - Aktivitäten des Prozess - eng verknüpft
 -	schneller Austausch zwischen den Aktivitäten ist daher möglich
+-	heutzutage Häufigster Ansatz
       
 <div style="margin-top:60px;">
   <img style="width:100%;" src="img/02.png"/>
 </div>       
       
----           
+---
       
-•	heutzutage Häufigster Ansatz
-•	Umsetzung entweder Plan-driven oder agil
-o	Plan-driven --> Festlegung aller zu lieferenden Inkremente
-o	Agil --> erste(s) Inkremente festlegen und dann dynamisch auf Anforderungen und Prioritäten des Kunden reagieren
-•	"Natürlicher" Weg des Problem lösen
-o	Im Alltag erarbeiten wir uns die Lösung eines Problems auch nicht im vorhinein
-o	Annäherung an Lösung in Schritten
-•	Eignet sich für Geschäftsanwendungen besser als Wasserfallmodell
-o	Geringere Kosten und Zeit für neue oder veränderte Anforderungen
-•	Wesentliche Vorteile (im vergleich zu Wasserfall)
-o	Geringere Kosten für Änderung an Anforderungen, da weniger Aufwand für Analyse und Dokumentation entsteht
-o	Feedback ist leichter einzuholen, da der Kunde regelmäßig Inkremente sieht
-o	Frühzeitige Lieferung und Betrieb ermöglicht Arbeit des Kunden mit der Software zu einem führen Zeitpunkt
-•	Wesentliche Nachteile aus Sicht des Management
-o	Prozess ist nicht greifbar, Vorgesetzte benötigen zur Überprüfung des Projektfortschritts regelmäßige Inkremente. Kosteneffizienz ist bei Erstellung von den selben Dokumenten für verschiedene Versionen nicht gut.
-o	Die Struktur des Gesamtsystems wird mit Projektforschritt schlechter, da Code wächst und Funktionalitäten auf verschiedenen Wegen umgesetzt werden. Code wird schlechter. Klassisches "historisch" gewachsen.
-	Für große Projekte ist diese Gefahr besonders groß, hier sollte eine einheitliche Architektur und ein stabiler Entwicklungsrahmen definiert werden
-•	Nicht jedes Inkrement muss dem Kunden zur Verfügung gestellt werden
+## Inkrementelle Entwicklung - Vorteile      
+      
+-	Umsetzung: Plan-driven/Agil/Kombination
+ -	Plan-driven: Festlegung aller zu lieferenden Inkremente
+ -	Agil: erste Inkremente festlegen --> dynamisch auf Anforderungen des Kunden reagieren     
+-	"Natürlicher" Weg des Problem lösen
+ -	Im Alltag erarbeitende Lösung eines Problems (nicht im vorhinein)
+ -  Lösung in Schritten
+-	Geringere Kosten für Änderung an Anforderungen (weniger Aufwand für Analyse und Dokumentation)
+-	Feedback ist leichter einzuholen (der Kunde regelmäßig Inkremente sieht)
+-	vorzeitige Lieferung und Bereitstellung ist möglich, auch wenn nicht alle Funktionen enthalten sind
+      
+ ---
+     
+## Inkrementelle Entwicklung - Nachteile 
+      
+aus Sicht des Management:
+-	Prozess ist nicht greifbar, Vorgesetzte benötigen zur Überprüfung des Projektfortschritts regelmäßige Inkremente. Kosteneffizienz ist bei Erstellung von den selben Dokumenten für verschiedene Versionen nicht gut.
+- Die Struktur des Gesamtsystems wird mit Projektforschritt schlechter, da Code wächst und Funktionalitäten auf verschiedenen Wegen umgesetzt werden. Code wird schlechter. Klassisches "historisch" gewachsen.
+ -	Für große Projekte ist diese Gefahr besonders groß, hier sollte eine einheitliche Architektur und ein stabiler Entwicklungsrahmen definiert werden
+-	Nicht jedes Inkrement muss dem Kunden zur Verfügung gestellt werden
       
       
       
