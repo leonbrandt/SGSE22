@@ -145,10 +145,10 @@ Allgemeine Prozessmodelle (abstrakte Beschreibungen, ohne Details über einzelne
       
 ## Das Wasserfallmodell - Beschreibung 
       
-- 1. Das Ergebnis jeder Stufe --> genehmigte Dokumente.
-- 2. Die nächste Phase beginnt nicht, bevor die vorherige abgeschlossen wurde.
-- 3. Hohe Herstellungskosten --> teuere Iterationen von Entwicklungsaktivitäten.     
-- 4. Sinnvoll für die Hardwareentwicklung mit der hohe Herstellungskosten. <br>
+1. Das Ergebnis jeder Stufe --> genehmigte Dokumente.
+2. Die nächste Phase beginnt nicht, bevor die vorherige abgeschlossen wurde.
+3. Hohe Herstellungskosten --> teuere Iterationen von Entwicklungsaktivitäten.     
+4. Sinnvoll für die Hardwareentwicklung mit der hohe Herstellungskosten. <br>
       
 Im Vergleich zu Hardwareentwicklung, wo Phasen klar abgegrenzt werden können, überschneiden sich bei Softwareentwicklung die Phasen. <br>
 (Bspw. werden bei der Implementierung möglicherweise Fehler im Softwareentwurf gefunden)
@@ -179,7 +179,54 @@ Aufgrund der Notwendigkeit, das System bei Änderungen frühzeitig zu verfeinern
 - Große Softwaresysteme, die Teil umfassenderer technischer Systeme sind, die von mehreren Partnerunternehmen entwickelt wurden. <br>
       Hardware in Systemen kann nach einem ähnlichen Modell entworfen werden. <br>
       -> gemeinsames Modell für Hardware und Software. <br>
-      --> eine unabhängige Entwicklung der verschiedenen Subsysteme möglich. <br>     
+      --> eine unabhängige Entwicklung der verschiedenen Subsysteme möglich. <br>
+      
+---
+      
+## Das Wasserfallmodell - Kontraindikationen
+      
+Das Wasserfallmodell ist kein geeignetes Vorgehensmodell wenn:
+- eine informelle Teamkommunikation möglich ist --> die Softwareanforderungen schnell ändern sich. 
+- Systementwicklung mit kleinem Budget
+    
+**hohe Kosten für die Entwicklung** einer formalen Spezifikation --> Entwicklungsmodell **selten verwendet.**
+      
+---
+      
+## Inkrementelle Entwicklung      
+      
+Software wird über mehrere Versionen entwickelt.
+-	Erste Implementierung --> Feedback des Kunden --> Weiterentwicklung
+- Aktivitäten des Prozess - eng verknüpft
+-	schneller Austausch zwischen den Aktivitäten ist daher möglich
+      
+<div style="margin-top:60px;">
+  <img style="width:100%;" src="img/02.png"/>
+</div>       
+      
+---           
+      
+•	heutzutage Häufigster Ansatz
+•	Umsetzung entweder Plan-driven oder agil
+o	Plan-driven --> Festlegung aller zu lieferenden Inkremente
+o	Agil --> erste(s) Inkremente festlegen und dann dynamisch auf Anforderungen und Prioritäten des Kunden reagieren
+•	"Natürlicher" Weg des Problem lösen
+o	Im Alltag erarbeiten wir uns die Lösung eines Problems auch nicht im vorhinein
+o	Annäherung an Lösung in Schritten
+•	Eignet sich für Geschäftsanwendungen besser als Wasserfallmodell
+o	Geringere Kosten und Zeit für neue oder veränderte Anforderungen
+•	Wesentliche Vorteile (im vergleich zu Wasserfall)
+o	Geringere Kosten für Änderung an Anforderungen, da weniger Aufwand für Analyse und Dokumentation entsteht
+o	Feedback ist leichter einzuholen, da der Kunde regelmäßig Inkremente sieht
+o	Frühzeitige Lieferung und Betrieb ermöglicht Arbeit des Kunden mit der Software zu einem führen Zeitpunkt
+•	Wesentliche Nachteile aus Sicht des Management
+o	Prozess ist nicht greifbar, Vorgesetzte benötigen zur Überprüfung des Projektfortschritts regelmäßige Inkremente. Kosteneffizienz ist bei Erstellung von den selben Dokumenten für verschiedene Versionen nicht gut.
+o	Die Struktur des Gesamtsystems wird mit Projektforschritt schlechter, da Code wächst und Funktionalitäten auf verschiedenen Wegen umgesetzt werden. Code wird schlechter. Klassisches "historisch" gewachsen.
+	Für große Projekte ist diese Gefahr besonders groß, hier sollte eine einheitliche Architektur und ein stabiler Entwicklungsrahmen definiert werden
+•	Nicht jedes Inkrement muss dem Kunden zur Verfügung gestellt werden
+      
+      
+      
 
     </textarea>
     <script src="../_assets/js/remark-latest.min.js">
