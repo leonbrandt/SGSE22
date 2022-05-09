@@ -51,7 +51,7 @@ Bei **großen Systemen** ist es sinnvoll, einige der besten Eigenschaften aller 
 
 ### 2.1.1 Das Wasserfallmodell
 
-Das erste veröffentlichte Modell für die Softwareentwicklung wurde von anderen Entwicklungsprozessen abgeleitet (Royce, 1970). Es wird in Abbildung 2.1 dargestellt. Wegen der Kaskade von einer Phase zur Nächsten wird dieses Modell das „Wasserfall-Modell“ oder der Softwarelebenszyklus genannt. Das Wasserfallmodell ist ein Beispiel für einen plangesteuerten Prozess. Die Planung und Terminierung aller Prozessaktivitäten erfolgt von der Softwareentwicklung.
+Das erste veröffentlichte Modell für die Softwareentwicklung wurde aus einem Entwiclungsprozessen für große militärische Projekte abgeleitet (Royce, 1970). Es wird in Abbildung 2.1 dargestellt. Wegen der Kaskade von einer Phase zur Nächsten wird dieses Modell das „Wasserfall-Modell“ oder der Softwarelebenszyklus genannt. Das Wasserfallmodell ist ein Beispiel für einen plangesteuerten Prozess. Das bedeutet, dass alle Aktivitäten werden hier im vorhinein geplant. Die Planung und Terminierung aller Prozessaktivitäten erfolgt von der Softwareentwicklung.
 
 ![](img/01.png)
 **Abbildung 2.1: Das Wasserfallmodell**
