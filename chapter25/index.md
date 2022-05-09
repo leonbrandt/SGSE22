@@ -1,85 +1,117 @@
-# Software processes
+# Configuration Management
 
 **Autor:** Timo Wortmann
 
-Nach dem Lesen des Kapitels sollten Sie einiges wissen und dann noch viel mehr und sehr viel mehr und weniger.
+## Einleitung zum Konfigurationsmanagement
 
-## Unterkapitel
+Ein Software System verändetr sich mit jedem Bugfixes und neuem Hard- oder Softwareversionsstand. Durch die Änderungen an dem System entsteht eine Reihe an Versionen, welche verwaltet werden müssen. 
+Das Konfigurationsmanagement übernimmt das Management von Richlinien, Prozessen und Werkzeugen für das Verändern von Software Systemen. 
 
-* **Softwaresystem**:
-  Die *innere* Sicht des Informatikers nimmt Software als Softwaresystem wahr.
-* **Softwareprodukt**: Die *äußere* Sicht eines Auftraggeber nimmt ein Softwaresystem als Softwareprodukt wahr. 
+Ohne Konfigurationsmanagement kann es zur Modifizierung der falschen Version, dem Ausrollen falscher Software oder zum Vergessen vom Speicherort bestimmter Komponenten.
+Vor allem in Teams wird Konfigurationsmanagement aufgrund der steigenden Verteilung von Mitglieder an verschiedenen Standorten benötigt. Es kann aber auch bei Einzelpersonen eingesetzt werden, um die Änderungen nicht zu vergessen.
 
-### Tabelle
+Konfigurationsmanagent setzt sich aus folgenden vier Aktivitäten zusammen:
 
-| A          |     B       |           C               | 
-|:----------:|:-----------:|:-------------------------:|
-| Eins | Zwei | Drei |
-| Vier | Fünf | Sechs |
+1. [Version management](#version-management)
+2. [System building](#system-building)
+3. [Change management](#change-management)
+4. [Release management](#release-management)
 
-## Links
+![25.1](assets/25.1-CM_activities.png)
 
-[Markdown] ist eine Sprache, die nach HTML konvertiert werden kann. 
+Die obere Abbildung 25.1 zeigt die Aktivitäten und deren Abhängigkeiten untereinander. Die einzelnen Bestandteile umfassen den gesamten Änderungsprozess eines Software Systems und werden in den kommenden Abschnitten genauer erklärt. 
 
-[Markdown]: http://daringfireball.net/projects/markdown/
+### Nutzung von Konfigurationsmanagement-Tools in der Softwareentwicklung
 
-## Aufzählung
+In der agilen Softwareentwicklung gibt es bei der Verwendung von Konfigurationsmanagement verschiedene Tools, welche von einem simplen Bugtracker bis hin zu einem vollständigen Managementsystem für unterschiedliche Softwareumgebungen alle Aufgaben übernehmen können.
 
-Es unterteilt sich in:
+Bei Nutzung solcher Tools gibt es oftmals eine zentralisierte Stelle, an der die aktuellen Versionsstände des Systems dokumentiert sind. Bei Änderunge an den Versionen werden die zentralisierten Dateien durch den jeweiligen Entwickler kopiert, lokal geändert und danach wieder an den zentralen Ablageort gesendet. So haben auch andere Entwickler Zugriff auf die Änderungen und deren Historie.
 
-* A
-  * A1
-* B
-  * B1
-  * B2
-* C
+Der Prozess der Softwareentwicklung besteht aus den Phasen **Development**, **System Testing** und **Release**. 
+In der Entwicklungsphase werden neue Funktionen der Software programmiert.
+Ind er Testphase werden die zuvor programmierten Funktionen getestet.
+In der Release-Phase ist das Softwareprodukt dann für den Endkunden verfügbar.
+
+Da die Phasen in der agilen Entwicklung oftmals parallel laufen, gibt es auch unterschiedliche Versionen des Softwareprodukts. Die Aufgabe eines Konfigurationsmanagement-Tools ist es dabei, den Überblick über alle verschiedenen Versionsstände des Softwareprodukts und deren Bestandteile zu behalten.
+
+### Terminologie und Begriffsdefinitionen
+
+Ursprünglich stammt das Konfigurationsmanagement aus dem Militär und bezog sich nur auf Hardware und wurde später in der Softwareentwicklung verwendet. 
+Je nach Anwendungsbereich gibt es unterschiedliche Definitionen für einzelne Bestandteile des Konfigurationsmanagements.
+Es gibt standardisierte Definitionen durch IEEE (z.B. IEEE 828-2012), aber diese werden in agilen Entwicklung augrund des hohen Dokumentationsaufwands nicht angewandt.
+
+Die Terminologie nach Sommerville folgt nach der hier aufgeführten Tabelle (alphabetisch sortiert). Eine Reihe Der Begriffe ist ähnlich zu den Begriffen bei der Nutzung von Versionskontrollsystemen wie Git, werden aber unabhängig davon betrachtet.
+
+| Begriff                                                | Beschreibung                                                                                                                                                                                                                                |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Baseline                                               | Eine Sammlung von Komponenten, welche zusammen ein System ergeben. Die Versionen der Komponenten einer Baseline können nicht verändert werden und es ist immer möglich, eine Baseline aus den versionierten Komponenten wiederherzustellen. |
+| Branching                                              | Das Erstellen einer neuen Codeline basierend auf einer bestehenden Codeline                                                                                                                                                                 |
+| Codeline                                               | Das Zusammenfassen einer Version einer Softwarekomponente und deren Abhängigkeiten (z.B. die Branches bei Git)                                                                                                                              |
+| Configuration (version) control                        | Der Prozess zur Dokumentation von Änderungen am System und Komponenten über die Lebensspanne des Systems.                                                                                                                                   |
+| Configuration item / software configuration item (SCI) | Jeder Bestandteil eines Softwareprojekts, welcher unter Versionskontrolle steht (z.B. Code, Dokumentation).                                                                                                                                 |
+| Mainline                                               | Eine Reihe von Baselines, die unterschiedliche Versionen des gleichen Systems darstellen.                                                                                                                                                   |
+| Merging                                                | Das Erstellen einer neuen Version durch Zusammenbringen unterschiedlicher Codelines.                                                                                                                                                        |
+| Release                                                | Eine Version der Software, welche für Endnutzer veröffentlicht wurde.                                                                                                                                                                       |
+| Repository                                             | Eine geteilte Datenbank mit Versionen und Metainformationen von Software.                                                                                                                                                                   |
+| System building                                        | Die Erstellung eines ausführbaren Systems durch Kompilierung und Verlinkung der Bestandteile in den richtigen Versionen.                                                                                                                    |
+| Version                                                | Eine Instanz eines Configuration Items, die sich in irgendeiner Form von der letzten Form unterscheidet. Versionen sollten durch ein einzigartiges Kennzeichen markiert werden.                                                             |
+| Workspace                                              | Eine private Arbeitsumgebung, worin die Software ohne die Beeinträchtigung anderer Entwickler verändert werden kann.                                                                                                                        |
+
+## Version Management
+
+Versionsmanagement bechreibt den Prozess der Versionierung von Software Komponenten und deren Nutzung in Systemen. Ein weiterer Bestandteil ist di Sicherstellung, dass sich Änderungen unterschiedlicher Entwickler nicht gegeneinander stören. In dem Prozess werden Baselines und Codelines verwaltet.
+
+![25.4 Codelines und Baselines](assets/25.4-Codelines_and_baselines.png)
+
+Die Abbildung 25.4 zeigt den Unterschied zwischen Code-, Base- und Mainlines. **Codelines** sind Sequenzen des Quellcodes in unterschiedlichen Versionen. Eine **Baseline** ist eien Zusammenstellung unterschiedlicher Versionen aus mehreren Codelines. Die Sequenz der unterschiedlichen Baselines nennt sich **Mainline**.
+
+### Versionskontrollsysteme
+
+Für die Nutzung von Versionsmanagement gitb es zwei Arten von Versionskontrollsystemen (engl. version control system; VC), in denen die Versionen der Code- und Baselines gespeichert werden.
+
+In zentralisierten Systemen, z.B. Subversion, gibt es ein einziges Repository, welches alle Versionen der Software anthält. In verteilten Systemen, wie z.B. Git, gibt es verschiedene Versionen des Repositories gleichzeitig (Bei GitHub = Forking). 
+Die beiden Arten an Systemen unterscheiden sich in einigen Punkten, bieten aber insgesamt folgende Funktionalität:
+
+- Identifizierung von Versionen und Releases anhand von einzigartigen Kennzeichen (z.B. v1.1.0)
+- Aufzeichnen der Änderungshistorie
+- Unabhängige Entwicklung mehrerer Personen
+- Unterstützung für widerverwendbare Komponenten und Projekte (z.B. Aufteilung in mehrere Repositories)
+- Effiziente Speicherung und Komprimierung von Dateien
+
+Damit mehrere Entwickler gleichzeitig unabhägig voneinander arbeiten können, gibt es das Konzept eines Projektrepositories und privatern Repositories. Das Projektrepository ist eine zentrale Version des Entwicklungsstandes, welches von den Entwicklern mit einem check-out heruntergeladen werden kann. Der Entwickler erhält dabei eine lokale Kopies des Repositories, das sogenannte private Repository. Daran können Änderungen vorgenommmen werden und per check-in wirder an das Projektrepository gesendet werden. Bei verteilten Versionskontrollsystemen wird statt einem check-in und check-out jeweils das gesamte Repository dupliziert (cloning).
+
+Der allgemeine Ablauf der Arbeit mit Versionskontrollsystemen ist wie auf den folgenden Abbildungen beschrieben:
+
+Repository check-in und check-out bei zentralisierten Versionskontrollsystemen
+![Repository check-in und check-out](assets/25.5-Check-in_check-out.png)
+
+Repository cloning bei verteilten Versionskontrollsystemen
+![](assets/25.5-Repository_cloning.png)
 
 
-# Überschrift
+Die Nutzung von Versionskontrollsystemen bietet folgende Vorteile:
 
-"...the **go to** statement should be abolished..." [1].
+- Backup der Dateien/Repositories und Wiederherstellung aus lokalen Kopien
+- Arbeit ohne Internetzugriff
+- Entwicklung und Tests auf der lokalen Umgebung des Entwicklers
 
-Dieser Link führt intern zu einem anderen [Thema](qualitaet/README)
+### Entwicklung von Open Source Projekten
 
-Dieser Link führt extern nach [Youtube](https://www.youtube.com/)
+Bei der Entwicklung von Open Source Projekten ist die Verwendung von verteilten Versionskontrollsystemen notwendig. Durch die Existenz eines zentralen Projektrepositories können die Entwickler das Repository clonen, Änderungen daran vornehmen und danach eine Anfrage an das Projektrepository stellen, die Änderungen zu übernehmen. Die Änderungen können dann durch eine befugte Person des Open Source Projekts freigegeben werden.
 
-> Dieser Text ist völlig sinnlos, aber steht trotzdem hier. Dieser Text geht über mehrere Zeilen.
+### Branching un Merging
 
-## Unterüberschrift
+Die Entwicklung des Software Systems erfolgt nicht nur in einer Codeline, sondern es können verschiedene Codelines durch **Branching** aufgespalten werden und unabhängig voneinander entwickelt werden. Bei einer Zusammenführung zweier unterschiedlicher Codelines werden diese durch **Merging** zusammengeführt.
 
-* Eins
-  * eins.eins
-  * eins.zwei
-* Zwei
-  * Zwei.zwei
-* Drei
+![Merging und Branching](assets/25.8-Merging_branching.png)
 
-### Code
+### Speicherung von Dateien
 
-```javascript
-public class A {
-  Integer a;
-  public A() {
-    this.a = 1
-  }
-}
-```
+Wie bereits erwähnt, ist ein Vorteil der Nutzung von Versionskontrollsystemen die Komprimierung und Speicherung von unterschiedlichen Versionen der gleichen Datei/Komponente. Anstatt dass jede neue Version separat gespeichert wird, werden in einem Versionskontrollsystem nur die Änderungen zwischen zwei Versionsständen gespeichert (z.B. die bearbeiteten Zeilen bei Textdateien oder veränderten Bytes bei Binärdateien). Bei einem Checkout wird aus der Änderungshistorie der aktuelle Stand der Datei zusammengebaut.
+Dazu kommen noch mögliche Erweiterungen, um die Schnelligkeit zu verbessern. Dazu gehören beispielsweise die vollständige Speicherung der aktuellesten Version einer Datei und die Zusammenfassung mehrerer kleiner Dateien zu einer Änderungshistorie.
 
-Syntax Highlighting für Javascript. Weitere Sprachen müssen konfiguriert werden.
+## System building
 
-### Bilder
+## Change Management
 
-![](media/image.jpg)
-
-### Audio
-
-[](media/sample.mp3 ':include')
-
-### Video
-
-[](media/sample.mp4 ':include')
-
-## Referenzen
-
-[1]: Dijkstra, E. W. (1968). Go to statement considered harmful. 
-Communications of the ACM, 11(3), 147-148.
+## Release Management

@@ -2,17 +2,20 @@
 <html>
   <head>
     <title>Kapitel 01: Einleitung</title>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <style>
-      body { 
-        font-family: 'Droid Serif';
+      body {
+        font-family: "Droid Serif";
       }
-      h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
+      h1,
+      h2,
+      h3 {
+        font-family: "Yanone Kaffeesatz";
         font-weight: normal;
       }
-      .remark-code, .remark-inline-code { 
-        font-family:Courier New;
+      .remark-code,
+      .remark-inline-code {
+        font-family: Courier New;
       }
       @page {
         size: 908px 681px;
@@ -29,73 +32,73 @@ class: center, middle
 
 
 
-# Kapitel 01: Einleitung
+# 11 - reliability engineering
 
-Max Mustermann
-
----
-# Voraussetzungen
-
-```java
-public class A {
-  public int a() {
-    return 42;
-  }
-}
-```
+Frederic Birwe
 
 ---
 
-## Inhalte 
+## availability
 
-* A
-* B
+> Anteil der Betriebszeit, in der das System nicht zur Verfügung steht
 
-![](media/image.jpg)
+## reliability
+
+> Anteil der Eingaben in ein System, die keine oder eine falsche Ausgabe erzeugen
+
+---
+
+## Wie entsteht ein Fehler?
+
+1. menschlicher Fehler
+2. system fault
+3. system error
+4. system failure
+
+---
+
+## Wie kann die reliability verbessert werden?
+
+![Abb. 11.1 - Entwicklung der Kosten pro gefundenem Fault](./assets/fig_11-1.png)
 
 
     </textarea>
-    <script src="../_assets/js/remark-latest.min.js">
-    </script>
+    <script src="../_assets/js/remark-latest.min.js"></script>
     <script>
-    
-    var slideshow = remark.create({
-  // Set the slideshow display ratio
-  // Default: '4:3'
-  // Alternatives: '16:9', ...
-  ratio: '4:3',
+      var slideshow = remark.create({
+        // Set the slideshow display ratio
+        // Default: '4:3'
+        // Alternatives: '16:9', ...
+        ratio: "4:3",
 
-  // Navigation options
-  navigation: {
-    // Enable or disable navigating using scroll
-    // Default: true
-    // Alternatives: false
-    scroll: true,
+        // Navigation options
+        navigation: {
+          // Enable or disable navigating using scroll
+          // Default: true
+          // Alternatives: false
+          scroll: true,
 
-    // Enable or disable navigation using touch
-    // Default: true
-    // Alternatives: false
-    touch: true,
+          // Enable or disable navigation using touch
+          // Default: true
+          // Alternatives: false
+          touch: true,
 
-    // Enable or disable navigation using click
-    // Default: false
-    // Alternatives: true
-    click: false
-  },
+          // Enable or disable navigation using click
+          // Default: false
+          // Alternatives: true
+          click: false,
+        },
 
-  // Customize slide number label, either using a format string..
-  slideNumberFormat: 'Slide %current% of %total%',
-  // .. or by using a format function
-  slideNumberFormat: function (current, total) {
-    return '' + current + '/' + total;
-  },
+        // Customize slide number label, either using a format string..
+        slideNumberFormat: "Slide %current% of %total%",
+        // .. or by using a format function
+        slideNumberFormat: function (current, total) {
+          return "" + current + "/" + total;
+        },
 
-  // Enable or disable counting of incremental slides in the slide counting
-  countIncrementalSlides: true
-}); 
-    
-    
-      
+        // Enable or disable counting of incremental slides in the slide counting
+        countIncrementalSlides: true,
+      });
     </script>
   </body>
 </html>

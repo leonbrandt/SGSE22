@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Kapitel 01: Einleitung</title>
+    <title>Kapitel 18: Service-orientiertes Software-Engineering</title>
     <meta charset="utf-8">
     <style>
       body { 
@@ -29,30 +29,145 @@ class: center, middle
 
 
 
-# Kapitel 01: Einleitung
+# Kapitel 18: Service-orientiertes Software-Engineering
 
-Max Mustermann
-
----
-# Voraussetzungen
-
-```java
-public class A {
-  public int a() {
-    return 42;
-  }
-}
-```
+Christoph Raitzig
 
 ---
+# Einleitung
 
-## Inhalte 
+Ein Web-Service kann (im Gegensatz zu einer Software-Komponente):
+* Mit Internetprotokollen abgefragt werden
+* Von Programmen ausgewertet werden
 
-* A
-* B
+---
+# Warum Services?
 
-![](media/image.jpg)
+* Services können kombiniert werden
+* Services von externen Anbietern können verwendet werden
+* Services sind wiederverwendbar
 
+---
+# Service-Arten
+
+Die beiden wichtigsten Service-Arten sind:
+
+* RESTful -Services
+* SOA-Services
+
+---
+# SOA
+
+* SOA steht für Service Oriented Architecture
+* älter als REST
+* hoch standardisiert, dadurch sehr komplex
+* XML-basiert
+
+---
+# RESTful-Services
+
+* einfacher umzusetzen
+* flexibler, z.B. JSON anstatt XML möglich
+* Konzept von Ressourcen mit CRUD-Aktionen
+* nutzt HTTP-Methoden
+
+---
+# Beispiel Web-Applikation
+
+* Ressource unter URL `www.example.com/api/user`
+* `POST` legt neuen User an
+* `GET` gibt Informationen zu einem Benutzer zurück, z.B. mit Parameter: `www.example.com/api/user?id=123`
+* `PUT` aktualisiert Informationen zu einem Benutzer
+* `DELETE` löscht Benutzer
+
+---
+# Beispiel Web-Applikation
+
+Warum Service für diese Funktionalität?
+* Service-Schnittstelle ist wiederverwendbar, z.B. weitere Oberfläche für Benutzerverwaltung
+* Service sind bewährtes Verfahren
+* Viele Entwickler sind mit Services vertraut
+* Viele Frameworks stehen zur Verfügung
+
+---
+# Services als universelles Prinzip
+
+* LSP
+* Docker
+
+---
+# LSP (Language Server Protocoll)
+
+## Was ist LSP?
+* Protokoll zwischen Editor und Language Server
+* Language Server stellt Programmiersprachenspezifische Funktionen bereit: auto complete, zu einer Definition springen etc.
+
+---
+# LSP (Language Server Protocoll)
+
+## Warum LSP?
+* Einheitliche API
+* Language Server kann auf anderem Computer sein als Editor
+
+---
+# Docker
+
+Docker besteht aus zwei Komponenten:
+* Docker-Daemon
+* Docker-Client
+
+Client sendet Befehle an Daemon mit REST-API
+
+---
+# Docker
+
+Daemon und Client können auf unterschiedlichen Computern laufen
+
+---
+# Fazit Services als universelles Prinzip
+
+* Aufteilung von Komponenten führt zu flexiblen Einsatzmöglichkeiten
+
+---
+# Service-Engineering
+
+3 Schritte:
+1. Identifizieren der möglichen Services
+2. Design des Service-Interfaces
+3. Service-Implementierung und Deployment
+
+---
+# Service-Engineering
+
+## Service-Identifikation
+
+* Services finden
+* funktionale und nicht-funktionale Anforderungen herausarbeiten
+
+---
+# Service-Engineering
+
+## Design des Service-Interfaces
+
+* Operationen des Services identifizieren
+* Parameter spezifizieren
+* Struktur der Anfrage-Daten spezifizieren
+
+---
+# Service-Engineering
+
+## Implementierung und Deployment
+
+* Implementierung in bestimmter Programmiersprache
+* Testen der Implementierung
+* Service mit Servern deployen
+
+---
+# Quellen
+
+* Sommerville, I. (2015). Software engineering 10th Edition. ISBN-10, 137035152, 18. S. 520-547
+* https://microsoft.github.io/language-server-protocol/
+* https://docs.docker.com/engine/security/
 
     </textarea>
     <script src="../_assets/js/remark-latest.min.js">
