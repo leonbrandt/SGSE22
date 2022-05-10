@@ -476,4 +476,69 @@ sodass ein gesamtes Ergebnis zur Verfügung steht
 
 ## sofware as a service ##
 
+- die zuvor erläuterten Client-Server Modelle setzen die Installation von einem
+applikationsspezifischen Programm auf dem Client-System voraus, um das System nutzen zu können.
+	- Reduzierung von Serverbelastung durch Berechnungen auf dem Client-System
+- Durch Technologien wie AJAX oder HTML5 kann die Server-Belastung ebenfalls weiter
+reduziert werden
+- Durch die Möglichkeit, Anwendungslogik in Skripten zu implementieren, die Teil einer
+Webseite sind, kann der Browser effektiv als Client-Anwendung konfiguriert werden kann.
+- Die Anwendungssoftware ist in diesem Fall ein Dienst, auf den von jedem Gerät aus zugegriffen werden kann,
+sofern das Gerät einen Standardbrowser ausführen kann
+- In diesem Fall wird von Software as a Service (SaaS) gesprochen
+- charakteristische Merkmale für SaaS:
+	- Die Software wird auf einem Server (oder in der Cloud) bereitgestellt und wird über einen Webbrowser
+	aufgerufen, es ist keine spezifische Software auf dem Client-Rechner nötig
+	- Der Anbieter der Software besitzt und verwaltet die Software, nicht der Nutzer der SOftware
+	- Nutzer zahlen je nach Nutzung oder in einem Abo-Modell; teilweise kann die Software
+	auch frei nutzbar sein, wird allerdings durch Werbung finanziert
+- Durch die Etablierung von Cloud Computing hat die Verbreitung des SaaS Modells beschleunigt
+- Da in der Cloud bereitgestellte Dienst einfach skalierbar sind, entfallen viele Kosten für
+die Anbieter dieser Dienste
+- Für Software-Nutzer hat das SaaS-Modell den Vorteil, dass die Verwaltungskosten der
+Software durch den Anbieter getragen werden.
+	- hierzu zählen Bugfixing, Installation von Upgrades, Umgang mit Veränderungen im
+	Betriebssystem, Bedarfsgerechte Dimensionierung der Rechnersysteme
+	- Außerdem entfallen Verwaltungskosten für Softwarelizenzen, da nicht für jeden
+	Rechner eine neue Lizenz erworben und verwaltet werden muss
+	- Darüber hinaus kann die Software von jedem webfähigen Endgerät aus genutzt werden
+
+- Hauptproblem ist der Datentransfer mit dem Dienst
+	- Datentransferrate ist an die Netzwerkgeschwindigkeit gekoppelt
+	- Transfer von großen Bilddateien oder Videos braucht Zeit
+- Weiteres Problem: keine Kontrolle über Weiterentwicklung der Software (Anbieter kann
+Änderungen vornehmen, wann er will)
+- Rechtliche Probleme (Datenschutz, Vorhalten von Daten auf ausländischen Servern)
+
+- SaaS und Dienstorientierte Architektur (SOA) sind verwand, aber unterschiedlich:
+	- SaaS ist eine Methode, Dienste von einem Server durch einen Webbrowser verfügbar zu machen.
+	Server hält die Daten des Nutzers für die Zeit der Interaktion vor. Interaktionen sind eher lang,
+	bspw. das Editieren eines Dokuments
+	- Dienstorientierte Architektur sieht es vor, ein Softwaresystem als Menge entkoppelter,
+	Zustandsloser Dienste zu konzeptionieren
+		- Dienste können von unterschiedlichen Anbietern bereitgestellt werden
+		- Transaktionen sind eher kurz
+- SaaS ist ein Modell, um dem Nutzer Anwendungsfunktionen zur Verfügung zu stellen,
+	SOA ist eine Implmentierungstechnologie für Anwendungssysteme, welche nicht von Nutzern
+	als Webdienste genutzt werden müssen
+- SaaS kann allerdings durch SOA implementiert werden, wodurch sich die Möglichkeit
+ergibt, die APIs der Dienst zu nutzen und in komplexeren Systemen einzubetten
+	- Diese System werden auch Mashups genannt und bilden einen weiteren Ansatz zur
+	Wiederverwendung und schnellen Entwicklung von Software
+
+- Aus Software-Engineering Sicht ist Entwicklung von Diensten vergleichbar mit der Entwicklung
+anderer Software, allerdings ist die Dienstentwicklung nicht durch Nutzerbedürfnissen getrieben, sondern
+durch Abschätzungen des Entwicklers, welche Funktionen der Nutzer vermutlich brauchen wird
+- Daher muss die Software in der Lage sein, schnell weiterentwickelt und abgeändert zu werden, um
+Feedback zur Funktionalität einzubinden
+	 - Hierzu bieten sich Methoden der Agilen Softwareentwicklung und die inkrementelle Bereitstellung
+	 der Software an
+- SaaS Anwendungen bieten jedem Nutzer eine generische Nutzererfahrung
+	- Geschäftskunden wünschen evtl. eine speziell angepasste Version mit individuell verfügbaren
+	zusätzlichen FUnktionen. Hierzu sind drei Faktoren zu beachten:
+		- Konfigurierbarkeit: Wie wird die Software für spezifische Bedürfnisse angepasst?
+		- Mehrmandantenfähigkeit: Wie wird sichergestellt, dass jeder Nutzer
+		der Software das Gefühl hat, eine individuell angepasste Version zu nutzen und
+		die verfügbaren Ressourcen effizient genutzt werden?
+		- Skalierbarkeit: Wie wird die Skalirbarkeit des Systems sichergestellt?
 
