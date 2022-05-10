@@ -33,7 +33,7 @@
 
 ## Schnittstellenbeschreibung
 
-| [GraphQL Schema](/praktikum/ratschinski/graphql#schnittstellenbeschreibung) | - | [gRPC Schnittstellenbeschreibung](/praktikum/ratschinski/grpc#schnittstellenbeschreibung)
+| [GraphQL Schema](/praktikum/ratschinski/graphql#schnittstellenbeschreibung) | [Rest Schnittstellenbeschreibung](/praktikum/ratschinski/rest#schnittstellenbeschreibung) | [gRPC Schnittstellenbeschreibung](/praktikum/ratschinski/grpc#schnittstellenbeschreibung)
 
 ### Warum eine Schnittstelle beschreiben ?
 
@@ -44,6 +44,21 @@
 5. Validierung von Nachrichten
 6. Vergleich von API Versionen (Kompatibilität)
 7. Qualitätssicherung
+
+### Schnittstellenbeschreibung Zusammenfassung
+
+|                                                    | gRPC IDL                 | GraphQL Schema           | REST(OpenAPI)                  |
+| -------------------------------------------------- | ------------------------ | ------------------------ | ------------------------------ |
+| **Vorgehen**                                       | Beschreibung first       | Beschreibung first       | Beschreibung oder Code first   |
+| **Format**                                         | Domain Specific Language | Domain Specific Language | JSON/YAML                      |
+| **Alternative Beschreibungssprachen**              | -                        | -                        | RAML, WADL, API Blueprint, ... |
+| **Nachrichtenformat**                              | protobuf                 | JSON                     | JSON, XML, ...                 |
+| **Ohne Interface description language einsetzen?** | ❌                       | ❌                       | ✅                             |
+| **Beschreibung von Sicherheitsfeatures**           | ❌                       | ❌                       | OAuth2, API Keys, ...          |
+| **Serveradresse angeben**                          | ❌                       | ❌                       | ✅                             |
+| **Typ-System**                                     | ✅                       | ✅                       | ✅ JSON Schema                 |
+| **Min., Max., Regex.**                             | ❌                       | ❌ (Über Custom Types)   | ✅                             |
+| **Schema-Inspektion(Vorschau)**                    | ❌                       | ✅                       | ❌                             |
 
 ## Sonstiges
 

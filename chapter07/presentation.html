@@ -2,17 +2,20 @@
 <html>
   <head>
     <title>Kapitel 01: Einleitung</title>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <style>
-      body { 
-        font-family: 'Droid Serif';
+      body {
+        font-family: "Droid Serif";
       }
-      h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
+      h1,
+      h2,
+      h3 {
+        font-family: "Yanone Kaffeesatz";
         font-weight: normal;
       }
-      .remark-code, .remark-inline-code { 
-        font-family:Courier New;
+      .remark-code,
+      .remark-inline-code {
+        font-family: Courier New;
       }
       @page {
         size: 908px 681px;
@@ -29,73 +32,289 @@ class: center, middle
 
 
 
-# Kapitel 01: Einleitung
+# Kapitel 07: Design and implementation
 
-Max Mustermann
-
----
-# Voraussetzungen
-
-```java
-public class A {
-  public int a() {
-    return 42;
-  }
-}
-```
+Rei Berberi
 
 ---
+# Agenda
 
-## Inhalte 
+1. Einleitung und Ziele
 
-* A
-* B
+2. Objektorientiertes Design unter Verwendung der UML
 
-![](media/image.jpg)
+3. Entwurfsmuster
 
+4. Implementierungsfragen
+
+5. Open-Source-Entwicklung
+
+---
+## 1. Einleitung und Ziele
+
+*Software-Design und -Implementierung*
+- Phasen der Softwareentwicklungsprozesses, in der ein Softwaresystem entwickelt wird.
+- Der Softwareentwurf ist eine kreative Tätigkeit.
+- Die Implementierung ist der Prozess der Umsetzung des Entwurfs.
+
+*Ziele*
+- die Aktivitäten in einem objektorientierten Entwurfsprozess zu verstehen;
+- einige der Modelle zu verstehen, die zur Dokumentation eines Entwurfs verwendet werden können;
+- die Idee der Entwurfsmuster kennenzulernen;
+- sich einen Überblick zu verschaffen, was bei der Implementierung von Software zu berücksichtigen ist;
+- die Wiederverwendung von Software und die Open-Source-Entwicklung zu verstehen;
+---
+## 2. Objektorientiertes Design unter Verwendung der UML
+
+- Objektklassen und die Beziehungen zwischen diesen Klassen werden entworfen.
+
+- Vom Konzept zum detaillierten, objektorientierten Design:
+    - Der Kontext und die externe Interaktionen mit dem System verstehen und definieren.
+    - Die Systemarchitektur entwerfen.
+    - Die wichtigsten Objekte im System identifizieren.
+    - Entwurfsmodelle entwickeln.
+    - Schnittstellen spezifizieren.
+---
+## 2. Objektorientiertes Design unter Verwendung der UML
+*Systemkontext und Interaktionen*
+
+- Ein Systemkontextmodell ist ein Strukturmodell.
+- Darstellt die anderen Systeme in der Umgebung des zu entwickelnden Systems.
+
+![image](https://user-images.githubusercontent.com/58107983/167624341-f019f8f0-32bf-433d-b4ee-2477cf1d2b08.png)
+
+**Abbildung 1** - Systemkontext für die Wetterstation [1]
+---
+## 2. Objektorientiertes Design unter Verwendung der UML
+*Systemkontext und Interaktionen*
+
+- Ein Interaktionsmodell ist ein dynamisches Modell.
+- Zeigt, wie das System mit seiner Umgebung interagiert, während es benutzt wird.
+- Anwendungsfälle sollen auch in einer strukturierten, natürlichen Sprache beschrieben werden.
+
+![image](https://user-images.githubusercontent.com/58107983/167658497-897418b8-756b-48b9-8652-fb27c9a8df56.png) ![image](https://user-images.githubusercontent.com/58107983/167658345-f619d5d5-c735-4de0-a083-d86e8ff29012.png)
+![image](https://user-images.githubusercontent.com/58107983/167658572-f3d0e3e9-06d2-43a6-bf0e-2fa5bb8c6b65.png)
+
+**Abbildung 2** - Anwendungsfälle für die Wetterstation und Beschreibung des Anwendungsfalls: Wetter berichten[1]
+
+---
+## 2. Objektorientiertes Design unter Verwendung der UML
+*Architektur-Design*
+
+![image](https://user-images.githubusercontent.com/58107983/167624583-e8ba615f-265e-4d48-bedf-87de94fe940b.png) ![image](https://user-images.githubusercontent.com/58107983/167624623-bdace060-91fb-4b05-9d5a-2528baeed426.png)
+
+**Abbildung 3** - Hochrangige Architektur der Wetterstation und Architektur des Datenerfassungssystems[1]
+
+---
+## 2. Objektorientiertes Design unter Verwendung der UML
+*Identifizierung der Objektklasse*
+
+- Die Beschreibung des Anwendungsfalls hilft dabei, Objekte und Operationen im System zu identifizieren.
+- Ein oder mehrere High-Level-Systemobjekte werden benötigt, die die in den Anwendungsfällen definierten Systeminteraktionen kapseln.
+
+![image](https://user-images.githubusercontent.com/58107983/167649218-231f4094-f896-4ff1-98d4-811559342087.png)
+
+**Abbildung 4** - Objekte der Wetterstation[1]
+---
+## 2. Objektorientiertes Design unter Verwendung der UML
+*Design Modelle*
+
+- Wenn man die UML zur Entwicklung eines Entwurfs verwendet, sollte man zwei Arten von Entwurfsmodellen entwickeln:
+  - **Strukturmodelle**, die die statische Struktur des Systems anhand von Objektklassen und deren Beziehungen beschreiben.
+  - **Dynamische Modelle**, die die dynamische Struktur des Systems beschreiben.
+
+- Drei UML-Modelltypen sind besonders nützlich:
+  - **Subsystemmodelle**, die logische Gruppierungen von Objekten in kohärente Subsysteme darstellen. 
+  - **Sequenzmodelle**, die die Abfolge von Objektinteraktionen darstellen.
+  - **Zustandsautomatenmodelle**, die zeigen, wie Objekte ihren Zustand als Reaktion auf Ereignisse ändern.
+---
+## 2. Objektorientiertes Design unter Verwendung der UML
+*Design Modelle*
+
+- Ein **Subsystemmodell** ist ein nützliches statisches Modell, das zeigt, wie ein Entwurf in logisch zusammenhängenden Gruppen von Objekten organisiert ist.
+
+![image](https://user-images.githubusercontent.com/58107983/167624583-e8ba615f-265e-4d48-bedf-87de94fe940b.png)
+
+**Abbildung 5** - Subsystemmodell: Hochrangige Architektur der Wetterstation
+---
+## 2. Objektorientiertes Design unter Verwendung der UML
+*Design Modelle*
+
+- **Sequenzmodelle** sind dynamische Modelle, die für jeden Interaktionsmodus die Abfolge der stattfindenden Objektinteraktionen beschreiben.
+
+![image](https://user-images.githubusercontent.com/58107983/167624718-5f13c83e-70f1-4543-9273-5806632aa4b2.png)
+
+**Abbildung 6** - Sequenzdiagramm zur Beschreibung der Datenerhebung[1]
+---
+## 2. Objektorientiertes Design unter Verwendung der UML
+*Design Modelle*
+
+- **Zustandsautomatenmodelle** zeigen, wie die Objektinstanz ihren Zustand in Abhängigkeit von den empfangenen Nachrichten ändert.
+
+![image](https://user-images.githubusercontent.com/58107983/167624749-c3a9c748-0beb-44db-b05f-7cd43c2add3d.png)
+
+**Abbildung 7** - Zustandsdiagramm der Wetterstation[1]
+---
+## 2. Objektorientiertes Design unter Verwendung der UML
+*Schnittstellenspezifikation*
+
+- Ein wichtiger Teil eines jeden Entwurfsprozesses ist die Spezifikation der Schnittstellen zwischen den Komponenten des Entwurfs.
+- In einem Schnittstellenentwurf sollten keine Details der Datendarstellung enthalten sein.
+
+![image](https://user-images.githubusercontent.com/58107983/167624813-ab4c68ef-39c2-4d13-8d39-2ad58faf88ef.png)
+
+**Abbildung 8** - Schnittstellen von Wetterstationen[1]
+---
+## 3. Entwurfsmuster
+
+- Lösungen für allgemeine Probleme, mit denen Softwareentwickler während der Softwareentwicklung konfrontiert sind.
+
+- 1994 veröffentlichten die Gang of Four(Gamma, Helm, Johnson, Vlissides) das Buch
+Design Patterns - Elements of Reusable Object-Oriented Software
+
+- Die vier wesentlichen Elemente von Design Patterns:
+  - Ein Name, der einen aussagekräftigen Verweis auf das Muster darstellt.
+  - Eine Beschreibung des Problembereichs, die erklärt, wann das Muster angewendet werden kann.
+  - Eine Lösungsbeschreibung der Teile der Entwurfslösung, ihrer Beziehungen und ihrer Verantwortlichkeiten.
+  - Eine Aussage über die Konsequenzen - die Ergebnisse und Kompromisse - der Anwendung des Musters.
+
+  - Patterns unterstützen die Wiederverwendung von Konzepten auf hoher Ebene.
+---
+## 4. Implementierungsfragen
+- Bei der Systemimplementierung wird eine ausführbare Version der Software erstellt.
+
+- Einige Aspekte der Implementierung, die für die Softwaretechnik besonders wichtig sind, sind:
+ - Wiederverwendung
+
+ - Konfigurationsmanagement
+
+ - Host-Target-Entwicklung
+---
+## 4. Implementierungsfragen
+*Wiederverwendung*
+- Weit verbreitet bei webbasierten Systemen, wissenschaftlicher Software und Entwicklung eingebetteter Systeme.
+
+- Neue Systeme können schneller, mit weniger Entwicklungsrisiken und zu geringeren Kosten entwickelt werden.
+
+- Die Wiederverwendung von Software ist auf verschiedenen Ebenen möglich.
+
+- Nachteile: 
+  - Die Kosten für die Zeit, die für die Suche nach wiederverwendbarer Software aufgewendet wird.
+  - Die Kosten für den Kauf der wiederverwendbaren Software.
+  - Die Kosten für die Anpassung und Konfiguration der wiederverwendbaren Softwarekomponenten oder -systeme.
+  - Die Kosten für die Integration wiederverwendbarer Softwareelemente untereinander und mit dem neu entwickelten Code.
+---
+## 4. Implementierungsfragen
+*Wiederverwendung*
+- Die Wiederverwendung von Software ist auf verschiedenen Ebenen möglich:
+
+![image](https://user-images.githubusercontent.com/58107983/167624968-d33a09b3-6920-44a3-be88-bd29525dfe87.png)
+
+**Abbildung 9** - Wiederverwendung von Software[1]
+---
+## 4. Implementierungsfragen
+*Konfigurationsmanagement*
+- Der allgemeine Prozess der Verwaltung eines sich verändernden Softwaresystems.
+
+- Es gibt vier grundlegende Aktivitäten des Konfigurationsmanagements:
+  - Versionsmanagement
+
+  - Systemintegration
+
+  - Problemverfolgung
+
+  - Release Management
+---
+## 4. Implementierungsfragen
+*Host-Target-Entwicklung*
+- Die Software wird auf einem Computer (dem Host) entwickelt, aber auf einem anderen Rechner (dem Target) ausgeführt.
+
+![image](https://user-images.githubusercontent.com/58107983/167625138-36df7c73-0e88-4e77-9923-1db94d5c1fef.png)
+
+**Abbildung 10** - Host-Target-Entwicklung[1]
+---
+## 4. Implementierungsfragen
+*Host-Target-Entwicklung*
+- Eine Softwareentwicklungsplattform sollte eine Reihe von Werkzeugen zur Unterstützung der Softwareentwicklungsprozesse bieten:
+  - Ein integrierter Compiler und ein syntaxgesteuertes Editiersystem.
+
+  - Ein System zum Debuggen von Sprachen.
+
+  - Grafische Bearbeitungswerkzeuge.
+
+  - Testwerkzeuge, wie z. B. JUnit..
+
+  - Werkzeuge zur Unterstützung von Refactoring und Programmvisualisierung.
+
+  - Konfigurationsmanagement-Tools.
+---
+## 4. Open-Source-Entwicklung
+- Open-Source-Entwicklung ist ein Ansatz zur Softwareentwicklung, bei dem der Quellcode eines Softwaresystems veröffentlicht wird und Freiwillige eingeladen werden, sich am Entwicklungsprozess zu beteiligen [2].
+
+- Für ein Unternehmen, das in der Softwareentwicklung tätig ist, gibt es zwei Aspekte von Open-Source, die berücksichtigt werden müssen:
+  - Soll das zu entwickelnde Produkt auf Open-Source-Komponenten zurückgreifen?
+  - Soll ein Open-Source-Ansatz für die eigene Softwareentwicklung verwendet werden?
+
+  *Open-Source-Lizenzierung*
+- Der Eigentümer des Codes kann dessen Verwendung einschränken, indem er rechtsverbindliche Bedingungen in eine Open-Source-Softwarelizenz aufnimmt[3].
+- Die meisten Open-Source-Lizenzen sind Varianten eines von drei allgemeinen Modellen:
+  - Die GNU General Public License (GPL).
+  - Die GNU Lesser General Public License (LGPL).
+  - Die Berkley Standard Distribution (BSD) Lizenz.
+---
+## 4. Open-Source-Entwicklung
+
+---
+## Vielen Dank für Ihre Aufmerksamkeit
+
+# Fragen?
+---
+## Quellen
+
+[1]: Ian Sommerville. 2015. Software Engineering (10th. ed.), 196-225.
+
+[2]: Raymond, E. S. 2001. The Cathedral and the Bazaar: Musings on Linux and Open Source by an Accidental Revolutionary. Sebastopol. CA: O’Reilly & Associates.
+
+[3]: St. Laurent, A. 2004. Understanding Open Source and Free Software Licensing. Sebastopol, CA: O’Reilly & Associates.
+---
 
     </textarea>
-    <script src="../_assets/js/remark-latest.min.js">
-    </script>
+    <script src="../_assets/js/remark-latest.min.js"></script>
     <script>
-    
-    var slideshow = remark.create({
-  // Set the slideshow display ratio
-  // Default: '4:3'
-  // Alternatives: '16:9', ...
-  ratio: '4:3',
+      var slideshow = remark.create({
+        // Set the slideshow display ratio
+        // Default: '4:3'
+        // Alternatives: '16:9', ...
+        ratio: "4:3",
 
-  // Navigation options
-  navigation: {
-    // Enable or disable navigating using scroll
-    // Default: true
-    // Alternatives: false
-    scroll: true,
+        // Navigation options
+        navigation: {
+          // Enable or disable navigating using scroll
+          // Default: true
+          // Alternatives: false
+          scroll: true,
 
-    // Enable or disable navigation using touch
-    // Default: true
-    // Alternatives: false
-    touch: true,
+          // Enable or disable navigation using touch
+          // Default: true
+          // Alternatives: false
+          touch: true,
 
-    // Enable or disable navigation using click
-    // Default: false
-    // Alternatives: true
-    click: false
-  },
+          // Enable or disable navigation using click
+          // Default: false
+          // Alternatives: true
+          click: false,
+        },
 
-  // Customize slide number label, either using a format string..
-  slideNumberFormat: 'Slide %current% of %total%',
-  // .. or by using a format function
-  slideNumberFormat: function (current, total) {
-    return '' + current + '/' + total;
-  },
+        // Customize slide number label, either using a format string..
+        slideNumberFormat: "Slide %current% of %total%",
+        // .. or by using a format function
+        slideNumberFormat: function (current, total) {
+          return "" + current + "/" + total;
+        },
 
-  // Enable or disable counting of incremental slides in the slide counting
-  countIncrementalSlides: true
-}); 
-    
-    
-      
+        // Enable or disable counting of incremental slides in the slide counting
+        countIncrementalSlides: true,
+      });
     </script>
   </body>
 </html>
