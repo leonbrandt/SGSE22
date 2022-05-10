@@ -34,7 +34,7 @@ Falls eine der drei Fragen mit Nein beantwortet wird, sollte das Projekt nicht d
 ![](media/nichtfunktionelle_anforderungen.PNG)
 #### Abbildung 4.3 [1]
 
-In Abbildung 4.3 kann man sehen, welche Faktoren alles bei den nicht-funktionellen Anforderungen herein spielen. Die nicht-funktionellen Anforderungen lass sich in drei Hauptkategorien unterteilen. Diese sind Produktanforderungen, organisatorische Anforderungen und externe Anforderungen. Bei den Produktanforderungen geht es um Faktoren, welche das zu entwickelnde Produkt betreffen, wie zum Beispiel die Sicherheit des entwickelten Systems oder die Laufzeit. Bei den organisationellen Anforderungen werden Anforderung, die das Unternehmen betreffen betrachtet und bei den externen Anforderungen werden äußere Einflüsse unter Betracht gezogen wie die Rechtslage oder Faktoren aus dem Rechnungswesen.
+In Abbildung 4.3 kann man sehen, welche Faktoren alles bei den nicht-funktionellen Anforderungen herein spielen. Die nicht-funktionellen Anforderungen lass sich in drei Hauptkategorien unterteilen. Diese sind Produktanforderungen, organisationelle Anforderungen und externe Anforderungen. Bei den Produktanforderungen geht es um Faktoren, welche das zu entwickelnde Produkt betreffen, wie zum Beispiel die Sicherheit des entwickelten Systems oder die Laufzeit. Bei den organisationellen Anforderungen werden Anforderung, die das Unternehmen betreffen betrachtet und bei den externen Anforderungen werden äußere Einflüsse unter Betracht gezogen wie die Rechtslage oder Faktoren aus dem Rechnungswesen.
 
 ## Prozesse des requirements engineering
 
