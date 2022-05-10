@@ -332,13 +332,148 @@ indem mehr Server zum System hinzugefügt werden
 	- Wahl der Systemarchitektur ist abhängig vom Szenario
 		- Siehe Tabelle
 
+### multi-Komponenten Systeme ###
+
+
+- Das mehrstufige client-Server Modell funktioniert gut für viele
+Anwedungsfälle
+- Es kann allerdings die Flexibilität einschränken, da es die Entwickler des Systems
+zwingt, Dienste einer Schicht zuzuordnen
+- Die klare Trennung zwischen Dienstarten ist meist auch praktisch schwierig
+- Skalierbarkeit und Replizierbarkeit von Servern muss ebenfalls gewährleistet werden
+- Ein generalisierter Ansatz ist, die Services als logische Einheiten zu betrachten,
+welche bedarfsweise miteinander in Verbindung treten, ohne die Dienste in logische Schichten
+aufzuteilen
+- Jeder Dienst kann dann als einzelne Komponente in diesem Komponenten-Netzwerk umgesetzt werden
+- Jede dieser Komponenten bietet eine Schnittstelle für die Dienste an, die sie bereitstellt
+- Andere Komponenten nutzen diese Schnittstellen über Kommunikations-Middleware / remote procedure / method calls
+- Solche verteilten Komponentensysteme sind von Middleware abhängig
+	- Verwaltung von Kommunikation zwischen Komponenten
+	- Umgang mit unterschiedlichen Datentypen in Parametern etc.
+- der CORBA standard verfolgt das Ziel, Middleware zu definieren, hat sich allerdings
+nie wirklich verbreitet durchgesetzt
+- Vorteile von verteilten Komponentensystemen für die
+Realisierung von verteilten Systemen
+	1. Der Systementwickler kann Entscheidungen darüber, wo und wie
+	Dienste bereitsgestellt werden. Komponenten, die Dienste
+	bereitstellen, können auf jeden Knoten des Netzwerks laufen.
+	Es muss nicht im Vorfeld entschieden werden, ob eine Komponente
+	Teil der Datenverwaltung, der Applikationsschicht oder der Nutzer-
+	schnittstelle ist
+	2. Die Architektur ist sehr offen gegenüber nachträglichem
+	Hinzufügen von neuen Ressourcen und Diensten.
+	3. Das System ist flexibel und skalierbar. Falls die Systembelastung
+	steigt, können neue oder replizierte Objekte hinzugefügt werden,
+	ohne andere Teile des Systems zu stören.
+	4. Das System kann dynamisch rekonfiguriert werden, indem Komponenten
+	über das Netzwerk auf andere Prozessoren migriert werden.
+	TODO: warum ist das wichtig?
+- Die Architektur der verteilten Komponenten kann auch als
+logisches Modell für ein System verwendet werden, indem
+dessen Funktionalität nur als Dienste und Kombination von Diensten
+konzeptioniert wird
+- Data-Mining System sind ein Beispiel für solche Systeme
+	- Data-Mining Systeme analysieren Beziehungen zwischen Daten, die
+	über mehrere Datenbanken verteilt sind
+	- Die FUnktion dieser Systeme kann unterteilt werden in Datenakquise,
+	Datenverarbeitung und Visualisierung
+	- TODO: Beispiel weiter ausführen
+
+Architekturen aus verteilten Komponenten haben zwei Nachteile:
+- Das Systemdesign ist komplexer als Client-Server Systeme.
+Mehrstufige Client-Server Systeme und ihre Transaktionen ähneln
+menschlicher Interaktion, wobei bestimmte Dienste von spezialisierten
+Menschen angefragt werden
+- Es gibt keinen einheitlichen Standard für verteilte Komponenten oder
+Middleware für diesen Kontext. Verschiedene Herstellter bieten
+inkompatible Middleware an, welche sehr komplex ist. Die Abhängigkeit von
+Middleware erhöht die Systemkomplexität
+
+- Aus diesen Gründen werden verteilte Komponenten Systeme durch dienst-
+orientierte Systeme ersetzt
+- Allerdings haben verteilte Komponentensysteme Leistungsvorteile
+gegenüber dienstorientierten Systemen
+- Daher werden verteilte Komponentensysteme noch für Anwendungen
+eingesetzt, in denen ein hoher Datendurchsatz nötig ist oder ein hohes
+Volumen an Transaktionen verarbeitet werden muss
+
 ### Peer-to-peer Architektur ###
 
+- client-server modelle unterscheiden klar zwischen den Anbietern
+von Diensten (Server) und den Nutzern von Diensten (Clients)
+	- das führt häufig zu ungleich verteilter Systemauslastung,
+	in der Server deutlich mehr Rechenaufwand betreiben müssen,
+	als Clients -> führt zu Ausgaben für Serverarchitektur,
+	obwohl sehr viel Leistungspotential auf den Client-Geräten
+	verfügbar wäre
+- Peer-to-peer (P2P) Systeme sind dezentral Systeme, die
+keine solche klare Trennung zwischen Clients und Servern
+treffen
+- Berechnungen können auf jedem Knoten des Systems ausgeführt werden
+- Kommunikationsstandards und -protokolle sind in der
+Applikation eingebettet und jeder Knoten muss eine Kopie
+dieser Applikation ausführen (ist das dann quasi wieder monolithisch?)
+- praktisch werden p2p Systeme eher im privaten Umfeld eingesetzt
+- da dezentral: schwerer zu überwachen -> höhere Privatsphäre
+der Kommunikation möglich
+- Beispiele (starker Privatsphärefokus):
+	- BitTorrent (Filesharing)
+	- ICQ / Jabber (Messaging)
+	- Bitcoin / Crypto-Währung
+	- Freenet (dezentrale Datenbank)
+- andere Beispiele:
+	- Voice over IP (bsp. Viber)
+	- SETI@home (Datenverarbeitung von Teleskopen auf PC)
+	- Folding@home
+- kein zentraler Server als Flaschenhals
+- p2p Systeme auch in Geschäftsanwendungen
+	- Nutzung von ungenutzten Rechenleistungen von lokalen
+	Geräten (bspw. komplexe Berechhnungen zu Zeiten geringer
+	Belastung)
+- Theoretisch wäre es möglich, dass jeder Teilnehmer mit jedem
+anderen Teilnehmer in Verbindung tritt (technische Begrenzung
+durch Netzwerk-Adressen)
+	- Daher Unterteilung in "localities"
+	- einige Teilnehmer bilden "Brücke" in andere "localities"
+	- TODO: siehe Bild
+- in dezentraler Architektur bilden die Netzwerkknoten sowohl
+Applikationslogik als auch Kommunikationsfunktionen ab
+	- TODO: bsp. dezentrale Dokumenten-Verwaltung
+- Vorteil: hohe Redundanz -> hohe Fehlertoleranz, Toleranz
+ggü. getrennten Teilnehmern
+- Nachteil: Overhead durch redundante Berechnung aufgrund
+fehlender Synchronisation (applikationsabhängig)
 
-
+- Abwandlung des klassischen p2p Modells durch semizentralisierte
+System, indem einige Knoten
+im Netzwerk als Server agieren & Verbindungen zwischen Teilnehmern
+herstellen -> weniger Netzwerk-Verkehr
+- die Rolle solcher Server besteht darin, Kontakt zwischen
+Teilnehmern herzustellen oder das Ergebnis einer
+Berechnung zu "koordinieren"
+- sobald direkte Verbindung hergestellt wurde, ist kein Kontakt
+mehr zu Server nötig
+- in rechenintensiven Anwendungen ist die Aufgabe solcher
+Server auch, die Teile einer verteilten Berechnung zusammenzustellen
+und zu überprüfen,
+sodass ein gesamtes Ergebnis zur Verfügung steht
+- zwei Hauptanwendungen:
+	- komplexe Berechnung, die sinnvoll in ausreichend
+	große Teile aufgespalten werden kann
+	- Anwendung besteht insbesonder in Kommunikation zwischen
+	Teilehmern und kein Bedarf, Informationen zentral zu
+	speichern
+		- file-sharing
+		- telefon-systeme
+- Zusammenfassend:
+	- p2p Systeme ermöglichen die effektive Nutzung der
+	Systemressourcen
+	- primärer Grund, kein p2p System zu nutzen ist Sicherheit
+		- keine zentrale Überwachung möglich
+		- Angreifer können bösartige Knoten etablieren, die
+		evtl. großzügigen Zugriff auf die Ressourcen anderer
+		Teilnehmer erhalten können -> erhöhter Absicherungsaufwand
 
 ## sofware as a service ##
-
-
 
 
