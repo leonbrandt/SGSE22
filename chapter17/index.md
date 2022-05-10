@@ -2,88 +2,6 @@
 
 **Autor:** Malte Reinsch
 
-Nach dem Lesen des Kapitels sollten Sie einiges wissen und dann noch viel mehr und sehr viel mehr und weniger.
-
-## Unterkapitel
-
-* **Softwaresystem**:
-  Die *innere* Sicht des Informatikers nimmt Software als Softwaresystem wahr.
-* **Softwareprodukt**: Die *äußere* Sicht eines Auftraggeber nimmt ein Softwaresystem als Softwareprodukt wahr.
-
-### Tabelle
-
-| A          |     B       |           C               |
-|:----------:|:-----------:|:-------------------------:|
-| Eins | Zwei | Drei |
-| Vier | Fünf | Sechs |
-
-## Links
-
-[Markdown] ist eine Sprache, die nach HTML konvertiert werden kann.
-
-[Markdown]: http://daringfireball.net/projects/markdown/
-
-## Aufzählung
-
-Es unterteilt sich in:
-
-* A
-  * A1
-* B
-  * B1
-  * B2
-* C
-
-
-# Überschrift
-
-"...the **go to** statement should be abolished..." [1].
-
-Dieser Link führt intern zu einem anderen [Thema](qualitaet/README)
-
-Dieser Link führt extern nach [Youtube](https://www.youtube.com/)
-
-> Dieser Text ist völlig sinnlos, aber steht trotzdem hier. Dieser Text geht über mehrere Zeilen.
-
-## Unterüberschrift
-
-* Eins
-  * eins.eins
-  * eins.zwei
-* Zwei
-  * Zwei.zwei
-* Drei
-
-### Code
-
-```javascript
-public class A {
-  Integer a;
-  public A() {
-    this.a = 1
-  }
-}
-```
-
-Syntax Highlighting für Javascript. Weitere Sprachen müssen konfiguriert werden.
-
-### Bilder
-
-![](media/image.jpg)
-
-### Audio
-
-[](media/sample.mp3 ':include')
-
-### Video
-
-[](media/sample.mp4 ':include')
-
-## Referenzen
-
-[1]: Dijkstra, E. W. (1968). Go to statement considered harmful.
-Communications of the ACM, 11(3), 147-148.
-
 <!-- notes -->
 # distributed software engineering #
 
@@ -541,4 +459,38 @@ Feedback zur Funktionalität einzubinden
 		der Software das Gefühl hat, eine individuell angepasste Version zu nutzen und
 		die verfügbaren Ressourcen effizient genutzt werden?
 		- Skalierbarkeit: Wie wird die Skalirbarkeit des Systems sichergestellt?
-
+- eine Möglichkeit, diese Form von Konfigurierbarkeit zu realisieren, sind
+Produkt-Linien Architekturen (siehe Kapitel 16)
+	- Start mit generischen System, schrittweise Anpassung an spezifische Bedürfnisse des
+	Nutzers
+	- Nicht nutzbar für SaaS, da dies bedeuten würde, eine unterschiedliche Kopie
+	für jede Spezialisierung des Systems bereitzustellen
+	- Daher muss die Konfigurierbarkeit direkt innerhalb des Systems realisiert werden
+	- Konfiguration des Systems über eine Konfigurationsschnittstelle, über die
+	sich der Nutzer selbstständig und dynamisch das System konfigurieren kann, während er es nutzt
+	- Einstellungen ändern das Verhalten des Systems
+- Konfigurationen können folgende Dinge zulassen:
+	- Branding: Nutzer einer Organisation bekommen eine Nutzerschnittstelle präsentiert, die
+	zu der Organisation passt
+	- Geschäftsregeln und Arbeitsabläufe: Jede Organisation bestimmt die Arbeitsabläufe und Regeln,
+	die die Nutzung des Dienstes und dessen Daten beeinflusst
+	- Datenbank-Erweiterungen: Jede Organisation gibt an, wie das generische Datenmodell
+	des Dienstes angepasst wird, um den spezifischen Anforderungen zu entsprechen
+	- Zugriffskontrolle: Anlegen von Mitarbeiterkonten und Definition der Nutzungsrechte für
+	Ressourcen und Funktionen
+- Nutzer interagieren mit dem Dienst über ein Nutzerprofil, in dem die Konfigurationseinstellungen
+hinterlegt sind
+- Mehrmandantenfähigkeit beschreibt eine Situation, in der mehrere Nutzer das gleiche System
+ansprechen. Allerdings muss jeder Nutzer in der Annahme sein, dass er der einzige Nutzer
+des Systems ist
+	- Dies setzt absolute Trennung von Systemfunktionalität und Daten voraus
+	- Jede Operation muss zustandslos sein, sodass sie geteilt werden kann
+	- Daten müssen entweder vom Client geliefert werden oder in einer Datenbank liegen, die
+	von allen Instanzen des Systems erreichbar ist
+- A particular problem... TODO
+- As an alternative... TODO
+- Scalability... TODO
+- Aufzählung... TODO
+- The notion... TODO
+- SaaS represents... TODO
+- Key points... TODO
