@@ -2,6 +2,7 @@
 
 **Autor:** Marco Schwier
 
+## Einleitung
 Sofwaretesten hat das Ziel zu zeigen das die Software für ihren angedachten Einsatzzweck geeigent ist. Dabei werden mittels des Testen defekte inerhalb der Software aufgedeckt. Dafür werden Testdaten verwendet die vorher für diesen Zweck erabeitet worden sind. Das Ergbnis, das durch die Verwendung dieser mit der Software erhalten wird, wird nach Fehlern oder Anomalien überprüft. Dadurch können Fehler aufgedeckt werden. Softwaretests sind jedoch nicht in der Lage das fehlen von Fehlern oder Defekten aufzudecken.
 
 Es gibt zwei Ansätze beim Softwaretesten, erfüllt die Software den erwartungen das sogenannte Validationtesting und die aktive Suche nach Fehlern das Defecttesting.
@@ -12,10 +13,10 @@ Beim Defekttesting sollen Fehler innerhalb der Software aufgedeckt werden. Dafü
 
 ![Testen allgemein](./media/Picture1.png)
 
-## Verifikation und Validation
+### Verifikation und Validation
 Testen ist teil des Verifikation und Validationprozesses. Dabei wird durch die Verfikikation ermittelt ob die Software den Spezifikationen enspircht und inherlab der Validation ob die Software das umsetzt was sie soll. Dabei wird eine Aussage darüber erhalten ob die Software für den Gebrauch, für den sie bestimmt ist, auch geeigent ist.
 
-## Inspektion und Testen
+### Inspektion und Testen
 Die Inspektion von Softwarecode ist eine Testmöglichkeit bei dem ein Inspektor den Programmcode der Software analysiert. Dabei hat diese art des Testens das Ziel Fehler und Anomalien zu finden. Um diese Ziel zu ereichen ist keine Ausführung des Programmes notwendig und kann schon vor der vollstandigen implementierung verwendet werden. Dabei werden alle Komponenten des Softwaresystems überprüft.
 
 Die Vorteil dieser vorangehensweise ist die das keine Fehlermaskierung stattfinden kann. Des Weitern können unvollständige Abschnitte der Software ohne Mehrkosten überprüft werden, da keine Mockobjekte erstellt werden müssen um diesen Teil des Systems zu simuliernen. Ebenfalls wird die Progammierweise dabei überprüft.
@@ -34,7 +35,7 @@ Die Tests können mittels Frameworks wie Junit erstellte werden. Dabei stellt Ju
 
 Das Zeil diese Testen ist das aufgezeigt wird das die Klasse den erwartungen entspricht und die Funktion ausführt wie sie gedacht sind. Dabei sollen Fehler aufgedeckt werden.
 
-Für das erstellen von Testdaten gibt es zwei Möglichkeiten. Zum ersten die normalen Eingaben die auch inerhalb der Nutzung dieser Klasse oder Funktion auftretten können. Die andere sind abnormale Daten die nicht dem normalen Nutzerverhalten entsprechen. Dabei soll überprüft werden ob die Klasse oder Funktion sich im Fehlerfall richtig verhält.
+Für das erstellen von Testdaten gibt es zwei Möglichkeiten. Zum ersten die normalen Eingaben die auch inerhalb der Nutzung dieser Klasse oder Funktion auftretten können. Die andere sind abnormale Daten die nicht dem normalen Nutzerverhalten entsprechen. Dabei soll überprüft werden ob die Klasse oder Funktion sich im Fehlerfall richtig verhält. Des Weitern werden Äquivalenzklassen gebildet, eine Äquivalenzklasse ist eine Menge von Eingaben. Dabei kann jedes Element dieser Klasse repenstiavtive für alle Elmente in einem Test verwendet werden. Neben den Äquivalenzklassen werden auch Grenzwertanalysen durchgeführt. Dafür wird das Elemente am äüßersten Rand der Äquivalenzklasse ebenfalls in den Testdaten verwendet.
 
 ### Komponententest
 Bei dem Komponententesten werden einzelnen Komponenten die sich aus Klassen zusammensetzen getestet. Dabei besitzten dies ein gemeinsames Interface mit dem die Komponente gesteuert wird. Daher ist das Ziel dieses Testabschnittes sicherzustellen dass das Interface korrekt funktioniert und das finden von Fehler inerhalb diesem.
@@ -62,7 +63,12 @@ Bei dem Veröffentlichungstest werden geplante Veröffentlichung der Software ge
 
 Bei diesem Test handelt es sich um einen Black Box Test. Diese bedeutet das das Testteam keine Informationen über die Vorgange inerhalb der Software hat und nur die Wirkung nach außen testen kann.
  
-Dabei sollen durch diese Test der Kunde davon überzeugt werden das die Software für seine Anforderung verwendbar ist, sowie das die Software im normalen Gebrauch verlässlich ist. Dafür werden Anforderungen an das System ermittelt und mögliche Bentutzer erstellt die ein möglichst reales umgehen mit der Software simuliern sollen. Diese Anforerungen und Nutzer werden inerhalb von Scenarien zusammengestellt. Für jedes Scenario wird ein eigener Testfall entwickelt. Dabei soll der Endnutzer verstehen was inerhalb des Testfalls getestet wird. Durch diese Vorgen benötigten Veröffentlichungstest viel Plannung.
+Dabei sollen durch diese Test der Kunde davon überzeugt werden das die Software für seine Anforderung verwendbar ist, sowie das die Software im normalen Gebrauch verlässlich ist. Dafür werden Anforderungen an das System ermittelt und mögliche Bentutzer erstellt die ein möglichst reales umgehen mit der Software simuliern sollen.
+Dafür gibt es zwei Ansätze das Anforderungsbasiertetesten und das Scenariotesten.
+
+Bei den Anforderungsbasieten Ansatz werden für jede vorher defeniert Anforderung mindesten ein Testfall erstellt.
+
+Bei dem Scenariobasierten Ansatz wird für jedes Scenario wird ein eigener Testfall entwickelt. Dabei soll der Endnutzer verstehen was inerhalb des Testfalls getestet wird. Das Scenario wird dabei detaliert formuliert. Durch diese Vorgen benötigten Veröffentlichungstest viel Plannung.
 
 Des Weitern werden Stresstest in diesem Abschnitt durchgeführt und Performancetest. Bei einem Stresstest wird die Software einer immer größen Last, zum Beispiel Anfragen, ausgesetzt bis diese nicht mehr reagiert. Dabei wird die maximale kapazität der Software ermittelt.
 
@@ -73,9 +79,9 @@ Inerhalb des Nutzertest gibt es drei Phasen Alpha, Beta und Akzeptanz.
 
 In der Alpha-Phase arbeiten die Entwicker eng mit den Nutzer zusammen um die Software den Erwartungen der Nutzer anzupassen.
 
-In der Beta-Phase wird ein vorab Version dem Nutzer zuverfügung gestellt. Diese können dann selbst die Software für sich testen.
+In der Beta-Phase wird ein vorab Version dem Nutzer zuverfügung gestellt. Diese können dann selbst die Software für sich, auf ihren eingenen Geräten, testen. So können Fehler die im realen Einsatzgebiet auftretten und nicht durch das Testen in den vorherigen Schritten gefunden wurden ermittelt werden.
 
-In der Acceptance-Phase ist das Produkt fertig und wird mehr Nutzern zuverfügung gestellt.
+In der Acceptance-Phase ist beschreibt ob das Produkt für den Markt geigenet ist. Dabei können diese Test auch von Fimren übernommen werden die das Produkt vertreiben.
 
 Diese Testart ist wichtig um einen Einblick zuerhalte ob das Produkt bei Veröffentlichung von den Nutzern angenommen wird. Jedoch ist es unsicher ob die Nutzer die in den Testprozess involviert sind eine repräsentive Nutzerschaft abdecken.
 

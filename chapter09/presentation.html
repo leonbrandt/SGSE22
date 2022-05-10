@@ -1,101 +1,456 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Kapitel 01: Einleitung</title>
+<head>
+    <title>Kapitel 09: Software Evolution</title>
     <meta charset="utf-8">
     <style>
-      body { 
-        font-family: 'Droid Serif';
-      }
-      h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
-        font-weight: normal;
-      }
-      .remark-code, .remark-inline-code { 
-        font-family:Courier New;
-      }
-      @page {
-        size: 908px 681px;
-        margin: 0;
-      }
+        body {
+            font-family: 'Droid Serif';
+        }
+
+        h1, h2, h3 {
+            font-family: 'Yanone Kaffeesatz';
+            font-weight: normal;
+        }
+
+        .remark-code, .remark-inline-code {
+            font-family: Courier New;
+        }
+
+        @page {
+            size: 908px 681px;
+            margin: 0;
+        }
     </style>
-  </head>
-  <body>
-    <textarea id="source">
+</head>
+<body>
+<textarea id="source">
 
 
 class: center, middle
 
+# Kapitel 09: Software Evolution
 
+Finn Kuhn
+---
+## Inhalte
 
+* Einführung
 
-# Kapitel 01: Einleitung
+* Evolutionsprozesse
 
-Max Mustermann
+* Altsysteme
+
+* Softwarewartung
+---
+class: center, middle
+
+# Einführung
+
+Systeme brauchen Veränderung über lange Lebenszeit
+---
+## Gründe für neue Anforderungen
+
+***
+
+* Fehlerbehebung
+
+* Änderung an Software oder Hardware Plattform
+
+* Performanceverbesserungen
+
+* Anpassungen am Betriebssystem
+
+* Mithalten mit Konkurrenten
 
 ---
-# Voraussetzungen
+## Veröffentlichungszyklus
+***
+<div style="margin-top:20px;">
+  <img style="width:100%;" src="assets/Bild1.png"/>
+</div>
 
-```java
-public class A {
-  public int a() {
-    return 42;
-  }
-}
-```
+---
+## Evolution und Service
+***
+<div style="margin-top:140px;">
+  <img style="width:100%;" src="assets/Bild2.png"/>
+</div>
+
+---
+class: center, middle
+# Evolutionsprozesse
+
+Ablauf des Änderungsprozess
+---
+## Änderungsprozess
+***
+* kein Standardprozesse
+
+* abhängig von Software, Entwicklungsprozess und Können der Entwickler
+
+* Basis bilden Änderungsvorschläge, begründet in:
+
+    * existierende Anforderungen
+
+    * neue Anforderungen
+
+    * Berichte über Bugs
+
+    * Optimierung der Software
+---
+## Zyklischer Prozess aus Vorschlägen und Evolution
+***
+<div style="margin-top:20px;">
+  <img style="width:100%;" src="assets/Bild3.png"/>
+</div>
+---
+## Aktivitäten während der Evolution
+***
+<div style="margin-top:20px;">
+  <img style="width:100%;" src="assets/Bild4.png"/>
+</div>
+---
+## Notfalländerungen
+***
+<div style="margin-top:20px;">
+  <img style="width:100%;" src="assets/Bild6.png"/>
+</div>
+---
+## Entwicklungs- und Evolutionsteam
+***
+* Probleme bei der Übergabe von Team zu Team
+
+    * agil zu planbasiert: nicht viel Dokumentation
+
+    * planbasiert zu agil: automatisierte Tests neu entwickeln, Code nicht vereinfacht
+
+* am besten ein Team übernimmt Entwicklung und Evolution
+
+    * bei agilen Teams einfacher Übergang
+
+    * minimale Änderungen im Ablauf (längerer Veröffentlichungsrhythmus)
+
+---
+class: center, middle
+# Altsysteme
+veraltete Softwaresysteme, die weiter genutzt werden
+---
+## Sozialtechnologische Systeme
+***
+<div style="margin-top:20px;">
+  <img style="width:100%;" src="assets/Bild7.png"/>
+</div>
+---
+## Schichtenmodell
+***
+<div style="margin-top:20px;">
+  <img style="width:100%;" src="assets/Bild8.png"/>
+</div>
+---
+## Gründe für Weiterbetreiben
+***
+* Ersetzen ist teuer und risikoreich, Gründe:
+
+    * unvollständige Dokumentation
+
+    * Geschäftsprozesse um Altsystem gebaut
+
+    * Geschäftsregeln undokumentiert in Software eingebaut
+
+    * Risiko von unerwarteten Probleme
+
+---
+## Probleme
+***
+* Änderungen werden immer teurer
+
+    * verschiedene Entwickler sorgen für schwer verständlichen Code
+
+    * veraltete Programmiersprachen
+
+    * Dokumentation veraltet
+
+    * Wartung verschlechtert Struktur
+
+    * Performanceoptimierung für alte Software → schwer verständlicher Code
+
+    * Daten in verschiedenen Strukturen, redundant oder veraltet
+
+* Irgendwann Kosten zu hoch
+
+---
+## Strategien zur Altsystemverwaltung
+***
+
+* begrenztes Budget erzwingt Auswahl von Evolutionsstrategie
+
+* mögliche Strategien
+
+    * System komplett entfernen
+
+    * System unverändert belassen und weiter warten
+
+    * System überarbeiten und Wartbarkeit verbessern
+
+    * Ersetzen des Systems
+
+---
+## Marktwert und Systemqualität
+***
+<div style="margin-top:20px;">
+  <img style="width:100%;" src="assets/Bild9.png"/>
+</div>
+---
+## Marktwert
+***
+
+* Marktwert bildet sich aus Zeit und Aufwand gegenüber Alternativen
+
+* Merkmale für Marktwert
+
+    * Nutzung des Systems
+
+    * Unterstütze Geschäftsprozesse
+
+    * Systemzuverlässigkeit
+
+    * Systemausgabe
+---
+## Technische Perspektive
+***
+
+* sowohl Umgebung, als auch Anwendung
+
+* Umgebung
+
+    * Stabilität, Ausfallrate
+
+    * Alter, Performance
+
+    * Supportanforderungen, Wartungskosten, Interoperabilität
+
+* Anwendung
+
+    * Verständlichkeit, Dokumentation
+
+    * Daten, Testdaten
+
+    * Performance, Programmiersprache, konfigurationsmanagement
+
+    * Personalfähigkeiten
+---
+class: center, middle
+# Softwarewartung
+Genereller Prozess des Verändern der Software nach der Auslieferung
+---
+## Typen der Wartung
+***
+
+* Fehlerkorrektur von Bugs und Schwachstellen
+
+    * Programmierfehler: günstig
+
+    * Designfehler: teurer
+
+    * Anforderungsfehler: am teuersten
+
+* Anpassungen an neue Plattformen und Umgebungen
+
+* Funktionen hinzufügen für neue Anforderungen
+---
+## Anteil der verschiedenen Arten
+***
+<div style="margin-top:20px;">
+  <img style="width:100%;" src="assets/Bild10.png"/>
+</div>
+---
+## evtl. Günde für teure Features
+***
+---
+## Wartungsoptimierung
+***
+
+* Wartung gleiche Wertschätzung wie Entwicklung
+
+* Softwareumgestaltung
+
+* Genaue Spezifikation, Test-first, Objektorientierung, Konfigurationsmanagement
+
+* In Praxis mehr Investition in Neuentwicklung
+
+    * Firmen denken in Quartalszahlen, nicht langfristig
+
+    * Entwickler kein Anreiz gut wartbare Software zu schreiben
+---
+## Wartungsvorhersage
+***
+<div style="margin-top:20px;">
+  <img style="width:100%;" src="assets/Bild11.png"/>
+</div>
+---
+
+## Metriken zur Abschätzung
+***
+
+* Beziehung zwischen System und externe Umgebung
+
+    * Anzahl und Komplexität von Schnittstellen
+
+    * Anzahl von typischerweise sprunghaften Änderungen
+
+    * Geschäftsablauf um das System
+
+* Metriken nach Veröffentlichung
+
+    * Anzahl der Anfragen für korrektive Wartung
+
+    * Durchschnittliche Zeit zur Auswirkungsanalyse
+
+    * Durchschnittliche Bearbeitungszeit einer Änderungsanfrage
+
+    * Anzahl außerordentlicher Änderungsanfragen
 
 ---
 
-## Inhalte 
+## Softwareumgestaltung
+***
 
-* A
-* B
+* Um Altsystem einfacher zu waten, kann Software umgestaltet werden
 
-![](media/image.jpg)
+* Möglichkeiten:
+
+    * Neudokumentierung
+
+    * Refactoring
+
+    * Übersetzen in moderne Programmiersprachen
+
+    * Strukter des Systems und der Daten anpassen
+
+* Vorteile gegenüber Neuentwicklung
+
+    * reduziertes Risiko
+
+    * reduzierte Kosten
+---
+
+    ## Softwareumgestaltung
+***
+
+* Um Altsystem einfacher zu waten, kann Software umgestaltet werden
+
+* Möglichkeiten:
+
+    * Neudokumentierung
+
+    * Refactoring
+
+    * Übersetzen in moderne Programmiersprachen
+
+    * Strukter des Systems und der Daten anpassen
+
+* Vorteile gegenüber Neuentwicklung
+
+    * reduziertes Risiko
+
+    * reduzierte Kosten
+---
+## Ablauf einer Umgestaltung
+***
+<div style="margin-top:20px;">
+  <img style="width:100%;" src="assets/Bild12.png"/>
+</div>
+---
+## Refactoring
+***
+
+* Prozess Verbesserungen zu machen, um die Degradierung der Software zu verlangsamen
+
+* Struktur verbessern, Komplexität reduzieren oder Verständlichkeit verbessern
+
+* konservieren der Funktion, reduzieren zukünftiger Probleme
+
+* integraler Bestandteil agiler Methoden
+
+* Indikatoren für mögliche Verbesserungen
+
+    * Codeduplikate
+
+    * Lange methoden
+
+    * Datenklumpen
+
+    * Spekulative Generalität
+
+---
+## Refactoring
+***
+
+* einfache Transformationen
+
+    * Extrahier Methode
+
+    * Konsolidieren bedingter Ausdrücke
+
+    * Hochzieh Methode
+
+* IDEs unterstützen mit Tools
+
+* Design Refactoring, wenn Struktur zu schlecht ist
+
+
+
+---
+
+class: center, middle
+
+# Kapitel 09: Software Evolution
+
+Finn Kuhn
 
 
     </textarea>
-    <script src="../_assets/js/remark-latest.min.js">
-    </script>
-    <script>
-    
+<script src="../_assets/js/remark-latest.min.js">
+</script>
+<script>
+
     var slideshow = remark.create({
-  // Set the slideshow display ratio
-  // Default: '4:3'
-  // Alternatives: '16:9', ...
-  ratio: '4:3',
+        // Set the slideshow display ratio
+        // Default: '4:3'
+        // Alternatives: '16:9', ...
+        ratio: '4:3',
 
-  // Navigation options
-  navigation: {
-    // Enable or disable navigating using scroll
-    // Default: true
-    // Alternatives: false
-    scroll: true,
+        // Navigation options
+        navigation: {
+            // Enable or disable navigating using scroll
+            // Default: true
+            // Alternatives: false
+            scroll: true,
 
-    // Enable or disable navigation using touch
-    // Default: true
-    // Alternatives: false
-    touch: true,
+            // Enable or disable navigation using touch
+            // Default: true
+            // Alternatives: false
+            touch: true,
 
-    // Enable or disable navigation using click
-    // Default: false
-    // Alternatives: true
-    click: false
-  },
+            // Enable or disable navigation using click
+            // Default: false
+            // Alternatives: true
+            click: false
+        },
 
-  // Customize slide number label, either using a format string..
-  slideNumberFormat: 'Slide %current% of %total%',
-  // .. or by using a format function
-  slideNumberFormat: function (current, total) {
-    return '' + current + '/' + total;
-  },
+        // Customize slide number label, either using a format string..
+        slideNumberFormat: 'Slide %current% of %total%',
+        // .. or by using a format function
+        slideNumberFormat: function (current, total) {
+            return '' + current + '/' + total;
+        },
 
-  // Enable or disable counting of incremental slides in the slide counting
-  countIncrementalSlides: true
-}); 
-    
-    
-      
-    </script>
-  </body>
+        // Enable or disable counting of incremental slides in the slide counting
+        countIncrementalSlides: true
+    });
+
+
+</script>
+</body>
 </html>

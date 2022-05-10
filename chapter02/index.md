@@ -174,7 +174,7 @@ Ein Softwareentwurf ist eine Beschreibung der Struktur der zu implementierenden 
 
 In der Abbildung 2.5 ist ein abstraktes Modell des Designprozesses dargestellt, das die Eingaben für den Prozess, Aktivitäten und die Ergebnisse zeigt. die Designprozessaktivitäten sind sowohl hier verschachtelt als auch voneinander abhängig. Nacharbeiten sind hier nicht auszuschließen, da es ständig neue Informationen über das Design generiert werden.
 
-![](img/05.png)
+![](img/05.2.png)
 
 **Abbildung 2.5: Ein allgemeines Modell des Designprozesses**
 

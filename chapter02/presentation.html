@@ -95,7 +95,7 @@ Unternehmen können der Software Prozess durch die Nutzung moderner Software Eng
       
 ---
       
-## Software-Prozessmodelle
+## 1. Software-Prozessmodelle
 <br><br>
 Allgemeine Prozessmodelle (abstrakte Beschreibungen, ohne Details über einzelne Aktivitäten im Prozess): <br>
 -	Wasserfallmodell
@@ -262,18 +262,19 @@ Drei Arten von wiederverwendete Softwarekomponenten:
       
 ## Integration und Konfiguration - Phasen
       
-1. **Anforderungsspezifikation** - Aufnahme gründlegender Anforderungen, ohne Details
+1. **Anforderungsspezifikation** - Aufnahme gründlegender Anforderungen (ohne Details)
 2.	**Software-Erkennung und -Evaluierung** <br>
-  Suche nach Komponenten und Systemen, welche den beschriebenen Anforderungen genügen <br>
-  Systeme bewerten und beurteilen ob sie geeignet sind um die Anforderungen umzusetzen
-3.	**Verfeinerung der Anforderungen** - unter Berücksichtigung der gefundenen Komponente/Systeme <br>
+  Suche nach Komponenten, welche den Anforderungen genügen <br>
+  Systeme bewerten, beurteilen --> mit die Anforderungen geeignet sind.
+3.	**Verfeinerung der Anforderungen** - Berücksichtigung der gefundenen Komponente <br>
   Wenn nichts gefunden wurde --> Rücksprung zur Anforderungsspezifikation um mögliche andere Lösungen zu suchen.
 4.	**Konfiguration des Anwenungssystems** - sofern die Anforderungen sich mit dem Standardsystem umsetzen lässt
 5.	**Komponentenanpassung und Integration** - wenn es kein Standartsystem gibt --> einzelne Komponente modifizieren und integrieren.
 
 <div style="margin-top:20px;">
-  <img style="width:50%;" src="img/03.png"/>
+  <img style="width:100%;" src="img/03.png"/>
 </div>
+      
 ---
       
 ## Integration und Konfiguration - Zusammenfassung      
@@ -288,7 +289,7 @@ Drei Arten von wiederverwendete Softwarekomponenten:
       
 ---
       
-## Prozessaktivitäten
+## 2. Prozessaktivitäten
       
 Prozess - eine verschachtelte Abfolge von technischen, kollaborativen und Managementaktivitäten.
       
@@ -328,23 +329,176 @@ Vereinbarung eines Anforderungsdokument (Systemspezifikation/Kundenanforderungen
       
 ## Softwarespezifikation      
      
-3 Hauptaktivitäten im Requirements-Engineering-Prozess:
+3 Hauptaktivitäten im Requirements Engineering:
       
- •	Prozess enthält 3 Aktivitäten
-o	Anforderungserhebung und Analyse
-	Aufnahme von Anforderungen
-	Beobachten von bestehenden Systemen
-	Gespräche mit Nutzern
-	Aufgabenanalyse
-	Kann die Entwicklung von Prototypen oder Systemmodellen beinhalten
-o	Anforderungsspezifikation
-	Gesammelte Information in ein Dokument überführen
-	Formulierung von Anforderungen auf End-User Level (high level) und Systemlevel (detaillierte Beschreibung der zu liefernden Funktionalität)
-o	Anforderungsvalidierung
-	Überprüfung der aufgenommenen Anforderungen hinsichtlich Umsetzbarkeit und vollständigkeit geprüft
-	Aktivität soll Qualität sicherstellen --> Fehler finden
-•	Aktivitäten sind verschachtelt und laufen während der Analyse weiter, so dass Anforderungen mit der Zeit weiter verfeinert werden können oder fehlende Anforderungen nachgepflegt werden können.
+<div style="position:absolute; top:70px; right:10px; width:45%;">
+  <img style="width:100%;" src="img/04.png"/>
+</div> 
+      
+-	Anforderungserhebung und Analyse
+ -	Aufnahme von Anforderungen
+ -	Beobachten von bestehenden Systemen
+ -	Gespräche mit Nutzern
+ -	Aufgabenanalyse
+ -	Entwicklung von Prototypen (möglich)
+-	Anforderungsspezifikation
+ -	Gesammelte Information in einem Dokument
+ -	Formulierung von Anforderungen auf End-User Level (Kunde) und Systemlevel (Entwickler)
+-	Anforderungsvalidierung
+ -	Überprüfung der aufgenommenen Anforderungen hinsichtlich Umsetzbarkeit und vollständigkeit
+ -	Aktivität soll Qualität sicherstellen --> Fehler finden
+      
+Aktivitäten (verschachtelt) laufen während der Analyse weiter <br> 
+      Anforderungen mit der Zeit --> weiter verfeinert
+      
+---
+      
+## Softwaredesign und Implementierung      
      
+**Ziel:** eine ausführbare Software zu liefern.
+      
+Abhängig von Prozess Modell können die Aktivitäten getrennt vorhanden sein
+      
+Softwareentwurf - Beschreibung der Struktur von:
+- implementierenden Software
+- der verwendeten Datenmodelle und -Strukturen
+- (selten) der Schnittstellen zwischen Systemkomponenten/Algorithmen
+      
+Infos über die Software Plattform (wo die Software ausgeführt wird) - wichtiger Teil für den Designprozess,
+da muss man wissen, wie man die Prozesse integrieren soll. --> Plattformspezifikation/Entwurfsprozess.
+
+Die Aktivitäten im Designprozess hängen von entwickelndem System.      
+      
+---
+      
+## Softwaredesign und Implementierung
+<br><br><br>     
+Aktivitäten (Teil des Entwurfsprozesses):
+      
+1. Architekturenentwurf: <br>
+-Gesamtstruktur des Systems <br>
+-Komponenten, ihre Beziehungen/Verteilung.
+2. Datenbankdesign: <br>
+-Systemdatenstrukturen und wie die darstellen. <br>
+(Datenbank wiederverwenden/neue erstellen)
+3. Schnittstellendesign: <br>
+Schnittstellen zwischen Systemkomponenten. <br>
+-Schnittstellenspezifikation. <br>
+-die Komponenten separat entwerfen <br>
+& entwickeln.
+4. wiederverwendbaren Komponenten. <br>
+-wenn es keine gibt --> neue Softwarekomponente entwerfen. <br>
+-einfache Komponentenbeschreibung / detaillierte Implementierungsdetails (Liste mit Änderungen / Designmodell mit UML Druck)      
+      
+<div style="position:absolute; top:120px; right:0px; width:45%;">
+  <img style="width:100%;" src="img/05.2.png"/>
+</div>       
+      
+---
+      
+## Softwaredesign und Implementierung      
+      
+Aktivitäten --> Entwurfsergebnissen.
+
+- Bei modellgetriebener Ansatz - die Entwurfsergebnisse in Entwurfsdiagrammen aufgeführt. 
+- Bei agile Entwicklungsmethoden - die Ergebnisse keine separaten Spezifikationsdokumente haben (im Code des Programms)
+
+Systemdesign --> Entwicklung <br>
+-> Tests des Codes  -> Programmfehler (Bugs) -> Debuggen
+
+Fehlerprüfung und Fehlerbeseitigung - unterschiedliche Prozesse.      
+      
+---
+      
+## Softwarevalidierung - Phasen
+      
+Validierungstechnik - Programmtests (unter Verwendung der Testdaten).  <br>
+Überprüfungsprozesse sind möglich (Inspektionen und Überprüfungen in jeder Phase) 
+
+- Meiste Zeit --> Test von Programmen.           
+- Integriertes System wird auch getestet.
+- Benutzertest heißt Beta-Test --> Benutzerkommentare
+    
+Die Phasen des Testprozesses:
+1. **Komponententests.** -  jede Komponente unabhängig von anderen getestet. <br>
+Bespiel für ein Komponent - Funktionen oder Klassen. 
+2. **Systemtest.** Komponenten --> Gesamtsystem. <br>
+(nicth)funktionale Anforderungen erfüllen. <br>
+Bei großen Systemen - mehrstufiger Prozess (Test von Subkomponenten).
+3. **Kundentests.** - von Systemkunden, mit realen Daten.    
+   
+<div style="margin-top:20px;">
+  <img style="width:80%;" src="img/06.png"/>
+</div>  
+      
+---
+      
+## Softwarevalidierung  
+      
+- Bei einer testgetriebener Entwicklung: <br>
+die Tests mit den Anforderungen --> Entwicklung 
+- Bei plangesteuertes Softwareprozess: <br>
+Testplänen (aus der Systemspezifikation) --> Tests
+- In der Abbildung: Testpläne - Verbindung zwischen Test und Entwicklungsaktivitäten (V-Modell). 
+- **V-Modell** - die Software-Validierungsaktivitäten, die jeder Stufe des WasserfallsProzessmodells entsprechen. 
+- Beta-Testing ist möglich
+      
+<div style="margin-top:20px;">
+  <img style="width:100%;" src="img/07.png"/>
+</div>      
+      
+---
+      
+## Software evolution
+      
+- viel sinnvoller eine Änderungen an der Software vorzunehmen als an der Systemhardware.
+
+Es gibt der Prozess namens Softwareevolution (Softwarewartung).
+
+- meist wird Softwareevolution als ein zusammenhängendes Prozess angesehen. 
+- Man sollte es aber lieber als ein getrenntes Prozess vorstellen (siehe Abbildung). 
+
+Hier ist die Software - Reaktion auf änderte Anforderungen und Kundenbedürfnisse.
+      
+<div style="margin-top:20px;">
+  <img style="width:100%;" src="img/08.png"/>
+</div>      
+      
+---
+      
+## 3. Umgang mit Veränderungen
+      
+
+Ansätze, um die Kosten der Nacharbeit zu reduzieren:
+1. **Erwartung ändern.** 
+z.b. ein Prototypsystem entwickeln <br> 
+--> Kunden die Merkmale des Systems zu zeigen. <br>
+--> die Anforderungen verfeinern.
+2. **Änderungstoleranz.** 
+inkrementelle Form von Entwicklung - die vorgeschlagenen Änderungen in Schritten implementieren. <br>
+(Monolith -> Modulith -> Microservice)
+
+Möglichkeiten, mit Veränderungen umzugehen:
+1. **System-Prototyping.** <br>
+schnelle Entwicklung einer Version des Systems(teils).
+- die Anforderungen / die Machbarkeit von Designentscheidungen prüfen.
+2. **Inkrementelle Lieferung.** <br>
+die Systeminkremente --> dem Kunden zur Kommentierung / Experimentieren.
+- Änderungsvermeidung, 
+- die vorzeitige Festlegung von Anforderungen für das gesamte System
+- Refactoring - die Struktur und Organisation von Programmen unterstützen      
+      
+---
+      
+## Prototyping
+      
+      
+      
+      
+      
+      
+      
+      
       
       
 

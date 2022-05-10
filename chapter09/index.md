@@ -1,9 +1,9 @@
-# Software evolution
+# Software Evolution
 
 **Autor:** Finn Kuhn
 
 Das Kapitel befasst sich mit der Software Evolution in der Softwareentwicklung. Die beschriebenen Inhalte stammen aus
-dem Buch Software Engineering von Ian Sommerville[1] (S. 255-282).
+dem Buch Software Engineering von Ian Sommerville[1] (S. 255-282). 
 
 ## Einführung
 
@@ -376,32 +376,31 @@ gezogen werden.
 
 Beim Refactoring können IDEs mit diversen Tools eine große Unterstützung sein. Es kann allerdings passieren, dass die
 Struktur eines Programms so schlecht ist, das Coderefactoring nicht mehr möglich ist. In dem Fall kann Design
-Refactoring in Betracht gezogen werden, um den Code mithilfe von Design Patterns azupassen.
+Refactoring in Betracht gezogen werden, um den Code mithilfe von Design Patterns anzupassen.
+
+## Zusammenfassung
+* 
 
 [Abbildung 1]: https://mwithoeft.github.io/SGSE22/chapter09/assets/Bild1.png
 
-[Abbildung 2]: chapter09/assets/Bild2.png
+[Abbildung 2]: https://mwithoeft.github.io/SGSE22/chapter09/assets/Bild2.png
 
-[Abbildung 3]: chapter09/assets/Bild3.png
+[Abbildung 3]: https://mwithoeft.github.io/SGSE22/chapter09/assets/Bild3.png
 
-[Abbildung 4]: chapter09/assets/Bild4.png
+[Abbildung 4]: https://mwithoeft.github.io/SGSE22/chapter09/assets/Bild4.png
 
-[Abbildung 5]: chapter09/assets/Bild6.png
+[Abbildung 5]: https://mwithoeft.github.io/SGSE22/chapter09/assets/Bild6.png
 
-[Abbildung 6]: chapter09/assets/Bild7.png
+[Abbildung 6]: https://mwithoeft.github.io/SGSE22/chapter09/assets/Bild7.png
 
-[Abbildung 7]: chapter09/assets/Bild8.png
+[Abbildung 7]: https://mwithoeft.github.io/SGSE22/chapter09/assets/Bild8.png
 
-[Abbildung 8]: chapter09/assets/Bild9.png
+[Abbildung 8]: https://mwithoeft.github.io/SGSE22/chapter09/assets/Bild9.png
 
-[Abbildung 9]: chapter09/assets/Bild10.png
+[Abbildung 9]: https://mwithoeft.github.io/SGSE22/chapter09/assets/Bild10.png
 
-[Abbildung 10]: chapter09/assets/Bild11.png
+[Abbildung 10]: https://mwithoeft.github.io/SGSE22/chapter09/assets/Bild11.png
 
-[Abbildung 11]: chapter09/assets/Bild12.png
+[Abbildung 11]: https://mwithoeft.github.io/SGSE22/chapter09/assets/Bild12.png
 
-[Abbildung 12]: chapter09/assets/Bild13.png
-
-## Referenzen
-
-[1]: Dijkstra, E. W. (1968). Go to statement considered harmful. Communications of the ACM, 11(3), 147-148.
+[Abbildung 12]: https://mwithoeft.github.io/SGSE22/chapter09/assets/Bild13.png
