@@ -129,6 +129,7 @@ Planorientierte Ansätze zur Softwareentwicklung, wie beispielsweise das Wasserf
 Frühe Ansätze der agilen Methodik kollidieren mit dem grundsätzlichen Bedürfnis nach Transparenz zur Planung in großen Unternehmen außerdem kann eine optimale Nutzung der Entwicklungsressourcen (z.B. Zeit) nicht sichergestellt werden, da Entwickler sich selbstständig organisieren, keine Dokumentation erstellt wird und die Entwickler nur kurzfristig, zyklisch, verplant werden. 
 Um die Probleme agiler Methodik in großen Unternehmen zu lösen, wurde Scrum entwickelt. Scrum versteht sich als Framework für Organisationen, welche mit agiler Methodik arbeiten. Es ermöglicht externen Einblick ins Projekt und dadurch ein Projektcontrolling im klassischen Sinne.
 Zur Abgrenzung von bekannten Projektmanagement Methoden implementiert Scrum eine neue Terminologie :
+
 |Scrum Begriff| Erklärung  |
 |--|--|
 | Entwicklerteam | Gruppe aus bis zu 7 Entwicklern, welche sich selbst organisiert und für Entwicklung verantwortlich ist |
@@ -199,7 +200,7 @@ Neben den Fragen zum System, müssen sich Unternehmen auch Fragen zum entwickeln
 -	Arbeitet das Entwicklerteam zentral? 
 	-	Agile Methodik eignet sich besonders für kleine, zentral arbeitende Teams
 -	 Welche Technologien stehen zur Unterstützung des Prozess zur Verfügung?
-		-	agile Methodik ist eher auf Tools angewiesen um einen besseren Überblick über das in Entwicklung befindliche System zu erhalten
+	-	agile Methodik ist eher auf Tools angewiesen um einen besseren Überblick über das in Entwicklung befindliche System zu erhalten
 		
 Auch Fragen betreffend der Organisation (Unternehmen) können Einfluss auf den Anteil an plangesteuerten Aktivitäten haben. Das allgemein vermittelte Bild, der unbürokratischen und legeren, jungen Softwareunternehmen entspricht nicht, oder nur in teilen, der Wahrheit. Folgende Fragestellungen betreffend der Organisation müssen sich Organisationen stellen:
 -	Gibt es rechtliche Rahmenbedingungen, welche einen detaillierten Softwareentwurf und/oder eine vollumfängliche Dokumentation nötig machen? Sollte dies der Fall sein, ist ein planorientiertes Vorgehen besser geeignet, als ein agiles.
@@ -220,7 +221,7 @@ Es gibt kein allgemeingültiges Modell zur Nutzung von agiler Methodik bei der E
 -	Für verschiedene Produktbereiche werden jeweils Product Owner definiert, welche permanent im Austausch stehen.
 -	Ein kompletter Verzicht auf Dokumentation, Entwürfen und Beschreibungen ist nicht möglich.
 -	Entwicklung von Kommunikationsmechanismen, wie zum Beispiel Telefon/Videokonferenzen. Schaffung von asynchronen Kommunikationswegen wie E-Mail oder Instant Messaging.
--	 Continuous integration über das gesamte Projekt ist meistens nicht möglich, trotzdem sollten regelmäßige Builds des Gesamtsystem erfolgen. Der Einsatz von Tools für das Konfigurationsmanagement ist unerlässlich.
+-	Continuous integration über das gesamte Projekt ist meistens nicht möglich, trotzdem sollten regelmäßige Builds des Gesamtsystem erfolgen. Der Einsatz von Tools für das Konfigurationsmanagement ist unerlässlich.
 
 Scrum wurde für den Einsatz bei der Entwicklung großer Softwaresysteme erweitert, hierfür wird das bekannte Scrum Model erweitert. Jedes Team hat einen eigenen Scrum Master und Product Owner. Außerdem hat jedes Team einen einen Produktarchitekten, welcher sich mit den Architekten der anderen Teams austauscht. Releases werden unter den Teams abgestimmt. Neben dem täglichen Scrum wird ein "Scrum of Scrum" etabliert, in welchem sich Vertreter aller Teams treffen und Fortschritte besprechen um Probleme frühzeitig zu identifizieren.
 
