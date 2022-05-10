@@ -29,11 +29,11 @@ Unterschieden wird zwischen der Modellierung bereits existierender oder angestre
 
 Um ein System zu entwerfen, ist es wichtig frühzeitig festzulegen, welche Prozesse und Operationen innerhalb der Systemumgebung auszuführen sind. Dazu sollten auch bereits vorhandene Systeme betrachtet werden, um redundante Funktionalitäten auszuschließen und mögliche Verbindungspunkte zu schaffen. Die Grenzen des Systems innerhalb der Umgebung sollen daher definiert werden. Dabei kann es sich um eine klare Abgrenzung handeln, allerdings kann es oftmals vorkommen, dass flexible Grenzen anzustreben sind, welche die Möglichkeit der Anpassung auf die Bedürfnisse der Nutzer bieten.
 
-![ContextModel](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/ContextModel.png?raw=true)
+<img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/ContextModel.png?raw=true" alt="ContextModel" style="zoom:80%;" />
 
 Was in dieser Phase der Systemmodellierung also angestrebt wird, ist die Definition des Systemkontextes. Abhängigkeiten oder Beziehungen innerhalb dieser Umgebung können mithilfe eines Kontextmodells erfasst werden. Dieses bietet einen guten Überblick über alle Komponenten der Umgebung, jedoch wird die jeweilige Art der Beziehung zwischen zwei Systemen nicht ersichtlich. Für die Ermittlung der Anforderungen und das Design des Systems ist es aber notwendig, die spezifischen Interaktionen und Beziehungen zu kennen. Aus diesem Grund werden häufig weitere Modelle herangezogen, welche die Prozesse abbilden können. 
 
-![ActivityDiagram](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/ActivityDiagram.png?raw=true)
+<img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/ActivityDiagram.png?raw=true" alt="ActivityDiagram" style="zoom:70%;" />
 
 UML Aktivitätsdiagramme bieten einen guten Rahmen, um Beziehungen zwischen Systemen, Prozesse und Aktivitäten zu abstrahieren. Dazu wird Gebrauch von folgenden Elementen gemacht:
 
@@ -108,7 +108,7 @@ Die in einem System vorhandenen Objekte und ihre Beziehungen zu anderen Objekten
 
 In den frühen Phasen der Systemmodellierung stellen diese Objektklassen zunächst Elemente aus der Realität dar. Es wird versucht, die wesentlichen Komponenten innerhalb eines Systems zu identifizieren und diese in Relation zu bringen. Dies erfolgt zunächst grobgranular, indem die Objekte als Rechteck mit dem entsprechenden repräsentiert werden. Mit Verbindungslinien werden nun Beziehungen kenntlich gemacht, wobei diese anhand von Beschreibungen und Multiplizitäten spezifiziert werden können. Diese Art der Modellierung erinnert an semantische Datenmodelle, in denen Entitäten, dessen Attribute und Relationen zueinander aufgeführt sind. Mit einer solchen Abbildung kann die Grundstruktur von Systemobjekten übersichtlich erfasst werden.
 
-![ClassesAndAssociations](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/ClassesAndAssociations.png?raw=true)
+<img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/ClassesAndAssociations.png?raw=true" alt="ClassesAndAssociations" style="zoom:80%;" />
 
 
 
@@ -166,19 +166,41 @@ Datengesteuerte Modelle waren bereits in den 1970er Jahren verbreitet, was sie z
 
 Doch auch mit Sequenzdiagrammen können DFDs dargestellt werden. Werden die Nachrichten zwischen Objekten ausschließlich von links nach rechts überliefert, wird so die sequentielle Abfolge des Datenflusses illustriert (siehe Abbildung).
 
-![Behaviour_ActivityModel](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Behaviour_ActivityModel.png?raw=true)
+<img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Behaviour_ActivityModel.png?raw=true" alt="Behaviour_ActivityModel" style="zoom:70%;" />
 
-![Behaviour_SequenceDiagram](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Behaviour_SequenceDiagram.png?raw=true)
+<img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Behaviour_SequenceDiagram.png?raw=true" alt="Behaviour_SequenceDiagram" style="zoom:70%;" />
 
 
 
 ### Ereignisgesteuerte (Event-Driven) Modellierung
 
-![Behaviour_StateDiagram](https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Behaviour_StateDiagram.png?raw=true)
+Einige Systeme wie beispielsweise Echtzeit-Systeme treten häufig externe oder interne Ereignisse auf, die das System in einen neuen Zustand aus einer endlichen Menge von Zuständen versetzen können. Zur Veranschaulichung der Systemabläufe bei spezifischen Ereignissen können hierbei von UML-Zustandsdiagrammen Gebrauch gemacht werden. In diesem Diagramm werden die unterschiedlichen Zustände des Systems aufgeführt, sowie die Übergänge zwischen den Zuständen. Ein Wechsel findet dabei zwischen zwei Zuständen statt, sobald das Ereignis welche den Übergang kennzeichnet, eintritt.
+
+Ein UML-Zustandsdiagramm setzt sich aus den folgenden Elementen zusammen:
+
+| Element                  | Bedeutung                                           |
+| ------------------------ | --------------------------------------------------- |
+| Abgerundetes Rechteck    | Zustand                                             |
+| Gefüllter Kreis          | Anfangszustand                                      |
+| Gefüllter Kreis mit Ring | Endzustand                                          |
+| Pfeil                    | Übergang zwischen zwei Zuständen (in Pfeilrichtung) |
+| Pfeilbeschreibung        | Ereignis                                            |
 
 
 
-### Modellbasierte Entwicklung
+<img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/StateDiagram.png?raw=true" alt="StateDiagram" style="zoom:60%;" />
+
+
+
+In einigen Zuständen werden Operationen definiert, welche auszuführen sind, sobald der Zustand aktiv ist. Diese können in dem Zustand unterhalb des Namens beschrieben werden, indem das Kennwort 'do:' der Operationsbeschreibung vorangeschrieben wird.
+
+<img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/SuperStateDiagram.png?raw=true" alt="SuperStateDiagram" style="zoom:60%;" />
+
+Oftmals sind innerhalb eines Systems eine Vielzahl von möglichen Zuständen vorhanden, was die grafische Erfassung dieser erschwert. Aus diesem Grund ist es auch hierbei sinnvoll, mehrere Zustandsdiagramme mit unterschiedlichem Detailgrad zu erstellen. Hierfür können sogenannte *Superzustände* genutzt werden, welche mehrere Zustände kapseln können, sodass diese für grobgranulare Diagramme zur Verfügung stehen. Die Superzustände werden dort als einfacher Zustand dargestellt, sollten dann aber in weiteren Diagrammen detaillreicher erfasst sein.
+
+Zustandsdiagramme schenken einen guten Überblick über die Reaktionen des Systems bei gewissen Ereignissen, doch ist es ebenso sinnvoll, die unterschiedlichen Zustände und Ereignisse im Detail zu erläutern. Dafür kann eine tabellarische Dokumenation erfolgen, in der jedem Zustand und jedem Ereignis eine ausführliche Erklärung beigefügt wird. 
+
+## Modellbasierte Entwicklung
 
 
 
