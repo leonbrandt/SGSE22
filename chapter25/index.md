@@ -154,4 +154,18 @@ Ziel des Systembaus ist es, so wenig wie möglich zu Kompilieren. Bereits kompil
 
 ## Change Management
 
+Change Management (dt. Änderungsmanagement) dient dazu, Änderungen an einem System zu kontrolliert aufgrund von Kosten und Dringlichkeit zu priorisieren und umzusetzen.
+
+![Prozess des Änderungsmanagements](assets/25.14-The_change_management_process.png)
+
+Die obere Abbildung zeigt eine mögliche Variante eines Change Management Prozesses. Je nach Unternehmens-/Teamgröße und Kunde gibt es Änderungen zu dem Modell. Dabei ist auch zu beachten, dass der Prozess in den meisten Fällen erst nach dem Release eines Systems in Kraft tritt. Während der Entwicklung gibt es oftmals keine gewünschten Änderungen an einem laufenden System.
+
+Ind dem Prozess werden Change Requests (CR, eine Anfrage nach einer bestimmten Änderung) durch den Kunden gestellt. Die Anfragen werden in einen Katalog aufgenommen und durch den Kundensupport bewertet. Gültige Anfragen werden an das Entwicklerteam für eine Einschätzung der Kosten und des Implementationsaufwands weitergegeben.
+Daraufhin werden die bewerteten und geschätzten Anfragen durch die Produktentwicklung oder ein separates Change Control Board (CBB, wird bei Regierung und Militär so genannt) aufgrund verschiedener Faktoren priorisiert. Mögliche Faktoren sind die Kosten, die Dringlichkeit, die Anzahl der betroffenen Nutzer oder die Gliederung in den Release-Zyklus des Systems.
+Priorisierte Anfragen landen danach wieder beim Entwicklungsteam, welches diese umsetzt, testet und zuletzt schließt.
+
+Bei weit verbreiteter Software kommen die Change Requests meist nicht direkt von Kunden, sondern es gibt Online-Foren, auf denen gewünschte Funktionen oder Bugs gepostet und von der Community bewertet werden können (z.B. durch Likes auf GitHub Issues). In der agilen Entwicklugn wird die Priorisierung der Changes manchmal auch durch die Entwickler selbst durchgeführt, um eine schnellere Umsetzung zu erreichen. Des Weiteren können manche Kunden auch direkt mit den Entwicklern die Änderungen besprechen, ohne den Kundensupport zu benachrichtigen.
+
+Eine gute Möglichkeit, um Änderungen an Quellcode festzuhalten, ist es, eine Kofzeile mit der Änderungshistorie in der Datei zu pflegen. Alternativ kann auch die Änderungshistorie des Versionskontrollsystems dazu verwendet werden.
+
 ## Release Management
