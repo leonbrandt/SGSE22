@@ -2,9 +2,13 @@
 
 **Autor:** Maxim Fründt
 
-## Einführung
-
 Durch die hohe Bedeutung, die Software in unserem alltäglichem Leben hat, ist es von großer Wichtigkeit, dass man sich auf diese verlassen kann. Man spricht auch von der Dependability (Zuverlässigkeit) von Software(-Systemen). Die Software sollte nicht nur immer zur Verfügung stehen, wenn sie benötigt wird, sondern korrekt und ohne Seiteneffekte funktionieren. Um die Doppeldeutigkeit der Begriffe zu umgehen, wird im Folgenden der englische Begriff verwendet, bei Erstnennung wird eine Übersetzung dazu geschrieben.
+
+## Dependability und Systeme
+
+Zunächst soll wiedergegeben werden, was ein System dependable (zuverlässig) macht und wie Systeme aufgebaut werden. Darüberhinaus werden die Systemeigenschaften genannt, welche die Dependability des Systems beeinflussen.
+
+### Einführung
 
 Die Dependability von Systemen ist in der Regel wichtiger als die Gesamtheit an Funktion dessen, hauptsächlich aus folgenden Gründen:
 - Oft ist es verkraftbar wenn eine Funktion des Systems ausfällt, solange das System weiter verfügbar ist
@@ -20,7 +24,7 @@ Um ein zuverlässiges System Designen zu können, muss mehr als nur die Software
 - Software-Fehler, welche durch Fehler in der Spezifikation, dem Design oder der Implementierung der Software auftreten können
 - Menschliche-Fehler, welche durch nicht vorhergesehene Bedienung der Software entstehen können
 
-## Eigenschaften der Dependability
+### Eigenschaften der Dependability
 
 Die Dependability eines Systems beschreibt wie viel Vertrauen man in das System hat, dass es unter normalen Bedingungen seine Aufgabe erfüllt, ohne in einen Fehlerzustand überzugehen. Quantifiziert wird die Dependability nicht in zahlen sondern in Beschreibungen wie beispielsweise "nicht zuverlässig", "sehr zuverlässig", "extrem zuverlässig".
 Die Dependability eines Systems wird hauptsächlich durch fünf Eigenschaften beeinflusst. Diese sind im folgenden aufgelistet und in Abbildung 11 visualisiert.
@@ -43,7 +47,7 @@ Zusätzlich gibt es weitere Systemeigenschaften, welche dessen Dependability bee
 - **Maintainability (Wartbarkeit)**, welche beurteilt, wie gut das System an neue Gegebenheiten angepasst werden kann ohne neue Fehler im System einzufügen
 - **Error tolerance (Fehlertoleranz)**, beschreibt wie umfangreich das System gegen Fehleingaben geschützt ist
 
-Um zuverlässige Software designen zu können muss folgendes berücksichtigt werden:
+Um zuverlässige Software designen zu können, muss folgendes berücksichtigt werden:
 - Das Einbringen von versehentlichen Fehlern in der Software-Spezifikation und -entwicklung ist zu vermeiden
 - Verzifizierungs- und Validierungsprozesse, welche effektiv Restfehler aufspühren, die die Dependability der Software beeinflussen, müssen definiert werden
 - Das System muss tolerant gegenüber Fehlern sein, sodass es auch im Fehlerfall weiter arbeiten kann
@@ -60,9 +64,9 @@ Um Fehlertoleranz gewährleisten zu können, muss redundanter Code implementiert
 
 Der Designprozess eines zuverlässigen Systems ist teurer. Neben der tatsächlichen Entwicklung müssen mehr Ressourcen für das Aufspühren von Fehlern und der Implementierung von Redundanz aufgebracht werden. Die Kosten steigen je nach Dependability-Level exponentiell an.
 
-## Soziotechnische Systeme
+### Soziotechnische Systeme
 
-Software und Hardware sind in Computersystemen voneinander abhängig. Zusammen formen sie ein System, welches komplexe Berechnungen ausführen und weitergeben kann. Dadurch folgt auch, dass Software Engineering keine für sich alleinstehende Aktivität ist, sondern ein Teil von Systems Engineering. 
+Um ein dependable System entwickeln zu können, muss klar sein was ein System ist, wie es abgegrenzt wird und wie es sich zusammensetzt. Software und Hardware sind in Computersystemen voneinander abhängig. Zusammen formen sie ein System, welches komplexe Berechnungen ausführen und weitergeben kann. Dadurch folgt auch, dass Software Engineering keine für sich alleinstehende Aktivität ist, sondern ein Teil von Systems Engineering. 
 Systeme sind in der Regel dazu ausgelegt der Gesellschaft einen Mehrwert zu bringen. Beispielsweise werden Wetterstationen von Organisationen ausgewertet, um eine vorhersage über das Wetter treffen zu können, wovon die Allgemeinheit profitiert. Systeme welche über die technischen Elemente hinausgehen, wie die im Beispiel genannte Organisation, welche die Daten der Wetterstationen auswertet, werden als soziotechnische Systeme bezeichnet. Ein soziotechnisches System wird in mehrere Ebenen eingeteilt, jedoch ist es auch wichtig das System als ganzes zu betrachten. Ein Fehler in der Software kann eventuell schnell behoben werden, der Einfluss auf die anderen Ebenen kann jedoch bleibende Schäden nach sich ziehen. In Abbildung 2 ist der Schichtenaufbau eines soziotechnischen Systems dargestellt und das Systems und Software Engineering den betroffenen Schichten zugewiesen. Da Software eine wichtige Rolle in jeder Ebene des Systems darstellt, gibt es keine ausdrückliche Softwareebene.
 
 |![](assets/SociotechnicalSystemsStack.png)|
@@ -81,15 +85,21 @@ Die Ebenen sollen so aufgebaut werden, dass eine Ebene nur mit ihren direkten Na
 
 Beim Design der Software muss stets das gesamte System im Blick behalten werden. Um andere Komponenten des Systems vor Fehlern in der Software zu schützen. Ein Softwarefehler darf nie zum Systemausfall führen sondern muss innerhalb seiner Ebene isoliert werden.
 
-## Redundanz und Diversität
+Eine detailiertere Vorstellung der soziotechnischen Systemen erfolgt in Kapitel 19 - Systems Engineering.
 
-Obwohl viele Maßnahme getroffen werden, um Fehler im System zu vermeiden, können sie nie ausgeschlossen werden. Aus diesem Grund ist es wichtig, dass ein Fehler nicht zu einem Totalausfall des Systems führt. Methoden gegen einen Totalausfall im Fehlerfall beinhalten Redundanz (d. h. Komponenten werden in mehrfacher Ausführung eingesetzt) und Diversität (d. h. die redundanten Komponenten sind nicht dieselben). Bei der Verbindung von Redundanz und Diversität spricht man auch von diversitärer Redundanz. Als beispiel sollten persönliche Daten gesichert werden. Durch die Kopie der Daten erhält man eine Redundanz. Die Kopie sollte jedoch auf einem anderen Medium gesichert werden, wodurch man eine Diversität erreicht. Im gleichen Sinne sind Systeme, welche eine hohe Availability erreichen wollen oft mit mehreren Servern ausgestattet, welche unterschiedliche Hardware aufweisen.
+## Maßnahmen zur Verbesserung der Dependability
+
+Im Folgenden wird näher auf Methoden eingegangen, welche die Dependability eines Systems verbessern. Dabei geht es nicht nur um Schutzmechanismen, die ein laufendes System schützen, sondern auch um Methoden, um Fehler in der Systemplanung bereits zu beseitigen.
+
+### Redundanz und Diversität
+
+Obwohl viele Maßnahme getroffen werden, um Fehler im System zu vermeiden, können sie nie ausgeschlossen werden. Aus diesem Grund ist es wichtig, dass ein Fehler nicht zu einem Totalausfall des Systems führt. Methoden gegen einen Totalausfall im Fehlerfall beinhalten Redundanz (d. h. Komponenten werden in mehrfacher Ausführung eingesetzt) und Diversität (d. h. die redundanten Komponenten sind nicht dieselben). Wenn im System durch einen Fehler eine Komponente ausfallen sollte, kann diese durch die Redundanz dieser einfach ersetzt werden. Diversität ist wichtig, da bei der Verwendung der gleichen Komponente diese durch den derzeitigen Fehler mit ausfallen könnte. Bei der Verbindung von Redundanz und Diversität spricht man auch von diversitärer Redundanz. Als beispiel sollten persönliche Daten gesichert werden. Durch die Kopie der Daten erhält man eine Redundanz. Die Kopie sollte jedoch auf einem anderen Medium gesichert werden, wodurch man eine Diversität erreicht. Im gleichen Sinne sind Systeme, welche eine hohe Availability erreichen wollen oft mit mehreren Servern ausgestattet, welche unterschiedliche Hardware aufweisen.
 Redundanz und Diversität werden auch im Prozess der Softwareentwicklung eingesetzt. So werden Probleme beispielsweise auf verschiedene Arten gelöst und das Ergebnis verglichen oder dieselbe Aufgabe von verschiedenen Entwicklern gelöst und verglichen. Solche Methoden führen jedoch zu höheren Entwicklungskosten. 
 Neben höheren Kosten führen Redundanz und Diversität zudem zu komplexeren Systemen, wodurch die Möglichkeit, dass Fehler auftreten wieder steigt. Aus diesen Gründen kann es je nach Projekt empfehlenswerter sein, dass Software Redundanz und Diversität vermieden wird um die Software einfacher zu halten und dafür mehr Ressourcen in die Verifikation und Validierung fließen sollen.
 
-## Zuverlässige (Software-)Prozesse
+### Zuverlässige (Software-)Prozesse
 
-Zuverlässige Software-Prozesse sind Software-Prozesse, welche verwendet werden um zuverlässige Software zu erstellen. Wenn ein solcher Prozess eingesetzt wird, kann man sich sicher sein, dass dieser vernünftig ausgeführt und dokumentiert worden ist. Zu der Dokumentation gehört ein Prozessmodell, welches definiert werden muss. Neben guter Dokumentation muss der Prozess zudem wiederholbar sein. Der Ausgang des Prozesses darf also nicht von Umwelteinflüssen, wie dem ausführenden Entwickler, abhängig sein.
+Zuverlässige Prozesse sind Prozesse, welche verwendet werden um zuverlässige Systeme zu erstellen. Diese können auch feingranular erstellt werden, um beispielsweise nur die Software oder nur die Hardware abzudecken. Wenn ein solcher Prozess eingesetzt wird, kann man sich sicher sein, dass dieser vernünftig ausgeführt und dokumentiert worden ist. Zu der Dokumentation gehört ein Prozessmodell, welches definiert werden muss. Neben guter Dokumentation muss der Prozess zudem wiederholbar sein. Der Ausgang des Prozesses darf also nicht von Umwelteinflüssen, wie dem ausführenden Entwickler, abhängig sein.
 Durch die Verwendung solcher Prozesse ist es einfacher zu beweisen, dass die Software bestimmte Normen erfüllt. Der Entwickler kann in diesem Falle dem Prüfer das Modell des verwendeten Prozesses vorstellen und beweise in Form von Daten, die während der Ausführung des Prozesses gesammelt werden, liefern, die bestätigen, dass der Prozess ordnungsgemäßg befolgt wurde. Neben der Prozessdokumentation ist für die Zertifizierung ebenfalls eine Dokumentation des Produkts nötig.
 Die Attribute von zuverlässigen Prozessen sehen wie folgt aus:
 - **Prüffähigkeit** Auch Außenstehende sollten den Prozessen verstehen können, damit diese den Prozess prüfen können
@@ -108,9 +118,13 @@ Grundsätzlich ist das Ziel aller Aktivitäten des Prozesses zu vermeiden, dass 
 Neben Prozessen, welche sich auf das Entwickeln und Testen konzentrieren, werden auch Prozesse für das Qualitäts- und Änderungsmanagement benötigt.
 Durch die Notwendigkeit der frühen Anforderungsprüfung und dem Streben nach einer umfangreichen Dokuemtation stehen zuverlässige Prozesse im Konflikt mit der agilen Entwicklungsmethodik, bei der die Anforderungen parallel zum System entwickelt werden und Dokumentation minimal gehalten werden soll. Dadurch ist rein agile Entwicklung unpraktisch für die Entwicklung von zuverlässigen Systemen, jedoch können agile Prozesse definiert werden, welche den Kriterien der zuverlässigen Prozessen gerecht werden.
 
-## Formale Methoden und Dependability
+### Formale Methoden und Dependability
 
 Formale Methoden sind mathematische Ansätze um Software zu Entwickeln. Dabei wird für die Software ein formales Modell definiert. Das definierte Modell kann anschließend auf Fehler und Inkonsistenzen analyisiert werden. Dabei kann bereits die Erstellung des Modells, ohne anschließenden Beweis helfen, um Fehler aufzudecken.
 In der Anfangszeit der Informatik wurden Modellen zu Beginn der Entwicklungszeit erstellt und mathematisch bewiesen. Da die Beweise mit einem hohen Aufwand verbunden sind, werden diese überwiegend automatisch durchgeführt.
 Alternativ zu der Erstellung der Beweise als eigenständige Aktivitäten neben der Entwicklung, gibt es den Ansatz des Refinement-Based Development. Dabei wird aus dem Modell durch Transformation die Software erstellt.
 Zudem gibt es die Methodik Model-Checking auf das Systemmodell anzuwenden. Dabei wird das Modell daraufhin analysiert, ob es die vorgegebenen Anforderungen erfüllt.
+
+## Referenzen
+
+[1]: Ian Sommerville. 2015. Software Engineering (10th. ed.), 285-307.
