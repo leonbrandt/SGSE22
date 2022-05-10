@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Agile software development</title>
+    <title>Kapitel 03: Agile software development</title>
     <meta charset="utf-8">
     <style>
       body { 
@@ -36,19 +36,17 @@ Benedikt Wiest
 ---
 
 ## Agenda
- 
 * Agile Methodik - Herkunft
-* Das agile Manifest      
+* Das agile Manifest 
 * Agiles Vorgehensmodell - XP
 * Agiles Vorgehensmodell - Scrum
 * Skalierung agiler Methodik
 * Entwicklung großer Softwaresysteme mit agiler Methodik
 * Agile Methodik in großen Organisationen
-      
+
 ---
-      
-## Agile Methodik - Herkunft:
-  
+
+## Herkunft agiler Methodik
 * Entwicklungsgrund - Veränderung der Arbeitsweise von Unternehmen/ Organisationen
       * schnell aufkommende digitale Märkte
 * Softwareentwicklung muss schneller gehen
@@ -57,11 +55,11 @@ Benedikt Wiest
 * plangesteuerte Vorgehensmodelle werden dem nicht gerecht
 * Ende der 90er -> agile Methodik
 * heute als Synonym für schnelle Entwicklung
-      
+
 ---
-      
-## Eigenschaften von agiler Methodik:
-   
+
+## Eigenschaften von agiler Methodik
+
 * agile Methdodik wir in Vorgehensmodellen umgesetzt
 * Gemeinsamkeiten der meisten Vorgehensmodelle:
 * Aktivitäten im Entwicklungsprozess sind verschachtelt    
@@ -70,15 +68,17 @@ Benedikt Wiest
 * Inkrementelle Entwicklung
 * Einbeziehung der Stakeholder (Feedback)
 * Nutzung von Tooling zur Unterstützung des Prozess
-      
+
 ---
-    
-## Das agile Manifest:   
-      
+
+## Das agile Manifest
+
 * Erstellt von einem Zusammenschluss von Softwarentwicklern
+* Versteht sich als Philosophie der agilen Methodik
 * Basis für alle agilen Vorgehensmodelle
 * Auszug aus dem agilen Manifest:
     
+      
 | Grundsatz | Beschreibung |
 |--|--|
 | Einbindung des Kunden | Enge Einbindung des Kunden, Definition  und Priorisierung neuer Anforderungen, Feedback zu Iterationen  |
@@ -86,35 +86,101 @@ Benedikt Wiest
 | Inkrementelle Auslieferung | Software wird iterativ entwickelt, Versionen verbessern jeweils die vorherige |
 | Einfachheit | Komplexität an jeder möglichen Stelle reduzieren um Einfachheit herzustellen |
 | Menschen > Prozesse | Kompetenz der Entwickler nutzen und die etablierung eigener Arbeitsweisen zulassen, statt stur an Prozessen festzuhalten |
-      
----           
-      
-## Skalierung agiler Methodik:
-
-<div style="margin-top:60px;">
-  <img style="width:100%;" src="img/XP.png"/>
-</div> 
-    
----
-      
-## Entwicklung großer Softwaresysteme mit agiler Methodik:
-      
- <div style="margin-top:60px;">
-  <img style="width:100%;" src="img/XP.png"/>
-</div> 
 
 ---
-      
-## Agile Methodik in großen Organisationen:    
 
-<div style="margin-top:60px;">
-  <img style="width:100%;" src="img/XP.png"/>
+## Extreme Programming - XP
+
+* Entwickelt von Kent Beck als Reaktion auf agiles Manifest
+* Benennung, da agile Methodik und iterative Entwicklung auf ein extremes Niveau getrieben wird
+* XP versteht sich als Vorgehensmodell - High Level enthält der Prozess folgende Schritte
+      1. Anforderungsanalyse durch User Stories
+      2. Umsetzung der User Stories in Arbeitspakete (Tasks)
+      3. Umsetzung der Tasks durch Entwickler in 2er Teams (Test-first Strategie)
+      4. Integration nach dem alle Tests erfolgreich gelaufen sind
+      5. Release einer neuen Version
+* Nachweis über Verfügbarkeit und Durchführung von Sicherheitsprüfungen
+      
+<div style="margin-top:30px;">
+  <img style="width:100%;" src="img/XP.PNG"/>
 </div> 
-      
 
+---
+
+## XP Grundsätze
+
+* Umsetzung der agilen Methodik in Grundsätzen - Auszug in Tabelle
+* Weitere wichtige Bestandteile werden auf den folgenden Slides beschrieben
       
       
-      
+|Grundsatz| Beschreibung |
+|--|--|
+| Kollektives Eigentum | Entwicklerpaare arbeiten an jeder Stelle, keine Bildung von Kompetenzinseln. Jeder kann alles ändern. |
+| Inkrementelle Planung | Anforderungen (User Stories) werden auf Story Cards festgehalten und je nach verfügbarer Zeit und Priorität umgesetzt |
+| On-site Customer | Kunde ist Bestandteil der Entwicklung, ein repräsentativer End-Nutzer muss dem Entwicklerteam permanent zur Verfügung stehen |
+| Simple design | Umsetzung nicht über das Ziel hinaus, es wird nur das umgesetzt was angefordert ist |
+| Konstante Geschwindigkeit | Überarbeitung führt zu schlechterem Code und mittelfristig zur geringerer Produktivität |
+
+
+---
+
+## Scrum
+
+* Gewährleistung über Sicherheit des Systems
+* Dokumentation der verantwortlichen Person
+* Kontrolle externen Komponententest
+* Prozesssicherung ist wichtig
+* Aktivitäten zur Gewährleistung über Sicherheit des Systems
+  1. Entwicklung von Gefahrenerfassung- und Überwachungssysteme
+  2. Benennung einer Verantwwortlichen Person
+  3. Häufige Überprüfung der Sicherheit
+  4. Detailliertes Konfigurationsmanagement
+
+---
+
+## Formale Verifizierung
+
+### Allgemein
+
+* Dienen mathematische Analyse der Spezifikation
+* Hohe Bedarf an Zusicherung in sicherheitskritischen Systemen
+* Systemtest sind teuer
+
+---
+
+## Formale Verifizierung
+
+### Vorteile
+
+* Erfordert detaillierte Analyse der Anforderungen
+* Erkennung von möglichen Deadlock
+
+### Nachteile
+
+* Durch spezielle Notation nicht immer verständlich
+* Sehr kostspielig
+
+## 
+
+---
+
+## Modellprüfung
+
+* Alternative zur formalen Analyse
+
+![Modellprüfung](./media/Model_ckecking.png)
+
+---
+
+## Statische Programmanalyse
+
+* Analyse des Quelltextes
+* Ergänzung und kein Ersatz für Inspektion
+* Ebenen der statischen Programmanalyse
+  1. Charakteristische Fehlerprüfung
+  2. Benutzerdefinierte Fehlerprüfung
+  3. Behauptungsprüfung
+
 
     </textarea>
     <script src="../_assets/js/remark-latest.min.js">
