@@ -322,8 +322,8 @@ Somit kann man mit den Erfahrungen aus dem Prototypen dann endgültige Anforderu
 Heutzutage gibt es eine ständige Nachfrage der Industrie nach billigerer, besserer Software, die in immer kürzeren Fristen geliefert werden muss. Infolgedessen haben sich viele Softwareunternehmen der Verbesserung von Softwareprozessen zugewandt, um Qualität ihrer Software zu verbessern, auch Kosten zu senken oder ihre Entwicklungsprozesse zu beschleunigen. Prozessverbesserung bedeutet, bestehende Prozesse zu verstehen und die zu ändern. Insofern wird hier auch die Produktqualität erhöht und die Kosten und die Entwicklungszeit reduziert. 
 
 Dabei definiere ich zwei ganz unterschiedliche Ansätze zur Prozessverbesserung und-Veränderung:
-1.Der Prozessreifeansatz: Hier geht die Konzentration auf die Verbesserung von Prozess- und Projektmanagement sowie Einführung guter Software –Engineering Praktiken in eine Organisation. Die primären Ziele dieses Ansatzes sind eine verbesserte Produktqualität und Prozessvorhersagbarkeit.
-2. Der agile Ansatz, der sich auf die iterative Entwicklung und die Reduzierung von Gemeinkosten konzentriert. Die Hauptmerkmale bei dem Ansatz sind schnelle Bereitstellung von Funktionen und die Reaktionsfähigkeit auf sich ändernde Kundenanforderungen. Nur die besten Prozesse sind, die geringe Overhead und agile Ansätze haben. 
+1. **Der Prozessreifeansatz:** Hier geht die Konzentration auf die Verbesserung von Prozess- und Projektmanagement sowie Einführung guter Software –Engineering Praktiken in eine Organisation. Die primären Ziele dieses Ansatzes sind eine verbesserte Produktqualität und Prozessvorhersagbarkeit.
+2. **Der agile Ansatz,** der sich auf die iterative Entwicklung und die Reduzierung von Gemeinkosten konzentriert. Die Hauptmerkmale bei dem Ansatz sind schnelle Bereitstellung von Funktionen und die Reaktionsfähigkeit auf sich ändernde Kundenanforderungen. Nur die besten Prozesse sind, die geringe Overhead und agile Ansätze haben. 
 
 Agile Ansätze konzentrieren sich auf den zu entwickelnden Code und reduzieren bewusst Formalität und Dokumentation.
 Der allgemeine Prozessverbesserungsprozess, der der Prozessreife zugrunde liegt

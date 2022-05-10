@@ -3,7 +3,9 @@
 **Autor:** Finn Kuhn
 
 Das Kapitel befasst sich mit der Software Evolution in der Softwareentwicklung. Die beschriebenen Inhalte stammen aus
-dem Buch Software Engineering von Ian Sommerville[1] (S. 255-282). 
+dem Buch Software Engineering von Ian Sommerville[1] (S. 255-282). Alle Abbildungen basieren auf dem Buch Software
+Engineering von Ian Sommerville[1] (S. 255-282) und wurden nur ins Deutsche übersetzt, möglichst ohne den Inhalt zu
+verändern.
 
 ## Einführung
 
@@ -221,15 +223,15 @@ beinhaltet neben der eigentlichen Anwendung auch das Umfeld der Software. Das Um
 Hardware und verbundene Unterstützungssoftware. Um diese technische Perspektive einzunehmen, helfen die Fragen aus
 *Tabelle 1*.
 
-|Faktor|     Fragen| 
-|:---:|:---:|
-| Lieferstabilität| Existiert der Lieferant noch? Ist er finanziell stabil und wird weiter existieren? Wenn er nicht mehr existiert, wer wartet das System? | 
-| Ausfallrate| Fällt die Hardware häufig aus? Muss häufig neugestartet werden, weil Unterstützungssoftware abstürzt? | 
-| Alter| Wie alt sind Software und Hardware?  | 
-| Performance| Ist die Performance des Systems angemessen? Haben Performanzprobleme große Auswirkung auf die Nutzer?| 
-| Supportanforderungen| Welcher lokaler Support ist für die hard- und software nötig?  | 
-| Wartungskosten| Was sind die Kosten von Hardwarepflege und Softwarelizenzen? |
-| Interoperabilität| Gibt es Probleme bei Schnittstellen zu anderen Systemen? |
+|        Faktor        |                                                                 Fragen                                                                  | 
+|:--------------------:|:---------------------------------------------------------------------------------------------------------------------------------------:|
+|   Lieferstabilität   | Existiert der Lieferant noch? Ist er finanziell stabil und wird weiter existieren? Wenn er nicht mehr existiert, wer wartet das System? | 
+|     Ausfallrate      |                  Fällt die Hardware häufig aus? Muss häufig neugestartet werden, weil Unterstützungssoftware abstürzt?                  | 
+|        Alter         |                                                   Wie alt sind Software und Hardware?                                                   | 
+|     Performance      |                  Ist die Performance des Systems angemessen? Haben Performanzprobleme große Auswirkung auf die Nutzer?                  | 
+| Supportanforderungen |                                      Welcher lokaler Support ist für die hard- und software nötig?                                      | 
+|    Wartungskosten    |                                      Was sind die Kosten von Hardwarepflege und Softwarelizenzen?                                       |
+|  Interoperabilität   |                                        Gibt es Probleme bei Schnittstellen zu anderen Systemen?                                         |
 
 *Tabelle 1: Faktoren zur Analyse des Umfelds*
 
@@ -238,16 +240,16 @@ werden. Neben der Umgebung ist natürlich die technische Qualität der Anwendung
 können, sollten Daten über die Anzahl der Systemänderungsanfragen, Anzahl der Nutzerschnittstellen und die Größe der
 Daten gesammelt werden. Mit diesen Daten lassen sich dann die Fragen aus *Tabelle 2* beantworten.
 
-| Faktor | Fragen | 
-|:---:|:---:|
-| Verständlichkeit | Wie verständlich ist der aktuelle Code? Wie komplex ist die Struktur? | 
-| Dokumentation | Was für eine Systemdokumentation ist vorhanden? ist diese vollständig, konsistent und aktuell? | 
-| Daten | Gibt es ein explizites Datenmodell für das System? Sind Daten aktuell und konsistent? | 
-| Performance | Ist die performance angemessen? Haben Performanzprobleme einen Einfluss auf den nutzer?| 
-| Programmiersprache | Wird die Programmiersprache noch genutzt? Wenn nicht gibt es trotzdem aktuelle Compiler? |
+|          Faktor          |                                                   Fragen                                                   | 
+|:------------------------:|:----------------------------------------------------------------------------------------------------------:|
+|     Verständlichkeit     |                   Wie verständlich ist der aktuelle Code? Wie komplex ist die Struktur?                    | 
+|      Dokumentation       |       Was für eine Systemdokumentation ist vorhanden? ist diese vollständig, konsistent und aktuell?       | 
+|          Daten           |           Gibt es ein explizites Datenmodell für das System? Sind Daten aktuell und konsistent?            | 
+|       Performance        |          Ist die performance angemessen? Haben Performanzprobleme einen Einfluss auf den nutzer?           | 
+|    Programmiersprache    |          Wird die Programmiersprache noch genutzt? Wenn nicht gibt es trotzdem aktuelle Compiler?          |
 | Konfigurationsmanagement | Sind die Versionen aller Teile durch ein Tool kontrolliert? Gibt es eine Beschreibung über alle Versionen? |
-| Testdaten | Existieren Testdaten für das System? Gibt es protokolle über Regressionstest bei neuen Funktionen? | 
-| Personalfähigkeiten | Ist Personal verfügbar mit Wissen über das System und Fähigkeiten es zu warten? |
+|        Testdaten         |     Existieren Testdaten für das System? Gibt es protokolle über Regressionstest bei neuen Funktionen?     | 
+|   Personalfähigkeiten    |              Ist Personal verfügbar mit Wissen über das System und Fähigkeiten es zu warten?               |
 
 *Tabelle 2: Faktoren zur Analyse der Anwendung*
 
@@ -377,9 +379,6 @@ gezogen werden.
 Beim Refactoring können IDEs mit diversen Tools eine große Unterstützung sein. Es kann allerdings passieren, dass die
 Struktur eines Programms so schlecht ist, das Coderefactoring nicht mehr möglich ist. In dem Fall kann Design
 Refactoring in Betracht gezogen werden, um den Code mithilfe von Design Patterns anzupassen.
-
-## Zusammenfassung
-* 
 
 [Abbildung 1]: https://mwithoeft.github.io/SGSE22/chapter09/assets/Bild1.png
 
