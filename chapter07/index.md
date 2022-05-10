@@ -265,17 +265,6 @@ Die meisten Open-Source-Lizenzen (Chapman 2010) sind Varianten eines von drei al
 
 [3]: St. Laurent, A. 2004. Understanding Open Source and Free Software Licensing. Sebastopol, CA: O’Reilly & Associates.
 
-![image](https://user-images.githubusercontent.com/58107983/167638209-62a28273-275e-4bc2-8c84-8ebe717f6007.png)
+![image](https://user-images.githubusercontent.com/58107983/167649218-231f4094-f896-4ff1-98d4-811559342087.png)
+![image](https://user-images.githubusercontent.com/58107983/167649571-90a0996a-0c97-4487-9b70-16102845ec34.png)
 
-![image](https://user-images.githubusercontent.com/58107983/167630681-e98f661e-149e-4cbf-a85e-8b7228695a23.png)
-![image](https://user-images.githubusercontent.com/58107983/167624341-f019f8f0-32bf-433d-b4ee-2477cf1d2b08.png)
-![image](https://user-images.githubusercontent.com/58107983/167624428-116adcea-5eb0-4f51-b69a-60fe301b95fc.png)
-![image](https://user-images.githubusercontent.com/58107983/167624527-8d057ee8-89f9-4293-8827-8556f7e63424.png)
-![image](https://user-images.githubusercontent.com/58107983/167624583-e8ba615f-265e-4d48-bedf-87de94fe940b.png)
-![image](https://user-images.githubusercontent.com/58107983/167624623-bdace060-91fb-4b05-9d5a-2528baeed426.png)
-![image](https://user-images.githubusercontent.com/58107983/167624674-9bb0028e-9244-44e2-bde9-ba70a7feb82f.png) - 6
-![image](https://user-images.githubusercontent.com/58107983/167624718-5f13c83e-70f1-4543-9273-5806632aa4b2.png)
-![image](https://user-images.githubusercontent.com/58107983/167624749-c3a9c748-0beb-44db-b05f-7cd43c2add3d.png)
-![image](https://user-images.githubusercontent.com/58107983/167624813-ab4c68ef-39c2-4d13-8d39-2ad58faf88ef.png)
-![image](https://user-images.githubusercontent.com/58107983/167624968-d33a09b3-6920-44a3-be88-bd29525dfe87.png)
-![image](https://user-images.githubusercontent.com/58107983/167625138-36df7c73-0e88-4e77-9923-1db94d5c1fef.png)
