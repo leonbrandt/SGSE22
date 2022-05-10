@@ -20,6 +20,15 @@
       h1#kapitel-06-architectural-design {
         font-size: 55px !important; /* "ignore" coverpage */
       }
+      img {
+        max-height: 681px;
+        max-width: 100%;
+      }
+      .img-200 img { height: 200px; }
+      .img-300 img { height: 300px; }
+      .img-400 img { height: 400px; }
+      .img-500 img { height: 500px; }
+      .img-600 img { height: 600px; }
       .remark-code, .remark-inline-code { 
         font-family:Courier New;
       }
@@ -64,9 +73,155 @@ Leon Brandt
 
 ---
 
+# Architectural Design
+
+Architectural Design =
+
+- Entwurf von Struktur und Organisation von Softwaresystemen
+- Identifikation von strukturellen Hauptkomponenten eines Systems + Beziehungen dieser
+
+Ergebnis: Artefakt: Architectural Model
+
+---
+
+# Motivation
+
+- Auch in agilen Prozessen üblich: Früher Fokus auf Design von Gesamtsystemen im Entwicklungsprozess
+- Inkrementelles Entwickeln von Architekturen ist (üblicherweise) nicht erfolgreich
+
+
+- Refactoring einzelner Komponenten ist (üblicherweise relativ) einfach
+- Refactoring einer Systemarchitektur erfordert (möglicherweise) ein Ändern mehrerer Komponenten
+
+---
+
+# Motivation
+
+- Individuelle Komponenten implementieren funktionale Anforderungen eines Systems
+- Dominanter Einflussfaktor auf nicht-Funktionale Anforderungen eines Systems ist dessen Architektur
+
+
+- Architektur eines Systems bestimmt u.A. dessen Laufzeitperformanz, Robustheit, Verteilbarkeit, Wartbarkeit
+
+---
+
+# Motivation
+
+- Explizites Benennen einer Systemarchitektur erfordert Analyse (Alternativen abwägen; Beste Lösung finden)
+
+
+- Architectural Models können zur Kommunikation genutzt werden (mit Stakeholdern, anderen Entwicklern)
+
+
+- Architekturen von Systemen mit ähnlichen Anforderungen können wiederverwendet werden
+
+---
+
+# Architectural Design vs. Requirements Engineering
+
+- Praxis: Schnittmenge zwischen Requirements Engineering und Architectural Design
+
+
+- Idealfall: Systemspezifikation (Was) enthält keine Designinformationen (Wie)
+- Unrealistisch, da High-Level-Features eines Systems durch dessen Hauptkomponenten repräsentiert werden
+
+
+- Bereits im Requirements Engineering möglich: Erzeugen einer abstrakten Systemarchitektur durch Gruppieren von Systemfeatures zu Subsystemen
+
+---
+
+# Abstraktionsebenen
+
+Betrachtung von Softwarearchitektur auf zwei Ebenen:
+
+## **Architecture in the small**
+
+Architektur individueller Programme
+
+*vs.*
+
+## **Architecture in the large**
+
+Architektur komplexer Systeme, also (verteilter) Systeme aus anderen Systemen, Programmen und Komponenten
+
+---
+
 --- TODO: Architectural Model ---
 
 - Debatte über Formalität
+
+---
+
+# Architectural Model
+
+Ein Architectural Model beschreibt die Organisation eines Systems als Menge von kommunizierenden Komponenten
+
+#### Wie (formell) die Architektur eines Systems notieren?
+
+---
+
+# Architectural Model: Nutzung
+
+Praxis: Nutzung von Architectural Models auf zwei Arten:
+
+## Zum Entwurf
+
+- Kommunikationshilfe im Designprozess
+- Auch: Basis für Design in höherem Detailgrad
+- Hier: High-Level-Repräsentationen nützlich
+
+## Zur Dokumentation
+
+- Dokumentation einer Architektur durch vollständiges Systemmodell
+- Auch: Basis für Implementierung
+- Hier: Strengere Notationen in hohem Detail- und Vollständigkeitsgrad
+
+---
+
+class: img-400
+
+# Architectural Model: Formalität
+
+- In der Praxis häufig: informelle Blockdiagramme
+
+![](media/6_01.png)
+
+[Fig. 6.1]
+
+---
+
+# Blockdiagramme
+
+**Vorteile**
+- Intuitiv verständlich für Menschen verschiedener Disziplinen
+	- Kommunikation zwischen Ingenieuren und Domänenexperten
+	- Nützlich für Manager zur Projektplanung
+
+
+**Nachteile**
+- Undetailliert
+	- Typen von Beziehungen + äußere Eigenschaften von Komponenten fehlen
+	- Raum für Missverständnisse
+
+---
+
+# UML?
+
+- Umfrage: Wenn UML genutzt, dann meist informell
+- UML soll objektorientierte Systeme beschreiben
+- Sommerville: Zur Phase des Architekturdesigns sollten Systeme abstrakter beschrieben werden
+- UML im Designprozess nicht nützlich
+
+---
+
+# Dokumentation durch strenge Notationen
+
+- Es existieren spezialisierte Modellierungssprachen: Architectural Description Languages (ADLs)
+	- Sind ohne Übung ggf. schwer nutzbar
+
+
+- Grundsätzlich: Erzeugen von vollständigen, detaillierten Architekturdokumentationen ist teuer
+- Kosteneffektivität lässt sich praktisch nicht messen &rarr; Ansatz nicht weit verbreitet
 
 ---
 
@@ -77,9 +232,102 @@ Leon Brandt
 
 ---
 
+# Architectural Views
+
+- Es ist nicht möglich, alle relevanten Informationen über eine Architektur auf einem einzelnen Diagramm darzustellen
+- Grundsätzliche Frage bei Entwurf: Welche Perspektiven auf eine Systemarchitektur sind nützlich?
+- Ein grafisches Modell kann nur eine Perspektive zeigen
+
+
+- Krutchen schlägt vier fundamentale Architektur-Sichten vor
+- Hofmeister et. al. ergänzen das Modell durch eine Fünfte
+
+---
+
+# Logical View (logische Sicht)
+
+- Zeigt die wesentlichen Abstraktionen innerhalb des Systems als Objekte oder Objektklassen
+- Zuordnung von Systemanforderungen zu Entities sollte hierbei möglich sein
+
+---
+
+# Process View (Prozesssicht)
+
+- Zeigt wie das System zur Laufzeit aus interagierenden Prozessen zusammengesetzt ist
+- u.A. nützlich zur Beurteilung von nicht-Funktionalen Charakteristiken wie Performance und Availability
+
+---
+
+# Development View (Entwicklungssicht)
+
+- Zeigt wie die Software zur Entwicklung zerlegt ist
+- Nützlich für Manager und Programmierer
+	- Komponenten können einzelnen Entwicklern / Teams zugewiesen werden
+
+---
+
+# Physical View (physische Sicht)
+
+- Zeigt Hardware und Verteilung von Komponenten über die Prozessoren im System
+- Nützlich für Systemingenieure zur Planung von Deployments
+
+---
+
+# Conceptual View (konzeptionelle Sicht)
+
+- Abstrakte Sicht des Systems
+- Nutzung zur Zerlegung von High-Level-Anforderungen in detaillierte Spezifikationen
+- Kann bei Identifikation von wiedeverwendbaren Komponenten helfen
+
+---
+
+# Architectural Views
+
+(nach Krutchen)
+
+- Logical View (logische Sicht)
+- Process View (Prozesssicht)
+- Development View (Entwicklungssicht)
+- Physical View (physische Sicht)
+
+(nach Hofmeister et. al.)
+
+- Conceptual View (konzeptionelle Sicht)
+
+---
+
 --- TODO: Architectural Design Decisions ---
 
 - 8 Fragestellungen
+
+---
+
+# Architectural Design Decisions
+
+- Architectural Design ist ein kreativer Prozess
+- Entwurf der Organisation eines Systems, sodass funktionale + nicht-funktionale Anforderungen erfüllt werden
+- Es existiert kein stereotyper Prozess
+- Konkreter Prozess ist abhängig von zu entwickelnden System (Typ, spezifische Anforderungen)
+
+
+- Architectural Design ist keine Sequenz von Aktivitäten
+- Besseres Konzept: Menge an zu treffenden Entscheindungen
+
+---
+
+# Architectural Design Decisions
+
+![](media/6_02.png)
+
+[Fig. 6.2]
+
+---
+
+# Architectural Design Decisions
+
+![](media/6_02_mod_full.png)
+
+[Eigene Darstellung nach Fig. 6.2]
 
 ---
 
