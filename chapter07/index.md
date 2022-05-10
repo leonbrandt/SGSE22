@@ -263,6 +263,8 @@ Die meisten Open-Source-Lizenzen (Chapman 2010) sind Varianten eines von drei al
 
 [3]: St. Laurent, A. 2004. Understanding Open Source and Free Software Licensing. Sebastopol, CA: O’Reilly & Associates.
 
+![image](https://user-images.githubusercontent.com/58107983/167638209-62a28273-275e-4bc2-8c84-8ebe717f6007.png)
+
 ![image](https://user-images.githubusercontent.com/58107983/167630681-e98f661e-149e-4cbf-a85e-8b7228695a23.png)
 ![image](https://user-images.githubusercontent.com/58107983/167624341-f019f8f0-32bf-433d-b4ee-2477cf1d2b08.png)
 ![image](https://user-images.githubusercontent.com/58107983/167624428-116adcea-5eb0-4f51-b69a-60fe301b95fc.png)
