@@ -152,89 +152,67 @@ folgendes unterstuetzen:
 4. **Sitzungsverwaltung** Klassen, welche Sitzungen erstellen und verwalten, sind oft Teil einer WAF.
 5. **Benutzerinteraktionen** Web Frameworks liefern Supprt fuer AJAX (Holdener 2008) und/oder HTML5 (Sarris 2013) zur Erstellung interaktiver Webseiten. Darunter koennen sich Klassen zur Erstellung geraeteunabhaeniger Interfaces befinden, welche sich automatisch an Mobiltelefone und Tablets anpassen.
 
+Bei der Systemimplementierung mit Frameworks, muessen konkrete Klassen erstellt werden, welche Operationen von abstrakten Klassen
+des Frameworks erben. Zusaetzlich muessen so genannte Callback-Funktionen definiert werden, welche aufgerufen werden, wenn ein
+Event vom Framework erkannt wird. Die Frameworksobjekte sind dabei fuer die Kontrolle zustaendig, nicht die applikationsspezifischen
+Objekte. Dies wird "Inversion of Control" (Schmidt, Gokhale, and Natarajan 2004) genannt.
 
+Als Reaktion auf Events von der Benutzeroberflaeche oder von Datenbankframework-Objekten werden so genannte "Hook-Methoden"
+aufgerufen. Diese werden mit vom Benutzer bereitgestellter Funktionalitaet verknuepft. Diese Funktionalitaet entscheidet,
+wie die Applikation bei einem Event reagieren soll. 
 
-- Systemimplementierung mit Frameworks
-  - erstellen konkreter Klassen, welche Operationen von abstrakten Klassen des Frameworks erben
-  - zusaetzlich muessen "Callbacks" definiert werden
-    - Methoden, welche aufgerufen werden, wenn ein Event vom Framework erkannt wurde
-    - Framework objekte sind fuer die Kontrolle zustaendig
-    - nicht die applikationsspezifischen Objekte
-    - "Inversion of control" (Schmidt, Gokhale, and Natarajan 2004)
-  - Als Reaktion auf Events von der Benutzeroberflaeche oder von Datenbankframework Objekten werden so genannte "Hook-Methoden" aufgerufen
-    - diese werden mit vom Benutzer bereitgestellte Funktionen verknuepft
-    - die Benutzer bereitgestellte funktionalitaet entscheided wie die applikation bei einem Event reagieren soll
-    - BILD 15.6
-    - Beispiel Framework besitzt Methode zum handhaben von Mausklicken
-      - Diese Methode ist die "Hook-Methode"
-      - muss konfiguriert werden um die richtigen applikations methoden aufzurufen, welche das Klicken handhaben
+BILD 15.6
 
-Fayad und Schmidt (Fayad und Schmidt 1997) diskutieren drei weitere Klassen von
-Frameworks:
+Beispielsweise stellt ein Framework eine Methode zum handhaben von Mausklicken bereit. Diese Methode ist die "Hook-Methode".
+Sie muss konfiguriert werden, um die richtigen Applikationsmethoden aufzurufen, welche das Klicken handhaben.
+
+Fayad und Schmidt (Fayad und Schmidt 1997) diskutieren drei weitere Klassen von Frameworks:
 
 1. **Systeminfrastruktur-Frameworks** unterstuetzen die Entwicklung von Systeminfrastrukturen wie beispielsweise Kommunikationen, Benutzerschnittstellen und Compiler.
 
-2. **Frameworks für die Middleware-Integration** bestshen aus einer Menge an Standards und damit verbundenen Objektklassen, welche den Kommunikation und den Datenaustausch der Komponenten unterstuetzt. Beispiele sind Microsoft's .NET und Enterprise Java Beans (EJB)
+2. **Frameworks für die Middleware-Integration** bestehen aus einer Menge an Standards und damit verbundenen Objektklassen, welche den Kommunikation und den Datenaustausch der Komponenten unterstuetzt. Beispiele sind Microsoft's .NET und Enterprise Java Beans (EJB)
 3. **Frameworks für Unternehmensanwendungen** behandeln konkrete Anwendungensgebiete wie Telekommunikations- und Finanzsysteme (Baumer et al. 1997). Diese beinhalten Wissen ueber Andwendungsbereiche und unterstuetzen die Entwicklung von Endbenutzeranwendungen. Heute sind sie nicht verbreitet und wurden weitgehend durch Software-Produktlinien ersetzt.
 
-- Applikationen mit Frameworks koenne die Basis fuer weitere Wiederverwendung darstelle
-  - Konzept der software-Produktlinien und Applikationsfamilien
-  - ERleichtert das Veraendern von "Familienmitgliedern" um Instanzen des Systems zu erstellen  
+Applikationen, welche mit Frameworks implementiert sind, koennen die Basis fuer weitere Wiederverwendung darstellen. Konzepte wie 
+Software-Produktlinien und Applikationsfamilien verwenden unter anderem Frameworks. Sie erleichtern beispielsweise das Veraendern
+von "Familienmitgliedern" um eine neue Instanz eines Systems zu erstellen.
 
-- Frameworks sind sehr effektiv im Bezug auf Wiederverwendung
-  - Nachteile
-    - Teuer zu einzubauen aufgrund der Komplexitaet
-      - kann monate dauern, die funktionsweise zu erlenen
-    - schwierig und teuer, verschiedene frameworks gegeneinander abzuwiegen
-      - welches ist das geeignetste
-    - Debbugging kann schwierig sein  
-      - man weiss nicht wie zwingend, wie die Framework methoden untereinander interagieren
-      - Debugging tools koennen dabei jedoch helfen
+Frameworks sind sehr effektiv im Bezug auf Wiederverwendung, dennoch gibt es auch einige Nachteile. Der Einbau von Frameworks ist
+aufgrund der Komplexitaet dieser teuer. Oft kann es Monate dauern, die Funktionalitaet zu erlernen. Es ist ebenfalls schwierig
+und teuer, verschiedene Frameworks gegeneinander abzuwiegen, um das Framework zu finden, welches fuer den Anwendungsfall am
+geeignetsten ist. Zusaetzlich kann das Debuggen mit Framework schwierig sein, da man nicht zwingend weiss, wie die Frameworkmethoden
+untereinander interagieren. Bestimmte Debugging-Tools koennen dabei jedoch Abhilfe schaffen.
 
 ## Software-Produktlinien
 
-- bei aehnlichen aber nicht gleichen systemen eines unternehmens
-  - wiederverwendung durch software produktlinien
-- gerne bei Hardware Kontrollsystemen
-- ebenso wie in Gebietspezifischen applikationen in der logistik oder im medizinischen feld
-- beispiel drucker
-  - die software ist sehr aehnlich aber nie ganz gleich
-  - erstellen eines core produkt bzw. kernprodukt (produktlinie)
-    - anschliessendes anpassen an jeden druckertypen
+Bei aehnlichen, aber nicht gleichen Systemen eines Unternehmens, bietet sich die Wiederverwendung durch Software-Produktlinien an.
+Sie werden oft bei Hardware-Kontrollsystemen oder in gebietspezifischen Applikationen in der Logistik oder im medizinischen Feld 
+verwendet. Ein Druckerhersteller zum Beispiel kann eine Software-Produktlinie aufbauen. Die Software ist oft sehr aehnlich, aber nie
+ganz gleich. Es wird ein Kernprodukt (Produktlinie) erstellt und anschliessend an jeden Druckertypen angepasst.
 
-- software produktlinie
-  - sammlung von applikationen mit aehnlicher architekur und gemeinsamen komponenten
-  - jede applikation fuer kundenspezifische anforderungen
-- core produkt
-  - kann konfiguriert werden 
-  - an kundenwuensche oder equipment angepasst werden
-    - Konfigurieren von komponenten
-    - zusaetzliche komponenten entwickeln
-    - veraendern einiger komponenten
-  
-- eine grosse menge an applikationscode kann so wieder verwendet werden
-- testen wird vereinfacht
-  - tests fuer grosse parts der applikation koennen eventuell wiederverwendet werden
-  - senken der entwicklungszeit
-- Entwickler erlernen das applikationsgebiet mit der produktlinie
-  - koennen so spezialisten werden
-  - und effizient neue applikationen entwickeln
+Software-Produktlinien sind eine Ansammlung von Applikationen mit aehnlicher Architektur und gemeinsamen Komponenten. Jede
+Applikation ist dabei fuer die kundesspezifischen Anforderungen angepasst. Das Kernprodukt (engl.: core product) kann
+konfiguriert und so an Kundenwuensche oder bestimmtes Equipment angepasst werden. Dazu koenn Komponenten konfiguriert, zusaetliche
+Komponenten entwickelt und einige Komponenten veraendert werden.
 
-- produktlinien entstehen meist aus vorhandener software
-  - ein produkt wurde entwickelt
-  - eine aehnliches produkt soll entwickelt werden
-  - wiederverwenden von teilen des ersten produkts
-  - gleicher prozess bei folgenden aehnlichen produkten
-  - wird immer schwieriger eine neue version zu erstellen
-  - generische produktlinie einsetzen
-    - gemeinsame funktionalitaeten feststellen
-    - eine basis applikation entwickeln fuer weitere entwicklungen
+Durch die Verwendung von Produktlinien kann eine grosse Menge an Applikationscode wiederverwendet werden. Das Testen kann ebenfalls
+vereinfacht werden. Test fuer grosse Teile der Applikation koennen eventuell wiederverwendet werden. So wird die Entwicklungszeit
+reduziert. Zusaetzlich erlernen Entwickler das Applikationsgebiet mit der Produktlinie, koennen sich so spezialisieren und
+effizienter neue Applikationen entwickeln.
 
-Basisapplikation ist so entworfen, um wiederverwendung und die Neukonfiguration zu erleichtern.
-(BILD 15.7) Eine Basisapplikation besteht aus folgenden Teilen:
+Meist entstehen Produklinien aus vorhandener Software. Ein Produkt wurde entwickelt und ein aehnliches neues Produkt soll fuer
+einen Kunden erstellt werden. Es koennen also Teile des ersten Produkts wiederverwendet werden. Bei folgenden aehnlichen Produkten
+wird der gleiche Prozess verwendet und ein vorhandenes Produkt teilweise wiederverwendet. Im Laufe der Zeit wird es immer 
+schwieriger neue Versionen zu erstellen und es muss entschieden werden, eine Produktlinie aufzubauen. Dazu gehoert das 
+Feststellen von gemeinsamer Funktionalitaet und die Entwicklung einer Basisapplikation.
+
+(BILD 15.7)
+
+Basisapplikationen sind so entworfen, dass Wiederverwendung und die Neukonfiguration erleichtert werden.
+Eine Basisapplikation besteht aus folgenden Teilen:
 
 1. Kernkomponenten, die Infrastrukturunterstuetzung bieten. Diese werden nicht bei der Erstellung einer neuen Instanz der Produktlinie veraendert.
-2. Konfigurierbare Komponenten, welche fuer bestimmte Anforderungen angepasst werden koennen. Diese Komponenten koennen teils auch ohne das Veraendern von Code mit Hilfe einer  Konfigurationssprache angepasst werden.
+2. Konfigurierbare Komponenten, welche fuer bestimmte Anforderungen angepasst werden koennen. Diese Komponenten koennen teils auch ohne das Veraendern von Code mit Hilfe einer Konfigurationssprache angepasst werden.
 3. Spezialisierte, gebietspezifische Komponenten werden entweder teils oder komplett bei der Erstellung einer neuen Instanz der Produktlinie ausgetauscht.
 
 Applikations Frameworks und Software Produktlinien haben einiges gemeinsam. Beide unterstuetzen eine gemeinsame Architektur und Komponenten. Zusaetzlich wird neue Entwicklungsaufwand benoetigt,
@@ -245,33 +223,28 @@ um eine neue Version eines Systems zu erstellen. Die Unterschiede werden im Folg
 3. Software Produktlinien sind meist Steueranwendungen fuer bestimmtes Equipment (z.B. Drucker). Das bedeutet, dass Produktlinien Hardwareschnittstellen unterstuetzen muss. Applikations Frameworks hingegen sind softwareorientiert und besitzen grundsaetzlich keine Komponenten zur Kommunikation mit Hardware.
 4. Software Produktlinien bestehen aus einer Familie verwandter Anwendungen, die Eigentum von derselben Organisation sind. Wenn eine neue Anwendung erstellt wird, ist der Ausgangspunkt oft das engste Mitglied der Anwendungsfamilie und nicht die generische Kernanwendung.
 
-- bei der erstellung einer produktlinie
-  - verwendung von objektorientierter sprache 
-  - eventuell ein framework als basis nehmen
-  - kernanwendung dann aus der Erweiterung des frameworks mit gebietspezifischen komponenten 
-  - in zweiter phase wird anschliessend das system fuer verschiedene kunden verfeinert.
-  - beispiel
-    - web-based framework als kern fuer ein webbasierte beratungsstelle
-    - produktlinie dann weiter spezialisiert auf verschiedene arten von beratungsstellen
+Bei der Erstellung einer Produktlinie in einer objektorientierten Sprache, kann ein Framework als Basis verwendet werden.
+Die Kernanwendung besteht dann aus der Erweiterung des Frameworks mit den gebietspezifischen Komponenten. In der zweiten Phase 
+wird anschliessend das System fuer die verschiedenen Kunden verfeinert. Ein webbasiertes Framework kann beispielsweise als Kern
+fuer eine webbasierte Beratungsstelle verwendet werden. Diese Produktlinie kann dann auf verschiedene Arten von Beratungsstellen
+spezialisiert werden.
 
-- Architektur einer produktlinie spiegelt oft einen allgemeinen, anwendungsspezifischen Architekturstil oder ein Muster wider
-- Beispiel 
-  - produktlinie um die Fahrzeugaufteilung für Rettungsdienste abzuwickeln
-  - telefonat annehmen 
-  - passendes fahrzeug finden
-  - und das fahrzeug passend zum Unfall etc. losschicken
-  - kann also an polizei, feuerwehr und krankenhaeuser verkauft werden
-- fahrzeugaufteilung gutes beispiel fuer generic resource allocation and management architectur
-  - BILD 15.8 
-  - Datenbank mit verfuegbaren ressourcen
-  - Komponenten die die Ressourcen Zuteilungspolitik beinhalten
-    - vom unternehmen festegelegt
-  - Benutzer interagieren mit dem system
-    - ressourcen anfragen
-    - freigeben 
-    - Fragen stellen bzgl. ressourcen und deren Verfuegbarkeit
-- fuer so ein Fahrzeugaufteilungs system koennen folgende komponenten implementiert sein
-  - BILD 15.9
+Die Architektur einer Produktlinie spiegelt oft einen allgemeinen, anwendungsspezifischen Architekturstil oder ein Muster wieder.
+Eine Produktlinie koennte zum Beispiel die Fahrzeugaufteilung fuer Rettungsdienste abwickeln. Die Benutzter des Systems 
+muessen Telefonate annehmen, passende Fahrzeuge finden und das passende Fahrzeug zum Vorfall losschicken koennen. Ein Hersteller
+koennte dieses System also an Polizei, Feuerwehr und Krankenhaeuser verkaufen. Die Fahrzeugaufteilung ist dabei ein gutes Beispiel
+fuer eine allgemeine Ressourcenzuweisungs- und Management-Architektur. 
+
+BILD 15.8
+
+Solche Ressourcenmanagementsysteme verwenden eine Datenbank mit verfuegbaren Ressourcen und Komponenten, die die Zuteilungspolitik
+der Ressourcen beinhaltet. Diese Zuteilungspolitik wird vom Unternehmen festgelegt. Benutzer interagieren mit dem System, fragen
+Ressourcen an, geben Ressourcen frei und koennen Fragen stellen bezueglich Ressourcen und deren Verfuegbarkeit.
+
+Fuer ein Fahrzeugaufteilungssystem koennen folgende Komponenten implementiert sein.
+
+BILD 15.9 
+
 Die Komponenten auf jeder Ebene sind im Folgenden weiter erlaeutert:
 
 1. Auf der Interaktionsebene stellen Komponenten eine Bedieneranzeigeschnittstelle bereit und eine Schnittstelle zu den verwendeten Kommunikationssystemen.
@@ -279,17 +252,9 @@ Die Komponenten auf jeder Ebene sind im Folgenden weiter erlaeutert:
 3. Auf der Ressourcen-Management-Ebene (Ebene 3) ermoeglichen Komponenten, Fahrzeuge zu lokalisieren, den Status von Fahrzeugen und Ausruestung zu aktualisieren und Imformationen zu Vorfaellen zu protokollieren.
 4. Auf der Datenbankebene gibt es seperate Datenbanken fuer Fahrzeuge, Ausruestung und Karten.
 
-- neue intanzen fuer das system   
-  - veraender der komponenten
-  - beispiel
-    - polizei
-      - viele autos 
-      - wenige verschiedene autos
-    - feuerweher 
-      - wenig autos
-      - sehr viele verschiedene und spezialisierte fahrzeuge
-    - anpassen der datenbankstruktur notwendig
-
+Um eine neue Instanz dieses Systems zu erstellen, muessen eventuell Komponenten veraendert werden. Die Polizei beispielsweise 
+besitzt viele, jedoch wenig verschiedene Autos. Die Feuerwehr hingegen besitzt wenige, dafuer aber sehr verschiedene und
+spezialisierte Fahrzeuge. Eine Anpassung der Datenbankstruktur ist notwendig.
 
 Es können verschiedene Arten der Spezialisierung einer Softwareproduktlinie entwickelt werden:
 
@@ -310,50 +275,44 @@ Die Aktivitäten in diesem Prozess sind:
 4. **Bestehendes System anpassen** Neue Module fuer das existierende System werden entwickelt und vorhandene Module werden den Anforderungen entsprechen angepasst.
 5. **Ausliefern des neuen Produktlinien-Mitglied** Die neue Instanz wird dem Kunden ausgeliefert. Hier sollten die wichtigsten Funktionen dokumentiert werden, damit das neue System als Basis fuer weitere Entwicklungen dienen kann.
 
-- Kompromiss finden zwischen moeglichst viel wiederverwenden und den anforderungen des kunden
-  - je detailierter die anforderungen, desto geringer ist die wahrscheinlichkeit, dass aehnliche systeme bereits existieren
-  - wenn kunden jedoch flexibel sind
-    - limitieren der system modifizierungen
-    - schnelleres ausliefern von systemen und guenstigere entwicklung
+Bei der Erstellung neuer Mitglieder einer Produklinie, muss eventuell ein Kompromiss zwischen Wiederverwenden und den Anforderungen
+des Kunden gefunden werden. Je detaillierter die Anforderungen, desto geringer ist die Wahrscheinlichkeit, dass aehnliche Systeme
+bereits existieren. Wenn ein Kunde jedoch flexibel sein kann und die Systemmodifizierungen die benoetigt sind limitiert, koennen
+Systeme schneller und guenstiger ausgeliefert werden.
 
-- Software-Produktlinien sind zum rekonfigurieren entwickelt
-  - hinzufuegen und loeschen von komponenten
-  - parameter definieren
-  - Einschraenkungen definieren
-  - einbauen von Wissen ueber business prozesse
-- kann in verschiedenen STufen des entwicklungsprozesses stattfinden:
+Software-Produktlinien sind zum Rekonfigurieren entwickelt. Komponenten koennen hinzugefuegt oder geloescht, Parameter angepasst,
+Einschraenkungen definiert und Wissen ueber Geschaeftsprozesse eingebaut werden. Die Konfiguration kann in verschiedenen 
+Stufen des Entwicklungsprozesses stattfinden:
 
 1. **Konfiguration zur Entwurfszeit** Die Organisation, die die Software entwickelt, modifiziert einen gemeinsamen Produktlinienkern durch Entwicklung, Auswahl oder Anpassung von Komponenten, um ein neues System für einen Kunden zu erstellen.
-2. **Konfiguration zur Bereitstellungszeit** Ein generisches System wird fuer die Konfiguration durch den Kunden entworfen. Kenntnisse der kundenspezifischen Anforderungen und der Betriebsumgebung des Systems sind in die vom generischen System verwendeten Konfigurationsdaten eingebettet.
+2. **Konfiguration zur Auslieferungszeit** Ein generisches System wird fuer die Konfiguration durch den Kunden entworfen. Kenntnisse der kundenspezifischen Anforderungen und der Betriebsumgebung des Systems sind in die vom generischen System verwendeten Konfigurationsdaten eingebettet.
 
-- Konfiguration zur Entwurfszeit
-  - generisches system oder mit vorhandenem system starten 
-  - modifizieren des systems und anpassen an kundenwuensche
-  - veraendern und erweitern des source codes 
-    - bessere flexibiliaet als bei Konfiguration zur bereistellungszeit
-  - wird verwendet
-    - wenn es nicht moeglich ist die bestehenden bereitsstellungszeit configurations Einrichtungen (?) verwendet werden kann
-  - Ueber zeit werden Produktlinien mitglieder mit gleicher funktionalitaet erstellt
-    - refactoring dieser funktionalitaet in die kernanwendung
-    - anschliessend wird diese funktionalitaet zur auslieferungszeit konfigurierbar gemacht
-- Konfiguration zur Bereitstellungszeit
-  - benutzen von configurations tools um ein spezifische systen konfiguration zu erhalten
-    - in konfigurations datenbanken gespeichert
-    - oder als ansammlung von konfigurations dateien
-    - BILD 15.11
-    - das system (auf server oder auf einem pc) holt sich die informationen aus der datenbank
+Wenn ein System zur Entwurfszeit konfiguriert wird, startet der Hersteller mit einem generischen oder einem vorhandenem System.
+Das System wird so modifiziert und angepasst, dass die Kundenwuensche erfuellt werden. Meist bedeutet dies, dass der Programmcode 
+veraendert und erweitert werden muss. Dies bietet eine hoehere Flexibilitaet als bei der Konfiguration zur Auslieferungszeit.
+Die Konfiguration zur Entwurfszeit wird verwendet, wenn es nicht moeglich ist, die bestehenden Konfigurationseinrichtungen zu
+verwenden. Ueber laengere Zeit werden Produktlinienmitglieder mit gleicher Funktionalitaet erstellt. Man kann entscheiden,
+ob die Kernanwendung diese Funktionalitaet eingebaut bekommen soll. Anschliessend kann man die Funktionalitaet zur 
+Auslieferungszeit konfigurierbar machen.
+Bei der Konfiguration eines Systems zur Auslieferungszeit werden Konfigurationstools verwendet, um eine spezifische 
+Systemkonfiguration zu erhalten. Diese Konfiguration wird in einer Datenbank oder als Ansammlung von Konfigurationsdateien 
+gespeichert. Das System holt sich die Informationen aus der Datenbank.
 
-Mehrere Ebenen der Konfiguration zur Bereitstellungszeit werden in einem system bereitgestellt:
+BILD 15.11
+
+Mehrere Ebenen der Konfiguration zur Auslieferungszeit werden in einem System bereitgestellt:
 
 1. **Komponentenauswahl**, in welcher passende Module fuer das System ausgesucht werden. Beispielsweise kann in einem System fuer die Speicherung von Patientendaten eine Komponente fuer das Verwalten von Bildern hinzugefuegt werden. So koennen medizinische Bilder mit der Patientenakte verknuepft werden.
 2. **Workflow- und Regeldefinition**, in welcher Workflows (wie Informationen verarbeitet werden) und Validierungsregeln (fuer Benutzereingaben und vom System generierte Daten) definiert werden.
 3. **Parameterdefinition**, in welcher bestimmte Werte fuer systemspezifische Parameter spezifiziert werden. Zum Beispiel kann die maximale Laenge von Eingabefeldern oder die Characteristiken bestimmter Hardware definiert werden.
 
-- kann sehr komplex sein
-- grosse systeme kann es mehrere monate dauern, das system zu konfigurieren und zu testen
-- grosse konfigurierbare systeme koennen software tools wie planungstools bereistellen
+Die Konfiguration zur Auslieferungszeit kann sehr komplex sein. Bei grossen Systemen kann es mehrere Monate dauern, das System
+zu konfigurieren und zu testen. Grosse konfigurierbare Systeme koennen den Konfigurationsprozess mit Software-Tools, wie zum
+Beispiel Planungstools, unterstuetzen.
 
 ## Wiederverwendung Applikationssysteme
+
+
 
 - applikationssystem
   - koennen angepasst werden an die anforderungen an kunden
