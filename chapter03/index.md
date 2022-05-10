@@ -130,7 +130,7 @@ Frühe Ansätze der agilen Methodik kollidieren mit dem grundsätzlichen Bedürf
 Um die Probleme agiler Methodik in großen Unternehmen zu lösen, wurde Scrum entwickelt. Scrum versteht sich als Framework für Organisationen, welche mit agiler Methodik arbeiten. Es ermöglicht externen Einblick ins Projekt und dadurch ein Projektcontrolling im klassischen Sinne.
 Zur Abgrenzung von bekannten Projektmanagement Methoden implementiert Scrum eine neue Terminologie :
 
-|Scrum Begriff| Erklärung  |
+|Scrum Begriff| Erklärung |
 |--|--|
 | Entwicklerteam | Gruppe aus bis zu 7 Entwicklern, welche sich selbst organisiert und für Entwicklung verantwortlich ist |
 | Potentiell auslieferbares Produktinkrement | Software Inkrement das in einem Sprint erstellt wird. Potentiell auslieferbar soll bedeuten, dass dieses Inkrement ohne Bearbeitung weiterer Arbeiten ausgeliefert werden. |
