@@ -84,7 +84,6 @@ Rei Berberi
 - Darstellt die anderen Systeme in der Umgebung des zu entwickelnden Systems.
 
 ![image](https://user-images.githubusercontent.com/58107983/167624341-f019f8f0-32bf-433d-b4ee-2477cf1d2b08.png)
-
 **Abbildung 1** - Systemkontext für die Wetterstation [1]
 
 ---
@@ -96,24 +95,16 @@ Rei Berberi
 - Zeigt, wie das System mit seiner Umgebung interagiert, während es benutzt wird.
 - Anwendungsfälle sollen auch in einer strukturierten, natürlichen Sprache beschrieben werden.
 
-![image](https://user-images.githubusercontent.com/58107983/167624428-116adcea-5eb0-4f51-b69a-60fe301b95fc.png) ![image](https://user-images.githubusercontent.com/58107983/167624527-8d057ee8-89f9-4293-8827-8556f7e63424.png)
-
-**Abbildung 2** - Anwendungsfälle für die Wetterstation[1]
-
-**Abbildung 3** - Beschreibung des Anwendungsfalls: Wetter berichten[1]
+![image](https://user-images.githubusercontent.com/58107983/167630681-e98f661e-149e-4cbf-a85e-8b7228695a23.png)
+**Abbildung 2** - Anwendungsfälle für die Wetterstation und Beschreibung des Anwendungsfalls: Wetter berichten[1]
 
 ---
 
 ## 2. Objektorientiertes Design unter Verwendung der UML
 *Architektur-Design*
 
-![image](https://user-images.githubusercontent.com/58107983/167624583-e8ba615f-265e-4d48-bedf-87de94fe940b.png)
-
-**Abbildung 4** - Hochrangige Architektur der Wetterstation[1]
-
-![image](https://user-images.githubusercontent.com/58107983/167624623-bdace060-91fb-4b05-9d5a-2528baeed426.png)
-
-**Abbildung 5** - Architektur des Datenerfassungssystems[1]
+![image](https://user-images.githubusercontent.com/58107983/167624583-e8ba615f-265e-4d48-bedf-87de94fe940b.png) ![image](https://user-images.githubusercontent.com/58107983/167624623-bdace060-91fb-4b05-9d5a-2528baeed426.png)
+**Abbildung 3** - Hochrangige Architektur der Wetterstation und Architektur des Datenerfassungssystems[1]
 
 ---
 
@@ -121,39 +112,65 @@ Rei Berberi
 *Identifizierung der Objektklasse*
 
 - Die Beschreibung des Anwendungsfalls hilft dabei, Objekte und Operationen im System zu identifizieren.
-
 - Ein oder mehrere High-Level-Systemobjekte werden benötigt, die die in den Anwendungsfällen definierten Systeminteraktionen kapseln.
-
 - Auf die Objekte selbst konzentrieren, nicht wie diese Objekte implementiert werden könnten.
 
 ![image](https://user-images.githubusercontent.com/58107983/167624674-9bb0028e-9244-44e2-bde9-ba70a7feb82f.png)
-
-**Abbildung 6** - Objekte der Wetterstation[1]
-
----
-
-## 2. Objektorientiertes Design unter Verwendung der UML
-*Design Modelle*
+**Abbildung 4** - Objekte der Wetterstation[1]
 
 ---
 
 ## 2. Objektorientiertes Design unter Verwendung der UML
 *Design Modelle*
 
+- Wenn man die UML zur Entwicklung eines Entwurfs verwendet, sollte man zwei Arten von Entwurfsmodellen entwickeln:
+  - **Strukturmodelle**, die die statische Struktur des Systems anhand von Objektklassen und deren Beziehungen beschreiben.
+  - **Dynamische Modelle**, die die dynamische Struktur des Systems beschreiben.
+- Drei UML-Modelltypen sind besonders nützlich:
+  - **Subsystemmodelle**, die logische Gruppierungen von Objekten in kohärente Subsysteme darstellen. 
+  - **Sequenzmodelle**, die die Abfolge von Objektinteraktionen darstellen.
+  - **Zustandsautomatenmodelle**, die zeigen, wie Objekte ihren Zustand als Reaktion auf Ereignisse ändern.
+
 ---
 
 ## 2. Objektorientiertes Design unter Verwendung der UML
 *Design Modelle*
 
+- Ein **Subsystemmodell** ist ein nützliches statisches Modell, das zeigt, wie ein Entwurf in logisch zusammenhängenden Gruppen von Objekten organisiert ist.
+
+![image](https://user-images.githubusercontent.com/58107983/167624583-e8ba615f-265e-4d48-bedf-87de94fe940b.png)
+**Abbildung 5** - Subsystemmodell: Hochrangige Architektur der Wetterstation
+
 ---
 
 ## 2. Objektorientiertes Design unter Verwendung der UML
 *Design Modelle*
+
+- **Sequenzmodelle** sind dynamische Modelle, die für jeden Interaktionsmodus die Abfolge der stattfindenden Objektinteraktionen beschreiben.
+
+![image](https://user-images.githubusercontent.com/58107983/167624718-5f13c83e-70f1-4543-9273-5806632aa4b2.png)
+**Abbildung 6** - Sequenzdiagramm zur Beschreibung der Datenerhebung[1]
+
+---
+
+## 2. Objektorientiertes Design unter Verwendung der UML
+*Design Modelle*
+
+- **Zustandsautomatenmodelle** zeigen, wie die Objektinstanz ihren Zustand in Abhängigkeit von den empfangenen Nachrichten ändert.
+
+![image](https://user-images.githubusercontent.com/58107983/167624749-c3a9c748-0beb-44db-b05f-7cd43c2add3d.png)
+**Abbildung 7** - Zustandsdiagramm der Wetterstation[1]
 
 ---
 
 ## 2. Objektorientiertes Design unter Verwendung der UML
 *Schnittstellenspezifikation*
+
+- Ein wichtiger Teil eines jeden Entwurfsprozesses ist die Spezifikation der Schnittstellen zwischen den Komponenten des Entwurfs.
+- In einem Schnittstellenentwurf sollten keine Details der Datendarstellung enthalten sein.
+
+![image](https://user-images.githubusercontent.com/58107983/167624813-ab4c68ef-39c2-4d13-8d39-2ad58faf88ef.png)
+**Abbildung 8** - Schnittstellen von Wetterstationen[1]
 
 ---
 
@@ -206,6 +223,11 @@ Rei Berberi
 [1]: Ian Sommerville. 2015. Software Engineering (10th. ed.), 196-225.
 
 ---
+
+
+
+![image](https://user-images.githubusercontent.com/58107983/167624968-d33a09b3-6920-44a3-be88-bd29525dfe87.png)
+![image](https://user-images.githubusercontent.com/58107983/167625138-36df7c73-0e88-4e77-9923-1db94d5c1fef.png)
 
 
     </textarea>
