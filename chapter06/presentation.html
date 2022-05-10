@@ -98,8 +98,8 @@ Ergebnis: Artefakt: Architectural Model
 
 # Motivation
 
-- Individuelle Komponenten implementieren funktionale Anforderungen eines Systems
-- Dominanter Einflussfaktor auf nicht-Funktionale Anforderungen eines Systems ist dessen Architektur
+- Funktionale Anforderungen beeinflusst durch individuelle Komponenten
+- Nicht-funktionale Anforderungen beeinflusst durch Systemarchitektur
 
 
 - Architektur eines Systems bestimmt u.A. dessen Laufzeitperformanz, Robustheit, Verteilbarkeit, Wartbarkeit
@@ -108,7 +108,7 @@ Ergebnis: Artefakt: Architectural Model
 
 # Motivation
 
-- Explizites Benennen einer Systemarchitektur erfordert Analyse (Alternativen abwägen; Beste Lösung finden)
+- Explizites Benennen einer Systemarchitektur erfordert Analyse (Alternativen abwägen; beste Lösung finden)
 
 
 - Architectural Models können zur Kommunikation genutzt werden (mit Stakeholdern, anderen Entwicklern)
@@ -123,8 +123,8 @@ Ergebnis: Artefakt: Architectural Model
 - Praxis: Schnittmenge zwischen Requirements Engineering und Architectural Design
 
 
-- Idealfall: Systemspezifikation (Was) enthält keine Designinformationen (Wie)
-- Unrealistisch, da High-Level-Features eines Systems durch dessen Hauptkomponenten repräsentiert werden
+- Ideal: Systemspezifikation (Was) enthält keine Designinformationen (Wie)
+- High-Level-Features eines Systems werden durch dessen Hauptkomponenten repräsentiert
 
 
 - Bereits im Requirements Engineering möglich: Erzeugen einer abstrakten Systemarchitektur durch Gruppieren von Systemfeatures zu Subsystemen
@@ -143,21 +143,25 @@ Architektur individueller Programme
 
 ## Architecture in the large
 
-Architektur komplexer Systeme, also (verteilter) Systeme aus anderen Systemen, Programmen und Komponenten
+Architektur komplexer Systeme
+
+((verteilte) Systeme aus anderen Systemen, Programmen und Komponenten)
 
 ---
 
---- TODO: Architectural Model ---
+class: center, middle
 
-- Debatte über Formalität
+# Architectural Model
 
 ---
 
 # Architectural Model
 
-Ein Architectural Model beschreibt die Organisation eines Systems als Menge von kommunizierenden Komponenten
+Beschreibt die Organisation eines Systems als Menge von kommunizierenden Komponenten
 
-#### Wie (formell) die Architektur eines Systems notieren?
+Zentrale Fragestellung:
+
+**Wie (formell) die Architektur eines Systems notieren?**
 
 ---
 
@@ -201,125 +205,114 @@ class: img-400
 
 **Nachteile**
 - Undetailliert
-	- Typen von Beziehungen + äußere Eigenschaften von Komponenten fehlen
+	- Typen von Beziehungen + äußere Eigenschaften von Komponenten nicht sichtbar
 	- Raum für Missverständnisse
 
 ---
 
-# UML?
+# UML zur Beschreibung von Architekturen
 
 - Umfrage: Wenn UML genutzt, dann meist informell
 - UML soll objektorientierte Systeme beschreiben
-- Sommerville: Zur Phase des Architekturdesigns sollten Systeme abstrakter beschrieben werden
+
+
+- Sommerville: Phase des Architekturdesigns &rarr; Systeme abstrakter beschreiben
 - UML im Designprozess nicht nützlich
 
 ---
 
 # Dokumentation durch strenge Notationen
 
-- Es existieren spezialisierte Modellierungssprachen: Architectural Description Languages (ADLs)
-	- Sind ohne Übung ggf. schwer nutzbar
+- Spezialisierte Modellierungssprachen: Architectural Description Languages (ADLs)
+	- Ohne Erfahrung ggf. schwer nutzbar
 
 
-- Grundsätzlich: Erzeugen von vollständigen, detaillierten Architekturdokumentationen ist teuer
+- Erzeugen von vollständigen, detaillierten Architekturdokumentationen ist teuer
 - Kosteneffektivität lässt sich praktisch nicht messen &rarr; Ansatz nicht weit verbreitet
 
 ---
 
---- TODO: Architectural Model > Architectural Views ---
+class: center, middle
 
-- 4 / 5 Views
-- Praxisbezug
+# Architectural Views
 
 ---
 
 # Architectural Views
 
-- Es ist nicht möglich, alle relevanten Informationen über eine Architektur auf einem einzelnen Diagramm darzustellen
-- Grundsätzliche Frage bei Entwurf: Welche Perspektiven auf eine Systemarchitektur sind nützlich?
+- Darstellung aller relevanten Informationen über eine Architektur in einem einzelnen Diagramm unmöglich
+- Grundsätzliche Frage bei Entwurf:
+
+*Welche Perspektiven auf eine Systemarchitektur sind nützlich?*
+
 - Ein grafisches Modell kann nur eine Perspektive zeigen
 
 
-- Krutchen schlägt vier fundamentale Architektur-Sichten vor
-- Hofmeister et. al. ergänzen das Modell durch eine Fünfte
-
----
-
-# Logical View (logische Sicht)
-
-- Zeigt die wesentlichen Abstraktionen innerhalb des Systems als Objekte oder Objektklassen
-- Zuordnung von Systemanforderungen zu Entities sollte hierbei möglich sein
-
----
-
-# Process View (Prozesssicht)
-
-- Zeigt wie das System zur Laufzeit aus interagierenden Prozessen zusammengesetzt ist
-- u.A. nützlich zur Beurteilung von nicht-Funktionalen Charakteristiken wie Performance und Availability
-
----
-
-# Development View (Entwicklungssicht)
-
-- Zeigt wie die Software zur Entwicklung zerlegt ist
-- Nützlich für Manager und Programmierer
-	- Komponenten können einzelnen Entwicklern / Teams zugewiesen werden
-
----
-
-# Physical View (physische Sicht)
-
-- Zeigt Hardware und Verteilung von Komponenten über die Prozessoren im System
-- Nützlich für Systemingenieure zur Planung von Deployments
-
----
-
-# Conceptual View (konzeptionelle Sicht)
-
-- Abstrakte Sicht des Systems
-- Nutzung zur Zerlegung von High-Level-Anforderungen in detaillierte Spezifikationen
-- Kann bei Identifikation von wiedeverwendbaren Komponenten helfen
+- Krutchen: vier fundamentale Architektur-Sichten
+- Hofmeister et. al.: ergänzen Fünfte
 
 ---
 
 # Architectural Views
 
-(nach Krutchen)
+- **Logical View (logische Sicht)**
+	- Wesentliche Abstraktionen als Objekte / Objekteklassen
+	- Zuordnung: Systemanforderungen &lrarr; Entities
 
-- Logical View (logische Sicht)
-- Process View (Prozesssicht)
-- Development View (Entwicklungssicht)
-- Physical View (physische Sicht)
 
-(nach Hofmeister et. al.)
+- **Process View (Prozesssicht)**
+	- Zusammensetzung von interagierenden Prozessen zur Laufzeit
+	- Beurteilung von nicht-funktionalen Charakteristiken (z.B. Performance, Availability)
 
-- Conceptual View (konzeptionelle Sicht)
+
+- **Development View (Entwicklungssicht)**
+	- Zerlegung der Software zur Entwicklung
+	- Nützlich für Manager zur Projektplanung
+	- Nützlich für Programmierer zur Implementierung
+
+
+- **Physical View (phsyische Sicht)**
+	- Hardware + Verteilung von Komponenten über Prozessoren im System
+	- Nützlich für Systemingenieure zur Planung von Deployments
 
 ---
 
 # Architectural Views
 
-Praxis: Nutzen der Sichten nach Bedarf (die, die zur Kommunikation nützlich sind)
-
-Sommerville: Vollständigkeit nicht von Bedeutung
+- **Conceptual View (konzeptionelle Sicht)**
+	- Abstrakte Sicht des Systems
+	- Zerlegung: High-Level-Anforderungen &rarr; detaillierte Spezifikationen
 
 ---
 
---- TODO: Architectural Design Decisions ---
+# Architectural Views
 
-- 8 Fragestellungen
+Sommerville:
+
+- Empfehlung für Praxis: Wahl nach Bedarf / Nutzen 
+- Vollständigkeit nicht von Bedeutung
+
+---
+
+class: center, middle
+
+# Architectural Design Decisions
 
 ---
 
 # Architectural Design Decisions
 
-- Architectural Design ist ein kreativer Prozess
-- Entwurf der Organisation eines Systems, sodass funktionale + nicht-funktionale Anforderungen erfüllt werden
-- Es existiert kein stereotyper Prozess
+- Architectural Design = kreativer Prozess
+- Ziel: Entwurf der Organisation eines Systems, sodass
+	- funktionale Anforderungen erfüllt
+	- nicht-funktionale Anforderungen erfüllt
+
+
+- Kein stereotyper Prozess
 - Konkreter Prozess ist abhängig von zu entwickelnden System (Typ, spezifische Anforderungen)
 
 
-- Architectural Design ist keine Sequenz von Aktivitäten
+- Architectural Design = keine Sequenz von Aktivitäten
 - Besseres Konzept: Menge an zu treffenden Entscheindungen
 
 ---
@@ -422,7 +415,11 @@ Sommerville: Vollständigkeit nicht von Bedeutung
 
 # Nicht-funktionale Anforderungen an Systeme
 
-Konkrete Architektur eines Systems sollte von nicht-funktionalen Anforderungen an dieses abhängen
+Architektur eines Systems bestimmt nicht-funktionale **Charakteristiken**
+
+*also:*
+
+Architektur eines Systems sollte von nicht-funktionalen **Anforderungen** abhängen
 
 ---
 
@@ -430,7 +427,7 @@ Konkrete Architektur eines Systems sollte von nicht-funktionalen Anforderungen a
 
 #### (Laufzeitperformanz)
 
-- Lokalisieren performanzkritischer Operationen auf eine geringe Anzahl an Komponenten
+- Lokalisieren performanzkritischer Operationen (auf wenige Komponenten)
 - Weniger, größere anstatt vieler, feingranularer Komponenten
 - Reduktion von Kommunikation zwischen Komponenten verbessert Performance
 - Auch: Parallelisierung
@@ -450,9 +447,9 @@ Konkrete Architektur eines Systems sollte von nicht-funktionalen Anforderungen a
 
 #### (Sicherheit hinsichtlich der Umgebung)
 
-- Safety-Relevante Vorgänge in gemeinsamer Komponente bzw. geringer Anzahl an Komponenten
-- Reduziert Kosten hinsichtlich Validierung
-- Verbundene Schutzsysteme können im Fehlerfall sicher abgeschaltet werden
+- Safety-Relevante Vorgänge in gemeinsamer Komponente bzw. wenige Komponenten
+- &rarr; Reduziert Kosten hinsichtlich Validierung
+- Verbundene Schutzsysteme: Sichere Abschaltung im Fehlerfall
 
 ---
 
@@ -470,7 +467,7 @@ Konkrete Architektur eines Systems sollte von nicht-funktionalen Anforderungen a
 #### (Wartbarkeit)
 
 - Fein-granulare bzw. self-contained (unabhängige) Komponenten
-- Trennung von Erzeugern von Daten und Konsumenten von Daten
+- Trennung: Erzeuger / Konsumenten von Daten
 - Vermeidung verteilter Datenstrukturen
 
 ---
@@ -482,7 +479,7 @@ Konkrete Architektur eines Systems sollte von nicht-funktionalen Anforderungen a
 
 
 - mehr Validierung verbessert Security
-- weniger (redundante) Validierung verbessert Safety
+- weniger Notwendigkeit nach redundanter Validierung verbessert Safety
 
 
 - Grundsätzlich: Kompromisse zwischen Anforderungen
@@ -492,24 +489,34 @@ Konkrete Architektur eines Systems sollte von nicht-funktionalen Anforderungen a
 
 # Bewertung von Architekturdesigns
 
-- Test einer Architektur = Genügung des Systems hinsichtlich funktionaler + nicht-funktionaler Anforderungen im Betrieb
+Test einer Architektur = Genügung des Systems hinsichtlich
+- funktionaler Anforderungen
+- nicht-funktionaler Anforderungen
+
+im Betrieb
+
 - Evaluation schwierig
-- Vergleich mit Referenzarchitekturen oder Pattern möglich
+- Vergleich mit Referenzarchitekturen / Pattern möglich
 
 ---
 
---- TODO: Architectural Patterns ---
+class: center, middle
 
-- Einleitung
-- Einordnung
+# Architectural Patterns
 
 ---
 
 # Architectural Patterns
 
-- Pattern erlauben Präsentieren, Teilen und Wiederverwenden von Wissen
-- Architectural Pattern = Abstrakte Beschreibung von Praktiken, die sich in verschiedenen Systemen / Umgebungen bewährt haben
-- Beschreiben Organisation entsprechender Systeme sowie Stärken + Schwächen
+Pattern erlauben
+- Präsentieren
+- Teilen
+- Wiederverwenden
+
+von Wissen
+
+
+Architectural Pattern = Abstrakte Beschreibung von Praktiken, die sich in verschiedenen Systemen / Umgebungen bewährt haben
 
 ---
 
@@ -517,7 +524,7 @@ Konkrete Architektur eines Systems sollte von nicht-funktionalen Anforderungen a
 
 #### Beschreibung
 
-- Seperiert Präsentation und Interaktion von Daten
+- Seperiert Präsentation / Interaktion / Daten
 - Drei logische Komponenten:
 	- Model (verwaltet Daten, implementiert Operationen auf diesen)
 	- View (definiert + verwaltet Präsentation der Daten)
@@ -539,23 +546,19 @@ class: img-450
 
 #### Verwendung
 
-- Wenn es mehrere Wege gibt, Daten zu betrachten und mit diesen zu interagieren
-- Wenn Zukünftige Anforderungen für Interaktion und Datenpräsentation unbekannt sind
-
----
-
-# Model-View-Controller (MVC)
+- Mehrere Arten der Betrachtung / Interaktion von / mit Daten
+- Unbekannte zukünftige Anforderungen für Präsentation / Interaktion von Daten
 
 #### Vorteile
 
-- Erlaubt Änderungen am Datenmodell unabhängig von der Präsentation (sowie umgekehrt)
-- Erlaubt verschiedene Präsentationen der selben Daten
-- Änderungen von Daten in einer Präsentation wirken sich unmittelbar auf alle aus
+- Änderungen an Datenmodell / Präsentation unabhängig
+- Verschiedene Präsentationen der selben Daten
+- Datenänderungen global in allen Präsentationen
 
 #### Nachteile
 
-- Erzeugt zusätzlichen Code und damit Komplexität
-- Auch, wenn Datenmodell und Interaktion simpel sind
+- Erzeugt zusätzlichen Code + Komplexität
+- Auch, wenn Datenmodell / Interaktion simpel
 
 ---
 
@@ -563,9 +566,10 @@ class: img-450
 
 #### Beschreibung
 
-- Organisation in Schichten, welche zusammengehörige Funktionalitäten implementieren
-- Eine Schicht stellt der Schicht über ihr Services zur Verfügung (Jede Schicht erfordert nur die direkt unterhalb)
-- Unterste Schicht repräsentiert Core-Funktionalitäten
+- Schichten implementieren zusammengehörige Funktionalitäten
+- Schichten stellen übergeordneten Schichten Services zur Verfügung
+	- Abhängigkeiten nur nach unten
+- Unterste Schicht = Core-Funktionalität
 
 ---
 
@@ -583,27 +587,25 @@ class: img-450
 
 #### Verwendung
 
-- Wenn Funktionalitäten auf Basis existierender Systeme hinzugefügt werden sollen
-- Nützlich bei Verteilung der Entwicklung über mehrere Personen / Teams
-- Bei Anforderungen an Security
-
----
-
-# Layered Architecture
+- Ergänzen von existierenden Systemen
+- Verteilung der Entwicklung auf Personen / Teams
+- Anforderungen an Security
 
 #### Vorteile
 
-- Einzelne Schichten sind austauschbar und portabel (solange Interfaces zu abhängiger / höherer Schicht gleich)
-- Bei Änderungen im Interface nur eine Schicht betroffen
-- Redundante Funktionalitäten in mehreren Schichten verbessern Dependability
-- Unterstützt inkrementelle Entwicklung (innenliegende Services können bereits während Entwicklung bereitgestellt werden)
-- Erleichtert Multi-Plattform-Implementierungen (Maschinenabhängigkeiten können lokal auf einer Schicht gehalten werden)
+- Einzelne Schichten: austauschbar + portabel
+- Änderungen im Interface einer Schicht betreffen nur eine Weitere
+- Redundante Funktionalitäten &rarr; verbesserte Dependability
+- Unterstützt inkrementelle Entwicklung
+	- Bereitstellung innenliegender Services zur Entwicklung
+- Erleichtert Multi-Plattform-Implementierungen
+	- Lokalisierung von Maschinenabhängigkeiten auf eine Schicht
 
 #### Nachteile
 
-- Praxis: saubere Seperation von Schichten häufig schwierig
-- Schichten müssen ggf. über mehrere Ebenen direkt interagieren (nicht via Stapel an Schichten dazwischen)
-- Mehrere Level der Verarbeitung kann Performance negativ beeinträchtigen
+- Praxis: Saubere Seperation von Schichten schwierig
+- ggf. direkte Interaktion über mehrere Ebenen notwendig
+- Mehrere Level der Verarbeitung &rarr; ggf. schlechtere Performance
 
 ---
 
@@ -611,13 +613,13 @@ class: img-450
 
 #### Beschreibung
 
-- Daten / Zustand wird innerhalb eines zentralen Repositories verwaltet
-- Komponenten interagieren nur durch das Repository mit Daten, niemals direkt
+- Daten / Zustand in zentralem Repository
+- Dateninteraktion nur via Repository, niemals direkt
 
 
 - Varianten der Steuerung:
 	- Passiv (Komponenten steuern Zugriff)
-	- Aktiv (z.B. Trigger bei Verfügbar-werden von Daten)
+	- Aktiv (z.B. Trigger bei Verfügbarwerden von Daten)
 
 ---
 
@@ -635,26 +637,24 @@ class: img-450
 
 #### Verwendung
 
-- Systeme, die große Mengen von Informationen erzeugen, die persistiert werden müssen
-- Bei Data-Driven-Systems, die bei Hinzufügen von Daten Aktionen auslösen
-- Anwendungen, bei denen eine Komponente Daten generiert und eine Andere diese nutzt
-
----
-
-# Repository Architecture
+- Erzeugung / Persistierung großer Datenmengen
+- Data-Driven-Systems (Hinzufügen von Aktionen löst Aktionen aus)
+- Consumer/Producer
 
 #### Vorteile
 
-- Komponenten sind unabhängig (müssen nichts von der Existenz von Anderen wissen, da keine explizite Kommunikation zwischen Komponenten)
-- Datenänderungen innerhalb einer Komponente wirken sich global auf alle Komponenten aus
-- Daten sind durchgehend konsistent (vereinfacht z.B. Erstellen von Backups)
+- Unabhängige Komponenten (keine explizite Kommunikation)
+- Datenänderungen sind global
+- Daten durchgehend konsistent (vereinfacht z.B. Backups)
 
 #### Nachteile
 
-- Repositories sind single point of failure (Probleme im Repository betreffen ganzes System)
-- Große Teile der Kommunikation via Repository kann ineffizient sein
-- Verteilung von Repositories erfordert Verwalten mehrerer Kopien und Herstellen von Konsistenz (Overhead)
-- Zentrales Repository-Datenmodell erforderlich (Kompromiss zwischen spezifischen Anforderungen in Komponenten; Integration schwierig bei Inkompabilität)
+- Repository = Single point of failure (Probleme betreffen ganzes System)
+- Großteil Kommunikation via Repository = ggf. ineffizient
+- Verteilung Repository
+	- Verwaltung mehrerer Kopien
+	- Herstellung Konsistenz (&rarr; Overhead)
+- Zentrales Repository-Datenmodell erforderlich (Integration; Inkompabilität)
 
 ---
 
@@ -663,17 +663,17 @@ class: img-450
 #### Beschreibung
 
 - Systeme sind Menge an:
-	- Services, die von Servern zur Verfügung gestellt werden
-	- Clients, die über ein Netzwerk Services nutzen
+	- Services (von Servern zur Verfügung gestellt)
+	- Clients (Nutzen Services via Netzwerk)
 
 
-- Server sind Softwarekomponenten, die Services anbieten
-- Mehrere Server können auf einem Rechner ausgeführt werden
+- Server = Softwarekomponenten, die Services anbieten
+- Mehrere Server auf einem Rechner
 - Üblich: viele Instanzen von Client-Programmen parallel auf vielen Computern
-- Üblich: Implementierung als verteiltes System (jedoch auch lokal auf einem Rechner möglich)
+- Üblich: Implementierung als verteiltes System
 
 
-- Clients müssen verfügbare Server sowie deren Services kennen
+- Clients müssen verfügbare Server + deren Services kennen
 - Server müssen weder Identitäten noch Anzahl der Clients kennen
 
 ---
@@ -692,23 +692,19 @@ class: img-450
 
 #### Verwendung
 
-- Wenn Daten in einer geteilten Datenbank von verschiedenen Orten abgerufen werden müssen
-- Wenn Last auf ein System variable ist (Server können repliziert werden)
-
----
-
-# Client-Server-Architecture
+- Abruf von geteilten Datenbanken von verschiedenen Orten
+- Variable Last auf System
 
 #### Vorteile
 
-- Generelle Funktionalitäten müssen nicht durch jeden Client implementiert werden (Bereitstellung durch Server)
-- Hinzufügen /Integration neuer Server ist einfach
-- Aktualisieren von Servern ist möglich, ohne andere Teile eines Systems zu beeinflussen
+- Generelle Funktionalitäten zentral auf Server (keine Implementierung durch Clients)
+- Hinzufügen / Integration neuer Server ist einfach
+- Aktualisieren von Servern ohne Beeinflussung anderer Systemteile
 
 #### Nachteile
 
-- Jeder Service ist single point of failure (DoS-Attacken, Server-Fehler)
-- Performance unvorhersehbar, das abhängig von System und Netzwerk
+- Jeder Service = Single point of failure (DoS-Attacken, Server-Fehler)
+- Performance unvorhersehbar (Abhängig von System + Netzwerk)
 
 ---
 
@@ -716,8 +712,10 @@ class: img-450
 
 #### Beschreibung
 
-- Verarbeitungseinheiten (Filter) führen einen Typ von Datentransformationen durch
-- Daten fließen in "Pipes" zur Verarbeitung von einer Komponente zur Nächsten (sequentiell/parallel; elementweise/batchweise)
+- Verarbeitungseinheiten (Filter) implementieren Typ von Datentransformationen
+- Daten fließen in "Pipes" von einer Transformation zur Nächsten
+- Sequentiell / Parallel
+- Elementweise / Batchweise
 
 ---
 
@@ -735,29 +733,37 @@ class: img-450
 
 #### Verwendung
 
-- Wenn Daten in seperaten Schritten verarbeitet werden
-- Bei Batch-Processing und eingebettete Systeme (ohne Benutzerinteraktion)
-
----
-
-# Pipe-and-Filter-Architecture
+- Verarbeitung von Daten in seperaten Schritten
+- Batch-Processing
+- Eingebettete Systeme (ohne Benutzerinteraktion)
 
 #### Vorteile
 
 - Einfach zu verstehen
-- Wiederverwenden einzelner Transformations-Komponenten möglich
-- Art der Verarbeitung entspricht der Art der Struktur vieler Businessprozesse
-- Weiterentwicklung durch Hinzufügen von Transformationen ist simpel
+- Wiederverwendung einzelner Transformations-Komponenten möglich
+- Art der Verarbeitung = Struktur vieler Businessprozesse
+- Einfache Weiterentwicklung durch Hinzufügen von Transformationen
 
 #### Nachteile
 
-- Abstimmung von Datenformaten zwischen kommunizierenden Komponenten
-- Jede Transformation muss Input parsen und interpretieren sowie Output unparsen (Overhead)
-- Bei Wiederverwendung ggf. Herstellen von Kompabilität
+- (häufig vielfache) Abstimmung von Datenformaten
+- Overhead durch häufiges Parsing / Interpretieren
 
 ---
 
---- TODO: Einordnung ---
+# Application Architectures
+
+- Fundamentale Prinzipen von Architectural Design = Seperation + Independence
+- &rarr; Lokalität von Änderungen
+- Pattern MVC + Layered Architecture seperieren Elemente 
+- &rarr; Betrachten konzeptionelle Organisation von Systemen
+
+
+- Repository Architecture beschreibt Datenaustausch in einer Menge von interagierenden Komponenten
+- &rarr; Betrachtet statische Struktur
+
+
+- Client-Server-Architecture + Pipe-and-Filter-Architecture organisieren Systeme zur Laufzeit
 
 ---
 
