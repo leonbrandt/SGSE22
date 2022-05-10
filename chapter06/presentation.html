@@ -24,11 +24,12 @@
         max-height: 681px;
         max-width: 100%;
       }
-      .img-200 img { height: 200px; }
-      .img-300 img { height: 300px; }
-      .img-400 img { height: 400px; }
-      .img-500 img { height: 500px; }
-      .img-600 img { height: 600px; }
+      .img-200 img { max-height: 200px; }
+      .img-300 img { max-height: 300px; }
+      .img-400 img { max-height: 400px; }
+      .img-450 img { max-height: 450px; }
+      .img-500 img { max-height: 500px; }
+      .img-600 img { max-height: 600px; }
       .remark-code, .remark-inline-code { 
         font-family:Courier New;
       }
@@ -134,13 +135,13 @@ Ergebnis: Artefakt: Architectural Model
 
 Betrachtung von Softwarearchitektur auf zwei Ebenen:
 
-## **Architecture in the small**
+## Architecture in the small
 
 Architektur individueller Programme
 
 *vs.*
 
-## **Architecture in the large**
+## Architecture in the large
 
 Architektur komplexer Systeme, also (verteilter) Systeme aus anderen Systemen, Programmen und Komponenten
 
@@ -296,6 +297,14 @@ class: img-400
 
 ---
 
+# Architectural Views
+
+Praxis: Nutzen der Sichten nach Bedarf (die, die zur Kommunikation nützlich sind)
+
+Sommerville: Vollständigkeit nicht von Bedeutung
+
+---
+
 --- TODO: Architectural Design Decisions ---
 
 - 8 Fragestellungen
@@ -325,9 +334,167 @@ class: img-400
 
 # Architectural Design Decisions
 
+![](media/6_02_mod_1a.png)
+
+[Eigene Darstellung nach Fig. 6.2]
+
+---
+
+# Architectural Design Decisions
+
+![](media/6_02_mod_1b.png)
+
+[Eigene Darstellung nach Fig. 6.2]
+
+---
+
+# Architectural Design Decisions
+
+![](media/6_02_mod_2a.png)
+
+[Eigene Darstellung nach Fig. 6.2]
+
+---
+
+# Architectural Design Decisions
+
+![](media/6_02_mod_2b.png)
+
+[Eigene Darstellung nach Fig. 6.2]
+
+---
+
+# Architectural Design Decisions
+
+![](media/6_02_mod_3a.png)
+
+[Eigene Darstellung nach Fig. 6.2]
+
+---
+
+# Architectural Design Decisions
+
+![](media/6_02_mod_3b.png)
+
+[Eigene Darstellung nach Fig. 6.2]
+
+---
+
+# Architectural Design Decisions
+
+![](media/6_02_mod_4a.png)
+
+[Eigene Darstellung nach Fig. 6.2]
+
+---
+
+# Architectural Design Decisions
+
+![](media/6_02_mod_4b.png)
+
+[Eigene Darstellung nach Fig. 6.2]
+
+---
+
+# Architectural Design Decisions
+
+![](media/6_02_mod_5a.png)
+
+[Eigene Darstellung nach Fig. 6.2]
+
+---
+
+# Architectural Design Decisions
+
+![](media/6_02_mod_5b.png)
+
+[Eigene Darstellung nach Fig. 6.2]
+
+---
+
+# Architectural Design Decisions
+
 ![](media/6_02_mod_full.png)
 
 [Eigene Darstellung nach Fig. 6.2]
+
+---
+
+# Nicht-funktionale Anforderungen an Systeme
+
+Konkrete Architektur eines Systems sollte von nicht-funktionalen Anforderungen an dieses abhängen
+
+---
+
+# Performance
+
+#### (Laufzeitperformanz)
+
+- Lokalisieren performanzkritischer Operationen auf eine geringe Anzahl an Komponenten
+- Weniger, größere anstatt vieler, feingranularer Komponenten
+- Reduktion von Kommunikation zwischen Komponenten verbessert Performance
+- Auch: Parallelisierung
+
+---
+
+# Security
+
+#### (Sicherheit hinsichtlich gezielter Störversuche)
+
+- Geschichtete Struktur; kritische Assets weiter innen
+- Hoher Grad an Security-Validierung innerhalb der Schichten
+
+---
+
+# Safety
+
+#### (Sicherheit hinsichtlich der Umgebung)
+
+- Safety-Relevante Vorgänge in gemeinsamer Komponente bzw. geringer Anzahl an Komponenten
+- Reduziert Kosten hinsichtlich Validierung
+- Verbundene Schutzsysteme können im Fehlerfall sicher abgeschaltet werden
+
+---
+
+# Availability
+
+#### (Verfügbarkeit)
+
+- Redundante Komponenten
+- Ersetzen und Aktualisieren ohne Ausfallzeiten
+
+---
+
+# Maintainability
+
+#### (Wartbarkeit)
+
+- Fein-granulare bzw. self-contained (unabhängige) Komponenten
+- Trennung von Erzeugern von Daten und Konsumenten von Daten
+- Vermeidung verteilter Datenstrukturen
+
+---
+
+# Nicht-funktionale Anforderungen an Systeme
+
+- größere Komponenten verbessern Performance
+- kleinere Komponenten verbessern Maintainability
+
+
+- mehr Validierung verbessert Security
+- weniger (redundante) Validierung verbessert Safety
+
+
+- Grundsätzlich: Kompromisse zwischen Anforderungen
+- Möglich: Unterschiedliche Ansätze für verschiedene Teile eines Systems
+
+---
+
+# Bewertung von Architekturdesigns
+
+- Test einer Architektur = Genügung des Systems hinsichtlich funktionaler + nicht-funktionaler Anforderungen im Betrieb
+- Evaluation schwierig
+- Vergleich mit Referenzarchitekturen oder Pattern möglich
 
 ---
 
@@ -338,48 +505,259 @@ class: img-400
 
 ---
 
---- TODO: Architectural Patterns > Model-View-Controller ---
+# Architectural Patterns
 
-- Beschreibung
-- Verwendung
-- Vorteile
-- Nachteile
-
----
-
---- TODO: Architectural Patterns > Layered Architecture ---
-
-- Beschreibung
-- Verwendung
-- Vorteile
-- Nachteile
+- Pattern erlauben Präsentieren, Teilen und Wiederverwenden von Wissen
+- Architectural Pattern = Abstrakte Beschreibung von Praktiken, die sich in verschiedenen Systemen / Umgebungen bewährt haben
+- Beschreiben Organisation entsprechender Systeme sowie Stärken + Schwächen
 
 ---
 
---- TODO: Architectural Patterns > Repository Architecture ---
+# Model-View-Controller (MVC)
 
-- Beschreibung
-- Verwendung
-- Vorteile
-- Nachteile
+#### Beschreibung
 
----
-
---- TODO: Architectural Patterns > Client-Server Architecture ---
-
-- Beschreibung
-- Verwendung
-- Vorteile
-- Nachteile
+- Seperiert Präsentation und Interaktion von Daten
+- Drei logische Komponenten:
+	- Model (verwaltet Daten, implementiert Operationen auf diesen)
+	- View (definiert + verwaltet Präsentation der Daten)
+	- Controller (verwaltet Benutzerinteraktion, leitet diese an View und Model)
 
 ---
 
---- TODO: Architectural Patterns > Pipe-and-Filter Architecture ---
+class: img-450
 
-- Beschreibung
-- Verwendung
-- Vorteile
-- Nachteile
+# Model-View-Controller (MVC)
+
+![](media/6_05.png)
+
+[Fig. 6.5]
+
+---
+
+# Model-View-Controller (MVC)
+
+#### Verwendung
+
+- Wenn es mehrere Wege gibt, Daten zu betrachten und mit diesen zu interagieren
+- Wenn Zukünftige Anforderungen für Interaktion und Datenpräsentation unbekannt sind
+
+---
+
+# Model-View-Controller (MVC)
+
+#### Vorteile
+
+- Erlaubt Änderungen am Datenmodell unabhängig von der Präsentation (sowie umgekehrt)
+- Erlaubt verschiedene Präsentationen der selben Daten
+- Änderungen von Daten in einer Präsentation wirken sich unmittelbar auf alle aus
+
+#### Nachteile
+
+- Erzeugt zusätzlichen Code und damit Komplexität
+- Auch, wenn Datenmodell und Interaktion simpel sind
+
+---
+
+# Layered Architecture
+
+#### Beschreibung
+
+- Organisation in Schichten, welche zusammengehörige Funktionalitäten implementieren
+- Eine Schicht stellt der Schicht über ihr Services zur Verfügung (Jede Schicht erfordert nur die direkt unterhalb)
+- Unterste Schicht repräsentiert Core-Funktionalitäten
+
+---
+
+class: img-450
+
+# Layered Architecture
+
+![](media/6_08.png)
+
+[Fig. 6.8]
+
+---
+
+# Layered Architecture
+
+#### Verwendung
+
+- Wenn Funktionalitäten auf Basis existierender Systeme hinzugefügt werden sollen
+- Nützlich bei Verteilung der Entwicklung über mehrere Personen / Teams
+- Bei Anforderungen an Security
+
+---
+
+# Layered Architecture
+
+#### Vorteile
+
+- Einzelne Schichten sind austauschbar und portabel (solange Interfaces zu abhängiger / höherer Schicht gleich)
+- Bei Änderungen im Interface nur eine Schicht betroffen
+- Redundante Funktionalitäten in mehreren Schichten verbessern Dependability
+- Unterstützt inkrementelle Entwicklung (innenliegende Services können bereits während Entwicklung bereitgestellt werden)
+- Erleichtert Multi-Plattform-Implementierungen (Maschinenabhängigkeiten können lokal auf einer Schicht gehalten werden)
+
+#### Nachteile
+
+- Praxis: saubere Seperation von Schichten häufig schwierig
+- Schichten müssen ggf. über mehrere Ebenen direkt interagieren (nicht via Stapel an Schichten dazwischen)
+- Mehrere Level der Verarbeitung kann Performance negativ beeinträchtigen
+
+---
+
+# Repository Architecture
+
+#### Beschreibung
+
+- Daten / Zustand wird innerhalb eines zentralen Repositories verwaltet
+- Komponenten interagieren nur durch das Repository mit Daten, niemals direkt
+
+
+- Varianten der Steuerung:
+	- Passiv (Komponenten steuern Zugriff)
+	- Aktiv (z.B. Trigger bei Verfügbar-werden von Daten)
+
+---
+
+class: img-450
+
+# Repository Architecture
+
+![](media/6_11.png)
+
+[Fig. 6.11]
+
+---
+
+# Repository Architecture
+
+#### Verwendung
+
+- Systeme, die große Mengen von Informationen erzeugen, die persistiert werden müssen
+- Bei Data-Driven-Systems, die bei Hinzufügen von Daten Aktionen auslösen
+- Anwendungen, bei denen eine Komponente Daten generiert und eine Andere diese nutzt
+
+---
+
+# Repository Architecture
+
+#### Vorteile
+
+- Komponenten sind unabhängig (müssen nichts von der Existenz von Anderen wissen, da keine explizite Kommunikation zwischen Komponenten)
+- Datenänderungen innerhalb einer Komponente wirken sich global auf alle Komponenten aus
+- Daten sind durchgehend konsistent (vereinfacht z.B. Erstellen von Backups)
+
+#### Nachteile
+
+- Repositories sind single point of failure (Probleme im Repository betreffen ganzes System)
+- Große Teile der Kommunikation via Repository kann ineffizient sein
+- Verteilung von Repositories erfordert Verwalten mehrerer Kopien und Herstellen von Konsistenz (Overhead)
+- Zentrales Repository-Datenmodell erforderlich (Kompromiss zwischen spezifischen Anforderungen in Komponenten; Integration schwierig bei Inkompabilität)
+
+---
+
+# Client-Server-Architecture
+
+#### Beschreibung
+
+- Systeme sind Menge an:
+	- Services, die von Servern zur Verfügung gestellt werden
+	- Clients, die über ein Netzwerk Services nutzen
+
+
+- Server sind Softwarekomponenten, die Services anbieten
+- Mehrere Server können auf einem Rechner ausgeführt werden
+- Üblich: viele Instanzen von Client-Programmen parallel auf vielen Computern
+- Üblich: Implementierung als verteiltes System (jedoch auch lokal auf einem Rechner möglich)
+
+
+- Clients müssen verfügbare Server sowie deren Services kennen
+- Server müssen weder Identitäten noch Anzahl der Clients kennen
+
+---
+
+class: img-450
+
+# Client-Server-Architecture
+
+![](media/6_13.png)
+
+[Fig. 6.13]
+
+---
+
+# Client-Server-Architecture
+
+#### Verwendung
+
+- Wenn Daten in einer geteilten Datenbank von verschiedenen Orten abgerufen werden müssen
+- Wenn Last auf ein System variable ist (Server können repliziert werden)
+
+---
+
+# Client-Server-Architecture
+
+#### Vorteile
+
+- Generelle Funktionalitäten müssen nicht durch jeden Client implementiert werden (Bereitstellung durch Server)
+- Hinzufügen /Integration neuer Server ist einfach
+- Aktualisieren von Servern ist möglich, ohne andere Teile eines Systems zu beeinflussen
+
+#### Nachteile
+
+- Jeder Service ist single point of failure (DoS-Attacken, Server-Fehler)
+- Performance unvorhersehbar, das abhängig von System und Netzwerk
+
+---
+
+# Pipe-and-Filter-Architecture
+
+#### Beschreibung
+
+- Verarbeitungseinheiten (Filter) führen einen Typ von Datentransformationen durch
+- Daten fließen in "Pipes" zur Verarbeitung von einer Komponente zur Nächsten (sequentiell/parallel; elementweise/batchweise)
+
+---
+
+class: img-450
+
+# Pipe-and-Filter-Architecture
+
+![](media/6_15.png)
+
+[Fig. 6.15]
+
+---
+
+# Pipe-and-Filter-Architecture
+
+#### Verwendung
+
+- Wenn Daten in seperaten Schritten verarbeitet werden
+- Bei Batch-Processing und eingebettete Systeme (ohne Benutzerinteraktion)
+
+---
+
+# Pipe-and-Filter-Architecture
+
+#### Vorteile
+
+- Einfach zu verstehen
+- Wiederverwenden einzelner Transformations-Komponenten möglich
+- Art der Verarbeitung entspricht der Art der Struktur vieler Businessprozesse
+- Weiterentwicklung durch Hinzufügen von Transformationen ist simpel
+
+#### Nachteile
+
+- Abstimmung von Datenformaten zwischen kommunizierenden Komponenten
+- Jede Transformation muss Input parsen und interpretieren sowie Output unparsen (Overhead)
+- Bei Wiederverwendung ggf. Herstellen von Kompabilität
+
+---
+
+--- TODO: Einordnung ---
 
 ---
 
