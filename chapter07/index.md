@@ -154,7 +154,7 @@ Abbildung 7.9 zeigt zwei Schnittstellen, die für die Wetterstation definiert we
 
 ## 7.2 Entwurfsmuster
 
-Entwurfsmuster stellen die besten Praktiken dar, die von erfahrenen objektorientierten Softwareentwicklern verwendet werden. Entwurfsmuster sind Lösungen für allgemeine Probleme, mit denen Softwareentwickler während der Softwareentwicklung konfrontiert sind. Diese Lösungen wurden durch Versuch und Irrtum von zahlreichen Softwareentwicklern über einen längeren Zeitraum hinweg erarbeitet. 1994 veröffentlichten die vier Autoren Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides ein Buch mit dem Titel Design Patterns - Elements of Reusable Object-Oriented Software (Entwurfsmuster - Elemente wiederverwendbarer objektorientierter Software), das das Konzept der Entwurfsmuster in der Softwareentwicklung einführte.
+Entwurfsmuster stellen die besten Praktiken dar, die von erfahrenen objektorientierten Softwareentwicklern verwendet werden. Entwurfsmuster sind Lösungen für allgemeine Probleme, mit denen Softwareentwickler während der Softwareentwicklung konfrontiert sind. Diese Lösungen wurden durch Versuch und Irrtum von zahlreichen Softwareentwicklern über einen längeren Zeitraum hinweg erarbeitet. 1994 veröffentlichten die vier Autoren Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides ein Buch mit dem Titel Design Patterns - Elements of Reusable Object-Oriented Software, das das Konzept der Entwurfsmuster in der Softwareentwicklung einführte.
 
 Diese Autoren sind gemeinsam als Gang of Four (GOF) bekannt. In ihrem Buch über Patterns definierten sie die vier wesentlichen Elemente von Design Patterns:
 
@@ -195,6 +195,8 @@ Durch die Wiederverwendung vorhandener Software können neue Systeme schneller, 
 4. Die Kosten für die Integration wiederverwendbarer Softwareelemente untereinander und mit dem neu entwickelten Code.
 
 ### 7.3.2 Konfigurationsmanagement
+
+Konfigurationsmanagement ist die Bezeichnung für den allgemeinen Prozess der Verwaltung eines sich verändernden Softwaresystems. Ziel des Konfigurationsmanagements ist es, den Systemintegrationsprozess zu unterstützen, damit alle Entwickler kontrolliert auf den Projektcode und die Dokumente zugreifen, herausfinden können, welche Änderungen vorgenommen wurden, und die Komponenten kompilieren und verknüpfen können, um ein System zu erstellen.
 
 Es gibt vier grundlegende Aktivitäten des Konfigurationsmanagements:
 
