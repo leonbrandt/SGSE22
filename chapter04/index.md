@@ -40,7 +40,7 @@ In Abbildung 4.3 kann man sehen, welche Faktoren alles bei den nicht-funktionell
 
 ![](media/process.PNG)
 #### Abbildung 4.6 [1]
-In der Abbildung 4.6 ist der Prozessablauf von der Anforderungserhebung bis zu der Erstellung des software requirements document dargestellt. Dabei gibt es drei Kernaktivitäten. Diese sind Anforderungserhebung, Anorderungsspezifikation und Anforderungsvalidierung und werden wie in der Abbildung dargestellt mehrmals nacheinander durchlaufen. Wird starten immer bei der Anforderungserhebung, welche eine high-level Aktivität ist und enden bei einer low-level Aktivität, der Anforderungsvalidierung.
+In der Abbildung 4.6 ist der Prozessablauf von der Anforderungserhebung bis zu der Erstellung des software requirements document dargestellt. Dabei gibt es drei Kernaktivitäten. Diese sind Anforderungserhebung, Anforderungsspezifikation und Anforderungsvalidierung und werden wie in der Abbildung dargestellt mehrmals nacheinander durchlaufen. Wird starten immer bei der Anforderungserhebung, welche eine high-level Aktivität ist und enden bei einer low-level Aktivität, der Anforderungsvalidierung.
 
 ### Anforderungserhebung
 Im ersten Prozess des reuirements engineering arbeiten Softwareentwickler mit den Ergebnissbetroffenen zusammen, um folgende Dinge über das zu entwickelnde System und die Anwender herauszufinden:
