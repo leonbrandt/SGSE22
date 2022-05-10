@@ -110,7 +110,47 @@ Die Entwicklung des Software Systems erfolgt nicht nur in einer Codeline, sonder
 Wie bereits erwähnt, ist ein Vorteil der Nutzung von Versionskontrollsystemen die Komprimierung und Speicherung von unterschiedlichen Versionen der gleichen Datei/Komponente. Anstatt dass jede neue Version separat gespeichert wird, werden in einem Versionskontrollsystem nur die Änderungen zwischen zwei Versionsständen gespeichert (z.B. die bearbeiteten Zeilen bei Textdateien oder veränderten Bytes bei Binärdateien). Bei einem Checkout wird aus der Änderungshistorie der aktuelle Stand der Datei zusammengebaut.
 Dazu kommen noch mögliche Erweiterungen, um die Schnelligkeit zu verbessern. Dazu gehören beispielsweise die vollständige Speicherung der aktuellesten Version einer Datei und die Zusammenfassung mehrerer kleiner Dateien zu einer Änderungshistorie.
 
-## System building
+## System Building
+
+System Building ist der Prozess der Erstellung eines ausführbaren Systems durch das Verbinden von Systemkomponenten, Bibliotheken, Konfigurationsdateien und Metadaten.
+
+Im Prozess des Systembaus sind die drei Systeme Entwicklungssystem, Build Server und Zielumgebung involviert.
+Das Entwicklungssystem enthält Entwicklungswerkzeuge wie Compiler und Textbearbeitungsprogramme/IDEs. Hier befindet sich auch das private Repository der Entwickler, in dem Änderungen an dem Quellcode vorgenommen werden.
+Der Build Server erstellt die ausführbaren Versionen des Systems. Er wird durch das Versionskontrollsystem nach dem Hochladen von neuem Code ausgelöst.
+Die Zielumgebung ist die Plattform, auf der die erstellen Systeme ausgeführt werden (z.B. Webserver, Mikrocontroller, Handy, ...).
+
+Wie beim Version Management gitb es auch für System Building spezielle Tools, um die Entwickler bei der Arbeit zu unterstützen. Diese beinhalten folgende Funktionen:
+
+- Generierung von Build Skripten durch Analyse der Systemkomponenten und deren Abhängigkeiten
+- Integration zu Versionskontrollsystemen
+- Minimale Neukompilierung durch Wiederverwendung bereits kompilierter Komponenten
+- Erstellung von ausführbaren Systemen/Dateien (z.B. .exe-Datei)
+- Automatisierte Tests(z.B. JUnit)
+- Benachrichtigungen zu Fehlern und Ereignissen
+- Generierung von Dokumentation
+
+### Continuous Integration
+
+In der agilen Softwareentwicklung werden häufig Änderungen am gebauten System vorgenommen. Bei den häufigen Änderungen werden durch Continuous Integration selbst bei kleinen Änderungen automatische Checks ausgeführt und das System neu gebaut.
+
+Der Prozess der Continuous Integration wird wie folgt beschrieben:
+
+![Ablauf der Continuous Integration](assets/25.12-Continuous_integration.png)
+
+1. Kopieren des Projektepositories in das private Repository der Entwickler
+2. Testen und Bauen des Systems. Bei Fehlern die Persone benachrichtigen, welche als Letztes Änderungen vorgenommen hat
+3. Änderungen vornehmen
+4. Testen und Bauen des Systems
+5. System an den Build Server übergeben
+6. Testen und Bauen des Systems auf dem Build Server
+7. Wenn die Tests erfolgreich waren, eine neue Baseline erstellen und in die Mainline aufnehmen
+
+Die Vorteile der Continuous Integration sind die schnelle Findung von Fehlern bedingt durch Interaktion von verschiedenen Entwicklern und die Existenz einer endgültigen Version des Systems (aktuellste Version). Der Ansatz ist allerdings nicht immer umsetzbar, beispielsweise wenn die Test- und Kompilierzeit zu lange dauern, oder es manchmal nicht möglich ist, die Zielumgebung einheitlich zu simulieren, bzw. Tests in einer ähnlichen Umgebung durchzuführen.
+In solchen Fällen bietet sich an, neue Builds in regelmäßigen Abständen, z.B. täglich durchzuführen, und nicht bei jeder Änderung.
+
+### Minimierung der Kompilierung
+
+Ziel des Systembaus ist es, so wenig wie möglich zu Kompilieren. Bereits kompilierte Komponenten werden daher mit Zeitstempeln oder Checksummen versehen, um nur neue Änderungen zu kompilieren.
 
 ## Change Management
 
