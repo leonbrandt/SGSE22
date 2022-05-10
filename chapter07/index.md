@@ -23,7 +23,7 @@ Der Entwurf ist kein klar umrissener, sequentieller Prozess. Daher entwickelt ma
 
 Um ein Systemdesign vom Konzept zum detaillierten, objektorientierten Design zu entwickeln, muss man:
 
-1. Der Kontexts und die externe Interaktionen mit dem System verstehen und definieren.
+1. Der Kontext und die externe Interaktionen mit dem System verstehen und definieren.
 2. Die Systemarchitektur entwerfen.
 3. Die wichtigsten Objekte im System identifizieren.
 4. Entwurfsmodelle entwickeln.
