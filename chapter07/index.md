@@ -264,10 +264,3 @@ Die meisten Open-Source-Lizenzen (Chapman 2010) sind Varianten eines von drei al
 [2]: Raymond, E. S. 2001. The Cathedral and the Bazaar: Musings on Linux and Open Source by an Accidental Revolutionary. Sebastopol. CA: O’Reilly & Associates.
 
 [3]: St. Laurent, A. 2004. Understanding Open Source and Free Software Licensing. Sebastopol, CA: O’Reilly & Associates.
-
-![image](https://user-images.githubusercontent.com/58107983/167658497-897418b8-756b-48b9-8652-fb27c9a8df56.png)
-
-![image](https://user-images.githubusercontent.com/58107983/167658345-f619d5d5-c735-4de0-a083-d86e8ff29012.png)
-
-![image](https://user-images.githubusercontent.com/58107983/167658572-f3d0e3e9-06d2-43a6-bf0e-2fa5bb8c6b65.png)
-
