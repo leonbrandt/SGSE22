@@ -38,7 +38,7 @@ Mit gewonnener Erfahrung im Umgang mit agiler Methodik, hat sich diese insbesond
 ## Agile development techniques
 
 ![](img/XP.PNG)
-** XP-Prozess **
+**XP-Prozess**
 
 Nach der Entwicklung der Idee von agiler Methodik in den 90er Jahren, folgten rasch Ansätze zur Umsetzung dieser. Einer der bedeutendsten Ansätze war das sogenannte "Extreme Programming" (folgend abgekürzt durch XP) welches durch Kent Beck geprägt wurde.  Die Benennung erfolgte so, da agile Methodik und iterative Entwicklung auf ein "extremes" Niveau getrieben wurde. 
 
@@ -75,11 +75,11 @@ XP hat mit seinen Bestandteilen einen wichtigen Beitrag zur Umsetzung agiler Met
  
 ![](img/StoryCard.PNG)
 
-** Story Card **
+**Story Card**
 
 ![](img/Tasks.PNG)
 
-** Task **
+**Task**
 
 
 Agile Methodik sieht keine separate Phase der Anforderungserhebung vor. In XP werden die Anforderungen daher als Nutzungsszenarien (User Stories) aufgenommen. Entwickler und Kunde entwickeln aus diesen Nutzungsszenarien anschließend Story Cards, welche die Kundenbedürfnisse konkret beschreiben. Aus den Story Cards werden konkrete Tasks ausgearbeitet, für welche die Entwickler den Aufwand abschätzen und der Kunde die Priorität vorgibt. Die Umsetzung dieser Iteration erfolgt anschließend in einer der folgenden Prozess Iterationen. 
@@ -151,7 +151,7 @@ Zur Abgrenzung von bekannten Projektmanagement Methoden implementiert Scrum eine
 Scrum folgt den Prinzipien des agilen Manifests, gibt jedoch keine expliziten Vorschriften welche agilen Methoden eingesetzt werden sollen. Durch diese geringen formellen Hürden ist Scrum leichter integrierbar in bereits bestehende Unternehmensstrukturen. 
 
 ![](img/Scrum.PNG)
-** Scrum Prozess **
+**Scrum Prozess**
 
 Als Input für den Scrum Prozess dienen die im Product backlog definierten Anforderungen/ Aktivitäten. Anforderungen können beispielsweise in Form von User Stories hinterlegt werden, definierte Aktivitäten können sich vielfältig darstellen - beispielsweise die Definition eines Datenmodells oder die Entwicklung eines Prototyps. Für die Pflege des Product backlog ist der Product Owner verantwortlich.
 Jeder Iteration, mit einer Dauer von 2 bis 4 Wochen, erzeugt ein Softwareinkrement, welches potentiell ausgeliefert werden kann. Zu Beginn eines Sprints werden die Aktivitäten ausgewählt, welche umgesetzt werden sollen. Die Auswahl erfolgt gemeinsam durch den Product Owner und das Entwicklerteam. Nicht umgesetzte Aktivitäten wandern zurück ins Product backlog. Eine Verlängerung von Sprints (auf Grund von unfertigen Aktivitäten) ist nicht vorgesehen. Bei der Planung ausgewählte Items wandern in das Sprint backlog, aus welchem sich die Entwickler im Laufe des Sprints Items auswählen und umsetzen. 
@@ -191,7 +191,7 @@ Prinzip der permanenten Einbindung eines repräsentativen Vertreter des Kunden k
 
 ![](img/Einflussfaktoren.PNG)
 
-** Einflussfaktoren für die Wahl agiler Methodik **
+**Einflussfaktoren für die Wahl agiler Methodik**
 
 Aufgrund elementarer Unterschiede in der Arbeitsweise von kleinen Unternehmen (Bspw. Startups) zu großen Unternehmen (bspw. Konzerne), ist zur Skalierung von agiler Methodik eine Einbindung plangesteuerter Aktivitäten unerlässlich. Software Entwicklung muss in großen Unternehmen geplant werden, außerdem ist ein Controlling der Projekte unerlässlich. 
 Unternehmen haben in ihren Entwicklungsprozessen agile Aktivitäten und plangesteuerte Aktivitäten eingebaut. Die Findung des richtigen Gleichgewichts zwischen Agilität und plangesteuerter Entwicklung müssen Unternehmen abhängig der Rahmenbedingungen finden, hierzu können 5 Fragen herangezogen werden:
