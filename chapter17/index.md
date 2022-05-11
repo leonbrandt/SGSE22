@@ -2,7 +2,6 @@
 
 **Autor:** Malte Reinsch
 
-<!-- Text -->
 Die meisten heute verwendeten Rechnersysteme sind verteilte Systeme. Ein verteiltes
 System ein ein Rechnersystem, an dem mehr als ein Rechner beteiligt ist.
 Tannenbaum und Van Steen definieren ein verteiltes System als: "Eine Sammlung
@@ -39,6 +38,8 @@ verteilter Systeme zu beachten sind. Des Weiteren diskutiert dieses Kapitle eini
 architektonische Ansätze zur Konzeptionierung und Implementierung verteilter Systeme.
 
 ## Distributed Systems ##
+
+<!-- TODO: kürzen -->
 
 Diese Komplexität verteilter Systeme entsteht insbesondere
 dadurch, dass keine Komponente des Systems die komplette Kontrolle
@@ -170,16 +171,57 @@ bestimmen und weiterhin so viele Dienste wie möglich bereitstellen. Durch Cloud
 können die Kosten für diese Mechanismen mitunter massiv gesenkt werden, da das Vorhalten
 redundanter Systemkomponenten deutlich einfacher realisierbar ist.
 
-### Models of interaction ###
+### Interaktionsmodelle ###
 
-- RPC (synchron)
-- Messages (asynchron)
+Die Interaktionen der Rechner in einem verteilten System kann in zwei Arten aufgeteilt
+werden: Prozedurale Interaktion und Nachrichten-basierte Kommunikation.
+Prozedurale Interaktion besteht in dem synchronen Aufruf eines bekannten Dienstes
+eines anderen Rechners. Nachrichten-basierte Kommunikation ist asynchron und übermittelt
+in der Regel mehr Informationen als prozedurale Interaktion.
+
+In der folgenden Abbildung ist die prozedurale Kommunikation zwischen einer bestellenden
+Person und einer bedienenden Person in einem Restaurant dargestellt.
+
+TODO: Add Bild
+
+Die bedienende Person stellt der bestellenden Person eine Frage und wartet auf die Antwort.
+Die bestellende Person bestätigt die Anfrage und gibt eine Antwort.
+Die Antworten werden von der bedienenden Person notiert und anschließend gesammelt
+an die Küche weitergeleitet. Die nachfolgende Abbildung zeigt den möglichen Inhalt
+dieser Nachricht an die Küche.
+
+TODO: Add Bild
+
+Die Kommunikaton mit der Küche erfolgt allerdings asynchron: die bedienende Person
+"sendet" eine Nachricht an die Küche und kann anschließend weitere Bestellungen aufnehmen.
+Sobald die Anfrage an die Küche erfolgreich abgeschlossen wurde, kann die bedienende
+Person die bestellten Gerichte aus der Küche abholen.
+
+Prozedurale Kommunikation wird in der Regel über "Remote Procedure Calls" (RPC)
+realisiert. Über einen eindeutigen Namen können Dienste einer Komponente wie lokale
+Funktionen aufgerufen werden. Dies erfordert, dass der aufrufenden Komponente der
+Funktionsstumpf (vergleichbar mit einer Funktionssignatur) bekannt ist, welcher die
+Schnittstelle zur aufzurufenden Funktion beschreibt. Middleware übernimmt viele
+Zwischenschritte (Konvertierung von Datentypen, etc.), um diese Form der Kommunikation zu ermöglichen.
+
+Bei der Nachrichten-basierten Kommunikation wird eine Nachricht mit Dienstanforderungen
+und dafür nötigen Daten von einer Komponente über Middleware an eine andere Komponente
+gesendet. Diese führt erforderliche Berechnungen durch und sendet anschließend eine
+Antwort an den Sender. Die Middleware stellt dabei die erfolgreiche Zustellung der
+Nachrichten sicher.
+
+Prozedurale Kommunikation erfordert die Erreichbarkeit der aufrufenden und aufgerufenen
+Komponente. Bei Nachrichten-basierter Kommunikation ist dies nicht der Fall, was ein
+großer Vorteil gegenüber prozeduraler Kommunikation ist.
 
 ### Middleware ###
 
 - Abstraktionsschicht über OS (Interaktions-Support)
 - Vereinheitlichung von vielfach benötigten Funktionen in gemeinsam
 genutzten Bibliotheken
+
+
+
 
 ## client-server computing ##
 
