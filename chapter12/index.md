@@ -2,7 +2,7 @@
 
 **Autor:** Rafael Berger
 
-Falls nicht anders gekennzeichnet, stammen alle Informationen und Grafiken aus dem Buch Software Engineering von Ian Sommerville [1].
+Falls nicht anders gekennzeichnet, stammen alle Informationen und Abbildungen aus dem Buch Software Engineering von Ian Sommerville [1].
 
 ## Einleitung
 
@@ -52,13 +52,14 @@ Bei der Entwicklung von sicherheitskritischen Systemen gibt es eine gefahrengest
 3. **Schadensbegrenzung**:
    * Das System versucht den Schaden, der ein Fehler verursacht, zu minimieren.
 
-Laut Perrow lassen sich fast alle Unfälle auf die Kombination von Fehlern aus unterschiedlichen Subsystemen zurückführen. Er erklärte, dass es in komplexen Systemen unmöglich ist alle Kombinationen von Fehlern vorherzusehen. Vor allem werden die Systeme immer komplexer, wodurch die Übersicht, über die möglichen Fehler zu behalten, immer schwieriger wird. Perrow war der Meinung, dass es "normale Unfälle" gibt, da nicht alle Unfälle zu vermeiden sind und somit diese bei dem Konstruieren von komplexen sicherheitskritischen Systemen als unvermeidlich betrachtet werden müssen.
+Laut Perrow [2] lassen sich fast alle Unfälle auf die Kombination von Fehlern aus unterschiedlichen Subsystemen zurückführen. Er erklärte, dass es in komplexen Systemen unmöglich ist alle Kombinationen von Fehlern vorherzusehen. Vor allem werden die Systeme immer komplexer, wodurch die Übersicht, über die möglichen Fehler zu behalten, immer schwieriger wird. Perrow war der Meinung, dass es "normale Unfälle" gibt, da nicht alle Unfälle zu vermeiden sind und somit diese bei dem Konstruieren von komplexen sicherheitskritischen Systemen als unvermeidlich betrachtet werden müssen.
 
 ## Sicherheitsanforderungen
 
 Bei Sicherheitsanforderungen handelt es sich zum einen um funktionale Anforderungen, die zusätzlich im System implementiert werden müssen. Zusätzlich kann es sich um Funktionen handeln, die einen Schutz vor Systemausfällen und Angriffen von außen bieten. Im Gegensatz zu den standardmäßigen funktionalen Anforderungen, die definieren wie das System sich verhalten soll, werden bei den Sicherheitsanforderungen sogenannte "soll nicht" Anforderungen definiert. Dabei handelt es sich um Anforderungen die nicht eintreten dürfen und auch nicht direkt in das System implementiert werden können. Bei dem Prozess der Sicherheitsspezifikation werden vier Schritte durchgeführt.
 
-![Prozess Sicherheitsspezifikation](./media/Gefahrenorientierte-Analyse.png)
+![Gefahrengesteuerte Anforderungsspezifikation](./media/Gefahrenorientierte-Analyse.png)
+**Abbildung 1: Gefahrengesteuerte Anforderungsspezifikation**
 
 ### Schritt 1: Gefährdungsermittlung
 
@@ -80,6 +81,8 @@ Im nächsten Schritt werden die erfassten Gefahren bewertet. Jede Gefahr kann zu
    * Bei dem Entwickeln des Systems soll darauf geachtet werden diese Risiken zu reduzieren, jedoch nicht auf Kosten von Lieferzeit oder anderen wichtigen funktionalen Anforderungen.
 
 ![Risikodreieck](./media/Risikodreieck.png)
+
+**Abbildung 2: Risikodreieck**
 
 Jede mögliche Gefahr wird somit auf die Eintrittswahrscheinlichkeit und der Schweregrad des Risikos eingeschätzt. Das Problem hierbei ist, dass es nicht immer klar definiert werden kann, welches Risiko geringe Folgen hat. Aus diesem Grund muss bei jeder Bewertung einer Gefahr die Eintrittswahrscheinlichkeit, der Schweregrad der Folgen, das geschätzte Risiko und die Annehmbarkeit der Gesellschaft hinzugezogen werden.
 
@@ -140,6 +143,7 @@ Formale Methoden dienen hauptsächlich für die mathematische Analyse der Spezif
 Die Modellprüfung ist eine Alternative zur formalen Analyse. In der nachfolgenden Abbildung ist der Ablauf dargestellt.
 
 ![Modellprüfung](./media/Model_ckecking.png)
+**Abbildung 3: Modellprüfung**
 
 Zu Beginn wird ein Endlicher Automat für das System entwickelt und das Model auf Fehler bei der Verwendung eines weiteren Systems überprüft. Dieses zusätzliche System wird Modellprüfer genannt. Dieser untersucht alle möglichen Pfade durch das Modell und kontrolliert dabei, ob die Eigenschaft für jeden Pfad gilt. Wenn die Eigenschaft korrekt ist, wird dieses durch den Modellprüfer bestätigt. Ansonsten wird die überprüfte und fehlgeschlagene Eigenschaft ausgegeben. Die Modellprüfung kann gut bei kleinen und mittel großen Systemen eingesetzt werden. Denn bei großen Systeme gibt es viele verschiedene Zustände, wodurch die Rechenzeit deutlich erhöht wird.
 
@@ -189,3 +193,5 @@ Ein System ist sicher, falls nachgewiesen werden kann, dass die Systemfehler, di
 ## Referenzen
 
 [1]: Ian Sommerville, Software Engineering, 10. Aufl., Kapitel 12 339-372.
+
+[2]: Perrow, C. 1984. Normal Accidents: Living with High-Risk Technology. New York: Basic Books
