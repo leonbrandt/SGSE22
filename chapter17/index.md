@@ -121,18 +121,54 @@ verwendet, um Missverständnissen vorzubeugen.
 
 ### Sicherheit ###
 
-4. Sicherheit: Wie können anwendungsgerechte Sicherheitsstrategien
-entwickelt werden, die auf den unabhängigen Rechnern des Systems
-eingesetzt werden können?
+Ein Angreifer kann jede individuelle Systemkomponente angreifen und diese
+im Erfolgsfall als Hintertür in andere Systemteile verwenden. Ein verteiltes System
+muss gegen die folgenden Angriffstypen abgesichert werden:
+1. Abfangen von Informationen: Durch das Abfangen der Kommunikation zwischen zwei
+Systemkomponenten geht die Vertraulichkeit der Informationen verloren.
+2. Unterbrechung: Systemkomponenten werden derart angegriffen, dass sie ihre
+Dienste nicht bereitstellen können. Ein Beispiel hierfür sind "denial of service"-Attacken,
+bei denen ein Netzwerkknoten mit sehr vielen ungültigen Anfragen überlastet wird, sodass
+dieser nicht mehr auf die gültigen Anfragen reagieren kann.
+3. Änderung: Ein Angreifer ist in der Lage Systemdienste oder Daten zu ändern.
+4. Erzeugung von Informationen: Ein Angreifer erzeugt Informationen, welche nicht
+existieren sollten und nutzt diese Informationen, um sich Zugang zum System zu
+verschaffen (z.B. Erzeugung eines falschen Passworts).
 
-5. Quality of Service (QoS): Wie kann die Qualität des bereitgestellten
-Dienstes spezifiziert und sichergestellt werden?
-6. Fehlermanagement: Wie werden Fehler im System erkannt, isoliert
-und behoben?
+Eine große Hürde bei der Absicherung eines verteilten Systems ist die Festlegung
+und Umsetzung durchgängiger Sicherheitsstrategien. Verschiedene Systemteile können
+von unterschiedlichen Organisation verwaltet werden, wodurch sich diese Schritte
+erschweren. Im Falle von inkompatiblen Sicherheitsstrategien zweier kooperierender
+Organisationen kann es nötig sein, die Strategien einzuschränken und Systeme so potentiell
+angreifbar zu machen.
 
-TODO: evtl. die hier nachfolgenden Erläuterung direkt unter den
-Stichpunkten integrieren und die Stichpunkte genauer erläutern
-Ja! zu eigenen Unterkapiteln machen!
+### Dienstqualität ###
+
+Die Dienstqualität (engl. Quality of Service) beschreibt, wie zuverlässig ein
+verteiltes System die versprochenen Dienste bereitstellen kann, sodass die Antwortzeit
+und der Durchsatz in akzeptablen Schranken liegt. Idealerweise ist die Dienstqualität
+vor der Systemimplementierung spezifiziert, sodass das System genau auf diese Dienstqualität
+abgestimmt realisiert wird. Das kann allerdings aus folgenden Gründen unpraktikabel sein:
+1. Es kann unwirtschaftlich sein, ein System zu implementieren, welches eine hohe
+Dienstqualität unter maximaler Last garantieren kann, da hierfür bspw. mehr Server
+benötigt werden als im normativen Belastungsfall. Durch die möglichkeiten des Cloud-Computings
+wird dieser Effekt jedoch abgeschwächt.
+2. Die Parameter für die Dienstqualität können sich gegenseitig ausschließen.
+Bspw. kann gesteigerte Zuverlässigkeit einen verringerten Durchsatz erzwingen.
+
+Die Dienstqualität ist insbesondere relevant für Systeme, die zeitkritische Daten
+verarbeiten (bspw. Audio- oder Videodateien). Bei unzureichender Dienstqualität
+kann z.B. eine Audiodatei nicht mehr richtig abgespielt werden. Daher sollten solche
+System dynamisch die erforderliche Dienstqualität berechnen und entsprechende Ressourcen
+anfordern.
+
+### Fehlermanagement ###
+
+In verteilten Systemen werden Fehler auftreten, daher muss das System resilient gegenüber
+Fehlern umgesetzt sein. Hierzu zählen Mechanismen, die Fehler detektieren, die Fehlerausmaße
+bestimmen und weiterhin so viele Dienste wie möglich bereitstellen. Durch Cloud-Computing
+können die Kosten für diese Mechanismen mitunter massiv gesenkt werden, da das Vorhalten
+redundanter Systemkomponenten deutlich einfacher realisierbar ist.
 
 ### Models of interaction ###
 
