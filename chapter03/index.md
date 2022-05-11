@@ -72,9 +72,13 @@ Die praktische Umsetzung von XP hat sich als schwierig herausgestellt da es nich
 XP hat mit seinen Bestandteilen einen wichtigen Beitrag zur Umsetzung agiler Methodik in Unternehmen geleistet, die wichtigsten Bestandteile werden daher in den folgenden Kapiteln genauer erklärt und beschrieben.
 
  ### User Stories
+ 
 ![](img/StoryCard.PNG)
+
 ** Story Card **
+
 ![](img/Tasks.PNG)
+
 ** Task **
 
 
@@ -186,6 +190,7 @@ Prinzip der permanenten Einbindung eines repräsentativen Vertreter des Kunden k
 ### Agile and plan-driven methods
 
 ![](img/Einflussfaktoren.PNG)
+
 ** Einflussfaktoren für die Wahl agiler Methodik **
 
 Aufgrund elementarer Unterschiede in der Arbeitsweise von kleinen Unternehmen (Bspw. Startups) zu großen Unternehmen (bspw. Konzerne), ist zur Skalierung von agiler Methodik eine Einbindung plangesteuerter Aktivitäten unerlässlich. Software Entwicklung muss in großen Unternehmen geplant werden, außerdem ist ein Controlling der Projekte unerlässlich. 
