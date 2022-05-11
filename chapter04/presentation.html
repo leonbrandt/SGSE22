@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Kapitel 01: Einleitung</title>
+    <title>Kapitel 04: Requirements Engineering</title>
     <meta charset="utf-8">
     <style>
       body { 
@@ -29,29 +29,263 @@ class: center, middle
 
 
 
-# Kapitel 01: Einleitung
+# Kapitel 04: Requirements Engineering
 
-Max Mustermann
-
----
-# Voraussetzungen
-
-```java
-public class A {
-  public int a() {
-    return 42;
-  }
-}
-```
+Marco Reineke
 
 ---
 
 ## Inhalte 
 
-* A
-* B
+* Nuter- / Systemanforderungen
 
-![](media/image.jpg)
+
+* Funtkionelle und nicht-funktionelle Anforderungen
+
+
+* Aktivitäten im der Anforderungsengineering
+	* Anforderungserhebung
+	* Anforderungsspezifikation
+	* Anforderungsvalidierung
+	
+* Anforderungsänderungen
+
+---
+
+### Nutzer-/ Systemanforderungen
+####Nutzeranforderungen
+* High-Level
+* Natürliche Sprache, Diagramme
+* Welche Funtkionen, Services, Beschränkungen erwarten den Nutzer
+* hohe Varianz zwischen groben Aussgagen und detaillierten Beschreibungen der Systemfunktionalität
+
+####Systemanforderungen
+* Erweiterung des Nutzeranforderungen
+* detailliert
+* funktionelle Spezifikationen
+* manchmal aufnahme in Verträgen
+
+![](media/readers.png)
+
+### Machbarkeitsstudie
+* 1 Trägt das System zu den allgemeinen Zielen der Organisation bei?
+* 2 Kann das System mit vorhandenem Budget und im geplanten Zeitraum implementiert werden?
+* 3 Ist das System mit anderen Systemen, die verwendet werden, integrierbar?
+
+---
+
+## Funktionelle & nicht-funktionelle Anforderungen
+
+<table style="width:100%">
+  <tr>
+    <th>Funtionelle Anforderungen</th>
+    <th>Nicht-funktionelle Anforderungen</th>
+  </tr>
+  <tr>
+    <td>Was soll das System tun/nicht tun? </td>
+    <td>Spezifizierung der Beschränkungen für das System als Ganzes</td>
+  </tr>
+  <tr>
+    <td>Detaillierte Beschreibung der Systemfunktion(Inputs/Outputs) </td>
+    <td>Effekte auf Gesamtarchitektur und nicht auf einzelne Komponente</td>
+  </tr>
+    <tr>
+    <td>Anforderungen abhängig von zu entwickelnder Software</td>
+    <td>Die Implementierung der Anforderung zieht sich durch das ganze System</td>
+  </tr>
+    <tr>
+    <td>Anforderungen abhängig von zu erwartenden Nutzern</td>
+    <td>Eine nicht erfüllte Anforderung kann für ein nicht nutzbares System sorgen</td>
+  </tr>
+    <tr>
+    <td>Geschrieben für Softwareentwickler|</td>
+    <td>Messgrößen: Schnelligkeit, Benutzerfreundlichkeit, Verlässlichkeit, Robustheit, Portabilität</td>
+  </tr>
+</table>
+
+---
+### Kategorien Nicht-funktioneller Anforderungen
+
+* Produktanforderungen
+* organisatorische Anforderungen
+* externe Anforderungen
+
+![](media/nichtfunktionelle_anforderungen.PNG)
+
+---
+## Prozesse des requirements engineering
+
+* Anforderungserhebung
+* Anforderungsspezifikation
+* Anforderungsvalidierung
+
+
+
+* Kernaktivitäten werden nacheinander ausgeführt
+* High-Level to Low-Level
+* Mehrmals durchlaufen
+
+---
+![](media/process.PNG)
+---
+
+## Anforderungserhebung
+- Informationen über zu entwickelndes System erlangen
+- zusammenarbet mit Ergebnissbetroffenen
+- Anwendungsbereich, Arbeitsaktivitäten, Services & Systemeigenschaften, benötigte Performance, Hardware Beschränkungen
+
+* 1 Anforderungen entdecken und verstehen
+* 2 Klassifizierung der Anforderungen
+* 3 Anforderungen priorisieren und verhandeln
+* 4 Anforderungen dokumentieren
+
+### Interviewen
+* Anforderungen aus Antworten ableiten
+* offenes,geschlossenes Interviewen
+* Mix aus beiden
+* schwierigkeiten: Fachsprache, Machtverhältnisse
+* theroetische statt realer Strukturen
+* wichtig: Unvoreingenommenheit, Sprungbrettfragen
+
+---
+
+### Ethnografie
+- Beobachrungstechnik, "abtauchen" in Arbeitumgebung
+- verstehen von bestehenden Systemen
+- Sinnvoll da für Menschen schwierig Details zu erwähnen
+- nicht nützlich um breite organisationelle Anforderungen zu finden
+- keine neuen Innovationen
+
+### Stories und Szenarios
+* einfacher auf Beispiele zu beziehen
+* können gut in Interviews verwendet werden
+* Stories- High-Level , Szenarios - Low-Level
+
+Szenario:
+* 1 Eine Beschreibung von dem, was den Nutzer erwartet, wenn das Szenario startet.
+* 2 Eine Beschreibung über den Ablauf der Ereignisse in dem Szenario.
+* 3 Was kann in dem Szenario schiefgehen und wie kann das resultierende Problem gelöst werden?
+* 4 Informationen über andere Aktivitäten, die zur selben Zeit stattfinden.
+* 5 Eine Beschreibung des Systemstatus, wenn das Szenario endet.
+
+---
+
+## Anforderungsspezifikation
+
+* aufschreiben in das software requirements document
+
+* klar, eindeutig, einfach zu verstehen, komplett, konsistent
+
+* in Praxis nicht zu erreichen -> Konflikte zwischen Anforderungen
+
+* Nutzeranforderungen - Natürliche Sprache, Grafiken, Tabellen
+
+* Systemanforderugen - Erweiterung der Nutzeranforderungen
+
+* Mathematische Notationen(z.B. endliche Zustandsautomaten)
+
+* verbesserung von Eindeutigkeit und Spezifikation
+
+---
+
+
+
+
+* Nicht für jeden verständlich
+
+* Detailliertheitsgrad abhängig vom System
+
+* kritische/komplexe Systeme detailliertere beschreibungen
+
+* Agile methoden argumentieren - software requirements document veraltet sobald geschrieben
+
+* Anforderungen ändern sich zu schnell
+
+* Anforderungen inkrementell sammeln - Userstories auf Karten/Tafeln
+
+
+
+---
+
+## Anforderungsvalidierung
+* prüfung ob Anforderungen System definieren, welches Kunde verlangt
+* überlappung mit Anforderungserhebung
+* Fehler können große Kosten verursachen
+
+#### Valiedierungsprozess
+* Gültigkeitsprüfung
+* Konsistenzprüfung
+* Vollständigkeitsprüfung
+* Realitätsprüfung
+* Überprüfbarkeit
+
+#### Validierungstechniken
+* Anforderungsrezensionen
+* Prototyp erstellen
+* Testfallgenerierung
+
+
+---
+### software requiremnts document
+![](media/re_doc.PNG)
+---
+
+## Anforderungsänderungen
+* Anforderungen ändern sich häufig
+
+* bei großen Software projekten - "schwache Probleme"
+
+* Probleme können nicht vollständig definiert werden, Anforderungen sind unvollständig
+
+* verständnis des Problems der Ergebnissbetroffenen ändert sich
+
+* Probleme treten auf sobald System installiert
+
+* meiste Änderungen weil sich etwas im Geschäftsumfeld ändert
+
+* agile Mehtoden können genutzt werden um mit Anforderungen umzugehen,die währen des Entwicklungsprozesses auftauchen
+
+* In agile Methoden entscheiden Nutzer Eigenschaften in der nächsten Iteration entwickelt werden
+
+* Nutzer achten nicht darauf, dass Änderungen Kosteneffizient sind
+
+
+---
+
+### Anforderungsmanagement Planung
+#### Während der Planungsphase sollten folgende Dinge berücksichtigt werden:
+
+* 1 Anforderungsidentifikation
+  * Identifizierung, Referenz zu anderen Anforderung
+* 2 Änderungsmanagement Prozess
+  * Problemanalyse und Änderungsspezifikation
+  * Änderungsanalyse und Kostenanalyse
+  * Änderungsimplementierung
+* 3 Rückverfolgbarkeitsprozess
+  * Definieren von Beziehungen zwischen dem Systemdesign und der Anforderung
+* 4 Tool Unterstützung(Für große Projekte sehr wichtig)
+  * Anforderungen zuverlässig/sicher speichern
+  * vorgeschlagenen Änderungen im Auge zu behalten
+  * auf die vorgeschlagenen Änderungen reagieren können
+  * verwandte Anforderungen entdecken
+  * manche Tools verwenden NLP Techniken, um Beziehungen zwischen Anforderungen zu entdecken
+---
+
+### Anforderungen Änderungsmanagement
+
+![](media/change_management.PNG)
+
+* sollte für alle Änderungen nach veröffentlichung des Sotfware requirements document durchgeführt werden
+
+* wichtig um abzuschätzen ob Vorteile von neuen Anforderungen aufkommende Kosten übersteigen
+
+* neue Änderungen immer in das software requiremnts document aufnehmen
+
+---
+
+## Quellen
+
+[1]: Ian Sommerville. 2015. Software Engineering (10th. ed.),101 - 137.
 
 
     </textarea>

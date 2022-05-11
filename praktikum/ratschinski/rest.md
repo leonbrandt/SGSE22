@@ -29,6 +29,42 @@
 - REST zieht noch weite Vorteile aus der Verwendung des HTTP-Protokolls
   - Z.B. Caching oder Inhaltsverhandlung
 
+## Schnittstellenbeschreibung
+
+Die Schnittstellenbeschreibung in REST ist komplett optional.
+
+- Für die Beschreibung gibt es eine Vielzahl von Tools wie RAML, WADL, API Blueprint, ...
+- **OpenAPI** hat sich hier als "Quasi-Standard" durchgesetzt.
+
+### OpenAPI Besonderheiten
+
+- Aufbau(Metadaten, Endpunkte, Datentypen)
+
+- Kompatibel mit JSON Schema
+
+- Kann zur Validierung genutzt werden
+
+- Datentypen
+
+  - Einfache
+    - integer(int32, int64)
+    - number(float, double)
+    - string(date, date-time, password, byte, binary)
+    - boolean
+  - Zusammengesetzte
+    - object
+    - array
+    - enum
+
+- Code Generator für eine Vielzahl von Programmiersprachen. ([OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator))
+
+  - Client
+  - Server
+  - Dokumentation (HTML, Markdown, Asciidoc, ...)
+  - Schema (GraphQL, protobuf, ...)
+
+- Beschreibung kann direkt in Postman geladen werden
+
 ## Vorläufiges Fazit
 
 Vorteile:

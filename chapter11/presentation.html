@@ -2,21 +2,35 @@
 <html>
   <head>
     <title>Kapitel 01: Einleitung</title>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <style>
-      body { 
-        font-family: 'Droid Serif';
+      body {
+        font-family: "Droid Serif";
       }
-      h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
+      h1,
+      h2,
+      h3,
+      p,
+      li {
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
         font-weight: normal;
       }
-      .remark-code, .remark-inline-code { 
-        font-family:Courier New;
+      .remark-code,
+      .remark-inline-code {
+        font-family: Courier New;
       }
       @page {
         size: 908px 681px;
         margin: 0;
+      }
+
+      img {
+        max-width: 75%;
+      }
+
+      div.remark-slide-number {
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
+        font-style: italic;
       }
     </style>
   </head>
@@ -29,73 +43,169 @@ class: center, middle
 
 
 
-# Kapitel 01: Einleitung
+# 11 - reliability engineering
 
-Max Mustermann
-
----
-# Voraussetzungen
-
-```java
-public class A {
-  public int a() {
-    return 42;
-  }
-}
-```
+_Frederic Birwe_
 
 ---
 
-## Inhalte 
+class: center, middle
+## availability
 
-* A
-* B
+> Anteil der Betriebszeit, in der das System nicht zur Verfügung steht
 
-![](media/image.jpg)
+## reliability
+
+> Anteil der Eingaben in ein System, die keine oder eine falsche Ausgabe erzeugen
+
+---
+
+class: center, middle
+
+## Wie entsteht ein Fehler?
+
+1. menschlicher Fehler
+2. system fault
+3. system error
+4. system failure
+
+---
+
+class: center, middle
+## Wieviel reliability ist sinnvoll?
+
+![Abb. 11.1 - Entwicklung der Kosten pro gefundenem Fault](./assets/fig_11-1.png)
+
+---
+
+class: center, middle
+## Reliability Metriken
+
+
+#### POFOD (_Probability of failure on demand_)
+1 von 1000 Transaktionen schlägt fehlt - POFOD 0.999
+
+
+#### ROCOF (_Rate of occurence of failures_)
+5 Transkationen schlagen innerhalb von 24h fehl
+
+
+#### MTTF (_Mean time to failure_)
+Zwischen zwei failures liegen im Schnitt 12h
+
+
+#### AVAIL (_Availability_)
+Das System steht zu 90% der Zeit zur Verfügung
+
+---
+
+class: center, middle
+## Anforderungen definieren
+
+---
+
+class: center, middle
+## nichtfunktionale/quantitative Anforderungen
+
+1. Spezifikation von availability und reliability für verschiedene mögliche failures.
+2. Spezifikation von availability und reliability für verschiedene Services.
+3. Überprüfung, ob eine hohe reliability wirklich benötigt wird.
+
+---
+
+class: center, middle
+## funktionale Anforderungen
+
+1. Check Anforderungen
+2. Wiederherstellungsanforderungen
+3. Redundanzanforderungen
+4. Prozessanforderungen
+
+---
+
+class: center, middle
+
+## Fault tolerante Architekturen
+
+---
+
+class: center, middle
+## Procetion System
+
+![Abb. 11.6](./assets/fig_11-6.png)
+
+---
+
+class: center, middle
+## Self-monitoring architectures
+
+![Abb. 11.7](./assets/fig_11-7.png)
+
+---
+
+class: center, middle
+## N-Version programming
+
+![Abb. 11.9](./assets/fig_11-9.png)
+
+---
+
+## Programmiertechniken zur Erhöhung der reliability
+
+1. Kontrolle über die Sichtbarkeit von Informationen im Programm
+2. Alle Eingaben auf Validität prüfen
+3. Exceptionhandler für alle Exceptions vorhalten
+4. Minimaler Einsatz von fehleranfälligen Komponenten
+5. Checkpoints für eventuell Neustarts ablegen
+6. Array-Dimensionen prüfen
+7. Timeouts definieren, wenn externe Komponenten genutzt werden
+8. Alle Konstanten, die reale Werte darstellen, werden benannt
+
+---
+
+class: center, middle
+## Reliability messen
+
+![Abb. 11.13](./assets/fig_11-13.png)
 
 
     </textarea>
-    <script src="../_assets/js/remark-latest.min.js">
-    </script>
+    <script src="../_assets/js/remark-latest.min.js"></script>
     <script>
-    
-    var slideshow = remark.create({
-  // Set the slideshow display ratio
-  // Default: '4:3'
-  // Alternatives: '16:9', ...
-  ratio: '4:3',
+      var slideshow = remark.create({
+        // Set the slideshow display ratio
+        // Default: '4:3'
+        // Alternatives: '16:9', ...
+        ratio: "4:3",
 
-  // Navigation options
-  navigation: {
-    // Enable or disable navigating using scroll
-    // Default: true
-    // Alternatives: false
-    scroll: true,
+        // Navigation options
+        navigation: {
+          // Enable or disable navigating using scroll
+          // Default: true
+          // Alternatives: false
+          scroll: true,
 
-    // Enable or disable navigation using touch
-    // Default: true
-    // Alternatives: false
-    touch: true,
+          // Enable or disable navigation using touch
+          // Default: true
+          // Alternatives: false
+          touch: true,
 
-    // Enable or disable navigation using click
-    // Default: false
-    // Alternatives: true
-    click: false
-  },
+          // Enable or disable navigation using click
+          // Default: false
+          // Alternatives: true
+          click: false,
+        },
 
-  // Customize slide number label, either using a format string..
-  slideNumberFormat: 'Slide %current% of %total%',
-  // .. or by using a format function
-  slideNumberFormat: function (current, total) {
-    return '' + current + '/' + total;
-  },
+        // Customize slide number label, either using a format string..
+        slideNumberFormat: "Slide %current% of %total%",
+        // .. or by using a format function
+        slideNumberFormat: function (current, total) {
+          return "" + current + "/" + total;
+        },
 
-  // Enable or disable counting of incremental slides in the slide counting
-  countIncrementalSlides: true
-}); 
-    
-    
-      
+        // Enable or disable counting of incremental slides in the slide counting
+        countIncrementalSlides: true,
+      });
     </script>
   </body>
 </html>

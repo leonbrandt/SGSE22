@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Kapitel 01: Einleitung</title>
+    <title>Kapitel 10: Dependable Systems</title>
     <meta charset="utf-8">
     <style>
       body { 
-        font-family: 'Droid Serif';
+        font-family: 'Calibri';
       }
       h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
+        font-family: 'Calibri';
         font-weight: normal;
       }
       .remark-code, .remark-inline-code { 
         font-family:Courier New;
+      }
+      .underline{
+        border-bottom: 2px solid rgb(68, 114, 196);
+        width: 100%;
+        display: block;
       }
       @page {
         size: 908px 681px;
@@ -26,32 +31,176 @@
 
 class: center, middle
 
+# Kapitel 10: Dependable Systems
 
-
-
-# Kapitel 01: Einleitung
-
-Max Mustermann
+Maxim Fründt
 
 ---
-# Voraussetzungen
+# Inhalt
+<div class="underline"></div>
 
-```java
-public class A {
-  public int a() {
-    return 42;
-  }
-}
-```
+* Was macht ein System zu einem dependable System?
+* Eigenschaften der Dependability
+* Wie setzt sich ein System zusammen?
+* Redundanz und Diversität
+* Zuverlässige Prozesse
+* Aktivitäten von zuverlässigen Prozessen
+* Formale Methoden und Dependability
+* Zusammenfassung
 
 ---
+## Was macht ein System zu einem dependable System?
+<div class="underline"></div>
 
-## Inhalte 
+* Software spielt eine große Rolle in unserem Leben<br>
+  => Man sollte sich auf diese verlassen können
+* Software sollte also korrekt funktionieren und immer erreichbar sein
+* Man spricht von der Dependability (Zuverlässigkeit) von Software
+* Dependability ist oft wichtiger als die Gesamtheit der Funktionen
+  => Ausfälle können hohen Schaden anrichten (Kosten/Umwelt)
+  => Fehler können zu Datenleaks führen
+* Neben der Software beeinflussen auch Hardware und der Benutzer die Dependability<br>
+  => Hardware-Fehler<br>
+  => Software-Fehler<br>
+  => Menschliche-Fehler
 
-* A
-* B
+---
+## Eigenschaften der Dependability
+<div class="underline"></div>
 
-![](media/image.jpg)
+<figure>
+  <img  style="margin-top: 20px;" 
+        src="https://github.com/mwithoeft/SGSE22/blob/main/chapter10/assets/PrincipleDependabilityProperties.png?raw=true"
+        alt="Haupteigenschaften der Dependability eines Systems"
+        height="300"
+        width="700"/>
+</figure>
+
+---
+## Eigenschaften der Dependability
+<div class="underline"></div>
+
+<figure>
+  <img  style="margin-top: 20px;" 
+        src="https://github.com/mwithoeft/SGSE22/blob/main/chapter10/assets/PrincipleDependabilityProperties.png?raw=true"
+        alt="Haupteigenschaften der Dependability eines Systems"
+        height="300"
+        width="700"/>
+</figure>
+
+Nicht für jedes System ist auch jede Eigenschaft der Dependability wichtig
+
+---
+## Eigenschaften der Dependability
+<div class="underline"></div>
+
+Zusätzliche Eigenschaften, welche die Dependability beeinflussen
+
+* Repairability (Reparierbarkeit)
+* Maintainability (Wartbarkeit)
+* Error Tolerance (Fehlertoleranz)
+
+<b>Einfluss auf die Performance:</b>
+Das Einbringen von redundanten Komponenten kann sich negativ auf die Performance auswirken
+
+<b>Einfluss auf die Kosten:</b>
+Die Verwendung von Redundanz erhöht die Kosten. Diese steigen abhängig vom Dependability-Level exponentiell.
+
+---
+## Was macht ein System aus?
+<div class="underline"></div>
+
+In Systemen sind Software und Hardware in der Regel voneinander abhängig. Systeme können darüber hinaus
+auch nicht-technische Elemente erhalten (beispielsweise Benutzer, die die Daten auswerten und aufbereiten).<br>
+  => Soziotechnische Systeme<br>
+(Soziotechnische) Systeme werden in Ebenen zerlegt, um die Komplexität aufzubrechen. Gesamtheit sollte
+jedoch immer im Hinterkopf behalten werden.
+
+---
+## Ebenen des soziotechnischen Systems
+<div class="underline"></div>
+
+<figure>
+  <img  style="margin-top: 20px;" 
+        src="https://github.com/mwithoeft/SGSE22/blob/main/chapter10/assets/SociotechnicalSystemsStack.png?raw=true"
+        alt="Schichtenaufbau eines soziotechnischen Systems"
+        height="250"
+        width="500"/>
+</figure>
+
+* Die Software des Systems erstreckt sich über mehrere Ebenen
+* Ebenen sollen so aufgebaut werden, dass diese nur mit dem direkten Nachbarn kommunizieren<br>
+  => Jedoch nicht immer möglich
+* Für das Design der Software muss stets das gesamte System berücksichtigt werden
+* Software-Fehler müssen in der aufgetretenen Ebene isoliert werden
+* Mehr zu soziotechnischen Systemen in Kapitel 19
+
+---
+## Redundanz und Diversität
+<div class="underline"></div>
+
+* Ein Fehler im System darf niemals zu einem Totalausfall des Systems führen<br>
+  => Komponenten in mehrfacher Ausführung einbauen (Redundanz)<br>
+  => Nicht ein und dieselbe Komponente mehrfach verbauen (Diversität)<br>
+* Ausfallsicherheit wird erhöht, jedoch zu einem Preis<br>
+  => Kosten werden erhöht<br>
+  => Komplexität steigt
+
+---
+## Zuverlässige Prozesse
+<div class="underline"></div>
+
+* Werden verwendet um zuverlässige Systeme zu erstellen
+* Müssen korrekt funktionieren, gut dokumentiert (Prozessmodell) und wiederholbar sein
+* Vereinfachen das Beweisen, dass bestimmte Normen eingehalten werden
+* Stehen im Konflikt mit rein agiler Entwicklung
+
+Attribute von zuverlässigen Prozessen:
+* Prüffähigkeit
+* Diversität
+* Dokumentierbarkeit
+* Robustheit
+* Standartisierung
+
+---
+## Aktivitäten von zuverlässigen Prozessen
+<div class="underline"></div>
+
+Aktivitäten von zuverlässigen Prozessen sollen in erster linie das Einbringen neuer Fehler in das System
+vermeiden und bestehende ausfindig machen und beseitigen. Im Detail hängen die Aktivitäten vom zu
+entwickelnden System ab. Allgemeingültig sind folgende Aktivitäten
+* Anforderungsprüfung
+* Anforderungsmanagement
+* Formale Spezifikation
+* Systemmodellierung
+* Kontrolle des Designs und Programms
+* Statische Analyse
+* Planung und Ausführung der Tests
+
+---
+## Formale Methoden und Dependability
+<div class="underline"></div>
+
+* Formale Methoden sind mathematische Ansätze zur Softwareentwicklung
+* Für die Software wird dabei ein formales Modell erstellt
+* Modelle können auf Fehler und Inkonsistenzen analysiert werden
+* Die Funktionstüchtigkeit eines Modells kann bewiesen werden (Beweise erfolgen oft automatisch)
+* Beweise können parallel zur Software erstellt werden (dies kann durch Transformation erreicht werden)<br>
+  => Refinement-Based Development
+* Model-Checking um zu prüfen, ob das Modell die vorgegebenen Anforderungen erfüllt
+
+---
+## Zusammenfassung
+<div class="underline"></div>
+
+* Die Dependability ist ein wichtiger Aspekt eines Systems, da Ausfälle zu großen Schäden führen können
+* Mit der Dependability wird das vertrauen in ein System gemessen, dass es seine Aufgabe korrekt Ausführt<br>
+  => Haupteigenschaften sind Availaibility, Reliability, Safety, Security, Resilience
+* Soziotechnische Systeme sind Systeme, welche über den technischen Aspekt hinaus gehen
+* Durch die Verwendung von zuverlässigen Prozessen können Fehler im System vermieden werden
+  => Jede Aktivität des Prozessesn sollte Verifizierung und Validierung beinhalten
+* Redundanz und Diversität werden eingesetzt um die Dependability zu verbessern
+* Formale Methoden werden eingesetzt um Fehler in der Spezifikation und Implementierung zu vermeiden
 
 
     </textarea>

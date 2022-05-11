@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Kapitel 01: Einleitung</title>
+    <title>Kapitel 08: Software Testing</title>
     <meta charset="utf-8">
     <style>
       body { 
@@ -29,29 +29,135 @@ class: center, middle
 
 
 
-# Kapitel 01: Einleitung
+# Kapitel 08: Software Testing
 
-Max Mustermann
-
----
-# Voraussetzungen
-
-```java
-public class A {
-  public int a() {
-    return 42;
-  }
-}
-```
+Marco Schwier
 
 ---
 
-## Inhalte 
+## Agenda
+- Einleitung
+- Inspektion
+- Entwicklungstest
+- Test-Driven Development
+- Veröffentlichungstest
+- Nutzertest
+- Fazit
+      
+---
 
-* A
-* B
+## Einleitung 
+- Validierungstest
+  - Funktioniert die Software Ordnungsgemäß
+  - Reales Verhalten
+- Fehlerprüfung
+  - Finden von Fehlern
+- Keine angezeigten Fehler != keine Fehler
 
-![](media/image.jpg)
+---
+
+## Inspektion 
+- Person überprüft Programmcode
+- Keine Fehlermaskierung
+- Keine Mehrkosten, wenn unvollständig
+- Ersetzt nicht automatisierte Tests
+- Überprüft Programmierweise
+- Keine nicht funktionalen Anforderungen
+
+---
+
+## Entwicklungstest
+- Modultest
+- Komponententest
+- Systemtest
+
+---
+
+## Modultest 
+- Einzelne Klassen und Funktionen
+- Klassen
+  - Alle Attribute
+  - Alle Zustände
+- Ablauf
+  - Vorbereiten
+  - Durchführen
+  - Vergleichen
+
+---
+
+## Komponententest
+- Was wird getestet?
+  - Interfaces
+- Womit wird getestet?
+  - Äquivalenzklassen 
+  - NULL-Pointer
+- Mögliche Fehler
+  - Falsche Verwendung vom Interface
+  - Anfrage wird nicht verstanden
+  - Zeitliche Fehler
+
+---
+
+## Systemtest 
+- Use-Case als Basis
+- Komplettes System
+- Test auf Kompatibilität der Komponenten
+
+---
+
+## Test-Driven Development
+![Ablauf](./media/Picture2.png)
+
+---
+
+## Veröffentlichungstest
+- Wer testet?
+  - Unabhängiges Team
+- Anforderungen
+  - Nachvollziehbar
+- Testart
+  - Black-Box-Test
+- Ansätze
+  - Anforderungsbasiert
+  - Szenariobasiert
+- Abschließend Lasttest
+
+---
+
+## Nutzertest
+- Alpha-Phase
+  - Nutzer arbeiten mit Entwickler
+- Beta-Phase
+  - Nutzer erhalten vorab Veröffentlichung
+- Akzeptanz-Phase
+  - Nach Veröffentlichung
+
+---
+
+## Fazit 
+- Inspektion
+  - Inspektor überprüft Programmcode
+- Entwicklungstest
+  - Entwickler testen zum Finden von Fehlern
+- Test-Driven Development
+  - Tests werden vor der Implementierung geschrieben
+  - Keine Implementation von neuen Anforderungen bis alle Tests erfolgreich
+- Veröffentlichungstest
+  - Vor Veröffentlichung
+  - Eigenes Team
+  - Black-Box-Test
+- Nutzertest
+  - Nutzer der Software testen
+
+---
+
+## Fragen?
+
+---
+
+## Quellen
+- Ian Sommerville, Software Engineering, 10. Aufl., Kapitel 08 226-254
+- Dijkstra, E. W. 1972. “The Humble Programmer.” Comm. ACM 15 (10): 859–66. doi:10.1145/355604.361591
 
 
     </textarea>
