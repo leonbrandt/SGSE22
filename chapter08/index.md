@@ -2,11 +2,11 @@
 
 **Autor:** Marco Schwier
 
-Sofern nicht weiter angegeben, entspringen alle Informationen und Abbildungen der Quelle [1].
+Sofern nicht weiter angegeben, entspringen alle Informationen und Abbildungen der Quelle [1] Software Engineering von Ian Sommerville.
 
 ## Einleitung
 
-Software testen hat das Ziel, zu zeigen, dass die Software für ihren angedachten Einsatzzweck geeignet ist. Dabei werden mittels des Testens Fehler innerhalb der Software aufgedeckt. Dafür werden Testdaten verwendet, die vorher für diesen Zweck erarbeitet worden sind. Nach der Ausführung der Software mit diesen Testdaten wird das Ergebnis nach Fehlern oder Anomalien überprüft. Dadurch können Fehler aufgedeckt werden. Softwaretests sind jedoch nicht in der Lage das Fehlen von Fehlern aufzudecken. Es gibt zwei Ansätze beim Softwaretesten:
+Software testen hat das Ziel, zu zeigen, dass die Software für ihren angedachten Einsatzzweck geeignet ist. Dabei werden mittels des Testens Fehler innerhalb der Software aufgedeckt. Dafür werden Testdaten verwendet, die vorher für diesen Zweck erarbeitet worden sind. Nach der Ausführung der Software mit diesen Testdaten wird das Ergebnis nach Fehlern oder Anomalien überprüft. Dadurch können Fehler aufgedeckt werden. Softwaretests sind jedoch nicht in der Lage das Fehlen von Fehlern aufzudecken.[2] Es gibt zwei Ansätze beim Softwaretesten:
 
 1. Validierungstest
 2. Fehlerprüfung
@@ -15,7 +15,8 @@ Beim **Validierungstest** werden Testfälle erstellt, die möglichst ein reales 
 
 Bei der **Fehlerprüfung** sollen Fehler innerhalb der Software aufgedeckt werden. Dafür werden Testfälle erstellt, die nicht dem normalen Nutzerverhalten widerspiegeln müssen. Ein Erfolg ist dadurch definiert, dass die Software nicht wie erwartet funktioniert.
 
-![Testen allgemein](./media/Picture1.png)
+![Ein- Ausgabe Model](./media/Picture1.png)
+**Abbildung 1: Ein- Ausgabe Model**
 
 ### Verifikation und Validation
 
@@ -57,7 +58,10 @@ Das Ziel dieses Testens ist, dass aufgezeigt wird, dass die Klasse den Erwartung
 2. **Abnormale Daten** die nicht dem normalen Nutzerverhalten entsprechen.
 
 Dabei soll überprüft werden, ob die Klasse oder Funktion sich im Fehlerfall richtig verhält. Des Weiteren werden Äquivalenzklassen gebildet.
+
 ![Äquivalenzklasse](./media/picture3.png)
+**Abbildung 2: Äquivalenzklasse**
+
 Eine Äquivalenzklasse ist eine Menge von Eingaben. Dabei kann jedes Element dieser Klasse repräsentativ für alle Elemente in einem Test verwendet werden. Neben den Äquivalenzklassen werden auch Grenzwertanalysen durchgeführt. Dafür wird das Element am äußersten Rand der Äquivalenzklasse ebenfalls in den Testdaten verwendet.
 
 ### Komponententest
@@ -82,7 +86,8 @@ Das Ziel dieser Entwicklungsmethode ist es, funktionierende Software einfach zu 
 
 Der Ablauf beginnt mit dem Identifizieren von neuen benötigten Funktionalitäten. Darauf folgend werden Tests geschrieben und diese durchgeführt. Sollte der Test fehlschlagen, was beim ersten Durchführen immer der Fall ist, wird die Funktionalität weiter implementiert und refactored. Daraufhin werden die Tests erneut ausgeführt. Sollten die Test keinen Fehler aufzeigen, wird der Prozess von neuem begonnen.
 
-![Testen-driven Development](./media/Picture2.png)
+![Test-Driven Development](./media/Picture2.png)
+**Abbildung 2: Test-Driven Development**
 
 Der Vorteil dieses Vorgehen ist, dass eine große Testabdeckung erhalten wird, da für jede neue Funktionalität zunächst Tests entwickelt werden. Außerdem lassen sich Codeabschnitt besser Debuggen. Des Weiteren wird bei jedem neuen Testdurchlauf alle anderen Test mit durchgeführt. So können Fehler in anderen Programmabschnitten durch neu implementierte Funktionalitäten schnell gefunden werden.
 
@@ -122,3 +127,4 @@ Diese Testart ist wichtig um einen Einblick zu erhalten, ob das Produkt bei Ver�
 ## Referenzen
 
 [1]: Ian Sommerville, Software Engineering, 10. Aufl., Kapitel 08 226-254.
+[2]: Dijkstra, E. W. 1972. “The Humble Programmer.” Comm. ACM 15 (10): 859–66. doi:10.1145/355604.361591
