@@ -2,18 +2,18 @@
 
 **Autor:** Malte Reinsch
 
-- Tannenbaum definieren ein verteiltes System als:
-"Eine Sammlung aus unabhängigen Rechnern, die aus Sicht des
-Nutzers als einzelnes zusammenhängendes System wahrgenommen
-wird."
-
-Die meisten Rechnersysteme sind heute verteilte Systeme.
+<!-- Text -->
+Die meisten heute verwendeten Rechnersysteme sind verteilte Systeme. Ein verteiltes
+System ein ein Rechnersystem, an dem mehr als ein Rechner beteiligt ist.
+Tannenbaum und Van Steen definieren ein verteiltes System als: "Eine Sammlung
+aus unabhängigen Rechnern, die aus Sicht des Nutzers als einzelnes zusammenhängendes
+System wahrgenommen wird."
 
 Aus der Verwendung von verteilten Systemen gehen einige Vorteile
 ggü. klassischen Rechnersystemen hervor:
 1. Geteilte Ressourcen: In einem verteilen System können
 Ressourcen (Hardware, Software) eines Rechners mit anderen
-Rechnern geteilt werden
+Rechnern geteilt werden.
 2. Offenheit: Verteilte Systeme werden oftmals als offen
 betrachtet, da sie Standardprotokolle verwenden, sodass Hardware
 und Software verschiedenster Hersteller verwendet werden können.
@@ -26,14 +26,17 @@ Hinzufügen neuer Hardware abgefangen werden können.
 mehrere Rechner des Systems kann das System gegenüber Hardware-
 ausfällen abgehärtet werden.
 
-Allerdings sind verteilte System ggü. klassischen (zentralisierten
+Verteilte System sind gegenüber klassischen (zentralisierten
 Systemen) deutlich komplexer. Durch die "Verteiltheit" entstehen
 neue Herausforderung für die Implementierung des Systems, welche
 in zentralisierten Systemen keine oder nur eine kleine Rolle
 spielen.
-- Insbesondere Netzwerk!
-- Antwort(zeit) des Gesamtsystems hängt auch von der Belastung des
-Gesamtsystems ab
+Da die Antwortzeit des Systems von der Belastung des gesamten Systems und des Netzwerks
+abhängt, kann die Antwortzeit auf für aufeinander folgende Anfragen stark variieren.
+
+Im Folgenden werden unterschiedliche Aspekte betrachtet, die für die Entwicklung
+verteilter Systeme zu beachten sind. Des Weiteren diskutiert dieses Kapitle einige
+architektonische Ansätze zur Konzeptionierung und Implementierung verteilter Systeme.
 
 ## distributed systems ##
 
