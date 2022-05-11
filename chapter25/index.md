@@ -6,7 +6,7 @@ Sofern nicht anders gekennzeichnet stammen alle folgenden Informationen und Abbi
 
 ## Einleitung zum Konfigurationsmanagement
 
-Ein Software System verändetr sich mit jedem Bugfixes und neuem Hard- oder Softwareversionsstand. Durch die Änderungen an dem System entsteht eine Reihe an Versionen, welche verwaltet werden müssen. 
+Ein Software System verändert sich mit jedem Bugfixes und neuem Hard- oder Softwareversionsstand. Durch die Änderungen an dem System entsteht eine Reihe an Versionen, welche verwaltet werden müssen. 
 Das Konfigurationsmanagement übernimmt das Management von Richlinien, Prozessen und Werkzeugen für das Verändern von Software Systemen. 
 
 Ohne Konfigurationsmanagement kann es zur Modifizierung der falschen Version, dem Ausrollen falscher Software oder zum Vergessen vom Speicherort bestimmter Komponenten.
@@ -61,7 +61,7 @@ Die Terminologie nach Sommerville folgt nach der hier aufgeführten Tabelle (alp
 
 ## Version Management
 
-Versionsmanagement bechreibt den Prozess der Versionierung von Software Komponenten und deren Nutzung in Systemen. Ein weiterer Bestandteil ist di Sicherstellung, dass sich Änderungen unterschiedlicher Entwickler nicht gegeneinander stören. In dem Prozess werden Baselines und Codelines verwaltet.
+Versionsmanagement bechreibt den Prozess der Versionierung von Software Komponenten und deren Nutzung in Systemen. Ein weiterer Bestandteil ist die Sicherstellung, dass sich Änderungen unterschiedlicher Entwickler nicht gegeneinander stören. In dem Prozess werden Baselines und Codelines verwaltet.
 
 ![25.4 Codelines und Baselines](assets/25.4-Codelines_and_baselines.png)
 
@@ -101,7 +101,7 @@ Die Nutzung von Versionskontrollsystemen bietet folgende Vorteile:
 
 Bei der Entwicklung von Open Source Projekten ist die Verwendung von verteilten Versionskontrollsystemen notwendig. Durch die Existenz eines zentralen Projektrepositories können die Entwickler das Repository clonen, Änderungen daran vornehmen und danach eine Anfrage an das Projektrepository stellen, die Änderungen zu übernehmen. Die Änderungen können dann durch eine befugte Person des Open Source Projekts freigegeben werden.
 
-### Branching un Merging
+### Branching und Merging
 
 Die Entwicklung des Software Systems erfolgt nicht nur in einer Codeline, sondern es können verschiedene Codelines durch **Branching** aufgespalten werden und unabhängig voneinander entwickelt werden. Bei einer Zusammenführung zweier unterschiedlicher Codelines werden diese durch **Merging** zusammengeführt.
 
