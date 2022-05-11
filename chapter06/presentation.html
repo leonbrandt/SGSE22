@@ -26,6 +26,7 @@
       }
       .img-200 img { max-height: 200px; }
       .img-300 img { max-height: 300px; }
+      .img-350 img { max-height: 350px; }
       .img-400 img { max-height: 400px; }
       .img-450 img { max-height: 450px; }
       .img-500 img { max-height: 500px; }
@@ -42,11 +43,7 @@
   <body>
     <textarea id="source">
 
-
 class: center, middle
-
-
-
 
 # Kapitel 06: Architectural Design
 
@@ -57,20 +54,16 @@ Leon Brandt
 # Inhalt
 
 - Einleitung
+
+*Was & Wie?*
+
 - Artefakt: Architectural Model
 - Architectural Design Decisions
+
+*Wissen wiederverwenden*
+
 - Architectural Patterns (inkl. 5 Beispiele)
 - Application Architectures (inkl. 3 Beispiele)
-
----
-
---- TODO: Einleitung ---
-
-- Definition
-- Motivation
-- Abgrenzung Requirements Engineering
-- Abstraktionsebenen
-- Relevanz
 
 ---
 
@@ -127,7 +120,8 @@ Ergebnis: Artefakt: Architectural Model
 - High-Level-Features eines Systems werden durch dessen Hauptkomponenten repräsentiert
 
 
-- Bereits im Requirements Engineering möglich: Erzeugen einer abstrakten Systemarchitektur durch Gruppieren von Systemfeatures zu Subsystemen
+- Bereits im Requirements Engineering:
+	- Abstrakte Systemarchitektur durch Gruppieren von Systemfeatures zu Subsystemen
 
 ---
 
@@ -280,7 +274,7 @@ class: center, middle
 # Architectural Views
 
 - **Conceptual View (konzeptionelle Sicht)**
-	- Abstrakte Sicht des Systems
+	- Abstrakte Sicht eines Systems
 	- Zerlegung: High-Level-Anforderungen &rarr; detaillierte Spezifikationen
 
 ---
@@ -413,7 +407,7 @@ class: center, middle
 
 ---
 
-# Nicht-funktionale Anforderungen an Systeme
+# Nicht-funktionale Anforderungen (an Systeme)
 
 Architektur eines Systems bestimmt nicht-funktionale **Charakteristiken**
 
@@ -423,56 +417,43 @@ Architektur eines Systems sollte von nicht-funktionalen **Anforderungen** abhän
 
 ---
 
-# Performance
+# Nicht-funktionale Anforderungen
 
-#### (Laufzeitperformanz)
+- **Performance (Laufzeitperformanz)**
+	- Lokalisieren performance-kritischer Operationen
+	- Weniger, größere Komponenten anstatt vieler, feingranularer Komponenten
+	- &rarr; Reduktion Kommunikation zwischen Komponenten
+	- Auch: Parallelisierung
 
-- Lokalisieren performanzkritischer Operationen (auf wenige Komponenten)
-- Weniger, größere anstatt vieler, feingranularer Komponenten
-- Reduktion von Kommunikation zwischen Komponenten verbessert Performance
-- Auch: Parallelisierung
 
----
+- **Security (Sicherheit hinsichtlich gezielter Störversuche)**
+	- Geschichtete Struktur; kritische Assets weiter innen (redundante Security-Validierung)
 
-# Security
 
-#### (Sicherheit hinsichtlich gezielter Störversuche)
-
-- Geschichtete Struktur; kritische Assets weiter innen
-- Hoher Grad an Security-Validierung innerhalb der Schichten
-
----
-
-# Safety
-
-#### (Sicherheit hinsichtlich der Umgebung)
-
-- Safety-Relevante Vorgänge in gemeinsamer Komponente bzw. wenige Komponenten
-- &rarr; Reduziert Kosten hinsichtlich Validierung
-- Verbundene Schutzsysteme: Sichere Abschaltung im Fehlerfall
+- **Safety (Sicherheit hinsichtlich Systemumgebung)**
+	- Lokalisieren safety-relevanter Vorgänge
+	- &rarr; Reduziert Kosten hinsichtlich Safety-Validierung
+	- Verbundene Schutzsysteme: Sichere Abschaltung im Fehlerfall
 
 ---
 
-# Availability
+# Nicht-funktionale Anforderungen
 
-#### (Verfügbarkeit)
+- **Availability (Verfügbarkeit)**
+	- Redundante Komponenten
+	- &rarr; Ersetzen / Aktualisieren ohne Ausfallzeiten
+	- &rarr; Kompensation von Ausfällen durch Fehler
 
-- Redundante Komponenten
-- Ersetzen und Aktualisieren ohne Ausfallzeiten
 
----
-
-# Maintainability
-
-#### (Wartbarkeit)
-
-- Fein-granulare bzw. self-contained (unabhängige) Komponenten
-- Trennung: Erzeuger / Konsumenten von Daten
-- Vermeidung verteilter Datenstrukturen
+- **Maintainability (Wartbarkeit)**
+	- Fein-granulare / self-contained (unabhängige) Komponenten
+	- Trennung: Erzeuger / Konsumenten von Daten
+	- Vermeidung verteilter Datenstrukturen
+	- hohe Kohäsion + geringe Kopplung
 
 ---
 
-# Nicht-funktionale Anforderungen an Systeme
+# Nicht-funktionale Anforderungen
 
 - größere Komponenten verbessern Performance
 - kleinere Komponenten verbessern Maintainability
@@ -520,21 +501,11 @@ Architectural Pattern = Abstrakte Beschreibung von Praktiken, die sich in versch
 
 ---
 
-# Model-View-Controller (MVC)
-
-#### Beschreibung
-
-- Seperiert Präsentation / Interaktion / Daten
-- Drei logische Komponenten:
-	- Model (verwaltet Daten, implementiert Operationen auf diesen)
-	- View (definiert + verwaltet Präsentation der Daten)
-	- Controller (verwaltet Benutzerinteraktion, leitet diese an View und Model)
-
----
-
-class: img-450
+class: img-400
 
 # Model-View-Controller (MVC)
+
+- Separiert Präsentation + Interaktion von Daten
 
 ![](media/6_05.png)
 
@@ -546,8 +517,10 @@ class: img-450
 
 #### Verwendung
 
-- Mehrere Arten der Betrachtung / Interaktion von / mit Daten
-- Unbekannte zukünftige Anforderungen für Präsentation / Interaktion von Daten
+- Mehrere Arten der...
+- Unbekannte zukünftige Anforderungen für...
+
+... Präsentation von / Interaktion mit Daten
 
 #### Vorteile
 
@@ -557,25 +530,16 @@ class: img-450
 
 #### Nachteile
 
-- Erzeugt zusätzlichen Code + Komplexität
-- Auch, wenn Datenmodell / Interaktion simpel
+- Erzeugt zusätzlichen Code + Komplexität (auch wenn Datenmodell / Interaktion simpel)
 
 ---
 
-# Layered Architecture
-
-#### Beschreibung
-
-- Schichten implementieren zusammengehörige Funktionalitäten
-- Schichten stellen übergeordneten Schichten Services zur Verfügung
-	- Abhängigkeiten nur nach unten
-- Unterste Schicht = Core-Funktionalität
-
----
-
-class: img-450
+class: img-400
 
 # Layered Architecture
+
+- Schicht: zusammengehörige Funktionalität
+- Services an übergeordnete Schichten; Abhängigkeiten nur nach unten
 
 ![](media/6_08.png)
 
@@ -588,18 +552,16 @@ class: img-450
 #### Verwendung
 
 - Ergänzen von existierenden Systemen
-- Verteilung der Entwicklung auf Personen / Teams
+- Verteilung von Entwicklung auf Personen / Teams
 - Anforderungen an Security
 
 #### Vorteile
 
 - Einzelne Schichten: austauschbar + portabel
 - Änderungen im Interface einer Schicht betreffen nur eine Weitere
-- Redundante Funktionalitäten &rarr; verbesserte Dependability
-- Unterstützt inkrementelle Entwicklung
-	- Bereitstellung innenliegender Services zur Entwicklung
-- Erleichtert Multi-Plattform-Implementierungen
-	- Lokalisierung von Maschinenabhängigkeiten auf eine Schicht
+- Redundante Funktionalitäten &rarr; verbesserte Dependability / Reliability
+- Inkrementelle Entwicklung (Bereitstellung innenliegender Services)
+- Erleichtert Multi-Plattform-Implementierungen (Lokalisierung von Maschinenabhängigkeiten)
 
 #### Nachteile
 
@@ -609,23 +571,12 @@ class: img-450
 
 ---
 
-# Repository Architecture
-
-#### Beschreibung
-
-- Daten / Zustand in zentralem Repository
-- Dateninteraktion nur via Repository, niemals direkt
-
-
-- Varianten der Steuerung:
-	- Passiv (Komponenten steuern Zugriff)
-	- Aktiv (z.B. Trigger bei Verfügbarwerden von Daten)
-
----
-
 class: img-450
 
 # Repository Architecture
+
+- Dateninteraktion nur via zentralem Repository
+- Passiv vs. Aktiv (Data-Driven-Systems)
 
 ![](media/6_11.png)
 
@@ -638,49 +589,31 @@ class: img-450
 #### Verwendung
 
 - Erzeugung / Persistierung großer Datenmengen
-- Data-Driven-Systems (Hinzufügen von Aktionen löst Aktionen aus)
+- Data-Driven-Systems
 - Consumer/Producer
 
 #### Vorteile
 
 - Unabhängige Komponenten (keine explizite Kommunikation)
-- Datenänderungen sind global
-- Daten durchgehend konsistent (vereinfacht z.B. Backups)
+- Globale Datenänderungen 
+- Konsistente Daten (für z.B. Backups)
 
 #### Nachteile
 
-- Repository = Single point of failure (Probleme betreffen ganzes System)
-- Großteil Kommunikation via Repository = ggf. ineffizient
-- Verteilung Repository
-	- Verwaltung mehrerer Kopien
-	- Herstellung Konsistenz (&rarr; Overhead)
-- Zentrales Repository-Datenmodell erforderlich (Integration; Inkompabilität)
+- Repository = Single Point of Failure
+- Großteil Kommunikation via Repository ggf. ineffizient
+- Verteilung Repository (Verwaltung Kopien; Konsistenz &rarr; Overhead)
+- Zentrales Repository-Datenmodell (Integration; Inkompabilität)
 
 ---
 
-# Client-Server-Architecture
-
-#### Beschreibung
-
-- Systeme sind Menge an:
-	- Services (von Servern zur Verfügung gestellt)
-	- Clients (Nutzen Services via Netzwerk)
-
-
-- Server = Softwarekomponenten, die Services anbieten
-- Mehrere Server auf einem Rechner
-- Üblich: viele Instanzen von Client-Programmen parallel auf vielen Computern
-- Üblich: Implementierung als verteiltes System
-
-
-- Clients müssen verfügbare Server + deren Services kennen
-- Server müssen weder Identitäten noch Anzahl der Clients kennen
-
----
-
-class: img-450
+class: img-350
 
 # Client-Server-Architecture
+
+- System = Server &rarr; Services &lrarr; Clients (via Netzwerk)
+- n Server auf einem Rechner; n Client-Instanzen parallel auf n Rechnern
+- Clients kennen Server; Server kennen Clients nicht
 
 ![](media/6_13.png)
 
@@ -698,30 +631,23 @@ class: img-450
 #### Vorteile
 
 - Generelle Funktionalitäten zentral auf Server (keine Implementierung durch Clients)
-- Hinzufügen / Integration neuer Server ist einfach
+- Hinzufügen / Integration neuer Server einfach
 - Aktualisieren von Servern ohne Beeinflussung anderer Systemteile
 
 #### Nachteile
 
-- Jeder Service = Single point of failure (DoS-Attacken, Server-Fehler)
+- Jeder Service = Single Point of Failure (DoS-Attacken, Server-Fehler)
 - Performance unvorhersehbar (Abhängig von System + Netzwerk)
-
----
-
-# Pipe-and-Filter-Architecture
-
-#### Beschreibung
-
-- Verarbeitungseinheiten (Filter) implementieren Typ von Datentransformationen
-- Daten fließen in "Pipes" von einer Transformation zur Nächsten
-- Sequentiell / Parallel
-- Elementweise / Batchweise
 
 ---
 
 class: img-450
 
 # Pipe-and-Filter-Architecture
+
+- Filter implementieren Typ von Datentransformationen
+- Daten fließen in "Pipes" durch Filter
+- Sequentiell vs. Parallel / Elementweise vs. Batchweise
 
 ![](media/6_15.png)
 
@@ -740,49 +666,140 @@ class: img-450
 #### Vorteile
 
 - Einfach zu verstehen
-- Wiederverwendung einzelner Transformations-Komponenten möglich
+- Wiederverwendung Transformations-Komponenten
 - Art der Verarbeitung = Struktur vieler Businessprozesse
-- Einfache Weiterentwicklung durch Hinzufügen von Transformationen
+- Hinzufügen von Transformationen einfach
 
 #### Nachteile
 
-- (häufig vielfache) Abstimmung von Datenformaten
+- Viele Schnittstellen &rarr; vielfache Abstimmung von Datenformaten
 - Overhead durch häufiges Parsing / Interpretieren
+
+---
+
+# Architectural Patterns
+
+- Fundamentale Prinzipen von Architectural Design = Seperation + Independence
+- &rarr; Lokalität von Änderungen
+
+
+- Pattern MVC + Layered Architecture seperieren Elemente 
+- &rarr; Konzeptionelle Organisation von Systemen
+
+
+- Repository Architecture beschreibt Datenaustausch in einer Menge von interagierenden Komponenten
+- &rarr; Statische Struktur
+
+
+- Client-Server-Architecture + Pipe-and-Filter-Architecture
+- &rarr; Organisation zur Laufzeit
+
+---
+
+class: center, middle
+
+# Application Architectures
 
 ---
 
 # Application Architectures
 
-- Fundamentale Prinzipen von Architectural Design = Seperation + Independence
-- &rarr; Lokalität von Änderungen
-- Pattern MVC + Layered Architecture seperieren Elemente 
-- &rarr; Betrachten konzeptionelle Organisation von Systemen
+- Fast alle Unternehmen...
+- Unternehmen in gleichen Branchen...
+
+...besitzen gemeinsame Geschäftsfunktionen
+
+- &rarr; Ähnliche Anforderungen an Software
+- &rarr; Ähnliche Architekturen von Software
 
 
-- Repository Architecture beschreibt Datenaustausch in einer Menge von interagierenden Komponenten
-- &rarr; Betrachtet statische Struktur
-
-
-- Client-Server-Architecture + Pipe-and-Filter-Architecture organisieren Systeme zur Laufzeit
-
----
-
---- TODO: Application Architectures ---
-
-- Einleitung
-- Arten der Nutzung
+- Application Architectures = Beschreiben Stuktur / Organisation spezifischer Systemtypen
+- Kapseln Hauptcharakteristiken einer Klasse von Systemen
 
 ---
 
---- TODO: Application Architectures > Transaction-Processing-Systems ---
+# Arten der Verwendung
+
+- als Startpunkt für Designprozess
+- als Checkliste
+- zur Projektorganisation
+- zur Identifikation von wiederverwendbaren Komponenten
+- als Vokabular von Konzepten / Begriffen
 
 ---
 
---- TODO: Application Architectures > Information Systems ---
+# Transaction-Processing Systems
+
+- Verarbeiten Benutzeranfragen r/w auf DBs
+- Transaktion = Kohärente Sequenz von Operationen (Persistierung, wenn alle Operationen erfolgreich)
+
+![](media/6_16.png)
+
+[Fig. 6.16]
 
 ---
 
---- TODO: Application Architectures > Language-Processing-Systems ---
+# Information Systems
+
+- Anwendungen mit Interaktion mit einer geteilten Datenbank
+- Kontrollierter Zugriff auf Informationsbasis
+- Können transaktionsbasiert sein
+- Häufig verteilt / webbasiert
+
+---
+
+class: img-400
+
+# Information Systems
+
+Als Layered Architecture
+
+![](media/6_18.png)
+
+[Fig. 6.18]
+
+---
+
+# Language-Processing-Systems
+
+- Übersetzen Sprache in alternative Repräsentation dieser
+- Compiler: Programmiersprache &rarr; Maschinencode
+- NLP-Systeme: natürliche Sprache &rarr; andere natürliche Sprache
+
+---
+
+class: img-400
+
+# Language-Processing-Systems
+
+Als Repository Architecture (Einfache Integration von Komponenten)
+
+![](media/6_21.png)
+
+[Fig. 6.21]
+
+---
+
+class: img-400
+
+# Language-Processing-Systems
+
+Als Pipe-and-Filter-Architecture (Effizient bei Batch-Processing)
+
+![](media/6_22.png)
+
+[Fig. 6.22]
+
+---
+
+# Architectural Patterns vs. Application Architectures
+
+- Methoden zum Präsentieren / Teilen / Wiederverwenden von Wissen
+- Bewährte Praktiken
+
+
+- Architectural Patterns = abstrakte Beschreibungen; generische Strukturen
+- Application Architectures = konkrete Systemklassen
 
     </textarea>
     <script src="../_assets/js/remark-latest.min.js">

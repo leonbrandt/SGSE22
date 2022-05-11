@@ -2,6 +2,8 @@
 
 **Autor:** Frederic Birwe
 
+Die Zusammenfassung basiert auf Kapitel 11 des Buches "Software Engineering (10th. ed.)" 2015 von Ian Sommerville. Weitere Quellen wurden nicht genutzt.
+
 ## 1 Einleitung
 
 Jedes Softwaresystem, dass in eine komplexe Umgebung eingebunden ist, wird zu einem Prozentsatz fehlerhafte Ausgaben verursachen. Das Reliability Engineering versucht eine Software und das System, in dem sie eingebettet ist, so zu gestalten, dass die Software möglichst verlässlich arbeitet. Die Begriffe Verfügbarkeit und Verlässlichkeit werden nachfolgend definiert.
@@ -109,7 +111,9 @@ Ein Protection System ist ein separates System, dass die Aufgabe hat, die korrek
 Ein Protection System sollte dabei mindestens gleiche Sensoren wie das Primärsystem haben, idealerweise auch gleiche Aktoren. Während des laufenden Betriebs überwacht das Protection System die Tätigkeit des Primärsystems. Bemerkt es dabei, dass eine Tätigkeit durch den Primärserver ausgeführt werden sollte, dies aber nicht geschieht, greift das Protection System ein und führt Notfallmaßnahmen durch. Beispielsweise kann das die Abschaltung einer Industrieanlage oder die Notfalllandung eines Flugzeugs sein.
 Das Protection System enthält nur Fähigkeiten zur Überwachung des Primärsystems sowie zur Ergreifung von Notfallmaßnahmen. Durch diese beschränkten Möglichkeiten ist das System sehr viel kompater und damit einmal deutlich kostengünstiger zu entwickeln als das Primärsystem, aber auch sehr viel einfacher und kostengünstiger zu testen und somit kann effizienter eine hohe reliability erreicht werden. Diese hohe reliability erhöht auch signifikant die reliability des Gesamsystems, da das Protection System ja als Notfallersatz für das Primärsystem dient.
 
-[abb 11.6]
+![Abb. 11.6](./assets/fig_11-6.png)
+
+_(Übernahme Abb. 11.6)_
 
 ### 8.3 Self-monitoring architectures
 
@@ -117,6 +121,10 @@ In Self-monitoring architectures wird eine eingehende Anfrage aufgeteilt und üb
 Bei den parallelen Systemen müssen dabei sowohl Hard- als auch Software divers sein. Das bedeutet, dass Hardwareseitig vor allem unterschiedliche Prozessoren als auch generell diverse Hardware benutzt werden muss. Wie Diversität bei Software hergestellt werden kann, wird im Abschnitt _software diversity_ beschrieben.
 In reiner Form kann ein self-monitoring system eingesetzt werden, wenn eine hohe reliability aber keine hohe availability notwendig ist. So ist es zum Beispiel in der Regel besser, dass sich ein System, dass Dosierungen von Medizin für Patienten in einem Krankenhaus steuert, einen Fehler meldet, anstatt den Patienten falsche Dosierungen zu verabreichen.
 Sollen sowohl eine hohe availability als auch eine hohe reliability erreicht werden, muss eine self-monitoring architecture mit anderen Methoden kombiniert werden. So können beispielsweise mehrere Self-monitoring Systeme parallel betrieben werden, die sich gegenseitig vertreten können.
+
+![Abb. 11.7](./assets/fig_11-7.png)
+
+_(Übernahme Abb. 11.7)_
 
 ### 8.4 N-Version programming
 
@@ -243,3 +251,7 @@ Für manche Bereiche mit überschaubarerer Komplexität in der Nutzung der Syste
 In vielen anderen Fällen ist eine Erstellung eines solchen Profiles so gut wie nicht möglich. Gründe dafür sind zum Beispiel, dass dazu häufig die Diversität in der Benutzerschaft zu groß ist. Dies gilt in Hinblick auf Wissensstand, kultureller Hintergrund, usw.
 Zudem ändert sich Nutzungsprofil eines Systems sich mit der Zeit. Wenn die Nutzer vertrauter mit dem System werden, ändert sich auch das Nutzungsprofil.
 Nehmen dazu beispielsweise an, dass ein Unternehmen für die interne Kommunikation nicht mehr auf E-Mail sondern auf Chatprogramme setzen will. Es ist plausibel anzunehmen, dass die Nutzer zu Beginn ein ähnliches Nutzungsverhalten wie in der E-Mail Kommunikation zeige beispielsweise weniger und längere Nachrichten schreiben, aber mit der Zeit nach und nach ihr Verhalten anpassen und mehr und dafür kürzere Nachrichten schreiben.
+
+![Abb. 11.14](./assets/fig_11-14.png)
+
+_(Übernahme Abb 11.14) Verteilung der Eingaben auf einzelne Klassen in einem Nutzungsprofil_
