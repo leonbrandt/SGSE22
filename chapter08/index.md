@@ -130,4 +130,5 @@ Diese Testart ist wichtig um einen Einblick zu erhalten, ob das Produkt bei Ver�
 ## Referenzen
 
 [1]: Ian Sommerville, Software Engineering, 10. Aufl., Kapitel 08 226-254.
+
 [2]: Dijkstra, E. W. 1972. “The Humble Programmer.” Comm. ACM 15 (10): 859–66. doi:10.1145/355604.361591
