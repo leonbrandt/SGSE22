@@ -33,6 +33,8 @@ class: center, middle
 
 Steffen Dorsch
 
+---
+      
 # Inhalte
 
 * Idee eines SoS
@@ -42,6 +44,8 @@ Steffen Dorsch
 * SoS Engineering
 * SoS Architektur
 
+---
+   
 # Idee eines SoS
 
 ```A system of systems is a system that contains two or more independently managed elements.``` (Sommerville)
@@ -50,6 +54,8 @@ Steffen Dorsch
 * Fähigkeiten und Ressourcen von Teilsystemen werden vereinigt
 * SoS bietet mehr als die Summe der Funktionalitäten der Teilsysteme
 
+---
+   
 # Beispiel SoS: SESAR (Single European Sky ATM Research Programme)
 
 ![SESAR](media/sesar.jpg "SESAR")
@@ -60,6 +66,8 @@ Steffen Dorsch
 2. Entwicklungsphase (2008-2013): Aktivitäten zur Einführung des Plans aus der Definitionsphase.
 3. Umsetzungsphase (2014-2020): Koordination und Umsetzung der Maßnahmen durch Luftverkehrspartner
       
+---
+   
 # Komplexität der Systeme - Einfache vs. komplexe Systeme
 
 ![Einfache und komplexe Systeme](media/simplevscomplex.png "Einfache und komplexe Systeme")
@@ -69,12 +77,16 @@ Steffen Dorsch
 * Statische Verbindungen (z.B. Softwareabhängigkeiten) haben geringe Komplexität
 * Dynamische Verbinungen (z.B. Verbindungen eines OS) haben größere Komplexität
       
+---
+   
 # Komplexität der Systeme - Komplexitätsarten
       
 1. *Technische Komplexität:* ergibt sich aus Beziehungen zwischen Systemkomponenten.
 2. *Verwaltungskomplexität:* ergibt sich durch Beziehungen des Systems zur Verwaltung sowie zu Verwaltungen anderer Teilsysteme.
 3. *Governance-Komplexität:* verschiedene Organisationen und Länder können verschiedene Regeln, Richtlinien und Grundsätze erfordern.
       
+---
+   
 # Komplexität der Systeme - Auswirkungen der Eigenschaften auf Komplexitätsarten
 
 | SoS Eigenschaft | Technische  Komplexität | Verwaltungs- komplexität | Governance- komplexität | Beschreibung |
@@ -87,6 +99,8 @@ Steffen Dorsch
 | Datenintensiv | x |  | x | Unterschiedliche Datenbeziehungen |
 | Heterogenität | x |  | x | Unterschiedliche Kompatibilität |
 
+---
+   
 # Klassifikation von SoS
 
 1. *Organisations-SoS:* Systeme in Besitz einer einzigen Organisation
@@ -95,15 +109,21 @@ Steffen Dorsch
       
 ![SoS-Kollaboration](media/soscollaboration.png "SoS-Kollaboration")
 
+---
+   
 # Reduktionismus und SoS
 
 ![Reduktionistische Annahmen und die Realität komplexer Systeme](media/reductionist.png "Reduktionistische Annahmen und die Realität komplexer Systeme")
 
+---
+   
 # SoS Engineering: Entstehung von SoS
 
 * SoS entstehen nicht von Grund auf neu, sondern durch Erkenntnis, dass bestehende Systeme durch Integration in SoS verbessert werden.
 * Neue Funktionen und Fähigkeit können durch Zusammenlegung bestehender Systeme geschaffen werden.
       
+---
+   
 # SoS Engineering: Engineering-Prozess
 
 ![SoS Engineering-Prozess](media/engineering_process.png "SoS Engineering-Prozess")
@@ -114,6 +134,8 @@ Steffen Dorsch
 4. *Entwicklung von Schnittstellen:* Schnittstellen für die Zusammenarbeit einzelner Systeme müssen entwickelt werden.
 5. *Integration und Bereitstellung:* Organisationen integrieren das SoS und nehmen es in Betrieb.
       
+---
+   
 # SoS Engineering: Probleme und Herausforderungen
 
 1. Fehlende Kontrolle über Systemfunktionalität und -leistung.
@@ -124,6 +146,8 @@ Steffen Dorsch
 * Die Lösung dieser Herausforderungen macht einen erheblichen Teil der Entwicklungsarbeit aus.
 <br>&rarr; Festlegung der Systemarchitektur und Entwicklung von Schnittstellen zur Ausgleichung von Diskrepanzen zwischen Teilsystemen.
 
+---
+   
 # SoS Engineering: Entwicklung von Schnittstellen
 
 ![Systeme mit Serviceschnittstellen](media/serviceinterfaces.png "Systeme mit Serviceschnittstellen")
@@ -132,6 +156,9 @@ Steffen Dorsch
 * APIs können verfügbar sein, jedoch spezialisiert und unnutzbar
 * Softwareschnittstellen müssen für Zusammenarbeit entwickelt werden
 * Software zur Schließung der Lücken zwischen unterschiedlichen Schnittstellen
+
+---
+   
 # SoS Engineering: Integration und Bereitstellung
 
 * Integration und Bereitstellung sollten Teil eines Prozesses sein.
@@ -143,6 +170,8 @@ Steffen Dorsch
     2. Die Systeme können sich verändern, sodass Tests nicht wiederholbar sind
     3. Bei Problemen: Behebung durch Änderung der Systeme evtl. nicht möglich => Zwischensoftware zur Problembehebung notwendig
 
+---
+   
 # SoS Architektur: Architekturentwurf
 
 * Phase des Architekturentwurfs ist sehr kritisch
@@ -154,6 +183,8 @@ Steffen Dorsch
 * SoS-Architekt muss festgelegtes Ziel aus der Entwurfsphase erreichen
     <br>&rarr; Entscheidungen sind essenziell für Leistung, Haltbarkeit und Wartbarkeit
 
+---
+   
 # SoS Architektur: Design Principles
 
 1. SoS sollten funktionieren, auch wenn Teilsysteme fehlerhaft oder unvollständig sind.
@@ -164,6 +195,8 @@ Steffen Dorsch
 6. Systemverhalten sollte als Dienste zwischen Knoten spezifiziert werden.
 7. Verstehen und Verwalten von Schwachstellen: Wappnung gegen unerwartete Ausfälle und unerwünschtes Verhalten
 
+---
+   
 # Architekturmuster: Systeme als Datenfeeds
 
 ![Systeme als Datenquellen mit einer vereinheitlichenden Schnittstelle](media/datafeed.png "Systeme als Datenquellen mit einer vereinheitlichenden Schnittstelle")
@@ -172,6 +205,8 @@ Steffen Dorsch
 * Hauptsystem kommuniziert mit Datenfeeds um Informationen zu erhalten
 * Üblicherweise kommunizieren Datenfeeds nicht untereinander
 
+---
+   
 # Architekturmuster: Containersysteme
 ![Containersysteme](media/container.png "Containersysteme")
 
@@ -179,6 +214,8 @@ Steffen Dorsch
 * Bereitstellung gemeinsamer Dienste
 * Bspw.: Authentifizierung, Systemkonfiguration, Speicherdienst
 
+---
+   
 # Architekturmuster: Handelssysteme
 ![Ein Handels-SoS](media/trading.png "Ein Handels-SoS")
 
@@ -187,6 +224,8 @@ Steffen Dorsch
 * Keine Schnittstellenstandards
 * Keine Governance-Struktur
 
+---
+   
 # Zusammenfassung
 * SoS bestehen aus min. zwei Teilsystemen, die unabhängig voneinander verwaltet und gesteuert werden.
 * Die drei wichtigen Arten der Komplexität eines SoS sind:
@@ -213,6 +252,8 @@ Steffen Dorsch
     2. Containersysteme
     3. Handelssysteme.
 
+---
+   
 # Ende
       
     </textarea>
