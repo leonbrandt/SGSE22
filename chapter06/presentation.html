@@ -57,20 +57,16 @@ Leon Brandt
 # Inhalt
 
 - Einleitung
+
+*Was & Wie?*
+
 - Artefakt: Architectural Model
 - Architectural Design Decisions
+
+*Wissen wiederverwenden*
+
 - Architectural Patterns (inkl. 5 Beispiele)
 - Application Architectures (inkl. 3 Beispiele)
-
----
-
---- TODO: Einleitung ---
-
-- Definition
-- Motivation
-- Abgrenzung Requirements Engineering
-- Abstraktionsebenen
-- Relevanz
 
 ---
 
@@ -751,7 +747,7 @@ class: img-450
 
 ---
 
-# Application Architectures
+# Architectural Patterns
 
 - Fundamentale Prinzipen von Architectural Design = Seperation + Independence
 - &rarr; Lokalität von Änderungen
@@ -767,22 +763,110 @@ class: img-450
 
 ---
 
---- TODO: Application Architectures ---
+class: center, middle
 
-- Einleitung
-- Arten der Nutzung
-
----
-
---- TODO: Application Architectures > Transaction-Processing-Systems ---
+# Application Architectures
 
 ---
 
---- TODO: Application Architectures > Information Systems ---
+# Application Architectures
+
+- Fast alle Unternehmen...
+- Unternehmen in gleichen Branchen...
+
+...besitzen gemeinsame Geschäftsfunktionen
+
+- &rarr; Ähnliche Anforderungen an Software
+- &rarr; Ähnliche Architekturen von Software
+
+
+- Application Architectures = Beschreiben Stuktur / Organisation spezifischer Systemtypen
+- Kapseln Hauptcharakteristiken einer Klasse von Systemen
 
 ---
 
---- TODO: Application Architectures > Language-Processing-Systems ---
+# Arten der Verwendung
+
+- als Startpunkt für Designprozess
+- als Checkliste
+- zur Projektorganisation
+- zur Identifikation von wiederverwendbaren Komponenten
+- als Vokabular von Konzepten / Begriffen
+
+---
+
+# Transaction-Processing Systems
+
+- Verarbeiten Benutzeranfragen r/w auf DBs
+- Transaktion = Kohärente Sequenz von Operationen (Persistierung, wenn alle Operationen erfolgreich)
+
+![](media/6_16.png)
+
+[Fig. 6.16]
+
+---
+
+# Information Systems
+
+- Anwendungen mit Interaktion mit einer geteilten Datenbank
+- Kontrollierter Zugriff auf Informationsbasis
+- Können transaktionsbasiert sein
+- Häufig verteilt / webbasiert
+
+---
+
+class: img-400
+
+# Information Systems
+
+Als Layered Architecture
+
+![](media/6_18.png)
+
+[Fig. 6.18]
+
+---
+
+# Language-Processing-Systems
+
+- Übersetzen Sprache in alternative Repräsentation dieser
+- Compiler: Programmiersprache &rarr; Maschinencode
+- NLP-Systeme: natürliche Sprache &rarr; andere natürliche Sprache
+
+---
+
+class: img-400
+
+# Language-Processing-Systems
+
+Als Repository Architecture (Einfache Integration von Komponenten)
+
+![](media/6_21.png)
+
+[Fig. 6.21]
+
+---
+
+class: img-400
+
+# Language-Processing-Systems
+
+Als Pipe-and-Filter-Architecture (Effizient bei Batch-Processing)
+
+![](media/6_22.png)
+
+[Fig. 6.22]
+
+---
+
+# Architectural Patterns vs. Application Architectures
+
+- Methoden zum Präsentieren / Teilen / Wiederverwenden von Wissen
+- Bewährte Praktiken
+
+
+- Architectural Patterns = abstrakte Beschreibungen; generische Strukturen
+- Application Architectures = konkrete Systemklassen
 
     </textarea>
     <script src="../_assets/js/remark-latest.min.js">
