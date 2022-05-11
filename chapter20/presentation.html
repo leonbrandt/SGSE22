@@ -29,31 +29,192 @@ class: center, middle
 
 
 
-# Kapitel 01: Einleitung
+# Kapitel 20: Systems of Systems / Systemverbünde
 
-Max Mustermann
+Steffen Dorsch
 
----
-# Voraussetzungen
+# Inhalte
 
-```java
-public class A {
-  public int a() {
-    return 42;
-  }
-}
-```
+* Idee eines SoS
+* Komplexität der Systeme
+* Klassifikation von SoS
+* Reduktionismus und SoS
+* SoS Engineering
+* SoS Architektur
 
----
+# Idee eines SoS
 
-## Inhalte 
+```A system of systems is a system that contains two or more independently managed elements.``` (Sommerville)
 
-* A
-* B
+* System of Systems = Systemverbund unabhängig verwalteter Systeme
+* Fähigkeiten und Ressourcen von Teilsystemen werden vereinigt
+* SoS bietet mehr als die Summe der Funktionalitäten der Teilsysteme
 
-![](media/image.jpg)
+# Beispiel SoS: SESAR (Single European Sky ATM Research Programme)
 
+![SESAR](media/sesar.jpg "SESAR")
 
+* Vereinheitlichung, Harmonisierung und Synchronisation der Dienste im europäischen Flugverkehrsmanagement
+* Ziele: Kapazität x3, Erhöhung der Sicherheit x10, Verbesserung der Umweltverträglichkeit x1.1, Senkung der Kosten um 50%
+1. Defintionsphase (2004-2008): Erarbeitung der Anforderungen und Maßnahmen zur erreichung der Ziele.
+2. Entwicklungsphase (2008-2013): Aktivitäten zur Einführung des Plans aus der Definitionsphase.
+3. Umsetzungsphase (2014-2020): Koordination und Umsetzung der Maßnahmen durch Luftverkehrspartner
+      
+# Komplexität der Systeme - Einfache vs. komplexe Systeme
+
+![Einfache und komplexe Systeme](media/simplevscomplex.png "Einfache und komplexe Systeme")
+
+* Komplexität eines System wird durch Anzahl und Art der Verbindungen der Bestandteile bestimmt.
+* Komplexität wird zudem durch Interaktionen mit anderen Systemen beeinflusst.
+* Statische Verbindungen (z.B. Softwareabhängigkeiten) haben geringe Komplexität
+* Dynamische Verbinungen (z.B. Verbindungen eines OS) haben größere Komplexität
+      
+# Komplexität der Systeme - Komplexitätsarten
+      
+1. *Technische Komplexität:* ergibt sich aus Beziehungen zwischen Systemkomponenten.
+2. *Verwaltungskomplexität:* ergibt sich durch Beziehungen des Systems zur Verwaltung sowie zu Verwaltungen anderer Teilsysteme.
+3. *Governance-Komplexität:* verschiedene Organisationen und Länder können verschiedene Regeln, Richtlinien und Grundsätze erfordern.
+      
+# Komplexität der Systeme - Auswirkungen der Eigenschaften auf Komplexitätsarten
+
+| SoS Eigenschaft | Technische  Komplexität | Verwaltungs- komplexität | Governance- komplexität | Beschreibung |
+|---|:---:|:---:|:---:|---|
+| Operative Unabhängigkeit |  | x | x | Unterschiedliche Strategien, Regeln und Möglichkeiten zur Verwaltung |
+| Verwaltungsunabhängigkeit | x | x |  | Unterschiedliche Verwaltung |
+| Evolutionäre Entwicklung | x |  |  | Unterschiedliche Technologien |
+| Emergenz | x |  |  | Unerwünschte emergente Eigenschaften |
+| Geografische Verteilung | x | x | x | Unterschiedliche Länder |
+| Datenintensiv | x |  | x | Unterschiedliche Datenbeziehungen |
+| Heterogenität | x |  | x | Unterschiedliche Kompatibilität |
+
+# Klassifikation von SoS
+
+1. *Organisations-SoS:* Systeme in Besitz einer einzigen Organisation
+2. *Föderative SoS:* Keine zentrale Verwaltung; Systemeigentümer verwalten das System föderal
+3. *Systemkoalitionen:* Keine expliziten Verwaltungsverfahren; informelle Verwaltung eigener Systeme um Gesamtsystem am Laufen zu halten
+      
+![SoS-Kollaboration](media/soscollaboration.png "SoS-Kollaboration")
+
+# Reduktionismus und SoS
+
+![Reduktionistische Annahmen und die Realität komplexer Systeme](media/reductionist.png "Reduktionistische Annahmen und die Realität komplexer Systeme")
+
+# SoS Engineering: Entstehung von SoS
+
+* SoS entstehen nicht von Grund auf neu, sondern durch Erkenntnis, dass bestehende Systeme durch Integration in SoS verbessert werden.
+* Neue Funktionen und Fähigkeit können durch Zusammenlegung bestehender Systeme geschaffen werden.
+      
+# SoS Engineering: Engineering-Prozess
+
+![SoS Engineering-Prozess](media/engineering_process.png "SoS Engineering-Prozess")
+
+1. *Konzeptioneller Entwurf:* Erstellung einer abstrakten Vision, Defintion grundlegender Anforderungen und Ermittlung von Rahmenbedingungen des Gesamtsystems.
+2. *Systemauswahl:* Auswahl durch Beurteilung und Bewertung existierender Systeme.
+3. *Architektonisches Design:* Eine Gesamtarchitektur für das SoS muss entwickelt werden.
+4. *Entwicklung von Schnittstellen:* Schnittstellen für die Zusammenarbeit einzelner Systeme müssen entwickelt werden.
+5. *Integration und Bereitstellung:* Organisationen integrieren das SoS und nehmen es in Betrieb.
+      
+# SoS Engineering: Probleme und Herausforderungen
+
+1. Fehlende Kontrolle über Systemfunktionalität und -leistung.
+2. Unterschiedliche und inkompatible Annahmen der Entwickler einzelner Systeme.
+3. Unterschiedliche Entwicklungsstrategien und Zeitpläne für die verschiedenen Systeme.
+4. Mangelnde Unterstützung durch die Systemeigentümer bei Problemen.
+
+* Die Lösung dieser Herausforderungen macht einen erheblichen Teil der Entwicklungsarbeit aus.
+<br>&rarr; Festlegung der Systemarchitektur und Entwicklung von Schnittstellen zur Ausgleichung von Diskrepanzen zwischen Teilsystemen.
+
+# SoS Engineering: Entwicklung von Schnittstellen
+
+![Systeme mit Serviceschnittstellen](media/serviceinterfaces.png "Systeme mit Serviceschnittstellen")
+
+* Teilsysteme oft zweckgebunden in Funktionalität und Benutzeroberfläche
+* APIs können verfügbar sein, jedoch spezialisiert und unnutzbar
+* Softwareschnittstellen müssen für Zusammenarbeit entwickelt werden
+* Software zur Schließung der Lücken zwischen unterschiedlichen Schnittstellen
+# SoS Engineering: Integration und Bereitstellung
+
+* Integration und Bereitstellung sollten Teil eines Prozesses sein.
+* Integrationsteam hat keinen Einfluss auf die Bereitsstellung oder Nutzung von Teilsystemen
+* Integrationsprozess sollte mit bestehenden System beginnen
+* Neue Systeme können danach zur Ergänzung der Funktionalität des Gesamtsystems hinzugefügt werden.
+* Integrationstests fü+r SoS sind teuer und zweitaufwendig:
+    1. Keine detaillierten Anforderungsspezifikationen
+    2. Die Systeme können sich verändern, sodass Tests nicht wiederholbar sind
+    3. Bei Problemen: Behebung durch Änderung der Systeme evtl. nicht möglich => Zwischensoftware zur Problembehebung notwendig
+
+# SoS Architektur: Architekturentwurf
+
+* Phase des Architekturentwurfs ist sehr kritisch
+    1. Auswahl der einzubeziehenden Systeme
+    2. Bewertungs der Interaktionen
+    3. Entwurfsmethoden für Interoperabilität
+    4. Entscheidungen über Datenmanagement, Redundanz und Kommunikation
+
+* SoS-Architekt muss festgelegtes Ziel aus der Entwurfsphase erreichen
+    <br>&rarr; Entscheidungen sind essenziell für Leistung, Haltbarkeit und Wartbarkeit
+
+# SoS Architektur: Design Principles
+
+1. SoS sollten funktionieren, auch wenn Teilsysteme fehlerhaft oder unvollständig sind.
+2. SoS Kontrolle sollte mit Bedacht passieren. Es ist mit Widerstand der Systembesitzer zu rechnen.
+3. Nicht-restriktive interopable Schnittstellen sind wichtig für die Kommunikation mit anderen Systemen.
+4. Belohnung von Zusammenarbeit: Systembesitzer brauchen Anreize, um sich am System zu beteiligen.
+5. Knoten- und Netzarchitektur: Die einzelnen Systeme bilden Knoten, das Netz ist die Kommunikationsinfrastruktur zwischen den Knoten
+6. Systemverhalten sollte als Dienste zwischen Knoten spezifiziert werden.
+7. Verstehen und Verwalten von Schwachstellen: Wappnung gegen unerwartete Ausfälle und unerwünschtes Verhalten
+
+# Architekturmuster: Systeme als Datenfeeds
+
+![Systeme als Datenquellen mit einer vereinheitlichenden Schnittstelle](media/datafeed.png "Systeme als Datenquellen mit einer vereinheitlichenden Schnittstelle")
+
+* Verwendung von Daten in verschiedenen Formen
+* Hauptsystem kommuniziert mit Datenfeeds um Informationen zu erhalten
+* Üblicherweise kommunizieren Datenfeeds nicht untereinander
+
+# Architekturmuster: Containersysteme
+![Containersysteme](media/container.png "Containersysteme")
+
+* Zusammenarbeit in einem virtuellen Container
+* Bereitstellung gemeinsamer Dienste
+* Bspw.: Authentifizierung, Systemkonfiguration, Speicherdienst
+
+# Architekturmuster: Handelssysteme
+![Ein Handels-SoS](media/trading.png "Ein Handels-SoS")
+
+* Kein zentrales System
+* Informationen werden unter teilnehmenden Systemen getauscht
+* Keine Schnittstellenstandards
+* Keine Governance-Struktur
+
+# Zusammenfassung
+* SoS bestehen aus min. zwei Teilsystemen, die unabhängig voneinander verwaltet und gesteuert werden.
+* Die drei wichtigen Arten der Komplexität eines SoS sind:
+    1. Technische Komplexität
+    2. Managementkomplexität
+    3. Governance-Komplexität
+* Es gibt drei Klassen von SoS die aus der System-Governance abgeleitet werden:
+    1. Organisatorische Systeme
+    2. Föderierte Systeme
+    3. Systemkoalitionen
+* Der Reduktionismus scheitert bei SoS aufgrund von:
+    1. keine klaren Systemgrenzen
+    2. keine rationaler Entscheidungsfindung
+    3. keine klar definierten Probleme
+* Die wichtigsten Phasen des SoS-Entwicklungsprozesses sind:
+    1. konzeptioneller Entwurf
+    2. Systemauswahl 
+    3. Architekturentwurf
+    4. Schnittstellenentwicklung
+    5. Integration und Einsatz
+    6. Governance und Management
+* Typische Architekturmuster für SoS:
+    1. Systeme als Datenfeeds
+    2. Containersysteme
+    3. Handelssysteme.
+
+# Ende
+      
     </textarea>
     <script src="../_assets/js/remark-latest.min.js">
     </script>

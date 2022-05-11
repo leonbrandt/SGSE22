@@ -36,6 +36,7 @@ Rafael Berger
 ---
 
 ## Agenda
+
 * Einleitung
 * Sicherheitskritische Systeme
 * Sicherheitsanforderungen
@@ -45,6 +46,7 @@ Rafael Berger
 ---
 
 ## Einleitung
+
 * Möglichkeit der Betrachtung von Software in sicherheitskritischen Systemen
   * Softwaregesteuertes System
   * Software zum Überprüfen und Überwachen eines Systems
@@ -61,6 +63,13 @@ Rafael Berger
 * Typen von sicherheitskritische Software
   * Primär
   * Sekundär
+* Begriffe
+  * Unfall(Missgeschick)
+  * Schaden
+  * Gefahr
+  * Gefahrenwahrscheinlichkeit
+  * Schweregrad der Gefahr
+  * Risiko
 * Umgang mit Gefahren
   1. Vermeidung
   2. Erkennung und Beseitigung
@@ -81,6 +90,50 @@ Rafael Berger
 
 ---
 
+## Schritt 1: Gefährdungsermittlung
+
+* Identifikation von Gefahren
+* Ergebnisse im Gefahrenkataster dokumentiert
+* Gefahrenkataster ist ein wichtiges Rechtsdokument
+
+---
+
+## Schritt 2: Gefährdungsbeurteilung
+
+* Verschiedene Kategorien
+  1. Nicht tolerierbar
+  2. So gering wie vernünftigerweise praktikabel
+  3. Akzeptabel
+
+![Risikodreieck](./media/Risikodreieck.png)
+
+---
+
+## Schritt 3: Gefahrenanalyse
+
+* Zwei verschiedene Ansätze
+  * Deduktive Top-down-Technik
+  * Induktive Bottom-up-Technik
+* Häufigste Technik ist die Fehlerbaumanalyse
+
+---
+
+## Schritt 3: Gefahrenanalyse
+
+* Beispiel Fehlerbaumanalyse:
+
+![Risikodreieck](./media/Beispiel_Fehlerbaum.png)
+
+---
+
+## Schritt 4: Risikominderung
+
+* Vermeidung von Gefahren
+* Gefahrenerkennung und -beseitigung
+* Schadensbegrenzung
+
+---
+
 ## Sicherheitstechnische Prozesse
 
 * Notwendigkeit eines Nachweises für die Sicherheit eines Systems
@@ -94,7 +147,7 @@ Rafael Berger
 
 * Gewährleistung über Sicherheit des Systems
 * Dokumentation der verantwortlichen Person
-* Kontrolle externen Komponententest
+* Kontrolle von externen Komponenten
 * Prozesssicherung ist wichtig
 * Aktivitäten zur Gewährleistung über Sicherheit des Systems
   1. Entwicklung von Gefahrenerfassung- und Überwachungssysteme
@@ -108,9 +161,9 @@ Rafael Berger
 
 ### Allgemein
 
-* Dienen mathematische Analyse der Spezifikation
-* Hohe Bedarf an Zusicherung in sicherheitskritischen Systemen
-* Systemtest sind teuer
+* Dienen zur mathematische Analyse der Spezifikation
+* Hoher Bedarf an Zusicherung in sicherheitskritischen Systemen
+* Systemtests sind teuer
 
 ---
 
@@ -119,7 +172,7 @@ Rafael Berger
 ### Vorteile
 
 * Erfordert detaillierte Analyse der Anforderungen
-* Erkennung von möglichen Deadlock
+* Erkennung von möglichen Deadlocks
 
 ### Nachteile
 
@@ -149,6 +202,17 @@ Rafael Berger
 
 ---
 
+## Automatisierte statische Programmanalyse
+
+* Überprüfende Fehlerklassen
+  1. Datenfehler
+  2. Steuerungsfehler
+  3. Ein-/Ausgangsfehler
+  4. Schnittstellenfehler
+  5. Speicherverwaltungsfehler
+
+---
+
 ## Sicherheitsnachweis
 
 * Externe Regulierungsbehörden können sicherheitskritische Systeme prüfen
@@ -163,6 +227,12 @@ Rafael Berger
   8. QA Prozess
   9. Änderungsmanagement
   10. Zugehörige Sicherheitsnachweise
+
+---
+
+## Quellen
+
+* Ian Sommerville, Software Engineering, 10. Aufl., Kapitel 12 339-372
 
 
     </textarea>

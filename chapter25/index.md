@@ -2,9 +2,11 @@
 
 **Autor:** Timo Wortmann
 
+Sofern nicht anders gekennzeichnet stammen alle folgenden Informationen und Abbildungen aus dem Buch "Software Engineering (10th ed.)" von Ian Sommerville [[1]](#ref1).
+
 ## Einleitung zum Konfigurationsmanagement
 
-Ein Software System verändetr sich mit jedem Bugfixes und neuem Hard- oder Softwareversionsstand. Durch die Änderungen an dem System entsteht eine Reihe an Versionen, welche verwaltet werden müssen. 
+Ein Software System verändert sich mit jedem Bugfixes und neuem Hard- oder Softwareversionsstand. Durch die Änderungen an dem System entsteht eine Reihe an Versionen, welche verwaltet werden müssen. 
 Das Konfigurationsmanagement übernimmt das Management von Richlinien, Prozessen und Werkzeugen für das Verändern von Software Systemen. 
 
 Ohne Konfigurationsmanagement kann es zur Modifizierung der falschen Version, dem Ausrollen falscher Software oder zum Vergessen vom Speicherort bestimmter Komponenten.
@@ -59,7 +61,7 @@ Die Terminologie nach Sommerville folgt nach der hier aufgeführten Tabelle (alp
 
 ## Version Management
 
-Versionsmanagement bechreibt den Prozess der Versionierung von Software Komponenten und deren Nutzung in Systemen. Ein weiterer Bestandteil ist di Sicherstellung, dass sich Änderungen unterschiedlicher Entwickler nicht gegeneinander stören. In dem Prozess werden Baselines und Codelines verwaltet.
+Versionsmanagement bechreibt den Prozess der Versionierung von Software Komponenten und deren Nutzung in Systemen. Ein weiterer Bestandteil ist die Sicherstellung, dass sich Änderungen unterschiedlicher Entwickler nicht gegeneinander stören. In dem Prozess werden Baselines und Codelines verwaltet.
 
 ![25.4 Codelines und Baselines](assets/25.4-Codelines_and_baselines.png)
 
@@ -99,7 +101,7 @@ Die Nutzung von Versionskontrollsystemen bietet folgende Vorteile:
 
 Bei der Entwicklung von Open Source Projekten ist die Verwendung von verteilten Versionskontrollsystemen notwendig. Durch die Existenz eines zentralen Projektrepositories können die Entwickler das Repository clonen, Änderungen daran vornehmen und danach eine Anfrage an das Projektrepository stellen, die Änderungen zu übernehmen. Die Änderungen können dann durch eine befugte Person des Open Source Projekts freigegeben werden.
 
-### Branching un Merging
+### Branching und Merging
 
 Die Entwicklung des Software Systems erfolgt nicht nur in einer Codeline, sondern es können verschiedene Codelines durch **Branching** aufgespalten werden und unabhängig voneinander entwickelt werden. Bei einer Zusammenführung zweier unterschiedlicher Codelines werden diese durch **Merging** zusammengeführt.
 
@@ -169,3 +171,35 @@ Bei weit verbreiteter Software kommen die Change Requests meist nicht direkt von
 Eine gute Möglichkeit, um Änderungen an Quellcode festzuhalten, ist es, eine Kofzeile mit der Änderungshistorie in der Datei zu pflegen. Alternativ kann auch die Änderungshistorie des Versionskontrollsystems dazu verwendet werden.
 
 ## Release Management
+
+Das Release Management beschäftigt sich mit der Veröffentlichung von Software für Endnutzer. Ein Release ist eine für Endnutzer bereitgestellte Version eines Systems. Es gibt Major und Minor Releases. Major Releases beinhalten große Funktionsänderungen (z.B. Windows 8 auf 10). Minor Releases enthalten Bugfixes und kleine Funktionsänderungen. Für Major Releases muss der Nutzer oftmals neu bezahlen, für Minor Releases nicht.
+
+Zu einem Release eines Systems gehört nicht nur eine ausführbare Datei, sondern auch:
+
+- Konfigurationsdateien
+- Dateien mit zusätzlichen Daten, z.B. Übersetzungen in andere Sprachen
+- Installationsprogramme
+- Dokumentation (elektronisch und auf Papier)
+- Verpackung und Werbung des Produkts
+
+Bei der Veröffentlichung spezieller Software für einzelne Kunden werden im Zusammenhang mit dem Konsigurationsmanagement Informationen über die jeweiligen Versionen der Kunden dokumentiert. So kann es auch vorkommen, dass ältere Versionen des Systems noch neue Releases erhalten, wenn sie noch von bestimmten Kunden verwendet werden. Dazu sollten auch Daten wie das verwendete Betriebssystem, Bibliotheken, Compiler und Buil Tools in der jeweiligen Version dokumentiert werden.
+
+### Zeitpunkt der Veröffentlichung
+
+Der Zeitpunkt der Veröffentlichung muss bedacht werden, da sont Kunden auf andere Produkte wechseln oder das Produkt Marktanteile verlieren kann. Folgende Faktoren haben einen Einfluss auf den Zeitpunkt der Veröffentlichung:
+
+- **Konkurrenz:** Bei Massensoftware ist es manchmal nötigt eine neue Version zu veröffentlichen, um mit den konkurrierenden Produkten mitzuhalten
+- **Marketing:** Marketing eines Produkts enthält oftmals versprochene Funktionen und ein Veröffentlichungsdatum, wann die Funktionen nutzbar sein sollen
+- **Änderungen an der Plattform:** Es kann notwendigg sein, dass eine neue Version veröffentlicht werden muss, wenn beispielsweise ein neues Betriebssystem veröffentlich wurde
+- **Technische Qualität:** Bei großflächigen Fehlern am System, welche viele Benutzer betreffen, ist es notwedig, schnell eine neue Version zu veröffentlichen, in der die Fehler behoben werden
+
+### Updaten von Releases
+
+Bei der Veröffentlichung neuer Versionen können Nutzer ein Update machen, wodurch sie von einer alten Version auf das neue Release wechseln. Dabei werden bei laufenden Systemen manchmal Änderungen vorgenommen, die auf älteren Versionen aufbauen, z.B. das Hinzufügen einer neuen Tabelle in Version 1.1 und die Ergänzung der Tabelle in Version 1.2. Dabei ist nicht garantiert, dass jeder Kunde von der letzen aktuellen Version upgradet. Beispielsweise könnte Version 1.1 vom Kunden übersprungen werden. Dabei muss durch die Entwickler sichergestellt werden, dass ein System trotz aufeinander aufbauender Änderungen nach einem beliebigen Versionsupdate noch funktioniert.
+
+Eine Möglichkeit, Update-Konflikte zu umgehen ist die Bereitstellung der Software als Software as a Service (SaaS), bei der die Installation und Updates durch den Hersteller durchgeführt werden. Der Kunde verwendet nur das Endprodukt.
+
+
+## Referenzen
+
+<span id="ref1">[1]: Sommerville, Ian (2015). Software Engineering (10th. ed.), 730-756.

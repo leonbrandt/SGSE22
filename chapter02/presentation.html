@@ -36,223 +36,214 @@ Artem Shipilov
 ---
 
 ## Agenda
-  <br><br><br>
-* Ziele
-* Einführung
-* Software-Prozessmodelle
-* 
+  <br>
+- Ziele
+- Einführung
+- Software-Prozessmodelle
+ - Das Wasserfallmodell
+ - Inkrementelle Entwicklung
+ - Integration und Konfiguration
+- Prozessaktivitäten
+ - Softwarespezifikation 
+ - Softwaredesign und Implementierung
+ - Softwarevalidierung      
+ - Software evolution
+- Umgang mit Veränderungen
+ - Prototyping
+ - Inkrementelle Lieferung
+- Prozessverbesserung      
       
 ---
       
 ## Ziele:
 <br>
-* die Konzepte von Softwareprozessen und Softwareprozessmodellen verstehen;
-* die Einführung der drei allgemeinen Software-Prozessmodelle und wann sie verwendet werden können;
-* die grundlegenden Prozessaktivitäten des Software Requirements Engineering, der Softwareentwicklung, des Testens und der Evolution kennen;
-verstehen, warum Prozesse organisiert werden sollten, um mit Änderungen in den Softwareanforderungen und -designs fertig zu werden;
-* den Begriff der Softwareprozessverbesserung und die Faktoren verstehen, die die Softwareprozessqualität beeinflussen.
+* die **Konzepte von Softwareprozessen** und -modellen verstehen;
+* wann **3 allgemeinen Software-Prozessmodelle** verwendet werden können;
+* die **grundlegenden Prozessaktivitäten** kennen;
+* verstehen, **warum** Prozesse **organisiert** werden sollten;
+* den Begriff der **Softwareprozessverbesserung** und die Faktoren verstehen.
 
 ---
       
 ## Einführung    
 
-Software Process - Menge von Aktivitäten zur Softwareproduktion
-<br>
-die verschiedenen Software Systeme zu unterschiedlich sind <br>
+**Software Process** - Menge von Aktivitäten --> Softwareproduktion
+
+die Software Systeme - zu unterschiedlich <br>
 -> Es gibt keine allgemeingültige Software Engineering Methode <br>
 --> Es gibt keinen ideallen Software Prozess    
       
 ---    
-Trotzdem gibt es grundlegende Abläufe, die alle Softwareprozesse haben:
+grundlegende Abläufe, die alle Softwareprozesse haben:
 <br>
 * **1. Softwarespezifikation.** - Anforderungen aufnehmen.
 * **2. Softwareentwicklung.** - Anforderungen umsetzen.
-* **3. Softwarevalidierung.** - Überprüfen, ob der Kund zufrieden ist.
-* **4. Weiterentwicklung von Software.** Mit den sich veränderten Bedürfnissen des Kunden gerecht werden.
+* **3. Softwarevalidierung.** - Überprüfen, ob der Kunde zufrieden ist.
+* **4. Weiterentwicklung von Software.** Veränderte Bedürfnisse des Kunden --> Arbeit.
       
----     
-Aktivität setzt sich zusammen aus:
-      <br>
+---
+      
+## Einführung      
+      
+Aktivität setzt sich aus:
 1. **Produkte oder Leistungen** - die Ergebnisse einer Prozessaktivität.
-2. **Rollen** welche die Verantwortlickeit festlegen.
-3. **Vor- und Nachbedingungen** - sind die Bedingungen, die erfüllt sein müssen, bevor und nachdem die Prozesstätigkeit durchgeführt wird. 
-      (bspw. eine Vorbedingung - die Zustimmung des Kunden zu allen Anforderungen; <br>
-      Nachbedingung - eine Validierung der UML-Modelle, die die Architektur beschreiben.)
+2. **Rollen** - Verantwortlickeit festlegen.
+3. **Vor- und Nachbedingungen** - sind die Bedingungen vor und nach der Prozesstätigkeit. <br> 
+      (z.b. Vorbedingung - Zustimmung von Anforderungen; <br>
+      Nachbedingung - Validierung der UML-Modelle.)
       
----   
-
-## Einführung  
-      
-**Abhängig von der zu entwickelnden Software können unterschiedliche Prozesse geeignet sein:**
+**unterschiedliche Prozesstypen:**
 - Sicherheitskritische Systeme
  - Stark Strukturierter Prozess nötig
--	Geschäftsanwendungen mit hoher Frequenz bei neuen/veränderten Anforderungen
+-	Anwendungen mit hoher Frequenz bei neuen Anforderungen
  -	flexibler, agiler Prozess
 - Bei großen Systemen 
  - ein Gleichgewicht zwischen geplanter und agiler Entwicklung
-<br>
-Unternehmen können der Software Prozess durch die Nutzung moderner Software Engineering Methodik optimieren.
+
+Unternehmen können der Software Prozess weiter optimieren.
       
 ---
       
 ## 1. Software-Prozessmodelle
 <br><br>
-Allgemeine Prozessmodelle (abstrakte Beschreibungen, ohne Details über einzelne Aktivitäten im Prozess): <br>
--	Wasserfallmodell
- -Darstellung aller Prozessaktivitäten als seperate Phasen
--	Inkrementelles Modell
- - Verknüpfung aller Aktivitäten und inkrementelle Entwicklung der Software (Reihe von Software Versionen, welche aufeinander aufbauen)
--	Integration & Configuration
- -	Entwicklung von wiederverwendbaren, konfigurierbaren Softwaremodulen
- -	Fokus auf Konfigurierung der Module in der neuen Umgebung
+Prozessmodelle (abstrakte Beschreibungen, ohne Details über einzelne Aktivitäten im Prozess):
+-	**Wasserfallmodell**
+ - Prozessaktivitäten - als seperate Phasen
+-	**Inkrementelles Modell**
+ - Verknüpfung aller Aktivitäten und inkrementelle Entwicklung
+-	**Integration & Configuration**
+ -	Entwicklung von wiederverwendbaren Softwaremodulen
       
 ---
       
-## Das Wasserfallmodell - Einführung
+## 1.1 Das Wasserfallmodell
       
 *	Abgeleitet aus einem Entwiclungsprozessen für große militärische Projekte
-*	Prozess als stufenweise abfolge von Aktivitäten
+*	Prozess als **stufenweise** Abfolge von Aktivitäten
 *	Plan-driven Prozess
-* Jede Stufe repräsentiert eine Aktivität im Entwicklungsprozess     
+* Jede Stufe - eine Aktivität     
 <div style="margin-top:60px;">
   <img style="width:100%;" src="img/01.png"/>
 </div> 
 
 ---
       
-## Das Wasserfallmodell - Beschreibung     
+## 1.1 Das Wasserfallmodell   
 
 -	Anforderungsdefinition:
  -	grundliegende Anforderungen --> Systemspezifikation
 -	System- und Softwaredesign:
- -	Softwarespezifikation --> Softwareentwurf (grundlegende Bestandteile und Beziehungen)
+ -	Softwarespezifikation --> Softwareentwurf (Bestandteile und Beziehungen)
 -	Implementierung und Unit-Tests:
  -	Softwareentwurf --> eine Menge an Programmen
- -	Test der Software auf Unit Ebene --> funktionsfähige Softwaremodulen
+ -	Test auf Unit Ebene --> funktionsfähige Softwaremodulen
 -	Integration- und Systemtest:
- -	Test des Gesamtsystems (bestehend aus den Softwaremodulen) --> betriebsbereite Software
+ -	Test des Gesamtsystems --> betriebsbereite Software
 -	Betrieb und Instandhaltung:
- -	produktiver Betrieb
- -	Behebung von Fehlern
- -	Weiterentwicklung auf Basis<br> neuer Anforderungen
+ -	Betrieb/Behebung von Fehlern/Weiterentwicklung
 
-<div style="position:absolute; bottom:30px; right:20px; width:50%;">
+<div style="width:70%; margin:auto;">
   <img style="width:100%;" src="img/01.png"/>
 </div>  
 <br>
       
 ---
       
-## Das Wasserfallmodell - Beschreibung 
+## 1.1 Das Wasserfallmodell 
       
-1. Das Ergebnis jeder Stufe --> genehmigte Dokumente.
-2. Die nächste Phase beginnt nicht, bevor die vorherige abgeschlossen wurde.
-3. Hohe Herstellungskosten --> teuere Iterationen von Entwicklungsaktivitäten.     
-4. Sinnvoll für die Hardwareentwicklung mit der hohe Herstellungskosten. <br>
-      
-Im Vergleich zu Hardwareentwicklung, wo Phasen klar abgegrenzt werden können, überschneiden sich bei Softwareentwicklung die Phasen. <br>
-(Bspw. werden bei der Implementierung möglicherweise Fehler im Softwareentwurf gefunden)
-      
----
-      
-## Das Wasserfallmodell - Beschreibung       
+1. Ergebnis jeder Stufe --> genehmigte Dokumente.
+2. Die nächste Phase **beginnt nicht, bevor** die vorherige **abgeschlossen** wurde.
+3. Hohe Herstellungskosten --> teuere Entwicklungsaktivität.     
+4. Sinnvoll für die Hardwareentwicklung mit hohen Herstellungskosten. <br>      
 
-Veränderungen an den Anforderungen --> erheblichen Verlangsamung des Prozesses. <br>      
-Kunden/Entwickler können die Softwarespezifikation einfrieren --> um weitere Änderungen zu verhindern.
-Das bedeutet, dass:
-* Probleme später gelöst/ignoriert/programmiert werden --> schlecht strukturierte Systemen
-* kann dazu führen, dass das System nicht das tut, was der Benutzer wünscht. 
+Veränderungen der Anforderungen --> Verlangsamung des Prozesses. <br>      
+Kunden/Entwickler können die **Spezifikation einfrieren** --> weitere Änderungen verhindern.
+* Probleme später gelöst/ignoriert/programmiert werden --> (möglich) schlecht strukturierte Systemen
+* (möglich) das System die Benutzerwünsche nicht erfüllt. 
 
 die Softwarewartung kann zur Folge haben:
-- dass einige oder alle der vorherigen Prozessphasen wiederholt werden müssen.
- - Daher die Anforderungen sollen gut durchdacht sein.   
+- einige/alle vorherigen Phasen wiederholen --> die Anforderungen - gut durchdenken.   
       
 ---
 
-## Das Wasserfallmodell - Anwendung      
+## 1.1 Das Wasserfallmodell - Anwendung      
 
-Aufgrund der Notwendigkeit, das System bei Änderungen frühzeitig zu verfeinern,
-      ist das Wasserfallmodell nur für einige Arten von Systemen geeignet:
-- Eingebettete Systeme (Software interagiert mit Hardwaresystemen).      
-- Kritische Systeme. (umfängliche Sicherheitsanalyse der Softwarespezifikation/Softwareentwurfs nötig ist, 
-      erst danach entwickelt werden).     
-- Große Softwaresysteme, die Teil umfassenderer technischer Systeme sind, die von mehreren Partnerunternehmen entwickelt wurden. <br>
-      Hardware in Systemen kann nach einem ähnlichen Modell entworfen werden. <br>
-      -> gemeinsames Modell für Hardware und Software. <br>
-      --> eine unabhängige Entwicklung der verschiedenen Subsysteme möglich. <br>
-      
----
-      
-## Das Wasserfallmodell - Kontraindikationen
-      
-Das Wasserfallmodell ist kein geeignetes Vorgehensmodell wenn:
-- eine informelle Teamkommunikation möglich ist --> die Softwareanforderungen schnell ändern sich. 
-- Systementwicklung mit kleinem Budget
+Das System frühzeitig verfeinern --> das Wasserfallmodell ist geeignet:
+- Eingebettete Systeme 
+ - Software interagiert mit Hardware      
+- Kritische Systeme
+ - Sicherheitsanalyse der Spezifikation/Entwurfs, danach Entwickelung     
+- Große Softwaresysteme - Teil der Systeme - die von mehreren Partnern
+ - Hardware - nach ähnlichem Modell entwerfen
+ - --> gemeinsames Modell für Hardware und Software. <br>
+ - --> (möglich) unabhängige Entwicklung der Subsysteme
+            
+Das Wasserfallmodell ist nicht geeignet:
+- informelle Teamkommunikation ist möglich -->wenn die Anforderungen sich schnell ändern. 
     
-**Hohe Kosten für die Entwicklung** einer formalen Spezifikation --> Entwicklungsmodell **selten verwendet.**
+**Hohe Kosten für die Entwicklung** einer Spezifikation --> **selten verwendet.**
       
 ---
       
-## Inkrementelle Entwicklung      
+## 1.2 Inkrementelle Entwicklung      
       
 Software wird über mehrere Versionen entwickelt.
 -	Erste Implementierung --> Feedback des Kunden --> Weiterentwicklung
-- Aktivitäten des Prozess - eng verknüpft
--	schneller Austausch zwischen den Aktivitäten ist daher möglich
--	heutzutage Häufigster Ansatz
+- Aktivitäten - eng verknüpft
+-	schneller Austausch zwischen den Aktivitäten
+-	heutzutage häufigster Ansatz
       
-<div style="margin-top:60px;">
+<div style="margin-top:20px;">
   <img style="width:100%;" src="img/02.png"/>
 </div>       
       
 ---
       
-## Inkrementelle Entwicklung - Vorteile      
+## 1.2 Inkrementelle Entwicklung - Vorteile      
       
 -	Umsetzung: Plan-driven/Agil/Kombination
  -	Plan-driven: Festlegung aller zu lieferenden Inkremente
- -	Agil: erste Inkremente festlegen --> dynamisch auf Anforderungen des Kunden reagieren     
--	"Natürlicher" Weg des Problem lösen
- -	Im Alltag erarbeitende Lösung eines Problems (nicht im vorhinein)
+ -	Agil: erste Inkremente festlegen --> dynamisch auf Anforderungen reagieren     
+-	"Natürlicher" Weg das Problem zu lösen
+ -	Im Alltag erarbeitende Lösung (nicht im vorhinein)
  -  Lösung in Schritten
--	Geringere Kosten für Änderung an Anforderungen (weniger Aufwand für Analyse und Dokumentation)
--	Feedback ist leichter einzuholen (der Kunde regelmäßig Inkremente sieht)
--	vorzeitige Lieferung und Bereitstellung ist möglich, auch wenn nicht alle Funktionen enthalten sind
+-	Geringere Kosten für Änderung an Anforderungen
+ - weniger Aufwand für Analyse und Dokumentation
+-	Feedback ist leichter einzuholen
+ - der Kunde regelmäßig Inkremente sieht
+-	vorzeitige Bereitstellung möglich - wenn nicht alle Funktionen enthalten
       
 ---
      
-## Inkrementelle Entwicklung - Nachteile 
+## 1.2 Inkrementelle Entwicklung - Nachteile 
       
-aus Sicht des Management:
--	Systeme schnell entwickelt werden <br>
+aus Sicht des Managements:
+-	Systeme können schnell entwickelt werden <br>
  -> ist es nicht kosteneffektiv, jede Version zu dokumentieren <br>
- --> Der Entwicklungsprozess ist nicht sichtbar
+ --> **Der Entwicklungsprozess ist nicht sichtbar**
 - Die Systeme sind oft schlecht strukturiert. <br>
- Softwareänderungen - zunehmend schwerer und teurer. <br> 
- Code - schlechter. <br>
- Bei großen Projekte --> einheitliche Architektur & stabiler Entwicklungsrahmen.
-      
+ Softwareänderungen - **zunehmend schwerer und teurer.** <br> 
+ Code - schlechter.      
 - spezielle Werkzeuge und Techniken <br>
   -> schnelle Entwicklung <br>
   --> Inkompatibilität mit anderen Werkzeugen oder Techniken <br> 
-  ---> wenige Leute wissen, wie man mit ihnen umgeht
+  ---> **wenige Leute wissen, wie man mit ihnen umgeht**
 -	Feedback von Kunden <br> 
-   -> Experimentieren mit neuer Software <br>
-   --> Störung von normalen Geschäftsprozessen
+   -> Experimenten mit neuer Software <br>
+   --> **Störung von normalen Geschäftsprozessen**
       
 ---
       
-## Integration und Konfiguration   
+## 1.3 Integration und Konfiguration   
       
-Wiederverwendung wird oft benutzt der Softwareentwicklung.
+Wiederverwendung wird oft benutzt.
       
 informelle Wiederverwendung --> seit Jahr 2000 weit verbreitet --> offizieller Softwareprozess
       
-Drei Arten von wiederverwendete Softwarekomponenten:
-1. **Eigenständige Anwendungssysteme,** - Verwendung in einer bestimmten Umgebung. <br>
-      Allzwecksysteme, müssen jedoch angepasst werden.
-2. **Sammlungen von Objekten,** (Komponente/Paket) - werden in einem Komponenten-Framework integriert.
-3. **Webdienste** (gemäß Dienststandards) - für den Fernaufruf über das Internet    
+Wiederverwendete Softwarekomponenten:
+1. **Eigenständige Anwendungssysteme** - für bestimmte Umgebung.
+2. **Sammlungen von Objekten** (Komponente) - für Komponenten-Framework.
+3. **Webdienste** - für den Fernaufruf über das Internet    
       
 <div style="margin-top:20px;">
   <img style="width:100%;" src="img/03.png"/>
@@ -260,14 +251,15 @@ Drei Arten von wiederverwendete Softwarekomponenten:
       
 ---
       
-## Integration und Konfiguration - Phasen
-      
-1. **Anforderungsspezifikation** - Aufnahme gründlegender Anforderungen (ohne Details)
+## 1.3 Integration und Konfiguration
+
+Phasen:      
+1. **Anforderungsspezifikation** - Aufnahme der Anforderungen (ohne Details)
 2.	**Software-Erkennung und -Evaluierung** <br>
-  Suche nach Komponenten, welche den Anforderungen genügen <br>
-  Systeme bewerten, beurteilen --> mit die Anforderungen geeignet sind.
-3.	**Verfeinerung der Anforderungen** - Berücksichtigung der gefundenen Komponente <br>
-  Wenn nichts gefunden wurde --> Rücksprung zur Anforderungsspezifikation um mögliche andere Lösungen zu suchen.
+  Suche nach Komponenten, die den Anforderungen genügen <br>
+  Systeme bewerten, beurteilen --> mit den die Anforderungen geeignet sind.
+3.	**Verfeinerung der Anforderungen** unter Berücksichtigung der gefundenen Komponente <br>
+  Wenn nichts gefunden wurde --> Rücksprung zur Anforderungsspezifikation, andere Lösungen suchen.
 4.	**Konfiguration des Anwenungssystems** - sofern die Anforderungen sich mit dem Standardsystem umsetzen lässt
 5.	**Komponentenanpassung und Integration** - wenn es kein Standartsystem gibt --> einzelne Komponente modifizieren und integrieren.
 
@@ -277,57 +269,51 @@ Drei Arten von wiederverwendete Softwarekomponenten:
       
 ---
       
-## Integration und Konfiguration - Zusammenfassung      
+## 1.3 Integration und Konfiguration - Zusammenfassung      
       
 -	Erheblicher Vorteil: <br>
-1. Umfang der zu entwickelnden Software wird stark reduziert
-2. 	geringere Kosten und Zeit
+    1. Größe der entwickelnden Software - stark reduziert
+    2. geringere Kosten/Zeit
       
 -	Nachteil
-1.	Kompromisse bei der Anforderungsanalyse. Ergebnis möglicherweise - nicht das was der Kunde möchte.
-2.	Kontrolle über Gesamtsystem schwierig (Harmonie verschiedener Komponenten Versionen untereinander).
+    1.	Kompromisse bei der Anforderungsanalyse. Ergebnis (möglich) - nicht der Kundenwunsch
+    2.	Kontrolle über Gesamtsystem - schwierig (Harmonie zwischen Komponenten verschiedener Versionen).
       
 ---
       
 ## 2. Prozessaktivitäten
       
-Prozess - eine verschachtelte Abfolge von technischen, kollaborativen und Managementaktivitäten.
-      
-Gesamtziel: Spezifikation -> Entwurf -> Implementierung -> Test
+Prozess - eine Abfolge von technischen, kollaborativen und Managementaktivitäten.
       
 Grundlegende Prozessaktivitäten:
       1. Spezifikation
       2. Entwicklung
       3. Validierung
       4. Evolution
-      
-Wie die Aktivitäten durchgeführt werden, hängt ab von:
+   
+Durchführung der Aktivitäten hängt von:
       1.	Art der entwickelnden Software
       2.	Erfahrung/Kompetenz der Entwickler
       3.	Art der Organisation
       
 ---
       
-## Softwarespezifikation (Requirements Engineering)
+## 2.1 Softwarespezifikation (Requirements Engineering)
 
-- Definition: <br>
-1. der Prozess des Verstehens, welche Funktionen benötigt werden.      
-2. Kritische Phase --> Fehler bei der Aktivität sind besonders teuer <br>
-      --> können sich in den folgenden Phase vergrößern.
-      
+Das ist der Prozess des Verstehens, welche Funktionen benötigt werden.      
+   
 - Vor der Anforderungsanalyse: <br>
-Machbarkeitstudie/Durchführbarkeitsstudie -	kurze Studien ob es einen Bedarf/Markt gibt für das Produkt und finanziell/zeitlich realistisch.
+Machbarkeitstudie -	kurze Studien ob es einen Bedarf/Markt gibt und das finanziell/zeitlich realistisch ist.
 
-- Ziel: <br>
-Vereinbarung eines Anforderungsdokument (Systemspezifikation/Kundenanforderungen)
+- **Ziel:** Vereinbarung eines Anforderungsdokuments (Systemspezifikation/Kundenanforderungen)
 
 - Zwei Ebenen der	Anforderungen:
 1. für End-User/Kunde: high level Anforderungen
-2. für Entwickler: mehr detalierte System spezifische Anforderungen
+2. für Entwickler: mehr detalierte System-spezifische Anforderungen
       
 ---
       
-## Softwarespezifikation      
+## 2.1 Softwarespezifikation      
      
 3 Hauptaktivitäten im Requirements Engineering:
       
@@ -335,60 +321,55 @@ Vereinbarung eines Anforderungsdokument (Systemspezifikation/Kundenanforderungen
   <img style="width:100%;" src="img/04.png"/>
 </div> 
       
--	Anforderungserhebung und Analyse
+-	**Anforderungserhebung und Analyse**
  -	Aufnahme von Anforderungen
  -	Beobachten von bestehenden Systemen
  -	Gespräche mit Nutzern
  -	Aufgabenanalyse
  -	Entwicklung von Prototypen (möglich)
--	Anforderungsspezifikation
+-	**Anforderungsspezifikation**
  -	Gesammelte Information in einem Dokument
  -	Formulierung von Anforderungen auf End-User Level (Kunde) und Systemlevel (Entwickler)
--	Anforderungsvalidierung
- -	Überprüfung der aufgenommenen Anforderungen hinsichtlich Umsetzbarkeit und vollständigkeit
- -	Aktivität soll Qualität sicherstellen --> Fehler finden
+-	**Anforderungsvalidierung**
+ -	Überprüfung der Anforderungen hinsichtlich Umsetzbarkeit/Vollständigkeit
+ -	Qualität sicherstellen --> Fehler finden
       
-Aktivitäten (verschachtelt) laufen während der Analyse weiter <br> 
-      Anforderungen mit der Zeit --> weiter verfeinert
+Aktivitäten laufen während der Analyse weiter, Anforderungen --> weiter verfeinert
       
 ---
       
-## Softwaredesign und Implementierung      
+## 2.2 Softwaredesign und Implementierung      
      
 **Ziel:** eine ausführbare Software zu liefern.
       
-Abhängig von Prozess Modell können die Aktivitäten getrennt vorhanden sein
-      
-Softwareentwurf - Beschreibung der Struktur von:
+**Softwareentwurf** - Beschreibung der Struktur von:
 - implementierenden Software
 - der verwendeten Datenmodelle und -Strukturen
 - (selten) der Schnittstellen zwischen Systemkomponenten/Algorithmen
       
-Infos über die Software Plattform (wo die Software ausgeführt wird) - wichtiger Teil für den Designprozess,
-da muss man wissen, wie man die Prozesse integrieren soll. --> Plattformspezifikation/Entwurfsprozess.
-
-Die Aktivitäten im Designprozess hängen von entwickelndem System.      
+Infos über die Plattform --> wie man die Prozesse integrieren soll <br>
+      --> Plattformspezifikation/Entwurfsprozess.     
       
 ---
       
-## Softwaredesign und Implementierung
-<br><br><br>     
-Aktivitäten (Teil des Entwurfsprozesses):
+## 2.2 Softwaredesign und Implementierung
       
-1. Architekturenentwurf: <br>
+<br>   
+Design Aktivitäten:      
+1. **Architekturenentwurf:** <br>
 -Gesamtstruktur des Systems <br>
 -Komponenten, ihre Beziehungen/Verteilung.
-2. Datenbankdesign: <br>
--Systemdatenstrukturen und wie die darstellen. <br>
+2. **Datenbankdesign:** <br>
+-Systemdatenstrukturen und was die darstellen. <br>
 (Datenbank wiederverwenden/neue erstellen)
-3. Schnittstellendesign: <br>
+3. **Schnittstellendesign:** <br>
 Schnittstellen zwischen Systemkomponenten. <br>
 -Schnittstellenspezifikation. <br>
--die Komponenten separat entwerfen <br>
-& entwickeln.
-4. wiederverwendbaren Komponenten. <br>
--wenn es keine gibt --> neue Softwarekomponente entwerfen. <br>
--einfache Komponentenbeschreibung / detaillierte Implementierungsdetails (Liste mit Änderungen / Designmodell mit UML Druck)      
+-Komponenten separat entwickeln.
+4. **wiederverwendbaren Komponenten.** <br>
+-wenn keine --> neue Komponente entwerfen. <br>
+-Komponentenbeschreibung/Implementierungsdetails <br> 
+(Liste mit Änderungen / Designmodell mit UML Druck)      
       
 <div style="position:absolute; top:120px; right:0px; width:45%;">
   <img style="width:100%;" src="img/05.2.png"/>
@@ -396,36 +377,22 @@ Schnittstellen zwischen Systemkomponenten. <br>
       
 ---
       
-## Softwaredesign und Implementierung      
-      
-Aktivitäten --> Entwurfsergebnissen.
-
-- Bei modellgetriebener Ansatz - die Entwurfsergebnisse in Entwurfsdiagrammen aufgeführt. 
-- Bei agile Entwicklungsmethoden - die Ergebnisse keine separaten Spezifikationsdokumente haben (im Code des Programms)
-
-Systemdesign --> Entwicklung <br>
--> Tests des Codes  -> Programmfehler (Bugs) -> Debuggen
-
-Fehlerprüfung und Fehlerbeseitigung - unterschiedliche Prozesse.      
-      
----
-      
-## Softwarevalidierung - Phasen
+## 2.3 Softwarevalidierung - Phasen
       
 Validierungstechnik - Programmtests (unter Verwendung der Testdaten).  <br>
-Überprüfungsprozesse sind möglich (Inspektionen und Überprüfungen in jeder Phase) 
+Überprüfungsprozesse sind möglich (in jeder Phase) 
 
 - Meiste Zeit --> Test von Programmen.           
 - Integriertes System wird auch getestet.
-- Benutzertest heißt Beta-Test --> Benutzerkommentare
+- Benutzertest - Beta-Test --> Benutzerkommentare
     
 Die Phasen des Testprozesses:
-1. **Komponententests.** -  jede Komponente unabhängig von anderen getestet. <br>
+1. **Komponententests** -  jede Komponente unabhängig getestet. <br>
 Bespiel für ein Komponent - Funktionen oder Klassen. 
-2. **Systemtest.** Komponenten --> Gesamtsystem. <br>
-(nicth)funktionale Anforderungen erfüllen. <br>
+2. **Systemtest** Komponenten --> Gesamtsystem. <br>
+(nicht)funktionale Anforderungen erfüllen. <br>
 Bei großen Systemen - mehrstufiger Prozess (Test von Subkomponenten).
-3. **Kundentests.** - von Systemkunden, mit realen Daten.    
+3. **Kundentests** - von Systemkunden, mit realen Daten.    
    
 <div style="margin-top:20px;">
   <img style="width:80%;" src="img/06.png"/>
@@ -433,14 +400,12 @@ Bei großen Systemen - mehrstufiger Prozess (Test von Subkomponenten).
       
 ---
       
-## Softwarevalidierung  
+## 2.3 Softwarevalidierung  
       
-- Bei einer testgetriebener Entwicklung: <br>
-die Tests mit den Anforderungen --> Entwicklung 
-- Bei plangesteuertes Softwareprozess: <br>
-Testplänen (aus der Systemspezifikation) --> Tests
-- In der Abbildung: Testpläne - Verbindung zwischen Test und Entwicklungsaktivitäten (V-Modell). 
-- **V-Modell** - die Software-Validierungsaktivitäten, die jeder Stufe des WasserfallsProzessmodells entsprechen. 
+- **testgetriebene Entwicklung:** Tests --> Entwicklung 
+- **plangesteuerter Softwareprozess:** Testplänen (aus der Spezifikation) --> Tests
+- In der Abbildung: Testpläne - Verbindung zwischen Test und Entwicklungsaktivitäten. 
+- **V-Modell** - die Validierungsaktivitäten, die jeder Stufe des Wasserfallmodells entsprechen. 
 - Beta-Testing ist möglich
       
 <div style="margin-top:20px;">
@@ -449,17 +414,13 @@ Testplänen (aus der Systemspezifikation) --> Tests
       
 ---
       
-## Software evolution
+## 2.4 Software evolution
       
-- viel sinnvoller eine Änderungen an der Software vorzunehmen als an der Systemhardware.
+- viel sinnvoller - Änderungen an der Software (nicht Hardware)
 
-Es gibt der Prozess namens Softwareevolution (Softwarewartung).
+Es gibt ein Prozess - Softwareevolution (Softwarewartung).
 
-- meist wird Softwareevolution als ein zusammenhängendes Prozess angesehen. 
-- Man sollte es aber lieber als ein getrenntes Prozess vorstellen (siehe Abbildung). 
-
-Hier ist die Software - Reaktion auf änderte Anforderungen und Kundenbedürfnisse.
-      
+**In der Abbildung:** die Software - Reaktion auf änderte Anforderungen und Kundenbedürfnisse.     
 <div style="margin-top:20px;">
   <img style="width:100%;" src="img/08.png"/>
 </div>      
@@ -469,54 +430,39 @@ Hier ist die Software - Reaktion auf änderte Anforderungen und Kundenbedürfnis
 ## 3. Umgang mit Veränderungen
 
 Die Änderungen tragen **hohe Kosten** mit sich, weil:
-- Anforderungsanalyse wiederholen (ganz/teilweise)
-- (manchmal) alle Programme ändern --> System neu testen      
+- Anforderungsanalyse sich wiederholt (ganz/teilweise)
+- (manchmal) alle Programme sich ändern --> System neu testen      
 
 Ansätze, um die Kosten der Nacharbeit zu reduzieren:
-1. **Erwartung ändern.** 
-z.b. ein Prototypsystem entwickeln <br> 
---> Kunden die Merkmale des Systems zeigen --> Anforderungen verfeinern.
-2. **Änderungstoleranz.** 
-inkrementelle Form von Entwicklung - die vorgeschlagenen Änderungen in Schritten implementieren. <br>
-(Monolith -> Modulith -> Microservice)
+1. **Erwartung ändern.** z.b. Prototyp entwickeln <br> 
+--> die Merkmale des Systems zeigen --> Anforderungen verfeinern.
+2. **Änderungstoleranz.** Änderungen in Schritten implementieren. <br> 
+      (Monolith -> Modulith -> Microservice)
 
 Möglichkeiten, mit Veränderungen umzugehen:
-1. **System-Prototyping.** - schnelle Entwicklung einer Version des Systems(teils). <br>
--die Anforderungen / die Machbarkeit von Designentscheidungen prüfen.
-2. **Inkrementelle Lieferung.** <br>
-die Systeminkremente --> dem Kunden zur Kommentierung / Experimentieren.
-- Änderungsvermeidung 
-- die vorzeitige Festlegung von Anforderungen für das gesamte System
-- Refactoring - die Struktur und Organisation von Programmen unterstützen      
+1. **System-Prototyping.** - Entwicklung von Prototyp --> die Machbarkeit von Entscheidungen prüfen.
+2. **Inkrementelle Lieferung.** die Systeminkremente --> dem Kunden zur Kommentierung
+- --> Änderungsvermeidung 
+- --> vorzeitige Festlegung von Anforderungen
+- --> Refactoring - Struktur von Programmen unterstützen      
       
 ---
       
-## Prototyping
+## 3.1 Prototyping
       
-**Prototyp** - eine frühe Version eines Softwaresystems, das wird oft bei Konzeption demonstriert. <br>
+**Prototyp** - eine frühe Version eines Softwaresystems. <br>
 --> Designoptionen / mögliche Lösungen
 
-**Ziel:** erforderliche Änderungen vorherzusehen:
-1. Im Requirements-Engineering: Erhebung/Validierung von Systemanforderungen.
-2. Im Systemdesignprozess: Softwarelösungen/Schnittstelle
-
-Im Software Engineering: erst ein/mehrere Prototypen --> ein Softwaresystem <br>
-Auch Designexperimente --> Machbarkeit vorgeschlagenes Designs. <br>
-z.b. Prototyp von Datenbankdesign --> Überprüfung vom Datenzugriff für die Benutzerabfragen --> Benutzerschnittstellen. 
-  
----
+**Ziel:** erforderliche Änderungen vorherzusehen.
+1. **Im Requirements-Engineering:** --> Validierung von Systemanforderungen.
+2. **Im Systemdesignprozess:** --> Softwarelösungen --> Schnittstelle 
       
-## Prototyping
-      
-Die Ziele des Prototyping sollen von Beginn des Prozesses eingeplant werden.      
-      
-Ohne Ziele - schwierig die Funktionen verstehen. 
+- Die Ziele des Prototyping - von Beginn des Prozesses plannen.      
+- Ohne Ziele - schwierig die Funktionen zu verstehen. 
+- **Die nächste Phase:** was im Prototyp einfügen/weglassen --> Kostensenkung
+- **Die letzte Phase:** Evaluierung des Prototyps. 
 
-Die nächste Phase: was in das Prototyp eingefügt/weggelassen soll. --> Kostensenkung
-
-Die letzte Phase: Evaluierung des Prototyps. 
-
-Ein allgemeines Problem: Verwendenung von Prototyp nicht  wie endgültige System.
+**Allgemeines Problem:** Verwendung von Prototyp nicht wie ein endgültiges System.
       
 <div style="margin-top:20px;">
   <img style="width:100%;" src="img/09.png"/>
@@ -524,15 +470,14 @@ Ein allgemeines Problem: Verwendenung von Prototyp nicht  wie endgültige System
       
 ---
       
-## Inkrementelle Lieferung
+## 3.2 Inkrementelle Lieferung
       
-Das ist ein Ansatz zur Softwareentwicklung, bei dem einige der entwickelten Inkremente 
-      an den Kunden geliefert und dort eingesetzt werden.  <br>
--> welche der Services sind dür sie wichtig/unwichtig --> die Lieferinkremente
+- entwickelte Inkremente an den Kunden liefern/einsetzen. <br>
+-> (Un)wichtigkeit der Services --> die Lieferinkremente
 
-die Dienste mit der höchsten Priorität - zuerst
+Dienste mit der **höchsten Priorität - zuerst**
  
-Während der Entwicklung --> (kann) weitere Anforderungsanalyse für spätere Inkremente (nicht zum aktuellen).      
+Während der Entwicklung --> (können) weitere Anforderungsanalyse für spätere Inkremente **(nicht zum aktuellen).**      
       
 <div style="margin-top:20px;">
   <img style="width:100%;" src="img/10.png"/>
@@ -540,7 +485,7 @@ Während der Entwicklung --> (kann) weitere Anforderungsanalyse für spätere In
       
 ---
       
-## Inkrementelle Lieferung - Vorteile   
+## 3.2 Inkrementelle Lieferung - Vorteile   
       
 1. Inkrement fertiggestellt -->
 2. bei dem Kunden installiert -->
@@ -549,68 +494,84 @@ Während der Entwicklung --> (kann) weitere Anforderungsanalyse für spätere In
 5. neue Inkremente --> 
 6. Integrierung mit bestehenden Inkrementen
 
-Vorteile von inkrementellen Lieferung:
+**Vorteile:**
 1. frühen Inkremente - als Prototypen verwenden <br>
 --> Anforderungen für spätere Systemerweiterungen <br>
---> Im Gegensatz zu Prototypen sind Inkremente Teil des realen Systems <br>
---> vollständige System verfügbar --> kein Umlernen
-2. Das erste Inkrement erfüllt wichtigsten Anforderungen der Kunden <br>
--->  sie verwenden die Software sofort
+--> (im Gegensatz zu Prototypen) Inkremente - Teil des realen Systems <br>
+--> vollständiges System verfügbar --> **kein Umlernen**
+2. Das **erste Inkrement** erfüllt wichtigsten Anforderungen der Kunden <br>
+-->  **sofortige Verwendung von Software**
 3. Alle Vorteile der inkrementellen Entwicklung <br>
---> relativ einfach Änderungen zu integrieren
+--> relativ **einfach Änderungen zu integrieren**
 4. Die wichtigsten Systemdienste werden am meisten getestet. <br>
---> weniger wahrscheinlich von Softwarefehler
+--> **weniger wahrscheinlich von Softwarefehler**
       
 ---
       
-## Inkrementelle Lieferung - Nachteile       
+## 3.2 Inkrementelle Lieferung - Nachteile       
       
 1. Problematisch, das **bestehende System durch ein neues ersetzen.** <br>
--Die Benutzer brauchen alle Funktionen des alten Systems <br>
+-Die Benutzer brauchen Funktionen des alten Systems <br>
 -Sie sind nicht bereit das neue System zu testen <br>
--Man soll nicht das alte und das neue System nebeneinander verwenden <br>
+-Verwendung von altem & neuem System nebeneinander <br>
 --> unterschiedliche Datenbanken / Benutzeroberflächen
-2. Schwierig, **gemeinsame Einrichtungen zu identifizieren,** die von allen Inkrementen benötigt werden.
+2. Schwierig, **gemeinsame Einrichtungen zu identifizieren,** die alle Inkrementen brauchen
 3. **Spezifikation & Software werden zusammen entwickelt.** <br>
 --> keine vollständige Systemspezifikation, bis das endgültige Inkrement spezifiziert ist. <br>
 --> erfordert eine neue Vertragsform - für Großkunden/ Regierungsbehörden schwierig      
             
 ---
       
-## Prozessverbesserung
+## 4. Prozessverbesserung
       
 Es gibt eine Nachfrage nach billigerer, besserer Software -  in kürzeren Fristen
 
 Ansätze zur Prozessverbesserung: 
 - **Der Prozessreife Ansatz:**
  -  Verbesserung von Prozess- und Projektmanagement. 
- -  Einführung guter Softwareengineering Praktiken. <br>
+ -  Einführung guter Softwareengineering Praktiken.
+      
 **Ziele:** bessere Produktqualität und Prozessvorhersagbarkeit.
       
 - **Der agile Ansatz** 
  -  iterative Entwicklung 
- -  Reduzierung von Gemeinkosten. <br>
-**Ziele:** <br> schnelle Bereitstellung von Funktionen und die Reaktionsfähigkeit auf sich ändernde Kundenanforderungen. 
+ -  Reduzierung von Gemeinkosten.
+      
+**Ziele:** schnelle Bereitstellung von Funktionen und die Reaktionsfähigkeit auf sich ändernde Kundenanforderungen. 
 - konzentrieren sich auf den zu entwickelnden Code
 - reduzieren bewusst Formalität und Dokumentation. 
 
 ---
       
-## Prozessverbesserung - Der Prozessreife Ansatz
+## 4. Prozessverbesserung - Der Prozessreife Ansatz
       
 Die Phasen in diesem Prozess sind:
 1. **Prozessmessung:** ein/mehrere Attribute gemessen werden. <br>
 --> Grundlage, ob Prozessverbesserungen wirksam/nicht. 
 2. **Prozessanalyse:** --> Prozessschwächen und Engpässe. <br>
 --> Prozessmodelle, die den Prozess beschreiben. (z.b. Schnelligkeit und Robustheit)
-3. **Prozessänderung:** - Prozessschwächen zu beheben.            
+3. **Prozessänderung:** - Prozessschwächen beheben.            
 <div style="margin-top:20px;">
   <img style="width:100%;" src="img/11.png"/>
 </div>      
+
+---
+
+## 4. Prozessverbesserung
       
----      
+Die Ebenen im Prozessreifemodell sind:
+
+1. **Initialisierung.** - der Umgang der Arbeit für Prozesse festlegen und mitteilen.
+2. **Verwaltung.** Projektplan --> Projektziele/Ressourcenmanagement/Prozessüberwachung. 
+3. **Definierung.** - Standardisierung/Einsatz von Prozessen.
+4. **Quantitative Verwaltung.** Prozess- und Produktmessungen --> im Prozessmanagement
+5. **Optimierung.** Prozess- und Produktmessungen --> Prozessverbesserung. Trends analysieren.
+
+Aber für kleine Unternehmen - zu viel Overhead.      
       
-## Prozessverbesserung       
+<div style="margin-top:0px;">
+  <img style="width:80%;" src="img/12.png"/>
+</div>       
       
       
       
