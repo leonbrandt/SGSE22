@@ -2,7 +2,7 @@
 
 **Autor:** Timo Wortmann
 
-Sofern nicht anders gekennzeichnet stammen alle folgenden Informationen und Abbildungen aus [[1]](#ref1)
+Sofern nicht anders gekennzeichnet stammen alle folgenden Informationen und Abbildungen aus dem Buch "Software Engineering (10th ed.)" von Ian Sommerville [[1]](#ref1).
 
 ## Einleitung zum Konfigurationsmanagement
 
