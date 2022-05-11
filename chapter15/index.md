@@ -68,7 +68,7 @@ Zusaetzlich helfen Standards bei der Wiederverwendung. Im Folgenden
 wird die Wiederverwendungslandschaft dargestellt (verschiedene Arten
 der Wiederverwendung) und anschliessend kurz erlaeutert.
 
-BILD
+![](media/15_3.png)
 
 | A          |     B       |
 |:----------:|:----------------:|
@@ -139,6 +139,8 @@ Praesentationen ermoeglicht. Grundsaetzlich wird der Zustand einer Praesentation
 Praesentation aktualisiert werden kann. Beim Veraendern von Daten durch eine Praesentation wird das System Modell veraendert und
 die Controller fuer die jeweiligen Anzeigen aktualisiert die Praesentation.
 
+![](media/15_5.png)
+
 Frameworks verwenden sehr oft Design Pattern (siehe Kapitel 7). MVC-Frameworks verwenden beispielsweise das Observer-Pattern, das 
 Strategy-Composite-Pattern und weitere. Pattern werden verwendet um die notwendige Erweitbarkeit von Frameworks zu gewaehrleisten.
 Ohne Programmierpattern waeren Frameworks impraktikabel.
@@ -161,7 +163,7 @@ Als Reaktion auf Events von der Benutzeroberflaeche oder von Datenbankframework-
 aufgerufen. Diese werden mit vom Benutzer bereitgestellter Funktionalitaet verknuepft. Diese Funktionalitaet entscheidet,
 wie die Applikation bei einem Event reagieren soll. 
 
-BILD 15.6
+![](media/15_6.png)
 
 Beispielsweise stellt ein Framework eine Methode zum handhaben von Mausklicken bereit. Diese Methode ist die "Hook-Methode".
 Sie muss konfiguriert werden, um die richtigen Applikationsmethoden aufzurufen, welche das Klicken handhaben.
@@ -206,7 +208,7 @@ wird der gleiche Prozess verwendet und ein vorhandenes Produkt teilweise wiederv
 schwieriger neue Versionen zu erstellen und es muss entschieden werden, eine Produktlinie aufzubauen. Dazu gehoert das 
 Feststellen von gemeinsamer Funktionalitaet und die Entwicklung einer Basisapplikation.
 
-(BILD 15.7)
+![](media/15_7.png)
 
 Basisapplikationen sind so entworfen, dass Wiederverwendung und die Neukonfiguration erleichtert werden.
 Eine Basisapplikation besteht aus folgenden Teilen:
@@ -235,7 +237,7 @@ muessen Telefonate annehmen, passende Fahrzeuge finden und das passende Fahrzeug
 koennte dieses System also an Polizei, Feuerwehr und Krankenhaeuser verkaufen. Die Fahrzeugaufteilung ist dabei ein gutes Beispiel
 fuer eine allgemeine Ressourcenzuweisungs- und Management-Architektur. 
 
-BILD 15.8
+![](media/15_8.png)
 
 Solche Ressourcenmanagementsysteme verwenden eine Datenbank mit verfuegbaren Ressourcen und Komponenten, die die Zuteilungspolitik
 der Ressourcen beinhaltet. Diese Zuteilungspolitik wird vom Unternehmen festgelegt. Benutzer interagieren mit dem System, fragen
@@ -243,7 +245,7 @@ Ressourcen an, geben Ressourcen frei und koennen Fragen stellen bezueglich Resso
 
 Fuer ein Fahrzeugaufteilungssystem koennen folgende Komponenten implementiert sein.
 
-BILD 15.9 
+![](media/15_9.png)
 
 Die Komponenten auf jeder Ebene sind im Folgenden weiter erlaeutert:
 
@@ -265,7 +267,7 @@ Es können verschiedene Arten der Spezialisierung einer Softwareproduktlinie ent
 
 Das folgende Bild zeigt den Prozess der Erweiterung einer Software Produktlinie zum Erstellen einer neuen Anwendung.
 
-BILD 15.10
+![](media/15_10.png)
 
 Die Aktivitäten in diesem Prozess sind:
 
@@ -298,7 +300,7 @@ Bei der Konfiguration eines Systems zur Auslieferungszeit werden Konfigurationst
 Systemkonfiguration zu erhalten. Diese Konfiguration wird in einer Datenbank oder als Ansammlung von Konfigurationsdateien 
 gespeichert. Das System holt sich die Informationen aus der Datenbank.
 
-BILD 15.11
+![](media/15_11.png)
 
 Mehrere Ebenen der Konfiguration zur Auslieferungszeit werden in einem System bereitgestellt:
 
@@ -379,7 +381,7 @@ Generische ERP-Systeme bestehen aus mehreren Modulen. Im Konfigurationsprozess m
 Unternehmensprozesse und -regeln definiert und die Struktur und Organisierung der Systemdatenbank beschlossen werden. Das folgende
 Bild zeigt die Architektur eines ERP-Systems.
 
-BILD 15.13
+![](media/15_13.png)
   
 Die Hauptmerkmale dieser Architektur sind wie folgt:
 
@@ -441,7 +443,7 @@ Auftragsabwicklungssoftware ist in die existierenden Rechnungsstellen- und Liefe
 das alte System in eine webbasierte E-Commerce-Platform und ein E-Mail-System, welches die Kommunikation mit den Benutzern
 abwickelt, eingebaut. Die Struktur wird in folgender Abbildung dargestellt. 
 
-BILD 15.14
+![](media/15_14.png)
 
 Durch das integrieren von existierenden Applikationssystemen koennen Monate oder sogar Jahre Entwicklungszeit eingespart werden.
 Das System aus dem Beispiel wurde in neun Monaten eingefuehrt, wobei vorher geschaetzt wurde, dass es drei Jahre dauer koennte,
@@ -453,7 +455,7 @@ jede diskrete Einheit der Funktionalitaet wird ein Service erstellt. Dazu kann e
 Applikation versteckt, aber extern sichtbare Services anbietet. Dies kann sehr gut bei alte Systemen gemacht werden, welche in
 ein neues System integriert werden soll.
 
-BILD 15.15
+![](media/15_15.png)
 
 Das Integieren von Applikationssytemen ist das gleiche wie das Integrieren jeder anderer Komponente auch. Es muss die 
 Systemschnittstelle, ueber die kommuniziert wird, verstanden werden. Es muessen Anforderungen gegen eine schnelle Entwicklung
@@ -470,9 +472,6 @@ und Abts (Boehm und Abts 1999) heben vier wichtige Systemintegrationsprobleme he
 4. **Unterstützung durch Systemanbieter** Anbieter bieten ganz unterschiedlich viel Support fuer ihre Produkte. Wenn Probleme auftreten ist die Unterstuetzung durch den Systemanbieter notwendig, da Kunden keinen Zugriff auf Programmcode oder detaillierte Dokumentation haben. Der sich veraendernde Markt und ekonomische Umstaende koennen dazu fuehren, dass der Systemanbieter nicht die Unterstuetzung liefern kann, die der Kunde benoetigt. Ein Produkt kann zum Beispiel aus dem Sortiment genommen werden, weil es nur eine begrenzte Nachfrage generiert.
 
 Boehm and Abts vermuten, dass die Kosten fuer die Systemwartung und -weiterentwicklung bei integrierten Applikationssystemen groesser sind. Je weiter die Leute, welche fuer die Systemwartung zustaendig sind, von den eigentlichen Entwicklern des Systems getrennt sind, desto mehr Probleme mit dem integrierten System koennen auftreten.
-
-### BilderS
-
 
 ## Referenzen
 
