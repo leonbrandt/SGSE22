@@ -8,7 +8,6 @@
  - Ein Master-Gerät (im Zentrum des Stern-Netzes) und mehrere Slave-Geräte
  - Kommunikation in Funk-Reichweite
  - Slave-Geräte sprechen direkt mit dem Master-Gerät, nicht untereinander
-
  - Teilnehmerzahl durch Hard- und Software des Masters beschränkt
  - Datenrate+Latenz je nach Standard meist von Anzahl der verbundenen Geräte und der Signalstärke abhängig
     - Mehr Geräte / geringere Signalstärke -> geringere Datenrate, höhere Latenz
