@@ -211,7 +211,7 @@ Software wird über mehrere Versionen entwickelt.
  - weniger Aufwand für Analyse und Dokumentation
 -	Feedback ist leichter einzuholen
  - der Kunde regelmäßig Inkremente sieht
--	vorzeitige Lieferung und Bereitstellung - wenn nicht alle Funktionen enthalten sind
+-	vorzeitige Bereitstellung möglich - wenn nicht alle Funktionen enthalten
       
 ---
      
@@ -236,15 +236,14 @@ aus Sicht des Management:
       
 ## Integration und Konfiguration   
       
-Wiederverwendung wird oft benutzt der Softwareentwicklung.
+Wiederverwendung wird oft benutzt.
       
 informelle Wiederverwendung --> seit Jahr 2000 weit verbreitet --> offizieller Softwareprozess
       
-Drei Arten von wiederverwendete Softwarekomponenten:
-1. **Eigenständige Anwendungssysteme,** - Verwendung in einer bestimmten Umgebung. <br>
-      Allzwecksysteme, müssen jedoch angepasst werden.
-2. **Sammlungen von Objekten,** (Komponente/Paket) - werden in einem Komponenten-Framework integriert.
-3. **Webdienste** (gemäß Dienststandards) - für den Fernaufruf über das Internet    
+Wiederverwendete Softwarekomponenten:
+1. **Eigenständige Anwendungssysteme** - für bestimmte Umgebung.
+2. **Sammlungen von Objekten** (Komponente) - für Komponenten-Framework.
+3. **Webdienste** - für den Fernaufruf über das Internet    
       
 <div style="margin-top:20px;">
   <img style="width:100%;" src="img/03.png"/>
@@ -254,12 +253,12 @@ Drei Arten von wiederverwendete Softwarekomponenten:
       
 ## Integration und Konfiguration - Phasen
       
-1. **Anforderungsspezifikation** - Aufnahme gründlegender Anforderungen (ohne Details)
+1. **Anforderungsspezifikation** - Aufnahme der Anforderungen (ohne Details)
 2.	**Software-Erkennung und -Evaluierung** <br>
-  Suche nach Komponenten, welche den Anforderungen genügen <br>
+  Suche nach Komponenten, die den Anforderungen genügen <br>
   Systeme bewerten, beurteilen --> mit die Anforderungen geeignet sind.
-3.	**Verfeinerung der Anforderungen** - Berücksichtigung der gefundenen Komponente <br>
-  Wenn nichts gefunden wurde --> Rücksprung zur Anforderungsspezifikation um mögliche andere Lösungen zu suchen.
+3.	**Verfeinerung der Anforderungen** unter Berücksichtigung der gefundenen Komponente <br>
+  Wenn nichts gefunden wurde --> Rücksprung zur Anforderungsspezifikation, andere Lösungen suchen.
 4.	**Konfiguration des Anwenungssystems** - sofern die Anforderungen sich mit dem Standardsystem umsetzen lässt
 5.	**Komponentenanpassung und Integration** - wenn es kein Standartsystem gibt --> einzelne Komponente modifizieren und integrieren.
 
@@ -272,12 +271,12 @@ Drei Arten von wiederverwendete Softwarekomponenten:
 ## Integration und Konfiguration - Zusammenfassung      
       
 -	Erheblicher Vorteil: <br>
-1. Umfang der zu entwickelnden Software wird stark reduziert
-2. 	geringere Kosten und Zeit
+1. Größe der entwickelnden Software - stark reduziert
+2. geringere Kosten/Zeit
       
 -	Nachteil
-1.	Kompromisse bei der Anforderungsanalyse. Ergebnis möglicherweise - nicht das was der Kunde möchte.
-2.	Kontrolle über Gesamtsystem schwierig (Harmonie verschiedener Komponenten Versionen untereinander).
+1.	Kompromisse bei der Anforderungsanalyse. Ergebnis (möglich) - nicht der Kundenwunsch
+2.	Kontrolle über Gesamtsystem - schwierig (Harmonie zwischen Komponenten verschiedener Versionen).
       
 ---
       
