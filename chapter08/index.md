@@ -90,7 +90,7 @@ Der Ablauf beginnt mit dem Identifizieren von neuen benötigten Funktionalitäte
 
 ![Test-Driven Development](./media/Picture2.png)
 
-**Abbildung 2: Test-Driven Development**
+**Abbildung 3: Test-Driven Development**
 
 Der Vorteil dieses Vorgehen ist, dass eine große Testabdeckung erhalten wird, da für jede neue Funktionalität zunächst Tests entwickelt werden. Außerdem lassen sich Codeabschnitt besser Debuggen. Des Weiteren wird bei jedem neuen Testdurchlauf alle anderen Test mit durchgeführt. So können Fehler in anderen Programmabschnitten durch neu implementierte Funktionalitäten schnell gefunden werden.
 
