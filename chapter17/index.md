@@ -220,8 +220,23 @@ großer Vorteil gegenüber prozeduraler Kommunikation ist.
 - Vereinheitlichung von vielfach benötigten Funktionen in gemeinsam
 genutzten Bibliotheken
 
+Die Komponenten eines verteilten Systems können in unterschiedlichen Programmiersprachen
+implementiert sein, auf verschiedenen Prozessoren laufen, verschiedene Protokolle verwenden
+und andere Formen der Informationsdarstellung verwenden. Um die Komponenten trotzdem
+in einem zusammenhängenden System verwenden zu kommen, ist Software nötig, die diese
+Unterschiede abfängt. Die Art von Software wird unter dem Namen *Middleware* zusammengefasst,
+der darauf hindeutet, dass es sich um die Software *zwischen* den Systemkomponenten und
+dem Betriebssystem handelt.
 
+Middleware besteht in der Regel aus einer Sammlung von Bibliotheken, die auf
+den Rechnern des Systems installiert sind und nicht spezifisch für die Implementierung
+des Systems entwickelt wurden.
 
+Middleware bietet zwei Arten von Unterstütztung bei der Realisierung eines verteilten Systems:
+1. Interaktionshilfe: Die Middleware koordiniert die Kommunikation zwischen Systemkomponenten.
+Hierzu zählen bspw. die Parameterkonvertierung zwischen verschiedenen Programmiersprachen.
+2. Bereitstellung gemeinsamer Dienste: Die Middleware stellt Wiederverwendbare
+Funktionalität bereit, die von mehreren Komponenten des Systems verwendet werden.
 
 ## client-server computing ##
 
