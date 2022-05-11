@@ -58,14 +58,21 @@ Kevin Ratschinski
 # Inhalte
 <div class="underline"></div>
 
-1. Einführung
-2. Softwarequalität
-3. Standards
-4. Reviews und Inspektionen
-5. Qualitätsmanagement und agile Entwicklung
-6. Softwaremessung
-7. Zusammenfassung
-8. Quellen
+**1. Einführung**
+
+**2. Softwarequalität**
+
+**3. Standards**
+
+**4. Reviews und Inspektionen**
+
+**5. Qualitätsmanagement und agile Entwicklung**
+
+**6. Softwaremessung**
+
+**7. Zusammenfassung**
+
+**8. Quellen**
 
 ---
 
@@ -78,7 +85,7 @@ Softwaresysteme sollen "**_fit for purpose_**" sein.
 - Zuverlässig
 - Fertigstellung innerhalb eines Zeit- und Kostenrahmens
 
-**Qualitätsmanagement hat sicherzustellen, dass alle Ziele und festgelegten Standards erfüllt werden!**
+**Qualitätsmanagement** hat sicherzustellen, dass alle Ziele und festgelegten Standards erfüllt werden.
 
 ---
 
@@ -123,7 +130,9 @@ als Entwickler (Wartbarkeit, Wiederverwendbarkeit).
 # 2. Softwarequalität
 <div class="underline"></div>
 
-Qualitätsmanagement in der Softwareentwicklung ist ein **subjektiver** Prozess, bei dem QM-Teams anhand ihrer Sachkenntnis und Erfahrung die Qualität eines Produktes beurteilen.
+Qualitätsmanagement in der Softwareentwicklung ist mehr ein **subjektiver** Prozess.
+
+QM-Teams beurteilen anhand ihrer Sachkenntnis und Erfahrung die Qualität eines Produktes.
 
 - Wurde die Software ordentlich getestet?
 
@@ -175,7 +184,7 @@ Die Qualität eines Systems basiert oft auf den **nicht funktionalen Eigenschaft
 # 2. Softwarequalität
 <div class="underline"></div>
 
-Traditionelles Qualitätsmanagement geht grundsätzlich davon aus, dass die Qualität der Software in direktem Bezug zu der Qualität des Entwicklungsprozesses steht.
+Traditionelles QM geht grundsätzlich davon aus, dass die Qualität der Software in direktem Bezug zu der Qualität des Prozesses steht.
 
 <figure>
   <img src="https://github.com/mwithoeft/SGSE22/blob/main/chapter24/assets/24.2_prozessbasierte_qualitaet_de.png?raw=true" alt="Qualitätsmanagement und Softwareentwicklung"/>
@@ -206,24 +215,26 @@ Softwarestandards spielen eine wichtige Rolle im Qualitätsmanagement.
 
 Es gibt zwei verwandte Arten von Software-Engineering-Standards, die im Softwarequalitätsmanagement definiert werden:
 
-- Produktstandards: Diese gelten für das zu entwickelnde Produkt.
+- **Produktstandards:** Diese gelten für das zu entwickelnde Produkt.
 
-- Prozessstandards: Diese definieren die Prozesse, die während des Entwicklungsprozesses zu befolgen sind.
+- **Prozessstandards:** Diese definieren die Prozesse, die während des Entwicklungsprozesses zu befolgen sind.
 
 --
 
+***
+
 Standards müssen sich immer positiv auf die Produktqualität auswirken.
 
-Produktstandards sollten dabei so entworfen werden, dass sie kosteneffizient angewendet und geprüft werden können.
+**Produktstandards** sollten dabei so entworfen werden, dass sie kosteneffizient angewendet und geprüft werden können.
 
-Prozessstandards sollten die Prozesse definieren, die prüfen, dass die Produktstandards eingehalten werden.  
+**Prozessstandards** sollten die Prozesse definieren, die prüfen, dass die Produktstandards eingehalten werden.  
 
 ---
 
 # 3. Standards
 <div class="underline"></div>
 
-<table>
+<table style="margin-top: 40px;">
   <tr>
     <th>Produktstandards</th>
     <th>Prozessstandards</th>
@@ -300,7 +311,7 @@ Unabhängige Zertifizierungsbehörden prüfen die Qualitätsmanagementprozesse u
 
 Reviews und Inspektionen sind Teile der Qualitätssicherung.
 
-Dabei wird die Software, ihre Dokumentation sowie die Prozessprotokolle untersucht, um Fehler und Versäumnisse festzustellen.
+Dabei wird die Software, ihre Dokumentation, sowie die Prozessprotokolle untersucht, um Fehler und Versäumnisse festzustellen.
 
 Es wird festgestellt, ob die zuvor festgelegten Qualitätsstandards eingehalten wurden.
 
@@ -311,7 +322,7 @@ Mit Hilfe von Reviews und Inspektionen soll die Softwarequalität verbessert wer
 # 4.1 Reviews
 <div class="underline"></div>
 
-Eine Gruppe von Personen untersucht sorgfältig einen Teil oder das gesamte Softwaresystem und die dazugehörige Dokumentation.
+Ein Team untersucht sorgfältig einen Teil oder das gesamte Softwaresystem und die dazugehörige Dokumentation.
 
 Code, Entwürfe, Spezifikationen, Testpläne, Standards usw. können alle überprüft werden.
 
@@ -326,7 +337,7 @@ Auch wenn Reviews sehr unterschiedlich ausfallen können, ist der Review-Prozess
 # 4.2 Programminspektionen
 <div class="underline"></div>
 
-Bei Programminspektionen suchen Teammitglieder nach Fehlern in der Software, die gerade entwickelt wird.
+Bei Programminspektionen (**Peer-Reviews**) suchen Teammitglieder nach Fehlern in der Software, die gerade entwickelt wird.
 
 Bei den Fehlern kann es sich um logische Fehler, Anomalien im Code, die zu einem möglicherweise falschen Zustand führen oder um Funktionen, die im Code nicht verwendet werden handeln.
 
@@ -337,7 +348,7 @@ Das Team überprüft den Programmcode und hebt Probleme hervor, mit denen sich d
 # 4.2 Programminspektionen
 <div class="underline"></div>
 
-<table>
+<table style="margin-top: 40px;">
   <tr>
     <th>Fehlerklasse</th>
     <th>Überprüfung während der Inspektion</th>
@@ -382,21 +393,6 @@ Das Team überprüft den Programmcode und hebt Probleme hervor, mit denen sich d
 
 ---
 
-# 4.2 Programminspektionen
-<div class="underline"></div>
-
-Obwohl bekannt ist, wie erfolgversprechend Inspektionen sind, werden sie von den Firmen nur zögerliche eingesetzt.
-
-Dies hat mitunter folgende Gründe:
-
-- Im Testen erfahrene Entwickler werden eventuell sich nur ungern eingestehen, dass Inspektionen effektiver sind als Tests.
-
-- Zusätzliche Kosten während der Entwicklungsphase.
-
-- Manager haben das Risiko dieser Zusatzkosten, welches sie oft nicht tragen wollen.
-
----
-
 # 5. QM und agile Entwicklung
 <div class="underline"></div>
 
@@ -412,6 +408,8 @@ Der Schwerpunkt wird auf die Kommunikation zwischen den Teammitgliedern gelegt.
 
 # 5. QM und agile Entwicklung
 <div class="underline"></div>
+
+Agile Entwicklungsmethoden:
 
 - _Prüfen von Code, bevor er eingefügt wird:_  
   Entwickler prüfen den Code ihrer Teammitglieder, bevor der Code in die aktuelle Version eingebracht wird.
@@ -448,8 +446,6 @@ Bei der Softwaremessung geht es darum, Merkmale eines Softwaresystems zu quantif
 
 - Idealerweise könnte sich das Qualitätsmanagement auf die Messungen dieser Werte verlassen.
 
-- Dann könnten sie objektiv bewerten, inwiefern Änderungen an den Prozessen sich auf die Softwarequalität auswirken.  
-
 - Langfristig zielt Softwaremessung darauf ab, die Softwarequalität anhand von Messungen zu beurteilen.
 
 ---
@@ -463,7 +459,7 @@ Attribute wie Verständlichkeit und Benutzerfreundlichkeit, beziehen sich darauf
 
 Sie unterliegen stark subjektiven Faktoren wie zum Beispiel Erfahrung und können deshalb objektiv nicht richtig gemessen werden.
 
-Um diese Attribute zu beurteilen, müssen zuerst einige interne Attribute (wie Codegröße, Komplexität, usw.) gemessen werden und diese danach mit den anderen Attributen in Verbindung gebracht werden.
+Um diese Attribute zu beurteilen, müssen zuerst einige **interne** Attribute (wie Codegröße, Komplexität, usw.) gemessen werden und diese danach mit den anderen Attributen in Verbindung gebracht werden.
 
 ---
 
@@ -496,13 +492,13 @@ Mit Vorhersage-Metriken können sich interne Attribute eines Systems quantifizie
 
 Vorhersage-Metriken lassen sich in zwei Gruppen einteilen:
 
-- _Dynamische Metriken:_ Lassen sich während der Programmausführung durch Messungen sammeln.
+- **Dynamische Metriken**: Lassen sich während der Programmausführung durch Messungen sammeln.
 
-- _Statische Metriken:_ Werden aus dem Entwurf des Programms oder aus der Dokumentation gesammelt.
+- **Statische Metriken**: Werden aus dem Entwurf des Programms oder aus der Dokumentation gesammelt.
 
-Dynamische Metriken sind für die Beurteilung der Zuverlässigkeit und Effizienz eines Programmes sehr hilfreich.
+**Dynamische Metriken** sind für die Beurteilung der Zuverlässigkeit und Effizienz eines Programmes sehr hilfreich.
 
-Statische Metriken sind für die Beurteilung der Verständlichkeit, Komplexität und der Wartung eines Softwaresystems wichtig.
+**Statische Metriken** sind für die Beurteilung der Verständlichkeit, Komplexität und der Wartung eines Softwaresystems wichtig.
 
 ---
 
