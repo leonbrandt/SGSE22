@@ -16,6 +16,7 @@ Beim **Validierungstest** werden Testfälle erstellt, die möglichst ein reales 
 Bei der **Fehlerprüfung** sollen Fehler innerhalb der Software aufgedeckt werden. Dafür werden Testfälle erstellt, die nicht dem normalen Nutzerverhalten widerspiegeln müssen. Ein Erfolg ist dadurch definiert, dass die Software nicht wie erwartet funktioniert.
 
 ![Ein- Ausgabe Model](./media/Picture1.png)
+
 **Abbildung 1: Ein- Ausgabe Model**
 
 ### Verifikation und Validation
@@ -60,6 +61,7 @@ Das Ziel dieses Testens ist, dass aufgezeigt wird, dass die Klasse den Erwartung
 Dabei soll überprüft werden, ob die Klasse oder Funktion sich im Fehlerfall richtig verhält. Des Weiteren werden Äquivalenzklassen gebildet.
 
 ![Äquivalenzklasse](./media/picture3.png)
+
 **Abbildung 2: Äquivalenzklasse**
 
 Eine Äquivalenzklasse ist eine Menge von Eingaben. Dabei kann jedes Element dieser Klasse repräsentativ für alle Elemente in einem Test verwendet werden. Neben den Äquivalenzklassen werden auch Grenzwertanalysen durchgeführt. Dafür wird das Element am äußersten Rand der Äquivalenzklasse ebenfalls in den Testdaten verwendet.
@@ -87,6 +89,7 @@ Das Ziel dieser Entwicklungsmethode ist es, funktionierende Software einfach zu 
 Der Ablauf beginnt mit dem Identifizieren von neuen benötigten Funktionalitäten. Darauf folgend werden Tests geschrieben und diese durchgeführt. Sollte der Test fehlschlagen, was beim ersten Durchführen immer der Fall ist, wird die Funktionalität weiter implementiert und refactored. Daraufhin werden die Tests erneut ausgeführt. Sollten die Test keinen Fehler aufzeigen, wird der Prozess von neuem begonnen.
 
 ![Test-Driven Development](./media/Picture2.png)
+
 **Abbildung 2: Test-Driven Development**
 
 Der Vorteil dieses Vorgehen ist, dass eine große Testabdeckung erhalten wird, da für jede neue Funktionalität zunächst Tests entwickelt werden. Außerdem lassen sich Codeabschnitt besser Debuggen. Des Weiteren wird bei jedem neuen Testdurchlauf alle anderen Test mit durchgeführt. So können Fehler in anderen Programmabschnitten durch neu implementierte Funktionalitäten schnell gefunden werden.
