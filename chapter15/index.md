@@ -473,7 +473,6 @@ Boehm and Abts vermuten, dass die Kosten fuer die Systemwartung und -weiterentwi
 
 ### BilderS
 
-![](media/image.jpg)
 
 ## Referenzen
 
