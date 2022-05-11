@@ -29,7 +29,7 @@ Falls eine der drei Fragen mit Nein beantwortet wird, sollte das Projekt nicht d
 |Anforderungen abhängig von zu entwickelnder Software|Die Implementierung der Anforderung zieht sich durch das ganze System|
 |Anforderungen abhängig von zu erwartenden Nutzern|Eine nicht erfüllte Anforderung kann für ein nicht nutzbares System sorgen|
 |Geschrieben für Softwareentwickler|Messgrößen: Schnelligkeit, Benutzerfreundlichkeit, Verlässlichkeit, Robustheit, Portabilität|
-|geschrieben in verschiedenen Detailgraden(Nutzer/Systemanforderungen)||
+
 
 ![](media/nichtfunktionelle_anforderungen.PNG)
 #### Abbildung 4.3 [1]
