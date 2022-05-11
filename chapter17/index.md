@@ -27,7 +27,7 @@ mehrere Rechner des Systems kann das System gegenüber Hardware-
 ausfällen abgehärtet werden.
 
 Verteilte System sind gegenüber klassischen (zentralisierten
-Systemen) deutlich komplexer. Durch die "Verteiltheit" entstehen
+Systemen) deutlich komplexer. Durch die Verteilung entstehen
 neue Herausforderung für die Implementierung des Systems, welche
 in zentralisierten Systemen keine oder nur eine kleine Rolle
 spielen.
@@ -38,37 +38,101 @@ Im Folgenden werden unterschiedliche Aspekte betrachtet, die für die Entwicklun
 verteilter Systeme zu beachten sind. Des Weiteren diskutiert dieses Kapitle einige
 architektonische Ansätze zur Konzeptionierung und Implementierung verteilter Systeme.
 
-## distributed systems ##
+## Distributed Systems ##
 
-Verteilte Systeme sind komplexer als Systeme, die nur auf einem
-einzelnen Prozessor laufen. Diese Komplexität entsteht insbesondere
+Diese Komplexität verteilter Systeme entsteht insbesondere
 dadurch, dass keine Komponente des Systems die komplette Kontrolle
 über das gesamte System (also alle Rechner und das Netzwerk) hat.
 Das Netzwerk, durch das die Rechnerknoten verbunden werden ist in
-der Regel ein eigenes System, welches kontrolliert werden muss.
-Durch diese verteilte Kontrolle ist wohnt dem Verhalten eines
+der Regel ein eigenes System, welches von externen Parteien kontrolliert wird.
+Durch diese verteilte Kontrolle wohnt dem Verhalten eines
 verteilten Systems eine natürliche Unberechnebarkeit inne.
 
 Aus dieser Komplexität ergeben sich folgende Aspekte, die
 insbesondere bei der Entwicklung eines verteilten Systems
 beachtet werden müssen:
-1. Transparenz: Inwiefern soll dem Nutzer des Systems bekannt
-sein, dass das System verteilt ist? Wann ist das sinnvoll?
-2. Offenheit: Soll das System nur Standardprotokolle verwenden, oder
-sollen höher spezialisierte Protokolle verwendet werden?
-3. Skalierbarkeit: Wie kann die Skalierbarkeit des Systems
-gewährleistet werden?
-4. Sicherheit: Wie können anwendungsgerechte Sicherheitspolitiken
+
+### Transparenz ###
+
+Inwiefern soll dem Nutzer des Systems bekannt
+sein, dass das System verteilt ist?
+
+Ein ideal transparentes verteiltes System ist nicht als solches von außen zu erkennen.
+Praktisch ist dies allerdings aus mehreren Gründen nicht realisierbar.
+Aufgrund fehlender zentraler Kontrolle verhalten sich Systemkomponenten von Interaktion zu
+Interaktion unterschiedlich
+und übermittelte Nachrichten benötigen eine gewissen Zeit, um das Netzwerk zu durchqueren.
+Diese Verzögerung ist von der (geografischen) Verteilung der Systemressourcen abhängig.
+
+Um mit diesen Problemen umzugehen, werden die Systemressourcen abstrahiert, beispielsweise
+durch Middleware, welche physikalische Ressourcen auf logische Ressourcen abbildet,
+welche einfacher genutzt werden können.
+Trotz dieser Maßnahmen ist es nicht möglich, ein verteiltes System vollständig transparent
+zu gestalten. Die Kommunikation dessen, dass es sich um ein verteiltes System handelt, kann
+dem Nutzenden dabei helfen, die Auswirkungen der beschriebenen Probleme besser einzuordnen
+und mit ihnen umzugehen.
+
+### Offenheit ###
+
+Soll das System nur Standardprotokolle verwenden, oder sollen höher spezialisierte
+Protokolle verwendet werden?
+
+Offene Systeme sind in der Hinsicht offen, dass sie Standardprotokolle verwenden,
+sodass standardisierte Komponenten jedes Herstellers einfach in das System integriert
+werden können. Auf der Netzwerkebene gilt diese Form der Offenheit mittlerweile als
+selbstverständlich, sodass die gängigen Internetprotokolle unterstützt werden.
+
+Der 1990 entwickelte CORBA Standard verfolgt das Ziel, die auch auf der Komponentenebene
+zu erreichen, wurde bisher allerdings noch nicht flächendecken angenommen. Viele
+Softwarehersteller vertrauen stattdessen auf proprietäre Standards, welche bessere
+Implementierungen und Support von großen Firmen wie Oracle oder Microsoft erhalten.
+
+### Skalierbarkeit ###
+
+Wie kann die Skalierbarkeit des Systems
+gewährleistet werden, sodass das System mit steigenden Nutzerzahlen
+umgehen kann?
+Skalierbarkeit kann in drei Dimensionen aufgeteilt werden:
+1. Größe: Es sollte möglich sein, mehr Ressourcen zum System hinzuzufügen, um mit
+steigenden Nutzerzahlen umzugehen. Die Systemgröße sollte also automatisch
+mit den Nutzerzahlen wachsen.
+2. Verteilung: Es sollte möglich sein, die Komponenten des Systems geografisch zu
+verteilen, ohne die Systemleistung zu verringern.
+3. Verwaltbarkeit: Das System sollte verwaltbar bleiben, auch wenn die Systemgröße
+wächst und Teile des Systems von unabhängigen Organisationen bereitgestellt werden.
+Dies ist in der Praxis häufig der Faktor, der die Skalierbarkeit eines Systems am
+stärksten limitiert
+
+Es wird zwischen zwei Skalierungsarten unterschieden:
+1. **Scaling Up**: Austauschen vorhandener Systemressourcen mit leistungsstärkeren
+Ressourcen (Austausch eines Prozessors gegen einen schnelleren).
+2. **Scaling Out**: Hinzufügen zusätzlicher Systemressourcen zu den bestehenden Ressourcen (Hinzufügen
+eines weiteren Rechners). *Scaling Out* ist meistens kostengünstiger als *Scaling Up*, setzt
+allerdings voraus, dass die Anwendung die parallele Berechnungen auf unterschiedlichen
+Rechnern zulässt.
+
+#### Anmerkung ####
+
+Im Deutschen lassen sich beide Begriffe zu den Worten "Ausweiten/Ausbreiten" übersetzen,
+deren Bedeutung nicht so klar voneinander getrennt ist, wie die Konzepte, die hier
+durch die englischen Begriffe beschrieben werden.
+Daher werden im weiteren Verlauf des Kapitels weiterhin die englischen Begriffe
+verwendet, um Missverständnissen vorzubeugen.
+
+### Sicherheit ###
+
+4. Sicherheit: Wie können anwendungsgerechte Sicherheitsstrategien
 entwickelt werden, die auf den unabhängigen Rechnern des Systems
 eingesetzt werden können?
-5. Quality of Service (QoS): Wie kann die Qualität des an die
-Nutzer gegebenen Dienstes (TODO: verbessern) spezifiziert und
-sichergestellt werden?
+
+5. Quality of Service (QoS): Wie kann die Qualität des bereitgestellten
+Dienstes spezifiziert und sichergestellt werden?
 6. Fehlermanagement: Wie werden Fehler im System erkannt, isoliert
-und repariert?
+und behoben?
 
 TODO: evtl. die hier nachfolgenden Erläuterung direkt unter den
 Stichpunkten integrieren und die Stichpunkte genauer erläutern
+Ja! zu eigenen Unterkapiteln machen!
 
 ### Models of interaction ###
 
