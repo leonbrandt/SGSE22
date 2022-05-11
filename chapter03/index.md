@@ -72,7 +72,7 @@ Die praktische Umsetzung von XP hat sich als schwierig herausgestellt da es nich
 XP hat mit seinen Bestandteilen einen wichtigen Beitrag zur Umsetzung agiler Methodik in Unternehmen geleistet, die wichtigsten Bestandteile werden daher in den folgenden Kapiteln genauer erklärt und beschrieben.
 
  ### User Stories
-![](img/Story Card.PNG)
+![](img/StoryCard.PNG)
 ** Story Card **
 ![](img/Tasks.PNG)
 ** Task **
