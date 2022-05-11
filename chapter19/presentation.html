@@ -25,6 +25,18 @@
       size: 908px 681px;
       margin: 0;
     }
+
+    table {
+      width: 100%;
+    }
+    table thead {
+      padding-bottom: 0.5em;
+    }
+    th, td {
+      border: 1px solid;
+      padding: 10px;
+      border-radius: 5px;
+    }
   </style>
 </head>
 
@@ -50,7 +62,8 @@ Moritz Withöft
 * Konzeptionelles Design
 * Systembeschaffung
 * Systementwicklung
-* Systembetrieb und -weiterentwicklung
+* Systembetrieb
+* Systemweiterentwicklung
 
 ---
 
@@ -156,20 +169,189 @@ Moritz Withöft
 ## Konzeptionelles Design
 
 
+**Aktivitäten im konzeptionellen Design**:  
+<br>
+![Aktivitäten im konzeptionellen Design](https://github.com/mwithoeft/SGSE22/blob/main/chapter19/media/konzeptionellesDesign/ConceptualDesignActivities.png?raw=true)
+
+**Struktur Concept of Operations *(ConOps)***:
+
+1. Kurze Zusammenfassung der Kernelemente (Probleme und Komponenten) für die Entscheidungsträger
+2. Reihe von sehr detaillierten Anhängen für die für Systemanforderungen und Systembeschaffung
+
 ---
 
 ## Systembeschaffung
 
+- Entscheidung über Kauf eines oder mehrerer Systeme von Zulieferern
+- Festlegung der Größe des Systems
+- Budgetplanung
+- Zeitplanung
+
+<div style="float: right; width: 60%;">
+  <b>Prozesse der Systembeschaffung:</b><br>
+  <img style="max-width: 100%; margin-top: 20px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter19/media/systembeschaffung/systemProcurementProcesses.png?raw=true"/>
+</div>  
+
+**Beinflussende Faktoren:**
+ - Ersetzen bestehender Systeme
+ - Befolgen externer Regularien
+ - Externer Wettbewerb
+ - Restrukturierung
+ - Verfügbares Budget
+
+
+ **Drei Arten von zu beschaffenden Systemen:**
+ - Standardapplikationen
+ - Konfigurierbare Applikationen
+ - Spezielle (maßangefertigte) Systeme
+
+---
+
+## Systembeschaffung - Weitere Faktoren
+
+- Durch Unternehmen zugelassene Komponenten
+ - *Whitelist* mit Applikationen, die ohne Zustimmung erworben werden können
+
+
+- Standardtechnik erfüllt nicht alle Anforderungen
+ - Standardtechnik muss konfigurierbar sein
+ - Ohne Konfigurationen möglichst nah an Anforderungen
+
+
+- Spezifikation für spezielle Systemkoponenten
+ - Anforderungen bereits bestandteil des Vertrags
+ - Rechtlich bindenes Dokument
+
+
+- Regularien für Beschaffungsprozess
+ - Ausschreibungen im öffentlichen Sektor
+ - Hemmung von schneller Entwicklung
+
+
+- Verhandlungen
+ - Langer Zeitraum, zeitaufwändig
+ - Kosten, Lizenzen, nachträgliche Änderungen
+ - Bezahlzeiträume, Akzeptanzkriterien
 
 ---
 
 ## Systementwicklung
 
+- Erschaffung des Systems durch
+ - Kauf
+ - Entwicklung
+ - Zusammenfügen
+
+
+- Systemanforderungen als Grundlagen
+  - Schnittstelle zwischen Design und Entwicklungsprozess
+
+
+- Verstehen der Anforderungen vor Beginn
+ - Änderungen im Nachgang aufwändig und teuer
+
+
+- Plangesteuerte Prozesse
+ - Wasserfallmodell sehr verbreitet
+ - Unterschiedliche Elemente gleichzeitig entwicklen
+ - Aufteilung auf Vertragspartner
 
 ---
 
-## Systembetrieb und -weiterentwicklung
+## Systementwicklung - Prozesse
 
+<div style="float: right; width: 50%;">
+  <b>Prozess der Systementwicklung:</b><br>
+  <img style="max-width: 100%; margin-top: 20px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter19/media/systementwicklung/systemDevelopmentProcess.PNG?raw=true"/>
+</div>
+
+1. **Anforderungsenginnering**
+ - Analyse
+ - Überarbeitung
+ - Dokumentation
+2. **Architekturdesign**
+ - Bestätigung der Architektur
+ - Identifikation der Komponenten
+3. **Anforderungsaufteilung**
+ - Zuteilung der Komponenten auf Anforderungen
+4. **Subsysteme**
+ - Einrichtung und Konfiguration
+5. **Systemintegration**
+ - Zusammenfügen der Subsysteme
+ - Emergente Eigenschaften werden sichtbar
+6. **Testen des Systems** *(Nutzer, Kunden und Entwickler)*
+ - Beheben von Problemen
+ - Anpassung der Anforderungen
+7. **Inbetriebnahme**
+ - Transfer alter Daten
+ - Liveschaltung der Produktivumgebung
+
+---
+
+<h2 >Systementwicklung <span style="font-size: 33px;">- Anforderungen und Design</span></h2>
+
+- Enges Zusammenspiel von Anforderungen und Design
+- Zeitgleiche Entwicklung
+- Gegenseitige Auswirkung der Prozesse
+
+<div style="width: 70%;">
+  <b>Spirale für Anforderungen und Design:</b><br>
+  <img style="max-width: 100%; margin-top: 20px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter19/media/systementwicklung/requirementsDesignSpiral.PNG?raw=true"/>
+</div>
+
+---
+
+## Systembetrieb
+
+- Erfüllung der Anforderungen wird deutlich
+ - Erforderliche Anpassungen am System werden erfasst
+- Entwicklung von Systemen für erfahrene Nutzer
+ - Gewöhnen sich zügig an neue Systeme
+ - Finden optimalen Umgang
+ - Decken Schwachstellen auf
+
+**Nicht alle Prozesse lassen sich automatisieren:**
+- Menschen sind anpassungsfähig
+ - Können mit unerwarteten Problemen umgehen
+ - Nicht jeder Fehlerzustand muss bekannt sein
+- Automatisierte System erhöhen Komplexität
+ - Müssen alle Fehlerzustände für korrekten Umgang Komponenten
+ - Weiterer Ausbau des Systems braucht Kosten und Zeit
+
+---
+
+## Systemweiterentwicklung
+
+- Lebensdauer von Systemen > 20 Jahre
+- Technologien haben oft ausgedient
+
+**Ursachen für Langlebigkeit:**
+
+| Grund | Beschreibung |
+|:--- | ---:|
+| Investitionskosten | System soll sich rentieren |
+| Verlust der Expertise | Abgang von Personal, Umstrukturierungen |
+| Ersatzkosten | Ersatzsystem muss signifikant Kosten einsparen |
+| Investionsrückkehr | Budget wird eher für neue Systeme eingesetzt |
+| Änderungsrisiken | Risiko eines Systemausfalls durch Änderungen |
+| Systemabhängigkeit | Nötige Änderungen ziehen sich durch viele Systeme |
+
+---
+
+## Referenzen
+
+<span id="ref1">[1]: *Ian Sommerville. 2015.* *Software Engineering* *(10th. ed.). Pearson.*</span>
+
+<span id="ref2">[2]: *White, S., et al.* *Systems Engineering of Computer Based Systems.* *IEEE Computer, November, 1993.*</span>
+
+<span id="ref3">[3]: *["CIVILIAN AND MILITARY AIR TRAFFIC CONTROL IN THE EU"](https://www.europarl.europa.eu/meetdocs/committees/rett/20020121/297568EN.pdf) (PDF). November, 2001.*</span>
+
+<span id="ref4">[4]: *Gordon Baxter, Ian Sommerville, Socio-technical systems: From design methods to systems engineering, Interacting with Computers, Volume 23, Issue 1, January 2011.*</span>
+
+<span id="ref5">[5]: *Rittel, H.W.J., Webber, M.M. Dilemmas in a general theory of planning. Policy Sci 4, 155–169, 1973.*</span>
+
+<br><br>
+**Danke für Eure Aufmerksamkeit!**
 
     </textarea>
   <script src="../_assets/js/remark-latest.min.js">
@@ -204,7 +386,7 @@ Moritz Withöft
       slideNumberFormat: 'Slide %current% of %total%',
       // .. or by using a format function
       slideNumberFormat: function (current, total) {
-        return '' + current + '/' + total;
+        return '<b>' + current + '/' + total + '</b>';
       },
 
       // Enable or disable counting of incremental slides in the slide counting
