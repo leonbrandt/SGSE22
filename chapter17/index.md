@@ -1,9 +1,6 @@
-# Software processes
+# Distributed Software Engineering #
 
 **Autor:** Malte Reinsch
-
-<!-- notes -->
-# distributed software engineering #
 
 - Tannenbaum definieren ein verteiltes System als:
 "Eine Sammlung aus unabhängigen Rechnern, die aus Sicht des
