@@ -312,117 +312,91 @@ Beispiel Planungstools, unterstuetzen.
 
 ## Wiederverwendung Applikationssysteme
 
+Applikationssysteme sind Softewaresysteme, welche an die Anforderungen des Kunden angepasst werden koennen, ohne den Programmcode
+aendern zu muessen. Sie werden fuer einen generellen Markt und nicht speziell fuer einzelne Kunden entwickelt. Sie werden auch
+"Commercial Off-the Shelf Systeme" (COTS). Da der Begriff meist in Militaersystemen verwendet wird, werden sie im Folgenden
+weiterhing Applikationsysteme genannt.
 
+Jede Desktop-Software fuer Unternehmen und viele serverbasierte Systeme sind Applikationssysteme. Sie koennen in verschiedenen
+Umgebungen und als Teil verschiedener Systeme wiederverwendet werden. Torchiano and Morisio (Torchiano and Morisio 2004) fanden
+heraus, dass viele Open-Source Produkte ohne Veraenderung verwendet werden und oft der Programmcode nicht mal angesehen wird.
 
-- applikationssystem
-  - koennen angepasst werden an die anforderungen an kunden
-  - ohne das aendern von source code
-  - fuer einen generellen markt entwickelt
-  - nicht speziell fuer einzelne kunden entwickelt
-  - cots (commercial off-the shelf system)
-    - haeufig in militaer systemen so genannt 
-    - im folgenden also applikationssysteme
-
-- jede desktop software fuer unternehmen
-- viele server-basierte systeme sind applikationssysteme 
-- kann also in verschiedenen environments und als teil verschiedener systeme wiederverwendet werden
-- Torchiano and Morisio (Torchiano and Morisio 2004)
-  - open source produkte werden oft ohne veraenderung verwendet 
-  - code wird nichtmal angeguckt 
-
-- Applikationssysteme 
-  - eingebaute configurations mechanismen zum einstellen fuer kunden
-  - beispiel 
-    - krankenakten system
-      - verschiedene eingabe und ausgabe formen abhaengig vom patienten
-    - andere konfigurations features erlauben eventuell plug ins zu erlauben
+Applikationssysteme besitzen eingebaute Konfigurationsmechanismen, um die Funktionalitaet des Systems den Kundenwuenschen 
+entsprechend anzupassen. Ein Krankenaktensystem benoetigt zum Beispiel verschiedene Eingabe- und Ausgabeformen abhaengig vom
+Patienten. Andere Konfigurationsfeatures erlauben eventuell Plugins zum Erweitern der Funktionalitaet.
 
 Dieser Ansatz zur Wiederverwendung von Software wird seit Ende der 1990er Jahre von großen Unternehmen sehr häufig übernommen, da er erhebliche Vorteile gegenüber der kundenspezifischen Softwareentwicklung bietet:
 
 1. Schnellere Herausbringen von zuverlaessigen Systemen ist moeglich.
 2. Es ist moeglich zu sehen, welche Funktionalitaet von der Applikation gegeben ist. Das Einschaetzen ob die Software passt wird vereinfacht. Andere Unternehmen verwenden eventuell besagte Software und Erfahrungen mit dem System liegen vor.
-3. Manche Entwicklungsrisiken beim verwenden vorhandener Software minimiert.
+3. Manche Entwicklungsrisiken beim Verwenden vorhandener Software minimiert.
 4. Unternehmen koennen sich auf Kernaktivitaeten konzentrieren, ohne viele Ressourcen fuer die Entwicklung von IT Systemen zu benoetigen.
 5. Wenn sich Opeationsplatformen veraendern ist das updaten vereinfacht, da die Verantwortung dafuer bei dem Applikationssystem-Anbieter liegt.
 
-Dennoch bringt diese Ansatz der Wiederverwendung Probleme:
+Dennoch bringt dieser Ansatz der Wiederverwendung Probleme:
 
 1. Anforderungen muessen angepasst werden, um die Funktionalitaet und die Arbeitsweise der Off-the-shelf Applikationssystem zu reflektieren. Das kann zu stoerenden Aenderungen in vorhandenen Unternehmensprozessen fuehren.
-2. Das Applikationssystem kann auf Annahmen basieren, welche nicht geaendert werden koennen. Der Kunde muss also sein Geschaeft so aendern, um diese Annahmen zu reflektieren
+2. Das Applikationssystem kann auf Annahmen basieren, welche nicht geaendert werden koennen. Der Kunde muss also sein Geschaeft so aendern, um diese Annahmen zu reflektieren.
 3. Das passende Applikationssytem auszusuchen kann ein schwieriger Prozess sein, da diese oft nicht gut dokumentiert sind. Bei falschen Entscheidungen kann es unmoeglich sein, das neue System nach den Anforderungen umzusetzen.
 4. Es kann einen Mangel an lokaler Expertise zur Systementwicklung geben. Der Kunde muss sich also auf den Hersteller des Applikationssystems oder auf externe Berater verlassen. Die Beratung kann dabei zum Verkaufen von weiteren Produkten oder Dienstleistungen verwendet werden, ohne passend auf die Kundenbeduerfnisse einzugehen.
 5. Der Systemanbieter steuert die Systemunterstützung und -entwicklung. Dieser kann sein Geschaeft aufgeben, uebernommen werden, oder Aenderungen vornehmen, die dem Kunden Schwierigkeiten bereiten.
 
-TABELLE UND BESCHREIBUNG
+Applikationssysteme koennen als individuelle Systeme oder als Kombination, in welcher zwei oder mehr Systeme integriert werden, 
+verwendet werden. Individuelle Systeme bestehen aus einer generischen Applikation eines Herstellers und werden fuer die 
+Anforderungen eines Kunden konfiguriert. Integrierte Systeme werden aus der Funktionalitaet mehrerer individuellen Systeme 
+zusammengesetzt. Diese Systeme sind oft von verschiedenen Herstellern. In folgender Tabelle werden die beiden dargestellt.
+
+| Konfigurierbare Applikationssysteme          | Integrierte Applikationssysteme       |
+|:----------:|:----------:|
+|Einzelnes Produkt, welches die gewuenschte Funktionalitaet liefert | Mehrere verschiedene Applikationssysteme welche integriert werden, um eine angepasst Funktionalitaet zu liefern|
+|Basierend auf einer generischen Lösung und standardisierten Prozessen | Flexible Lösungen können für Kundenprozesse entwickelt werden|
+|Der Entwicklungsfokus liegt auf der Systemkonfiguration | Der Entwicklungsfokus liegt auf der Systemintegration|
+|Der Systemanbieter ist für die Wartung verantwortlich | Der Systembesitzer ist für die Wartung verantwortlich|
+|Der Systemanbieter stellt die Plattform für das System bereit | Der Systembesitzer stellt die Plattform für das System bereit|
+
 
 ### Konfigurierbare Applikationssysteme
 
-- Konfigurierbare Applikationssysteme 
-  - generische applikationssystem
-  - designed fuer einen bestimmten unternehmenstypen
-    - unternehmensaktivitaeten
-    - oder manchmal eine komplette business enterprise
-  - beispiel
-    - system fuer zahnaerzte 
-      - termine
-      - erinnerungen
-      - patientenakten
-      - patientenrueckruf
-      - rechnungen
-    - groesser kann ein enterprise resource planning (erp) system
-      - herstellung 
-      - einkauf 
-      - Kundenbeziehungs management in grossen firmen
-- Gebietspezifische applikationssysteme
-  - funktionalitaet die von einer vielzahl an kunden benoetigt wird
-  - aber es werden annahmen getroffen, welche in bestimmten situationen probleme bereiten
-    - beispiel
-      - system zum anmelden von studenten an einer universiaet
-      - annahme, dass studenten sich fuer einen abschluss an einer uni einschreiben
-      - bei kollaborationen mit zwei universitaeten fuer gemeinsame abschluesse
-      - koennen im system nicht dargestellt werden
-- ERP systeme (produziert von sap und oracle)
-    - grosse integrierte systeme
-    - Bestellungen 
-    - Rechnungsstellung
-    - Bestandsverwaltung
-    - Fertigungsplanung
-    - (Monk and Wagner 2013)
-    - Konfigurationsprozess
-      - sammeln von detailierten infos ueber unternehmen des kunden und deren unternehmensprozesse 
-      - speichern in configurations datenbank
-      - expertise ueber konfigurationsnotationen und tools
-      - meist durch Berater, die mit dem Systemkunden zusammenarbeiten
+Konfigurierbare Applikationssysteme sind genereische Applikationssysteme, welche fuer bestimmte Unternehmenstypen,
+Unternehmensaktivitaeten oder manchmal fuer einen ganzen Wirtschaftsbetrieb konstruiert werden. Ein System fuer Zahnaerzte kann 
+zum Beispiel Termine, Erinnerungen, Patientenakten, Patientenrueckrufe und Rechnungen handhaben. In groesserem Umfang kann
+ein Enterprise Resource Planning (ERP) System die Herstellung, den Einlauf und das Kundenbeziehungsmanagement in grossen 
+Unternehmen unterstuetzen.
 
-- Generisches ERP System besteht aus mehreren Modulen
-  - Konfigurationsprozess
-    - module auswaehlen
-    - diese konfigurieren
-    - unternehmensprozesse definieren
-    - unternehmensregeln definineren
-    - struktur und organisierung der system datenbank definieren
-    - BILD 15.13
+Gebietspezifische Applikationssysteme liefern Funktionalitaet, die von einer Vielzahl an Kunden benoetigt wird. Dennoch werden
+ebenfalls Annahmen getroffen, welche in bestimmten Situationen Probleme bereiten koennen. Ein System zum Einschreiben von 
+Studenten an einer Universitaet beispielsweise bedient sich der Annahme, dass Studenten sich fuer einen Abschluss an einer 
+Universitaet einschreiben koennen. Bei einer Kollaberatiion zweier Universitaeten werden gemeinsame Abschluesse angeboten, und
+koennen so im System nicht dargestellt werden.
+
+ERP-Systeme (beispielsweise produziert von SAP oder Oracle) sind grosse intergrierte Systeme zum unterstuetzen von Bestellungen, 
+Rechnungsstellung, Bestandsverwaltung und Fertigungsplanung (Monk and Wagner 2013). Im Konfigurationsprozess dieser Systeme muessen
+detailierte Informationen ueber das Unternehmen des Kunden und deren Unternehmensprozesse gesammelt und anschliessend in einer 
+Kofigurationsdatenbank gespeichert werden. Dabei ist eine Expertise ueber die Konfigurationsnotation und -tools notwendig. Meist
+wird der Prozess der Konfigurierung von Beratern, die mit dem Systemkunden zusammenarbeiten ausgefuerht.
+
+Generische ERP-Systeme bestehen aus mehreren Modulen. Im Konfigurationsprozess muessen die Module ausgewaehlt und konfiguriert,
+Unternehmensprozesse und -regeln definiert und die Struktur und Organisierung der Systemdatenbank beschlossen werden. Das folgende
+Bild zeigt die Architektur eines ERP-Systems.
+
+BILD 15.13
   
 Die Hauptmerkmale dieser Architektur sind wie folgt:
 
-1. Eine Menge von Modulen, um verschieden Unternehmensfunktionen zu unterstuetzen. Diese sind grosse Module, die ganze Abteilungen oder Unternehmenbereiche unterstuetzen koennen. Dargestellt ist ein Modul zum unterstuetzen des Einkaufs; ein Modul fuer das Lieferketten Management; ein Logistikmodul fuer die Lieferung von Waren; und ein Kundenbeziehungs Management (engl.: customer relationship management (CRM)).
+1. Eine Menge von Modulen, um verschieden Unternehmensfunktionen zu unterstuetzen. Diese sind grosse Module, die ganze Abteilungen oder Unternehmenbereiche unterstuetzen koennen. Dargestellt ist ein Modul zum Unterstuetzen des Einkaufs; ein Modul fuer das Lieferketten Management; ein Logistikmodul fuer die Lieferung von Waren; und ein Kundenbeziehungsmanagement (engl.: customer relationship management (CRM)).
 2. Eine definierte Menge an Unternehmensprozess-Modellen, jedem Modul zugeordnet, welche sich auf die Aktivitaeten in diesem Modul beziehen. Zum Beispiel wird im Bestellungsprozess-Modell festegelegt, wie Bestellungen erstellt und angenommen werden. Dies spezifiziert die Rollen und Aktivitaeten im Zusammenhang mit der Auftragserstellung.
-3. Eine gemeinsame Datenbank, welche Informationen ueber die Unternehmensfunktionen plegt. So ist es nicht notwendig Informationen, wie zum Beispiel Kundendaten, an verschiedenen Teilen des Unternehmens zu speichern.
-4. Eine Menge an Unternehmensregeln, die fuer alle Daten in der Datenbank gelten. Bei der Eingabe von Daten, muessen die Regeln eine Konsistenz innerhalb der Datenbank erhalten. Beispielsweise kann eine Geschaeftsregel verlangen, dass alle Spesenabrechnungen von einer hoeheren Person genehmigt werden muessen als die Person, die den Anspruch geltend macht.
+3. Eine gemeinsame Datenbank, welche Informationen ueber die Unternehmensfunktionen pflegt. So ist es nicht notwendig Informationen, wie zum Beispiel Kundendaten, an verschiedenen Orten des Unternehmens zu speichern.
+4. Eine Menge an Unternehmensregeln, die fuer alle Daten in der Datenbank gelten. Bei der Eingabe von Daten, muessen die Regeln eine Konsistenz innerhalb der Datenbank erhalten. Beispielsweise kann eine Geschaeftsregel verlangen, dass alle Spesenabrechnungen von einer ranglich hoeheren Person genehmigt werden muessen als die Person, die den Anspruch geltend macht.
 
-- ERP Systeme werden in allen grossen Unternehmen benutzt
-  - fuer einige oder alle ihrer funktionen
-  - Viel benutzte form der Wiederverwerndung 
-  - Limitierungen
-    - funktionalitaet des kunden ist an die funktionalitaet des erp systems gebunden
-    - falls eine zusaetliche funktionalitaet benoetigt wird, muss ein seperates add-on implementiert und eingebaut werden.
-- Unternehmensprozesse und -operationen muessen in der ERP system eigenen konfigurationssprache definiert werden
-  - bei der Ersellung koennen Nichtuebereinstimmungen entstehen
-    - zischen annahmen des systemanbieters und dem Kunden
-    - bezueglich der Konzepte und Prozesse im Unternehmen
-  - Eine grosse abweichung
-    - zwischen kunden unternehmensmodell und dem system model benutzt vom erp system
-    - erp system wird nicht den anforderungen des kunden entsprechen
+ERP-Systeme werden in allen grossen Unternehmen fuer einige oder alle ihrer Funktionen verwendet. Sie stellen so eine viel
+benutzte Form der Wiederverwendung dar. Eine Limitierung ist es, dass die Funktionalitaet des Systems des Kunden an die
+Funktionalitaet des ERP-Systems gebunden ist. Falls eine weitere Funktionalitaet benoetigt wird, muss ein seperates 
+Addon implementiert und eingebaut werden.
+
+Unternehmensprozesse und -operationen muessen in der ERP-System eigenen Konfigurationssprache definiert werden. Bei der
+Erstellung koennen Nichtuebereinstimmungen zwischen den Annahmen des Systemanbieters und dem Kunden entstehen bezueglich
+der Konzepte und Prozesse im Unternehmen entstehen. Eine grosse Abweichung fuert dazu, dass das ERP-System nicht den
+Anforderunged des Kunden entspricht.
 
 ERP Systeme benoetigen grundsaetzlich eine umfangreiche Konfiguration, um an die Anforderungen des Kunden angepasst zu werden. Diese Konfiguration enthealt:
 
@@ -434,20 +408,18 @@ ERP Systeme benoetigen grundsaetzlich eine umfangreiche Konfiguration, um an die
 6. Entwerfen neuer Geschäftsprozesse, die dem zugrunde liegenden Prozessmodell, welches vom System unterstuetzt wird, entsprechen.
 7. Festlegen von Parametern, die definieren, wie das System auf seiner Plattform bereitgestellt wird.
 
-Nach der Konfiguration, kann das System getestet werden. Das Testen eines Systems, welches konfiguriert und nicht in einer konventionellen Programmiersprache entwickelt wird, stellt ein Prorblem dar. Es gibt zwei Gruende hierfuer:
+Nach der Konfiguration, kann das System getestet werden. Das Testen eines Systems, welches konfiguriert und nicht in einer konventionellen Programmiersprache entwickelt wird, stellt ein Problem dar. Es gibt zwei Gruende hierfuer:
 
-1. Testautomatisierung ist schwierig oder sogar unmoeglich. Möglicherweise gibt es keinen einfachen Zugang zueine API, die zum Testen von Frameworks wie JUnit verwendet werden kann. Die Systeme muessen per Hand getestet werden, indem manuell Testdaten eingefuegt werden. Desweiteren sind die Systeme informell spezifiziert. Testfaelle ohne die Hilfe vom Enfbenutzer zu definieren, erweist sich als schwierig.
-2. Systemfehler sind oft subtil und spezifisch fuer Geschaeftsprozesse. Die meisten Fehler passieren, weil es Missverstaendnisse zwischen denen, die das System konfigurieren, und den Benutzerinteressesnten. Systemtester, ohne detailierte Kenntnisse der Endbenutzerprozesse koennen solche Fehler nicht erkennen.
+1. Testautomatisierung ist schwierig oder sogar unmoeglich. Möglicherweise gibt es keinen einfachen Zugang zu einer API, die zum Testen von Frameworks wie JUnit verwendet werden kann. Die Systeme muessen per Hand getestet werden, indem manuell Testdaten eingefuegt werden. Desweiteren sind die Systeme informell spezifiziert. Testfaelle ohne die Hilfe vom Endbenutzer zu definieren, erweist sich als schwierig.
+2. Systemfehler sind oft subtil und spezifisch fuer Geschaeftsprozesse. Die meisten Fehler passieren, weil es Missverstaendnisse zwischen denen, die das System konfigurieren, und den Benutzerinteressenten gibt. Systemtester, ohne detailierte Kenntnisse der Endbenutzerprozesse koennen solche Fehler nicht erkennen.
 
 ### Integrierte Applikationssysteme
 
-- Integrierte Applikationssysteme beinhalten zwei oder mehr Applikationssysteme oder manchmal auch Legacy-Systeme.
-- Wenn keine einzelne Applikationssystem alle Anforderungen entspricht
-- oder wenn ein neues applikatoonssystem mut einem system, welches bereits benutzt wird, integriert werden soll
-- Interaktion moeglich durch deren APIs
-  - sevice-schnittstellen
-  - verbindung indem output des einen systems eingabe des anderen wird
-  - oder updaten der datenbank welche von der applikation verwendet wird
+Integrierte Applikationssysteme beinhalten zwei oder mehr Applikationssysteme oder manchmal auch Legacy-Systeme.
+Der Ansatz wird verwendet, wenn kein einzelnes Applikationssystem allen Anforderungen entspricht oder wenn ein neues
+Applikationssystem mit eine System, welche bereits verwendet wird, integriert werden soll. Die Interaktion zwischen den Systemen
+ist durch APIs oder durch Serviceschnittstellen moeglich. Alternativ kann die Ausgabe des einen Systems mit der Eingabe des
+anderen Systems verknuepft oder die Datenbank, welche von den Applikatiionen verwendet wird, angepasst werden.
 
 Um ein integriertes Applikationssystem zu entwickeln, muessen eine Menge an Designentscheidungen getroffen werden:
 
@@ -455,50 +427,51 @@ Um ein integriertes Applikationssystem zu entwickeln, muessen eine Menge an Desi
 2. **wie werden Daten ausgetauscht?** Verschiedene Systeme benutzen eigene Strukturen und Datenttypen. Eventuell muessen Adapter implementiert werden, um zwischen den Repraesentationen konvertieren zu koennen. 
 3. **Welche Features werden vom Produkt letzendlich verwendet?** Applikationssysteme liefern eventuell mehr Funktionalitaet als benoetigt wird. Es muss entschieden werden, welches Feature aus welchem Produkt sich am besten fuer die Anforderungen anbietet. Falls moeglich, sollten nicht benoetigte Features ebenfalls deaktiviert werden, um den Normalsystembetrieb nicht zu stoeren.
 
-- Riesenbeispiel
-  - procurement System zum Bestellungen von ihrem Schreibtisch aus aufgeben
-  - 5 millin dollar pro jahr einsparung erhofft
-  - zentralisieren des kaufens
-    - system kann so garantieren, dass bestellungen sind immer von Lieferanten die die besten preise liefern
-    - sollte notwendige administration bei bestellungen reduzieren
-  - manuelles system
-    - verfuegbare ware auswaehlen
-    - bestellung erstellen
-    - bestellung genehmigen lassen
-    - bestellung an haendler schicken
-    - ware erhalten
-    - Bestaetigung dass die Zahlung erfolgen soll
-  - Das unternehmen hat ein altes bestellungssystem welches von einer zentralen Beschaffung verwendet wird
-    - Diese Auftragsabwicklungssoftware ist in die existierenden Rechnungsstellen- und Liefersysteme eingebaut
-    - fuer das neue system, wird das altes system in eine webbasierte E-Commerce-Platform und einem email system, welches die kommunikation mit den benutzern abwickelt, eingebaut
-    - BILD 15.14
-  - Monate oder sogar jahre entwicklungszeit koennen eingesparrt werden
-    - aus dem beispiel
-      - wurde in einer grossen firma in neun monaten eingefuehrt
-      - vorher wurde gesagt,es dauert 3 jahre ein eigenes system zu entwicklen, welches mit dem alten system verknuepft werden kann
+Das folgende Beispiel zeigt die integrierung von Systemen. Ein grosses Unternehmen moechte ein Beschaffungssystem einbauen,
+welches den Angestellten das Bestellen von ihrem Schreibtisch aus ermoeglicht. Es wird sich dabei eine jaehrliche Einsparung von
+5 Millionen Dollar erhofft. Durch das Zentralisieren des Einkaufs kann garantiert werden, dass immer bei Lieferanten bestellt wird,
+die die besten Preise anbieten. Zusaetzlich sollte die notwendige Administration bei dem Bestellungsvorgang reduziert werden.
 
-- Applikationssystem-Integration
-  - kann mit sevice-oriented approach vereinfacht werden
-  - heisst
-    - Zugriff auf die funktionalitaet des applikationssystems durch Standard-Serviceschnittstellen
-    - ein service fuer jede diskrete einheit der funktionalitaet
-  - eventuell muss ein wrapper implementiert werden
-    - der die applikation versteckt
-    - aber extern sichtbare sevices anbietet 
-    - BILD 15.15
-    - sehr gut bei alten system die in ein neues system integriert werden soll
-- wie auch bei anderen komponenten
-  - verstehen der systemschnittstelle ueber die kommuniziert wird
-  - anforderungen gegen schnelle entwicklung und wiederverwendung abwiegen
-  - design von systemarchitektur welche es ermoeglicht dass die applikationssysteme miteinander arbeiten koennen
+Das aktuelle manuelle System besteht daraus, die verfuegbare Ware auszuwaehlen, die Bestellung zu erstellen, diese genehmigen zu
+lassen, die Bestellung dem Haendler zu schicken, die Ware zu erhalten und anschliessend die Bestaetigung, dass eine Zahlung 
+erfolgen soll, zu geben.
+
+Das Unternehmen hat ein altes Bestellsystem, welches von einer zentralen Beschaffung verwendet wird. Diese
+Auftragsabwicklungssoftware ist in die existierenden Rechnungsstellen- und Liefersysteme eingebaut. Fuer das neue System, wird
+das alte System in eine webbasierte E-Commerce-Platform und ein E-Mail-System, welches die Kommunikation mit den Benutzern
+abwickelt, eingebaut. Die Struktur wird in folgender Abbildung dargestellt. 
+
+BILD 15.14
+
+Durch das integrieren von existierenden Applikationssystemen koennen Monate oder sogar Jahre Entwicklungszeit eingespart werden.
+Das System aus dem Beispiel wurde in neun Monaten eingefuehrt, wobei vorher geschaetzt wurde, dass es drei Jahre dauer koennte,
+ein eigenes System zu entwickeln, welches mit dem alten System verknuepft werden kann.
+
+Die Applikationssytem-Integration kann mit einem serviceorientierten Ansatz vereinfacht werden. Dies bedeutet, dass der 
+Zugriff auf Funktionalitaet des Applikationssystems durch Anbieten von Standard-Serviceschnittstellen ermoeglicht wird. Fuer 
+jede diskrete Einheit der Funktionalitaet wird ein Service erstellt. Dazu kann ein Wrapper implementiert werden, die die
+Applikation versteckt, aber extern sichtbare Services anbietet. Dies kann sehr gut bei alte Systemen gemacht werden, welche in
+ein neues System integriert werden soll.
+
+BILD 15.15
+
+Das Integieren von Applikationssytemen ist das gleiche wie das Integrieren jeder anderer Komponente auch. Es muss die 
+Systemschnittstelle, ueber die kommuniziert wird, verstanden werden. Es muessen Anforderungen gegen eine schnelle Entwicklung
+und Wiederverwendung abgewogen werden. Und es muss eine Systemarchitektur entworfen werden, welche es ermoeglicht, dass die 
+Applikationssysteme miteinander arbeiten koennen.
 
 Die Tatsache, dass diese Produkte in der Regel eigenständige große Systeme sind und
 oft als separate eigenständige Systeme verkauft werden, bringt zusätzliche Probleme mit sich. Böhm
 und Abts (Boehm und Abts 1999) heben vier wichtige Systemintegrationsprobleme hervor:
 
-1. 
+1. **Mangelnde Kontrolle über Funktionalität und Leistung** Auch wenn eine Schnittstelle eines Produkts vielversprechend aussieht, weiss man nicht, ob das System nicht vielleicht schlecht implementiert ist, oder schlecht abschneidet. Das Produkt hat eventuell versteckte Operationen, welche bei der Benutzung in bestimmten Situationen stoeren koennen. Diese Probleme zu beheben kann sehr wichtig fuer den Systemintegrator sein, jedoch von weniger Bedeutung fuer den Systemanbieter selbst. Benutzer muessen so eventuell Problemungehungen finden, wenn das System wiederverwendet werden soll.
+2. **Probleme mit der Systeminteroperabilität** Es ist schwierig individuelle Systeme miteinander arbeiten zu lassen, da in beiden Systemen Annahmen getroffen wurden, wie diese verwendet werden. Garlan et al. (Garlan, Allen, and Ockerbloom 1995), berichtet von einer Integration von vier Systemen. Drei Systeme waren eventbasiert, benutzten jedoch verschiedene Modelle von Events. Die Integration dauerte zwei Jahre statt die geschaetzten sechs Monate. Torchiano and Morisio (Torchiano and Morisio 2004) fanden heraus, dass das Nichteinhalten von Standards die Integrierung erschwert.
+3. **No control over system evolution** Systemanbieter koennen alleine ueber Aenderungen des Systems entscheiden. Bei PC Produkten heisst dies, dass oft neue Versionen veroeffentlicht werden, welche eventuell nicht mit alten Versionen kompatibel sind. Neue Versionen haben eventuell neue ungewollte Funktionalitaeten und alte Versionen koennen nicht mehr verfuegbar und unterstuetzt werden.
+4. **Unterstützung durch Systemanbieter** Anbieter bieten ganz unterschiedlich viel Support fuer ihre Produkte. Wenn Probleme auftreten ist die Unterstuetzung durch den Systemanbieter notwendig, da Kunden keinen Zugriff auf Programmcode oder detaillierte Dokumentation haben. Der sich veraendernde Markt und ekonomische Umstaende koennen dazu fuehren, dass der Systemanbieter nicht die Unterstuetzung liefern kann, die der Kunde benoetigt. Ein Produkt kann zum Beispiel aus dem Sortiment genommen werden, weil es nur eine begrenzte Nachfrage generiert.
 
-### Bilder
+Boehm and Abts vermuten, dass die Kosten fuer die Systemwartung und -weiterentwicklung bei integrierten Applikationssystemen groesser sind. Je weiter die Leute, welche fuer die Systemwartung zustaendig sind, von den eigentlichen Entwicklern des Systems getrennt sind, desto mehr Probleme mit dem integrierten System koennen auftreten.
+
+### BilderS
 
 ![](media/image.jpg)
 
