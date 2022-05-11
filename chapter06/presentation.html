@@ -80,40 +80,21 @@ Ergebnis: Artefakt: Architectural Model
 
 # Motivation
 
-- Auch in agilen Prozessen üblich: Früher Fokus auf Design von Gesamtsystemen im Entwicklungsprozess
-- Inkrementelles Entwickeln von Architekturen ist (üblicherweise) nicht erfolgreich
-
-
-- Refactoring einzelner Komponenten ist (üblicherweise relativ) einfach
-- Refactoring einer Systemarchitektur erfordert (möglicherweise) ein Ändern mehrerer Komponenten
-
----
-
-# Motivation
-
-- Funktionale Anforderungen beeinflusst durch individuelle Komponenten
-- Nicht-funktionale Anforderungen beeinflusst durch Systemarchitektur
-
-
-- Architektur eines Systems bestimmt u.A. dessen Laufzeitperformanz, Robustheit, Verteilbarkeit, Wartbarkeit
-
----
-
-# Motivation
-
-- Explizites Benennen einer Systemarchitektur erfordert Analyse (Alternativen abwägen; beste Lösung finden)
-
-
-- Architectural Models können zur Kommunikation genutzt werden (mit Stakeholdern, anderen Entwicklern)
-
-
-- Architekturen von Systemen mit ähnlichen Anforderungen können wiederverwendet werden
+- Inkrementelles Entwickeln von Architekturen scheitert
+	- Refactoring einzelner Komponenten = einfach
+	- Refactoring einer Systemarchitektur &rarr; ggf. Ändern mehrerer Komponenten
+- Erfüllen nicht-funktionaler Anforderungen
+	- Funktionale Anforderungen &larr; individuelle Komponenten
+	- Nicht-funktionale Anforderungen &larr; Systemarchitektur
+- Explizites Benennen Systemarchitektur &rarr; Analyse (Alternativen abwägen; beste Lösung finden)
+- Architectural Models zur Kommunikation (Stakeholder, Entwickler)
+- Wiederverwenden von Architekturen bei ähnlichen Anforderungen
 
 ---
 
 # Architectural Design vs. Requirements Engineering
 
-- Praxis: Schnittmenge zwischen Requirements Engineering und Architectural Design
+- Praxis: Schnittmenge
 
 
 - Ideal: Systemspezifikation (Was) enthält keine Designinformationen (Wie)
@@ -182,6 +163,7 @@ class: img-400
 # Architectural Model: Formalität
 
 - In der Praxis häufig: informelle Blockdiagramme
+- Intuitivität vs. Detailgrad
 
 ![](media/6_01.png)
 
@@ -189,36 +171,14 @@ class: img-400
 
 ---
 
-# Blockdiagramme
+# Architectural Model: Formalität
 
-**Vorteile**
-- Intuitiv verständlich für Menschen verschiedener Disziplinen
-	- Kommunikation zwischen Ingenieuren und Domänenexperten
-	- Nützlich für Manager zur Projektplanung
+- UML = Beschreibung objektorientierter Systeme
+- Sommerville: Architekturdesign &rarr; höherer Abstraktionsgrad (UML nicht nützlich)
 
 
-**Nachteile**
-- Undetailliert
-	- Typen von Beziehungen + äußere Eigenschaften von Komponenten nicht sichtbar
-	- Raum für Missverständnisse
-
----
-
-# UML zur Beschreibung von Architekturen
-
-- Umfrage: Wenn UML genutzt, dann meist informell
-- UML soll objektorientierte Systeme beschreiben
-
-
-- Sommerville: Phase des Architekturdesigns &rarr; Systeme abstrakter beschreiben
-- UML im Designprozess nicht nützlich
-
----
-
-# Dokumentation durch strenge Notationen
-
-- Spezialisierte Modellierungssprachen: Architectural Description Languages (ADLs)
-	- Ohne Erfahrung ggf. schwer nutzbar
+- ADLs (Architectural Description Languages) = Spezialisierte Modellierungssprachen
+- Ohne Erfahrung schwer nutzbar (keine Kommunikationshilfe)
 
 
 - Erzeugen von vollständigen, detaillierten Architekturdokumentationen ist teuer
@@ -464,7 +424,7 @@ Architektur eines Systems sollte von nicht-funktionalen **Anforderungen** abhän
 
 
 - Grundsätzlich: Kompromisse zwischen Anforderungen
-- Möglich: Unterschiedliche Ansätze für verschiedene Teile eines Systems
+- Möglich: Unterschiedliche Ansätze für Systemteile
 
 ---
 
@@ -612,7 +572,7 @@ class: img-350
 # Client-Server-Architecture
 
 - System = Server &rarr; Services &lrarr; Clients (via Netzwerk)
-- n Server auf einem Rechner; n Client-Instanzen parallel auf n Rechnern
+- mehrere Server auf einem Rechner; viele parallele Client-Instanzen
 - Clients kennen Server; Server kennen Clients nicht
 
 ![](media/6_13.png)
@@ -728,49 +688,24 @@ class: center, middle
 
 ---
 
-# Transaction-Processing Systems
+# Application Architectures
 
-- Verarbeiten Benutzeranfragen r/w auf DBs
-- Transaktion = Kohärente Sequenz von Operationen (Persistierung, wenn alle Operationen erfolgreich)
-
-![](media/6_16.png)
-
-[Fig. 6.16]
-
----
-
-# Information Systems
-
-- Anwendungen mit Interaktion mit einer geteilten Datenbank
-- Kontrollierter Zugriff auf Informationsbasis
-- Können transaktionsbasiert sein
-- Häufig verteilt / webbasiert
+- **Transaction-Processing Systems**
+	- Verarbeiten Benutzeranfragen r/w auf DBs in Form von Transaktionen
+- **Information Systems**
+	- Kontrollierter Zugriff auf geteilte DB
+	- ggf. transaktionsbasiert
+	- häufig verteilt / webbasiert
+- **Language-Processing-Systems**
+	- Übersetzen Sprache in alternative Repräsentation dieser
+	- Compiler: Programmiersprache &rarr; Maschinencode
+	- NLP-Systeme: natürliche Sprache &rarr; andere natürliche Sprache
 
 ---
 
 class: img-400
 
-# Information Systems
-
-Als Layered Architecture
-
-![](media/6_18.png)
-
-[Fig. 6.18]
-
----
-
-# Language-Processing-Systems
-
-- Übersetzen Sprache in alternative Repräsentation dieser
-- Compiler: Programmiersprache &rarr; Maschinencode
-- NLP-Systeme: natürliche Sprache &rarr; andere natürliche Sprache
-
----
-
-class: img-400
-
-# Language-Processing-Systems
+## Bsp: Language-Processing-Systems
 
 Als Repository Architecture (Einfache Integration von Komponenten)
 
@@ -782,7 +717,7 @@ Als Repository Architecture (Einfache Integration von Komponenten)
 
 class: img-400
 
-# Language-Processing-Systems
+## Bsp: Language-Processing-Systems
 
 Als Pipe-and-Filter-Architecture (Effizient bei Batch-Processing)
 
