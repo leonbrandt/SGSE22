@@ -352,19 +352,20 @@ Infos über die Plattform --> wie man die Prozesse integrieren soll <br>
 ---
       
 ## 2.2 Softwaredesign und Implementierung
-   
+      
+<br>   
 Design Aktivitäten:      
-1. Architekturenentwurf: <br>
+1. **Architekturenentwurf:** <br>
 -Gesamtstruktur des Systems <br>
 -Komponenten, ihre Beziehungen/Verteilung.
-2. Datenbankdesign: <br>
+2. **Datenbankdesign:** <br>
 -Systemdatenstrukturen und wie die darstellen. <br>
 (Datenbank wiederverwenden/neue erstellen)
-3. Schnittstellendesign: <br>
+3. **Schnittstellendesign:** <br>
 Schnittstellen zwischen Systemkomponenten. <br>
 -Schnittstellenspezifikation. <br>
 -Komponenten separat entwickeln.
-4. wiederverwendbaren Komponenten. <br>
+4. **wiederverwendbaren Komponenten.** <br>
 -wenn keine --> neue Komponente entwerfen. <br>
 -Komponentenbeschreibung/Implementierungsdetails <br> 
 (Liste mit Änderungen / Designmodell mit UML Druck)      
@@ -378,19 +379,19 @@ Schnittstellen zwischen Systemkomponenten. <br>
 ## 2.3 Softwarevalidierung - Phasen
       
 Validierungstechnik - Programmtests (unter Verwendung der Testdaten).  <br>
-Überprüfungsprozesse sind möglich (Inspektionen und Überprüfungen in jeder Phase) 
+Überprüfungsprozesse sind möglich (in jeder Phase) 
 
 - Meiste Zeit --> Test von Programmen.           
 - Integriertes System wird auch getestet.
-- Benutzertest heißt Beta-Test --> Benutzerkommentare
+- Benutzertest - Beta-Test --> Benutzerkommentare
     
 Die Phasen des Testprozesses:
-1. **Komponententests.** -  jede Komponente unabhängig von anderen getestet. <br>
+1. **Komponententests** -  jede Komponente unabhängig getestet. <br>
 Bespiel für ein Komponent - Funktionen oder Klassen. 
-2. **Systemtest.** Komponenten --> Gesamtsystem. <br>
+2. **Systemtest** Komponenten --> Gesamtsystem. <br>
 (nicth)funktionale Anforderungen erfüllen. <br>
 Bei großen Systemen - mehrstufiger Prozess (Test von Subkomponenten).
-3. **Kundentests.** - von Systemkunden, mit realen Daten.    
+3. **Kundentests** - von Systemkunden, mit realen Daten.    
    
 <div style="margin-top:20px;">
   <img style="width:80%;" src="img/06.png"/>
@@ -400,12 +401,10 @@ Bei großen Systemen - mehrstufiger Prozess (Test von Subkomponenten).
       
 ## 2.3 Softwarevalidierung  
       
-- Bei einer testgetriebener Entwicklung: <br>
-die Tests mit den Anforderungen --> Entwicklung 
-- Bei plangesteuertes Softwareprozess: <br>
-Testplänen (aus der Systemspezifikation) --> Tests
-- In der Abbildung: Testpläne - Verbindung zwischen Test und Entwicklungsaktivitäten (V-Modell). 
-- **V-Modell** - die Software-Validierungsaktivitäten, die jeder Stufe des WasserfallsProzessmodells entsprechen. 
+- **testgetriebene Entwicklung:** Tests --> Entwicklung 
+- **plangesteuerter Softwareprozess:** Testplänen (aus der Spezifikation) --> Tests
+- In der Abbildung: Testpläne - Verbindung zwischen Test und Entwicklungsaktivitäten. 
+- **V-Modell** - die Validierungsaktivitäten, die jeder Stufe des Wasserfallmodells entsprechen. 
 - Beta-Testing ist möglich
       
 <div style="margin-top:20px;">
@@ -416,15 +415,11 @@ Testplänen (aus der Systemspezifikation) --> Tests
       
 ## 2.4 Software evolution
       
-- viel sinnvoller eine Änderungen an der Software vorzunehmen als an der Systemhardware.
+- viel sinnvoller - Änderungen an der Software (nicht Hardware)
 
-Es gibt der Prozess namens Softwareevolution (Softwarewartung).
+Es gibt ein Prozess - Softwareevolution (Softwarewartung).
 
-- meist wird Softwareevolution als ein zusammenhängendes Prozess angesehen. 
-- Man sollte es aber lieber als ein getrenntes Prozess vorstellen (siehe Abbildung). 
-
-Hier ist die Software - Reaktion auf änderte Anforderungen und Kundenbedürfnisse.
-      
+**In der Abbildung:** die Software - Reaktion auf änderte Anforderungen und Kundenbedürfnisse.     
 <div style="margin-top:20px;">
   <img style="width:100%;" src="img/08.png"/>
 </div>      
