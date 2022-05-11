@@ -4,23 +4,13 @@
 
 # Einleitung
 
-// Definition
-
 Architectural Design befasst sich mit dem Entwurf der Struktur und Organisation von Softwaresystemen. Hierbei werden die strukturellen Hauptkomponenten eines Systems sowie die Beziehungen dieser identifiziert. Ergebnis dieser Tätigkeit ist ein Architectural Model. Dieses Artefakt beschreibt die Organisation eines Systems als Menge von kommunizierenden Komponenten.
-
-// Motivation
 
 In agilen Prozessen ist es üblich, dass früh im Entwicklungsprozess ein Fokus auf das Design des Gesamtsystems gelegt wird. Ein inkrementelles Entwickeln von Architekturen ist üblicherweise nicht erfolgreich. Grund hierfür ist, dass ein Refactoring einzelner Komponenten üblicherweise relativ einfach ist. Ein Refactoring einer Systemarchitektur hingegen ist aufwändig, weil möglicherweise ein Ändern mehrerer Komponenten erforderlich ist.
 
-// Abgrenzung zu Requirements engineering
-
 In der Praxis besteht eine große Schnittmenge zwischen Requirements Engineering und Architectural Design. Im Idealfall enthält eine Systemspezifikation keine Designinformationen. Dies ist jedoch unrealistisch, da High-Level-Features eines Systems durch seine Hauptkomponenten repräsentiert werden. Bereits im Requirements Engineering kann also eine abstrakte Systemarchitektur erzeugt werden. Hierbei werden Systemfeatures zu abstrakten Komponenten oder Subsystemen gruppiert.
 
-// Abstraktionsebenen
-
 Softwarearchitekturen können auf zwei Abstraktionsebenen betrachtet werden. *Architecture in the small* betrachtet die Architektur individueller Programme. *Architecture in the large* betrachtet die Architektur komplexer Systeme. Diese sind gegebenenfalls verteilte Systeme aus anderen Systemen, Programmen und Programmkomponenten. Dieses Kapitel befasst sich hauptsächlich mit Architecture in the small.
-
-// Relevanz
 
 Wohingegen individuelle Komponenten funktionale Anforderungen eines Systems implementieren, ist der dominante Einflussfaktor auf nicht-funktionale Anforderungen eines Systems seine Systemarchitektur. Die Architektur eines Systems bestimmt also unter Anderem seine Performance (Laufzeitperformanz), Robustness (Robustheit), Distributability (Verteilbarkeit) sowie Maintainability (Wartbarkeit).
 
@@ -28,14 +18,10 @@ Ein explizites Designen und Dokumentieren von Softwarearchitekturen hat diverse 
 
 # Architectural Model
 
-// Blockdiagramme
-
 Das Ergebnis von Architectural Design ist ein Architectural Model. Hierbei werden zur Modellierung von Systemarchitekturen häufig einfache Blockdiagramme auf eine informelle Art genutzt. Hierbei repräsentieren Kästen einzelne Komponenten, Kästen in Kästen Komponenten, die in Subkomponenten zerlegt werden und Pfeile repräsentieren den Fluss von Daten oder Kontrollsignalen. Abbildung 1 zeigt an einem Beispiel ein solches informelles Blockdiagramm.
 
 ![](media/6_01.png)
 Abbildung 1: Beispiel für ein Architectural Model als Blockdiagramm [Fig. 6.1]
-
-// Formalität
 
 Blockdiagramme stellen eine High-Level-Betrachtung einer Systemstruktur dar. Menschen verschiedener Disziplinen, die im Softwareentwicklungsprozess involviert sind, können diese verstehen. Nachteil von Informellen Darstellungen ist, dass diese undetaillierte Repräsentationen von Softwarearchitekturen sind. Sie stellen weder die Typen von Beziehungen zwischen Komponenten, noch die von außen sichtbaren Eigenschaften dieser dar.
 
@@ -59,17 +45,11 @@ Die Physical View (physische Sicht) zeigt die Hardware sowie die Verteilung von 
 
 Hofmeister et. al. ergänzen das Modell von Krutchen durch eine Conceptual View (konzeptionelle Sicht). Diese ist eine abstrakte Ansicht des Systems, welche genutzt werden kann um High-Level-Anforderung in detaillierte Spezifikationen zu zerlegen. Diese Perspektive kann Entwicklern auch dabei helfen zu entscheiden, welche Komponenten wiederverwendet werden können.
 
-// Praxis
-
 In der Praxis wird eine Conceptual View meistens innerhalb des Designprozesses erzeugt. Andere Perspektiven beziehungsweise Sichten werden bei Bedarf erzeugt. Es ist selten notwendig, eine vollständige Beschreibung aller Sichten zu erzeugen. In agilen Methoden wird häufig die Behauptung formuliert, dass detaillierte Dokumentationen meistens ungenutzt bleiben. Somit ist die Entwicklung von Artefakten zur Dokumentation von Architekturen eine Verschwendung von Ressourcen. Aus diesem Grund sollten laut Sommerville nur die Perspektiven genutzt werden, die zur Kommunikation nützlich sind. Er schlägt vor, sich nicht um die Vollständigkeit der Dokumentation von Architekturen zu sorgen.
 
 # Architectural Design Decisions
 
-// Prozess ("Es gibt keinen Prozess")
-
 Architectural Design ist ein kreativer Prozess. Hier wird die Organisation eines Systems entworfen, sodass sowohl funktionale als auch nicht-funktionale Anforderungen an das System erfüllt werden. Es existiert kein stereotyper Prozess, denn dieser hängt vom Typ des zu entwickelnden Systems, vom Hintergrund und der Erfahrung des Systemarchitekts sowie von spezifischen Anforderungen an das System ab. Deshalb ist Architectural Design nicht als Sequenz von Aktivitäten zu verstehen. Ein besseres Konzept ist eine Serie an Entscheidungen, die zu treffen sind. Diese Entscheidungen haben tiefgreifende Auswirkungen auf das System und den Entwicklungsprozess.
-
-// Fragestellungen
 
 ![](media/6_02.png)
 Abbildung 2: Acht Fragestellungen für Systemarchitekten zur Hinleitung an Architectural Design Decisions [Fig. 6.2]
@@ -94,8 +74,6 @@ Wenn Performance (Laufzeitperformanz) eine kritische Anforderung ist, sollte die
 Wenn Security (Sicherheit hinsichtlich gezielter Störversuche) eine kritische Anforderung ist, bietet sich die Verwendung einer geschichteten Struktur an. Kritische Assets befinden sich hierbei weiter Innen. Es ist ein hoher Grad an Security-Validierung innerhalb der Schichten zu implementieren.
 
 Wenn Safety (Sicherheit hinsichtlich der Umgebung) eine kritische Anforderung ist, sollten safety-relevante Vorgänge in einer gemeinsamen Komponente oder einer geringen Anzahl an Komponenten stattfinden. Dies reduziert Kosten hinsichtlich Validierung und ermöglicht, dass verbundene Schutzsysteme im Fehlerfall sicher abgeschaltet werden können.
-
-// mehr Validierung erhöht Security; weniger Validierung erhöht Safety
 
 Wenn Availability (Verfügbarkeit) eine kritische Anforderung ist, sollten redundante Komponenten zum Einsatz kommen. Dies ermöglicht ein Ersetzen und Aktualisieren dieser ohne Ausfallzeiten.
 
@@ -254,8 +232,6 @@ Für viele Business-Systeme (häufig ERP-Systeme) ist die Wiederverwendung einer
 
 Es existieren viele Typen von Application Systems. Diese erscheinen auf den ersten Blick möglicherweise sehr unterschiedlich. Oberflächlich unterschiedlich erscheinende Applikationen haben jedoch möglicherweise viel gemeinsam. Diese teilen sich eventuell eine abstrakte Application Architecture.
 
-// Arten der Nutzung
-
 Modelle von Application Architectures können auf unterschiedliche Arten genutzt werden. So können diese als Startpunkt für den Designprozess von Architectural Design dienen. Bei unbekannten Applikationstypen können so initiale Architekturdesigns auf generischen Application Architectures basiert werden. Diese können dann für spezifische Systeme spezialisiert werden.
 
 Auch können Application Architectures als Checkliste dienen. Hier können entwickelte Architekturdesigns mit generischen Application Architectures verglichen und auf Konsistenz mit diesen geprüft werden.
@@ -288,8 +264,6 @@ Abbildung 10 zeigt die abstrakte Struktur von Information Systems als Blockdiagr
 
 Information Systems sind häufig auch Transaction-Processing-Systems. So sind zum Beispiel E-Commerce-Systeme internetbasierte Information Systems. Diese akzeptieren Bestellungen von Waren und veranlassen eine Lieferung. Es wird Kunden ein Produktkatalog zur Verfügung gestellt und Bezahlungen erfolgen innerhalb von Transaktionen.
 
-// Verteilung
-
 Häufig sind Information Systems als verteiltes System mit einer mehrstufigen Client-Server-Architektur implementiert. So kann in der beschriebenen abstrakten Struktur jede Schicht durch einen eigenen Server implementiert werden.
 
 ## Language-Processing-Systems
@@ -303,3 +277,11 @@ Abbildung 11: Beispiel eines Language-Processing-Systems als Repository Architec
 Abbildung 12: Beispiel eines Language-Processing-Systems als Pipe-and-Filter-Architecture [Fig. 6.22]
 
 Abbildung 11 zeigt ein als Repository Architecture organisiertes Language-Processing-System als Blockdiagramm. Konkret wird hier eine Entwicklungsumgebung zum Umgang mit Programmiersprachen dargestellt. Ein Teil desselben Systems wird in Abbildung 12 als Pipe-and-Filter-Architecture dargestellt. Die Variante der Repository Architecture zentralisiert interne Repräsentationen der Sprache sowie weitere Definitionen in einem Repository. Diese Form der Organisation ermöglicht ein einfaches Ergänzen von Modulen zur Formatierung von Optimierung durch Anbindung an das Repository. Die Variante der Pipe-and-Filter-Architecture besitzt bei Batch-Verarbeitung positive Performanzeigenschaften, wenn Programme ohne Benutzerinteraktion kompiliert werden sollen. Eine Integration von weiteren Komponenten wie in der ersten Variante ist hier mit einem höheren Aufwand verbunden.
+
+---
+
+**Referenzen**
+
+I. Sommerville, "Architectural design," in Software engineering, Tenth Edition, Harlow: Pearson Education, 2019, pp. 167–195. 
+
+Alle Abbildungen sind, soweit nicht anders angegeben, aus dieser Quelle entnommen. Nummern dieser sind unter Abbildungen angegeben.
