@@ -240,36 +240,41 @@ Funktionalität bereit, die von mehreren Komponenten des Systems verwendet werde
 
 ## client-server computing ##
 
-- Programme, die übers Internet angesprochen werden, sind als client-server systeme
-angelegt
-- client-programm (auf einem Rechner) interagiert mit dem server-program (in der Regel auf einem
-anderen Rechner)
-- client-server modell ist aber eher ein Konzept auf Applikationsebene und nicht nur auf
-verteilte System (über meherere Rechner) beschränkt
-- in client-server modell wird eine Applikation als Menge von Diensten ("Services")
-modelliert, welche von Servern bereitgestellt werden
-- clients müssen die Server kennen, aber nichts über andere clients wissen
-- jeder client kann unterschiedliche services von unterschiedlichen servern nutzen
-- server können unterschiedliche services bereitstellen
-- oftmals laufen mehrere client-prozesse auf dem gleichen Prozessor (Mail-Client, Web-Browser, Drucker-Treiber)
-- es können theoretisch auch mehrere Server-Prozesse auf dem gleichen Prozessor
-laufen, allerdings werden Server-Systeme oftmals als Mehrkern-System aufgesetzt,
-bei dem eine Instanz des gleichen Server-Programms auf jedem Kern läuft
-	- Verteilung der Client-Anfragen an Server wird oftmals durch Load Balancing Software
-	gleichmäßig auf die Prozesse verteilt -> Vermeidung von Überlastung eines Prozesses,
-	was eine Verschlechterung des Dienstes bedeuten würde, der dem Client bereitgestellt
-	werden kann
-- client-server systeme sind von der klaren Trennung zwischen der Darstellung von Informationen
-und den Berechnungen, die diese Informationen erzeugen/bereitstellen abhängig
-	- setzt Organisation der Applikationsarchitektur in logischen Schichten voraus, die
-	durch klar definiert Schnittstellen von einander getrennt sind
-	- Bsp. hierfür in Fig 17.5:
-		1. Präsentationsschicht: Darstellung von Information für den User und Interaktion mit dem User
-		2. Daten-Behandlung (data-handling, TODO: besseren Namen finden): Behandlung der
-		Daten, die zum und vom Client geschickt werden (Implementierung von Input-Validierung etc.)
-		3. Anwendungs-Berechnungs Schicht (application processing layer): Implementierung
-		der Anwendungslogik und deren Bereitstellung
-		4. Datenbankenschicht: Speicherung und Bereitstellung (+ transaction management) der Daten
+Programme, die über das Internet angesprochen werden, sind als Client-Server Systeme
+angelegt. Dabei interagiert ein Client-Progamm (auf einem lokalen Rechner) mit einem
+Server-Programm (in der Regel auf einem anderen Rechner, ggfs. geografisch entfernt).
+Dieses Client-Server Modell ist ein Konzept auf der Applikationsebene, daher ist seine
+Anwendung nicht nur auf verteilte Systeme beschränkt.
+
+Im Client-Server Modell wird die Applikation als eine Menge aus Diensten, welche von
+Servern bereitgestellt werden, modelliert. Jeder Server kann unterschiedliche Dienste
+anbieten. Ein Client-Programm kann diese Dienste nutzen
+und muss dafür nur die Server kennen, jedoch keine anderen Client-Rechner.
+
+Wie in der untenstehenden Abbildung zu erkennen, handelt es sich bei Servern und Clients
+um unterschiedliche Prozesse.
+
+TODO: Bild
+
+Oftmals laufen mehrere Client-Prozesse auf dem gleichen Prozessor (z.B. Mail-Client, Web-Browser,
+Drucker-Treiber). Dies ist theoretisch auf für Server-Prozesse möglich, praktisch
+werden Server-Systeme allerdings häufig als Mehrkern-Systeme ausgelegt, auf dessen Kernen
+Instanzen des gleichen Server-Programms laufen. Load-Balancing Software verteilt die
+Client-Anfragen gleichmäßig an die Server, um die Überlastung einzelner Server-Instanzen
+zu vermeiden.
+
+Client-Server Systeme sind von der klaren Trennung der Informationsdarstellung und
+den Berechnungen, die diese Informationen erzeugen, abhängig.
+Dies setzt die Organisation
+einer Applikation in vier logische Schichten voraus, die durch klar definierte Schnittstellen voneinander
+getrennt sind:
+1. Präsentationsschicht: Darstellung von Informationen für die Nutzende Person
+2. Datenverarbeitungsschicht: Verarbeitet die Daten, die von und zu dem Client
+geschickt werden.
+3. Applikationsschicht: Implementierung der Applikationslogik
+4. Datenbankschicht: Speicherung und Bereitstellung von Daten
+
+TODO: Bild
 
 ## architectural patterns for distributed system ##
 
