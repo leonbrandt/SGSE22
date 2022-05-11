@@ -56,7 +56,9 @@ Das Ziel dieses Testens ist, dass aufgezeigt wird, dass die Klasse den Erwartung
 1. **Normale Eingaben** die auch innerhalb der Nutzung dieser Klasse oder Funktion auftreten können.
 2. **Abnormale Daten** die nicht dem normalen Nutzerverhalten entsprechen.
 
-Dabei soll überprüft werden, ob die Klasse oder Funktion sich im Fehlerfall richtig verhält. Des Weiteren werden Äquivalenzklassen gebildet. Eine Äquivalenzklasse ist eine Menge von Eingaben. Dabei kann jedes Element dieser Klasse repräsentativ für alle Elemente in einem Test verwendet werden. Neben den Äquivalenzklassen werden auch Grenzwertanalysen durchgeführt. Dafür wird das Element am äußersten Rand der Äquivalenzklasse ebenfalls in den Testdaten verwendet.
+Dabei soll überprüft werden, ob die Klasse oder Funktion sich im Fehlerfall richtig verhält. Des Weiteren werden Äquivalenzklassen gebildet.
+![Äquivalenzklasse](./media/picture3.png)
+Eine Äquivalenzklasse ist eine Menge von Eingaben. Dabei kann jedes Element dieser Klasse repräsentativ für alle Elemente in einem Test verwendet werden. Neben den Äquivalenzklassen werden auch Grenzwertanalysen durchgeführt. Dafür wird das Element am äußersten Rand der Äquivalenzklasse ebenfalls in den Testdaten verwendet.
 
 ### Komponententest
 
@@ -80,7 +82,7 @@ Das Ziel dieser Entwicklungsmethode ist es, funktionierende Software einfach zu 
 
 Der Ablauf beginnt mit dem Identifizieren von neuen benötigten Funktionalitäten. Darauf folgend werden Tests geschrieben und diese durchgeführt. Sollte der Test fehlschlagen, was beim ersten Durchführen immer der Fall ist, wird die Funktionalität weiter implementiert und refactored. Daraufhin werden die Tests erneut ausgeführt. Sollten die Test keinen Fehler aufzeigen, wird der Prozess von neuem begonnen.
 
-![Testen allgemein](./media/Picture2.png)
+![Testen-driven Development](./media/Picture2.png)
 
 Der Vorteil dieses Vorgehen ist, dass eine große Testabdeckung erhalten wird, da für jede neue Funktionalität zunächst Tests entwickelt werden. Außerdem lassen sich Codeabschnitt besser Debuggen. Des Weiteren wird bei jedem neuen Testdurchlauf alle anderen Test mit durchgeführt. So können Fehler in anderen Programmabschnitten durch neu implementierte Funktionalitäten schnell gefunden werden.
 
