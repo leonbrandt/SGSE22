@@ -487,10 +487,64 @@ des Systems ist
 	- Jede Operation muss zustandslos sein, sodass sie geteilt werden kann
 	- Daten müssen entweder vom Client geliefert werden oder in einer Datenbank liegen, die
 	von allen Instanzen des Systems erreichbar ist
-- A particular problem... TODO
-- As an alternative... TODO
-- Scalability... TODO
-- Aufzählung... TODO
-- The notion... TODO
-- SaaS represents... TODO
-- Key points... TODO
+- Ein Problem in Mehrmandanten-Systemen ist die Datenverwaltung
+	- einfachste Lösung: Jeder Kunde hat seine eigene Datenbank, selbst verantwortlich für die Konfiguration
+		- erfordert allerdings die Verwaltung vieler Datenbank-Instanzen auf Seiten des Dienstanbieters
+	- alternative Lösung: Dienstanbieter verwaltet eine einzelne Datenbank, in der
+	die Nutzer virtuell voneinander isoliert sind
+	- TODO: Referenz auf Bild, Nutzung von Views
+- Skalierbarkeit beschreibt die Fähigkeit eines Systems, mit steigenden Nutzerzahlen
+umzugehen, ohne die Qualität des angebotenen Dienstes einzuschränken
+	- Im Kontext von SaaS wird häufig "scaling out" bevorzugt, also das Hinzufügen von
+	neuen Servern
+	- Folgende Richtlinien helfen dabei, skalierbare Software zu entwickeln
+		1. Entwicklung einzelner Komponenten als zustandslose Dienste, die auf einem Server
+		ausgeführt werden könnten. Das Ermöglicht die Mehrfache Interaktion des Nutzers
+		mit einem Dienst, der auf unterschiedlichen Servern bereitgestellt wird, während einer Transaktion.
+		2. Entwicklung des Systems, indem asynchrone Interaktion bevorzugt wird.
+		Dies führt dazu, dass die Anwendung nicht auf die Antwort einer Anfrage warten muss,
+		sondern währenddessen weitere Berechnungen durchführen kann
+		3. Ressourcen (z.B. Netzwerk- und Datenbank-Verbindungen) in einem Pool
+		verwalten, sodass keinem einzelnen Server die verfügbaren Ressourcen schnell ausgehen
+		4. Entwicklung der Datenbank, sodass fein granulares Locking möglich ist (nicht
+		einen gesamten Eintrag sperren, wenn nur ein Teil in Benutztung ist)
+		5. Nutzung einer cloud PaaS (Platform as a Service) Platform zur Systemimplementierung.
+		Diese Platformen enthalten Mechanismen um "scaling out" zu automatisieren
+
+- SaaS ist ein Paradigmenwechsel für verteilte Rechensysteme
+	- viele Softwareanbieter haben weite Teile ihres Portfolios auf diese Form der
+	Softwarebereitstellung umgestellt (bspw. Photoshop)
+	- Firmen stellen ihre eigenen Systeme (wie bspw. CRMs und Lagerverwaltung) auf
+	SaaS-Dienste externer Anbieter um
+
+- SaaS stellt eine neue Denkweise für Unternehmenssysteme dar. Im Falle von SaaS
+liegen die Abstraktionen des Systems näher am Nutzer, sodass die Systeme leichter
+zu verstehen, zu warten und weiter zu entwicklen sind.
+
+## Kernaspekte ##
+
+- Die Vorteile von verteilten Systemen bestehen darin, dass sie gut skaliert werden können,
+um mit steigenden Nutzeranzahlen umzugehen und, dass durch ihre Architektur die Möglichkeit
+besteht, Systemressourcen zu teilen und effizienter auszunutzen
+- Bereiche, denen bei der Entwicklung verteilter Systeme besondere Aufmerksamkeit
+zugewandt werden sollten sind Transparenz, Offenheit, Skalierbarkeit, Sicherheit,
+Dienstqualität und Fehlermanagement
+- Client-Server Systeme sind verteilte Systeme, in denen das System in Schichten
+aufgeteilt ist
+	- Die Präsentationsschicht wird auf dem Client implementiert
+	- Server stellen Datenverwaltung, Anwendungslogik und die Datenbankdienste zur Verfügung
+- Client-Server systeme können mehrschichtig aufgebaut sein, wobei verschiedene
+Schichten auf verschiedene Rechner verteilt sind
+- Architekturmuster für verteilte Systeme umfassen:
+	- Master-Slave Architekturen
+	- Zweischicht- und Mehrschicht-Architekturen
+	- Verteilte Komponenten Systeme
+	- Peer-to-peer (P2P) Architekturen
+- Verteilte Komponentensysteme benötigen Middleware zur Realisierung der Kommunikaton
+der Komponenten
+- P2P Architekturen sind dezentrale Architekturen, in denen nicht zwischen Clients und
+Servern unterschieden wird
+- "Software as a Service" ist eine Methode, eine Applikation als Thin-Client System
+zu realisieren, bei denen die Client-Anwendung ein Web Browser ist
+
+
