@@ -88,35 +88,77 @@ Zwei Interaktionsarten der System-Rechner:
 ---
 ### Interaktionsmodelle
 
-![Synchrone Interaktion](media/Waiter_Diner_scaled.drawio.png)
+
+<div style="margin-top:20px;">
+  <img style="width:50%;" src="media/Waiter_Diner.PNG" />
+</div>
 
 ---
 ### Interaktionsmodelle
 
-
-<div style="margin-top:20px;">
-  <img style="width:20%;" src="media/Waiter_Diner.PNG" />
-</div>
-
----
-# Voraussetzungen
-
-```java
-public class A {
-  public int a() {
-    return 42;
-  }
-}
+Nachricht an die Küche:
+```
+<starter>
+	<dish name = “soup” type = “tomato” />
+	<dish name = “soup” type = “fish” />
+	<dish name = “pigeon salad” />
+</starter>
+<main course>
+	<dish name = “steak” type = “sirloin” cooking = “medium” />
+	<dish name = “steak” type = “fillet” cooking = “rare” />
+	<dish name = “sea bass”>
+</main>
+<accompaniment>
+	<dish name = “french fries” portions = “2” />
+	<dish name = “salad” portions = “1” />
+</accompaniment>
 ```
 
 ---
+### Middleware
 
-## Inhalte
+Komponenten verwenden verschiedene
+- Programmiersprachen
+- Rechnerarchitekturen
+- Protokolle
+- ...
 
-* A
-* B
+Mit Middleware wird das Zusammenspiel der Komponenten gewährleistet.
+Zwei Arten der Unterstützung:
+- Interaktionshilfe
+- Bereitstellung gemeinsamer Dienste
 
-![](media/image.jpg)
+---
+### Middleware
+
+<div style="margin-top:20px;">
+  <img style="width:50%;" src="media/middleware.drawio.PNG" />
+</div>
+
+---
+### Client-Server Computing
+
+- Modellierung der Software als Sammlung von Diensten
+- Server bieten Dienste an
+- Clients nutzen Dienste
+
+---
+### Client-Server Computing
+
+<div style="margin-top:20px;">
+  <img style="width:50%;" src="media/client_server.drawio.PNG" />
+</div>
+
+---
+### Schichtenmodell
+
+
+<div style="margin-top:20px;">
+  <img style="width:50%;" src="media/layers.drawio.PNG" />
+</div>
+
+
+
 
 
     </textarea>
