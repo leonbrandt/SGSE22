@@ -182,15 +182,30 @@ in der Regel mehr Informationen als prozedurale Interaktion.
 In der folgenden Abbildung ist die prozedurale Kommunikation zwischen einer bestellenden
 Person und einer bedienenden Person in einem Restaurant dargestellt.
 
-TODO: Add Bild
+![Interaktion zwischen einem Kellner und einem Kunden](./img/Waiter_Diner.drawio.png)
 
 Die bedienende Person stellt der bestellenden Person eine Frage und wartet auf die Antwort.
 Die bestellende Person bestätigt die Anfrage und gibt eine Antwort.
 Die Antworten werden von der bedienenden Person notiert und anschließend gesammelt
-an die Küche weitergeleitet. Die nachfolgende Abbildung zeigt den möglichen Inhalt
+an die Küche weitergeleitet. Das nachfolgende Listing zeigt den möglichen Inhalt
 dieser Nachricht an die Küche.
 
-TODO: Add Bild
+```
+<starter>
+	<dish name = “soup” type = “tomato” />
+	<dish name = “soup” type = “fish” />
+	<dish name = “pigeon salad” />
+</starter>
+<main course>
+	<dish name = “steak” type = “sirloin” cooking = “medium” />
+	<dish name = “steak” type = “fillet” cooking = “rare” />
+	<dish name = “sea bass”>
+</main>
+<accompaniment>
+	<dish name = “french fries” portions = “2” />
+	<dish name = “salad” portions = “1” />
+</accompaniment>
+```
 
 Die Kommunikaton mit der Küche erfolgt allerdings asynchron: die bedienende Person
 "sendet" eine Nachricht an die Küche und kann anschließend weitere Bestellungen aufnehmen.
@@ -250,7 +265,7 @@ und muss dafür nur die Server kennen, jedoch keine anderen Client-Rechner.
 Wie in der untenstehenden Abbildung zu erkennen, handelt es sich bei Servern und Clients
 um unterschiedliche Prozesse.
 
-TODO: Bild
+![Client-Server Architektur](./img/client_server.drawio.png)
 
 Oftmals laufen mehrere Client-Prozesse auf dem gleichen Prozessor (z.B. Mail-Client, Web-Browser,
 Drucker-Treiber). Dies ist theoretisch auf für Server-Prozesse möglich, praktisch
@@ -270,7 +285,10 @@ geschickt werden.
 3. Applikationsschicht: Implementierung der Applikationslogik
 4. Datenbankschicht: Speicherung und Bereitstellung von Daten
 
-TODO: Bild
+Im folgenden sind diese Schichten grafisch dargestellt:
+
+![Schichtenmodell](./img/layers.drawio.png)
+
 
 ## architectural patterns for distributed system ##
 
@@ -303,7 +321,7 @@ zuständig und kontrolliert die "Slave"-Prozesse. Jeder "Slave"-Prozess ist eine
 bestimmten Aktion zugeordnet, wie beispielsweise das Erfassen einer Sensorgröße oder
 die Stellung eines Aktors.
 
-TODO: Bild
+![Ampelsteuerung](./img/Ampel.drawio.png)
 
 In der obigen Abbildung ist eine mit dem Master-Slave Modell realisierte Ampelsteuerung
 dargestellt. Am System sind zwei "Slave"- und ein "Master"-Prozess beteiligt.
@@ -345,7 +363,7 @@ deutlich komplexer. Eine Änderung in der Applikationssoftware erfordert beispie
 die komplette Neuinstalltion der geänderten Software auf allen Client-Systemen.
 
 
-TODO: Bild
+![Geldautomaten-System](./img/Bank_simple.drawio.png "opt title")
 
 Die obige Abbildung zeigt ein Geldautomaten-System, die einzelnen Geldautomaten
 sind als dicke Clients umgesetzt. Der Server ist die Datenbank in Form von Mainframes,
@@ -369,12 +387,15 @@ führen (im Falle von flachen Clients) und zu Problemen mit der Systemverwaltung
 dicken Clients). Als Lösung ermöglicht die mehrstufige Client-Server Architektur die Verteilung
 jeder logischen Schicht auf einen einzelnen Prozessor.
 
-In einem beispielhaften
-Internetbanking-System könnten die Schichten wie folgt aufgeteilt sein:
+In einem beispielhaften Internetbanking-System könnten die Schichten wie folgt aufgeteilt sein:
 - Die Kundendatenbank wird auf einem Mainframe gehostet (Datenbankdienste)
 - Applikationsdienste, wie z.B. Überweisungen anzuweisen, sind im Webserver als Skripte
 hinterlegt, die auf dem Client ausgeführt werden können
 - Der Webbrowser auf dem Rechner der nutzenden Person stellt den Client dar
+
+Dieses System ist in der nachfolgenden Abbildung dargestellt:
+
+![Dreistufiges Client-Server Modell](./img/Bank_three.drawio.png)
 
 Diese Lösung ist einfach zu skalieren, da relativ einfach neue Webserver mit steigenden
 Nutzendenzahlen hinzugefügt werden können. Dieses dreistufige Client-Server Modell
@@ -414,6 +435,8 @@ die Dienste nur bedarfsweise miteinander in Verbindung treten.
 Jeder Dienst bzw. jede zusammenhängende Gruppe von Diensten kann als Komponente im
 System umgesetzt werden, die eine Schnittstelle für die implementierten Dienste bietet.
 Andere Komponenten nutzen diese Schnittstellen über Middleware mithilfe von Remote Procedure Calls.
+Eine verteilte Komponentenarchitektur ist in dem folgenden Bild dargestellt:
+![Verteilte Komponentenarchitektur](./img/dist_component.drawio.png)
 
 Die Verwendung des verteilten Komponentenmodells bietet einige Vorteile:
 1. Der Systementwickler muss Entscheidungen, wo und wie Dienste bereitgestellt werden, nicht
@@ -478,9 +501,10 @@ Theoretisch wäre es möglich, dass jeder Teilnehmer mit jedem
 anderen Teilnehmer in Verbindung tritt, praktisch wird die Anzahl direkter Verbindungen
 aber durch die zugrundeliegende Netzwerktechnologie begrenzt.
 Daher werden Netzwerkknoten in Lokalitäten organisiert, wobei einige Knoten als
-Brücken in andere Lokalitäten fungieren.
+Brücken in andere Lokalitäten fungieren. In der nachfolgenden Abbildung ist
+eine P2P-Netzwerkstruktur zu sehen, in denen beispielsweise die Knoten `n1` bis `n5` eine Lokalität bilden.
 
-TODO: Bild
+![Eine dezentrale P2P Architektur](./img/P2P.drawio.png)
 
 In dezentralen Architekturen müssen Netzwerkknoten sowohl Applikationslogik, als auch
 Kommunikationsfunktionen implementieren, um den Datentransfer durch das Netzwerk
@@ -609,15 +633,19 @@ realisiert werden, über die sich die Nutzenden das System selbstständig konfig
 können.
 
 Diese Konfigurationen können folgende Dinge umfassen:
-	1. Branding: Nutzer einer Organisation bekommen eine Nutzerschnittstelle präsentiert, die
-	zu der Organisation passt
-	2. Geschäftsregeln und Arbeitsabläufe: Jede Organisation bestimmt die Arbeitsabläufe und Regeln,
-	die die Nutzung des Dienstes und dessen Daten beeinflusst
-	3. Datenbank-Erweiterungen: Jede Organisation gibt an, wie das generische Datenmodell
-	des Dienstes angepasst wird, um den spezifischen Anforderungen zu entsprechen
-	4. Zugriffskontrolle: Anlegen von Mitarbeiterkonten und Definition der Nutzungsrechte für
-	Ressourcen und Funktionen
+1. Branding: Nutzer einer Organisation bekommen eine Nutzerschnittstelle präsentiert, die
+zu der Organisation passt
+2. Geschäftsregeln und Arbeitsabläufe: Jede Organisation bestimmt die Arbeitsabläufe und Regeln,
+die die Nutzung des Dienstes und dessen Daten beeinflusst
+3. Datenbank-Erweiterungen: Jede Organisation gibt an, wie das generische Datenmodell
+des Dienstes angepasst wird, um den spezifischen Anforderungen zu entsprechen
+4. Zugriffskontrolle: Anlegen von Mitarbeiterkonten und Definition der Nutzungsrechte für
+Ressourcen und Funktionen
 
+In der folgenden Abbildung ist dargestellt, wie 5 Nutzer auf einen Applikationsdienst
+über Nutzerprofile (in denen Konfigurationen hinterlegt sind) zugreifen.
+
+![Mehrmandantensystem mit Konfiguration](./img/saas_config.drawio.png)
 
 Mehrmandantenfähigkeit beschreibt eine Situation, in der mehrere Nutzende das gleiche System
 ansprechen können. Allerdings müssen dabei alle Nutzenden in der Annahme sein,
@@ -634,9 +662,6 @@ vieler Datenbank-Instanzen auf Seiten des Dienstanbieters. In einer alternativen
 verwaltet der Dienstanbieter eine einzelne Datenbank, in der die Nutzer virtuell
 voneinander isoliert sind.
 
-	- TODO: Referenz auf Bild, Nutzung von Views
-	Nutzer interagieren mit dem Dienst über ein Nutzerprofil, in dem die Konfigurationseinstellungen
-	hinterlegt sind
 
 
 Skalierbarkeit spielt auch für SaaS-Systeme eine große Rolle, allerdings wird
