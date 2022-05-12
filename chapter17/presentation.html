@@ -321,9 +321,24 @@ Client.
 - Dienst muss für mehrere Kunden gleichermaßen nutzbar sein
 - Kundenspezifische Konfiguration muss möglich sein
 
+**Realisierung**:
+- Jede Operation muss zustandslos sein
+- Daten entweder vom Client geliefert oder in Datenbank liegen,
+die von allen Systeminstanzen erreichbar ist
+- Anbieterseitige Datenverwaltung:
+	- eine Datenbank für jeden Kunden
+	- Isolation der Kundendaten innerhalb einer gemeinsamen Datenbank
+- Konfigurierbarkeit ist im System integriert
+- Speichern von Einstellungen in Nutzerprofil
+
+---
+### Mehrmandantenfähigkeit
+
+<div style="margin-top:20px;">
+  <img style="width:80%;" src="media/saas_config.drawio.PNG" />
+</div>
 
 
-TODO: Konfiguration
 TODO: Wrap up
 
 
