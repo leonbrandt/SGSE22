@@ -29,30 +29,337 @@ class: center, middle
 
 
 
-# Kapitel 01: Einleitung
+# Kapitel 05: Systemmodellierung
 
-Max Mustermann
-
----
-# Voraussetzungen
-
-```java
-public class A {
-  public int a() {
-    return 42;
-  }
-}
-```
+Christiane Zolkin
 
 ---
 
-## Inhalte 
+# Inhalte
 
-* A
-* B
+- Einführung
+- Kontextmodelle
+- Interaktionsmodelle
+      - Use-Case-Diagramme
+      - Sequenzdiagramme
+- Strukturmodelle
+      - Klassendiagramme
+- Verhaltensmodelle
+      - Datengesteuerte Modellierung
+      - Ereignisgesteuerte Modellierung
+- Modellbasiertes Engineering
+- Modellbasierte Architektur
 
-![](media/image.jpg)
+---
+# Einführung
 
+** Was ist Systemmodellierung? **
+<br/>
+- Prozess, Systeme durch die Entwicklung abstrakter Modelle zu repräsentieren
+- Modellierung kann während der Anforderungsanalyse, im Design-Prozess und nach Implementierung eines Systems erfolgen
+- Verschiedene Perspektiven:
+      - Externe Perspektive
+      - Interaktionsperspektive
+      - Strukturelle Perspektive
+      - Verhaltensperspektive
+- UML stellt 13 standardisierte Diagramme zur Verfügung, um die Perspektiven auf einem System abzubilden
+      - 5 Diagramme werden vorgestellt:
+        - Aktivitätsdiagramme
+        - Use-Case-Diagramme
+        - Sequenzdiagramme
+        - Klassendiagramme
+        - Zustandsdiagramme
+---
+
+# Kontextmodelle
+
+** In welchem Kontext befindet sich das zu entwickelnde System? **
+<br/>
+- Grenzen des Systems
+      - fest oder flexibel
+- Verbindungsstellen/Kommunikation zwischen anderen Systemen
+- Operationen und Prozesse des Systems
+---
+
+## Kontextmodell
+<div>
+  <img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/ContextModel.png?raw=true" alt="ContextModel" style="zoom:80%;" />
+</div>
+
+---
+
+## Aktivitätsdiagramm als Kontextmodell
+
+** Welche Aktivitäten werden in einem Prozess durchlaufen, und welche Komponenten werden herangezogen? **
+
+- Elemente:
+      - Ausgefüllter Kreis (Beginn des Prozesses)
+      - Ausgefüllter Kreis mit Ring (Ende des Prozesses)
+      - Abgerundete Rechtecke (Aktivität)
+      - Pfeil (Übergang von einer Aktivität zur nächsten)
+      - Balken (Koordination von Aktivitäten)
+      - Diamant (Fallentscheidung)
+
+---
+
+## Aktivitätsdiagramm als Kontextmodell (2/2)
+
+<div>
+  <img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/ActivityDiagram.png?raw=true" alt="ActivityDiagram" style="zoom:70%;"/>
+</div>
+
+---
+
+# Interaktionsmodelle
+
+** Welche Interaktionen sind in dem System vorhanden? **
+<br/>
+- Interaktionstypen:
+  - Zwischen Nutzer und System
+    ➞ Mögliche Anforderungen identifizieren
+  - Zwischen System und System
+    ➞ Potenzielle Kommunikationsprobleme identifizieren
+  - Zwischen Komponenten in einem System
+    ➞ Vorhandene Abhängigkeiten identifizieren
+    
+---
+
+## Interaktionsmodelle: UML Use-Case-Diagramme (1/2)
+
+** Welche Aufgaben können bei einer Interaktion zwischen Aktor und System erfolgen? **
+<br/>
+- Elemente:
+  - Strichmännchen (Aktor)
+  - Ellipse (Use-Case)
+  - Verbindung Aktor u. Use-Case (Interaktion/Nachrichtenfluss)
+
+---
+
+## Interaktionsmodelle: UML Use-Case-Diagramme (2/2)
+
+<div style="margin: 5%;">
+  <img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/UseCases.png?raw=true" alt="UseCases" style="zoom:80%;" />
+</div>
+
+---
+
+## Interaktionsmodelle: UML Sequenzdiagramme (1/2)
+
+** Welche Interaktionen sind zwischen Aktoren und Systemobjekten bzw. zwischen Systemobjekten untereinander vorhanden? **
+<br/>
+- Beschreibt detailliert Interaktionssequenzen/Use-Cases
+- Elemente:
+  - Obere Reihe aus Rechtecken (Aktoren und Systemobjekte)
+  - Balken unterhalb von Aktoren/Objekten (Lebenslinie)
+  - Annotierte Pfeile zwischen Objekten (Funktionsaufrufe mit Parametern)
+  - Annotierte gestrichelte Pfeile (Rückgabewert)
+  - alt-Box (Fallunterscheidung)
+  
+---
+
+## Interaktionsmodelle: UML Sequenzdiagramme (2/2)
+
+<div>
+  <img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/SequenceDiagram.png?raw=true" alt="SequenceDiagram" style="zoom:80%;" />
+</div>
+
+---
+
+# Strukturmodelle
+
+** Welche Komponenten existieren im System und in welcher Beziehung stehen diese zueinander? **
+<br/>
+- Statische Abbildung der Systemstruktur
+- Dynamische Abbildung der Systemstruktur (Änderungen zur Laufzeit)
+- Erfassung der Struktur mit unterschiedlichem Detailgrad
+
+---
+
+## Strukturmodelle: Klassendiagramme (1/2)
+
+** Welche Klassenobjekte sind in dem System vorhanden und in welcher Beziehung stehen diese zueinander? **
+<br/>
+- Objektorientierter Ansatz der Systemmodellierung
+- Elemente:
+  - Rechtecke (Klassen)
+  - Annotierte Verbindungslinien (Beziehung/Assoziation)
+    - Beschreibung
+    - Multiplizitäten
+  - Unausgefüllter Pfeil (Generalisierung)
+  - Unausgefüllter Diamant (Aggregation)
+  - Ausgefüllter Diamant (Komposition)
+
+---
+
+## Strukturmodelle: Klassendiagramme (2/2)
+
+<div style="margin: 5%;">
+  <img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/ClassesAndAssociations.png?raw=true" alt="ClassesAndAssociations" style="zoom:80%;" />
+</div>
+
+---
+
+## Detaillierte Abbildung einer Klasse
+<div style="margin: 5%;">
+  <img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Class.png?raw=true" alt="Class" style="zoom:80%;" />
+</div>
+
+1. Klassenname
+
+2. Klasseneigenschaften/-attribute
+
+3. Klassenoperationen/-funktionen
+
+---
+
+## Beispiel für eine Klassenhierarchie
+<div style="margin: 5%;">
+  <img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/HierarchicalClasses.png?raw=true" alt="HierarchicalClasses" style="zoom:80%;" />
+</div>
+
+- Klassen weisen teilweise gleiche Eigenschaften auf
+      - Oberklassen bündeln gleichartige Informationen, welche Unterklassen erben können
+---
+
+# Verhaltensmodelle
+
+** Wie verhält sich das System bei bestimmten Stimuli? **
+<br/>
+- Daten als Stimuli (Geschäftssysteme)
+- Ereignisse als Stimuli (Echtzeit-Systeme)
+
+---
+
+## Verhaltensmodelle: Datengesteuerte Modellierung
+
+** Wie verhält sich das System bei ankommenden Daten? **
+- Datengesteuerte Modelle visualisieren Abläufe der Datenverarbeitung bis zu der Ausgabe
+- Data-Flow-Diagrams (DFDs) als einfache u. intuitive Abbildungen, um Datenfluss in Prozessen zu erfassen
+      - UML-Aktivitätsdiagramme als Umsetzung eines DFDs
+
+---
+
+## Aktivitätsdiagramm als datengesteuertes Verhaltensmodell (1/2)
+
+- Elemente:
+      - Abgerundete Rechtecke (Aktivität/Prozessschritt)
+      - Rechtecke (Objekte/Daten)
+      - Pfeile (Datenfluss)
+---
+
+## Aktivitätsdiagramm als datengesteuertes Verhaltensmodell (2/2)
+
+<div>
+  <img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Behaviour_ActivityModel.png?raw=true" alt="ActivityModel" style="zoom:60%;" />
+</div>
+
+---
+
+## Sequenzdiagramm als datengesteuertes Verhaltensmodell
+<img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Behaviour_SequenceDiagram.png?raw=true" alt="SequenceDiagram" style="zoom:60%;" />
+
+- Datengesteuerte Verhaltensmodelle können mit Sequenzdiagrammen realisiert werden, wenn der Nachrichtenfluss von links nach rechts erfolgt
+      - Illustration der sequentiellen Abfolge des Datenflusses
+---
+
+## Verhaltensmodelle: Ereignisgesteuerte Modellierung
+
+** Wie verhält sich das System bei bestimmten Ereignissen und welche Zustände kann es annehmen? **
+<br/>
+- In Systemen können interne und externe Ereignisse eintreten
+- Ein Ereignis versetzt das System häufig in einen neuen Zustand
+- UML-Zustandsdiagramme können Zustände, Ereignisse und deren Verknüpfungen erfassen
+
+---
+
+## Zustandsdiagramm als ereignisgesteuertes Verhaltensmodell (1/2)
+
+- Elemente:
+      - Abgerundetes Rechteck (Zustand)
+      - Gefüllter Kreis (Anfangszustand)
+      - Gefüllter Kreis mit Ring (Endzustand)
+      - Pfeil (Übergang zwischen zwei Zuständen in Pfeilrichtung)
+      - Pfeilannotation (Ereignis)
+---
+
+## Zustandsdiagramm als ereignisgesteuertes Verhaltensmodell (2/2)
+<img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/StateDiagram.png?raw=true" alt="StateDiagram" style="zoom:80%;" />
+
+---
+
+# Modellgesteuerte Architektur (1/3)
+<div>
+  <img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/MDA.png?raw=true" alt="MDA"/>
+</div>
+
+- Idee:
+    - Programmcode wird automatisch basierend auf definierten Systemmodellen generiert
+
+---
+
+# Modellgesteuerte Architektur (2/3)
+
+- Drei wesentliche Modelle zur Realisierung:
+      1. Das *Computation independent model* (CIM)
+        - Abstraktion der Systemdomäne
+        - Mehrere CIMs für unterschiedliche Perspektiven auf das System
+      2. Das *Platform independent model* (PIM)
+        - Modelliert Funktionsweise des Systems, ohne Implementierung zu beachten
+      3. Das *Platform specific model* (PSM)
+        - Spezifikation eines PIMs in Anbetracht der spezifischen Plattform
+
+---
+
+# Modellgesteuerte Architektur (3/3)
+
+<div>
+  <img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/MDA_2.png?raw=true" alt="MDA"/>
+</div>
+
+---
+
+## Modellgesteuerte Architektur - Vorteile
+
+- Vorteile:
+      - Software Entwickler können sich auf Design und Modellierungsprozess des Systems konzentrieren
+      - Weniger Fehler (keine menschlichen Fehler im Programmcode)
+      - Zeiteffizient (Zeit für Implementierung fällt weg)
+      - Leichte Veränderbarkeit und Wartbarkeit des Systems
+        - Plattformunabhängige Änderungen können in Modell vorgenommen und wird auf plattformspezifische Modelle übertragen
+      - Wiederverwendbarkeit plattformunabhängiger Modelle für verschiedene Plattformen
+
+---
+
+## Modellgesteuerte Architektur - Nachteile
+
+- Nachteile:
+      - In Realität nicht immer einsetzbar
+      - Kosten und Zeit, um MDA zu etablieren
+        - Übersetzung zwischen CIMs und PIMs sehr komplex (menschliche Eingriffe notwendig)
+        - Auf Unternehmen/System zugeschnittene Übersetzer müssen entwickelt werden
+      - Systemmodelle sind nicht immer beste Basis für die Implementierung
+        - dienen hauptsächlich als Diskussionsbasis für Entwickler
+      - Implementierung oft nicht das Problem
+        - Anforderungen, Sicherheit, Testen des Systems, ... relevanter für Systementwicklung
+      - Lohnt sich eher für langlebige Systeme, welche häufig auf neue Plattformen anzupassen sind
+---
+
+# Modellgesteuerte Entwicklung vs. Architektur
+
+- Model-driven engineering (MDE) basiert auf Idee der model-driven architecture (MDA)
+- MDE betrachtet alle Aspekte des Software-Entwicklungsprozesses
+      - Modellbasierte Anforderungsanalyse
+      - Softwareprozesse für Modellbasierte Entwicklung
+      - Modellbasiertes Testing
+      - ...
+- MDA fokussiert sich auf Design- und Implementierungsphasen
+
+---
+
+# Vielen Dank für's Zuhören! 
+# Gibt es Fragen?
+
+---
 
     </textarea>
     <script src="../_assets/js/remark-latest.min.js">
