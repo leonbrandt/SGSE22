@@ -3,7 +3,7 @@
 **Autor:** Malte Reinsch
 
 Die meisten heute verwendeten Rechnersysteme sind verteilte Systeme. Ein verteiltes
-System ein ein Rechnersystem, an dem mehr als ein Rechner beteiligt ist.
+System ist ein Rechnersystem, an dem mehr als ein Rechner beteiligt sind.
 Tannenbaum und Van Steen definieren ein verteiltes System als: "Eine Sammlung
 aus unabhängigen Rechnern, die aus Sicht des Nutzers als einzelnes zusammenhängendes
 System wahrgenommen wird."
@@ -16,14 +16,13 @@ Rechnern geteilt werden.
 2. Offenheit: Verteilte Systeme werden oftmals als offen
 betrachtet, da sie Standardprotokolle verwenden, sodass Hardware
 und Software verschiedenster Hersteller verwendet werden können.
-3. Nebenläufigkeit: Verschieden Aufgaben können nebenläufig (also parallel / gleichzeitig)
+3. Nebenläufigkeit: Verschiedene Aufgaben können nebenläufig (also parallel / gleichzeitig)
 auf verschiedenen Rechnern des Systems ausgeführt werden.
 4. Skalierbarkeit: Prinzipiell sind verteilte Systeme dahingehend
 skalierbar, dass erhöhte Anforderungen an das System durch das
 Hinzufügen neuer Hardware abgefangen werden können.
 5. Fehlertoleranz: Durch die Verteilung von Informationen über
-mehrere Rechner des Systems kann das System gegenüber Hardware-
-ausfällen abgehärtet werden.
+mehrere Rechner des Systems kann das System gegenüber Hardwareausfällen abgehärtet werden.
 
 Verteilte System sind gegenüber klassischen (zentralisierten
 Systemen) deutlich komplexer. Durch die Verteilung entstehen
@@ -31,26 +30,24 @@ neue Herausforderung für die Implementierung des Systems, welche
 in zentralisierten Systemen keine oder nur eine kleine Rolle
 spielen.
 Da die Antwortzeit des Systems von der Belastung des gesamten Systems und des Netzwerks
-abhängt, kann die Antwortzeit auf für aufeinander folgende Anfragen stark variieren.
+abhängt, kann die Antwortzeit für aufeinander folgende Anfragen stark variieren.
 
 Im Folgenden werden unterschiedliche Aspekte betrachtet, die für die Entwicklung
-verteilter Systeme zu beachten sind. Des Weiteren diskutiert dieses Kapitle einige
+verteilter Systeme zu beachten sind. Des Weiteren diskutiert dieses Kapitel einige
 architektonische Ansätze zur Konzeptionierung und Implementierung verteilter Systeme.
 
 ## Verteilte Systeme ##
 
-<!-- TODO: kürzen -->
-
-Diese Komplexität verteilter Systeme entsteht insbesondere
+Die Komplexität verteilter Systeme entsteht insbesondere
 dadurch, dass keine Komponente des Systems die komplette Kontrolle
 über das gesamte System (also alle Rechner und das Netzwerk) hat.
-Das Netzwerk, durch das die Rechnerknoten verbunden werden ist in
+Das Netzwerk, durch das die Rechnerknoten verbunden werden, ist in
 der Regel ein eigenes System, welches von externen Parteien kontrolliert wird.
 Durch diese verteilte Kontrolle wohnt dem Verhalten eines
 verteilten Systems eine natürliche Unberechnebarkeit inne.
 
 Aus dieser Komplexität ergeben sich folgende Aspekte, die
-insbesondere bei der Entwicklung eines verteilten Systems
+bei der Entwicklung eines verteilten Systems
 beachtet werden müssen:
 
 ### Transparenz ###
@@ -70,7 +67,7 @@ durch Middleware, welche physikalische Ressourcen auf logische Ressourcen abbild
 welche einfacher genutzt werden können.
 Trotz dieser Maßnahmen ist es nicht möglich, ein verteiltes System vollständig transparent
 zu gestalten. Die Kommunikation dessen, dass es sich um ein verteiltes System handelt, kann
-dem Nutzenden dabei helfen, die Auswirkungen der beschriebenen Probleme besser einzuordnen
+dem Nutzer dabei helfen, die Auswirkungen der beschriebenen Probleme besser einzuordnen
 und mit ihnen umzugehen.
 
 ### Offenheit ###
@@ -83,7 +80,7 @@ sodass standardisierte Komponenten jedes Herstellers einfach in das System integ
 werden können. Auf der Netzwerkebene gilt diese Form der Offenheit mittlerweile als
 selbstverständlich, sodass die gängigen Internetprotokolle unterstützt werden.
 
-Der 1990 entwickelte CORBA Standard verfolgt das Ziel, die auch auf der Komponentenebene
+Der 1990 entwickelte CORBA Standard verfolgt das Ziel, diese Offenheit auch auf der Komponentenebene
 zu erreichen, wurde bisher allerdings noch nicht flächendecken angenommen. Viele
 Softwarehersteller vertrauen stattdessen auf proprietäre Standards, welche bessere
 Implementierungen und Support von großen Firmen wie Oracle oder Microsoft erhalten.
@@ -112,14 +109,6 @@ eines weiteren Rechners). *Scaling Out* ist meistens kostengünstiger als *Scali
 allerdings voraus, dass die Anwendung die parallele Berechnungen auf unterschiedlichen
 Rechnern zulässt.
 
-#### Anmerkung ####
-
-Im Deutschen lassen sich beide Begriffe zu den Worten "Ausweiten/Ausbreiten" übersetzen,
-deren Bedeutung nicht so klar voneinander getrennt ist, wie die Konzepte, die hier
-durch die englischen Begriffe beschrieben werden.
-Daher werden im weiteren Verlauf des Kapitels weiterhin die englischen Begriffe
-verwendet, um Missverständnissen vorzubeugen.
-
 ### Sicherheit ###
 
 Ein Angreifer kann jede individuelle Systemkomponente angreifen und diese
@@ -131,7 +120,7 @@ Systemkomponenten geht die Vertraulichkeit der Informationen verloren.
 Dienste nicht bereitstellen können. Ein Beispiel hierfür sind "denial of service"-Attacken,
 bei denen ein Netzwerkknoten mit sehr vielen ungültigen Anfragen überlastet wird, sodass
 dieser nicht mehr auf die gültigen Anfragen reagieren kann.
-3. Änderung: Ein Angreifer ist in der Lage Systemdienste oder Daten zu ändern.
+3. Änderung: Ein Angreifer ist in der Lage, Systemdienste oder Daten zu ändern.
 4. Erzeugung von Informationen: Ein Angreifer erzeugt Informationen, welche nicht
 existieren sollten und nutzt diese Informationen, um sich Zugang zum System zu
 verschaffen (z.B. Erzeugung eines falschen Passworts).
