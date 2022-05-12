@@ -139,6 +139,7 @@ Zwei Arten der Unterstützung:
 ### Client-Server Computing
 
 - Modellierung der Software als Sammlung von Diensten
+- Client-Programm (lokaler Rechner) interagiert mit Server-Programm (idr. kein lokaler Rechner)
 - Server bieten Dienste an
 - Clients nutzen Dienste
 
@@ -185,7 +186,7 @@ entwickelt, die in bestimmten Szenarien eine gute Lösung präsentieren.
 
 **Anwendung**
 - häufig in zeitkritischen Anwendungen eingesetzt
-- Bsp. Echtzeitsysteme
+- Bspw. Echtzeitsysteme
 - arbeitet oft mit fester Zykluszeit
 
 **"Master"-Prozess**
@@ -194,7 +195,7 @@ entwickelt, die in bestimmten Szenarien eine gute Lösung präsentieren.
 - Kommunikation
 - Steuerung der "Slave"-Prozesse
 
-**"Slave"-Prozess**
+**"Slave"-Prozesse**
 - einer bestimmten Aktion zugeordnet
 - Datenakquise und -aufbereitung (Sensoren)
 - Aktorsteuerung
@@ -208,6 +209,48 @@ Beispiel einer Ampelsteuerung:
   <img style="width:100%;" src="media/Ampel.drawio.PNG" />
 </div>
 
+
+---
+### Zweistufige Client-Server Architektur
+
+Die einfachste Form der klassischen Client-Server Architektur.
+Die Architektur ist hilfreich zur Orientierung während des Systementwurfs,
+wird sonst aber praktisch fast nicht mehr eingesetzt.
+
+**Unterscheidung nach**
+- Thin-Client: Der Client implementiert nur die Präsentationsschicht
+- Fat-Client: Ein Teil oder die gesamte Applikationslogik ist auf dem Client
+implementiert
+
+
+---
+#### Thin-Client
+
+**Vorteile**
+- einfach zu verwalten
+- insbesondere dann relevant, wenn viele Clients mit spezifischer
+Software eingesetzt werden
+
+**Nachteile**
+- hohe Rechenbelastung der Server
+- Netzwerkbelastung
+
+#### Fat-Client
+
+**Vorteile:**
+- Bessere Ausnutzung der Rechenleistung des Client-Rechners
+- Reduzierung der Netzwerkbelastung
+
+**Nachteile:**
+- Erfordert Installation und Wartung komplexer Client-Software
+- Verwaltbarkeit leidet durch Verteilung des Applikationslogik
+
+---
+### Beispiel Fat-Client (Bankautomaten)
+
+<div style="margin-top:20px;">
+  <img style="width:100%;" src="media/Bank_simple.drawio.PNG" />
+</div>
 
 
 
