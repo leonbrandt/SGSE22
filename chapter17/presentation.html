@@ -252,8 +252,23 @@ Software eingesetzt werden
   <img style="width:100%;" src="media/Bank_simple.drawio.PNG" />
 </div>
 
+---
+### Mehrstufige Client-Server Architektur
 
+**Limitierungen zweistufige Client-Server Architektur**:
+- Thin-Clients: Skalierbarkeit, Performance
+- Fat-Clients: Systemverwaltung
 
+Idee: jede logische Schicht kann theoretisch auf einem eigenen Prozessor ausgeführt werden.
+
+**Vorteile**:
+- Mehr Webserver hinzufügen -> Skalierbarkeit
+- Aufspaltung monolithischer Strukturen -> Verwaltbarkeit
+- Applikationslogik verwendet anderen Rechner als Datenbereitstellung -> Performance
+
+<div style="margin-top:20px;">
+  <img style="width:80%;" src="media/Bank_three.drawio.PNG" />
+</div>
 
     </textarea>
     <script src="../_assets/js/remark-latest.min.js">
