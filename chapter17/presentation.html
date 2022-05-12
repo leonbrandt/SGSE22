@@ -152,9 +152,60 @@ Zwei Arten der Unterstützung:
 ---
 ### Schichtenmodell
 
+Das Client-Server Modell ist von der klaren Trennung zwischen Berechnungen von
+Informationen und deren Darstellung abhängig.
+
+Daher hat sich das Schichtenmodell etablier:
 
 <div style="margin-top:20px;">
   <img style="width:30%;" src="media/layers.drawio.PNG" />
+</div>
+
+---
+### Architekturmuster für verteilte Systeme
+
+**Design von verteilten Systemen ist ein Balanceakt zwischen**
+- Performance
+- Verlässlichkeit
+- Sicherheit
+- Verwaltbarkeit
+
+Um diesen Balanceakt zu bestehen, haben sich im Laufe der Zeit Architekturmuster
+entwickelt, die in bestimmten Szenarien eine gute Lösung präsentieren.
+
+**Im Folgenden**
+- Master-Slave Architektur
+- Zweistufige Client-Server Architektur
+- Mehrstufige Client-Server Architektur
+- Verteilte Komponentenarchitektur
+- Peer-to-peer Architektur
+
+---
+### Master-Slave Architektur
+
+**Anwendung**
+- häufig in zeitkritischen Anwendungen eingesetzt
+- Bsp. Echtzeitsysteme
+- arbeitet oft mit fester Zykluszeit
+
+**"Master"-Prozess**
+- Berechnungen
+- Datenverarbeitung
+- Kommunikation
+- Steuerung der "Slave"-Prozesse
+
+**"Slave"-Prozess**
+- einer bestimmten Aktion zugeordnet
+- Datenakquise und -aufbereitung (Sensoren)
+- Aktorsteuerung
+
+---
+### Master-Slave Architektur
+
+Beispiel einer Ampelsteuerung:
+
+<div style="margin-top:20px;">
+  <img style="width:100%;" src="media/Ampel.drawio.PNG" />
 </div>
 
 
