@@ -343,7 +343,11 @@ einhergehende Netzwerkbelastung ist dieser Aspekt relevant.
 
 Dicke Clients haben den Vorteil, dass sie das Rechenpotential der Client-Rechner
 besser ausnutzen. Dies erfordert jedoch die Installation und Wartung von spezifischer
-Client-Software, was weitere Komplexitäts- und Kostenfaktoren darstellt.
+Client-Software, was weitere Komplexitäts- und Kostenfaktoren darstellt. Durch die Verteilung
+der Applikationsfunktion über meherere Rechnersysteme wird die Verwaltung des Gesamtsystems
+deutlich komplexer. Eine Änderung in der Applikationssoftware erfordert beispielsweise
+die komplette Neuinstalltion der geänderten Software auf allen Client-Systemen.
+
 
 TODO: Bild
 
@@ -356,49 +360,45 @@ welche die Kommunikation mit den Client-Systemen verwaltet.
 Zusammenfassend kann das Thin-/Fat-Client Modell als
 Orientierung für den Systementwurf hilfreich sein, es
 wird in dieser strikten Trennung allerdings nur selten eingesetzt.
+Besonders durch die weite Verbreitung von leistungsstarken mobilen Endgeräten wird
+die zufor beschriebene klare Trennung aufgeweicht, da gewisse Teile der Applikationslogik
+auf den Client-Systemen vorgenommen werden können.
 
-### mehrstufige client-server Architektur ###
+### Mehrstufige Client-Server Architektur ###
 
-- Fundamentales Problem der zweistufigen client-server Architektur
-ist, dass die logischen Schichten des Systems (Anwendungslogik, etc.)
-auf zwei Rechnersysteme gemapped werden müssen
-- Das kann zu Problemen mit Skalierbarkeiet oder Performance führen
-(im Falle von Thin-Clienet) und Problemen mit Systemverwaltung (falls
-Fat-Client)
-- Lösungsidee: Logische Schichten können jeweils auf unterschiedlichen
-Prozessoren laufen
-- Beispiel Internet-Bankensystem:
-	- Kundendatenbank auf Mainframe gehostet -> Datenbankservices
-	- Web server: Data management services, z.B. Webseiten-Generierung
-	und Applikationsdienste
-	- Applikationsdienste, zum Beispiel Möglichkeit, Geld zu überweisen
-	sind im Webserver und als Skripte, die auf dem Client ausgeführt werden
-	implementiert
-	- skalierbar, da es relativ einfach ist, neue Server hinzuzufügen
-	um Applikationsdienste bereit zu stellen (scaling out), falls Anzahl
-	Kunden ansteigt
-	- Konkretes Beispiel ist also ein dreistufiges Modell
-	- Effiziente Middleware, die bspw. SQL-Abfragen unterstützt,
-	wird zur Informationsabfrage von der Datenbank verwendet
-- Tabelle übersetzen: TODO
-- dreistufiges Modell kann auch auf mehrstufiges ausgeweitet werden,
-indem mehr Server zum System hinzugefügt werden
-	- Aufteilung von Dienstbereitstellung auf verschiedene Rechner
-	- Auch dann anwendbar, wenn mehrere Datenbanken verwendet werden
-	- Bspw. Einsatz von Integrationsserver, der die verteilten Daten
-	sammelt und der übrigen Systemarchitektur über eine
-	gemeinsame Schnittstelel zur Verfügung stellt
-- Zusammenfassend:
-	- mehrstufige Modelle, die Berechnungen für die Applikation über
-	mehrere Rechner verteilen, sind besser skalierbar als zweistufige
-	client-server modelle
-	- Jede Stufe des Systems kann einzeln verwaltet werden (kein Monolit),
-	sodass es einfacher ist, Hardware für diese einzelne Schicht hinzuzufügen,
-	falls durch Systemänderungen der Bedarf des einzelnen Dienstes erhöht wird
-	- Applikationslogik und Datenbereitstellung / Verwaltung kann aufgeteilt
-	werden, was zu schnellerer Systemantwort führen kann
-	- Wahl der Systemarchitektur ist abhängig vom Szenario
-		- Siehe Tabelle
+Ein fundamentales Problem der zweistufigen Client-Server Architektur stellt die
+Zuordnung der logischen Schichten des Systems auf zwei Rechnersysteme dar. Diese
+strenge Aufteilung kann zu Problemen bei der Skalierbarkeit oder der Systemperformance
+führen (im Falle von flachen Clients) und zu Problemen mit der Systemverwaltung (im Falle von
+dicken Clients). Als Lösung ermöglicht die mehrstufige Client-Server Architektur die Verteilung
+jeder logischen Schicht auf einen einzelnen Prozessor.
+
+In einem beispielhaften
+Internetbanking-System könnten die Schichten wie folgt aufgeteilt sein:
+- Die Kundendatenbank wird auf einem Mainframe gehostet (Datenbankdienste)
+- Applikationsdienste, wie z.B. Überweisungen anzuweisen, sind im Webserver als Skripte
+hinterlegt, die auf dem Client ausgeführt werden können
+- Der Webbrowser auf dem Rechner der nutzenden Person stellt den Client dar
+
+Diese Lösung ist einfach zu skalieren, da relativ einfach neue Webserver mit steigenden
+Nutzendenzahlen hinzugefügt werden können. Dieses dreistufige Client-Server Modell
+kann auch auf ein mehrstufiges Modell ausgeweitet werden, indem einzelne Applikationsdienste
+auf einzelne Server ausgelagert werden. Falls mehrere Datenbanken verwendet werden sollen,
+könnte zusätzlich ein Integrationsserver eingesetzt werden, der die verteilten Daten
+sammelt und der übrigen Systemarchitektur über eine gemeinsame Schnittstelle zur
+Verfügung stellt.
+
+Zusammenfassend lässt sich festhalten, dass mehrstufige Modelle, die Applikationslogik
+auf mehrere Rechner verteilen, besser als zweistufige Client-Server Modelle
+skalierbar sind. Durch die Aufspaltung monolithischer Strukturen verbessert sich
+außerdem die Verwaltbarkeit, da jede Schicht einzeln verwaltet und skaliert werden kann.
+Indem die Applikationslogik und die Datenbereitstellung auf unterschiedliche Rechner
+aufgeteilt wird, kann zusätzlich eine schnellere Systemantwort erreicht werden.
+
+Die Auswahl einer konkreten Systemarchitektur ist von vielen Faktoren abhängig, welche
+in der nachfolgenden Tabelle gegenübergestellt sind.
+
+TODO: Tabelle
 
 ### multi-Komponenten Systeme ###
 
