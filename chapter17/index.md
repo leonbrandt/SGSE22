@@ -400,72 +400,49 @@ in der nachfolgenden Tabelle gegenübergestellt sind.
 
 TODO: Tabelle
 
-### multi-Komponenten Systeme ###
+### Verteilte Komponentensysteme ###
 
+Das mehrstufige Client-Server Modell funktioniert gut für viele Anwendungsfälle,
+es kann allerdings die Flexibilität einschränken, da es die Systementwickler zwingt,
+Dienste einer logischen Schicht zuzuordnen. Die klare Trennung von Dienstarten ist
+praktisch oft schwierig.
 
-- Das mehrstufige client-Server Modell funktioniert gut für viele
-Anwedungsfälle
-- Es kann allerdings die Flexibilität einschränken, da es die Entwickler des Systems
-zwingt, Dienste einer Schicht zuzuordnen
-- Die klare Trennung zwischen Dienstarten ist meist auch praktisch schwierig
-- Skalierbarkeit und Replizierbarkeit von Servern muss ebenfalls gewährleistet werden
-- Ein generalisierter Ansatz ist, die Services als logische Einheiten zu betrachten,
-welche bedarfsweise miteinander in Verbindung treten, ohne die Dienste in logische Schichten
-aufzuteilen
-- Jeder Dienst kann dann als einzelne Komponente in diesem Komponenten-Netzwerk umgesetzt werden
-- Jede dieser Komponenten bietet eine Schnittstelle für die Dienste an, die sie bereitstellt
-- Andere Komponenten nutzen diese Schnittstellen über Kommunikations-Middleware / remote procedure / method calls
-- Solche verteilten Komponentensysteme sind von Middleware abhängig
-	- Verwaltung von Kommunikation zwischen Komponenten
-	- Umgang mit unterschiedlichen Datentypen in Parametern etc.
-- der CORBA standard verfolgt das Ziel, Middleware zu definieren, hat sich allerdings
-nie wirklich verbreitet durchgesetzt
-- Vorteile von verteilten Komponentensystemen für die
-Realisierung von verteilten Systemen
-	1. Der Systementwickler kann Entscheidungen darüber, wo und wie
-	Dienste bereitsgestellt werden. Komponenten, die Dienste
-	bereitstellen, können auf jeden Knoten des Netzwerks laufen.
-	Es muss nicht im Vorfeld entschieden werden, ob eine Komponente
-	Teil der Datenverwaltung, der Applikationsschicht oder der Nutzer-
-	schnittstelle ist
-	2. Die Architektur ist sehr offen gegenüber nachträglichem
-	Hinzufügen von neuen Ressourcen und Diensten.
-	3. Das System ist flexibel und skalierbar. Falls die Systembelastung
-	steigt, können neue oder replizierte Objekte hinzugefügt werden,
-	ohne andere Teile des Systems zu stören.
-	4. Das System kann dynamisch rekonfiguriert werden, indem Komponenten
-	über das Netzwerk auf andere Prozessoren migriert werden.
-	TODO: warum ist das wichtig?
-- Die Architektur der verteilten Komponenten kann auch als
-logisches Modell für ein System verwendet werden, indem
-dessen Funktionalität nur als Dienste und Kombination von Diensten
-konzeptioniert wird
-- Data-Mining System sind ein Beispiel für solche Systeme
-	- Data-Mining Systeme analysieren Beziehungen zwischen Daten, die
-	über mehrere Datenbanken verteilt sind
-	- Die FUnktion dieser Systeme kann unterteilt werden in Datenakquise,
-	Datenverarbeitung und Visualisierung
-	- TODO: Beispiel weiter ausführen
+Daher wird im verteilten Komponenten Modell die Applikation als Menge von Diensten
+definiert, ohne eine Zuordnung dieser Dienste zu logischen Schichten des Systems vorzunehmen, sodass
+die Dienste nur bedarfsweise miteinander in Verbindung treten.
+Jeder Dienst bzw. jede zusammenhängende Gruppe von Diensten kann als Komponente im
+System umgesetzt werden, die eine Schnittstelle für die implementierten Dienste bietet.
+Andere Komponenten nutzen diese Schnittstellen über Middleware mithilfe von Remote Procedure Calls.
 
-Architekturen aus verteilten Komponenten haben zwei Nachteile:
-- Das Systemdesign ist komplexer als Client-Server Systeme.
-Mehrstufige Client-Server Systeme und ihre Transaktionen ähneln
-menschlicher Interaktion, wobei bestimmte Dienste von spezialisierten
-Menschen angefragt werden
-- Es gibt keinen einheitlichen Standard für verteilte Komponenten oder
-Middleware für diesen Kontext. Verschiedene Herstellter bieten
-inkompatible Middleware an, welche sehr komplex ist. Die Abhängigkeit von
-Middleware erhöht die Systemkomplexität
+Die Verwendung des verteilte Komponenten Modells bietet einige Vorteile:
+1. Der Systementwickler muss Entscheidungen, wo und wie Dienste bereitgestellt werden, nicht
+sofort treffen, da keine klare Zuordnung zu einer Schicht nötig ist.
+2. Die Architektur ist sehr offen gegegnüber nachträglichem Hinzufügen von neuen Ressourcen und Diensten.
+3. Die Architektur ist gut skalierbar. Falls die Systembelastung steigt, können
+neue oder replizierte Objekte hinzugefügt werden, ohne andere Teile des Systems zu stören.
+4. Das System kann dynamisch rekonfiguriert werden, indem Komponenten über das Netzwerk
+migrieren. Hierdurch kann bspw. eine Komponente, welche einen Dienst anbietet, auf den
+gleichen Rechner migriert werden, wie eine Komponente, welche den Dienst benötigt, um
+die Leistung des Systems zu verbessern.
 
-- Aus diesen Gründen werden verteilte Komponenten Systeme durch dienst-
-orientierte Systeme ersetzt
-- Allerdings haben verteilte Komponentensysteme Leistungsvorteile
-gegenüber dienstorientierten Systemen
-- Daher werden verteilte Komponentensysteme noch für Anwendungen
-eingesetzt, in denen ein hoher Datendurchsatz nötig ist oder ein hohes
-Volumen an Transaktionen verarbeitet werden muss
+Verteilte Komponenten Systeme haben zwei große Nachteile:
+1. Der Systementwurf ist komplexer als von Client-Server Systemen. Die Kommunikation in
+Client-Server Systemen ist konzeptionell ähnlicher zu der menschlichen Transaktion
+zwischen Kunden und Dienstleistern. Die höhere Komplexität von verteilten Komponenten Systemn
+erhöht die Implementierungskosten.
+2. Es gibt keine universell etablierten Standards oder Middleware für verteilte Komponenten Modelle.
+Die Middleware verschiedener Anbieter ist häufig inkompatibel, komplex und die Abhängigkeit von ihr
+erhöht die Systemkomplexität.
+
+Aufgrund dieser Nachteile werden verteilte Komponenten System durch dienstorientierte
+Architekturen ersetzt (siehe Kapitel 18). Allerdings haben verteilte Komponentensysteme
+aufgrund der Verwendung von Remote Procedure Calls gewisse Leistungsvorteile, sodass
+sie immer noch in Anwendungen eingesetzt werden, die einen hohen Transaktionsdurchsatz
+erfordern.
 
 ### Peer-to-peer Architektur ###
+
+
 
 - client-server modelle unterscheiden klar zwischen den Anbietern
 von Diensten (Server) und den Nutzern von Diensten (Clients)
