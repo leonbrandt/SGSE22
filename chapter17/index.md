@@ -648,18 +648,18 @@ voneinander isoliert sind.
 
 Skalierbarkeit spielt auch für SaaS-Systeme eine große Rolle, allerdings wird
 häufig "scaling out" bevorzugt, also das Hinzufügen von neuen Servern.
-Folgende Richtlinien helfen dabei, skalierbare Software zu entwickeln:
+Folgende Richtlinien helfen dabei, skalierbare SaaS-Software zu entwickeln:
 	1. Entwicklung einzelner Komponenten als zustandslose Dienste, die auf einem Server
-	ausgeführt werden könnten. Das Ermöglicht die Mehrfache Interaktion des Nutzers
+	ausgeführt werden könnten. Das ermöglicht die Mehrfache Interaktion des Nutzers
 	mit einem Dienst, der auf unterschiedlichen Servern bereitgestellt wird, während einer Transaktion.
 	2. Entwicklung des Systems, indem asynchrone Interaktion bevorzugt wird.
 	Dies führt dazu, dass die Anwendung nicht auf die Antwort einer Anfrage warten muss,
 	sondern währenddessen weitere Berechnungen durchführen kann
 	3. Ressourcen (z.B. Netzwerk- und Datenbank-Verbindungen) in einem Pool
-	verwalten, sodass keinem einzelnen Server die verfügbaren Ressourcen schnell ausgehen
+	verwalten, sodass keinem einzelnen Server die verfügbaren Ressourcen schnell ausgehen.
 	4. Entwicklung der Datenbank, sodass fein granulares Locking möglich ist (nicht
 	einen gesamten Eintrag sperren, wenn nur ein Teil in Benutztung ist)
-	5. Nutzung einer cloud PaaS (Platform as a Service) Platform zur Systemimplementierung.
+	5. Nutzung einer Cloud PaaS (Platform as a Service) Platform zur Systemimplementierung.
 	Diese Platformen enthalten Mechanismen um "scaling out" zu automatisieren
 
 SaaS ist ein Paradigmenwechsel für verteilte Rechensysteme.
@@ -678,7 +678,7 @@ zu verstehen, zu warten und weiter zu entwicklen sind.
 um mit steigenden Nutzeranzahlen umzugehen und, dass durch ihre Architektur die Möglichkeit
 besteht, Systemressourcen zu teilen und effizienter auszunutzen
 - Bereiche, denen bei der Entwicklung verteilter Systeme besondere Aufmerksamkeit
-zugewandt werden sollten sind Transparenz, Offenheit, Skalierbarkeit, Sicherheit,
+zugewandt werden sollte, sind Transparenz, Offenheit, Skalierbarkeit, Sicherheit,
 Dienstqualität und Fehlermanagement
 - Client-Server Systeme sind verteilte Systeme, in denen das System in Schichten
 aufgeteilt ist
@@ -688,10 +688,10 @@ aufgeteilt ist
 Schichten auf verschiedene Rechner verteilt sind
 - Architekturmuster für verteilte Systeme umfassen:
 	- Master-Slave Architekturen
-	- Zweischicht- und Mehrschicht-Architekturen
-	- Verteilte Komponenten Systeme
+	- Zweischicht- und Mehrschicht Client-Server-Architekturen
+	- Verteilte Komponentensysteme
 	- Peer-to-peer (P2P) Architekturen
-- Verteilte Komponentensysteme benötigen Middleware zur Realisierung der Kommunikaton
+- Verteilte Komponentensysteme benötigen Middleware zur Kommunikaton
 der Komponenten
 - P2P Architekturen sind dezentrale Architekturen, in denen nicht zwischen Clients und
 Servern unterschieden wird
