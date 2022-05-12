@@ -64,7 +64,10 @@ Der aktuelle Implementierungsfortschritt kann [HIER](https://github.com/mwithoef
 
 - Bei der versuchten Implementierung eines WebTransport-Servers in NodeJS wurde festgestellt, das sich solcher nicht dort umsetzen lässt. Die begründete Wahl und die Dokumentation der Programmiersprache für das Backend lässt sich [HIER](praktikum/withöft/backendProgrammiersprache) finden.
 
-- UseCases der Protokolle - Größe der Daten, Rate der Daten, Videos Texte etc.
+## Weitere Stichpunkte 
+
+- UseCases der Protokolle
+  - Größe der Daten, Rate der Daten, Videos Texte etc.
   - Literatur (nur Client-Server oder auch Client-Client)
-- Implementierung des Datenaustausch
-- Library? - "Gemeinsame" API Spezifizierung für den Client
+- Gemeinsame API Spezifizierung für den Client
+  - Eventuelle Auslagerung in eine Bibliothek
