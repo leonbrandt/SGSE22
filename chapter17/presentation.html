@@ -58,61 +58,21 @@ Verteilte Systeme haben einige Vorteile:
 4. Skalierbarkeit
 5. Fehlertoleranz
 
-### Wo Licht, da auch Schatten...
-- deutlich (!) komplexer
-- Antwortzeit hängt von Gesamtbelastung ab
-
 ---
 ### Verteilte Systeme
 
-Komplexität:
+**Komplexität:**
 - keine Komponente hat die komplette Kontrolle über das System (Unberechenbarkeit)
 - das Netzwerk ist ein eigenes System
 - Interaktion von Komponenten unterschiedlicher Hersteller
 
-Wichtige Entwicklungsaspekte:
+**Wichtige Entwicklungsaspekte:**
 - Transparenz
 - Offenheit
 - Skalierbarkeit
 - Sicherheit
 - Dienstqualität (QoS)
 - Fehlermanagement
-
----
-### Interaktionsmodelle
-
-Zwei Interaktionsarten der System-Rechner:
-- prozedurale Interaktion
-- Nachrichtenbasierte Interaktion
-
----
-### Interaktionsmodelle
-
-
-<div style="margin-top:20px;">
-  <img style="width:50%;" src="media/Waiter_Diner.PNG" />
-</div>
-
----
-### Interaktionsmodelle
-
-Nachricht an die Küche:
-```
-<starter>
-	<dish name = “soup” type = “tomato” />
-	<dish name = “soup” type = “fish” />
-	<dish name = “pigeon salad” />
-</starter>
-<main course>
-	<dish name = “steak” type = “sirloin” cooking = “medium” />
-	<dish name = “steak” type = “fillet” cooking = “rare” />
-	<dish name = “sea bass”>
-</main>
-<accompaniment>
-	<dish name = “french fries” portions = “2” />
-	<dish name = “salad” portions = “1” />
-</accompaniment>
-```
 
 ---
 ### Middleware
@@ -228,8 +188,6 @@ implementiert
 
 **Vorteile**
 - einfach zu verwalten
-- insbesondere dann relevant, wenn viele Clients mit spezifischer
-Software eingesetzt werden
 
 **Nachteile**
 - hohe Rechenbelastung der Server
@@ -266,14 +224,88 @@ Idee: jede logische Schicht kann theoretisch auf einem eigenen Prozessor ausgef�
 - Aufspaltung monolithischer Strukturen -> Verwaltbarkeit
 - Applikationslogik verwendet anderen Rechner als Datenbereitstellung -> Performance
 
+---
+### Beispiel Mehrstufige Client-Server Architektur (Online-Banking)
+
+
 <div style="margin-top:20px;">
   <img style="width:80%;" src="media/Bank_three.drawio.PNG" />
 </div>
+
+---
+### Verteilte Komponentensysteme
+
+Vorherige Modelle erzwingen Zuordnung von Diensten in logische Schichten,
+das schränkt die Flexibilität ein.
+
+**Lösung:**
+- Applikation als Menge von Diensten definiert (ohne Zuordnung in logische
+Schichten)
+- Dienste in Komponenten organisieren
+- Komponente definiert Schnittstelle für die enthaltenen Dienste
+- Kommunikation über RPCs, performant
+
+<div style="margin-top:20px;">
+  <img style="width:80%;" src="media/dist_component.drawio.PNG" />
+</div>
+
+---
+### Verteilte Komponentensysteme
+
+**Probleme**:
+- Systementwurf komplex
+- keine universellen Standards und Middleware für verteilte Komponentenarchitektur
+
+---
+### Peer-to-peer Architektur
+
+**Problem mit Client-Server Architekturen**:
+- Harte Trennung zwischen Client & Server
+- Server hierdurch häufig stärker belastet als Client
+- Potentiell hohe Ausgaben für Serverinfrastruktur
+
+**Lösung:
+- Dezentralisierung
+- keine klare Trennung mehr zwischen Client und Server
+- Berechnungen auf jeden Knoten
+- Jeder Knoten vereint Netzwerkfunktionen und Anwendungsfunktionen
+
+---
+### Peer-to-peer Architektur
+
+<div style="margin-top:20px;">
+  <img style="width:80%;" src="media/P2P.drawio.PNG" />
+</div>
+
+---
+### Peer-to-peer Architektur
+
+**Semizentrale P2P Netzwerke**:
+- Server stellt Verbindung zwischen zwei Knoten her
+- Knoten müssen nicht mehr selbst suchen
+- ab dann wieder direkte Verbindung
+
+**Probleme**:
+- Sicherheit, keine zentrale Kontrollinstanz
+- Angreifer können sich potentiell uneingeschränken Zugriff auf Systemressourcen
+verschaffen
+
+---
+### Software as a Servie
+
+Bisher: applikationsspezifische Client-Software muss installiert werden.
+
+Fortschritte in Webtechnologien -> Konfiguration eines Standard Webbrowsers als
+Client.
+
+
 
     </textarea>
     <script src="../_assets/js/remark-latest.min.js">
     </script>
     <script>
+
+
 
     var slideshow = remark.create({
   // Set the slideshow display ratio
