@@ -39,9 +39,23 @@ Finn Kuhn
 
 * Evolutionsprozesse
 
+    * Änderungsprozess
+
+    * Ablauf
+
 * Altsysteme
 
+    * Sozialtechnologische Systeme
+
+    * Altsystemverwaltung
+
 * Softwarewartung
+
+    * Wartungsvorhersagen
+
+    * Refactoring
+
+* Zusammenfassung
 ---
 class: center, middle
 
@@ -85,21 +99,21 @@ Ablauf des Änderungsprozess
 ---
 ## Änderungsprozess
 ***
-* kein Standardprozesse
+* Keine Standardprozesse
 
-* abhängig von Software, Entwicklungsprozess und Können der Entwickler
+* Abhängig von Software, Entwicklungsprozess und Können der Entwickler
 
 * Basis bilden Änderungsvorschläge, begründet in:
 
-    * existierende Anforderungen
+    * Existierende Anforderungen
 
-    * neue Anforderungen
+    * Neue Anforderungen
 
     * Berichte über Bugs
 
     * Optimierung der Software
 ---
-## Zyklischer Prozess aus Vorschlägen und Evolution
+## Prozess aus Vorschlägen und Evolution
 ***
 <div style="margin-top:20px;">
   <img style="width:100%;" src="assets/Bild3.png"/>
@@ -121,15 +135,15 @@ Ablauf des Änderungsprozess
 ***
 * Probleme bei der Übergabe von Team zu Team
 
-    * agil zu planbasiert: nicht viel Dokumentation
+    * Agil zu planbasiert: nicht viel Dokumentation
 
-    * planbasiert zu agil: automatisierte Tests neu entwickeln, Code nicht vereinfacht
+    * Planbasiert zu agil: automatisierte Tests neu entwickeln, Code nicht vereinfacht
 
-* am besten ein Team übernimmt Entwicklung und Evolution
+* Am besten ein Team übernimmt Entwicklung und Evolution
 
-    * bei agilen Teams einfacher Übergang
+    * Bei agilen Teams einfacher Übergang
 
-    * minimale Änderungen im Ablauf (längerer Veröffentlichungsrhythmus)
+    * Minimale Änderungen im Ablauf (längerer Veröffentlichungsrhythmus)
 
 ---
 class: center, middle
@@ -152,7 +166,7 @@ veraltete Softwaresysteme, die weiter genutzt werden
 ***
 * Ersetzen ist teuer und risikoreich, Gründe:
 
-    * unvollständige Dokumentation
+    * Unvollständige Dokumentation
 
     * Geschäftsprozesse um Altsystem gebaut
 
@@ -165,9 +179,9 @@ veraltete Softwaresysteme, die weiter genutzt werden
 ***
 * Änderungen werden immer teurer
 
-    * verschiedene Entwickler sorgen für schwer verständlichen Code
+    * Verschiedene Entwickler sorgen für schwer verständlichen Code
 
-    * veraltete Programmiersprachen
+    * Veraltete Programmiersprachen
 
     * Dokumentation veraltet
 
@@ -183,9 +197,9 @@ veraltete Softwaresysteme, die weiter genutzt werden
 ## Strategien zur Altsystemverwaltung
 ***
 
-* begrenztes Budget erzwingt Auswahl von Evolutionsstrategie
+* Begrenztes Budget erzwingt Auswahl von Evolutionsstrategie
 
-* mögliche Strategien
+* Mögliche Strategien
 
     * System komplett entfernen
 
@@ -220,7 +234,7 @@ veraltete Softwaresysteme, die weiter genutzt werden
 ## Technische Perspektive
 ***
 
-* sowohl Umgebung, als auch Anwendung
+* Sowohl Umgebung, als auch Anwendung
 
 * Umgebung
 
@@ -242,7 +256,7 @@ veraltete Softwaresysteme, die weiter genutzt werden
 ---
 class: center, middle
 # Softwarewartung
-Genereller Prozess des Verändern der Software nach der Auslieferung
+Genereller Prozess der Veränderung der Software nach der Auslieferung
 ---
 ## Typen der Wartung
 ***
@@ -311,7 +325,7 @@ Genereller Prozess des Verändern der Software nach der Auslieferung
 
 ---
 
-    ## Softwareumgestaltung
+## Softwareumgestaltung
 ***
 
 * Um Altsystem einfacher zu warten, kann Software umgestaltet werden
@@ -324,13 +338,13 @@ Genereller Prozess des Verändern der Software nach der Auslieferung
 
     * Übersetzen in moderne Programmiersprachen
 
-    * Strukter des Systems und der Daten anpassen
+    * Struktur des Systems und der Daten anpassen
 
 * Vorteile gegenüber Neuentwicklung
 
-    * reduziertes Risiko
+    * Reduziertes Risiko
 
-    * reduzierte Kosten
+    * Reduzierte Kosten
 ---
 ## Ablauf einer Umgestaltung
 ***
@@ -341,13 +355,15 @@ Genereller Prozess des Verändern der Software nach der Auslieferung
 ## Refactoring
 ***
 
-* Prozess Verbesserungen zu machen, um die Degradierung der Software zu verlangsamen
+* Verbesserungen machen, um die Degradierung der Software zu verlangsamen
 
 * Struktur verbessern, Komplexität reduzieren oder Verständlichkeit verbessern
 
-* konservieren der Funktion, reduzieren zukünftiger Probleme
+* Konservieren der Funktion
 
-* integraler Bestandteil agiler Methoden
+* Reduzieren zukünftiger Probleme
+
+* Integraler Bestandteil agiler Methoden
 
 * Indikatoren für mögliche Verbesserungen
 
@@ -361,7 +377,7 @@ Genereller Prozess des Verändern der Software nach der Auslieferung
 ## Refactoring
 ***
 
-* einfache Transformationen
+* Einfache Transformationen
 
     * Extrahier Methode
 
@@ -373,6 +389,21 @@ Genereller Prozess des Verändern der Software nach der Auslieferung
 
 * Design Refactoring, wenn Struktur zu schlecht ist
 
+---
+## Zusammenfassung
+***
+
+* Softwareevolution ist iterativer Prozess
+
+* Evolutionsprozess durch Änderungsanfragen getrieben
+
+* Altsysteme nutzen veraltete Software und Hardware, trotzdem großer Nutzen
+
+* Je nach Altsystem verschiedene Herangehensweisen
+
+* Softwareumwandlung strukturiert System für bessere Wartbarkeit um
+
+* Refactoring verlangsamt Degradierung, bei gleicher Funktionalität
 ---
 
 ## Quellen
