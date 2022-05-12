@@ -407,14 +407,14 @@ es kann allerdings die Flexibilität einschränken, da es die Systementwickler z
 Dienste einer logischen Schicht zuzuordnen. Die klare Trennung von Dienstarten ist
 praktisch oft schwierig.
 
-Daher wird im verteilten Komponenten Modell die Applikation als Menge von Diensten
+Daher wird im verteilten Komponentenmodell die Applikation als Menge von Diensten
 definiert, ohne eine Zuordnung dieser Dienste zu logischen Schichten des Systems vorzunehmen, sodass
 die Dienste nur bedarfsweise miteinander in Verbindung treten.
 Jeder Dienst bzw. jede zusammenhängende Gruppe von Diensten kann als Komponente im
 System umgesetzt werden, die eine Schnittstelle für die implementierten Dienste bietet.
 Andere Komponenten nutzen diese Schnittstellen über Middleware mithilfe von Remote Procedure Calls.
 
-Die Verwendung des verteilte Komponenten Modells bietet einige Vorteile:
+Die Verwendung des verteilten Komponentenmodells bietet einige Vorteile:
 1. Der Systementwickler muss Entscheidungen, wo und wie Dienste bereitgestellt werden, nicht
 sofort treffen, da keine klare Zuordnung zu einer Schicht nötig ist.
 2. Die Architektur ist sehr offen gegegnüber nachträglichem Hinzufügen von neuen Ressourcen und Diensten.
@@ -428,13 +428,13 @@ die Leistung des Systems zu verbessern.
 Verteilte Komponenten Systeme haben zwei große Nachteile:
 1. Der Systementwurf ist komplexer als von Client-Server Systemen. Die Kommunikation in
 Client-Server Systemen ist konzeptionell ähnlicher zu der menschlichen Transaktion
-zwischen Kunden und Dienstleistern. Die höhere Komplexität von verteilten Komponenten Systemn
+zwischen Kunden und Dienstleistenden. Die höhere Komplexität von verteilten Komponentensystemn
 erhöht die Implementierungskosten.
-2. Es gibt keine universell etablierten Standards oder Middleware für verteilte Komponenten Modelle.
+2. Es gibt keine universell etablierten Standards oder Middleware für verteilte Komponentenmodelle.
 Die Middleware verschiedener Anbieter ist häufig inkompatibel, komplex und die Abhängigkeit von ihr
 erhöht die Systemkomplexität.
 
-Aufgrund dieser Nachteile werden verteilte Komponenten System durch dienstorientierte
+Aufgrund dieser Nachteile werden verteilte Komponentensystem durch dienstorientierte
 Architekturen ersetzt (siehe Kapitel 18). Allerdings haben verteilte Komponentensysteme
 aufgrund der Verwendung von Remote Procedure Calls gewisse Leistungsvorteile, sodass
 sie immer noch in Anwendungen eingesetzt werden, die einen hohen Transaktionsdurchsatz
@@ -442,82 +442,81 @@ erfordern.
 
 ### Peer-to-peer Architektur ###
 
+<!-- TExt -->
+Client-Server Modelle unterscheiden klar zwischen den Anbietern von Diensten (Servern)
+und Nutzenden von Diensten (Clients). Dies fürht häufig zu einer ungleich verteilten
+Systemauslastung, in der Server deutlich mehr Rechenaufwand betreiben müssen, als
+Clients. Hierdurch sind hohe finanzielle Ausgaben für Serverinfrastruktur nötig,
+obwohl viel Rechenpotential ungenutzt auf den Client-Rechnern zur Verfügung steht.
 
+Peer-to-peer (P2P) Systeme sind dezentral Systeme, die keine klare Trennung
+zwischen Client und Server vornehmen, dementsprechend können Berechnungen
+auf jedem Knoten des Systems ausgeführt werden. Dafür ist es nötig, die verwendeten
+Kommunikationsstandards und -protokolle in die Applikation einzubetten und auf jedem
+Systemknoten eine Kopie der Applikation zu installieren.
 
-- client-server modelle unterscheiden klar zwischen den Anbietern
-von Diensten (Server) und den Nutzern von Diensten (Clients)
-	- das führt häufig zu ungleich verteilter Systemauslastung,
-	in der Server deutlich mehr Rechenaufwand betreiben müssen,
-	als Clients -> führt zu Ausgaben für Serverarchitektur,
-	obwohl sehr viel Leistungspotential auf den Client-Geräten
-	verfügbar wäre
-- Peer-to-peer (P2P) Systeme sind dezentral Systeme, die
-keine solche klare Trennung zwischen Clients und Servern
-treffen
-- Berechnungen können auf jedem Knoten des Systems ausgeführt werden
-- Kommunikationsstandards und -protokolle sind in der
-Applikation eingebettet und jeder Knoten muss eine Kopie
-dieser Applikation ausführen (ist das dann quasi wieder monolithisch?)
-- praktisch werden p2p Systeme eher im privaten Umfeld eingesetzt
-- da dezentral: schwerer zu überwachen -> höhere Privatsphäre
-der Kommunikation möglich
-- Beispiele (starker Privatsphärefokus):
-	- BitTorrent (Filesharing)
-	- ICQ / Jabber (Messaging)
-	- Bitcoin / Crypto-Währung
-	- Freenet (dezentrale Datenbank)
-- andere Beispiele:
-	- Voice over IP (bsp. Viber)
-	- SETI@home (Datenverarbeitung von Teleskopen auf PC)
-	- Folding@home
-- kein zentraler Server als Flaschenhals
-- p2p Systeme auch in Geschäftsanwendungen
-	- Nutzung von ungenutzten Rechenleistungen von lokalen
-	Geräten (bspw. komplexe Berechhnungen zu Zeiten geringer
-	Belastung)
-- Theoretisch wäre es möglich, dass jeder Teilnehmer mit jedem
-anderen Teilnehmer in Verbindung tritt (technische Begrenzung
-durch Netzwerk-Adressen)
-	- Daher Unterteilung in "localities"
-	- einige Teilnehmer bilden "Brücke" in andere "localities"
-	- TODO: siehe Bild
-- in dezentraler Architektur bilden die Netzwerkknoten sowohl
-Applikationslogik als auch Kommunikationsfunktionen ab
-	- TODO: bsp. dezentrale Dokumenten-Verwaltung
-- Vorteil: hohe Redundanz -> hohe Fehlertoleranz, Toleranz
-ggü. getrennten Teilnehmern
-- Nachteil: Overhead durch redundante Berechnung aufgrund
-fehlender Synchronisation (applikationsabhängig)
+Praktisch werden P2P Systeme vorwiegend im privaten Umfeld eingesetzt, da sie durch
+den dezentralen Ansatz schwer zu überwachen sind und eine hohe Privatsphäre der
+Kommunikation versprechen.
+Beispiele für Anwendungen mit hohen Ansprüchen an die Privatsphäre sind:
+- BitTorrent (Filesharing)
+- ICQ / Jabber (Nachrichtendienste)
+- Bitcoin (Währung)
+- Freenet (dezentral Datenbank)
 
-- Abwandlung des klassischen p2p Modells durch semizentralisierte
-System, indem einige Knoten
-im Netzwerk als Server agieren & Verbindungen zwischen Teilnehmern
-herstellen -> weniger Netzwerk-Verkehr
-- die Rolle solcher Server besteht darin, Kontakt zwischen
-Teilnehmern herzustellen oder das Ergebnis einer
-Berechnung zu "koordinieren"
-- sobald direkte Verbindung hergestellt wurde, ist kein Kontakt
-mehr zu Server nötig
-- in rechenintensiven Anwendungen ist die Aufgabe solcher
-Server auch, die Teile einer verteilten Berechnung zusammenzustellen
-und zu überprüfen,
-sodass ein gesamtes Ergebnis zur Verfügung steht
-- zwei Hauptanwendungen:
-	- komplexe Berechnung, die sinnvoll in ausreichend
-	große Teile aufgespalten werden kann
-	- Anwendung besteht insbesonder in Kommunikation zwischen
-	Teilehmern und kein Bedarf, Informationen zentral zu
-	speichern
-		- file-sharing
-		- telefon-systeme
-- Zusammenfassend:
-	- p2p Systeme ermöglichen die effektive Nutzung der
-	Systemressourcen
-	- primärer Grund, kein p2p System zu nutzen ist Sicherheit
-		- keine zentrale Überwachung möglich
-		- Angreifer können bösartige Knoten etablieren, die
-		evtl. großzügigen Zugriff auf die Ressourcen anderer
-		Teilnehmer erhalten können -> erhöhter Absicherungsaufwand
+Weiter Beispiel ohne so starke Privatsphäreanforderungen sind:
+- Voice over IP Systeme (Telefonie)
+- SETI@home (Datenverarbeitung von Teleskopen auf dem PC)
+
+P2P Systeme werden vereinzelt auch in Geschäftsanwendungen eingesetzt. Beispielsweise
+haben Intel und Boing Systeme entwickelt, die ungenutzte Ressourcen lokaler Rechner
+nutzen, um komplexe Berechnungen durchzuführen, ohne teure Spezialhardware anschaffen
+zu müssen.
+
+Theoretisch wäre es möglich, dass jeder Teilnehmer mit jedem
+anderen Teilnehmer in Verbindung tritt, praktisch wird die Anzahl direkter Verbindungen
+aber durch die zugrundeliegende Netzwerktechnologie begrenzt.
+Daher werden Netzwerkknoten in Lokalitäten organisiert, wobei einige Knoten als
+Brücken in andere Lokalitäten fungieren.
+
+TODO: Bild
+
+In dezentralen Architekturen müssen Netzwerkknoten sowohl Applikationslogik, als auch
+Kommunikationsfunktionen implementieren, um den Datentransfer durch das Netzwerk
+zu realisieren. Ein Beispiel hierfür ist eine dezentrale Dokumenten-Verwaltung,
+in der jeder Teilnehmende einen eigenen Dokumentspeicher verwaltet. Falls ein Knoten
+ein bestimmtes Dokument sucht, wird ein Suchbefehl an die eigene Lokalität des Knotens
+geschickt und anschließend über Brücken in andere Lokalitäten, bis das Dokument gefunden wurde.
+Sobald das Dokument gefunden wurde, sendet der Knoten, auf dem das Dokument vorhanden ist,
+eine direkte Nachricht an den ursprünglich suchenden Knoten.
+
+Ein Vorteil solch einer dezentralen Architektur ist die hohe Informations- und
+Ressourcen-Redundanz, sodass dezentrale Systeme in der Regel über eine hohe Toleranz
+gegenüber Fehlern und getrennten Teilnehmern verfügt. Dies ist allerdings auch
+gleichzeitig eine Schwachstelle dezentraler Systeme, da Berechnungen evtl.
+aufgrund fehlender Synchronisation der Knoten ebenfalls redundant ausgeführt werden.
+
+Das P2P Modell kann auch in abgewandelter Form als semizentralisiertes System
+verwendet, indem einige Knoten im Netzwerk als Server agieren und Verbindungen
+zwischen Teilnehmern herstellen. Hierdurch kann der Netzwerkverkehr verringert werden.
+Sobald eine Verbindung durch einen Server zwischen zwei Knoten hergestellt wurde,
+gehen diese Knoten eine direkte P2P-Verbindung ein und die Kommunikation kann anschließend
+unabhängig vom Server stattfinden. In rechenintensiven Anwendungen ist die Aufgabe
+der Server auch, die insgesamt nötigen Berechnungen unter den Knoten aufzuteilen und
+die Teilergebnisse zu einem Gesamtergebnis zusammenzustellen.
+
+P2P Systeme sind vorallem in zwei Fällen sinnvoll einsetzbar:
+1. Das System muss komplexe Berechnungen durchführen, die sinnvoll eine
+kleiner Teile aufgespalten und auf Systemknoten verteilt werden können.
+2. Die Anwendung des Systems besteht primär in der Kommunikation zwischen einzelnen
+Teilnehmenden. Außerdem besteht kein Bedarf, Informationen zentral zu speichern.
+
+Es kann zusammengefasst werden, dass P2P die effektive Ausnutzung der
+Systemressourcen ermöglichen. Der Hauptaspekt für die geringe Verbreitung ist die
+fehlende Sicherheit, da keine zentrale Kontrollinstanz vorgesehen ist. Hierdurch
+ist es Angreifenden möglich, bösartige Knoten in das Netzwerk zu integrieren. Da
+P2P Kommunikation teilweise großzügigen Zugriff auf Rechnerressourcen erlaubt, könnten sich
+Angreifende so Zugriff auf den Großteil dieser Ressourcen verschaffen.
 
 ## sofware as a service ##
 
