@@ -57,7 +57,7 @@ Diese Interaktionen können anhand von zwei UML-Diagrammen abgebildet werden:
 1. Use-Case-Diagramme
 2. Sequenzdiagramme
 
-Dabei fokussieren sich Use-Case-Diagramme weitestgehend um Interaktionen zwischen dem System und externen [?], wohingegen Sequenzdiagramme hauptsächlich Interaktionen zwischen Systemkomponenten modellieren. Doch auch externe [?] können in dieses Modell vertreten werden. Die zwei Diagramme geben die Abstraktion dieser Interaktionen in unterschiedlichem Detailgraden wider, weshalb die Nutzung der beiden in Kombination sinnvoll ist. 
+Dabei fokussieren sich Use-Case-Diagramme weitestgehend um Interaktionen zwischen dem System und externen Objekten, wohingegen Sequenzdiagramme hauptsächlich Interaktionen zwischen Systemkomponenten modellieren. Doch auch externe [?] können in dieses Modell vertreten werden. Die zwei Diagramme geben die Abstraktion dieser Interaktionen in unterschiedlichem Detailgraden wider, weshalb die Nutzung der beiden in Kombination sinnvoll ist. 
 
 ### Use Case Modellierung
 
@@ -202,12 +202,44 @@ Zustandsdiagramme schenken einen guten Überblick über die Reaktionen des Syste
 
 ## Modellbasierte Entwicklung
 
-
+Innerhalb der modellgesteuerten Entwicklung (Model-driven engineering) als Entwicklungsergebnis die Modellierung des Systems angestrebt [2], anstatt die Implementierung des Systems, da der Programmcode automatisch basierend auf den Systemmodellen generiert werden soll. Diese Idee basiert auf dem Konzept der modellbasierten Architektur, und wurde als neuer Ansatz für die Systementwicklung der *Object Management Group* (OMG) [3] eingeführt. Der Unterschied zu der modellgesteuerten Architektur liegt allerdings darin, dass alle Aspekte des Entwicklungsprozesses betrachtet werden. Modellbasierte Anforderungsanalysen, Softwareprozesse für modellbasierte Entwicklung und modellbasiertes Testen gehören dadurch zu dem Prozess des MDEs, während sich MDA auf die Design- und Implementierungsphasen konzentriert.
 
 ## Modellbasierte Architektur
 
+Mit dem Konzept der modellbasierten Architektur (Model-driven architecture) wird die Idee verfolgt, automatisch Programme für ein System basierend definierten Modellen zu generieren. Das angestrebte System kann mithilfe von UML-Modellen auf verschiedenen Abstraktionsebenen beschrieben werden, sodass lauffähige Software mithilfe bestimmter Tools entsteht und Ingenieure sich auf den Design- und Modellierungsprozess des Systems fokussieren können, ohne sich über die Implementierung Gedanken machen zu müssen. Die verschiedenen Abstraktionsebenen sollen dabei die einfache Veränderbarkeit und Wartbarkeit der Systemprogramme ermöglichen, da Änderungen der Modelle automatisch in die Programme übernommen werden. In der Theorie werden Fehler im System dadurch reduziert, sowie der Design- und Implementierungsprozess beschleunigt. Außerdem können plattformunabhängige Modelle wiederverwendet werden, um diese in plattformspezifische Modelle zu übersetzen, aus denen letztendlich die Softwareprogramme entstehen.
 
+
+
+<img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/MDA.png?raw=true" alt="MDA" style="zoom:60%;" />
+
+
+
+Um dieses Konzept umzusetzen, werden insbesondere drei Modelle angestrebt, die es zu erstellen gilt:
+
+1. Das *Computation independent model* (CIM)
+2. Das *Platform independent model* (PIM)
+3. Das *Platform specific model* (PSM)
+
+Das CIMs werden auch als Domänenmodelle, da diese die Abstraktionen der Domäne des Systems modelliert. Dafür können mehrere CIMs für ein System entwickelt werden, indem das System unter verschiedenen Blickpunkten betrachtet wird. 
+
+Ein PIM modelliert die Funktionsweise des Systems auf abstrakter Ebene, ohne auf die Implementierung einzugehen. Dort werden häufig UML-Diagramme herangezogen, um die statische Struktur des Systems zu beschreiben, sowie dessen Verhalten bei internen und externen Ereignissen abzubilden.
+
+PSMs stellen hierbei die Spezifikation des PIMs dar. Mehrere PSMs werden für ein spezifisches PIM erstellt, um eine Modellierung zu erhalten, die für die gewünschte Applikationsplattform angepasst wird. Werden mehrere Endplattformen des Systems gewünscht, müssen entsprechend viele PSMs kreiirt werden. Dabei wird ein PSM oftmals in mehrere Schichten unterteilt, um schrittweise die notwendigen Details für die Plattform auszulegen. Ein Level könnte sich auf die Modellierung der Middleware fokussieren, während das nächste sich auf die Datenbank-spezifische Modellierung konzentriert.
+
+Mithilfe von Übersetzern sollen Transformationen zwischen den drei Modellarten automatisiert ermöglicht werden, wobei die letzte Transformationsstufe basierend auf den PSMs stattfindet, und den Programmcode für das System produziert. In der Theorie ist dies ein effektives Konzept für die Systementwicklung, und einige Erfolgsgeschichten dadurch hervor, doch in der Praxis können auch häufig Komplikationen auftreten, die die Umsetzung der modellgesteuerten Architektur erschweren.
+
+### Probleme
+
+Modellgesteuerte Architektur ist in der Realität nur beschränkt einsetzbar, und für einige Unternehmen lohnt es sich kosten- und zeittechnisch nicht, dieses Verfahren zu etablieren. In der Theorie sollte die automatisierte Übersetzung von abstrakten Systemmodellen zu Programmen möglich sein, doch in der Praxis erscheinen oftmals Fehler, die diese Möglichkeit sehr einschränken. Die Übersetzung von CIMs zu PIMs erweist sich als sehr komplex, und einige Verbindungen zwischen unterschiedlichen CIM-Modellen erfordern häufig einen menschlichen Eingriff.
+
+Die Übersetzung von PIMs zu PSMs wird technisch oft von Übersetzungstools unterstützt, beschränkt sich jedoch auf den Einsatz der Standardumgebung der spezifischen Plattform. In der Realität werden in Unternehmen jedoch häufig Gebrauch von internen Tools und Libraries gemacht, welche bei der Übersetzung miteinzubeziehen sind. Aus diesem Grund ist es notwendig, spezielle Übersetzer zu entwickeln, welche auf die Bedürfnisse des Unternehmens angepasst werden können, was sich der angestrebten Kosten- und Zeiteffizienz entgegensetzt.
+
+Außerdem ist es nicht immer gegeben, dass Systemmodelle eine geeignete Basis für die Implementierung des Systems darstellen, sondern eher die Basis für eine Diskussion der Stakeholder darstellen soll. Bei abweichenden Implementierungsmethoden ist widerrum eine manuelle Programmierung von Nöten. Für viele komplexe Systeme ist die Implementierung kein schwieriger Faktor. Der Fokus liegt oftmals auf die Spezifikation der Anforderungen, der Sicherheit, Zuverlässigkeit und Testen des Systems und die Integration in die Systemumgebung gelegt. Plattformunabhängige Systemdefinitionen sind besonders für langlebige Systeme relevant, welche weiter bestehen als die Plattformen, in denen sie eingesetzt werden. 
 
 ## Referenzen
 
 [1]: Sommerville, Ian (2016). Software Engineering (Tenth Edition).
+
+[2]: Brambilla, M., J. Cabot, and M. Wimmer. 2012. Model-Driven Software Engineering in Practice. San  Rafael, CA: Morgan Claypool.
+
+[3]: Mellor, S. J., K. Scott, and D. Weise. 2004. MDA Distilled: Principles of Model-Driven Architecture.  Boston: Addison-Wesley.
