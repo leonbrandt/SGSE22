@@ -518,132 +518,149 @@ ist es Angreifenden möglich, bösartige Knoten in das Netzwerk zu integrieren. 
 P2P Kommunikation teilweise großzügigen Zugriff auf Rechnerressourcen erlaubt, könnten sich
 Angreifende so Zugriff auf den Großteil dieser Ressourcen verschaffen.
 
-## sofware as a service ##
+## Sofware as a Service ##
 
-- die zuvor erläuterten Client-Server Modelle setzen die Installation von einem
-applikationsspezifischen Programm auf dem Client-System voraus, um das System nutzen zu können.
-	- Reduzierung von Serverbelastung durch Berechnungen auf dem Client-System
-- Durch Technologien wie AJAX oder HTML5 kann die Server-Belastung ebenfalls weiter
-reduziert werden
-- Durch die Möglichkeit, Anwendungslogik in Skripten zu implementieren, die Teil einer
-Webseite sind, kann der Browser effektiv als Client-Anwendung konfiguriert werden kann.
-- Die Anwendungssoftware ist in diesem Fall ein Dienst, auf den von jedem Gerät aus zugegriffen werden kann,
-sofern das Gerät einen Standardbrowser ausführen kann
-- In diesem Fall wird von Software as a Service (SaaS) gesprochen
-- charakteristische Merkmale für SaaS:
-	- Die Software wird auf einem Server (oder in der Cloud) bereitgestellt und wird über einen Webbrowser
-	aufgerufen, es ist keine spezifische Software auf dem Client-Rechner nötig
-	- Der Anbieter der Software besitzt und verwaltet die Software, nicht der Nutzer der SOftware
-	- Nutzer zahlen je nach Nutzung oder in einem Abo-Modell; teilweise kann die Software
-	auch frei nutzbar sein, wird allerdings durch Werbung finanziert
-- Durch die Etablierung von Cloud Computing hat die Verbreitung des SaaS Modells beschleunigt
-- Da in der Cloud bereitgestellte Dienst einfach skalierbar sind, entfallen viele Kosten für
-die Anbieter dieser Dienste
-- Für Software-Nutzer hat das SaaS-Modell den Vorteil, dass die Verwaltungskosten der
-Software durch den Anbieter getragen werden.
-	- hierzu zählen Bugfixing, Installation von Upgrades, Umgang mit Veränderungen im
-	Betriebssystem, Bedarfsgerechte Dimensionierung der Rechnersysteme
-	- Außerdem entfallen Verwaltungskosten für Softwarelizenzen, da nicht für jeden
-	Rechner eine neue Lizenz erworben und verwaltet werden muss
-	- Darüber hinaus kann die Software von jedem webfähigen Endgerät aus genutzt werden
+Die bisher vorgestellten Client-Server Modelle setzen die Installation eines
+applikationsspezifischen Programms auf dem Client-System voraus, um das System
+nutzen zu können. Dieses spezifische Programm kann Berechnungen direkt auf
+dem Client-System ausführen, sodass die Serverbelastung reduziert wird. Durch Technologien
+wie AJAX und HTML5 kann diese Belastung noch weiter reduziert werden, indem diese
+Technologien die Präsentation von Webseiten und die Berechnung durch das Ausführen von
+Skripten im Webbrowser sehr effizient gestalten. Indem Anwendungslogik in solchen Skritpen
+implmentiert wird, kann der Browser effektiv als Client-Anweundg konfiguriert werden.
+Die Anwendungssoftware ist in diesem Fall ein Dienst, auf den von jedem Gerät
+aus zugegriffen werden kann, sofern das Gerät einen Standardbrowser ausführen kann.
+Hier wird auch von Software als Dienst (engl. "Software as a Service" / "SaaS") gesprochen.
 
-- Hauptproblem ist der Datentransfer mit dem Dienst
-	- Datentransferrate ist an die Netzwerkgeschwindigkeit gekoppelt
-	- Transfer von großen Bilddateien oder Videos braucht Zeit
-- Weiteres Problem: keine Kontrolle über Weiterentwicklung der Software (Anbieter kann
-Änderungen vornehmen, wann er will)
-- Rechtliche Probleme (Datenschutz, Vorhalten von Daten auf ausländischen Servern)
+Es können einige Kernmerkmale von SaaS definiert werden:
+- Die Software wird auf einem Server (oder in der Cloud) bereitgestellt und ist über
+einen Webbrowser abrufbar
+- Der Anbieter der Software besitzt und verwaltet die Software, nicht der Nutzer der Software
+- Nutzer zahlen je nach Nutzung oder in einem Abo-Modell; teilweise kann die Software
+auch frei nutzbar sein und finanziert sich durch Werbung
 
-- SaaS und Dienstorientierte Architektur (SOA) sind verwand, aber unterschiedlich:
-	- SaaS ist eine Methode, Dienste von einem Server durch einen Webbrowser verfügbar zu machen.
-	Server hält die Daten des Nutzers für die Zeit der Interaktion vor. Interaktionen sind eher lang,
-	bspw. das Editieren eines Dokuments
-	- Dienstorientierte Architektur sieht es vor, ein Softwaresystem als Menge entkoppelter,
-	Zustandsloser Dienste zu konzeptionieren
-		- Dienste können von unterschiedlichen Anbietern bereitgestellt werden
-		- Transaktionen sind eher kurz
+Die Etablierung von Cloud Computing hat die Verbreitung des SaaS Modells beschleunigt,
+da in der Cloud bereitgestellte Dienste einfach skalierbar sind und somit viele Kosten
+für die Anbieter solcher Dienste entfallen.
+
+Für Software-Nutzende hat das SaaS-Modell den Vorteil, dass die Verwaltungskosten der
+Software durch den Anbietenden getragen werden. Hierzu zählen Bugfixing, die Installation
+von Upgrades, Umgang mit Veränderungen im Betriebssystem, und die bedarfsgerechte Dimensionierung
+der Rechnersysteme. Darüber hinaus entfallen Verwaltungskosten für Softwarelizenzen, da nicht für jeden
+Rechner eine neue Lizenz erworben und verwaltet werden muss.
+
+Das Hauptproblem von SaaS ist der Datentransfer mit dem Dienst, da die Datentransferrate
+an die Netzwerkgeschwindigkeit gekoppelt ist. Insbesonder die Übermittlungvon großen
+Bild- und Videodaten benötigt viel Zeit. Ein weiteres Problem aus Nutzendensicht ist
+die fehlende Kontrolle über Weiterentwicklung der Software, da der Anbietende jederzeit
+Änderungen vornehmen kann.
+
+Die Nutzung eines SaaS-Dienstes kann zu rechtlichen
+Problemen führen, da die Dienste personenbezogene Daten auf Servern außerhalb des Landes des Nutzenden
+speichern. Falls die nationale Rechtslage einen bestimmten Umgang mit personenbezogenen Daten
+vorsieht, könnten diese Gesetze durch solch eine Speicherung gebrochen werden.
+
+### Vergleich mit Dienstorientierter Architektur ###
+
+SaaS und Dienstorientierte Architektur (SOA) sind verwandte Konzepte, die sich in folgenden Punkten
+unterscheiden:
+- SaaS ist eine Methode, Dienste von einem Server durch einen Webbrowser verfügbar zu machen.
+	Der Server hält die Daten des Nutzers für die Zeit der Interaktion vor.
+	Interaktionen sind eher lang, bspw. das Editieren eines Dokuments.
+	SOA sieht es vor, ein Softwaresystem als Menge entkoppelter, Zustandsloser Dienste zu konzeptionieren.
+	Diese Dienste können von unterschiedlichen Anbietern bereitgestellt werden und
+	die Transaktionen sind vergleichsweise kurz.
 - SaaS ist ein Modell, um dem Nutzer Anwendungsfunktionen zur Verfügung zu stellen,
 	SOA ist eine Implmentierungstechnologie für Anwendungssysteme, welche nicht von Nutzern
 	als Webdienste genutzt werden müssen
-- SaaS kann allerdings durch SOA implementiert werden, wodurch sich die Möglichkeit
-ergibt, die APIs der Dienst zu nutzen und in komplexeren Systemen einzubetten
-	- Diese System werden auch Mashups genannt und bilden einen weiteren Ansatz zur
-	Wiederverwendung und schnellen Entwicklung von Software
 
-- Aus Software-Engineering Sicht ist Entwicklung von Diensten vergleichbar mit der Entwicklung
+SaaS kann allerdings durch SOA implementiert werden, wodurch sich die Möglichkeit
+ergibt, die APIs der Dienste zu nutzen und in komplexeren Systemen einzubetten. Systeme,
+die hiervon Gebrauch machen, werden auch Mashups genannt und bilden einen weiteren Ansatz zur
+Wiederverwendung und schnellen Entwicklung von Software
+
+### Entwicklung und Konfiguration von SaaS-Systemen ###
+
+Aus Software-Engineering Sicht ist die Entwicklung von Diensten vergleichbar mit der Entwicklung
 anderer Software, allerdings ist die Dienstentwicklung nicht durch Nutzerbedürfnissen getrieben, sondern
-durch Abschätzungen des Entwicklers, welche Funktionen der Nutzer vermutlich brauchen wird
-- Daher muss die Software in der Lage sein, schnell weiterentwickelt und abgeändert zu werden, um
-Feedback zur Funktionalität einzubinden
-	 - Hierzu bieten sich Methoden der Agilen Softwareentwicklung und die inkrementelle Bereitstellung
-	 der Software an
-- SaaS Anwendungen bieten jedem Nutzer eine generische Nutzererfahrung
-	- Geschäftskunden wünschen evtl. eine speziell angepasste Version mit individuell verfügbaren
-	zusätzlichen FUnktionen. Hierzu sind drei Faktoren zu beachten:
-		- Konfigurierbarkeit: Wie wird die Software für spezifische Bedürfnisse angepasst?
-		- Mehrmandantenfähigkeit: Wie wird sichergestellt, dass jeder Nutzer
-		der Software das Gefühl hat, eine individuell angepasste Version zu nutzen und
-		die verfügbaren Ressourcen effizient genutzt werden?
-		- Skalierbarkeit: Wie wird die Skalirbarkeit des Systems sichergestellt?
-- eine Möglichkeit, diese Form von Konfigurierbarkeit zu realisieren, sind
-Produkt-Linien Architekturen (siehe Kapitel 16)
-	- Start mit generischen System, schrittweise Anpassung an spezifische Bedürfnisse des
-	Nutzers
-	- Nicht nutzbar für SaaS, da dies bedeuten würde, eine unterschiedliche Kopie
-	für jede Spezialisierung des Systems bereitzustellen
-	- Daher muss die Konfigurierbarkeit direkt innerhalb des Systems realisiert werden
-	- Konfiguration des Systems über eine Konfigurationsschnittstelle, über die
-	sich der Nutzer selbstständig und dynamisch das System konfigurieren kann, während er es nutzt
-	- Einstellungen ändern das Verhalten des Systems
-- Konfigurationen können folgende Dinge zulassen:
-	- Branding: Nutzer einer Organisation bekommen eine Nutzerschnittstelle präsentiert, die
+durch Abschätzungen der Entwickelnden, welche Funktionen die Nutzenden vermutlich brauchen werden.
+Daher muss die Software in der Lage sein, schnell weiterentwickelt und abgeändert zu werden, um
+Feedback zur Funktionalität einzubinden. Hierzu bieten sich Methoden der Agilen
+Softwareentwicklung und die inkrementelle Bereitstellung der Software an.
+
+SaaS Anwendungen bieten jedem Nutzer eine generische Nutzererfahrung, Geschäftskunden
+wünschen jedoch oft eine speziell angepasste Version mit individuell verfügbaren
+zusätzlichen Funktionen.
+Hierzu sind drei Faktoren zu beachten:
+	- Konfigurierbarkeit: Wie wird die Software für spezifische Bedürfnisse angepasst?
+	- Mehrmandantenfähigkeit: Wie wird sichergestellt, dass jeder Nutzer
+	der Software das Gefühl hat, eine individuell angepasste Version zu nutzen und
+	die verfügbaren Ressourcen effizient genutzt werden?
+	- Skalierbarkeit: Wie wird die Skalierbarkeit des Systems sichergestellt?
+
+Eine Möglichkeit, diese Form von Konfigurierbarkeit zu realisieren, sind
+Produkt-Linien Architekturen (siehe Kapitel 16). Hier wird ein generisches System
+schrittweise an spezifische Bedürfnisse des Nutzenden angepasst. Dieses Vorgehen
+ist nicht nutzbar für SaaS, da dies bedeuten würde, eine unterschiedliche Kopie
+für jede Spezialisierung des Systems auf einem Server bereitzustellen.
+Daher muss die Konfigurierbarkeit direkt innerhalb des Systems als Konfigurationsschnittstelle
+realisiert werden, über die sich die Nutzenden das System selbstständig konfigurieren
+können.
+
+Diese Konfigurationen können folgende Dinge umfassen:
+	1. Branding: Nutzer einer Organisation bekommen eine Nutzerschnittstelle präsentiert, die
 	zu der Organisation passt
-	- Geschäftsregeln und Arbeitsabläufe: Jede Organisation bestimmt die Arbeitsabläufe und Regeln,
+	2. Geschäftsregeln und Arbeitsabläufe: Jede Organisation bestimmt die Arbeitsabläufe und Regeln,
 	die die Nutzung des Dienstes und dessen Daten beeinflusst
-	- Datenbank-Erweiterungen: Jede Organisation gibt an, wie das generische Datenmodell
+	3. Datenbank-Erweiterungen: Jede Organisation gibt an, wie das generische Datenmodell
 	des Dienstes angepasst wird, um den spezifischen Anforderungen zu entsprechen
-	- Zugriffskontrolle: Anlegen von Mitarbeiterkonten und Definition der Nutzungsrechte für
+	4. Zugriffskontrolle: Anlegen von Mitarbeiterkonten und Definition der Nutzungsrechte für
 	Ressourcen und Funktionen
-- Nutzer interagieren mit dem Dienst über ein Nutzerprofil, in dem die Konfigurationseinstellungen
-hinterlegt sind
-- Mehrmandantenfähigkeit beschreibt eine Situation, in der mehrere Nutzer das gleiche System
-ansprechen. Allerdings muss jeder Nutzer in der Annahme sein, dass er der einzige Nutzer
-des Systems ist
-	- Dies setzt absolute Trennung von Systemfunktionalität und Daten voraus
-	- Jede Operation muss zustandslos sein, sodass sie geteilt werden kann
-	- Daten müssen entweder vom Client geliefert werden oder in einer Datenbank liegen, die
-	von allen Instanzen des Systems erreichbar ist
-- Ein Problem in Mehrmandanten-Systemen ist die Datenverwaltung
-	- einfachste Lösung: Jeder Kunde hat seine eigene Datenbank, selbst verantwortlich für die Konfiguration
-		- erfordert allerdings die Verwaltung vieler Datenbank-Instanzen auf Seiten des Dienstanbieters
-	- alternative Lösung: Dienstanbieter verwaltet eine einzelne Datenbank, in der
-	die Nutzer virtuell voneinander isoliert sind
+
+
+Mehrmandantenfähigkeit beschreibt eine Situation, in der mehrere Nutzende das gleiche System
+ansprechen können. Allerdings müssen dabei alle Nutzenden in der Annahme sein,
+dass sie die einzigen Nutzenden des Systems sind. Dies setzt die absolute Trennung
+von Systemfunktionalität und Daten voraus.
+Daher muss jede Operation zustandslos sein, sodass sie zwischen Nutzenden geteilt werden kann.
+Daten müssen entweder vom Client geliefert werden oder in einer Datenbank liegen, die
+von allen Instanzen des Systems erreichbar ist.
+
+Die anbieterseitige Datenverwaltung stellt ein großes Problem in Mehrmandanten-Systemen dar.
+In der einfachsten Lösung hat jeder Kunde seine eigene Datenbank und ist selbst
+verantwortlich für die Konfiguration. Dies erfordert allerdings die Verwaltung
+vieler Datenbank-Instanzen auf Seiten des Dienstanbieters. In einer alternativen Lösung
+verwaltet der Dienstanbieter eine einzelne Datenbank, in der die Nutzer virtuell
+voneinander isoliert sind.
+
 	- TODO: Referenz auf Bild, Nutzung von Views
-- Skalierbarkeit beschreibt die Fähigkeit eines Systems, mit steigenden Nutzerzahlen
-umzugehen, ohne die Qualität des angebotenen Dienstes einzuschränken
-	- Im Kontext von SaaS wird häufig "scaling out" bevorzugt, also das Hinzufügen von
-	neuen Servern
-	- Folgende Richtlinien helfen dabei, skalierbare Software zu entwickeln
-		1. Entwicklung einzelner Komponenten als zustandslose Dienste, die auf einem Server
-		ausgeführt werden könnten. Das Ermöglicht die Mehrfache Interaktion des Nutzers
-		mit einem Dienst, der auf unterschiedlichen Servern bereitgestellt wird, während einer Transaktion.
-		2. Entwicklung des Systems, indem asynchrone Interaktion bevorzugt wird.
-		Dies führt dazu, dass die Anwendung nicht auf die Antwort einer Anfrage warten muss,
-		sondern währenddessen weitere Berechnungen durchführen kann
-		3. Ressourcen (z.B. Netzwerk- und Datenbank-Verbindungen) in einem Pool
-		verwalten, sodass keinem einzelnen Server die verfügbaren Ressourcen schnell ausgehen
-		4. Entwicklung der Datenbank, sodass fein granulares Locking möglich ist (nicht
-		einen gesamten Eintrag sperren, wenn nur ein Teil in Benutztung ist)
-		5. Nutzung einer cloud PaaS (Platform as a Service) Platform zur Systemimplementierung.
-		Diese Platformen enthalten Mechanismen um "scaling out" zu automatisieren
+	Nutzer interagieren mit dem Dienst über ein Nutzerprofil, in dem die Konfigurationseinstellungen
+	hinterlegt sind
 
-- SaaS ist ein Paradigmenwechsel für verteilte Rechensysteme
-	- viele Softwareanbieter haben weite Teile ihres Portfolios auf diese Form der
-	Softwarebereitstellung umgestellt (bspw. Photoshop)
-	- Firmen stellen ihre eigenen Systeme (wie bspw. CRMs und Lagerverwaltung) auf
-	SaaS-Dienste externer Anbieter um
 
-- SaaS stellt eine neue Denkweise für Unternehmenssysteme dar. Im Falle von SaaS
+Skalierbarkeit spielt auch für SaaS-Systeme eine große Rolle, allerdings wird
+häufig "scaling out" bevorzugt, also das Hinzufügen von neuen Servern.
+Folgende Richtlinien helfen dabei, skalierbare Software zu entwickeln:
+	1. Entwicklung einzelner Komponenten als zustandslose Dienste, die auf einem Server
+	ausgeführt werden könnten. Das Ermöglicht die Mehrfache Interaktion des Nutzers
+	mit einem Dienst, der auf unterschiedlichen Servern bereitgestellt wird, während einer Transaktion.
+	2. Entwicklung des Systems, indem asynchrone Interaktion bevorzugt wird.
+	Dies führt dazu, dass die Anwendung nicht auf die Antwort einer Anfrage warten muss,
+	sondern währenddessen weitere Berechnungen durchführen kann
+	3. Ressourcen (z.B. Netzwerk- und Datenbank-Verbindungen) in einem Pool
+	verwalten, sodass keinem einzelnen Server die verfügbaren Ressourcen schnell ausgehen
+	4. Entwicklung der Datenbank, sodass fein granulares Locking möglich ist (nicht
+	einen gesamten Eintrag sperren, wenn nur ein Teil in Benutztung ist)
+	5. Nutzung einer cloud PaaS (Platform as a Service) Platform zur Systemimplementierung.
+	Diese Platformen enthalten Mechanismen um "scaling out" zu automatisieren
+
+SaaS ist ein Paradigmenwechsel für verteilte Rechensysteme.
+Viele Softwareanbieter haben bereits weite Teile ihres Portfolios auf diese Form der
+Softwarebereitstellung umgestellt (bspw. Photoshop).
+Firmen stellen auch ihre eigenen Systeme (wie bspw. CRMs und Lagerverwaltung) auf
+SaaS-Dienste externer Anbieter um.
+
+SaaS stellt aber auch eine neue Denkweise für Unternehmenssysteme dar. Im Falle von SaaS
 liegen die Abstraktionen des Systems näher am Nutzer, sodass die Systeme leichter
 zu verstehen, zu warten und weiter zu entwicklen sind.
 
