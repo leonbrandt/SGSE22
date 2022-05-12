@@ -478,13 +478,24 @@ Böhm and Abts [10] vermuten, dass die Kosten für die Systemwartung und -weiter
 ## Referenzen
 
 [1]: Sommerville, I. (2015), Software engineering (10th ed.), 437-463
+
 [2]: Jacobsen, I., M. Griss, und P. Jonsson (1997), Software Reuse
+
 [3]: Schmidt, D. C., A. Gokhale, and B. Natarajan (2004), “Leveraging Application Frameworks.”
+
 [4]: Holdener, A.T. (2008), Ajax: The Definitive Guide
+
 [5]: Sarris, S. (2013), HTML5 Unleashed
+
 [6]: Fayad, M.E., and D.C. Schmidt (1997), “Object-Oriented Application Frameworks.”
+
 [7]: Baumer, D., G. Gryczan, R. Knoll, C. Lilienthal, D. Riehle, and H. Zullighoven (1997), “Framework Development for Large Systems.”
+
 [8]: Torchiano, M., and M. Morisio (2004), “Overlooked Aspects of COTS-Based Development.” 
+
 [9]: Monk, E., and B. Wagner (2013), Concepts in Enterprise Resource Planning (4th ed.)
+
 [10]: Boehm, B., and C. Abts (1999), “COTS Integration: Plug and Pray?” 
+
 [11]: Garlan, D., R. Allen, and J. Ockerbloom (1995), “Architectural Mismatch: Why Reuse Is So Hard.” 
+
