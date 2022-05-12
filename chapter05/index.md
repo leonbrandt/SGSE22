@@ -57,7 +57,7 @@ Diese Interaktionen können anhand von zwei UML-Diagrammen abgebildet werden:
 1. Use-Case-Diagramme
 2. Sequenzdiagramme
 
-Dabei fokussieren sich Use-Case-Diagramme weitestgehend um Interaktionen zwischen dem System und externen Objekten, wohingegen Sequenzdiagramme hauptsächlich Interaktionen zwischen Systemkomponenten modellieren. Doch auch externe [?] können in dieses Modell vertreten werden. Die zwei Diagramme geben die Abstraktion dieser Interaktionen in unterschiedlichem Detailgraden wider, weshalb die Nutzung der beiden in Kombination sinnvoll ist. 
+Dabei fokussieren sich Use-Case-Diagramme weitestgehend um Interaktionen zwischen dem System und externen Objekten, wohingegen Sequenzdiagramme hauptsächlich Interaktionen zwischen Systemkomponenten modellieren. Doch auch externe Objekte können in dieses Modell vertreten werden. Die zwei Diagramme geben die Abstraktion dieser Interaktionen in unterschiedlichem Detailgraden wider, weshalb die Nutzung der beiden in Kombination sinnvoll ist. 
 
 ### Use Case Modellierung
 
@@ -75,7 +75,7 @@ UML-Use-Case-Diagramme bieten eine einfache und übersichtliche Notation, um die
 
 <img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/UseCases.png?raw=true" alt="UseCases" style="zoom:80%;" />
 
-Die Abbildung [?] zeigt ein Beispiel für eines Use-Case-Diagrammes, welches mehrere Use-Cases aufweist. Der Aktor ist medizinischer Rezeptionist, welche in Interaktion mit dem System die aufgezeigten Aufgaben bewältigen kann. Die Verbindungen zu den einzelnen Use-Cases stellen dabei einen Nachrichtenfluss in beide Richtungen dar - von Aktor zu System und von System zu Aktor.
+Die Abbildung zeigt ein Beispiel für eines Use-Case-Diagrammes, welches mehrere Use-Cases aufweist. Der Aktor ist medizinischer Rezeptionist, welche in Interaktion mit dem System die aufgezeigten Aufgaben bewältigen kann. Die Verbindungen zu den einzelnen Use-Cases stellen dabei einen Nachrichtenfluss in beide Richtungen dar - von Aktor zu System und von System zu Aktor.
 
 In manchen Fällen ist es möglich, alle vorhandenen Use-Cases in dem Diagramm wiederzugeben. Allerdings kann es auch vorkommen, dass dies aufgrund einer zu hohen Anzahl von Use-Cases nicht mehr möglich ist. In diesem Fall können mehrere Diagramme erstellt werden, wobei auf die Komplexität der Modelle geachtet werden muss, um das Verständnis dieser beizubehalten.
 
@@ -126,7 +126,7 @@ Allerdings ist es ebenso sinnvoll, die Eigenschaften und Funktionen der einzelne
 
 In der Realität kommt es häufig vor, dass unterschiedliche Objekte gleichsame Eigenschaften aufweisen. Um die Komplexität zu verringern und reduntante Informationen zu vermeiden, werden derartige Objekte einer Klasse untergeordnet, und somit die Eigenschaften der übergeordneten Klasse erben. 
 
-In dem praktischen Beispiel in der Abbildung [?] lässt sich erkennen, dass es sich sowohl bei dem 'Hospital doctor' als auch dem 'General practitioner' um einen 'Doctor' handelt. Sie weisen also die Eigenschaften und Funktionen eines Doktors auf und können ebenso zusätzliche Informationen enthalten.
+In dem praktischen Beispiel in der Abbildung lässt sich erkennen, dass es sich sowohl bei dem 'Hospital doctor' als auch dem 'General practitioner' um einen 'Doctor' handelt. Sie weisen also die Eigenschaften und Funktionen eines Doktors auf und können ebenso zusätzliche Informationen enthalten.
 
 Für die Modellierung des Systems ist es notwendig, solche Generalisierungen zu identifizieren und entsprechend grafisch zu erfassen. Dies reduziert redundante Informationen und kapselt die Daten sinnvoll, sodass Änderungen an diesen nur an einer Stelle zu unternehmen sind. Für diesen Fall bietet das UML-Klassendiagramm eine Generalisierungsassoziation, welche mit einem unausgefüllten Pfeil am Ende einer Verbindungslinie dargestellt wird. Überlicherweise werden erbende Klassen unterhalb der vererbenden Klasse dargestellt. Der Pfeil zeigt in die Richtung des Klassenelements, welche seine Eigenschaften und Operationen an die unterliegende Klasse vererbt.
 
@@ -138,7 +138,7 @@ Für die Modellierung des Systems ist es notwendig, solche Generalisierungen zu 
 
 <img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Aggregation.png?raw=true" alt="Aggregation" style="zoom:80%;" />
 
-Es kommt in der Modellierung von Systemen häufig vor, dass einige Objekte sich aus weiteren Objekten zusammensetzen. Diese Art von Beziehung nennt sich Aggregation und wird in einem UML-Klassendiagramm anhand einer Diamantenform am Ende einer Verbindungsstelle zweier Klassen gekennzeichnet. In der Abbildung [?] erkennt man die Klasse *Patient record*, welche sich aus den Informationen aus *Patient*, sowie die der *Consulation* zusammensetzt.
+Es kommt in der Modellierung von Systemen häufig vor, dass einige Objekte sich aus weiteren Objekten zusammensetzen. Diese Art von Beziehung nennt sich Aggregation und wird in einem UML-Klassendiagramm anhand einer Diamantenform am Ende einer Verbindungsstelle zweier Klassen gekennzeichnet. In der Abbildung erkennt man die Klasse *Patient record*, welche sich aus den Informationen aus *Patient*, sowie die der *Consulation* zusammensetzt.
 
 
 
@@ -162,11 +162,13 @@ Datengesteuerte Modelle waren bereits in den 1970er Jahren verbreitet, was sie z
 | Rechteck              | Objekt (Daten)             |
 | Pfeil                 | Datenfluss                 |
 
+<img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Behaviour_ActivityModel.png?raw=true" alt="Behaviour_ActivityModel" style="zoom:70%;" />
+
 
 
 Doch auch mit Sequenzdiagrammen können DFDs dargestellt werden. Werden die Nachrichten zwischen Objekten ausschließlich von links nach rechts überliefert, wird so die sequentielle Abfolge des Datenflusses illustriert (siehe Abbildung).
 
-<img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Behaviour_ActivityModel.png?raw=true" alt="Behaviour_ActivityModel" style="zoom:70%;" />
+
 
 <img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Behaviour_SequenceDiagram.png?raw=true" alt="Behaviour_SequenceDiagram" style="zoom:70%;" />
 
