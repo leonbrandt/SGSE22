@@ -39,24 +39,23 @@ Im Folgenden werden die Vorteile der Software-Wiederverwendung dargestellt.
 
 | Vorteil          |     Erklärung       |
 |:----------:|:----------------:|
-| Schnellere Entwicklung | sdfsdfs |
-| Effektiver Einsatz von Spezialisten  | asdsdf | 
-Erhöhte Zuverlässigkeit
-Niedrigere Entwicklungskosten
-Reduziertes Prozessrisiko
-Einhaltung von Standards
+| Schnellere Entwicklung | Ein System so schnell wie moeglich auf den Markt zu bringen ist teils wichtiger als die Entwicklungskosten. Wiederverwerndung von Software kann die Entwicklungszeit beschleunigen. |
+| Effektiver Einsatz von Spezialisten  | Statt die gleiche Arbeit immer wieder zu machen, koennen Spezialisten wiederverwendbare Software entwickeln, welche ihr Wissen einfaengt. | 
+| Erhöhte Zuverlässigkeit | Wiederverwendete Software, welche bereits in funktionierenden Systemen getestet wurde, sollte zuferlaessiger als neue Systeme sein. Die Design- und Implementierungsfehler sollten bereits gefunden sein. |
+| Niedrigere Entwicklungskosten | Entwicklungskosten sind proportional zu der groesse des Softwaresystems. Software wiederzuverwenden bedeutet, dass weniger Programmcode geschrieben werden muss. |
+| Reduziertes Prozessrisiko | Die Kosten von existierender Software sind bereits bekannt, waehrend die Kosten der Entwicklung immer geschaetzt sind. Das Wiederverwenden kann so den Fehler in der Projektkosten-Schaetzung verringern. Dies ist gerade dann wahr, wenn grosse Softwarekomponenten wie Subsystem wiederverwendet werden koennen. |
+| Einhaltung von Standards | Manche Standards koennen als Sammlung von wiederverwendbare Software implementiert werden. Die Verwendung von Standardbenutzeroberflaechen zum Beispiel verbessert die Zuverlaesslichkeit, weil Benutzer weniger Fehler machen, wenn sie mit vertrauten Oberflaechen konfrontiert werden. |
 
 Folgend werden Nachteile tabellarisch dargestellt.
 
 | Nachteil          |     Erklärung       |
 |:----------:|:----------------:|
-| Erstellen, Pflegen und Verwenden von
-Komponentenbibliotheken | sdfsdfs |
-| Finden, Verstehen und
-Anpassung wiederverwendbarer Komponenten  | asdsdf | 
-Erhöhte Wartungskosten
-Fehlende Werkzeugunterstützung
-"Nicht-hier-erfunden" Syndrom
+| Erstellen, Pflegen und Verwenden von Komponentenbibliotheken | Das Befüllen einer wiederverwendbaren Komponentenbibliothek und das Sicherstellen, dass die Software vom Entwickler verwendet werden kann, ist teuer. Entwicklung
+Prozesse müssen angepasst werden, um sicherzustellen, dass die Bibliothek verwendet wird.  |
+| Finden, Verstehen und Anpassung wiederverwendbarer Komponenten  | Softwarekomponenten muessen in Bibliotheken gefunden, verstanden und manchmal an die neue Umgebung angepasst werden. Ingenieure muessen halbwegs zuversichtlich sein, Komponenten in einer Bibliothek zu finden, bevor sie eine Komponentensuche als Teil ihrer Normalität in den Entwicklungsprozess einschließen. | 
+| Erhöhte Wartungskosten | Wenn der Quellcode eines wiederverwendbaren Systems oder einer Komponente nicht verfuegbar ist, dann koennen Wartungsarbeiten wegen der Wiederverwendung hoeher sein, weil die wiederverwendbaren Teile des Systems eventuell nach Veraenderung des Systems inkompatibel werden. |
+| Fehlende Werkzeugunterstützung | Manche Softwaretools unterstuetzen keine Entwicklung mit Wiederverwendung. Es kann so unmoeglich sein, diese Tools mit einem Bibliothekssystem zu integrieren. Dies ist bei Tools, welche Embedded-System-Entwicklung unterstuetzen, eher der Fall als bei objektorientierten Entwicklungstools. |
+| "Nicht-hier-erfunden" | Syndrom Manche Entwickler bevorzugen es Komponenten selber zu entwickeln, da sie der Meinung sind, diese verbessern zu koennen. Dies liegt unter anderem an Vertrauen und teils daran, dass es als herausfordernder angesehen wird, als die Software von anderen Personen wiederzuverwenden. |
 
 
 ## Die Wiederverwendungslandschaft
@@ -71,7 +70,7 @@ der Wiederverwendung) und anschliessend kurz erläutert.
 
 ![](media/15_3.PNG)
 
-| A          |     B       |
+| Ansatz          |    Erklärung       |
 |:----------:|:----------------:|
 |Anwendungsframeworks | Sammlungen von abstrakten und konkreten Klassen werden angepasst und erweitert um Anwendungssysteme zu erstellen. |
 |Integration von Anwendungssystemen | Zwei oder mehr Anwendungssysteme werden integriert, um eine erweiterte Funktionalität bereitzustellen. |
