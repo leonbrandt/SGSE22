@@ -672,7 +672,7 @@ SaaS stellt aber auch eine neue Denkweise für Unternehmenssysteme dar. Im Falle
 liegen die Abstraktionen des Systems näher am Nutzer, sodass die Systeme leichter
 zu verstehen, zu warten und weiter zu entwicklen sind.
 
-## Kernaspekte ##
+## Zusammenfassung ##
 
 - Die Vorteile von verteilten Systemen bestehen darin, dass sie gut skaliert werden können,
 um mit steigenden Nutzeranzahlen umzugehen und, dass durch ihre Architektur die Möglichkeit
