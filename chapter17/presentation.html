@@ -4,14 +4,14 @@
     <title>Kapitel 01: Einleitung</title>
     <meta charset="utf-8">
     <style>
-      body { 
+      body {
         font-family: 'Droid Serif';
       }
       h1, h2, h3 {
         font-family: 'Yanone Kaffeesatz';
         font-weight: normal;
       }
-      .remark-code, .remark-inline-code { 
+      .remark-code, .remark-inline-code {
         font-family:Courier New;
       }
       @page {
@@ -27,11 +27,68 @@
 class: center, middle
 
 
+# Distributed Software Engineering #
 
+**Autor:** Malte Reinsch
 
-# Kapitel 01: Einleitung
+---
+### Inhalte
 
-Max Mustermann
+- Einleitung
+- Verteilte Systeme
+- Client-Server Computing
+- Architekturmuster für verteilte Systeme
+- Software as a Service
+
+---
+### Einleitung
+
+- die meisten modernen Systeme sind verteilt
+- d.h.: mehr als ein Rechner beteiligt
+- Tannenbaum & Van Steen: "Eine Sammlung aus unabhängigen Rechnern, die aus Sicht
+des Nutzers als einzelnes zusammenhängendes System wahrgenommen wird"
+
+---
+### Vorteile
+
+Verteilte Systeme haben einige Vorteile:
+1. Geteilte Ressourcen
+2. Offenheit
+3. Nebenläufigkeit
+4. Skalierbarkeit
+5. Fehlertoleranz
+
+### Wo Licht, da auch Schatten...
+- deutlich (!) komplexer
+- Antwortzeit hängt von Gesamtbelastung ab
+
+---
+### Verteilte Systeme
+
+Komplexität:
+- keine Komponente hat die komplette Kontrolle über das System (Unberechenbarkeit)
+- das Netzwerk ist ein eigenes System
+- Interaktion von Komponenten unterschiedlicher Hersteller
+
+Wichtige Entwicklungsaspekte:
+- Transparenz
+- Offenheit
+- Skalierbarkeit
+- Sicherheit
+- Dienstqualität (QoS)
+- Fehlermanagement
+
+---
+### Interaktionsmodelle
+
+Zwei Interaktionsarten der System-Rechner:
+- prozedurale Interaktion
+- Nachrichtenbasierte Interaktion
+
+---
+### Interaktionsmodelle
+
+![Synchrone Interaktion](media/Waiter_Diner.drawio.png ':size=100')
 
 ---
 # Voraussetzungen
@@ -46,7 +103,7 @@ public class A {
 
 ---
 
-## Inhalte 
+## Inhalte
 
 * A
 * B
@@ -58,7 +115,7 @@ public class A {
     <script src="../_assets/js/remark-latest.min.js">
     </script>
     <script>
-    
+
     var slideshow = remark.create({
   // Set the slideshow display ratio
   // Default: '4:3'
@@ -92,10 +149,10 @@ public class A {
 
   // Enable or disable counting of incremental slides in the slide counting
   countIncrementalSlides: true
-}); 
-    
-    
-      
+});
+
+
+
     </script>
   </body>
 </html>
