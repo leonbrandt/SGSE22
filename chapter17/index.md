@@ -216,10 +216,6 @@ großer Vorteil gegenüber prozeduraler Kommunikation ist.
 
 ### Middleware ###
 
-- Abstraktionsschicht über OS (Interaktions-Support)
-- Vereinheitlichung von vielfach benötigten Funktionen in gemeinsam
-genutzten Bibliotheken
-
 Die Komponenten eines verteilten Systems können in unterschiedlichen Programmiersprachen
 implementiert sein, auf verschiedenen Prozessoren laufen, verschiedene Protokolle verwenden
 und andere Formen der Informationsdarstellung verwenden. Um die Komponenten trotzdem
@@ -395,10 +391,15 @@ außerdem die Verwaltbarkeit, da jede Schicht einzeln verwaltet und skaliert wer
 Indem die Applikationslogik und die Datenbereitstellung auf unterschiedliche Rechner
 aufgeteilt wird, kann zusätzlich eine schnellere Systemantwort erreicht werden.
 
-Die Auswahl einer konkreten Systemarchitektur ist von vielen Faktoren abhängig, welche
-in der nachfolgenden Tabelle gegenübergestellt sind.
+Die Auswahl einer konkreten Systemarchitektur ist von der konkreten Anwendung abhängig.
+In der nachfolgenden Tabelle sind einige Szenarien gegenübergestellt.
 
-TODO: Tabelle
+| Architektur | Anwendungen |
+|---        |-----------------|
+|Zweischichtige Client-Server Architektur mit flachem Client | Altsystemanwendungen, die genutzt werden, falls die Trennung zwischen Applikationslogik und Datenverarbeitung unpraktikabel ist; Rechenintensive Anwendungen (z.B. Compiler) mit geringem Bedarf nach Datenverarbeitung; Daten-intensive Anwendung (Webbrowsing) mit wenig Applikationslogik |
+|Zweischichtige Client-Server Architektur mit dickem Client | Anwendungen, bei denen die Applikationslogik durch Standardsoftware (z.B. Microsoft Excel) auf dem Client erfolgt; Anwendungen, bei denen rechenintensive Datenverarbeitung nötig ist (z.B. Datenvisualisierung); Mobile Anwendungen, bei denen eine Internetverbindung nicht garantiert werden kann|
+|Mehrschichtige Client-Server Architektur| Große Anwendungen mit hunderten oder tausenden Clients; Anwendungen, bei denen sowohl die Daten als auch die Applikation unberechenbar sind|
+
 
 ### Verteilte Komponentensysteme ###
 
