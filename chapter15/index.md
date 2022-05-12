@@ -50,8 +50,7 @@ Folgend werden Nachteile tabellarisch dargestellt.
 
 | Nachteil          |     Erklärung       |
 |:----------:|:----------------:|
-| Erstellen, Pflegen und Verwenden von Komponentenbibliotheken | Das Befüllen einer wiederverwendbaren Komponentenbibliothek und das Sicherstellen, dass die Software vom Entwickler verwendet werden kann, ist teuer. Entwicklung
-Prozesse müssen angepasst werden, um sicherzustellen, dass die Bibliothek verwendet wird.  |
+| Erstellen, Pflegen und Verwenden von Komponentenbibliotheken | Das Befüllen einer wiederverwendbaren Komponentenbibliothek und das Sicherstellen, dass die Software vom Entwickler verwendet werden kann, ist teuer. Entwicklung Prozesse müssen angepasst werden, um sicherzustellen, dass die Bibliothek verwendet wird.  |
 | Finden, Verstehen und Anpassung wiederverwendbarer Komponenten  | Softwarekomponenten muessen in Bibliotheken gefunden, verstanden und manchmal an die neue Umgebung angepasst werden. Ingenieure muessen halbwegs zuversichtlich sein, Komponenten in einer Bibliothek zu finden, bevor sie eine Komponentensuche als Teil ihrer Normalität in den Entwicklungsprozess einschließen. | 
 | Erhöhte Wartungskosten | Wenn der Quellcode eines wiederverwendbaren Systems oder einer Komponente nicht verfuegbar ist, dann koennen Wartungsarbeiten wegen der Wiederverwendung hoeher sein, weil die wiederverwendbaren Teile des Systems eventuell nach Veraenderung des Systems inkompatibel werden. |
 | Fehlende Werkzeugunterstützung | Manche Softwaretools unterstuetzen keine Entwicklung mit Wiederverwendung. Es kann so unmoeglich sein, diese Tools mit einem Bibliothekssystem zu integrieren. Dies ist bei Tools, welche Embedded-System-Entwicklung unterstuetzen, eher der Fall als bei objektorientierten Entwicklungstools. |
