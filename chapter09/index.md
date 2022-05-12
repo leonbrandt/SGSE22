@@ -9,7 +9,7 @@ verändern.
 
 ## Einführung
 
-Softwaresysteme können eine sehr lange Lebenszeit haben. In dieser Zeit kommt es zu Änderungen an den Systemen. Dies
+Softwaresysteme können eine sehr lange Lebenszeit haben, in der es zu Änderungen an den Systemen kommt. Dies
 kann unterschiedliche Gründe haben, wie Fehlerbehebung, neue Hardware, Performanceoptimierung oder Druck durch
 Konkurrenz. Dieser Prozess des stetigen Änderns und Weiterentwickelns ist die Softwareevolution. Firmen investieren
 viel in diese Evolution, 60%-90% der Produktkosten werden hier verwendet. Deshalb kann eine Optimierung der Evolution
@@ -17,8 +17,7 @@ Kosten einsparen und zum Erfolg eines Systems beitragen.
 
 Je nach Systemen ist die Evolution aufwändiger und teurer. Besonders aufwändig können Änderungen an einem "System of
 Systems" sein. Also Software, die aus mehreren Teilen besteht, die sich gegenseitig beeinflussen. Hohe Kosten können
-dann
-Änderungen verursachen, die Anpassungen in anderen Teilen benötigen.
+durch Änderungen verursacht werden, die Anpassungen in anderen Teilen benötigen.
 
 ![](assets/Bild1.png )
 
@@ -27,16 +26,17 @@ dann
 
 Da stetig neue Anforderung für ein Softwaresystem aufkommen, müssen immer wieder neue Versionen veröffentlicht werden.
 Dieser sich immer wiederholende Ablauf ist in [Abbildung 1] dargestellt. Jeder Zyklus ist ein Ablauf aus Anforderungen,
-Design, Implementierung und Testen. Die Veröffentlichungen passieren häufig in einen regelmäßigen Rhythmus, so dass
-beispielsweise alle zwei Wochen eine neue Version veröffentlicht werden kann. Durch die verschiedenen Phasen und einem
-engen Rhythmus kann es passieren, dass eine weitere Version bereits entwickelt wird, bevor die Vorige veröffentlicht
+Design, Implementierung und Testen. Neue Versionen werden häufig in einen regelmäßigen Rhythmus veröffentlicht,
+beispielsweise alle zwei Wochen. Durch die verschiedenen Phasen und einem
+engen Rhythmus kann es passieren, dass eine weitere Version bereits entwickelt wird, bevor die vorherige veröffentlicht
 wurde. Der Abstand zwischen Veröffentlichungen wird, vor allem in den letzten zehn Jahren, immer kleiner. Das hat den
 Vorteil, dass schneller auf externe Faktoren wie Konkurrenten oder Nutzerrückmeldungen eingegangen werden kann.
 
 Dieser Ansatz der Evolution kann nur funktionieren, wenn die initiale Entwicklung und die Evolution vom gleichen Team
 durchgeführt wird. Es passiert allerdings häufig, dass die Wartung durch ein anderes Team umgesetzt wird, beispielsweise
 wenn externe Firmen zur Entwicklung eingeschaltet werden. Durch diese Trennung können Probleme im Evolutionsprozess
-aufkommen. Es passieren, dass Anforderungs- oder Designdokument nicht weitergegeben werden. Wenn Firmen fusionieren,
+aufkommen. Es kann vorkommen, dass Anforderungs- oder Designdokument nicht weitergegeben werden. Wenn Firmen
+fusionieren,
 läuft man in die Gefahr einer Unterbrechung der Evolution, da die externe Software integriert und angepasst werden muss.
 Bei so einer Trennung von Entwicklung und Evolution, wird der Prozess der Anpassungen Softwarewartung genannt.
 
@@ -89,7 +89,7 @@ Anforderungen enthält. Nach der Implementierung wird die neue Version veröffen
 
 ### Evolutionsteam
 
-Wenn initiale Entwicklung und Evolution durch ein einzelnes Team umgesetzt werden, können Änderungen direkt in den
+Wenn initiale Entwicklung und Evolution durch ein einzelnes Team umgesetzt werden, können Änderungen in den
 Entwicklungsprozess eingebunden werden. Dies bietet die Möglichkeit Nutzerrückmeldungen direkt zu verarbeiten. Falls
 sich ein anderes Team um die Evolution kümmert, muss zuerst eine Phase des Verstehens umgesetzt werden, damit der
 Einfluss einer Änderung abgeschätzt werden kann.
@@ -110,7 +110,7 @@ wird, um den Produktiveinsatz nicht zu sehr zu stören.
 Es kann immer vorkommen, dass eine Software umgehend geändert werden muss. Das kann aufgrund eines kritischen
 Systemfehlers sein, der das Arbeiten blockiert oder eine Sicherheitslücke aufmacht. Es kann passieren, dass eine
 vorherige Änderung unerwartet Effekte hat, die behoben werden müssen oder dass sich das Geschäftsfeld unerwartet ändert
-durch zum Beispiel eine rechtliche Änderung oder eine Neuentwicklung eines Konkurrenten. Diese Änderungen müssen sofort
+durch eine rechtliche Änderung oder eine Neuentwicklung eines Konkurrenten. Diese Änderungen müssen sofort
 umsetzt werden, was zu einem veränderten Prozess führt, der in [Abbildung 5] zu sehen ist.
 
 ![](assets/Bild6.png )
@@ -126,9 +126,9 @@ immer schwieriger macht.
 
 ## Altsysteme
 
-Softwaresystem gibt es inzwischen seit ca. 60 Jahren. Über diese Zeit wurden manche Softwaresysteme ersetzt, andere
+Softwaresystem gibt es inzwischen seit ca. 60 Jahren. Über diese Zeit wurden manche Systeme ersetzt, andere
 werden über eine lange Zeit genutzt. Alte Softwaresysteme, die auf Technologien oder Sprachen basieren, die nicht mehr
-benutzt werden, heißen Altsysteme. Diese werden entsprechend bereits seit einer langen Seit gewartet, was dazu führen
+benutzt werden, heißen Altsysteme. Diese werden entsprechend seit einer langen Zeit gewartet, was dazu führen
 kann, dass die Struktur der Software durch Änderungen schlechter geworden ist. Außerdem ist es möglich, dass das System
 auf veralteter Hardware basiert. Dadurch ist es teilweise nicht mehr möglich die Software anzupassen und zu optimieren.
 
@@ -143,7 +143,8 @@ Elemente und ihre Abhängigkeiten sind in [Abbildung 6] visualisiert.
 [Abbildung 6]
 *Elemente eines Altsystems*
 
-* Systemhardware: Altsysteme wurden für alte Hardware entwickelt, die nicht mehr verfügbar und kompatibel ist teuer zu
+* Systemhardware: Altsysteme wurden für alte Hardware entwickelt, die nicht mehr verfügbar und kompatibel ist, somit
+  teuer zu
   warten.
 * Softwareabhängigkeiten: Abhängig von Software, zum Beispiel dem Betriebssystem, die nicht mehr weiterentwickelt wird.
 * Anwendungssoftware: Ein System kann aus mehreren Teilen bestehen, die zu unterschiedlichen Zeiten entwickelt wurden.
@@ -157,7 +158,7 @@ Elemente und ihre Abhängigkeiten sind in [Abbildung 6] visualisiert.
 
 [Abbildung 7] *Altsystem als Schichtmodell*
 
-Eine alternative perspektive auf ein Altsystem bietet das Schichtmodell, wie es in [Abbildung 7] zu sehen ist. Jede
+Eine alternative Perspektive auf ein Altsystem bietet das Schichtmodell, wie es in [Abbildung 7] zu sehen ist. Jede
 Schicht ist abhängig von der darunter liegenden und ist über eine Schnittstelle mit ihr verbunden. Wenn eine Schicht
 geändert wird, muss nur die Schnittstelle angepasst werden, damit keine weiteren Schnittstellen beeinflusst werden. Dies
 ist allerdings eine Vereinfachung, da neue Möglichkeiten in unteren Schichten häufig Änderungen in den anderen Schichten
@@ -168,7 +169,8 @@ und neue Hardware benötigt wird.
 
 Es ist davon auszugehen, dass noch viele Altsysteme in Betrieb sind. Auch wenn es keinen genauen Zahlen gibt, kann als
 Beispiel die Verwendung von COBOL herangezogen werden. Es sind weiterhin ca. 200 Milliarden Zeilen COBOL in
-Produktivsystemen verbaut, obwohl die Sprache bereits seit 1990 nicht mehr in Benutzung ist. Daraus resultiert das große
+Produktivsystemen verbaut, obwohl die Sprache bereits seit 1990 nicht mehr weiterentwickelt wird. Daraus resultiert das
+große
 Problem, dass es schwierig ist, Fachpersonal für diese Systeme zu finden, da COBOL nicht mehr gelehrt wird. Ein weiteres
 Problem bei Altsystemen ist die Sicherheit. Viele Systeme wurden vor der Verbreitung des Internets entwickelt und sind
 dementsprechend nicht gegen die entsprechenden Gefahren abgesichert.
@@ -177,7 +179,7 @@ Das Ersetzen der Software ist, trotz der Probleme, häufig zu teuer und zu risik
 dass Spezifikationen veraltet und unvollständig sind und die Planung eines neuen Systems nicht darauf basieren kann. Des
 Weiteren können Geschäftsprozesse um das Altsystem gebaut sein, für ein neues System müssten also die Prozesse angepasst
 werden. Geschäftsregeln können in das Altsystem eingebunden sein, ohne dass es dokumentiert ist. Das kann schwere Folgen
-bei der Verletzung der regeln im neuen System haben. Zusätzlich hält eine neue Software immer das Risiko unerwartete
+bei der Verletzung der Regeln im neuen System haben. Zusätzlich hält eine neue Software immer das Risiko unerwartete
 Probleme aufzuwerfen.
 
 Allerdings werden die Kosten, um ein Altsystem am Laufen zu halten oder zu ändern immer teurer, so dass ein Ersatz mit
@@ -188,8 +190,8 @@ macht.
 
 ### Altsystemverwaltung
 
-Da Projekte an ein limitiertes Budget gebunden sind, muss entschieden werden welche Evolution von Altsystemen Sinn
-ergibt und welche verzichtbar sind. Dabei gibt es verschiedene Strategien wie mit einem Altsystem umgegangen wird. Die
+Da Projekte an ein limitiertes Budget gebunden sind, muss entschieden werden, welche Evolutionen von Altsystemen Sinn
+ergeben und welche verzichtbar sind. Dabei gibt es verschiedene Strategien wie mit einem Altsystem umgegangen wird. Die
 erste Möglichkeit ist es das System komplett zu entfernen, weil es nicht mehr zum Geschäft beiträgt. Im Gegensatz dazu
 kann ein System unberührt bleiben, wenn es stabil läuft und einen großen Mehrwert für die Firma hat. Als dritte
 Strategie kann das System überarbeitet werden, um die Wartbarkeit zu verbessern. Das ergibt vor allem dann Sinn, wenn in
@@ -218,7 +220,7 @@ können wenige und Gelegenheitsnutzer auf einen geringen Marktwert hinweisen. Ei
 die unterstützen Geschäftsprozesse. Wenn das System nur veraltete Prozesse unterstützt, sorgt das für einen geringeren
 Marktwert. Wichtig ist außerdem, dass ein System zuverlässig ist, viele Ausfälle sorgen für einen kleinen Wert.
 Abschließend spielt die Systemausgabe eine große Rolle, wenn ein Geschäft auf die Ausgabe des Systems angewiesen ist,
-steigert das natürlich den Marktwert.
+steigert das den Marktwert.
 
 Neben der Bewertung des wirtschaftlichen Marktwerts, ist es wichtig die technische Perspektive zu betrachten. Diese
 beinhaltet neben der eigentlichen Anwendung auch das Umfeld der Software. Das Umfeld beinhaltet beispielsweise die
@@ -240,7 +242,7 @@ Hardware und verbundene Unterstützungssoftware. Um diese technische Perspektive
 Um diese Fragen korrekt beantworten zu können, müssen Daten über die Kosten der Wartung oder Systemausfälle gesammelt
 werden. Neben der Umgebung ist die technische Qualität der Anwendung elementar. Um diese sinnvoll bewerten zu
 können, sollten Daten über die Anzahl der Systemänderungsanfragen, Anzahl der Nutzerschnittstellen und die Größe der
-Daten gesammelt werden. Mit diesen Daten lassen sich dann die Fragen aus *Tabelle 2* beantworten.
+Daten gesammelt werden. Diese Daten helfen die Fragen aus *Tabelle 2* beantworten.
 
 |          Faktor          |                                                   Fragen                                                   | 
 |:------------------------:|:----------------------------------------------------------------------------------------------------------:|
@@ -248,14 +250,14 @@ Daten gesammelt werden. Mit diesen Daten lassen sich dann die Fragen aus *Tabell
 |      Dokumentation       |       Was für eine Systemdokumentation ist vorhanden? ist diese vollständig, konsistent und aktuell?       | 
 |          Daten           |           Gibt es ein explizites Datenmodell für das System? Sind Daten aktuell und konsistent?            | 
 |       Performance        |          Ist die Performance angemessen? Haben Performanzprobleme einen Einfluss auf den Nutzer?           | 
-|    Programmiersprache    |          Wird die Programmiersprache noch genutzt? Wenn nicht gibt es trotzdem aktuelle Compiler?          |
+|    Programmiersprache    |         Wird die Programmiersprache noch genutzt? Wenn nicht, gibt es trotzdem aktuelle Compiler?          |
 | Konfigurationsmanagement | Sind die Versionen aller Teile durch ein Tool kontrolliert? Gibt es eine Beschreibung über alle Versionen? |
-|        Testdaten         |     Existieren Testdaten für das System? Gibt es Protokolle über Regressionstest bei neuen Funktionen?     | 
+|        Testdaten         |    Existieren Testdaten für das System? Gibt es Protokolle über Regressionstests bei neuen Funktionen?     | 
 |   Personalfähigkeiten    |              Ist Personal verfügbar mit Wissen über das System und Fähigkeiten es zu warten?               |
 
 *Tabelle 2: Faktoren zur Analyse der Anwendung*
 
-Bei dieser Vorgehensweise handelt es sich um ein idealisiertes Vorgehen. Häufig beeinflussen weitere Faktoren eine große
+Bei dieser Vorgehensweise handelt es sich um ein idealisiertes Vorgehen. Häufig spielen weitere Faktoren eine große
 Rolle bei der Entscheidung. Dabei kann es sich um Firmenübernahmen, das Budget oder Entscheidungen der Geschäftsführung
 handeln.
 
@@ -287,7 +289,7 @@ unerfahrensten Entwickler. Mit dem Alter verschlechtert sich die Struktur einer 
 
 Die ersten drei Probleme resultieren vor allem durch die Trennung von Entwicklung und Wartung. Sie könnten also mit
 einem gleichen Team, sowie der gleichen Wertschätzung für Entwicklung und Wartung gelöst werden. Die Verschlechterung
-der Struktur kann durch Umgestaltung der Software bekämpft werden. Des Weiteren hilft eine von Beginn an gutes Design
+der Struktur kann durch Umgestaltung der Software bekämpft werden. Des Weiteren helfen ein von Beginn an gutes Design
 und eine gute Struktur die Kosten der Wartung zu senken. Weitere Techniken, wie genaue Spezifikationen, Test-First
 Entwicklungen, objektorientierte Programmierung und Konfigurationsmanagement senken ebenfalls die laufenden Kosten.
 
@@ -300,7 +302,7 @@ abzubilden.
 Um die Kosten von Wartung abzuschätzen und sie möglichst früh einzupreisen, nutzt man die Wartungsanalyse. Diese
 versucht zu bewerten welche Teile eines Systems besonders teuer zu ändern sind. Wenn Komponenten als besonders teuer zu
 Warten eingeschätzt werden, können diese anpassungsfähiger gestaltet werden. [Abbildung 10] zeigt verschiedene
-Vorhersagen und Fragen, um Wartbarkeit abzuschätzen.
+Vorhersagen und Fragen, um die Wartbarkeit abzuschätzen.
 
 ![](assets/Bild11.png)
 
@@ -309,7 +311,8 @@ Vorhersagen und Fragen, um Wartbarkeit abzuschätzen.
 Um die Anzahl von zukünftigen Änderungsanfragen abzuschätzen, muss die Beziehung zwischen der Anwendung und der externen
 Umgebung betrachtet werden. Ein Indiz ist die Anzahl und Komplexität von Schnittstellen. Bei vielen Schnittstellen kommt
 es häufiger zu Änderungen. Des Weiteren sollte die Zahl der typischerweise sprunghaften Änderungen beachtet werden.
-Diese werden häufig durch Anforderung, die aus einer Änderung der Firmenpolitik oder der Geschäftsabläufe resultieren.
+Diese entstehen häufig aus Anforderungen, die aus einer Änderung der Firmenpolitik oder der Geschäftsabläufe
+resultieren.
 Wenn die Abläufe rund um das System komplex sind, ist das ein weiteres Anzeichen für viele Änderungswünsche.
 
 Um nach der Veröffentlichung abzuschätzen, wie viel Wartung aktuell benötigt wird und wie gut die Software noch wartbar
@@ -342,8 +345,8 @@ Daten zusätzlich zu bereinigen. Das kann allerdings sehr aufwendig sein. Bei ei
 Schritte nötig sein, je nach Projekt sind manche obsolet.
 
 Um eine Kommunikation zwischen umgewandelter und neuer Software zu ermöglichen, können Adapterdienste entwickelt werden.
-Je komplizierter und vor allem manueller eine Umwandlung ist, desto höher sind die resultierenden Kosten, wie
-in [Abbildung 12] aufgezeigt.
+Je komplizierter und vor allem manueller eine Umwandlung ist, desto höher sind die resultierenden Kosten,
+wie [Abbildung 12] aufgezeigt.
 
 ![](assets/Bild13.png)
 
