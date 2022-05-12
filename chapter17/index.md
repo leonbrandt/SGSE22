@@ -37,7 +37,7 @@ Im Folgenden werden unterschiedliche Aspekte betrachtet, die für die Entwicklun
 verteilter Systeme zu beachten sind. Des Weiteren diskutiert dieses Kapitle einige
 architektonische Ansätze zur Konzeptionierung und Implementierung verteilter Systeme.
 
-## Distributed Systems ##
+## Verteilte Systeme ##
 
 <!-- TODO: kürzen -->
 
@@ -249,7 +249,12 @@ Hierzu zählen bspw. die Parameterkonvertierung zwischen verschiedenen Programmi
 2. Bereitstellung gemeinsamer Dienste: Die Middleware stellt Wiederverwendbare
 Funktionalität bereit, die von mehreren Komponenten des Systems verwendet werden.
 
-## client-server computing ##
+Die Einordnung von Middleware in die Kommunikation zweier Applikationsanwendungen
+ist der folgenden Abbildung zu entnehmen:
+
+![Einordnung Middleware](./img/middleware.drawio.png )
+
+## Client-Server Computing ##
 
 Programme, die über das Internet angesprochen werden, sind als Client-Server Systeme
 angelegt. Dabei interagiert ein Client-Progamm (auf einem lokalen Rechner) mit einem
@@ -290,7 +295,7 @@ Im folgenden sind diese Schichten grafisch dargestellt:
 ![Schichtenmodell](./img/layers.drawio.png)
 
 
-## architectural patterns for distributed system ##
+## Architekturmuster für verteilte Systeme ##
 
 Entwickler von verteilten Systemen müssen beim Systemdesign eine Balance zwischen
 Performance, Verlässlichkeit, Sicherheit und Verwaltbarkeit des Systems finden.
