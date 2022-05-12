@@ -83,7 +83,7 @@ Aufgrund der einfachen Darstellung bedarf es an Details, die dem Diagramm hinzuz
 
 ### Sequenzdiagramme
 
-Sequenzdiagramme werden dazu genutzt, Interaktionen zwischen Aktoren und Systemobjekten, sowie zwischen Systemobjekten untereinander abzubilden. Es stellt also eine detailliertere Form der Interaktionsmodellierung dar. Hierfür wird ein spezifischer Use-Case näher betrachtet, um die dort durchzuführenden Interaktionssequenzen in dem Diagramm wiederzuspiegeln. Ein Sequenzdiagramm setzt sich aus folgenden Elementen zusammen:
+Sequenzdiagramme werden dazu genutzt, Interaktionen zwischen Aktoren und Systemobjekten, sowie zwischen Systemobjekten untereinander abzubilden. Es stellt also eine detailliertere Form der Interaktionsmodellierung dar. Hierfür wird ein spezifischer Use-Case näher betrachtet, um die dort durchzuführenden Interaktionssequenzen in dem Diagramm widerzuspiegeln. Ein Sequenzdiagramm setzt sich aus folgenden Elementen zusammen:
 
 | Element                                              | Bedeutung                                                    |
 | ---------------------------------------------------- | ------------------------------------------------------------ |
@@ -122,19 +122,21 @@ Allerdings ist es ebenso sinnvoll, die Eigenschaften und Funktionen der einzelne
 
 <img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Class.png?raw=true" alt="Class" style="zoom:80%;" />
 
-### Generalisierung
+#### Generalisierung
 
-In der Realität kommt es häufig vor, dass unterschiedliche Objekte gleichsame Eigenschaften aufweisen. Um die Komplexität zu verringern und reduntante Informationen zu vermeiden, werden derartige Objekte einer Klasse untergeordnet, und somit die Eigenschaften der übergeordneten Klasse erben. 
-
-In dem praktischen Beispiel in der Abbildung lässt sich erkennen, dass es sich sowohl bei dem 'Hospital doctor' als auch dem 'General practitioner' um einen 'Doctor' handelt. Sie weisen also die Eigenschaften und Funktionen eines Doktors auf und können ebenso zusätzliche Informationen enthalten.
-
-Für die Modellierung des Systems ist es notwendig, solche Generalisierungen zu identifizieren und entsprechend grafisch zu erfassen. Dies reduziert redundante Informationen und kapselt die Daten sinnvoll, sodass Änderungen an diesen nur an einer Stelle zu unternehmen sind. Für diesen Fall bietet das UML-Klassendiagramm eine Generalisierungsassoziation, welche mit einem unausgefüllten Pfeil am Ende einer Verbindungslinie dargestellt wird. Überlicherweise werden erbende Klassen unterhalb der vererbenden Klasse dargestellt. Der Pfeil zeigt in die Richtung des Klassenelements, welche seine Eigenschaften und Operationen an die unterliegende Klasse vererbt.
+In der Realität kommt es häufig vor, dass unterschiedliche Objekte gleichsame Eigenschaften aufweisen. Um die Komplexität zu verringern und redundante Informationen zu vermeiden, werden derartige Objekte einer Klasse untergeordnet, und somit die Eigenschaften der übergeordneten Klasse erben. 
 
 <img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/HierarchicalClasses.png?raw=true" alt="HierarchicalClasses" style="zoom:80%;" />
 
+In dem praktischen Beispiel in der Abbildung lässt sich erkennen, dass es sich sowohl bei dem 'Hospital doctor' als auch dem 'General practitioner' um einen 'Doctor' handelt. Sie weisen also die Eigenschaften und Funktionen eines Doktors auf und können ebenso zusätzliche Informationen enthalten.
+
 <img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/DetailedHierarchicalClasses.png?raw=true" alt="DetailedHierarchicalClasses" style="zoom:80%;" />
 
-### Aggregation
+Für die Modellierung des Systems ist es notwendig, solche Generalisierungen zu identifizieren und entsprechend grafisch zu erfassen. Dies reduziert redundante Informationen und kapselt die Daten sinnvoll, sodass Änderungen an diesen nur an einer Stelle zu unternehmen sind. Für diesen Fall bietet das UML-Klassendiagramm eine Generalisierungsassoziation, welche mit einem unausgefüllten Pfeil am Ende einer Verbindungslinie dargestellt wird. Üblicherweise werden erbende Klassen unterhalb der vererbenden Klasse dargestellt. Der Pfeil zeigt in die Richtung des Klassenelements, welche seine Eigenschaften und Operationen an die unterliegende Klasse vererbt.
+
+
+
+#### Aggregation
 
 <img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Aggregation.png?raw=true" alt="Aggregation" style="zoom:80%;" />
 
@@ -152,6 +154,12 @@ Um das Verhalten eines laufenden Systems bei bestimmten Stimuli zu illustrieren,
 
 Mithilfe von datengesteuerten Modellen können Abläufe der Verarbeitung der eingehenden Daten bis zu deren Ausgabe visualisiert werden. Dadurch können schnell Anforderungen identifiziert werden, da die gesamte Sequenz der Prozessaktivitäten abgebildet wird.
 
+
+
+<img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Behaviour_ActivityModel.png?raw=true" alt="Behaviour_ActivityModel" style="zoom:70%;" />
+
+
+
 Datengesteuerte Modelle waren bereits in den 1970er Jahren verbreitet, was sie zu einer der ersten grafischen Modelle macht, die in der Softwaremodellierung zum Einsatz kamen. Sogenannte *Data-Flow-Diagrams* (DFDs) stellten dabei einfache und intuitive Abbildungen dar, um den Datenfluss in Prozessen für alle Stakeholder verständlich erklären zu können. In UML können DFDs unter anderem als Aktivitätsdiagramm mithilfe der gegebenen Elemente umgesetzt werden:
 
 
@@ -162,11 +170,9 @@ Datengesteuerte Modelle waren bereits in den 1970er Jahren verbreitet, was sie z
 | Rechteck              | Objekt (Daten)             |
 | Pfeil                 | Datenfluss                 |
 
-<img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/Behaviour_ActivityModel.png?raw=true" alt="Behaviour_ActivityModel" style="zoom:70%;" />
 
 
-
-Doch auch mit Sequenzdiagrammen können DFDs dargestellt werden. Werden die Nachrichten zwischen Objekten ausschließlich von links nach rechts überliefert, wird so die sequentielle Abfolge des Datenflusses illustriert (siehe Abbildung).
+Doch auch mit Sequenzdiagrammen können DFDs dargestellt werden. Werden die Nachrichten zwischen Objekten ausschließlich von links nach rechts überliefert, wird so die sequenzielle Abfolge des Datenflusses illustriert (siehe Abbildung).
 
 
 
@@ -198,9 +204,9 @@ In einigen Zuständen werden Operationen definiert, welche auszuführen sind, so
 
 <img src="https://github.com/mwithoeft/SGSE22/blob/czolkin/chapter05/chapter05/img/SuperStateDiagram.png?raw=true" alt="SuperStateDiagram" style="zoom:60%;" />
 
-Oftmals sind innerhalb eines Systems eine Vielzahl von möglichen Zuständen vorhanden, was die grafische Erfassung dieser erschwert. Aus diesem Grund ist es auch hierbei sinnvoll, mehrere Zustandsdiagramme mit unterschiedlichem Detailgrad zu erstellen. Hierfür können sogenannte *Superzustände* genutzt werden, welche mehrere Zustände kapseln können, sodass diese für grobgranulare Diagramme zur Verfügung stehen. Die Superzustände werden dort als einfacher Zustand dargestellt, sollten dann aber in weiteren Diagrammen detaillreicher erfasst sein.
+Oftmals sind innerhalb eines Systems eine Vielzahl von möglichen Zuständen vorhanden, was die grafische Erfassung dieser erschwert. Aus diesem Grund ist es auch hierbei sinnvoll, mehrere Zustandsdiagramme mit unterschiedlichem Detailgrad zu erstellen. Hierfür können sogenannte *Superzustände* genutzt werden, welche mehrere Zustände kapseln können, sodass diese für grobgranulare Diagramme zur Verfügung stehen. Die Superzustände werden dort als einfacher Zustand dargestellt, sollten dann aber in weiteren Diagrammen detailreicher erfasst sein.
 
-Zustandsdiagramme schenken einen guten Überblick über die Reaktionen des Systems bei gewissen Ereignissen, doch ist es ebenso sinnvoll, die unterschiedlichen Zustände und Ereignisse im Detail zu erläutern. Dafür kann eine tabellarische Dokumenation erfolgen, in der jedem Zustand und jedem Ereignis eine ausführliche Erklärung beigefügt wird. 
+Zustandsdiagramme schenken einen guten Überblick über die Reaktionen des Systems bei gewissen Ereignissen, doch ist es ebenso sinnvoll, die unterschiedlichen Zustände und Ereignisse im Detail zu erläutern. Dafür kann eine tabellarische Dokumentation erfolgen, in der jedem Zustand und jedem Ereignis eine ausführliche Erklärung beigefügt wird. 
 
 ## Modellbasierte Entwicklung
 
@@ -208,7 +214,7 @@ Innerhalb der modellgesteuerten Entwicklung (Model-driven engineering) als Entwi
 
 ## Modellbasierte Architektur
 
-Mit dem Konzept der modellbasierten Architektur (Model-driven architecture) wird die Idee verfolgt, automatisch Programme für ein System basierend definierten Modellen zu generieren. Das angestrebte System kann mithilfe von UML-Modellen auf verschiedenen Abstraktionsebenen beschrieben werden, sodass lauffähige Software mithilfe bestimmter Tools entsteht und Ingenieure sich auf den Design- und Modellierungsprozess des Systems fokussieren können, ohne sich über die Implementierung Gedanken machen zu müssen. Die verschiedenen Abstraktionsebenen sollen dabei die einfache Veränderbarkeit und Wartbarkeit der Systemprogramme ermöglichen, da Änderungen der Modelle automatisch in die Programme übernommen werden. In der Theorie werden Fehler im System dadurch reduziert, sowie der Design- und Implementierungsprozess beschleunigt. Außerdem können plattformunabhängige Modelle wiederverwendet werden, um diese in plattformspezifische Modelle zu übersetzen, aus denen letztendlich die Softwareprogramme entstehen.
+Mit dem Konzept der modellbasierten Architektur (Model-driven architecture) wird die Idee verfolgt, automatisch Programme für ein System basierend definierten Modellen zu generieren. Das angestrebte System kann mithilfe von UML-Modellen auf verschiedenen Abstraktionsebenen beschrieben werden, sodass lauffähige Software mithilfe bestimmter Tools entsteht und Ingenieure sich auf den Design- und Modellierungsprozess des Systems fokussieren können, ohne sich über die Implementierung Gedanken machen zu müssen. Die verschiedenen Abstraktionsebenen sollen dabei die einfache Veränderbarkeit und Wartbarkeit der Systemprogramme ermöglichen, da Änderungen der Modelle automatisch in die Programme übernommen werden. In der Theorie werden Fehler im System dadurch reduziert, sowie der Design- und Implementierungsprozess beschleunigt. Außerdem können plattformunabhängige Modelle wiederverwendet werden, um diese in plattformspezifische Modelle zu übersetzen, aus denen schließlich die Softwareprogramme entstehen.
 
 
 
@@ -226,7 +232,7 @@ Das CIMs werden auch als Domänenmodelle, da diese die Abstraktionen der Domäne
 
 Ein PIM modelliert die Funktionsweise des Systems auf abstrakter Ebene, ohne auf die Implementierung einzugehen. Dort werden häufig UML-Diagramme herangezogen, um die statische Struktur des Systems zu beschreiben, sowie dessen Verhalten bei internen und externen Ereignissen abzubilden.
 
-PSMs stellen hierbei die Spezifikation des PIMs dar. Mehrere PSMs werden für ein spezifisches PIM erstellt, um eine Modellierung zu erhalten, die für die gewünschte Applikationsplattform angepasst wird. Werden mehrere Endplattformen des Systems gewünscht, müssen entsprechend viele PSMs kreiirt werden. Dabei wird ein PSM oftmals in mehrere Schichten unterteilt, um schrittweise die notwendigen Details für die Plattform auszulegen. Ein Level könnte sich auf die Modellierung der Middleware fokussieren, während das nächste sich auf die Datenbank-spezifische Modellierung konzentriert.
+PSMs stellen hierbei die Spezifikation des PIMs dar. Mehrere PSMs werden für ein spezifisches PIM erstellt, um eine Modellierung zu erhalten, die für die gewünschte Applikationsplattform angepasst wird. Werden mehrere Endplattformen des Systems gewünscht, müssen entsprechend viele PSMs kreiert werden. Dabei wird ein PSM oftmals in mehrere Schichten unterteilt, um schrittweise die notwendigen Details für die Plattform auszulegen. Ein Level könnte sich auf die Modellierung der Middleware fokussieren, während das nächste sich auf die Datenbank-spezifische Modellierung konzentriert.
 
 Mithilfe von Übersetzern sollen Transformationen zwischen den drei Modellarten automatisiert ermöglicht werden, wobei die letzte Transformationsstufe basierend auf den PSMs stattfindet, und den Programmcode für das System produziert. In der Theorie ist dies ein effektives Konzept für die Systementwicklung, und einige Erfolgsgeschichten dadurch hervor, doch in der Praxis können auch häufig Komplikationen auftreten, die die Umsetzung der modellgesteuerten Architektur erschweren.
 
@@ -236,7 +242,7 @@ Modellgesteuerte Architektur ist in der Realität nur beschränkt einsetzbar, un
 
 Die Übersetzung von PIMs zu PSMs wird technisch oft von Übersetzungstools unterstützt, beschränkt sich jedoch auf den Einsatz der Standardumgebung der spezifischen Plattform. In der Realität werden in Unternehmen jedoch häufig Gebrauch von internen Tools und Libraries gemacht, welche bei der Übersetzung miteinzubeziehen sind. Aus diesem Grund ist es notwendig, spezielle Übersetzer zu entwickeln, welche auf die Bedürfnisse des Unternehmens angepasst werden können, was sich der angestrebten Kosten- und Zeiteffizienz entgegensetzt.
 
-Außerdem ist es nicht immer gegeben, dass Systemmodelle eine geeignete Basis für die Implementierung des Systems darstellen, sondern eher die Basis für eine Diskussion der Stakeholder darstellen soll. Bei abweichenden Implementierungsmethoden ist widerrum eine manuelle Programmierung von Nöten. Für viele komplexe Systeme ist die Implementierung kein schwieriger Faktor. Der Fokus liegt oftmals auf die Spezifikation der Anforderungen, der Sicherheit, Zuverlässigkeit und Testen des Systems und die Integration in die Systemumgebung gelegt. Plattformunabhängige Systemdefinitionen sind besonders für langlebige Systeme relevant, welche weiter bestehen als die Plattformen, in denen sie eingesetzt werden. 
+Außerdem ist es nicht immer gegeben, dass Systemmodelle eine geeignete Basis für die Implementierung des Systems darstellen, sondern eher die Basis für eine Diskussion der Stakeholder darstellen soll. Bei abweichenden Implementierungsmethoden ist wiederum eine manuelle Programmierung von Nöten. Für viele komplexe Systeme ist die Implementierung kein schwieriger Faktor. Der Fokus liegt oftmals auf die Spezifikation der Anforderungen, der Sicherheit, Zuverlässigkeit und Testen des Systems und die Integration in die Systemumgebung gelegt. Plattformunabhängige Systemdefinitionen sind besonders für langlebige Systeme relevant, welche weiter bestehen als die Plattformen, in denen sie eingesetzt werden. 
 
 ## Referenzen
 
