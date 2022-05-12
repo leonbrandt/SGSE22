@@ -221,7 +221,7 @@ großer Vorteil gegenüber prozeduraler Kommunikation ist.
 ### Middleware ###
 
 Die Komponenten eines verteilten Systems können in unterschiedlichen Programmiersprachen
-implementiert sein, auf verschiedenen Prozessoren laufen, verschiedene Protokolle verwenden
+implementiert sein, auf verschiedenen Prozessorarchitekturen laufen, verschiedene Protokolle verwenden
 und andere Formen der Informationsdarstellung verwenden. Um die Komponenten trotzdem
 in einem zusammenhängenden System verwenden zu kommen, ist Software nötig, die diese
 Unterschiede abfängt. Die Art von Software wird unter dem Namen *Middleware* zusammengefasst,
@@ -288,20 +288,8 @@ Im folgenden sind diese Schichten grafisch dargestellt:
 
 Entwickler von verteilten Systemen müssen beim Systemdesign eine Balance zwischen
 Performance, Verlässlichkeit, Sicherheit und Verwaltbarkeit des Systems finden.
-Im Laufe der Zeit haben sich verschiedene architektonische Muster entwickelt.
-
-<!-- Alternativ: Im Folgenden werden fünf dieser Muster behandlet, Zack los gehts -->
-
-Die folgenden Fünf Architekturen werden im Folgenden behandelt:
-1. Master-Slave Architektur: In Echtzeit-Systemen verwendet, welche eine Antwort in einer bestimmten Zeit
-garantieren
-2. Zweistufige Client-Server Architektur: Für einfache Client-Server Systeme verwendet und
-in Situationen, in denen Zentralisierung aus Sicherheitsgründen nötig ist
-3. Mehrstufige Client-Server Architektur: Genutzt, wenn der Server viele Anfragen bearbeiten muss
-4. Verteilte Komponenten Architektur: Verwendet, wenn Ressourcen verschiedener Systeme und
-Datenbanken verbunden werden müssen (oder als Implementierungsmodell der Multi-Stufen Client-Server Architektur)
-5. Peer-to-peer Architektur: Verwendet, wenn Clients lokal gespeicherte Informationen austauschen
-und die Rolle des Servers darin besteht, die Clients miteinander zu verbinden
+Im Laufe der Zeit haben sich verschiedene architektonische Muster entwickelt, welche im Folgenden
+genauer dargestellt werden
 
 ### Master-Slave Architektur ###
 
