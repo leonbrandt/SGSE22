@@ -1,11 +1,11 @@
 # Finn Kuhn
 
-## Design Thinking und User Centered Design - Der Nutzer im Fokus der Entwicklung
+# Design Thinking und User Centered Design - Der Nutzer im Fokus der Entwicklung
 
 * Vorstellung der beiden Ansätze
 * Entwicklung von zwei Projekten je nach einem Ansatz
 
-### UCD
+## UCD
 
 * wird vor allem für Entwicklung der Benutzeroberfläche genutzt
 * immer wieder Feedback von Nutzern einholen und verarbeiten
@@ -18,7 +18,7 @@
     * sowohl gezielte Fragen, als auch offene Anmerkungen
     * sinnvoller Aufbau von Feedback Teil der Recherche
 
-### Design Thinking
+## Design Thinking
 
 * Finden von Ideen für Projekte
 * Nutzen von verschiedenen Parteien im Designprozess (Domainwissen)
@@ -27,14 +27,14 @@
     * diese in einer App zusammenfassen und mit komfortabler Suche vereinen (z.B. nach Symptomen oder Krankheiten)
     * Bekannter kann Domänenwissen liefern
 
-### Forschungsfragen
+## Forschungsfragen
 
 * Welcher Ansatz hat welche Vorteile/Nachteile?
 * Welcher Ansatz ist aufwendiger? (Time to production)
 * In welchen Fällen ist welcher Ansatz sinnvoll?
 * Lassen sich die Vorteile aus beiden Ansätzen eventuell vereinen?
 
-### Zeitplan
+## Zeitplan
 
 | Woche|Ziel| 
 |:----------:|:---:|
@@ -50,7 +50,7 @@
 | KW 25 |Puffer| 
 | KW 26 |Abgabe| 
 
-### Design Thinking
+## Design Thinking
 
 Design Thinking beschreibt einen Ansatz der Innovationen fördern soll, um Probleme zu lösen. Dabei liegt der Fokus immer
 auf dem Nutzer und dessen Probleme, die verstanden werden müssen. Hierbei ist Design Thinking zu aller erst eine
@@ -73,9 +73,11 @@ Als Beispiel wird der Prozess des Hasso Plattner Instituts vorgestellt, der aus 
 5. Prototyp erstellen: Ideen konkretisieren und daraus Prototyp erstellen
 6. Testen: Rückmeldungen zum Prototypen einholen und einarbeiten (Iteration)
 
-### Projektablaufplanung
+## Projektablaufplanung
 
-#### Design Thinking Projekt 1
+### Design Thinking Projekt 1
+
+#### Planung
 
 1. Kick-off:
     1. vorläufige Aufgabenstellung aufstellen: "System zur Unterstützung des Rettungsdiensts"
@@ -97,5 +99,39 @@ Als Beispiel wird der Prozess des Hasso Plattner Instituts vorgestellt, der aus 
 5. Ideen generieren: Möglichst viele (auch unrealistische) Ideen entwickeln
     1. Crazy 8
     2. SCAMPER
+6. Prototyp erstellen: Ideen konkretisieren und daraus Prototyp erstellen Anforderungen festlegen
+   1. Mockup
+
+![](assets/Bild13.png)
+
+#### Ergebnisse
+
+Folgend kommen die Ergebnisse aufgeteilt nach den verschiedenen Methoden die genutzt wurden.
+
+*Aufgabenstellung verfeinern und Brainstorming*
+
+![](assets/BrainstormingProject1.jpg)
+
+#### Design Thinking Projekt 2
+
+1. Kick-off:
+    1. vorläufige Aufgabenstellung aufstellen: "System zur Erweiterung von Spotify"
+2. Verstehen: Problem verstehen und daraus Aufgabenstellung definieren
+    1. Brainstorming
+    2. Sweet und Sour-Spot-Methode
+3. Beobachten: Nutzerverhalten analysieren, daraus Hindernisse erkennen
+    1. Interviews
+        1. Was stört aktuell?
+        2. Was funktioniert gut?
+        3. Was fehlt?
+    2. Direkte Auswertung
+4. Standpunkt definieren: Das Problem aus sicht der Nutzer beschreiben
+    1. Personas + extreme Nutzer
+    2. neue Challenges aufstellen
+    3. Challenge aussuchen
+5. Ideen generieren: Möglichst viele (auch unrealistische) Ideen entwickeln
+    1. Crazy 8
+    2. Dot Voting
+    3. 6-3-5
 6. Prototyp erstellen: Ideen konkretisieren und daraus Prototyp erstellen Anforderungen festlegen
     1. Mockup
