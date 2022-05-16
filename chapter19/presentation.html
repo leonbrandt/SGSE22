@@ -25,6 +25,18 @@
       size: 908px 681px;
       margin: 0;
     }
+
+    table {
+      width: 100%;
+    }
+    table thead {
+      padding-bottom: 0.5em;
+    }
+    th, td {
+      border: 1px solid;
+      padding: 10px;
+      border-radius: 5px;
+    }
   </style>
 </head>
 
@@ -45,16 +57,17 @@ Moritz Withöft
 
 ## Agenda
   <br><br><br>
-* Einführung
+* Grundlagen
 * Soziotechnische Systeme
 * Konzeptionelles Design
 * Systembeschaffung
 * Systementwicklung
-* Systembetrieb und -weiterentwicklung
+* Systembetrieb
+* Systemweiterentwicklung
 
 ---
 
-## Einführung
+## Grundlagen
 
 **Was ist ein System?**
 - System besteht aus mehreren Komponenten
@@ -73,20 +86,33 @@ Moritz Withöft
 - Systembetrieb und -instandhaltung
 - Technische und soziotechnische Systeme
 
+???
+
+Technische Systeme:
+- Beinhalten Hardware- und Softwarekomponenten 
+- Keine Vorgänge und Prozesse
+
+Soziotechnische Systeme:
+- Umfassen ein oder mehrere technische Systeme
+- Personen, die den Zweck des Systems im System verstehen  
+- Schreibt man und veröffentlicht Buch, braucht man soziotechnisches Veröffentlichungssystem
+  mit verschiedenen Prozessen (Erstellung, Bearbeitung, Design), verwendet. 
+- Dahinter liegen dann technische Systeme, wie Photoshop oder MS Word.
+
 ---
 
-## Einführung - Phasen
+## Grundlagen - Phasen
 
 **Phasen im Systems Engineering**  
 <br>
 ![Phasen im Systems Engineering](https://github.com/mwithoeft/SGSE22/blob/main/chapter19/media/einfuehrung/StagesOfSystemsEngineering.png?raw=true)
 
-- Phasen laufen beständig -weiter
+- Phasen laufen beständig weiter
 - Wechsel zwischen Phasen wenn nötig
 
 ---
 
-## Einführung - Fachbereiche
+## Grundlagen - Fachbereiche
 
 **Erforderliche Disziplinen bei der Erschaffung von Air Traffic Control-Systemen**  
 <br>
@@ -135,41 +161,310 @@ Moritz Withöft
 <br>
 **Unterscheidung in zwei Kategorien:**
 - Funktionale Emergente Eigenschaften
- - Computer kann Software nach Zusammenbau Software ausführen
+ - Computer kann nach Zusammenbau Software ausführen
 - Nicht-funktionale emergente Eigenschaften
- - Sicherheit, Zuverlässigkeit, Reparierbarkeit etc.
+ - Sicherheit
+ - Zuverlässigkeit
+ - Reparierbarkeit
 
 ---
 
-## Soziot. Sys. - Emergente Eigenschaften
+## Soziot. Sys. - Fehlerausbreitung
 
 **Fehlerausbreitung auf andere Schichten**:  
 <br>
 ![Ausbreitung von Fehlern auf andere Schichten](https://github.com/mwithoeft/SGSE22/blob/main/chapter19/media/soziotechnischeSysteme/FailurePropagation.png?raw=true)
 
-**Zusätzliche emergente Eigenschaften:**
+**Häufige emergente Eigenschaften:**
 - Nichtdeterminismus
 - Erfolgskriterien
 
 ---
 
+## Soziot. Sys. - Häufige emerg. Eigensch.
+
+**Nichtdeterminismus:**
+
+- Softwaresysteme auf robuster Hardware gelten als deterministisch
+ - Liefern bei gleichem Input immer gleichen Output
+- Menschen sind nicht deterministisch
+- Änderungen an Hardware, Software und Daten
+ - Sehr häufig
+ - Man spricht nicht mehr von Determinismus  
+- **Vorteile**
+ - Verhalten des Systems ist nicht statisch
+ - Anpassung auf Veränderungen
+
+**Erfolgskriterien:**
+
+- Stakeholder haben verschiedene Perspektiven auf Probleme / Anforderungen
+- Erfolgskriterien aus frühen Phasen sind später nicht zwingend relevant
+- Objektive Auswertung schwierig
+ - Subjektive Meinung der Nutzer entscheidend
+
+---
+
 ## Konzeptionelles Design
 
+**Aktivitäten im konzeptionellen Design**:  
+<br>
+![Aktivitäten im konzeptionellen Design](https://github.com/mwithoeft/SGSE22/blob/main/chapter19/media/konzeptionellesDesign/ConceptualDesignActivities.png?raw=true)
+
+**Struktur Concept of Operations *(ConOps)***:
+
+1. Kurze Zusammenfassung der Kernelemente (Probleme und Komponenten) für die Entscheidungsträger
+2. Reihe von sehr detaillierten Anhängen für die für Systemanforderungen und Systembeschaffung
+
+---
+
+## Konzeptionelles Design - Ziele
+
+- Späteren Nutzen des Systems verdeutlichen
+
+
+- Diskussionen mit Stakeholdern führen
+ - Anwender
+ - Politiker
+ - Entscheidungsträger
+
+
+- Verstehen der Arbeitsweise und Grenzen des Systems
+
+- Darstellung der Ideen durch das Designteam
+- Machbarkeitsstudie
+ - Bestehende Systeme berücksichtigen
+ - Aktuellen technologischen Stand einfließen lassen
+
+
+- Skizzierung der Architektur
+ - Identifizierung der Schlüsselelemente
+ - Unterstützung der Machbarkeitsstudie
 
 ---
 
 ## Systembeschaffung
 
+- Entscheidung über Kauf eines oder mehrerer Systeme von Zulieferern
+- Festlegung der Größe des Systems
+- Budgetplanung
+- Zeitplanung
+
+<div style="float: right; width: 60%;">
+  <b>Prozesse der Systembeschaffung:</b><br>
+  <img style="max-width: 100%; margin-top: 20px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter19/media/systembeschaffung/systemProcurementProcesses.png?raw=true"/>
+</div>  
+
+**Beinflussende Faktoren:**
+ - Ersetzen bestehender Systeme
+ - Befolgen externer Regularien
+ - Externer Wettbewerb
+ - Restrukturierung
+ - Verfügbares Budget
+
+
+ **Drei Arten von zu beschaffenden Systemen:**
+ - Standardapplikationen
+ - Konfigurierbare Applikationen
+ - Spezielle (maßangefertigte) Systeme
+
+---
+
+## Systembeschaffung - Weitere Faktoren
+
+- Durch Unternehmen zugelassene Komponenten
+ - *Whitelist* mit Applikationen, die ohne Zustimmung erworben werden können
+
+
+- Standardtechnik erfüllt nicht alle Anforderungen
+ - Standardtechnik muss konfigurierbar sein
+ - Ohne Konfigurationen möglichst nah an Anforderungen
+
+
+- Spezifikation für spezielle Systemkomponenten
+ - Anforderungen bereits bestandteil des Vertrags
+ - Rechtlich bindenes Dokument
+
+
+- Regularien für Beschaffungsprozess
+ - Ausschreibungen im öffentlichen Sektor
+ - Hemmung der schnellen, agilen Entwicklung
+
+
+- Verhandlungen
+ - Langer Zeitraum, zeitaufwändig
+ - Kosten, Lizenzen, nachträgliche Änderungen
+ - Bezahlzeiträume, Akzeptanzkriterien
 
 ---
 
 ## Systementwicklung
 
+- Erschaffung des Systems durch
+ - Kauf
+ - Entwicklung
+ - Zusammenfügen
+
+
+- Systemanforderungen als Grundlagen
+  - Schnittstelle zwischen Design und Entwicklungsprozess
+
+
+- Verstehen der Anforderungen vor Beginn
+ - Änderungen im Nachgang aufwändig und teuer
+
+
+- Plangesteuerte Prozesse
+ - Wasserfallmodell sehr verbreitet
+ - Unterschiedliche Elemente gleichzeitig entwickeln
+ - Aufteilung auf Vertragspartner
 
 ---
 
-## Systembetrieb und -weiterentwicklung
+## Systementwicklung - Prozesse
 
+<div style="float: right; width: 50%;">
+  <b>Prozess der Systementwicklung:</b><br>
+  <img style="max-width: 100%; margin-top: 20px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter19/media/systementwicklung/systemDevelopmentProcess.PNG?raw=true"/>
+</div>
+
+1. **Anforderungsengineering**
+ - Analyse
+ - Überarbeitung
+ - Dokumentation
+2. **Architekturdesign**
+ - Bestätigung der Architektur
+ - Identifizierung der Komponenten
+3. **Anforderungsaufteilung**
+ - Zuteilung der Komponenten auf Anforderungen
+4. **Subsysteme**
+ - Einrichtung und Konfiguration
+5. **Systemintegration**
+ - Zusammenfügen der Subsysteme
+ - Emergente Eigenschaften werden sichtbar
+6. **Testen des Systems** *(Nutzer, Kunden und Entwickler)*
+ - Beheben von Problemen
+ - Anpassung der Anforderungen
+7. **Inbetriebnahme**
+ - Transfer alter Daten
+ - Liveschaltung der Produktivumgebung
+
+---
+
+<h2 >Systementwicklung <span style="font-size: 33px;">- Anforderungen und Design</span></h2>
+
+- Enges Zusammenspiel von Anforderungen und Design
+- Zeitgleiche Entwicklung
+- Gegenseitige Auswirkung der Prozesse
+
+<div style="width: 70%;">
+  <b>Spirale für Anforderungen und Design:</b><br>
+  <img style="max-width: 100%; margin-top: 20px;" src="https://github.com/mwithoeft/SGSE22/blob/main/chapter19/media/systementwicklung/requirementsDesignSpiral.PNG?raw=true"/>
+</div>
+
+---
+
+## Systembetrieb
+
+- Erfüllung der Anforderungen wird deutlich
+ - Erforderliche Anpassungen am System werden erfasst
+
+
+- Entwicklung von Systemen für erfahrene Nutzer
+ - Gewöhnen sich zügig an neue Systeme
+ - Finden optimalen Umgang
+ - Decken Schwachstellen auf
+
+**Nicht alle Prozesse lassen sich automatisieren:**
+- Menschen sind anpassungsfähig
+ - Können mit unerwarteten Problemen umgehen
+ - Nicht jeder Fehlerzustand muss bekannt sein
+
+
+- Automatisierte System erhöhen Komplexität
+ - Müssen alle Fehlerzustände für korrekten Umgang Komponenten
+ - Weiterer Ausbau des Systems braucht Kosten und Zeit
+
+---
+
+## Systembetrieb - Systemqualität
+
+Trotz Erfüllung der spezifierten Anforderungen:
+
+- System erfüllt nicht die praktischen Betriebsanforderungen
+- Prozesse des Systems nicht in der echten Welt anwendbar
+  
+→ System stellt keinen Mehrwert für Unternehmen dar
+<br><br><br>
+Maßnahmen zur Erhöhung der Systemqualität:
+
+- Prozesse flexibel und anpassbar gestalten
+- Grenzen nicht zu strikt setzen
+ - Erfahrene Nutzer finden optimalen Umgang
+ - Anwender wählen selbst passenden Prozess
+- Festgelegte Reihenfolgen vermeiden
+ - Prozesse sollten keinen vorherigen Prozess erfordern
+
+---
+
+## Systemweiterentwicklung
+
+- Lebensdauer von Systemen oft mehr als 20 Jahre
+- Technologien haben oft ausgedient / sind veraltet
+
+**Ursachen für Langlebigkeit:**
+
+| Grund | Beschreibung |
+|:--- | ---:|
+| Investitionskosten | System soll sich rentieren |
+| Verlust der Expertise | Abgang von Personal, Umstrukturierungen |
+| Ersatzkosten | Ersatzsystem muss signifikant Kosten einsparen |
+| Investionsrückkehr | Budget wird für neue Systeme eingesetzt |
+| Änderungsrisiken | Risiko eines Systemausfalls durch Änderungen |
+| Systemabhängigkeit | Nötige Änderungen ziehen sich durch viele Systeme |
+
+---
+
+## Systemweiterentwicklung - Hindernisse
+
+
+- Änderungen werden aus unternehmerischer Perspektive betrachtet
+ - Müssen Unternehmen von Nutzen sein
+ - Dürfen nicht rein technisch motiviert sein
+
+
+- Subsysteme sind selten unabhängig
+ - Änderungen bringen viele Nebenwirkungen
+
+
+- Anfängliche Entscheidungen wurden nicht festgehalten
+ - Zweck vorgenommener Änderungen ist nicht definiert
+ - Änderungen muss nachvollzogen werden
+
+
+- Struktur des System wird angepasst / aufgegeben
+ - Gewisse Strukturen lassen sich nicht weiterentwickeln
+ - Zusätzliche Änderungen führen zu neuen Kosten
+
+
+- Veraltete Prozesse
+ - Verlassen sich auf veraltete Hardware und Software
+
+---
+
+## Referenzen
+
+<span id="ref1">[1]: *Ian Sommerville. 2015.* *Software Engineering* *(10th. ed.). Pearson.*</span>
+
+<span id="ref2">[2]: *White, S., et al.* *Systems Engineering of Computer Based Systems.* *IEEE Computer, November, 1993.*</span>
+
+<span id="ref3">[3]: *["CIVILIAN AND MILITARY AIR TRAFFIC CONTROL IN THE EU"](https://www.europarl.europa.eu/meetdocs/committees/rett/20020121/297568EN.pdf) (PDF). November, 2001.*</span>
+
+<span id="ref4">[4]: *Gordon Baxter, Ian Sommerville, Socio-technical systems: From design methods to systems engineering, Interacting with Computers, Volume 23, Issue 1, January 2011.*</span>
+
+<span id="ref5">[5]: *Rittel, H.W.J., Webber, M.M. Dilemmas in a general theory of planning. Policy Sci 4, 155–169, 1973.*</span>
+
+<br><br>
+**Danke für Eure Aufmerksamkeit!**
 
     </textarea>
   <script src="../_assets/js/remark-latest.min.js">
@@ -204,7 +499,7 @@ Moritz Withöft
       slideNumberFormat: 'Slide %current% of %total%',
       // .. or by using a format function
       slideNumberFormat: function (current, total) {
-        return '' + current + '/' + total;
+        return '<b>' + current + '/' + total + '</b>';
       },
 
       // Enable or disable counting of incremental slides in the slide counting

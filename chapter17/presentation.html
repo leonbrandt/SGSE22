@@ -4,14 +4,14 @@
     <title>Kapitel 01: Einleitung</title>
     <meta charset="utf-8">
     <style>
-      body { 
+      body {
         font-family: 'Droid Serif';
       }
       h1, h2, h3 {
         font-family: 'Yanone Kaffeesatz';
         font-weight: normal;
       }
-      .remark-code, .remark-inline-code { 
+      .remark-code, .remark-inline-code {
         font-family:Courier New;
       }
       @page {
@@ -27,38 +27,340 @@
 class: center, middle
 
 
+# Distributed Software Engineering #
 
-
-# Kapitel 01: Einleitung
-
-Max Mustermann
+**Autor:** Malte Reinsch
 
 ---
-# Voraussetzungen
+### Inhalte
 
-```java
-public class A {
-  public int a() {
-    return 42;
-  }
-}
-```
+- Einleitung
+- Verteilte Systeme
+- Client-Server Computing
+- Architekturmuster für verteilte Systeme
+- Software as a Service
 
 ---
+### Einleitung
 
-## Inhalte 
+- die meisten modernen Systeme sind verteilt
+- d.h.: mehr als ein Rechner beteiligt
+- Definition "Verteiltes System"
+	- Tannenbaum & Van Steen: "Eine Sammlung aus unabhängigen Rechnern, die aus Sicht
+	des Nutzers als einzelnes zusammenhängendes System wahrgenommen wird"
 
-* A
-* B
+---
+### Vorteile
 
-![](media/image.jpg)
+Verteilte Systeme haben einige Vorteile:
+1. Geteilte Ressourcen
+2. Offenheit
+3. Nebenläufigkeit
+4. Skalierbarkeit
+5. Fehlertoleranz
 
+---
+### Verteilte Systeme
+
+**Komplexität:**
+- keine Komponente hat die komplette Kontrolle über das System (Unberechenbarkeit)
+- das Netzwerk ist ein eigenes System
+- Interaktion von Komponenten unterschiedlicher Hersteller
+
+**Wichtige Entwicklungsaspekte:**
+- Transparenz
+- Offenheit
+- Skalierbarkeit
+- Sicherheit
+- Dienstqualität (QoS)
+- Fehlermanagement
+
+---
+### Middleware
+
+Komponenten verwenden verschiedene
+- Programmiersprachen
+- Rechnerarchitekturen
+- Protokolle
+- ...
+
+Mit Middleware wird das Zusammenspiel der Komponenten gewährleistet.
+Zwei Arten der Unterstützung:
+- Interaktionshilfe
+- Bereitstellung gemeinsamer Dienste
+
+---
+### Middleware
+
+<div style="margin-top:20px;">
+  <img style="width:90%;" src="media/middleware.drawio.PNG" />
+</div>
+
+---
+### Client-Server Computing
+
+- Modellierung der Software als Sammlung von Diensten
+- Client-Programm (lokaler Rechner) interagiert mit Server-Programm (idR. kein lokaler Rechner)
+- Server bieten Dienste an
+- Clients nutzen Dienste
+
+---
+### Client-Server Computing
+
+<div style="margin-top:20px;">
+  <img style="width:90%;" src="media/client_server.drawio.PNG" />
+</div>
+
+---
+### Schichtenmodell
+
+Das Client-Server Modell hängt von der klaren Trennung zwischen Berechnungen von
+Informationen und deren Darstellung ab.
+
+Daher hat sich das Schichtenmodell etabliert:
+
+<div style="margin-top:20px;">
+  <img style="width:30%;" src="media/layers.drawio.PNG" />
+</div>
+
+---
+### Architekturmuster für verteilte Systeme
+
+**Design von verteilten Systemen ist ein Balanceakt zwischen**
+- Performance
+- Verlässlichkeit
+- Sicherheit
+- Verwaltbarkeit
+
+Um diesen Balanceakt zu bestehen, haben sich im Laufe der Zeit Architekturmuster
+entwickelt, die in bestimmten Szenarien eine gute Lösung präsentieren.
+
+**Im Folgenden**
+- Master-Slave Architektur
+- Zweistufige Client-Server Architektur
+- Mehrstufige Client-Server Architektur
+- Verteilte Komponentenarchitektur
+- Peer-to-peer Architektur
+
+---
+### Master-Slave Architektur
+
+**Anwendung**
+- häufig in zeitkritischen Anwendungen eingesetzt
+- Bspw. Echtzeitsysteme
+- arbeitet oft mit fester Zykluszeit
+
+**"Master"-Prozess**
+- Berechnungen
+- Datenverarbeitung
+- Kommunikation
+- Steuerung der "Slave"-Prozesse
+
+**"Slave"-Prozesse**
+- einer bestimmten Aktion zugeordnet
+- Datenakquise und -aufbereitung (Sensoren)
+- Aktorsteuerung
+
+---
+### Master-Slave Architektur
+
+Beispiel einer Ampelsteuerung:
+
+<div style="margin-top:20px;">
+  <img style="width:100%;" src="media/Ampel.drawio.PNG" />
+</div>
+
+
+---
+### Zweistufige Client-Server Architektur
+
+Die einfachste Form der klassischen Client-Server Architektur.
+Die Architektur ist hilfreich zur Orientierung während des Systementwurfs,
+wird sonst aber praktisch fast nicht mehr eingesetzt.
+
+**Unterscheidung nach**
+- Thin-Client: Der Client implementiert nur die Präsentationsschicht
+- Fat-Client: Ein Teil oder die gesamte Applikationslogik ist auf dem Client
+implementiert
+
+
+---
+#### Thin-Client
+
+**Vorteile**
+- einfach zu verwalten
+
+**Nachteile**
+- hohe Rechenbelastung der Server
+- Netzwerkbelastung
+
+#### Fat-Client
+
+**Vorteile:**
+- Bessere Ausnutzung der Rechenleistung des Client-Rechners
+- Reduzierung der Netzwerkbelastung
+
+**Nachteile:**
+- Erfordert Installation und Wartung komplexer Client-Software
+- Verwaltbarkeit leidet durch Verteilung des Applikationslogik
+
+---
+### Beispiel Fat-Client (Bankautomaten)
+
+<div style="margin-top:20px;">
+  <img style="width:100%;" src="media/Bank_simple.drawio.PNG" />
+</div>
+
+---
+### Mehrstufige Client-Server Architektur
+
+**Limitierungen zweistufige Client-Server Architektur**:
+- Thin-Clients: Skalierbarkeit, Performance
+- Fat-Clients: Systemverwaltung
+
+Idee: jede logische Schicht kann theoretisch auf einem eigenen Prozessor ausgeführt werden.
+
+**Vorteile**:
+- Mehr Webserver hinzufügen -> Skalierbarkeit
+- Aufspaltung monolithischer Strukturen -> Verwaltbarkeit
+- Applikationslogik verwendet anderen Rechner als Datenbereitstellung -> Performance
+
+---
+### Beispiel Mehrstufige Client-Server Architektur (Online-Banking)
+
+
+<div style="margin-top:20px;">
+  <img style="width:80%;" src="media/Bank_three.drawio.PNG" />
+</div>
+
+---
+### Verteilte Komponentensysteme
+
+Vorherige Modelle erzwingen Zuordnung von Diensten in logische Schichten,
+das schränkt die Flexibilität ein.
+
+**Lösung:**
+- Applikation als Menge von Diensten definiert (ohne Zuordnung in logische
+Schichten)
+- Dienste in Komponenten organisieren
+- Komponente definiert Schnittstelle für die enthaltenen Dienste
+- Kommunikation über RPCs, performant
+
+---
+### Verteilte Komponentensysteme
+
+<div style="margin-top:20px;">
+  <img style="width:70%;" src="media/dist_component.drawio.PNG" />
+</div>
+
+**Probleme**:
+- Systementwurf komplex
+- keine universellen Standards und Middleware für verteilte Komponentenarchitektur
+
+---
+### Peer-to-peer Architektur
+
+**Problem mit Client-Server Architekturen**:
+- Harte Trennung zwischen Client & Server
+- Server hierdurch häufig stärker belastet als Client
+- Potentiell hohe Ausgaben für Serverinfrastruktur
+
+**Lösung:**
+- Dezentralisierung
+- keine klare Trennung mehr zwischen Client und Server
+- Berechnungen auf jeden Knoten
+- Jeder Knoten vereint Netzwerkfunktionen und Anwendungsfunktionen
+
+---
+### Peer-to-peer Architektur
+
+<div style="margin-top:20px;">
+  <img style="width:80%;" src="media/P2P.drawio.PNG" />
+</div>
+
+---
+### Peer-to-peer Architektur
+
+**Semizentrale P2P Netzwerke**:
+- Server stellt Verbindung zwischen zwei Knoten her
+- Knoten müssen nicht mehr selbst suchen
+- ab dann wieder direkte Verbindung
+
+**Probleme**:
+- Sicherheit, keine zentrale Kontrollinstanz
+- Angreifer können sich potentiell uneingeschränken Zugriff auf Systemressourcen
+verschaffen
+
+---
+### Software as a Service
+
+**Bisher:**
+applikationsspezifische Client-Software muss installiert werden.
+
+Fortschritte in Webtechnologien -> Konfiguration eines Standard Webbrowsers als
+Client.
+
+**Kernmerkmale SaaS**:
+- Sofware nur auf Server als Dienst bereitgestellt und über Webbrowser erreichbar
+- Anbieter der Software besitzt und verwaltet die Software
+- Bezahlung nach Verbrauch oder im Abo-Modell
+
+**Paradigmenwechsel**:
+- viele Anbieter stellen ihr Portfolio zu weiten Teilen auf SaaS Angebote um
+- Firmen tauschen auch ihre eignen Systeme (CRM, Lagerverwaltung) auf SaaS Angebote um
+- Entwicklung beschleunigt durch Cloud-Computing
+
+---
+### Software as a Service
+
+**Vorteile**:
+- Für Nutzer entfallen Verwaltungskosten (Updates, Veränderung im OS)
+- Keine Lizenzverwaltung
+
+**Nachteile**:
+- Datentransfer mit dem Dienst ist von der Netzwerkgeschwindigkeit abhängig
+- Anbieter kann jederzeit den Dienst ändern
+- Datenschutz
+
+---
+### Mehrmandantenfähigkeit
+
+- Dienst muss für mehrere Kunden gleichermaßen nutzbar sein
+- Kundenspezifische Konfiguration muss möglich sein
+
+**Realisierung**:
+- Jede Operation muss zustandslos sein
+- Daten für Operationen entweder vom Client geliefert oder in Datenbank,
+die von allen Systeminstanzen erreichbar ist
+- Anbieterseitige Datenverwaltung:
+	- eine Datenbank für jeden Kunden
+	- Isolation der Kundendaten innerhalb einer gemeinsamen Datenbank
+- Konfigurierbarkeit ist im System integriert
+- Speichern von Einstellungen in Nutzerprofil
+
+---
+### Mehrmandantenfähigkeit
+
+<div style="margin-top:20px;">
+  <img style="width:80%;" src="media/saas_config.drawio.PNG" />
+</div>
+
+
+---
+## Referenzen
+
+<span id="ref1">[1]: *Ian Sommerville. 2015.* *Software Engineering* *(10th. ed.). Pearson.*</span>
+
+<br><br>
+**Danke für Eure Aufmerksamkeit!**
 
     </textarea>
     <script src="../_assets/js/remark-latest.min.js">
     </script>
     <script>
-    
+
+
+
     var slideshow = remark.create({
   // Set the slideshow display ratio
   // Default: '4:3'
@@ -92,10 +394,10 @@ public class A {
 
   // Enable or disable counting of incremental slides in the slide counting
   countIncrementalSlides: true
-}); 
-    
-    
-      
+});
+
+
+
     </script>
   </body>
 </html>

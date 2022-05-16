@@ -191,7 +191,7 @@ Abbildung 3 zeigt die Kernprozesse eines Software- oder Systemherstellers nach I
   <figcaption>Quelle: In Anlehnung an Ian Sommerville <a href="#/chapter24/index?id=ref_1">[1]</a>, S. 709</figcaption>
 </figure>
 
-In der Norm werden keine Qualitätsprozesse definiert oder vorgeschrieben, welche Prozesse eingesetzt werden müssen. Um mit der ISO 9001 kompatibel zu sein, muss ein Unternehmen z. B. die verschiedenen Prozesse aus Abbildung 3 definieren und Verfahren entwickeln, die nachweisen, dass seine Qualitätsprozesse eingehalten werden. Diese gewährt den Unternehmen eine gewisse Flexibilität, bei der Umsetzung der Norm.
+In der Norm wird nicht genau definiert, welche Qualitätsprozesse eingesetzt werden müssen. Um mit der ISO 9001 kompatibel zu sein, muss ein Unternehmen z. B. die verschiedenen Prozesse aus Abbildung 3 definieren und Verfahren entwickeln, die nachweisen, dass seine Qualitätsprozesse eingehalten werden. Diese gewährt den Unternehmen eine gewisse Flexibilität, bei der Umsetzung der Norm.
 
 Unabhängige Zertifizierungsbehörden prüfen die Qualitätsmanagementprozesse und deren Dokumentation und entscheiden, ob die Prozesse alle die in der ISO 9001 angegebenen Bereiche abdecken. Wenn ja, erfolgt eine Zertifizierung, dass alle Prozesse eines Unternehmens mit der ISO 9001 übereinstimmen.
 

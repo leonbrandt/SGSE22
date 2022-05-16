@@ -34,105 +34,131 @@ class: center, middle
 Marco Schwier
 
 ---
-      
+
 ## Agenda
-- Allgemein
+- Einleitung
 - Inspektion
 - Entwicklungstest
 - Test-Driven Development
-- Veröffentlichungstesten
+- Veröffentlichungstest
 - Nutzertest
 - Fazit
       
-
 ---
 
-## Allgemein 
+## Einleitung 
 - Validierungstest
   - Funktioniert die Software Ordnungsgemäß
   - Reales Verhalten
 - Fehlerprüfung
   - Finden von Fehlern
-- Findet Fehler
 - Keine angezeigten Fehler != keine Fehler
-      
+
 ---
-      
+
 ## Inspektion 
 - Person überprüft Programmcode
-- keine Fehlermaskierung
-- keine Mehrkosten, wenn unvollständig
-- ersetzt nicht automatisierte Test
+- Keine Fehlermaskierung
+- Keine Mehrkosten, wenn unvollständig
+- Ersetzt nicht automatisierte Tests
 - Überprüft Programmierweise
-- keine nicht funktionalen Anforderungen
-      
+- Keine nicht funktionalen Anforderungen
+
 ---
-      
-## Entwicklungstest 
+
+## Entwicklungstest
 - Modultest
 - Komponententest
 - Systemtest
-      
+
 ---
-      
+
 ## Modultest 
-- einzelne Klassen und Funktionen
+- Einzelne Klassen und Funktionen
 - Klassen
-  - alle Attribute
-  - alle Zustände
+  - Alle Attribute
+  - Alle Zustände
 - Ablauf
   - Vorbereiten
   - Durchführen
   - Vergleichen
-      
+
 ---
-      
-## Komponententest 
-- Interfaces
-- Äquivalenzklassen 
-- NULL-Pointer
-      
+
+## Komponententest
+- Was wird getestet?
+  - Interfaces
+- Womit wird getestet?
+  - Äquivalenzklassen 
+  - NULL-Pointer
+- Mögliche Fehler
+  - Falsche Verwendung vom Interface
+  - Anfrage wird nicht verstanden
+  - Zeitliche Fehler
+
 ---
-      
+
 ## Systemtest 
 - Use-Case als Basis
-- komplettes System 
-- Kompatibilität
-      
+- Komplettes System
+- Test auf Kompatibilität der Komponenten
+
 ---
-      
-## Test-Driven Development 
+
+## Test-Driven Development
 ![Ablauf](./media/Picture2.png)
-      
+
 ---
-      
-## Veröffentlichungstesten 
-- unabhängiges Team
-- Black-Box-Test
-- Kompatibilität
-- nachvollziehbar
-- Szenarien
-- abschließend Lasttest
-      
+
+## Veröffentlichungstest
+- Wer testet?
+  - Unabhängiges Team
+- Anforderungen
+  - Nachvollziehbar
+- Testart
+  - Black-Box-Test
+- Ansätze
+  - Anforderungsbasiert
+  - Szenariobasiert
+- Abschließend Lasttest
+
 ---
-      
-## Nutzertest 
+
+## Nutzertest
 - Alpha-Phase
   - Nutzer arbeiten mit Entwickler
 - Beta-Phase
   - Nutzer erhalten vorab Veröffentlichung
 - Akzeptanz-Phase
-  - nach Veröffentlichung
-      
+  - Nach Veröffentlichung
+
 ---
-      
+
 ## Fazit 
 - Inspektion
+  - Inspektor überprüft Programmcode
 - Entwicklungstest
+  - Entwickler testen zum Finden von Fehlern
 - Test-Driven Development
-- Veröffentlichungstesten
+  - Tests werden vor der Implementierung geschrieben
+  - Keine Implementation von neuen Anforderungen bis alle Tests erfolgreich
+- Veröffentlichungstest
+  - Vor Veröffentlichung
+  - Eigenes Team
+  - Black-Box-Test
 - Nutzertest
-      
+  - Nutzer der Software testen
+
+---
+
+## Fragen?
+
+---
+
+## Quellen
+- Ian Sommerville, Software Engineering, 10. Aufl., Kapitel 08 226-254
+- Dijkstra, E. W. 1972. “The Humble Programmer.” Comm. ACM 15 (10): 859–66. doi:10.1145/355604.361591
+
 
     </textarea>
     <script src="../_assets/js/remark-latest.min.js">

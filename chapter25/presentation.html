@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Kapitel 01: Einleitung</title>
+    <title>Kapitel 25: Configuration Management</title>
     <meta charset="utf-8">
     <style>
       body { 
@@ -29,30 +29,155 @@ class: center, middle
 
 
 
-# Kapitel 01: Einleitung
+# Kapitel 25: Configuration Management
 
-Max Mustermann
+Timo Wortmann
 
 ---
-# Voraussetzungen
+# Agenda
 
-```java
-public class A {
-  public int a() {
-    return 42;
-  }
-}
-```
+- Einführung vom Configuration Management
+- Version Management
+- System Building
+- Change Management
+- Release Management
 
 ---
 
-## Inhalte 
+## Einführung zum Configuration Management
 
-* A
-* B
+- Softwaresysteme verändern sich häufig
+- Configuration Management = Richlinien, Prozesse und Werkzeuge für das Verändern von Software Systemen 
+- Ohne CM:
+  - Falsche Version bearbeiten
+  - Falsche Version veröffentlicht
+  - Vergessen des Speicherorts von Komponenten
 
-![](media/image.jpg)
+---
 
+  ## Einführung zum Configuration Management
+  
+  ![Bestandteile des CM](./assets/25.1-CM_activities.png)
+
+---
+
+## Baseline, Codeline, Mainline
+
+![Codelines und Baselines](./assets/25.4-Codelines_and_baselines.png)
+
+---
+
+## Version Management
+
+- Versionierung von Software und Komponenten
+- Nutzung von Versionskontrollsystemen
+  - Zentralisiert, z.B. Subversion
+  - Verteilt, z.B. Git 
+- Unabhängige Arbeit von mehreren Entwicklern gleichzeitig
+- Komprimierung von Dateien
+
+---
+
+## Zentralisierte Versionskontrollsysteme
+
+<div style="margin-top:30px;">
+  <img style="width:100%;height:500px" src="assets/25.5-Check-in_check-out.png"/>
+</div>
+
+---
+
+## Verteilte Versionskontrollsysteme
+
+<div style="margin-top:30px;">
+  <img style="height:500px" src="assets/25.5-Repository_cloning.png"/>
+</div>
+
+---
+
+## Branching und Merging
+
+<div style="margin-top:30px;">
+  <img style="width:100%;" src="assets/25.8-Merging_branching.png"/>
+</div>
+
+---
+
+## System Building
+
+- Aufbau einer ausführbaren Softwareversion
+  - Build Skripte
+  - Integration zu Versionskontrollsystemen
+  - Minimale Neukompilierung
+  - Erstellung von ausführbaren Dateien
+  - Automatisierte Tests
+  - Benachrichtigungen bei Fehlern und Ereignissen
+  - Generierung von Dokumentation
+
+---
+
+## Continuous Integration
+  
+![Ablauf Continuous Integration](./assets/25.12-Continuous_integration.png)
+  
+---
+
+## Change Management
+
+- Aufnahme von Änderungen
+- Priorisierung
+- Umsetzung und Dokumentation 
+
+---
+## Change Management - Ablauf
+
+<div style="margin-top:30px;">
+  <img style="width:100%;height:500px" src="assets/25.14-The_change_management_process.png"/>
+</div>
+
+---
+
+## Release Management
+
+- Veröffentlichung von Software für Endnutzer
+  - ausführbare Dateien
+  - Konfigurationsdateien
+  - sonstige Daten, z.B. Übersetzung
+  - Installationsprogramme
+  - Dokumentation
+  - Verpackung und Werbung
+
+---
+
+## Einfluss auf Releases
+
+- Konkurrenz
+- Marketing
+- Änderungen an der Plattform
+- Technische Qualität
+
+---
+
+## Update von Releases
+
+- Auf aufeinander abhängige Änderungen achten!
+- Beispiel:
+  - Version 1.0 einer Software wird veröffentlicht
+  - Version 1.1 installiert Datenbank
+  - Version 1.2 installiert zusätzliche Attribute in DB
+  - Kunde updated von Version 1.0 direkt auf 1.2
+- Vereinfacht durch Software as a Service (SaaS)
+
+---
+
+## Überblick zum Abschluss
+
+![Bestandteile des CM](./assets/25.1-CM_activities.png)
+
+---
+
+## Referenzen 
+
+- Sommerville, Ian (2015). Software Engineering (10th. ed.), 730-756.
 
     </textarea>
     <script src="../_assets/js/remark-latest.min.js">

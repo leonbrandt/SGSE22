@@ -26,9 +26,7 @@
   <body>
     <textarea id="source">
 
-
 class: center, middle
-
 
 
 
@@ -53,7 +51,7 @@ Rei Berberi
 ## 1. Einleitung und Ziele
 
 *Software-Design und -Implementierung*
-- Phasen der Softwareentwicklungsprozesses, in der ein Softwaresystem entwickelt wird.
+- Phasen des Softwareentwicklungsprozesses, in der ein Softwaresystem entwickelt wird.
 - Der Softwareentwurf ist eine kreative Tätigkeit.
 - Die Implementierung ist der Prozess der Umsetzung des Entwurfs.
 
@@ -69,7 +67,7 @@ Rei Berberi
 - Objektklassen und die Beziehungen zwischen diesen Klassen werden entworfen.
 
 - Vom Konzept zum detaillierten, objektorientierten Design:
-    - Der Kontext und die externe Interaktionen mit dem System verstehen und definieren.
+    - Den Kontext und die externen Interaktionen mit dem System verstehen und definieren.
     - Die Systemarchitektur entwerfen.
     - Die wichtigsten Objekte im System identifizieren.
     - Entwurfsmodelle entwickeln.
@@ -79,7 +77,7 @@ Rei Berberi
 *Systemkontext und Interaktionen*
 
 - Ein Systemkontextmodell ist ein Strukturmodell.
-- Darstellt die anderen Systeme in der Umgebung des zu entwickelnden Systems.
+- Stellt die anderen Systeme in der Umgebung des zu entwickelnden Systems dar.
 
 ![image](https://user-images.githubusercontent.com/58107983/167624341-f019f8f0-32bf-433d-b4ee-2477cf1d2b08.png)
 
@@ -90,12 +88,20 @@ Rei Berberi
 
 - Ein Interaktionsmodell ist ein dynamisches Modell.
 - Zeigt, wie das System mit seiner Umgebung interagiert, während es benutzt wird.
+
+![image](https://user-images.githubusercontent.com/58107983/167861510-b4a79d80-f865-4703-a4fb-d967a293dfd7.png)
+
+**Abbildung 2** - Anwendungsfälle für die Wetterstation[1]
+
+---
+## 2. Objektorientiertes Design unter Verwendung der UML
+*Systemkontext und Interaktionen*
+
 - Anwendungsfälle sollen auch in einer strukturierten, natürlichen Sprache beschrieben werden.
 
-![image](https://user-images.githubusercontent.com/58107983/167658497-897418b8-756b-48b9-8652-fb27c9a8df56.png) ![image](https://user-images.githubusercontent.com/58107983/167658345-f619d5d5-c735-4de0-a083-d86e8ff29012.png)
-![image](https://user-images.githubusercontent.com/58107983/167658572-f3d0e3e9-06d2-43a6-bf0e-2fa5bb8c6b65.png)
+![image](https://user-images.githubusercontent.com/58107983/167861540-9b35e922-4381-4af3-892b-9eaa251041f9.png)
 
-**Abbildung 2** - Anwendungsfälle für die Wetterstation und Beschreibung des Anwendungsfalls: Wetter berichten[1]
+**Abbildung 3** - Beschreibung des Anwendungsfalls: Wetter berichten[1]
 
 ---
 ## 2. Objektorientiertes Design unter Verwendung der UML
@@ -103,18 +109,17 @@ Rei Berberi
 
 ![image](https://user-images.githubusercontent.com/58107983/167624583-e8ba615f-265e-4d48-bedf-87de94fe940b.png) ![image](https://user-images.githubusercontent.com/58107983/167624623-bdace060-91fb-4b05-9d5a-2528baeed426.png)
 
-**Abbildung 3** - Hochrangige Architektur der Wetterstation und Architektur des Datenerfassungssystems[1]
-
+**Abbildung 4** - Hochrangige Architektur der Wetterstation und Architektur des Datenerfassungssystems[1]
 ---
 ## 2. Objektorientiertes Design unter Verwendung der UML
 *Identifizierung der Objektklasse*
 
 - Die Beschreibung des Anwendungsfalls hilft dabei, Objekte und Operationen im System zu identifizieren.
-- Ein oder mehrere High-Level-Systemobjekte werden benötigt, die die in den Anwendungsfällen definierten Systeminteraktionen kapseln.
+- Ein oder mehrere High-Level-Systemobjekte werden benötigt, welche die in den Anwendungsfällen definierten Systeminteraktionen kapseln.
 
 ![image](https://user-images.githubusercontent.com/58107983/167649218-231f4094-f896-4ff1-98d4-811559342087.png)
 
-**Abbildung 4** - Objekte der Wetterstation[1]
+**Abbildung 5** - Objekte der Wetterstation[1]
 ---
 ## 2. Objektorientiertes Design unter Verwendung der UML
 *Design Modelle*
@@ -124,9 +129,9 @@ Rei Berberi
   - **Dynamische Modelle**, die die dynamische Struktur des Systems beschreiben.
 
 - Drei UML-Modelltypen sind besonders nützlich:
-  - **Subsystemmodelle**, die logische Gruppierungen von Objekten in kohärente Subsysteme darstellen. 
-  - **Sequenzmodelle**, die die Abfolge von Objektinteraktionen darstellen.
-  - **Zustandsautomatenmodelle**, die zeigen, wie Objekte ihren Zustand als Reaktion auf Ereignisse ändern.
+  - **Subsystemmodelle**, welche logische Gruppierungen von Objekten in kohärente Subsysteme darstellen. 
+  - **Sequenzmodelle**, welche die Abfolge von Objektinteraktionen darstellen.
+  - **Zustandsautomatenmodelle**, welche zeigen, wie Objekte ihren Zustand als Reaktion auf Ereignisse ändern.
 ---
 ## 2. Objektorientiertes Design unter Verwendung der UML
 *Design Modelle*
@@ -135,7 +140,7 @@ Rei Berberi
 
 ![image](https://user-images.githubusercontent.com/58107983/167624583-e8ba615f-265e-4d48-bedf-87de94fe940b.png)
 
-**Abbildung 5** - Subsystemmodell: Hochrangige Architektur der Wetterstation
+**Abbildung 6** - Subsystemmodell: Hochrangige Architektur der Wetterstation
 ---
 ## 2. Objektorientiertes Design unter Verwendung der UML
 *Design Modelle*
@@ -144,7 +149,7 @@ Rei Berberi
 
 ![image](https://user-images.githubusercontent.com/58107983/167624718-5f13c83e-70f1-4543-9273-5806632aa4b2.png)
 
-**Abbildung 6** - Sequenzdiagramm zur Beschreibung der Datenerhebung[1]
+**Abbildung 7** - Sequenzdiagramm zur Beschreibung der Datenerhebung[1]
 ---
 ## 2. Objektorientiertes Design unter Verwendung der UML
 *Design Modelle*
@@ -153,7 +158,7 @@ Rei Berberi
 
 ![image](https://user-images.githubusercontent.com/58107983/167624749-c3a9c748-0beb-44db-b05f-7cd43c2add3d.png)
 
-**Abbildung 7** - Zustandsdiagramm der Wetterstation[1]
+**Abbildung 8** - Zustandsdiagramm der Wetterstation[1]
 ---
 ## 2. Objektorientiertes Design unter Verwendung der UML
 *Schnittstellenspezifikation*
@@ -163,7 +168,7 @@ Rei Berberi
 
 ![image](https://user-images.githubusercontent.com/58107983/167624813-ab4c68ef-39c2-4d13-8d39-2ad58faf88ef.png)
 
-**Abbildung 8** - Schnittstellen von Wetterstationen[1]
+**Abbildung 9** - Schnittstellen von Wetterstationen[1]
 ---
 ## 3. Entwurfsmuster
 
@@ -174,7 +179,7 @@ Design Patterns - Elements of Reusable Object-Oriented Software
 
 - Die vier wesentlichen Elemente von Design Patterns:
   - Ein Name, der einen aussagekräftigen Verweis auf das Muster darstellt.
-  - Eine Beschreibung des Problembereichs, die erklärt, wann das Muster angewendet werden kann.
+  - Eine Beschreibung des Problembereichs, welche erklärt, wann das Muster angewendet werden kann.
   - Eine Lösungsbeschreibung der Teile der Entwurfslösung, ihrer Beziehungen und ihrer Verantwortlichkeiten.
   - Eine Aussage über die Konsequenzen - die Ergebnisse und Kompromisse - der Anwendung des Musters.
 
@@ -199,7 +204,7 @@ Design Patterns - Elements of Reusable Object-Oriented Software
 - Die Wiederverwendung von Software ist auf verschiedenen Ebenen möglich.
 
 - Nachteile: 
-  - Die Kosten für die Zeit, die für die Suche nach wiederverwendbarer Software aufgewendet wird.
+  - Die Kosten für die Zeit, welche für die Suche nach wiederverwendbarer Software aufgewendet wird.
   - Die Kosten für den Kauf der wiederverwendbaren Software.
   - Die Kosten für die Anpassung und Konfiguration der wiederverwendbaren Softwarekomponenten oder -systeme.
   - Die Kosten für die Integration wiederverwendbarer Softwareelemente untereinander und mit dem neu entwickelten Code.
@@ -210,7 +215,7 @@ Design Patterns - Elements of Reusable Object-Oriented Software
 
 ![image](https://user-images.githubusercontent.com/58107983/167624968-d33a09b3-6920-44a3-be88-bd29525dfe87.png)
 
-**Abbildung 9** - Wiederverwendung von Software[1]
+**Abbildung 10** - Wiederverwendung von Software[1]
 ---
 ## 4. Implementierungsfragen
 *Konfigurationsmanagement*
@@ -227,11 +232,11 @@ Design Patterns - Elements of Reusable Object-Oriented Software
 ---
 ## 4. Implementierungsfragen
 *Host-Target-Entwicklung*
-- Die Software wird auf einem Computer (dem Host) entwickelt, aber auf einem anderen Rechner (dem Target) ausgeführt.
+- Die Software wird auf einem Computer (dem Host) entwickelt, jedoch auf einem anderen Rechner (dem Target) ausgeführt.
 
 ![image](https://user-images.githubusercontent.com/58107983/167625138-36df7c73-0e88-4e77-9923-1db94d5c1fef.png)
 
-**Abbildung 10** - Host-Target-Entwicklung[1]
+**Abbildung 11** - Host-Target-Entwicklung[1]
 ---
 ## 4. Implementierungsfragen
 *Host-Target-Entwicklung*
@@ -252,7 +257,7 @@ Design Patterns - Elements of Reusable Object-Oriented Software
 - Open-Source-Entwicklung ist ein Ansatz zur Softwareentwicklung, bei dem der Quellcode eines Softwaresystems veröffentlicht wird und Freiwillige eingeladen werden, sich am Entwicklungsprozess zu beteiligen [2].
 
 - Für ein Unternehmen, das in der Softwareentwicklung tätig ist, gibt es zwei Aspekte von Open-Source, die berücksichtigt werden müssen:
-  - Soll das zu entwickelnde Produkt auf Open-Source-Komponenten zurückgreifen?
+  - Soll das zu entwickelnde Produkt auf Open-Source-Komponente zurückgreifen?
   - Soll ein Open-Source-Ansatz für die eigene Softwareentwicklung verwendet werden?
 
   *Open-Source-Lizenzierung*
@@ -262,9 +267,7 @@ Design Patterns - Elements of Reusable Object-Oriented Software
   - Die GNU Lesser General Public License (LGPL).
   - Die Berkley Standard Distribution (BSD) Lizenz.
 ---
-## 4. Open-Source-Entwicklung
 
----
 ## Vielen Dank für Ihre Aufmerksamkeit
 
 # Fragen?
@@ -318,3 +321,5 @@ Design Patterns - Elements of Reusable Object-Oriented Software
     </script>
   </body>
 </html>
+
+

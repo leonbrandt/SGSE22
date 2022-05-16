@@ -7,7 +7,7 @@ Die folgende Ausarbeitung basiert auf dem Buch **Software Engineering von Ian So
 ## Agile Methodik
 
 Unternehmen und ihre Art zu arbeiten haben sich in den vergangenen  Jahren verändert, insbesondere wegen der neu aufgekommenen digitalen Märkte und den damit einhergehenden Chancen, verändern sich die Anforderungen an den Entwicklungsprozess. Klassische, plangesteuerte Entwicklung mit seinem langsameren Prozess kann diese Anforderungen nicht umsetzen. Die rasche Entwicklung und Bereitstellung von Software ist ein Erfolgsfaktor für Unternehmen welche in digitalen Märkten operieren. Anforderungen an Software ändern sich heute schneller und kommen erst während der Entwicklung auf. So verändern sich Schnittstellen in einer hohen Frequenz und neue Potentiale werden erst während der Entwicklung entdeckt. 
-Mit der Notwendigkeit für schnellere Softwareentwickler kam in den späten 1990er Jahren die agile Methodik auf, welche bis heute das weitverbreitete Synonym für schnelle Entwicklung ist. 
+Mit der Notwendigkeit für schnellere Softwareentwicklung kam in den späten 1990er Jahren die agile Methodik auf, welche bis heute das weitverbreitete Synonym für schnelle Entwicklung ist. 
 
 Alle, im folgenden vorgestellten, agilen Methodiken haben 3 Gemeinsamkeiten:
 
@@ -28,7 +28,7 @@ Ein Auszug aus den Prinzipien des agilen Manifests:
 | Veränderung aufgeschlossen gegenüberstehen| Damit rechnen das sich Anforderungen ändern und Software entsprechend entwickeln |
 | Inkrementelle Auslieferung | Software wird iterativ entwickelt, Versionen verbessern jeweils die vorherige |
 | Einfachheit | Komplexität an jeder möglichen Stelle reduzieren um Einfachheit herzustellen |
-| Menschen > Prozesse | Kompetenz der Entwickler nutzen und die etablierung eigener Arbeitsweisen zulassen, statt stur an Prozessen festzuhalten |
+| Menschen > Prozesse | Kompetenz der Entwickler nutzen und die Etablierung eigener Arbeitsweisen zulassen, statt an Prozessen festzuhalten |
 
 Mit gewonnener Erfahrung im Umgang mit agiler Methodik, hat sich diese insbesondere für 2 Typen von Projekten bewährt:
  
@@ -37,7 +37,8 @@ Mit gewonnener Erfahrung im Umgang mit agiler Methodik, hat sich diese insbesond
  
 ## Agile development techniques
 
-![Modell Extreme Programming](https://ibb.co/9ntbMfR)
+![](img/XP.PNG)
+**Abbildung: XP-Prozess**
 
 Nach der Entwicklung der Idee von agiler Methodik in den 90er Jahren, folgten rasch Ansätze zur Umsetzung dieser. Einer der bedeutendsten Ansätze war das sogenannte "Extreme Programming" (folgend abgekürzt durch XP) welches durch Kent Beck geprägt wurde.  Die Benennung erfolgte so, da agile Methodik und iterative Entwicklung auf ein "extremes" Niveau getrieben wurde. 
 
@@ -71,12 +72,18 @@ Die praktische Umsetzung von XP hat sich als schwierig herausgestellt da es nich
 XP hat mit seinen Bestandteilen einen wichtigen Beitrag zur Umsetzung agiler Methodik in Unternehmen geleistet, die wichtigsten Bestandteile werden daher in den folgenden Kapiteln genauer erklärt und beschrieben.
 
  ### User Stories
+ 
+![](img/StoryCard.PNG)
 
-// einfügen Story Card - in Cloud
-// einfügen Tasks - in Cloud
+**Abbildung: Story Card**
+
+![](img/Tasks.PNG)
+
+**Abbildung: Task**
+
 
 Agile Methodik sieht keine separate Phase der Anforderungserhebung vor. In XP werden die Anforderungen daher als Nutzungsszenarien (User Stories) aufgenommen. Entwickler und Kunde entwickeln aus diesen Nutzungsszenarien anschließend Story Cards, welche die Kundenbedürfnisse konkret beschreiben. Aus den Story Cards werden konkrete Tasks ausgearbeitet, für welche die Entwickler den Aufwand abschätzen und der Kunde die Priorität vorgibt. Die Umsetzung dieser Iteration erfolgt anschließend in einer der folgenden Prozess Iterationen. 
-Die oben illustrierte Story Card, beschreibt ein Szenario für die Verschreibung von Medikamenten in einem medizinischen Softwaresystem.
+Die oben illustrierte Story Card beschreibt ein Szenario für die Verschreibung von Medikamenten in einem medizinischen Softwaresystem.
 
 Die Arbeit mit User Stories birgt viele Vorteile, so können sich Menschen grundsätzlich besser mit Geschichten identifizieren als mit Stichpunkten in Anforderungsdokumenten. Nachteilig wirkt sich jedoch aus, dass User Stories nicht immer vollständig sind, da besonders erfahrene Nutzer häufig Details weglassen da sie mit ihrer Arbeit in einem hohen Maß vertraut sind.
 
@@ -86,7 +93,7 @@ Die Arbeit mit User Stories birgt viele Vorteile, so können sich Menschen grund
 Ein Grundprinzip der traditionellen Software Engineering sieht vor, dass Code so entwickelt wird, dass mögliche zukünftige Änderung leicht umsetzbar sind ("design for change").
 
 In XP wird dieser Grundsatz nicht gelebt, da der Aufwand für Entwicklung nach diesem Grundsatz sehr groß ist. Man sollte keine Zeit darauf verwenden ein System allgemeiner zu gestalten als nötig, da erwartete Anforderungen häufig nicht gestellt werden, oder ganz anders umgesetzt werden sollen. 
-Stattdessen sieht XP vor, den Code permanent zu refaktorisieren. Dies sorgt dafür das ständig und immer wieder nach Verbesserungsmöglichkeiten gesucht wird und diese umgesetzt werden. Außerdem wird verhindert das die Gesamtstruktur des Systems sich nicht durch viele lokale Veränderungen verschlechtert. Die Verbesserung der Lesbarkeit von Code und Struktur des Systems, ist ein weiterer positiver Effekt. 
+Stattdessen sieht XP vor, den Code permanent zu refaktorisieren. Dies sorgt dafür das ständig und immer wieder nach Verbesserungsmöglichkeiten gesucht wird und diese umgesetzt werden. Außerdem wird verhindert, dass die Gesamtstruktur des Systems sich nicht durch viele lokale Veränderungen verschlechtert. Die Verbesserung der Lesbarkeit von Code und Struktur des Systems, ist ein weiterer positiver Effekt. 
  
  Refactoring Maßnahmen können zum Beispiel die Reorganisation von Klassenstrukturen sein, oder auch das Aufräumen von Attributen und Methoden. Auch die Ausgliederung und Restrukturierung von Code in Bibliotheken kann eine Maßnahme des Refactoring sein.
 
@@ -99,13 +106,13 @@ Im  Vergleich zu einem plangesteuerten Modell, existieren bei inkrementeller/agi
 Mit der Nutzung von XP sollte ein umfangreiches Testkonzept umgesetzt werden, welches sich wie folgt zusammensetzt:
 
  - Entwicklung nach dem Prinzip "test-first"
- - Entwicklung von Test inkrementell
- - Entwicklung von Test auf Basis der Story Cards
+ - Entwicklung von Tests inkrementell
+ - Entwicklung von Tests auf Basis der Story Cards
  - Einbindung von repräsentativen Nutzern in die Entwicklung der Tests
  - Nutzung von automatisierten Test Frameworks
 
-Die Umsetzung von Entwicklung nach dem Prinzip "test-first" bringt einige Vorteile. So wird durch die Implementierung von Tests das Verhalten der zu entwickelnden Software spezifiziert und die Schnittstellen implizit definiert. Die resultierende hohe Anzahl an Tests sorgt außerdem für eine Test coverage. Insgesamt für eine Test-first Strategie dazu, dass es weniger Fehler und Missverständnisse gibt und die Qualität des Codes und des Produkts erhöht wird.
-Eine Bedingung für die Umsetzung von Test-first ist das die Anforderungen vor Entwicklung definiert sind. In XP kann diese Bedingung durch die Nutzung von Szenarien in Form von Story Cards erfüllt werden.
+Die Umsetzung von Entwicklung nach dem Prinzip "test-first" bringt einige Vorteile. So wird durch die Implementierung von Tests das Verhalten der zu entwickelnden Software spezifiziert und die Schnittstellen implizit definiert. Die resultierende hohe Anzahl an Tests sorgt außerdem für eine Test coverage. Insgesamt führt eine Test-first Strategie dazu, dass es weniger Fehler und Missverständnisse gibt und die Qualität des Codes und des Produkts erhöht wird.
+Eine Bedingung für die Umsetzung von Test-first ist, dass die Anforderungen vor Entwicklung definiert sind. In XP kann diese Bedingung durch die Nutzung von Szenarien in Form von Story Cards erfüllt werden.
 
 Die Automatisierung der Tests ist Bestandteil des Testkonzepts von XP. Zur Entwicklung von Tests sollte ein Framework eingesetzt werden, in welchem die Tests als ausführbare Komponenten implementiert werden können (zum Beispiel JUnit). 
 
@@ -118,15 +125,15 @@ Ein weiterer Teil des Konzepts von XP sieht das arbeiten von Entwicklern in 2er-
 Pair programming bietet im wesentlichen folgende Vorteile:
 
 -	Realisierung eines Systems als kollektives Eigentum mit gemeinsamer Verantwortlichkeit - keine Bildung von Kompetenzinseln. Das Entwickler Team als ganzes trägt die Verantwortung für den Code und das Produkt.
--	Wenig formelles Überprüfungsverfahren für den Code- nach dem 4-Augen Prinzip arbeiten sorgt für weniger Fehler, da Fehler schneller identifiziert werden können. Pair programming bietet eine günstige und einfache Variante (da implizit) von Code review.
+-	Wenig formelles Überprüfungsverfahren für den Code- arbeiten nach dem 4-Augen Prinzip sorgt für weniger Kosten, da Fehler schneller identifiziert werden können. Pair programming bietet eine günstige und einfache Variante (da implizit) von Code review.
 -	Ermutigung zu umfangreichen Refactoring durch gemeinsame Arbeit 
 
-Der gängigen Meinung nach, sorgt Pair programming für einen Verlust von Produktivität, da man annehmen kann, dass ein Entwicklerpaar nur 50% so viel Code erstellt, wie zwei alleinarbeitende Entwickler. Mit der Frage ob diese gängige Meinung der Realität entspricht, wurden 2 Studien unter freiwilligen Teilnehmer durchgeführt. Bei einer Gruppe von Studenten konnte ein Verlust von Produktivität nicht beobachtet werden, vermutlich ist dies darauf zurückzuführen, dass Entwickler sich mehr besprechen und dadurch Fehler und Irrwege vermieden werden. Eine analog durchgeführte Studie unter erfahrenen Programmierern konnte die Ergebnisse nicht reproduzieren. In der Gruppe der erfahrenen Programmierer wurde ein erheblicher Produktivitätsverlust festgestellt. Pair programming kann allerdings auch Sinn machen, da durch den Wissensaustausch unter den Entwicklern, die Projektrisiken sinken.
+Der gängigen Meinung nach, sorgt Pair programming für einen Verlust von Produktivität, da man annehmen kann, dass ein Entwicklerpaar nur 50% so viel Code erstellt, wie zwei alleinarbeitende Entwickler. Mit der Frage ob diese gängige Meinung der Realität entspricht, wurden zwei Studien unter freiwilligen Teilnehmer durchgeführt. Bei einer Gruppe von Studenten konnte ein Verlust von Produktivität nicht beobachtet werden, vermutlich ist dies darauf zurückzuführen, dass Entwickler sich mehr besprechen und dadurch Fehler und Irrwege vermieden werden. Eine analog durchgeführte Studie unter erfahrenen Programmierern konnte die Ergebnisse nicht reproduzieren. In der Gruppe der erfahrenen Programmierer wurde ein erheblicher Produktivitätsverlust festgestellt. Pair programming kann allerdings auch Sinn machen, da durch den Wissensaustausch unter den Entwicklern, die Projektrisiken sinken.
 
 
 ## Agile project management
 Planorientierte Ansätze zur Softwareentwicklung, wie beispielsweise das Wasserfallmodell, ermöglichen externen Beobachtern einen umfangreichen Einblick in das Projekt Geschehen und erlauben eine Beurteilung des Projektfortschritts. Die klare Abgrenzung von Phasen ermöglicht starkes Projektcontrolling.
-Frühe Ansätze der agilen Methodik kollidieren mit dem grundsätzlichen Bedürfnis nach Transparenz zur Planung in großen Unternehmen außerdem kann eine optimale Nutzung der Entwicklungsressourcen (z.B. Zeit) nicht sichergestellt werden, da Entwickler sich selbstständig organisieren, keine Dokumentation erstellt wird und die Entwickler nur kurzfristig, zyklisch, verplant werden. 
+Frühe Ansätze der agilen Methodik kollidieren mit dem grundsätzlichen Bedürfnis nach Transparenz zur Planung in großen Unternehmen, außerdem kann eine optimale Nutzung der Entwicklungsressourcen (z.B. Zeit) nicht sichergestellt werden, da Entwickler sich selbstständig organisieren, keine Dokumentation erstellt wird und die Entwickler nur kurzfristig, zyklisch, verplant werden. 
 Um die Probleme agiler Methodik in großen Unternehmen zu lösen, wurde Scrum entwickelt. Scrum versteht sich als Framework für Organisationen, welche mit agiler Methodik arbeiten. Es ermöglicht externen Einblick ins Projekt und dadurch ein Projektcontrolling im klassischen Sinne.
 Zur Abgrenzung von bekannten Projektmanagement Methoden implementiert Scrum eine neue Terminologie :
 
@@ -143,7 +150,8 @@ Zur Abgrenzung von bekannten Projektmanagement Methoden implementiert Scrum eine
 
 Scrum folgt den Prinzipien des agilen Manifests, gibt jedoch keine expliziten Vorschriften welche agilen Methoden eingesetzt werden sollen. Durch diese geringen formellen Hürden ist Scrum leichter integrierbar in bereits bestehende Unternehmensstrukturen. 
 
-// Bild einfügen - in Cloud
+![](img/Scrum.PNG)
+**Abbildung: Scrum Prozess**
 
 Als Input für den Scrum Prozess dienen die im Product backlog definierten Anforderungen/ Aktivitäten. Anforderungen können beispielsweise in Form von User Stories hinterlegt werden, definierte Aktivitäten können sich vielfältig darstellen - beispielsweise die Definition eines Datenmodells oder die Entwicklung eines Prototyps. Für die Pflege des Product backlog ist der Product Owner verantwortlich.
 Jeder Iteration, mit einer Dauer von 2 bis 4 Wochen, erzeugt ein Softwareinkrement, welches potentiell ausgeliefert werden kann. Zu Beginn eines Sprints werden die Aktivitäten ausgewählt, welche umgesetzt werden sollen. Die Auswahl erfolgt gemeinsam durch den Product Owner und das Entwicklerteam. Nicht umgesetzte Aktivitäten wandern zurück ins Product backlog. Eine Verlängerung von Sprints (auf Grund von unfertigen Aktivitäten) ist nicht vorgesehen. Bei der Planung ausgewählte Items wandern in das Sprint backlog, aus welchem sich die Entwickler im Laufe des Sprints Items auswählen und umsetzen. 
@@ -181,7 +189,9 @@ Prinzip der permanenten Einbindung eines repräsentativen Vertreter des Kunden k
 
 ### Agile and plan-driven methods
 
-// Grafik über die Einflussfaktoren einfügen
+![](img/Einflussfaktoren.PNG)
+
+**Abbildung: Einflussfaktoren für die Wahl agiler Methodik**
 
 Aufgrund elementarer Unterschiede in der Arbeitsweise von kleinen Unternehmen (Bspw. Startups) zu großen Unternehmen (bspw. Konzerne), ist zur Skalierung von agiler Methodik eine Einbindung plangesteuerter Aktivitäten unerlässlich. Software Entwicklung muss in großen Unternehmen geplant werden, außerdem ist ein Controlling der Projekte unerlässlich. 
 Unternehmen haben in ihren Entwicklungsprozessen agile Aktivitäten und plangesteuerte Aktivitäten eingebaut. Die Findung des richtigen Gleichgewichts zwischen Agilität und plangesteuerter Entwicklung müssen Unternehmen abhängig der Rahmenbedingungen finden, hierzu können 5 Fragen herangezogen werden:

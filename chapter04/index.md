@@ -5,7 +5,7 @@
 In diesem Kapitel wird beschrieben, was genau funktionelle und nicht-funktionelle Anforderungen sind und weshalb man zwischen Nutzer- und Systemanforderungen unterscheidet. Es werden die Fragen beantwortet, warum Requirements Engineering so wichtig ist und inwiefern Requirements Engineering andere Aktivitäten der Softwareentwicklung unterstützt. Außerdem werden die Prozesse des Requirements Engineering beschrieben und wie diese zusammenhängen. Die drei wesentlichen Prozesse im Requirements Engineering sind die Anforderungserhebung, die Anforderungsspezifikation und Anforderungsvalidierung. Mithilfe dieser drei Prozesse wird ein sogenanntes system requirements document erstellt, in welchem die herausgearbeiteten Anforderungen festgehalten werden. Da es durchaus vorkommt, dass neue Anforderungen hinzukommen oder sich Anforderungen im Laufe des Entwicklungsprozesses ändern, gibt es noch den Prozess der Anforderungsänderung, welcher ebenfalls in diesem Kapitel beschrieben wird.
 
 ## Einleitung
-Bei der Erstellung von Anforderungen für ein Softwareprojekt gibt es zwei verschiedene Level der Abstraktion. Diese Abstraktionslevel werden Nutzer- und Systemanforderungen genannt. Der wesentliche Unterschied zwischen Nutzer- und Systemanforderungen ist, dass Nutzeranforderungen eine abstrakte High-Level-Beschreibung der Anforderungen sind und Systemanforderungen eine detaillierte Beschreibung der Anforderung sind. In den Nutzeranforderungen wird mithilfe von natürlicher Sprache und Diagrammen beschrieben, welche Services das System dem Nutzer bereitstellen soll und unter welchen Einschränkungen das System später operieren wird. Dabei gibt es in den Nutzeranforderungen meist eine hohe Varianz zwischen groben Aussagen über eine Anforderung und einer detaillierten Beschreibung der Systemfunktionalität. In den Systemanforderungen wird detailliert beschrieben, welche Funktionen, Services und Beschränkungen es gibt. In den Systemanforderungen werden auch funktionelle Spezifikationen aufgenommen, welche genau beschreiben, was implementiert werden soll. Die Systemanforderungen werden manchmal in Verträgen aufgenommen, um die Anforderungen zu definieren.
+Bei der Erstellung von Anforderungen für ein Softwareprojekt gibt es zwei verschiedene Level der Abstraktion. Diese Abstraktionslevel werden Nutzer- und Systemanforderungen genannt. Der wesentliche Unterschied zwischen Nutzer- und Systemanforderungen ist, dass Nutzeranforderungen eine abstrakte High-Level-Beschreibung der Anforderungen sind und Systemanforderungen eine detaillierte Beschreibung der Anforderung sind. In den Nutzeranforderungen wird mithilfe von natürlicher Sprache und Diagrammen beschrieben, welche Services das System dem Nutzer bereitstellen soll und unter welchen Einschränkungen das System später operieren wird. Es gibt bei den Nutzeranforderungen eine hohe Varianz zwischen groben Aussagen und detaillierten Beschreibungen der Systemfunktionalität. Die Systemanforderungen sind eine Erweiterung der Nutzeranforderungen und es werden auch funktionelle Spezifikationen aufgenommen, welche genau beschreiben, was implementiert werden soll. Die Systemanforderungen werden manchmal in Verträgen zwischen den Käufern des Systems und den Softwareentwicklern aufgenommen, um die Anforderungen zu definieren.
 
 ![](media/readers.png)
 #### Abbildung 4.1 [1]
@@ -24,17 +24,17 @@ Falls eine der drei Fragen mit Nein beantwortet wird, sollte das Projekt nicht d
 
 | Funktionelle Anforderungen | Nicht-funktionelle Anforderungen|
 |:----------:|:-----------:|
-| Was soll das System tun/nicht tun? | Spezifizierung der Beschränkungen für das System als Ganzes|
-| Detaillierte Beschreibung der Systemfunktion(Inputs/Outputs) | Effekte auf Gesamtarchitektur und nicht auf einzelne Komponente|
+|Was soll das System tun/nicht tun? | Spezifizierung der Beschränkungen für das System als Ganzes|
+|Detaillierte Beschreibung der Systemfunktion(Inputs/Outputs) | Effekte auf Gesamtarchitektur und nicht auf einzelne Komponente|
 |Anforderungen abhängig von zu entwickelnder Software|Die Implementierung der Anforderung zieht sich durch das ganze System|
-|Anforderungen abhängig von zu erwartenden Nutzern|Messgrößen: Schnelligkeit, Benutzerfreundlichkeit, Verlässlichkeit, Robustheit, Portabilität|
-|Sind eine Erweiterung der Nutzeranforderungen||
-|Geschrieben für Softwareentwickler||
+|Anforderungen abhängig von zu erwartenden Nutzern|Eine nicht erfüllte Anforderung kann für ein nicht nutzbares System sorgen|
+|Geschrieben für Softwareentwickler|Messgrößen: Schnelligkeit, Benutzerfreundlichkeit, Verlässlichkeit, Robustheit, Portabilität|
+
 
 ![](media/nichtfunktionelle_anforderungen.PNG)
 #### Abbildung 4.3 [1]
 
-In Abbildung 4.3 kann man sehen, welche Faktoren alles bei den nicht-funktionellen Anforderungen herein spielen. Die nicht-funktionellen Anforderungen lass sich in drei Hauptkategorien unterteilen. Diese sind Produktanforderungen, organisationelle Anforderungen und externe Anforderungen. Bei den Produktanforderungen geht es um Faktoren, welche das zu entwickelnde Produkt betreffen, wie zum Beispiel die Sicherheit des entwickelten Systems oder die Laufzeit. Bei den organisationellen Anforderungen werden Anforderung, die das Unternehmen betreffen betrachtet und bei den externen Anforderungen werden äußere Einflüsse unter Betracht gezogen wie die Rechtslage oder Faktoren aus dem Rechnungswesen.
+In Abbildung 4.3 kann man sehen, welche Faktoren alles bei den nicht-funktionellen Anforderungen herein spielen. Die nicht-funktionellen Anforderungen lass sich in drei Hauptkategorien unterteilen. Diese sind Produktanforderungen, organisatorische Anforderungen und externe Anforderungen. Bei den Produktanforderungen geht es um Faktoren, welche das zu entwickelnde Produkt betreffen, wie zum Beispiel die Sicherheit des entwickelten Systems oder die Laufzeit. Bei den organisatorischen Anforderungen werden Betriebsanforderungen oder Entwicklungsanforderungen, wie zum Beispiel Programmiersprache betrachtet und bei den externen Anforderungen werden äußere Einflüsse unter Betracht gezogen wie die Rechtslage oder Faktoren aus dem Rechnungswesen.
 
 ## Prozesse des requirements engineering
 

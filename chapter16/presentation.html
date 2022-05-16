@@ -1,101 +1,318 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Kapitel 01: Einleitung</title>
-    <meta charset="utf-8">
-    <style>
-      body { 
-        font-family: 'Droid Serif';
-      }
-      h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
-        font-weight: normal;
-      }
-      .remark-code, .remark-inline-code { 
-        font-family:Courier New;
-      }
-      @page {
-        size: 908px 681px;
-        margin: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <textarea id="source">
+
+<head>
+  <title>Kapitel 01: Einleitung</title>
+  <meta charset="utf-8">
+  <style>
+    body {
+      font-family: 'Droid Serif';
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Yanone Kaffeesatz';
+      font-weight: normal;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    figure {
+      text-align: center;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    .remark-code,
+    .remark-inline-code {
+      font-family: Courier New;
+    }
+
+    @page {
+      size: 908px 681px;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <textarea id="source">
 
 
 class: center, middle
 
+# Kapitel 16: Component-based software engineering
 
-
-
-# Kapitel 01: Einleitung
-
-Max Mustermann
-
----
-# Voraussetzungen
-
-```java
-public class A {
-  public int a() {
-    return 42;
-  }
-}
-```
+Benjamin Krüger
 
 ---
 
-## Inhalte 
+## Agenda
 
-* A
-* B
+* Einführung
+* Komponenten
+* Komponentenmodelle
+* Prozesse
+* Komposition
+* Entwurfsbeispiel
+* Zusammenfassung
 
-![](media/image.jpg)
+---
 
+## Einführung
+
+* Stetig präsente Qualitätsmerkmale für Softwaresysteme
+    * Wiederverwendbarkeit
+    * Erweiterbarkeit
+    * Testbarkeit
+* Ansatz OOP
+    * Abstraktion der Realität in Form von Objekten
+    * Vererbung und co.
+    * Erwartung: Code im hohen Maße wiederverwendbar, erweiterbar, testbar
+    * Erkenntnis: Wiederverwendung und Erweiterbarkeit oft mit hohem Aufwand verbunden, da Objekte zu nah an Problemstruktur gebunden sind
+
+=> Es wird ein Ansatz benötigt, welcher auf höherer Abstraktionsebene als die objektorientierte Entwicklung arbeitet
+
+---
+
+## Einführung
+
+**Wie werden Qualitätsaspekte im Entwurf anderer Disziplinen umgesetzt?**
+
+<div style="display: flex; flex-direction: row">
+  <div style="width: 60%;">
+    <p style="margin: 10px 0px 0px 0px; font-weight: bold;">Entwurf von Computersystemen</p>
+    <p >-> Komposition aus Subsystemen bzw. in sich gekapselten Hardwarekomponenten</p>
+    <p style="margin: 10px 0px 0px 0px; font-weight: bold;">Beispiel Grafikkarte</p>
+    <p>-> Aufgabe: Für Darstellung benötigte Berechnungen durchführen und an Output weitergeben</p>
+    <p>-> Kann über definierte Schnittstelle mit Mainboard verbunden werden / in das System integriert werden</p>
+    <p>-> Wichtig für Verwendung: Aufgabe, Schnittstellen</p>
+    <p>-> Unwichtig für Verwendung: Konkrete Implementierung der Aufgabe</p>
+  </div>
+  <div style="width: 40%;">
+    <img   
+          src="https://github.com/mwithoeft/SGSE22/blob/main/chapter16/assets/hardwarecomponentExample.png?raw=true"
+          alt="Beispiel Hardwarekomponenten im Computersystem"
+          height="Auto"
+          width="100%"/>
+  </div>
+</div>
+
+---
+
+## Einführung
+
+... Es wird ein Ansatz benötigt, welcher auf höherer Abstraktionsebene als die objektorientierte Entwicklung arbeitet
+  
+### Komponentenbasierte Softwareentwicklung
+
+=> Auf Wiederverwendung von Komponenten basierender Ansatz zur Definition, Implementierung und Komposition von lose gekoppelten unabhängigen Komponenten  
+
+---
+
+## Komponenten
+
+* Lose gekoppelte unabhängige Einheit
+  * Definiert durch Schnittstellen
+  * Keine gegenseitige Beeinträchtigung der Funktionen zwischen Komponenten
+  * Implementierungsdetails verborgen (weil nicht notwendig)
+  * Implementierung der Komponente kann ausgetauscht werden, ohne Auswirkungen auf Rest des Systems
+  * Eingettetet als ausführbare Routine oder bereitgestellt als externer Dienst
+  * Muss nicht kompiliert werden => Komponente ist binär
+* Kein Wissen über die Funktionsweise bzw. den Code notwendig
+* Programmiersprachen unabhängig
+* Entsprechen einem standardisiertem Komponentenmodell
+
+<figure>
+  <img  style="margin-top: 20px;" 
+        src="https://github.com/mwithoeft/SGSE22/blob/main/chapter16/assets/componentsGeneral.png?raw=true"
+        alt="Komponente allgemein"
+        height="120"
+        width="Auto"/>
+</figure>
+
+---
+
+## Komponenten
+
+<figure>
+  <img  style="margin-top: 20px;" 
+        src="https://github.com/mwithoeft/SGSE22/blob/main/chapter16/assets/exampleComponent.png?raw=true"
+        alt="Beispiel einer Komponente"
+        height="300"
+        width="Auto"/>
+</figure>
+
+---
+
+## Komponentenmodelle
+
+=> Definieren Vorgaben für eine ordnungsgemäße Dokumentation, Implementierung sowie Bereitstellung von Komponenten 
+
+<figure>
+  <img  style="margin-top: 20px;" 
+        src="https://github.com/mwithoeft/SGSE22/blob/main/chapter16/assets/basicElementsOfComponentModels.png?raw=true"
+        alt="Grundlegende Eigenschaften eines Komponentenmodells"
+        height="350"
+        width="Auto"/>
+</figure>
+
+---
+
+## Prozesse
+
+* Hauptprozesse: KBSE für Wiederverwendung und KBSE mit Wiederverwendung
+* Unterstützende/Ergänzende Prozesse: Komponentenmanagement, Komponentenzertifizierung, Komponentenbeschaffung
+
+<figure>
+  <img  style="margin-top: 20px;" 
+        src="https://github.com/mwithoeft/SGSE22/blob/main/chapter16/assets/CSBEprocesses.png?raw=true"
+        alt="Prozesse der komponentenbasierten Softwareentwicklung"
+        height="350"
+        width="Auto"/>
+</figure>
+
+---
+
+## Prozesse
+
+### KSBE für Wiederverwendung
+=> Entwicklung von wiederverwendbaren Komponenten  
+<br>
+**Notwendige Schritte**
+- Applikationsspezifische Methode entfernen
+- Namensgebung anpassen, sodass diese unspezifisch/allgemein sind
+- Methoden hinzufügen, um vielen Anforderungen gerecht zu werden
+- Konsistente Ausnahmebehandlungen implementieren
+- Konfiguration über Konfigurationsschnittstelle ermöglichen
+- Benötigte Schnittstellen integrieren 
+
+**Schwierigkeit**  
+=> Lohnt sich der Aufwand zur Erstellung der Komponente?  
+=> Kompromiss zwischen Investitions-/Entwicklungskosten, Wiederverwendbarkeit und Benutzerfreundlichkeit  
+
+---
+
+## Prozesse
+
+### KSBE mit Wiederverwendung  
+=> Wiederverwendung von bereits existierenden Komponenten zur Umsetzung eines Systems
+
+<figure>
+  <img  style="margin-top: 20px;" 
+        src="https://github.com/mwithoeft/SGSE22/blob/main/chapter16/assets/cbseReuse.png?raw=true"
+        alt="Schritte von KBSE mit Wiederverwendung"
+        height="300"
+        width="Auto"/>
+</figure>
+
+---
+
+## Komposition
+
+**Arten der Komponentenkomposition**
+- (1) Sequentiell
+- (2) Hierarchisch
+- (3) Additiv
+
+<figure>
+  <img  style="margin-top: 20px; " 
+        src="https://github.com/mwithoeft/SGSE22/blob/main/chapter16/assets/componentComposition.png?raw=true"
+        alt="Kompositionsarten"
+        height="300"
+        width="Auto"/>
+</figure>
+
+---
+
+## Komposition
+
+**Kompositionsinkompatibilitäten**
+- Parameterinkompatibilität 
+- Operationsinkompatibilität 
+- Operationsunvollständigkeiten
+
+=> Notwendigkeit der Implementierung von Adapterkomponenten zur Konvertierung der Schnittstellen
+
+<figure>
+  <img  style="margin-top: 20px;" 
+        src="https://github.com/mwithoeft/SGSE22/blob/main/chapter16/assets/exampleAdapterComponent.png?raw=true"
+        alt="Kompositionsarten"
+        height="200"
+        width="Auto"/>
+</figure>
+
+---
+
+## Entwurfsbeispiel
+
+<figure>
+  <img  style="margin-top: 20px;" 
+        src="https://github.com/mwithoeft/SGSE22/blob/main/chapter16/assets/exampleDesignWIthComponents.png?raw=true"
+        alt="Entwurfsbeispiel"
+        height="400"
+        width="Auto"/>
+  <p>(https://www.uml-diagrams.org/component-diagrams.html)</p>
+</figure>
+---
+
+## Zusammenfassung
+* KBSE ist ein auf der Wiederverwendung basierender Ansatz zur Definition, Implementierung und Komposition von lose gekoppelten unabhängigen Komponenten
+* Softwarekomponenten stellen lose gekoppelte unabhängige Einheiten dar, dessen Funktionalitäten und Abhängigkeiten vollständig durch öffentliche Schnittstellen definiert sind
+* Komponenten können zusammengestellt werden, ohne Implementierungsdetails der anderen Komponente zu kennen
+* Softwarekomponenten können in Systeme in Form von ausführbaren Routinen eingebettet oder als externer Service bereitgestellt werden
+* Komponenten werden mithilfe von Modellen/Standards definiert, integriert und bereitgestellt
+* Komponenten können sequentiell, hierarchisch und additiv kompositioniert werden (evtl. Adapterkomponente notwendig)
+* Während der CSBE-Prozesse müssen Prozesse der Anforderungsanalyse und des Systemdesign miteinander verschränkt werden, um wünschenswerte Anforderungen gegenüber den von vorhandenen Komponenten bereitgestellten Diensten abzuwägen 
 
     </textarea>
-    <script src="../_assets/js/remark-latest.min.js">
-    </script>
-    <script>
-    
+  <script src="../_assets/js/remark-latest.min.js">
+  </script>
+  <script>
+
     var slideshow = remark.create({
-  // Set the slideshow display ratio
-  // Default: '4:3'
-  // Alternatives: '16:9', ...
-  ratio: '4:3',
+      // Set the slideshow display ratio
+      // Default: '4:3'
+      // Alternatives: '16:9', ...
+      ratio: '4:3',
 
-  // Navigation options
-  navigation: {
-    // Enable or disable navigating using scroll
-    // Default: true
-    // Alternatives: false
-    scroll: true,
+      // Navigation options
+      navigation: {
+        // Enable or disable navigating using scroll
+        // Default: true
+        // Alternatives: false
+        scroll: true,
 
-    // Enable or disable navigation using touch
-    // Default: true
-    // Alternatives: false
-    touch: true,
+        // Enable or disable navigation using touch
+        // Default: true
+        // Alternatives: false
+        touch: true,
 
-    // Enable or disable navigation using click
-    // Default: false
-    // Alternatives: true
-    click: false
-  },
+        // Enable or disable navigation using click
+        // Default: false
+        // Alternatives: true
+        click: false
+      },
 
-  // Customize slide number label, either using a format string..
-  slideNumberFormat: 'Slide %current% of %total%',
-  // .. or by using a format function
-  slideNumberFormat: function (current, total) {
-    return '' + current + '/' + total;
-  },
+      // Customize slide number label, either using a format string..
+      slideNumberFormat: 'Slide %current% of %total%',
+      // .. or by using a format function
+      slideNumberFormat: function (current, total) {
+        return '' + current + '/' + total;
+      },
 
-  // Enable or disable counting of incremental slides in the slide counting
-  countIncrementalSlides: true
-}); 
-    
-    
-      
-    </script>
-  </body>
+      // Enable or disable counting of incremental slides in the slide counting
+      countIncrementalSlides: true
+    });
+
+
+
+  </script>
+</body>
+
 </html>

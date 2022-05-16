@@ -9,8 +9,10 @@
       }
       h1,
       h2,
-      h3 {
-        font-family: "Yanone Kaffeesatz";
+      h3,
+      p,
+      li {
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
         font-weight: normal;
       }
       .remark-code,
@@ -20,6 +22,15 @@
       @page {
         size: 908px 681px;
         margin: 0;
+      }
+
+      img {
+        max-width: 75%;
+      }
+
+      div.remark-slide-number {
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
+        font-style: italic;
       }
     </style>
   </head>
@@ -34,10 +45,11 @@ class: center, middle
 
 # 11 - reliability engineering
 
-Frederic Birwe
+_Frederic Birwe_
 
 ---
 
+class: center, middle
 ## availability
 
 > Anteil der Betriebszeit, in der das System nicht zur Verfügung steht
@@ -48,6 +60,8 @@ Frederic Birwe
 
 ---
 
+class: center, middle
+
 ## Wie entsteht ein Fehler?
 
 1. menschlicher Fehler
@@ -57,9 +71,113 @@ Frederic Birwe
 
 ---
 
-## Wie kann die reliability verbessert werden?
+class: center, middle
+
+## Wie entsteht ein Fehler?
+
+1. Im Code wird eine Datei gelesen, ohne zu prüfen, ob diese existiert
+2. Der fehlerhafte Code ist im System
+3. Bei einer Ausführung wird der Code erreicht und eine Datei gelesen, die nicht existiert
+4. Der Service bricht mit einem Fehler ab und steht nicht mehr zur Verfügung
+
+---
+
+class: center, middle
+## Wieviel reliability ist sinnvoll?
 
 ![Abb. 11.1 - Entwicklung der Kosten pro gefundenem Fault](./assets/fig_11-1.png)
+
+---
+
+class: center, middle
+## Reliability Metriken
+
+
+#### POFOD (_Probability of failure on demand_)
+1 von 1000 Transaktionen schlägt fehlt - POFOD 0.999
+
+
+#### ROCOF (_Rate of occurence of failures_)
+5 Transkationen schlagen innerhalb von 24h fehl
+
+
+#### MTTF (_Mean time to failure_)
+Zwischen zwei failures liegen im Schnitt 12h
+
+
+#### AVAIL (_Availability_)
+Das System steht zu 90% der Zeit zur Verfügung
+
+---
+
+class: center, middle
+## Anforderungen definieren
+
+---
+
+class: center, middle
+## nichtfunktionale/quantitative Anforderungen
+
+1. Spezifikation von availability und reliability für verschiedene mögliche failures.
+2. Spezifikation von availability und reliability für verschiedene Services.
+3. Überprüfung, ob eine hohe reliability wirklich benötigt wird.
+
+---
+
+class: center, middle
+## funktionale Anforderungen
+
+1. Check Anforderungen
+2. Wiederherstellungsanforderungen
+3. Redundanzanforderungen
+4. Prozessanforderungen
+
+---
+
+class: center, middle
+
+## Fault tolerante Architekturen
+
+---
+
+class: center, middle
+## Procetion System
+
+![Abb. 11.6](./assets/fig_11-6.png)
+
+---
+
+class: center, middle
+## Self-monitoring architectures
+
+![Abb. 11.7](./assets/fig_11-7.png)
+
+---
+
+class: center, middle
+## N-Version programming
+
+![Abb. 11.9](./assets/fig_11-9.png)
+
+---
+
+## Programmiertechniken zur Erhöhung der reliability
+
+1. Kontrolle über die Sichtbarkeit von Informationen im Programm
+2. Alle Eingaben auf Validität prüfen
+3. Exceptionhandler für alle Exceptions vorhalten
+4. Minimaler Einsatz von fehleranfälligen Komponenten
+5. Checkpoints für eventuell Neustarts ablegen
+6. Array-Dimensionen prüfen
+7. Timeouts definieren, wenn externe Komponenten genutzt werden
+8. Alle Konstanten, die reale Werte darstellen, werden benannt
+
+---
+
+class: center, middle
+## Reliability messen
+
+![Abb. 11.13](./assets/fig_11-13.png)
 
 
     </textarea>
