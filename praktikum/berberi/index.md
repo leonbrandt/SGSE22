@@ -20,3 +20,11 @@
         * Performanz testen durch Anwendungsbeispiele, z.B die gleiche Anwendung PHP vs JavaScript
         * Simplizität durch einfache Code-Beispiele
         * Integration, Universalität, Community und Arbeitsmarkt durch Recherche vergleichen.
+      * Warum sollte man anstelle von JavaScript-Frameworks WordPress-Themes und PHP verwenden, um kommerzielle Content-Websites zu entwickeln? 
+      * Ist es für digitale Marketingunternehmen kostengünstiger, ihren Entwicklungsprozess auf WordPress und PHP statt auf JavaScript-Lösungen zu stützen?
+
+      Zeitplan:
+      KW 16 - Themenauswahl
+      Bis KW20 - Einarbeitung in PHP
+      KW21 - Anpassung der Forschungsfragen, Thema der Ausarbeitung steht fest.
+      KW22 - Einarbeitung in der Theoretische Teil der Ausarbeitung
