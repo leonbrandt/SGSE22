@@ -28,3 +28,30 @@ Neben der Entwickler-Erfahrung wird außerdem die Performanz der Applikation, un
 
 ![](./Praktikum_Gantt.png)
 
+
+
+## Software Design
+
+
+
+### "Routined" Web Application
+
+Link zum Github-Repository:
+
+https://github.com/ChrisZol/RoutinedApp.git
+
+### Frontend
+
+
+
+#### User Interface Mockups
+
+
+
+### Backend
+
+
+
+#### Datenbank
+
+Als lokale Datenbank für die Applikation wird Sqlite bzw. Sqlflite genutzt. Das Schema wird dabei recht einfach gehalten, da der Fokus in diesem Projekt nicht auf der Datenverwaltung liegt.
