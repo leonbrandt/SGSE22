@@ -1,12 +1,11 @@
 # Marco Reineke
 
-# Thema: KI gestützte Softwareentwicklung(computational assisited coding)
+# Thema: KI gestützte Softwareentwicklung
 
 * Inhalt/Fragestellungen:
   * Welche Vor- und Nachteile hat die KI gestützte Softwareentwicklung ?
      * Hat KI gestützte Softwareentwicklung nur positive Eigenschaften oder gibt es auch Nachteile ?
      * Falls ja was sind die Nachteile und überwiegen diese die positiven 
-     * computational assisted coding
    * Was ist language modeling ?
      * bezug zur eigentlichen Problemstellung  (SNLP, language modeling, transformer based language model)
      * Probabilistic language Models
