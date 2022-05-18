@@ -17,18 +17,17 @@
     - Community und Arbeitsmarkt
     - Ideen:
       - Forschungsstatistiken finden
-      - Performanz testen durch Anwendungsbeispiele, z.B die gleiche Anwendung PHP vs JavaScript
+      - Performanz testen durch Anwendungsbeispiele, z.B die gleiche Anwendung PHP vs JavaScript?
       - Simplizität durch einfache Code-Beispiele
       - Integration, Universalität, Community und Arbeitsmarkt durch Recherche vergleichen.
-    - Warum sollte man WordPress-Themes und PHP anstelle von JavaScript-Frameworks verwenden, um kommerzielle Content-Websites zu entwickeln?
-    - Ist es für digitale Marketing- und Webentwicklungunternehmen kostengünstiger, ihren Entwicklungsprozess auf WordPress und PHP statt auf JavaScript-Lösungen zu stützen?
+  - Warum sollte man WordPress-Themes und PHP anstelle von JavaScript-Frameworks verwenden, um kommerzielle Content-Websites zu entwickeln?
+  - Ist es für digitale Marketing- und Webentwicklungunternehmen kostengünstiger, ihren Entwicklungsprozess auf WordPress und PHP statt auf JavaScript-Lösungen zu stützen?
 
-\*Zeitplan:
-
-- KW 14: Einführung SGSE Modul
-- KW 15: Themenauswahl
-- Bis KW19: Einarbeitung in PHP und WordPress Themes mit PHP durch Tutorials/Online-Kurse und Selbstlernen.
-- KW20: Anpassung der Forschungsfragen, Besprechung mit Herrn Brunsmann, Endgültige Thema der Ausarbeitung steht fest.
-- KW21 bis KW24: Ausarbeitung Vergleich PHP-JavaScript mit Theorie und Code Beispiele.
-- KW25 bis KW26: Ausarbeitung der beiden neuen Forschungsfragen.
-- KW26: Abgabe
+- Zeitplan:
+  - [+] KW 14: Einführung SGSE Modul
+  - [+] KW 15: Themenauswahl
+  - [+] Bis KW19: Einarbeitung in PHP und WordPress Themes mit PHP durch Tutorials/Online-Kurse, Selbstlernen und Arbeitsprojekte.
+  - [] KW20: Anpassung der Forschungsfragen, Besprechung mit Herrn Brunsmann, Endgültige Thema der Ausarbeitung steht fest.
+  - [] KW21 bis KW24: Ausarbeitung Vergleich PHP-JavaScript mit Theorie und Code Beispiele.
+  - [] KW25 bis KW26: Ausarbeitung der beiden neuen Forschungsfragen.
+  - [] KW26: Abgabe
