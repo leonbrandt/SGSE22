@@ -45,15 +45,15 @@ Abgabe                                           | KW 26
 
 ## Checkliste
 
-[] Unterschied Autorisierung und Authentifizierung <br>
-[] Allgemein OAuth 2.0 <br>
-[] Autorisierungsabläufe OAuth 2.0 <br>
+[X] Unterschied Autorisierung und Authentifizierung <br>
+[X] Allgemein OAuth 2.0 <br>
+[X] Autorisierungsabläufe OAuth 2.0 <br>
 [] Sicherheitsrisiken OAuth 2.0 <br>
-[] Allgemein OIDC <br>
-[] Einarbeitung JWT <br>
-[] Autorisierungsabläufe OIDC <br>
+[X] Allgemein OIDC <br>
+[X] Einarbeitung JWT <br>
+[X] Autorisierungsabläufe OIDC <br>
 [] Sicherheitsrisiken OIDC <br>
-[] Allgemein SAML <br>
+[X] Allgemein SAML <br>
 [] Autorisierungsabläufe SAML <br>
 [] Sicherheitsrisiken SAML <br>
 [] Einarbeitung Keycloak <br>
