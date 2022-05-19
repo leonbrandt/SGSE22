@@ -6,6 +6,10 @@
 
   Mittels GraphQL, REST und gRPC können Client und Server miteinander kommunizieren. Für den Transport verwenden alle drei Technologien das HTTP Protokoll. Abgesehen von dieser Gemeinsamkeit, sind die drei Technologien grundverschieden. Während des Praktikums soll ermittelt werden, für welche Einsatzgebiete die verschiedenen Technologien am besten geeignet sind.
 
+## Github Repository
+
+&#8594; [Github Repository Performanz Test](https://github.com/Kevin-Ratschinski/rest-graphql-grpc)
+
 ## Technologien
 
 &#8594; [GraphQL](/praktikum/ratschinski/graphql)

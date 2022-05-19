@@ -32,3 +32,13 @@ Vite, Webpack und esbuild sollen darauffolgend an einer bestehenden Node.JS Anwe
 Des Weiteren wird erörter in welchen Anwendungsbereichen Vite, Webpack oder esbuild zu bevorzugen sind. <br>
 Am Ende der Evaluierung wird ein gesamtes Fazit gezogen. <br>
 
+## Webpack
+[Webpack](./Einarbeitung_webpack.md)
+
+## EsBuild
+[EsBuild](./Einarbeitung_esbuild.md)
+
+## Vite
+[Vite](./Einarbeitung_vite.md)
+
+

@@ -45,8 +45,9 @@ class: center, middle
 
 - die meisten modernen Systeme sind verteilt
 - d.h.: mehr als ein Rechner beteiligt
-- Tannenbaum & Van Steen: "Eine Sammlung aus unabhängigen Rechnern, die aus Sicht
-des Nutzers als einzelnes zusammenhängendes System wahrgenommen wird"
+- Definition "Verteiltes System"
+	- Tannenbaum & Van Steen: "Eine Sammlung aus unabhängigen Rechnern, die aus Sicht
+	des Nutzers als einzelnes zusammenhängendes System wahrgenommen wird"
 
 ---
 ### Vorteile
@@ -99,7 +100,7 @@ Zwei Arten der Unterstützung:
 ### Client-Server Computing
 
 - Modellierung der Software als Sammlung von Diensten
-- Client-Programm (lokaler Rechner) interagiert mit Server-Programm (idr. kein lokaler Rechner)
+- Client-Programm (lokaler Rechner) interagiert mit Server-Programm (idR. kein lokaler Rechner)
 - Server bieten Dienste an
 - Clients nutzen Dienste
 
@@ -113,10 +114,10 @@ Zwei Arten der Unterstützung:
 ---
 ### Schichtenmodell
 
-Das Client-Server Modell ist von der klaren Trennung zwischen Berechnungen von
-Informationen und deren Darstellung abhängig.
+Das Client-Server Modell hängt von der klaren Trennung zwischen Berechnungen von
+Informationen und deren Darstellung ab.
 
-Daher hat sich das Schichtenmodell etablier:
+Daher hat sich das Schichtenmodell etabliert:
 
 <div style="margin-top:20px;">
   <img style="width:30%;" src="media/layers.drawio.PNG" />
@@ -291,7 +292,7 @@ Schichten)
 verschaffen
 
 ---
-### Software as a Servie
+### Software as a Service
 
 **Bisher:**
 applikationsspezifische Client-Software muss installiert werden.
@@ -300,9 +301,14 @@ Fortschritte in Webtechnologien -> Konfiguration eines Standard Webbrowsers als
 Client.
 
 **Kernmerkmale SaaS**:
-- Sofware nur auf Server bereitgestellt und über Webbrowser erreichbar
+- Sofware nur auf Server als Dienst bereitgestellt und über Webbrowser erreichbar
 - Anbieter der Software besitzt und verwaltet die Software
 - Bezahlung nach Verbrauch oder im Abo-Modell
+
+**Paradigmenwechsel**:
+- viele Anbieter stellen ihr Portfolio zu weiten Teilen auf SaaS Angebote um
+- Firmen tauschen auch ihre eignen Systeme (CRM, Lagerverwaltung) auf SaaS Angebote um
+- Entwicklung beschleunigt durch Cloud-Computing
 
 ---
 ### Software as a Service
@@ -311,10 +317,33 @@ Client.
 - Für Nutzer entfallen Verwaltungskosten (Updates, Veränderung im OS)
 - Keine Lizenzverwaltung
 
+**Nachteile**:
+- Datentransfer mit dem Dienst ist von der Netzwerkgeschwindigkeit abhängig
+- Anbieter kann jederzeit den Dienst ändern
+- Datenschutz
 
-TODO: Konfiguration
-TODO: Nachteile
-TODO: Wrap up
+---
+### Mehrmandantenfähigkeit
+
+- Dienst muss für mehrere Kunden gleichermaßen nutzbar sein
+- Kundenspezifische Konfiguration muss möglich sein
+
+**Realisierung**:
+- Jede Operation muss zustandslos sein
+- Daten für Operationen entweder vom Client geliefert oder in Datenbank,
+die von allen Systeminstanzen erreichbar ist
+- Anbieterseitige Datenverwaltung:
+	- eine Datenbank für jeden Kunden
+	- Isolation der Kundendaten innerhalb einer gemeinsamen Datenbank
+- Konfigurierbarkeit ist im System integriert
+- Speichern von Einstellungen in Nutzerprofil
+
+---
+### Mehrmandantenfähigkeit
+
+<div style="margin-top:20px;">
+  <img style="width:80%;" src="media/saas_config.drawio.PNG" />
+</div>
 
 
 ---

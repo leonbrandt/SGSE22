@@ -3,7 +3,7 @@
 **Autor:** Malte Reinsch
 
 Die meisten heute verwendeten Rechnersysteme sind verteilte Systeme. Ein verteiltes
-System ein ein Rechnersystem, an dem mehr als ein Rechner beteiligt ist.
+System ist ein Rechnersystem, an dem mehr als ein Rechner beteiligt sind.
 Tannenbaum und Van Steen definieren ein verteiltes System als: "Eine Sammlung
 aus unabhängigen Rechnern, die aus Sicht des Nutzers als einzelnes zusammenhängendes
 System wahrgenommen wird."
@@ -16,14 +16,13 @@ Rechnern geteilt werden.
 2. Offenheit: Verteilte Systeme werden oftmals als offen
 betrachtet, da sie Standardprotokolle verwenden, sodass Hardware
 und Software verschiedenster Hersteller verwendet werden können.
-3. Nebenläufigkeit: Verschieden Aufgaben können nebenläufig (also parallel / gleichzeitig)
+3. Nebenläufigkeit: Verschiedene Aufgaben können nebenläufig (also parallel / gleichzeitig)
 auf verschiedenen Rechnern des Systems ausgeführt werden.
 4. Skalierbarkeit: Prinzipiell sind verteilte Systeme dahingehend
 skalierbar, dass erhöhte Anforderungen an das System durch das
 Hinzufügen neuer Hardware abgefangen werden können.
 5. Fehlertoleranz: Durch die Verteilung von Informationen über
-mehrere Rechner des Systems kann das System gegenüber Hardware-
-ausfällen abgehärtet werden.
+mehrere Rechner des Systems kann das System gegenüber Hardwareausfällen abgehärtet werden.
 
 Verteilte System sind gegenüber klassischen (zentralisierten
 Systemen) deutlich komplexer. Durch die Verteilung entstehen
@@ -31,26 +30,24 @@ neue Herausforderung für die Implementierung des Systems, welche
 in zentralisierten Systemen keine oder nur eine kleine Rolle
 spielen.
 Da die Antwortzeit des Systems von der Belastung des gesamten Systems und des Netzwerks
-abhängt, kann die Antwortzeit auf für aufeinander folgende Anfragen stark variieren.
+abhängt, kann die Antwortzeit für aufeinander folgende Anfragen stark variieren.
 
 Im Folgenden werden unterschiedliche Aspekte betrachtet, die für die Entwicklung
-verteilter Systeme zu beachten sind. Des Weiteren diskutiert dieses Kapitle einige
+verteilter Systeme zu beachten sind. Des Weiteren diskutiert dieses Kapitel einige
 architektonische Ansätze zur Konzeptionierung und Implementierung verteilter Systeme.
 
 ## Verteilte Systeme ##
 
-<!-- TODO: kürzen -->
-
-Diese Komplexität verteilter Systeme entsteht insbesondere
+Die Komplexität verteilter Systeme entsteht insbesondere
 dadurch, dass keine Komponente des Systems die komplette Kontrolle
 über das gesamte System (also alle Rechner und das Netzwerk) hat.
-Das Netzwerk, durch das die Rechnerknoten verbunden werden ist in
+Das Netzwerk, durch das die Rechnerknoten verbunden werden, ist in
 der Regel ein eigenes System, welches von externen Parteien kontrolliert wird.
 Durch diese verteilte Kontrolle wohnt dem Verhalten eines
 verteilten Systems eine natürliche Unberechnebarkeit inne.
 
 Aus dieser Komplexität ergeben sich folgende Aspekte, die
-insbesondere bei der Entwicklung eines verteilten Systems
+bei der Entwicklung eines verteilten Systems
 beachtet werden müssen:
 
 ### Transparenz ###
@@ -70,7 +67,7 @@ durch Middleware, welche physikalische Ressourcen auf logische Ressourcen abbild
 welche einfacher genutzt werden können.
 Trotz dieser Maßnahmen ist es nicht möglich, ein verteiltes System vollständig transparent
 zu gestalten. Die Kommunikation dessen, dass es sich um ein verteiltes System handelt, kann
-dem Nutzenden dabei helfen, die Auswirkungen der beschriebenen Probleme besser einzuordnen
+dem Nutzer dabei helfen, die Auswirkungen der beschriebenen Probleme besser einzuordnen
 und mit ihnen umzugehen.
 
 ### Offenheit ###
@@ -83,7 +80,7 @@ sodass standardisierte Komponenten jedes Herstellers einfach in das System integ
 werden können. Auf der Netzwerkebene gilt diese Form der Offenheit mittlerweile als
 selbstverständlich, sodass die gängigen Internetprotokolle unterstützt werden.
 
-Der 1990 entwickelte CORBA Standard verfolgt das Ziel, die auch auf der Komponentenebene
+Der 1990 entwickelte CORBA Standard verfolgt das Ziel, diese Offenheit auch auf der Komponentenebene
 zu erreichen, wurde bisher allerdings noch nicht flächendecken angenommen. Viele
 Softwarehersteller vertrauen stattdessen auf proprietäre Standards, welche bessere
 Implementierungen und Support von großen Firmen wie Oracle oder Microsoft erhalten.
@@ -112,14 +109,6 @@ eines weiteren Rechners). *Scaling Out* ist meistens kostengünstiger als *Scali
 allerdings voraus, dass die Anwendung die parallele Berechnungen auf unterschiedlichen
 Rechnern zulässt.
 
-#### Anmerkung ####
-
-Im Deutschen lassen sich beide Begriffe zu den Worten "Ausweiten/Ausbreiten" übersetzen,
-deren Bedeutung nicht so klar voneinander getrennt ist, wie die Konzepte, die hier
-durch die englischen Begriffe beschrieben werden.
-Daher werden im weiteren Verlauf des Kapitels weiterhin die englischen Begriffe
-verwendet, um Missverständnissen vorzubeugen.
-
 ### Sicherheit ###
 
 Ein Angreifer kann jede individuelle Systemkomponente angreifen und diese
@@ -131,7 +120,7 @@ Systemkomponenten geht die Vertraulichkeit der Informationen verloren.
 Dienste nicht bereitstellen können. Ein Beispiel hierfür sind "denial of service"-Attacken,
 bei denen ein Netzwerkknoten mit sehr vielen ungültigen Anfragen überlastet wird, sodass
 dieser nicht mehr auf die gültigen Anfragen reagieren kann.
-3. Änderung: Ein Angreifer ist in der Lage Systemdienste oder Daten zu ändern.
+3. Änderung: Ein Angreifer ist in der Lage, Systemdienste oder Daten zu ändern.
 4. Erzeugung von Informationen: Ein Angreifer erzeugt Informationen, welche nicht
 existieren sollten und nutzt diese Informationen, um sich Zugang zum System zu
 verschaffen (z.B. Erzeugung eines falschen Passworts).
@@ -232,7 +221,7 @@ großer Vorteil gegenüber prozeduraler Kommunikation ist.
 ### Middleware ###
 
 Die Komponenten eines verteilten Systems können in unterschiedlichen Programmiersprachen
-implementiert sein, auf verschiedenen Prozessoren laufen, verschiedene Protokolle verwenden
+implementiert sein, auf verschiedenen Prozessorarchitekturen laufen, verschiedene Protokolle verwenden
 und andere Formen der Informationsdarstellung verwenden. Um die Komponenten trotzdem
 in einem zusammenhängenden System verwenden zu kommen, ist Software nötig, die diese
 Unterschiede abfängt. Die Art von Software wird unter dem Namen *Middleware* zusammengefasst,
@@ -299,20 +288,8 @@ Im folgenden sind diese Schichten grafisch dargestellt:
 
 Entwickler von verteilten Systemen müssen beim Systemdesign eine Balance zwischen
 Performance, Verlässlichkeit, Sicherheit und Verwaltbarkeit des Systems finden.
-Im Laufe der Zeit haben sich verschiedene architektonische Muster entwickelt.
-
-<!-- Alternativ: Im Folgenden werden fünf dieser Muster behandlet, Zack los gehts -->
-
-Die folgenden Fünf Architekturen werden im Folgenden behandelt:
-1. Master-Slave Architektur: In Echtzeit-Systemen verwendet, welche eine Antwort in einer bestimmten Zeit
-garantieren
-2. Zweistufige Client-Server Architektur: Für einfache Client-Server Systeme verwendet und
-in Situationen, in denen Zentralisierung aus Sicherheitsgründen nötig ist
-3. Mehrstufige Client-Server Architektur: Genutzt, wenn der Server viele Anfragen bearbeiten muss
-4. Verteilte Komponenten Architektur: Verwendet, wenn Ressourcen verschiedener Systeme und
-Datenbanken verbunden werden müssen (oder als Implementierungsmodell der Multi-Stufen Client-Server Architektur)
-5. Peer-to-peer Architektur: Verwendet, wenn Clients lokal gespeicherte Informationen austauschen
-und die Rolle des Servers darin besteht, die Clients miteinander zu verbinden
+Im Laufe der Zeit haben sich verschiedene architektonische Muster entwickelt, welche im Folgenden
+genauer dargestellt werden
 
 ### Master-Slave Architektur ###
 
@@ -671,18 +648,18 @@ voneinander isoliert sind.
 
 Skalierbarkeit spielt auch für SaaS-Systeme eine große Rolle, allerdings wird
 häufig "scaling out" bevorzugt, also das Hinzufügen von neuen Servern.
-Folgende Richtlinien helfen dabei, skalierbare Software zu entwickeln:
+Folgende Richtlinien helfen dabei, skalierbare SaaS-Software zu entwickeln:
 	1. Entwicklung einzelner Komponenten als zustandslose Dienste, die auf einem Server
-	ausgeführt werden könnten. Das Ermöglicht die Mehrfache Interaktion des Nutzers
+	ausgeführt werden könnten. Das ermöglicht die Mehrfache Interaktion des Nutzers
 	mit einem Dienst, der auf unterschiedlichen Servern bereitgestellt wird, während einer Transaktion.
 	2. Entwicklung des Systems, indem asynchrone Interaktion bevorzugt wird.
 	Dies führt dazu, dass die Anwendung nicht auf die Antwort einer Anfrage warten muss,
 	sondern währenddessen weitere Berechnungen durchführen kann
 	3. Ressourcen (z.B. Netzwerk- und Datenbank-Verbindungen) in einem Pool
-	verwalten, sodass keinem einzelnen Server die verfügbaren Ressourcen schnell ausgehen
+	verwalten, sodass keinem einzelnen Server die verfügbaren Ressourcen schnell ausgehen.
 	4. Entwicklung der Datenbank, sodass fein granulares Locking möglich ist (nicht
 	einen gesamten Eintrag sperren, wenn nur ein Teil in Benutztung ist)
-	5. Nutzung einer cloud PaaS (Platform as a Service) Platform zur Systemimplementierung.
+	5. Nutzung einer Cloud PaaS (Platform as a Service) Platform zur Systemimplementierung.
 	Diese Platformen enthalten Mechanismen um "scaling out" zu automatisieren
 
 SaaS ist ein Paradigmenwechsel für verteilte Rechensysteme.
@@ -695,13 +672,13 @@ SaaS stellt aber auch eine neue Denkweise für Unternehmenssysteme dar. Im Falle
 liegen die Abstraktionen des Systems näher am Nutzer, sodass die Systeme leichter
 zu verstehen, zu warten und weiter zu entwicklen sind.
 
-## Kernaspekte ##
+## Zusammenfassung ##
 
 - Die Vorteile von verteilten Systemen bestehen darin, dass sie gut skaliert werden können,
 um mit steigenden Nutzeranzahlen umzugehen und, dass durch ihre Architektur die Möglichkeit
 besteht, Systemressourcen zu teilen und effizienter auszunutzen
 - Bereiche, denen bei der Entwicklung verteilter Systeme besondere Aufmerksamkeit
-zugewandt werden sollten sind Transparenz, Offenheit, Skalierbarkeit, Sicherheit,
+zugewandt werden sollte, sind Transparenz, Offenheit, Skalierbarkeit, Sicherheit,
 Dienstqualität und Fehlermanagement
 - Client-Server Systeme sind verteilte Systeme, in denen das System in Schichten
 aufgeteilt ist
@@ -711,10 +688,10 @@ aufgeteilt ist
 Schichten auf verschiedene Rechner verteilt sind
 - Architekturmuster für verteilte Systeme umfassen:
 	- Master-Slave Architekturen
-	- Zweischicht- und Mehrschicht-Architekturen
-	- Verteilte Komponenten Systeme
+	- Zweischicht- und Mehrschicht Client-Server-Architekturen
+	- Verteilte Komponentensysteme
 	- Peer-to-peer (P2P) Architekturen
-- Verteilte Komponentensysteme benötigen Middleware zur Realisierung der Kommunikaton
+- Verteilte Komponentensysteme benötigen Middleware zur Kommunikaton
 der Komponenten
 - P2P Architekturen sind dezentrale Architekturen, in denen nicht zwischen Clients und
 Servern unterschieden wird

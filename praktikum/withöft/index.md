@@ -45,6 +45,8 @@ Die bereits genannten Fragen sollen unter folgendem Arbeitstitel untersucht werd
 
 Der aktuelle Implementierungsfortschritt kann [HIER](https://github.com/mwithoeft/Spezielle-Gebiete-zum-Softwareengineering) eingesehen werden.
 
+Die ausformulierte Ausarbeitung zum Thema kann [HIER](praktikum/withöft/ausarbeitung) gelesen werden.
+
 ## Zeitplan
 
 | Termin                                                   | Fortschritt                                                  |
