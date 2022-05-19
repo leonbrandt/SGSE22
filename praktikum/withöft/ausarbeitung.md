@@ -27,8 +27,8 @@ Für diesen Test wurde bei jedem Testdurchlauf immer nur **ein** Client mit dem 
 | 1 KB   | **12.484993811881** | **11.572652382426** |
 | 1 MB   | **104.33856019879** | **124.32311649134** |
 | 10 MB  | **904.5404451578**  | **1114.5141601562** |
-| 100 MB |                     | **1537.4056940362** |
-| 1 GB   |                     | **10263.622625376** |
+| 100 MB | **9420.1602935734** | **1537.4056940362** |
+| 1 GB   | **95298.762860362** | **10263.622625376** |
 
 Dateien, die größer sind als 1GB können nicht mehr Standardmäßig über WebSocket transportiert werden. Hier ist die Zunahme eines Streams erforderlich, sodass die Datei aufgeteilt werden kann und nicht komplett im Arbeitsspeicher liegen muss. Eine komplette Übertragung führt meist auf Client-Seite zu Fehlern *(Out-Of-Memory)*.
 
