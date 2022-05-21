@@ -23,7 +23,7 @@
 
 ### Types
 
-![grpc types](./assets/grpc/grpc_types.png)
+![grpc types](./assets/grpc/gRPC_types.png)
 
 ### decoding
 
