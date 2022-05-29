@@ -1,28 +1,167 @@
-# Kevin Ratschinski
-
-## Thema: Vergleich von verschiedenen Architekturstilen für eine Programmierschnittstelle
+# Vergleich von verschiedenen Architekturstilen für eine Programmierschnittstelle
 
 - Technologien: **GraphQL**, **REST** und **gRPC**
 
   Mittels GraphQL, REST und gRPC können Client und Server miteinander kommunizieren. Für den Transport verwenden alle drei Technologien das HTTP Protokoll. Abgesehen von dieser Gemeinsamkeit, sind die drei Technologien grundverschieden. Während des Praktikums soll ermittelt werden, für welche Einsatzgebiete die verschiedenen Technologien am besten geeignet sind.
 
-## Github Repository
+# Einführung in die verschiedenen Technologien
 
-&#8594; [Github Repository Performanz Test](https://github.com/Kevin-Ratschinski/rest-graphql-grpc)
+## gRPC
 
-## Technologien
+![gRPC Paradigma](./assets/grpc/grpc_paradigma.png)
 
-&#8594; [GraphQL](/praktikum/ratschinski/graphql)
+TODO Beschreibung gRPC
 
-&#8594; [REST](/praktikum/ratschinski/rest)
+## GraphQL
 
-&#8594; [gRPC](/praktikum/ratschinski/grpc)
+![GraphQL Paradigma](./assets/graphql/graphql_paradigma.png)
 
-## Vergleich Datenformat
+TODO Beschreibung GraphQL
 
-[GraphQL Datenformat](/praktikum/ratschinski/graphql#datenformat) | [REST Datenformat](/praktikum/ratschinski/rest#datenformat) | [gRPC Datenformat](/praktikum/ratschinski/grpc#datenformat)
+## REST
 
-### Datenformat Zusammenfassung
+![REST Paradigma](./assets/rest/rest_paradigma.png)
+
+TODO Beschreibung REST
+
+# Datenformat
+
+## gRPC
+
+- Die Daten werden mit Hilfe des protobuf Frameworks übermittelt.
+
+- Das Framework serialisiert die Daten.
+
+- Die serialisierten Daten können einfach über das Netz übertragen werden.
+
+![gRPC serialisieren](./assets/grpc/grpc_serialize.png)
+
+### Datentypen
+
+![gRPC Datentypen](./assets/grpc/grpc_typen.png)
+
+TODO Referenz mit angeben
+
+### Decoding
+
+![gRPC decoding](./assets/grpc/grpc_decoding.png)
+
+- Vorteile gegenüber JSON
+
+  - Nachrichten sind kompakter
+  - Nachrichten sind nicht lesbar (Beschreibung der Nachricht wird zum lesen benötigt)
+
+### Versionierbarkeit
+
+```protobuf
+Version 1
+
+message User {
+  int64 id = 1;
+  string first_name = 2;
+  string last_name = 3;
+  string email = 4;
+}
+```
+
+```protobuf
+Version 2
+
+message User {
+  int64 id = 1;
+  string first_name = 2;
+  string last_name = 3;
+  string password = 5;
+}
+```
+
+Feldnummern ändern sich nicht. (siehe string email = 4; / string password = 5;)  
+Nachrichten lassen sich so sehr einfach von Version 1 auf Version 2 mappen. Dies wird vom Framework automatisch gemacht.
+
+### Übertragung von binären Daten zum Beispiel Bilder
+
+```protobuf
+message Image {
+  bytes image = 1;
+}
+```
+
+Nachteile:
+
+- Komplettes Bild wird übertragen
+- Ressourcenverbrauch
+- Performanz
+
+Stückweise Übertragung ist mit etwas Mehraufwand möglich.
+
+- Stream Blöcke
+
+## GraphQL
+
+- Verwendet als Datenformat JSON oder graphql für Anfragen
+  - Wird im Content-Type festgelegt.
+
+POST /test HTTP/1.1  
+Content-Type: application/graphlql
+
+```graphql
+{
+  user(id: 1) {
+    id
+    first_name
+    last_name
+    email
+    messages {
+      id
+      text
+      userId
+    }
+  }
+}
+```
+
+- Antwort immer in JSON
+
+HTTP/1.1 200 Ok  
+Content-Type: application/json
+
+```json
+{
+  "data": {
+    "user": {
+      "id": "1",
+      "first_name": "Markos",
+      "last_name": "O'Sirin",
+      "email": "mosirin0@vk.com",
+      "messages": []
+    }
+  }
+}
+```
+
+- Keine Unterstützung für binäre Daten
+  - Lassen sich Base64 codiert versenden
+  - Nachteil: Base64 ist immer größer als die jeweilige Datei (ca. 30%)
+  - Bilder können als Verweis(Link) versendet werden
+
+## REST
+
+![rest data](./assets/rest/rest_datenformat.png)
+
+- Datenformat wird im Content-Type festgelegt.
+  - JSON, XML, IMAGE, PDF, CSV, ...
+  - Keine Begrenzung auf ein Datenformat
+
+### Besonderheiten
+
+- REST unterstützt Hypermedia
+
+  - Verweis auf Ressourcen
+
+- REST zieht noch weite Vorteile aus der Verwendung des HTTP-Protokolls
+  - Z.B. Caching oder Inhaltsverhandlung
+
+## Zusammenfassung
 
 |                      | gRPC     | GraphQL             | REST                 |
 | -------------------- | -------- | ------------------- | -------------------- |
@@ -35,11 +174,9 @@
 | **Hypermedia**       | ❌       | ❌                  | ✅                   |
 | **Language Mapping** | ✅       | -                   | ❌                   |
 
-## Schnittstellenbeschreibung
+# Schnittstellenbeschreibung
 
-| [GraphQL Schema](/praktikum/ratschinski/graphql#schnittstellenbeschreibung) | [Rest Schnittstellenbeschreibung](/praktikum/ratschinski/rest#schnittstellenbeschreibung) | [gRPC Schnittstellenbeschreibung](/praktikum/ratschinski/grpc#schnittstellenbeschreibung)
-
-### Warum eine Schnittstelle beschreiben ?
+Vorteile einer Schnittstellenbeschreibung
 
 1. Aufrufe erleichtern
 2. Entwicklung Client und Server
@@ -49,7 +186,159 @@
 6. Vergleich von API Versionen (Kompatibilität)
 7. Qualitätssicherung
 
-### Schnittstellenbeschreibung Zusammenfassung
+## gRPC
+
+Die Schnittstelle wird in gRPC über proto Dateien beschrieben.
+
+```protobuf
+syntax = "proto3";
+
+service UserService {
+  rpc GetUser(Id) returns (User) {}
+  rpc GetAllUsers (Empty) returns (UserList) {}
+  rpc AddUser(User) returns (Id) {}
+  rpc DeleteUser (Id) returns (Empty) {}
+  rpc EditUser (User) returns (User) {}
+  rpc GetMessage(Id) returns (Message) {}
+  rpc GetAllMessages (Empty) returns (MessageList) {}
+  rpc GetUserMessages (Id) returns (MessageList) {}
+  rpc AddMessage(Message) returns (Id) {}
+  rpc DeleteMessage (Id) returns (Empty) {}
+  rpc EditMessage (Message) returns (Message) {}
+}
+
+message User {
+  int64 id = 1;
+  string first_name = 2;
+  string last_name = 3;
+  string email = 4;
+}
+
+message Message {
+  int64 id = 1;
+  string text = 2;
+  int64 userId = 3;
+}
+
+message Id {
+  string id = 1;
+}
+
+message Empty {}
+
+message UserList {
+  repeated User users = 1;
+}
+
+message MessageList {
+  repeated Message messages = 1;
+}
+```
+
+Der proto Compiler kann aus den Dateien verschiedene Vorlagen für Clients und Server erstellen.
+
+_Beispiel GO Client und JAVA Server_
+![proto](./assets/grpc/proto.png)
+
+Dadurch dass die Feldnummern in den proto Dateien nicht verändert werden dürfen entsteht eine gute Kompatibilität zwischen den verschiedenen Schnittstellenversionen.
+
+- Typen dürfen vertauscht werden solange kein **Overflow** entsteht
+- Namen dürfen geändert werden, da intern nur die Feldnummern benutzt werden
+- **Wichtig** Feldnummern dürfen gelöscht, aber später nicht wieder verwendet werden
+
+## GraphQL
+
+Die Schnittstelle wird in GraphQL mit einem Schema beschrieben.
+
+```graphql
+type Query {
+  users: [User!]
+  user(id: ID!): User
+}
+
+type Mutation {
+  createUser(first_name: String!, last_name: String!, email: String!): User!
+  updateUser(
+    id: ID!
+    first_name: String
+    last_name: String
+    email: String
+  ): User!
+  deleteUser(id: ID!): Boolean!
+}
+
+type User {
+  id: ID!
+  first_name: String!
+  last_name: String!
+  email: String!
+  messages: [Message!]
+}
+```
+
+- Mit Hilfe des Schemas können alle möglichen Informationen über die Schnittstelle gewonnen werden.
+- Schemas können leicht als Graph visualisiert werden. Beispiele: [GraphQL Voyager](https://apis.guru/graphql-voyager/)
+- Aus den Schemas lässt sich Code für den Client (React, Vue, Angular, ...) und den Server(Node.js, .NET, Java, ...) generieren. [GraphQL Code Generator](https://www.graphql-code-generator.com/)
+
+### Typ-System Schema
+
+- Einfache Typen
+
+  - Int
+  - String
+  - Float
+  - Boolean
+  - ID
+
+- Zusammengesetzte
+  - Objekte
+  - Enumeration
+  - Interfaces
+  - Unions
+
+### Schemas und Microservices
+
+Die Schnittstellenbeschreibung mit Schemas, eignet sich sehr gut für Microservices
+
+![GraphQL Schema](./assets/graphql/graphql_schema.png)
+
+## REST
+
+Die Schnittstellenbeschreibung in REST ist komplett optional.
+
+- Für die Beschreibung gibt es eine Vielzahl von Tools wie RAML, WADL, API Blueprint, ...
+- **OpenAPI** hat sich hier als "Quasi-Standard" durchgesetzt.
+
+### OpenAPI Besonderheiten
+
+- Aufbau(Metadaten, Endpunkte, Datentypen)
+
+- Kompatibel mit JSON Schema
+
+- Kann zur Validierung genutzt werden
+
+- Datentypen
+
+  - Einfache
+    - integer(int32, int64)
+    - number(float, double)
+    - string(date, date-time, password, byte, binary)
+    - boolean
+  - Zusammengesetzte
+    - object
+    - array
+    - enum
+
+- Code Generator für eine Vielzahl von Programmiersprachen. ([OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator))
+
+  - Client
+  - Server
+  - Dokumentation (HTML, Markdown, Asciidoc, ...)
+  - Schema (GraphQL, protobuf, ...)
+
+- Beschreibung kann direkt in Postman geladen werden
+
+## Zusammenfassung
 
 |                                                    | gRPC IDL                 | GraphQL Schema           | REST(OpenAPI)                  |
 | -------------------------------------------------- | ------------------------ | ------------------------ | ------------------------------ |
@@ -64,24 +353,68 @@
 | **Min., Max., Regex.**                             | ❌                       | ❌ (Über Custom Types)   | ✅                             |
 | **Schema-Inspektion(Vorschau)**                    | ❌                       | ✅                       | ❌                             |
 
-## Sonstiges
+# Performanz
+
+## Repository
+
+&#8594; [Github Repository Performance testing](https://github.com/Kevin-Ratschinski/rest-graphql-grpc)
+
+## Auswertung
+
+# Skalierung
+
+# Implementationsaufwand
+
+# Versionierbarkeit
+
+# Security
+
+# "Vorläufiges" Fazit
+
+TODO Fazit ausarbeiten
 
 - Einsatzgebiete für die verschiedenen Technologien ermitteln.  
    Was eignet sich am besten für API`s, Microservices, Webanwendungen und Mobile Apps?
 
-- Metriken:
+## gRPC
 
-  - Performanz
-  - Skalierung
-  - Effizienz
-  - Implementationsaufwand
-  - Security
-  - Versionierbarkeit
+Vorteile:
 
-- Nächste Schritte:
+- Effizient
+- Serialisierung übernimmt protobuf
+- Type - System
+- Language Mapping (Java, c++, Go, ...)
+- Versionierbarkeit
 
-  1. Einarbeitung in die verschiedenen Technologien
-  2. Testfälle für die Metriken erstellen
-  3. Verschiedene Architekturen mit den unterschiedlichen Technologien aufbauen
-  4. Auf Grundlage der Architekturen werden verschiedene Tests durchgeführt, um die Unterschiede festzustellen
-  5. Konkretes Ergebnis anhand der ermittelten Werte
+Nachteile:
+
+- Komplex
+- Lesen geht nur mit Formatbeschreibung
+
+## GraphQL
+
+Vorteile:
+
+- Format ist vorgegeben
+- Type - System
+- ausführliche Schnittstellenbeschreibung
+- Eignet sich gut für Microservices
+
+Nachteile:
+
+- Nur JSON wird zurückgegeben
+- Fehlende Unterstützung für binäre Daten
+
+## REST
+
+Vorteile:
+
+- Beliebige Formate
+- Gut geeignet für binäre Inhalte
+
+Nachteile:
+
+- Kein vorgegebenes Format
+- Kein "Standard-" Mapping auf Objekte
+
+# Referenzen
