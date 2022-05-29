@@ -1,6 +1,6 @@
 # Vergleich von verschiedenen Architekturstilen für eine Programmierschnittstelle
 
-- Technologien: **GraphQL**, **REST** und **gRPC**
+- Technologien: **gRPC**, **GraphQL** und **REST**
 
   Mittels GraphQL, REST und gRPC können Client und Server miteinander kommunizieren. Für den Transport verwenden alle drei Technologien das HTTP Protokoll. Abgesehen von dieser Gemeinsamkeit, sind die drei Technologien grundverschieden. Während des Praktikums soll ermittelt werden, für welche Einsatzgebiete die verschiedenen Technologien am besten geeignet sind.
 
@@ -10,19 +10,19 @@
 
 ![gRPC Paradigma](./assets/grpc/grpc_paradigma.png)
 
-TODO Beschreibung gRPC
+gRPC ist ein von Google entwickeltes Open-Source-Framework für Remote Procedure Calls (RPC). Remote Procedure Calls sind entfernte Funktionsaufrufe, die über verschiedene Systeme hinweg ausgeführt werden können. gRPC basiert auf dem HTTP/2 Standard und benutzt zum Versenden der Daten das "Protocol Buffers" Datenformat, welches ebenfalls von Google entwickelt wird.
 
 ## GraphQL
 
 ![GraphQL Paradigma](./assets/graphql/graphql_paradigma.png)
 
-TODO Beschreibung GraphQL
+GraphQL ist eine Abfragesprache, die von Meta entwickelt wurde. Mit GraphQL können vom Client genau definierte Abfragen an den Server gestellt werden. Die Abfrage wird anschließend vom Server verarbeitet und die Antwort zum Client zurückgesendet. Mit "Mutationen" lassen sich auch Änderungen durchführen. Hierbei handelt es sich um einfache Remote Procedure Calls. Das zeigt das GraphQL nicht nur eine reine Abfragesprache ist.
 
 ## REST
 
 ![REST Paradigma](./assets/rest/rest_paradigma.png)
 
-TODO Beschreibung REST
+REST basiert auf der Architektur des World Wide Web. Mithilfe des HTTP-Protokolls lassen sich verschiedene Anfragen an den Server stellen. Um mit dem Server zu kommunizieren, werden URI's vom Server adressiert, welcher anschließend eine Antwort zurückliefert.
 
 # Datenformat
 
@@ -39,8 +39,7 @@ TODO Beschreibung REST
 ### Datentypen
 
 ![gRPC Datentypen](./assets/grpc/grpc_typen.png)
-
-TODO Referenz mit angeben
+Quelle: https://developers.google.com/protocol-buffers/docs/encoding
 
 ### Decoding
 
@@ -163,16 +162,16 @@ Content-Type: application/json
 
 ## Zusammenfassung
 
-|                      | gRPC     | GraphQL             | REST                 |
-| -------------------- | -------- | ------------------- | -------------------- |
-| **Datenformat**      | protobuf | JSON / graphql      | Beliebig             |
-| **Dokument Stil**    | ❌       | ✅                  | Ja bei JSON oder XML |
-| **Effizienz**        | ✅       | -                   | -                    |
-| **Komplexität**      | hoch     | gering              | mittel               |
-| **Abstraktion**      | hoch     | mittel              | gering               |
-| **Binärdaten**       | Bytes    | Base64 oder Verweis | Binäre 8 Bit Inhalte |
-| **Hypermedia**       | ❌       | ❌                  | ✅                   |
-| **Language Mapping** | ✅       | -                   | ❌                   |
+|                      |   gRPC   |       GraphQL       |         REST         |
+| -------------------- | :------: | :-----------------: | :------------------: |
+| **Datenformat**      | protobuf |   JSON / graphql    |       Beliebig       |
+| **Dokument Stil**    |    ❌    |         ✅          | Ja bei JSON oder XML |
+| **Effizienz**        |    ✅    |          -          |          -           |
+| **Komplexität**      |   hoch   |       gering        |        mittel        |
+| **Abstraktion**      |   hoch   |       mittel        |        gering        |
+| **Binärdaten**       |  Bytes   | Base64 oder Verweis | Binäre 8 Bit Inhalte |
+| **Hypermedia**       |    ❌    |         ❌          |          ✅          |
+| **Language Mapping** |    ✅    |          -          |          ❌          |
 
 # Schnittstellenbeschreibung
 
@@ -340,18 +339,18 @@ Die Schnittstellenbeschreibung in REST ist komplett optional.
 
 ## Zusammenfassung
 
-|                                                    | gRPC IDL                 | GraphQL Schema           | REST(OpenAPI)                  |
-| -------------------------------------------------- | ------------------------ | ------------------------ | ------------------------------ |
-| **Vorgehen**                                       | Beschreibung first       | Beschreibung first       | Beschreibung oder Code first   |
-| **Format**                                         | Domain Specific Language | Domain Specific Language | JSON/YAML                      |
-| **Alternative Beschreibungssprachen**              | -                        | -                        | RAML, WADL, API Blueprint, ... |
-| **Nachrichtenformat**                              | protobuf                 | JSON                     | JSON, XML, ...                 |
-| **Ohne Interface description language einsetzen?** | ❌                       | ❌                       | ✅                             |
-| **Beschreibung von Sicherheitsfeatures**           | ❌                       | ❌                       | OAuth2, API Keys, ...          |
-| **Serveradresse angeben**                          | ❌                       | ❌                       | ✅                             |
-| **Typ-System**                                     | ✅                       | ✅                       | ✅ JSON Schema                 |
-| **Min., Max., Regex.**                             | ❌                       | ❌ (Über Custom Types)   | ✅                             |
-| **Schema-Inspektion(Vorschau)**                    | ❌                       | ✅                       | ❌                             |
+|                                                 |         gRPC IDL         |      GraphQL Schema       |         REST(OpenAPI)          |
+| ----------------------------------------------- | :----------------------: | :-----------------------: | :----------------------------: |
+| **Vorgehen**                                    |    Beschreibung first    |    Beschreibung first     |  Beschreibung oder Code first  |
+| **Format**                                      | Domain Specific Language | Domain Specific Language  |           JSON/YAML            |
+| **Alternative Beschreibungssprachen**           |            -             |             -             | RAML, WADL, API Blueprint, ... |
+| **Nachrichtenformat**                           |         protobuf         |           JSON            |         JSON, XML, ...         |
+| **Ohne Schnittstellenbeschreibung einsetzbar?** |            ❌            |            ❌             |               ✅               |
+| **Beschreibung von Sicherheitsfeatures**        |            ❌            |            ❌             |     OAuth2, API Keys, ...      |
+| **Serveradresse angeben**                       |            ❌            |            ❌             |               ✅               |
+| **Typ-System**                                  |            ✅            |            ✅             |      ✅ <br> JSON Schema       |
+| **Min., Max., Regex.**                          |            ❌            | ❌ <br> Über Custom Types |               ✅               |
+| **Schema-Inspektion(Vorschau)**                 |            ❌            |            ✅             |               ❌               |
 
 # Performanz
 
