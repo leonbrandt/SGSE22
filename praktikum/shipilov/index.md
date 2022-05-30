@@ -73,7 +73,7 @@ Alle Infrastrukturdienste laufen über Docker-Container, die das Ausführen von 
 
 ![](img/02.png)
 
-**Abbildung 3.1: Systemarchitektur Shop Economy.**
+**Abbildung 3.1: Systemarchitektur Shop Economy. (erstellt mit https://www.diagrams.net/) **
 
 # Literaturverzeichnis
 * [1] - vgl. Martin 2017, Kap. 15 Abschn. 1
@@ -82,3 +82,15 @@ Alle Infrastrukturdienste laufen über Docker-Container, die das Ausführen von 
 * [4] - vgl. Wolff E., Microservices – Grundlagen flexibler Softwarearchitekturen, Kindle-Position 698 ff.
 * [5] - vgl. Wolff E., Microservices – Grundlagen flexibler Softwarearchitekturen, Kindle-Position 1524 ff.
 * [6] - vgl. Wolff E., Microservices – Grundlagen flexibler Softwarearchitekturen, Kindle-Position 2084 ff. und Newman S, Building microservices – Designing finegrained systems, Chapter 3
+
+# Verwendete Icons von Dritten
+* https://www.diagrams.net/
+* https://www.rabbitmq.com/trademark-guidelines.html
+* https://masstransit-project.com/
+* https://www.pngkey.com/maxpic/u2q8q8i1i1o0t4a9/
+* https://commons.wikimedia.org/wiki/File:React-icon.svg
+* https://identityserver4.readthedocs.io/en/latest/
+* https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png
+* https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Grafana_logo.svg/1200px-Grafana_logo.svg.png
+* https://de.wikipedia.org/wiki/Datei:Prometheus_software_logo.svg
+* https://github.com/emissary-ingress
