@@ -35,14 +35,14 @@
 
 In diesem Kapitel werden Microservices für ein einheitliches Verständnis im Rahmen dieser Arbeit anhand ihrer Merkmale näher definiert:
 Microservices sind ein Ansatz zur Modularisierung großer Software-Systeme in kleinere Einheiten (Microservices), die… [2]
-•	unabhängig voneinander deployt werden können.
-•	unabhängig von Änderungen an anderen Microservices in Produktion ge-bracht werden können.
-•	mit unterschiedlichen Technologien umgesetzt sein können.
-•	eine eigene, unabhängige Datenhaltung haben z.B. in Form einer eige-nen Datenbank oder eines eigenen Schemas.
-•	über Netzwerk miteinander kommunizieren und untereinander eine lose Kopplung aufweisen.
-•	ein eigenes User Interface (UI) enthalten sollten.
-•	sich auf einen fachlichen Kontext innerhalb einer Domäne fokussieren und damit innerhalb eines Microservice eine hohe Kohäsion aufweisen.
-•	von genau einem Team, typischerweise drei bis neun Personen, entwickelt werden, wobei ein Team mehrere Microservices Betreuen kann.
+*	unabhängig voneinander deployt werden können.
+*	unabhängig von Änderungen an anderen Microservices in Produktion ge-bracht werden können.
+*	mit unterschiedlichen Technologien umgesetzt sein können.
+*	eine eigene, unabhängige Datenhaltung haben z.B. in Form einer eige-nen Datenbank oder eines eigenen Schemas.
+*	über Netzwerk miteinander kommunizieren und untereinander eine lose Kopplung aufweisen.
+*	ein eigenes User Interface (UI) enthalten sollten.
+*	sich auf einen fachlichen Kontext innerhalb einer Domäne fokussieren und damit innerhalb eines Microservice eine hohe Kohäsion aufweisen.
+*	von genau einem Team, typischerweise drei bis neun Personen, entwickelt werden, wobei ein Team mehrere Microservices Betreuen kann.
 
 
 
