@@ -91,6 +91,4 @@ Alle Infrastrukturdienste laufen über Docker-Container, die das Ausführen von 
 * https://commons.wikimedia.org/wiki/File:React-icon.svg
 * https://identityserver4.readthedocs.io/en/latest/
 * https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png
-* https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Grafana_logo.svg/1200px-Grafana_logo.svg.png
-* https://de.wikipedia.org/wiki/Datei:Prometheus_software_logo.svg
 * https://github.com/emissary-ingress
