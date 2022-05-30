@@ -1,20 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, ScrollView, KeyboardAvoidingView } from 'react-native';
+
+import Header from './components/Header';
+import RegisterScreen from './screens/RegisterScreen';
+import Card from './components/Card';
+import ViewOrder from './screens/ViewOrder';
+import NewOrder from './screens/NewOrder';
+import OrderListing from './screens/OrderListing';
+import MyOrders from './screens/MyOrders';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <KeyboardAvoidingView style={styles.screen} behavior="padding" enabled>
+      <ScrollView>
+        <NewOrder></NewOrder>
+        <ViewOrder></ViewOrder>
+        <RegisterScreen></RegisterScreen>
+        <OrderListing></OrderListing>
+        <MyOrders></MyOrders>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  screen: {
+    flex: 1
+  }
 });
