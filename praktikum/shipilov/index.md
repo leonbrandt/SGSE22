@@ -49,7 +49,8 @@ Microservices sind ein Ansatz zur Modularisierung großer Software-Systeme in kl
 ## 2.3 Architektur von Microservice-Systemen
 
 Bei einem Microservice-System sind insbesondere die Aufteilung in Microservices sowie die Beziehungen der Microservices untereinander zu betrachten. In der folgenden Abbildung ist ein grundlegendes Microservice-System mit zwei Microservices dargestellt. In der Praxis wird ein solches System meist aus mehreren Microservices bestehen.
-
+![](img/01.png)
+**Abbildung 2.1: Entkoppelte Arbeit durch Microservices (entnommen aus „Wolff E., Microservices – Grundlagen flexibler Softwarearchitekturen“. Chapter 3.)**
 
 
 
