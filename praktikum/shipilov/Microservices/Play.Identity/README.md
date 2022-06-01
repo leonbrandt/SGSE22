@@ -3,7 +3,7 @@ Play.Identity.Contracts libraries used by SchüCal Economy services
 
 ## Create and publish package
 ```powershell
-$version="1.0.3"
+$version="1.0.4"
 $owner="masterarbeitschueco"
 $gh_pat="[PAT HERE]"
 
@@ -23,5 +23,6 @@ docker build --secret id=GH_OWNER --secret id=GH_PAT -t play.identity:$version .
 ## Run the docker image
 ```powershell
 $adminPass="[PASSWORD HERE]"
-docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__Host=mongo -e RabbitMQSettings__Host=rabbitmq -e IdentitySettings__AdminUserPassword=$adminPass --network infrastructure_default play.identity:$version
+$cosmosDbConnectionString="[CONN STRING HERE]"
+docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__ConnectionString=$cosmosDbConnectionString -e RabbitMQSettings__Host=rabbitmq -e IdentitySettings__AdminUserPassword=$adminPass --network infrastructure_default play.identity:$version
 ```

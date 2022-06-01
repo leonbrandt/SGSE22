@@ -11,7 +11,7 @@ namespace Common.Settings
 
         public string ConnectionString
         {
-            get { return string.IsNullOrWhiteSpace(ConnectionString) ? $"mongodb://{Host}:{Port}" : connectionString; }
+            get { return string.IsNullOrWhiteSpace(connectionString) ? $"mongodb://{Host}:{Port}" : connectionString; }
             init { connectionString = value; }
         }
 
