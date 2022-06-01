@@ -75,6 +75,8 @@ Alle Infrastrukturdienste laufen über Docker-Container, die das Ausführen von 
 
 **Abbildung 3.1: Systemarchitektur Shop Economy. (erstellt mit https://www.diagrams.net/) **
 
+
+
 # Literaturverzeichnis
 * [1] - vgl. Martin 2017, Kap. 15 Abschn. 1
 * [2] - vgl. Wolff E., Microservices – Grundlagen flexibler Softwarearchitekturen. 183ff. und Newman S, Building microservices – Designing fine-grained systems, Chapter 1
