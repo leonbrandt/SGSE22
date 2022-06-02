@@ -34,7 +34,19 @@ Für die Implementierung von WebTransport im Frontend wird auf Grund der Neuheit
 
 ## Forschungserklärung
 
-### 
+Innerhalb dieser Ausarbeitung sollen WebSockets und WebTransport miteinander verglichen werden. Dazu sollen folgende Fragen untersucht und die beiden Protokolle im Hinblick verschiedener Aspekte einander gegenübergestellt werden.
+
+- Hat WebTransport das Potential WebSockets abzulösen oder haben die Protokolle unterschiedliche Anwendungsbereiche, sodass sie sich gegenseitig ergänzen?
+- Wie unterscheiden sich WebTransport und WebSockets von einander? Die Unterschiede in den festgelegten Standards wurden bereits in den Grundlagen erläutert. Hier soll es mehr um die Unterschiede in der Implementierung und bei den Messergebnissen gehen.
+- Welche Schnittstelle ist unter welchen Bedingungen performanter?
+
+Um letztere Frage vernünftig untersuchen zu können sollen gewisse Messungen durchgeführt werden. Dabei sollen die Tests die Verbindungseigenschaften der beiden Technologien messen, anhand derer ein Vergleich stattfinden kann. Hierbei sollen folgende Messungen durchgeführt werden:
+
+- Messung der Geschwindigkeit, in Abhängigkeit von verbundenen Clients
+- Messung der maximalen Austauschs von Nachrichten pro Sekunden
+- Messung der Performanz bzw. der Übertragungsrate /-dauer beim Austausch von großen Datenmengen
+
+Um die genannten Messungen durchführen zu können, soll sowohl eine kleine Frontend- als auch eine schmale Backend-Applikation implementiert werden. Hier sollen jeweils beide Protokolle für jeweils die drei Messbereiche verwendet werden. Im Zuge der Evaluation werden die Messergebnisse einander gegenüber gestellt, sodass abschließend ein Entscheidungsdiagramm entwickelt wurde, sodass Entwickler das passende Protokoll für ihren Anwendungszweck auswählen können.
 
 ## Implementierung
 
