@@ -73,7 +73,7 @@ Alle Infrastrukturdienste laufen über Docker-Container, die das Ausführen von 
 
 ![](img/02.png)
 
-**Abbildung 3.1: Systemarchitektur Shop Economy. (erstellt mit https://www.diagrams.net/) **
+**Abbildung 3.1: Systemarchitektur Shop Economy. (erstellt mit https://www.diagrams.net/)**
 
 # 4. Vergleich der Cloud-Dienste von AWS, Azure und Google
 
@@ -84,6 +84,10 @@ Laut einem Bericht der Synergy Research Group aus dem Jahr 2020 „spiegelte das
 Microsoft ist besonders stark in SaaS und Google Cloud ist ein sehr guter KI-Dienst und bietet niedrige Preise und Rabatte.
 
 Nachfolgend finden Sie einen Vergleich der Cloud-Dienste von AWS, Azure und Google:
+
+![](img/03.jpg)
+
+**Abbildung 4.1: Inkrementelles Wachstum der Cloud-Ausgaben (entnommen aus https://www.srgresearch.com/articles/incremental-growth-cloud-spending-hits-new-high-while-amazon-and-microsoft-maintain-clear-lead-reno-nv-february-4-2020)**
 
 
 
