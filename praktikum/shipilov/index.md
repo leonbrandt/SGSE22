@@ -63,7 +63,7 @@ Als zweites Prinzip zeichnet sich der Ansatz durch eine **lose Kupplung der Micr
 
 Das dritte Prinzip ist **eine hohe Kohäsion innerhalb eines Microservice**, wobei ein Microservice eine eigene Datenhaltung, ein eigenes Backend und ein User Inter-face beinhaltet. Dies führt zu einer hohen Unabhängigkeit. Neue Funktionen können innerhalb eines Microservice und damit von einem Team umgesetzt werden, weitestgehend unabhängig von anderen Microservices und Teams. Gibt es innerhalb eines Microservice keine hohe Kohäsion kann dies ein Anzeichen dafür sein, dass die fachliche Aufteilung nicht optimal ist und eine Funktion besser in einem anderen Microservice implementiert werden müsste. [6]
 
-# 3.	Konzeption und Realisierung
+# 3.	Konzeption und Realisierung von der Microservice-Architektur
 
 Zur Unterstützung der Client-Apps wurde ein auf Microservices basierendes System entwickelt. Der Name des Systems lautet "Shop Economy". Hier werden vier Microservices identifiziert: Katalog, Inventar, Identität und Handel. Jeder dieser Microservices verfügt über eine eigene Datenbank, die in keiner Beziehung zu anderen Datenbanken steht und ausschließlich für den besitzenden Microservice verwendet wird. Für die Kommunikation zwischen Diensten wird ein „Message Broker“ eingeführt, der es den Microservices ermöglicht, Nachrichten asynchron zu veröffentlichen und zu konsumieren. Die gesamte Authentifizierung und Autorisierung über das gesamte System wird vom Identitäts-Microservice über das „OpenID Connect“-Protokoll abgewickelt. Es gibt auch ein Frontend-Portal, das alle Microservices nutzt, um mehrere End-to-End-Szenarien über die Benutzeroberfläche zu ermöglichen.
 Da das System in der lokalen Entwicklungsmaschine aufgebaut ist, interagieren die Clients (Desktop und Mobile) direkt mit den Microservices und dem Portal.
@@ -75,6 +75,16 @@ Alle Infrastrukturdienste laufen über Docker-Container, die das Ausführen von 
 
 **Abbildung 3.1: Systemarchitektur Shop Economy. (erstellt mit https://www.diagrams.net/) **
 
+# 4. Vergleich der Cloud-Dienste von AWS, Azure und Google
+
+Im Jahr 2021 hat Cynthia Harvey im "AWS vs. Azure vs. Google Cloud: 2022 Cloud Platform Comparison" bestätigt, dass derzeit drei Unternehmen die Hauptkonkurrenz auf dem Cloud-Computing-Markt anführen: Amazon Web Services (AWS), Microsoft Azure und Google Cloud Platform (GCP). Alle bieten alle Arten von Funktionen für Infrastructure as a Service (IaaS), Software as a Service (SaaS) und Platform as a Service (PaaS). AWS dominiert den Markt. Es erschien früher als die Konkurrenz (2010). [7]
+
+Laut einem Bericht der Synergy Research Group aus dem Jahr 2020 „spiegelte das Wachstum von Amazon weiterhin genau das Gesamtmarktwachstum wider, sodass das Unternehmen seinen Anteil von 33 % am globalen [Cloud]-Markt halten konnte. Der Zweitplatzierte Microsoft ist erneut schneller gewachsen als der Markt und hat seinen Marktanteil in den letzten vier Quartalen um fast drei Prozentpunkte auf 18 % gesteigert." [8]
+
+Microsoft ist besonders stark in SaaS und Google Cloud ist ein sehr guter KI-Dienst und bietet niedrige Preise und Rabatte.
+
+Nachfolgend finden Sie einen Vergleich der Cloud-Dienste von AWS, Azure und Google:
+
 
 
 # Literaturverzeichnis
@@ -84,6 +94,8 @@ Alle Infrastrukturdienste laufen über Docker-Container, die das Ausführen von 
 * [4] - vgl. Wolff E., Microservices – Grundlagen flexibler Softwarearchitekturen, Kindle-Position 698 ff.
 * [5] - vgl. Wolff E., Microservices – Grundlagen flexibler Softwarearchitekturen, Kindle-Position 1524 ff.
 * [6] - vgl. Wolff E., Microservices – Grundlagen flexibler Softwarearchitekturen, Kindle-Position 2084 ff. und Newman S, Building microservices – Designing finegrained systems, Chapter 3
+* [7] - vgl. Cynthia Harvey 2021, AWS vs. Azure vs. Google Cloud: 2022 Cloud Platform Comparison. URL: https://www.datamation.com/cloud/aws-vs-azure-vs-google-cloud/
+* [8] - Synergy Research Group 2020, Incremental Growth in Cloud Spending Hits a New High while Amazon and Microsoft Maintain a Clear Lead. URL: https://www.srgresearch.com/articles/incremental-growth-cloud-spending-hits-new-high-while-amazon-and-microsoft-maintain-clear-lead-reno-nv-february-4-2020
 
 # Verwendete Icons von Dritten
 * https://www.diagrams.net/
