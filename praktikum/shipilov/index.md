@@ -83,11 +83,29 @@ Laut einem Bericht der Synergy Research Group aus dem Jahr 2020 „spiegelte das
 
 Microsoft ist besonders stark in SaaS und Google Cloud ist ein sehr guter KI-Dienst und bietet niedrige Preise und Rabatte.
 
-Nachfolgend finden Sie einen Vergleich der Cloud-Dienste von AWS, Azure und Google:
+Nachfolgend finden Sie einen Vergleich der Cloud-Dienste von AWS, Azure und Google.
 
 ![](img/03.jpg)
 
 **Abbildung 4.1: Inkrementelles Wachstum der Cloud-Ausgaben (entnommen aus https://www.srgresearch.com/articles/incremental-growth-cloud-spending-hits-new-high-while-amazon-and-microsoft-maintain-clear-lead-reno-nv-february-4-2020)**
+
+![](img/04.jpeg)
+
+**Abbildung 4.2: Magic Quadrant für Cloud-Infrastruktur und Plattformservices (entnommen aus https://www.datamation.com/cloud/aws-vs-azure-vs-google-cloud/)**
+
+## 4.1 Amazon Web Services
+
+
+
+
+
+## 4.2 Microsoft Azure
+
+
+
+
+## 4.3 Google Cloud
+
 
 
 
