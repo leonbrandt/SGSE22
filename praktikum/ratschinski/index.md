@@ -1,28 +1,35 @@
 # Vergleich von verschiedenen Architekturstilen für eine Programmierschnittstelle
 
+# Einführung in die verschiedenen Technologien
+
 - Technologien: **gRPC**, **GraphQL** und **REST**
 
-  Mittels GraphQL, REST und gRPC können Client und Server miteinander kommunizieren. Für den Transport verwenden alle drei Technologien das HTTP Protokoll. Abgesehen von dieser Gemeinsamkeit, sind die drei Technologien grundverschieden. Während des Praktikums soll ermittelt werden, für welche Einsatzgebiete die verschiedenen Technologien am besten geeignet sind.
-
-# Einführung in die verschiedenen Technologien
+  Mittels gRPC, GraphQL und REST werden Programmierschnittstellen entwickelt, damit Client und Server miteinander kommunizieren können. Für den Transport verwenden alle drei Technologien das HTTP Protokoll. Abgesehen vom Transportprotokoll, sind die drei Technologien grundverschieden und bieten alle unterschiedliche Konzepte, um eine Kommunikation zwischen Client und Server zu ermöglichen.  
+  Während des Praktikums soll ermittelt werden, für welche Einsatzgebiete die verschiedenen Technologien am besten geeignet sind.
 
 ## gRPC
 
 ![gRPC Paradigma](./assets/grpc/grpc_paradigma.png)
+Abbildung 1 - gRPC Paradigma
+(Quelle: gRPC Logo https://grpc.io/)
 
-gRPC ist ein von Google entwickeltes Open-Source-Framework für Remote Procedure Calls (RPC). Remote Procedure Calls sind entfernte Funktionsaufrufe, die über verschiedene Systeme hinweg ausgeführt werden können. gRPC basiert auf dem HTTP/2 Standard und benutzt zum Versenden der Daten das "Protocol Buffers" Datenformat, welches ebenfalls von Google entwickelt wird.
+gRPC ist ein von Google entwickeltes Open-Source-Framework für Remote Procedure Calls (RPC). Remote Procedure Calls sind entfernte Funktionsaufrufe, die über verschiedene Systeme hinweg ausgeführt werden können. Laut des Unternehmens ist es ein hochperformantes und leichtgewichtiges Kommunikationsprotokoll, das über allen bekannten Betriebssystemen hinweg funktioniert .gRPC basiert auf dem HTTP/2 Standard und benutzt zum Versenden der Daten das "Protocol Buffers" Datenformat, welches ebenfalls von Google entwickelt wird. Viele bekannte Unternehmen wie Netflix, Square oder Cisco stützen ihre interne Kommunikation auf das API-Framework. <a href="#/praktikum/ratschinski/index?id=ref_1">(gRPC, 2022)</a>
 
 ## GraphQL
 
 ![GraphQL Paradigma](./assets/graphql/graphql_paradigma.png)
+Abbildung 2 - GraphQL Paradigma
+(Quelle: GraphQL Logo https://graphql.org/brand/)
 
-GraphQL ist eine Abfragesprache, die von Meta entwickelt wurde. Mit GraphQL können vom Client genau definierte Abfragen an den Server gestellt werden. Die Abfrage wird anschließend vom Server verarbeitet und die Antwort zum Client zurückgesendet. Mit "Mutationen" lassen sich auch Änderungen durchführen. Hierbei handelt es sich um einfache Remote Procedure Calls. Das zeigt das GraphQL nicht nur eine reine Abfragesprache ist.
+GraphQL wurde 2015 von Meta, ehemals Facebook, für die eigene Facebook-API veröffentlicht und ist die Spezifikation einer plattformunabhängigen Abfragesprache für APIs. Mit GraphQL können vom Client genau definierte Abfragen an den Server gestellt werden. Die Abfrage wird anschließend vom Server verarbeitet und die Antwort zum Client zurückgesendet. Besonders an GraphQL ist, dass die API nicht für jedes Objekt einen eigenen Endpunkt, den der Client für die entsprechende Ressource ansprechen kann, zur Verfügung stellt. Vielmehr stellt die API nur einen einzigen Endpunkt zur Verfügung, über den der Client mit Queries lesende oder mittels Mutationen schreibende Operationen durchführen kann. <a href="#/praktikum/ratschinski/index?id=ref_2">(GraphQL, 2022)</a>
 
 ## REST
 
 ![REST Paradigma](./assets/rest/rest_paradigma.png)
+Abbildung 3 - REST Paradigma
 
-REST basiert auf der Architektur des World Wide Web. Mithilfe des HTTP-Protokolls lassen sich verschiedene Anfragen an den Server stellen. Um mit dem Server zu kommunizieren, werden URI's vom Server adressiert, welcher anschließend eine Antwort zurückliefert.
+REST steht für _Representational State Transfer_. Es handelt sich dabei nicht um eine konkrete Technologie, sondern um einen Architekturstil oder ein Programmierparadigma, das 2000 von Roy T. Fielding in seiner Dissertation konzipiert wurde <a href="#/praktikum/ratschinski/index?id=ref_3">(T. Fielding, 2000)</a>.  
+REST basiert auf der Architektur des World Wide Web. Daten werden als Ressourcen gesehen und können über eine eindeutige Adresse (URI) identifiziert werden. Der Client stellt über die verschiedenen HTTP-Methoden entsprechende Anfragen an die gewünschte Ressource und der Server liefert eine entsprechende Antwort zurück.
 
 # Datenformat
 
@@ -416,4 +423,15 @@ Nachteile:
 - Kein vorgegebenes Format
 - Kein "Standard-" Mapping auf Objekte
 
-# Referenzen
+# Literaturverzeichnis
+
+1. <span id="ref_1">gRPC: A high performance, open source universal RPC framework. (2022, 02. Juni). https://grpc.io/</span>
+<!-- (gRPC, 2022) -->
+2. <span id="ref_2">GraphQL: A query language for your API. (2022, 02. Juni). https://graphql.org/</span>
+<!-- (GraphQL, 2022) -->
+3. <span id="ref_3">Thomas Fielding, R. (2000). Architectural Styles and the Design of Network-based Software Architectures, Dissertation</span>
+<!-- (T. Fielding, 2000) -->
+4. <span id="ref_4">Tilkov, S., Eigenbrodt, M., Schreier, S. & Wolf, O. (2015). REST und HTTP (3. Aufl.). dpunkt.verlag.</span>
+<!-- (Tilkov et al., 2015, S. xx) -->
+5. <span id="ref_5">Kress, D. (2021). GraphQL (1. Aufl.). dpunkt.verlag.</span>
+<!-- (Kress, 2015, S. xx) -->
