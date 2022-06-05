@@ -31,81 +31,48 @@ Abbildung 3 - REST Paradigma
 REST steht für _Representational State Transfer_. Es handelt sich dabei nicht um eine konkrete Technologie, sondern um einen Architekturstil oder ein Programmierparadigma, das 2000 von Roy T. Fielding in seiner Dissertation konzipiert wurde <a href="#/praktikum/ratschinski/index?id=ref_3">(T. Fielding, 2000)</a>.  
 REST basiert auf der Architektur des World Wide Web. Daten werden als Ressourcen gesehen und können über eine eindeutige Adresse (URI) identifiziert werden. Der Client stellt über die verschiedenen HTTP-Methoden entsprechende Anfragen an die gewünschte Ressource und der Server liefert eine entsprechende Antwort zurück.
 
-# Datenformat
+# Datenübertragung
 
 ## gRPC
 
-- Die Daten werden mit Hilfe des protobuf Frameworks übermittelt.
-
-- Das Framework serialisiert die Daten.
-
-- Die serialisierten Daten können einfach über das Netz übertragen werden.
+Für die Datenübertragung in gRPC, wird das protobuf Framework verwendet. Mithilfe des Frameworks können die Daten serialisiert und anschließend über das Netzwerk, zwischen Client und Server, ausgetauscht werden. _protobuf_ ist dabei unabhängig von der Wahl der Programmiersprache, welcher ein Client und ein Server verwendet. Eine Nachricht lässt sich beispielsweise mit C++ erzeugen und kann mit Go eingelesen werden.
+Nach der Serialisierung werden die Bytes über das Netzwerk verschickt und auf der Seite des Empfängers deserialisiert.
 
 ![gRPC serialisieren](./assets/grpc/grpc_serialize.png)
+Abbildung 4 - protobuf Daten versenden
 
-### Datentypen
+Für die Deserialisierung beim Empfänger wird die Schnittstellenbeschreibung benötigt, in der Schnittstellenbeschreibung sind alle wesentlichen Merkmale enthalten, damit Client und Server die Daten austauschen können.  
+Die Abbildung zeigt, wie ein User decodiert wird. Das erste Byte wird in eine Feldnummer und den Wire Type aufgeteilt (siehe Abbildung 6). Im Beispiel handelt es sich bei der _id_, um die Feldnummer 1 und den Wire Type 0. Das zweite Byte gibt den Wert 2 der _id_ an.  
+Würde der Wert der _id_ größer als 128 sein, müssten weitere Bytes mit hinzugenommen werden. Somit lassen sich in protobuf auch größere Zahlen abbilden.  
+Die restlichen Bytes beschreiben den Vornamen des Users. Das erste Byte wird wieder in Feldnummer(2) und in Wire Type(2) aufgeteilt. Das zweite Byte gibt die Länge der Bytes an und die restlichen Bytes bilden die direkten Werte ab.
+
+![gRPC decoding](./assets/grpc/grpc_decoding.png)  
+Abbildung 5 - gRPC Decoding
 
 ![gRPC Datentypen](./assets/grpc/grpc_typen.png)
-Quelle: https://developers.google.com/protocol-buffers/docs/encoding
+Abbildung 6 - gRPC Wire Types
+(Quelle: https://developers.google.com/protocol-buffers/docs/encoding)
 
-### Decoding
-
-![gRPC decoding](./assets/grpc/grpc_decoding.png)
-
-- Vorteile gegenüber JSON
-
-  - Nachrichten sind kompakter
-  - Nachrichten sind nicht lesbar (Beschreibung der Nachricht wird zum lesen benötigt)
-
-### Versionierbarkeit
-
-```protobuf
-Version 1
-
-message User {
-  int64 id = 1;
-  string first_name = 2;
-  string last_name = 3;
-  string email = 4;
-}
-```
-
-```protobuf
-Version 2
-
-message User {
-  int64 id = 1;
-  string first_name = 2;
-  string last_name = 3;
-  string password = 5;
-}
-```
-
-Feldnummern ändern sich nicht. (siehe string email = 4; / string password = 5;)  
-Nachrichten lassen sich so sehr einfach von Version 1 auf Version 2 mappen. Dies wird vom Framework automatisch gemacht.
-
-### Übertragung von binären Daten zum Beispiel Bilder
-
-```protobuf
-message Image {
-  bytes image = 1;
-}
-```
-
-Nachteile:
-
-- Komplettes Bild wird übertragen
-- Ressourcenverbrauch
-- Performanz
-
-Stückweise Übertragung ist mit etwas Mehraufwand möglich.
-
-- Stream Blöcke
+Ein Vorteil einer solchen Übertragung in Bytes liegt in der Nachrichtengröße. Daten lassen sich deutlich kompakter versenden als, wenn man zum Beispiel ein reines JSON-Format versenden würde. Zudem bietet sich noch ein Sicherheitsaspekt dadurch, dass sich die Daten ohne die passende Schnittstellenbeschreibung nicht interpretieren lassen.
 
 ## GraphQL
 
-- Verwendet als Datenformat JSON oder graphql für Anfragen
-  - Wird im Content-Type festgelegt.
+Für die Datenübertragung wird bei GraphQL das JSON-Format oder das _graphql_-Format verwendet. Welches Format verwendet wird, wird im Content-Type des HTTP-Request festgelegt. Für die Übermittlung der Daten werden in GraphQL nur die HTTP-Methoden GET und POST eingesetzt. In der Regel wird überwiegend die POST Methode für die Kommunikation verwendet. Alle relevanten Informationen zu einem Request, ob nun Query oder Mutation, können innerhalb des Payloads eines Post Requests gehalten werden. Mit der GET Requests lassen sich bei GraphQL nur Queries abbilden. Ein weiterer Nachteil ist noch, dass die Query dabei als URI-Parameter des Requests angeben werden muss. Das reduziert deutlich die Lesbarkeit der Queries.
+
+POST /test HTTP/1.1  
+Content-Type: application/json
+
+```json
+{
+   "query": "{
+     user(id:1) {
+       id first_name last_name email messages{
+         id text userId
+        }
+      }
+    }"
+}
+```
 
 POST /test HTTP/1.1  
 Content-Type: application/graphlql
@@ -126,7 +93,9 @@ Content-Type: application/graphlql
 }
 ```
 
-- Antwort immer in JSON
+---
+
+Die Antworten der Queries und Mutationen, erfolgen immer im JSON-Format. Die Daten werden im Payload des Response zurückgesendet und können sowohl die Antworten oder auch Fehlermeldungen enthalten.
 
 HTTP/1.1 200 Ok  
 Content-Type: application/json
@@ -145,56 +114,60 @@ Content-Type: application/json
 }
 ```
 
-- Keine Unterstützung für binäre Daten
-  - Lassen sich Base64 codiert versenden
-  - Nachteil: Base64 ist immer größer als die jeweilige Datei (ca. 30%)
-  - Bilder können als Verweis(Link) versendet werden
-
 ## REST
 
-![rest data](./assets/rest/rest_datenformat.png)
+![REST Ressource / Repräsentation](./assets/rest/rest_datenformat.png)  
+Abbildung 7 - REST Datenübertragung
 
-- Datenformat wird im Content-Type festgelegt.
-  - JSON, XML, IMAGE, PDF, CSV, ...
-  - Keine Begrenzung auf ein Datenformat
+Die Datenübertragung in REST erfolgt in der Regel über das HTTP-Protokoll. Mit den verschiedenen HTTP-Methoden (GET, POST, PUT, DELETE, ...) können die Ressourcen, über zuvor festgelegte URIs angesprochen werden. Ressourcen bilden die zentrale Abstraktion im REST-Architekturstil. Sie sind eindeutig identifizierbar und die Interaktion mit ihnen erfolgt immer über den Austausch von Repräsentationen <a href="#/praktikum/ratschinski/index?id=ref_4">(Tilkov et al., 2015, S. 52)</a>. Das Datenformat, wie die Daten ausgetauscht werden sollen, ist in REST nicht vorgeschrieben und kann beliebig im Content-Type des HTTP-Request festgelegt werden (JSON, XML, IMAGE, PDF, CSV, ...).
 
-### Besonderheiten
+## Zusammenfassung Datenübertragung
 
-- REST unterstützt Hypermedia
-
-  - Verweis auf Ressourcen
-
-- REST zieht noch weite Vorteile aus der Verwendung des HTTP-Protokolls
-  - Z.B. Caching oder Inhaltsverhandlung
-
-## Zusammenfassung
-
-|                      |   gRPC   |       GraphQL       |         REST         |
-| -------------------- | :------: | :-----------------: | :------------------: |
-| **Datenformat**      | protobuf |   JSON / graphql    |       Beliebig       |
-| **Dokument Stil**    |    ❌    |         ✅          | Ja bei JSON oder XML |
-| **Effizienz**        |    ✅    |          -          |          -           |
-| **Komplexität**      |   hoch   |       gering        |        mittel        |
-| **Abstraktion**      |   hoch   |       mittel        |        gering        |
-| **Binärdaten**       |  Bytes   | Base64 oder Verweis | Binäre 8 Bit Inhalte |
-| **Hypermedia**       |    ❌    |         ❌          |          ✅          |
-| **Language Mapping** |    ✅    |          -          |          ❌          |
+|                      |   gRPC   |    GraphQL     |         REST         |
+| -------------------- | :------: | :------------: | :------------------: |
+| **Datenformat**      | protobuf | JSON / graphql |       Beliebig       |
+| **Dokument Stil**    |    ❌    |       ✅       | Ja bei JSON oder XML |
+| **Effizienz**        |    ✅    |       -        |          -           |
+| **Komplexität**      |   hoch   |     gering     |        mittel        |
+| **Abstraktion**      |   hoch   |     mittel     |        gering        |
+| **Language Mapping** |    ✅    |       -        |          ❌          |
 
 # Schnittstellenbeschreibung
 
-Vorteile einer Schnittstellenbeschreibung
+Ein wichtiger Aspekt bei der Auswahl der Technologie ist die Schnittstellenbeschreibung. Mithilfe der Beschreibung weiß ein Client, welche Funktionen die Schnittstelle anbietet, welche Nachrichtenformate erwartet und welche Fehler bei der Übertragung auftreten können. Außerdem bietet eine Beschreibung noch eine Reihe weiterer Vorteile:
 
 1. Aufrufe erleichtern
+   - Durch die Beschreibung weiß der Client welche, Aufrufe er durchführen kann.
 2. Entwicklung Client und Server
+   - Eine Beschreibung kann, mit der Hilfe eines Codegenerators, direkt in Client oder Servercode übersetzt werden, was die Entwicklung der Schnittstelle vereinfacht.
 3. Einhaltung eines Vertrages
-4. Erzeugung von Dokumentationen (PDF's, HTML)
+   - Die Schnittstellenbeschreibung schreibt vor, wie sich Client und Server während der Kommunikation zu verhalten haben und welche Bedingungen erfüllt werden müssen, damit ein Aufruf erfolgreich ist.
+4. Erzeugung von Dokumentationen
+   - Aus einer Schnittstellenbeschreibung lässt sich oft direkt eine Dokumentation in z. B. einem HTML-Format erstellen
 5. Validierung von Nachrichten
+   - In einer Schnittstellenbeschreibung wird festgelegt, welche Datentypen und Nachrichtenformate von der Schnittstelle akzeptiert werden.
 6. Vergleich von API Versionen (Kompatibilität)
+   - Mithilfe einer Beschreibung lässt sich die aktuelle Version eine API festhalten. So lassen sich auch verschiedene Versionen einer API einfach auf Kompatibilität testen.
 7. Qualitätssicherung
+   - Schnittstellenbeschreibungen lassen sich automatisiert überprüfen, somit lässt sich direkt feststellen, ob zuvor festgelegte Qualitätsregeln eingehalten wurden.
 
 ## gRPC
 
-Die Schnittstelle wird in gRPC über proto Dateien beschrieben.
+Die Schnittstelle wird in gRPC über _proto_ Dateien beschrieben. Zuerst wird der Service definiert und beschrieben, welche Funktionen er anbietet. Danach werden alle Messagetypen definiert, welche in dem Service verwendet werden.  
+Jeder Typ eines Messagetypes bekommt eine eigene Feldnummer und eine Beschriftung. Die Feldnummern werden intern von protobuf, für die Kommunikation, verwendet und ermöglichen zusätzlich noch eine Versionierung der Schnittstelle. Bei den Typen unterscheidet man zwischen zusammengesetzten und einfachen Typen. Um ein Array in protobuf abzubilden, muss das Schlüsselwort _repeated_ vor den jeweiligen Typ gesetzt werden. Mit dem Typsystem, welches von protobuf mitgeliefert wird, lassen sich komplexe und große Schnittstellen einfach beschreiben.
+
+|                Einfache Typen                | Zusammengesetzte Typen |
+| :------------------------------------------: | :--------------------: |
+|                double, float                 |        Message         |
+| int32, int64, uint32, uint64, sint32, sint64 |          Enum          |
+|     fixed32, fixed64, sfixed32, sfixed64     |                        |
+|                     bool                     |                        |
+|                    string                    |                        |
+|                    bytes                     |                        |
+
+<a href="#/praktikum/ratschinski/index?id=ref_6">(proto Typen, 2022)</a>
+
+Beispiel: gRPC Schnittstelle
 
 ```protobuf
 syntax = "proto3";
@@ -241,20 +214,35 @@ message MessageList {
 }
 ```
 
-Der proto Compiler kann aus den Dateien verschiedene Vorlagen für Clients und Server erstellen.
+Der _protobuf_ Compiler kann anschließend aus der Schnittstellenbeschreibung verschiedene Vorlagen für Client und Server generieren. Dabei werden von _protobuf_ eine Vielzahl von Programmiersprachen unterstützt.
 
-_Beispiel GO Client und JAVA Server_
-![proto](./assets/grpc/proto.png)
+- C#
+- C++
+- Dart
+- Go
+- Java
+- Kotlin
+- Node
+- Objective-C
+- PHP
+- Python
+- Ruby
 
-Dadurch dass die Feldnummern in den proto Dateien nicht verändert werden dürfen entsteht eine gute Kompatibilität zwischen den verschiedenen Schnittstellenversionen.
+<a href="#/praktikum/ratschinski/index?id=ref_7">(gRPC languages, 2022)</a>
 
-- Typen dürfen vertauscht werden solange kein **Overflow** entsteht
-- Namen dürfen geändert werden, da intern nur die Feldnummern benutzt werden
-- **Wichtig** Feldnummern dürfen gelöscht, aber später nicht wieder verwendet werden
+Beispiel: GO Client und JAVA Server
+![protobuf Codegenerierung](./assets/grpc/proto.png)  
+Abbildung 8 - protobuf Codegenerierung
 
 ## GraphQL
 
-Die Schnittstelle wird in GraphQL mit einem Schema beschrieben.
+Die Schnittstelle wird in GraphQL über das GraphQL-Schema beschrieben. Das GraphQL-Schema ist eine Definition der aufrufbaren Daten, ihres Typs, ihrer Relationen sowie deren möglichen Zugriffe zur Manipulation. Das Schema legt die genaue Datenstruktur fest, gegen die eingehende Anfragen validiert werden. Entspricht eine Anfrage dem Schema, wird sie weiter verarbeitet. Das erfolgt, indem GraphQL die Anfrage zerteilt und einzelnen _Resolvern_ übergibt, welche die Anfrage auflösen und ein Ergebnis kumuliert zurücksenden.
+
+Das GraphQL-Schema liefert alle möglichen Informationen über eine Schnittstelle. Aus dem Schema lässt sich erkennen, welche Werte abgefragt werden können und welche Werte sich manipulieren lassen. Durch den Graphenansatz kann ein Schema auch einfach als Graph visualisiert werden <a href="#/praktikum/ratschinski/index?id=ref_8">(GraphQL Voyager, 2022)</a>.
+
+Wie bereits in gRPC, lässt sich auch in GraphQL über die Schnittstellenbeschreibung direkt Code für den Client oder Server generieren <a href="#/praktikum/ratschinski/index?id=ref_9">(GraphQL Code Generator, 2022)</a>.
+
+Beispiel: GraphQL-Schema
 
 ```graphql
 type Query {
@@ -282,31 +270,115 @@ type User {
 }
 ```
 
-- Mit Hilfe des Schemas können alle möglichen Informationen über die Schnittstelle gewonnen werden.
-- Schemas können leicht als Graph visualisiert werden. Beispiele: [GraphQL Voyager](https://apis.guru/graphql-voyager/)
-- Aus den Schemas lässt sich Code für den Client (React, Vue, Angular, ...) und den Server(Node.js, .NET, Java, ...) generieren. [GraphQL Code Generator](https://www.graphql-code-generator.com/)
+### Typ-System GraphQL-Schema
 
-### Typ-System Schema
+GraphQL hat ein sehr umfangreiches Typsystem, welches sich aus den folgenden Punkten zusammensetzt:  
+<a href="#/praktikum/ratschinski/index?id=ref_10">(GraphQL-Schema, 2022)</a>
 
-- Einfache Typen
+1. **Objekt-Typen**
 
-  - Int
-  - String
-  - Float
-  - Boolean
-  - ID
+   Die grundlegendsten Komponenten eines Schemas sind die Objekt-Typen, die ein einfaches Objekt repräsentieren.
 
-- Zusammengesetzte
-  - Objekte
-  - Enumeration
-  - Interfaces
-  - Unions
+   ```graphql
+   type Product {
+     name: String
+     category: Category
+   }
 
-### Schemas und Microservices
+   type Category {
+     name: String
+   }
+   ```
 
-Die Schnittstellenbeschreibung mit Schemas, eignet sich sehr gut für Microservices
+   Der kurze Code repräsentiert einen Einstiegspunkt der API auf das Objekt _Product_ und _Category_, über den die Daten der Objekte abrufbar sind.
 
-![GraphQL Schema](./assets/graphql/graphql_schema.png)
+2. **Parameter**
+
+   Jedes Feld eines Objektes können zusätzlich noch Parameter übergeben werden, welche die Rückgabewerte einer Query verändern können. Parameter können dabei optional oder erforderlich sein.
+
+   ```graphql
+   type Product {
+     name: String
+     price: (unit: Currency = EUR): Float
+   }
+   ```
+
+   In dem Beispiel kann bei einer Query der Parameter unit mitgeben werden, das den Wert des Feldes in einer gewünschten Währung zurückgibt (default = EUR).
+
+3. **Skalar-Typen**
+
+   Jedes Objekt hat Namen und Felder, am Ende einer Abfrage muss aber jedes Feld in einen konkreten Datentyp aufgelöst werden. Diese Datentypen sind in GraphQL die Skalar-Typen. Die möglichen Skalar-Typen von GraphQL sind:
+
+   - Int: Eine positive oder negative 32-Bit-Ganzzahl
+   - Float: Eine positive oder negative Gleitkommazahl
+   - String: Eine UTF-8-Zeichenkette
+   - Boolean: ein binärer Datentyp mit den möglichen Werten _true_ oder _false_
+   - ID: Eine eindeutige Identifikation eines Objektes
+
+   In den meisten Implementierungen von GraphQL-Diensten gibt es zudem die Möglichkeit, benutzerdefinierte Skalar-Typen zu definieren. Zum Beispiel ein extra Datumstyp:
+
+   ```graphql
+   scalar Date
+   ```
+
+   Anschließend muss serverseitig festgelegt werden, wie der Typ serialisiert, deserialisiert und validiert werden soll.
+
+4. **Enumerations-Typen**
+
+   Felder vom Typ Enumeration erhalten ein definiertes Set an erlaubten Werten, die dieses Feld annehmen kann.
+
+   ```graphql
+   type Product {
+     name: String
+     category: Category
+   }
+
+   enum Category {
+     FOOD
+     ELECTRONICS
+     CLOTHES
+   }
+   ```
+
+   In dem Beispiel kann _Category_ nicht jeden beliebigen Namen annehmen, sondern nur die Namen FOOD, ELECTRONICS oder CLOTHES.
+
+5. **Typ-Modifikatoren: Listen und Non-Null**
+
+   Mit den Listen-Modifikator lassen sich Listen von Objekten, Feldern oder Enumerationen erstellen und mit den Non-Null-Modifikator kann definiert werden, dass ein Feld, Objekt oder Enum immer einen Wert enthält und somit nie den Wert _null_ zurückgibt.
+
+   Ein Element wird durch eckige Klammern um dessen Typ zu einer Liste. Damit wird nicht mehr ein einzelnes Element, sondern eine Liste des jeweiligen Objektes, Feldes oder Enums zurückgeliefert. Der Non-Null-Modifikator wird durch ein Ausrufezeichen bei der Typdefinition direkt am entsprechenden Feld, Objekt oder Enum gekennzeichnet.
+
+   ```graphql
+   type Category {
+     name: String!
+     products: [Product!]
+   }
+   ```
+
+   In dem Beispiel muss im Objekt _Category_ immer ein Wert für das Feld _name_ vorhanden sein. Zudem können in einer Kategorie mehrere Produkte als Liste zurückgeliefert werden, definiert mit den eckigen Klammern um den Typ _Product_.
+
+   Entscheidend bei der Liste ist ebenfalls die Positionierung des Non-Null-Modifikator für das Resultat und der Validierung.  
+   Folgende Varianten wären möglich, welche sich alle im Resultat unterscheiden:
+
+   - products: [Product]: Die Liste kann _null_ sein sowie Elemente enthalten, die _null_ sind.
+
+   - products: [Product!]: Die Liste kann _null_ sein, aber darf keine Elemente enthalten, die _null_ sind.
+
+   - products: [Product]!: Die Liste darf nicht _null_ sein, kann aber Elemente enthalten, die _null_ sind.
+
+   - products: [Product!]!: Die Liste darf nicht _null_ sein sowie keine Elemente enthalten, die _null_ sind.
+
+6. **Interfaces**
+
+   TODO
+
+7. **Union-Typen**
+
+   TODO
+
+8. **Input-Typen**
+
+   TODO
 
 ## REST
 
@@ -365,13 +437,48 @@ Die Schnittstellenbeschreibung in REST ist komplett optional.
 
 &#8594; [Github Repository Performance testing](https://github.com/Kevin-Ratschinski/rest-graphql-grpc)
 
+## Szenario
+
 ## Auswertung
+
+### n+1 Problem
 
 # Skalierung
 
-# Implementationsaufwand
-
 # Versionierbarkeit
+
+## gRPC
+
+```protobuf
+Version 1
+
+message User {
+  int64 id = 1;
+  string first_name = 2;
+  string last_name = 3;
+  string email = 4;
+}
+```
+
+```protobuf
+Version 2
+
+message User {
+  int64 id = 1;
+  string first_name = 2;
+  string last_name = 3;
+  string password = 5;
+}
+```
+
+Feldnummern ändern sich nicht. (siehe string email = 4; / string password = 5;)  
+Nachrichten lassen sich so sehr einfach von Version 1 auf Version 2 mappen. Dies wird vom Framework automatisch gemacht.
+
+Dadurch dass die Feldnummern in den proto Dateien nicht verändert werden dürfen entsteht eine gute Kompatibilität zwischen den verschiedenen Schnittstellenversionen.
+
+- Typen dürfen vertauscht werden solange kein **Overflow** entsteht
+- Namen dürfen geändert werden, da intern nur die Feldnummern benutzt werden
+- **Wichtig** Feldnummern dürfen gelöscht, aber später nicht wieder verwendet werden
 
 # Security
 
@@ -435,3 +542,13 @@ Nachteile:
 <!-- (Tilkov et al., 2015, S. xx) -->
 5. <span id="ref_5">Kress, D. (2021). GraphQL (1. Aufl.). dpunkt.verlag.</span>
 <!-- (Kress, 2015, S. xx) -->
+6. <span id="ref_6">proto Typen: Language Guide (proto3). (2022, 04. Juni). https://developers.google.com/protocol-buffers/docs/proto3</span>
+<!-- (proto Typen, 2022) -->
+7. <span id="ref_7">gRPC languages: Supported languages. (2022, 04. Juni). https://grpc.io/docs/languages/</span>
+<!-- (gRPC languages, 2022) -->
+8. <span id="ref_8">GraphQL Voyager: GRAPHQL VOYAGER. (2022, 04. Juni). https://ivangoncharov.github.io/graphql-voyager/</span>
+<!-- (GraphQL Voyager, 2022) -->
+9. <span id="ref_9">GraphQL Code Generator: Generate anything from GraphQL schema / operations! (2022, 04. Juni). https://www.graphql-code-generator.com/</span>
+<!-- (GraphQL Code Generator, 2022) -->
+10. <span id="ref_10">GraphQL-Schema: Schemas and Types (2022, 04. Juni). https://graphql.org/learn/schema/</span>
+<!-- (GraphQL-Schema, 2022) -->
