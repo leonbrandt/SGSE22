@@ -1,3 +1,4 @@
+DROP SCHEMA IF EXISTS ezorder;
 CREATE SCHEMA ezorder;
 USE ezorder;
 
@@ -41,8 +42,8 @@ CREATE TABLE PRODUCT
 	FOREIGN KEY(category_catID) REFERENCES CATEGORY(catID)
 );
 
-DROP TABLE IF EXISTS ORDER;
-CREATE TABLE ORDER
+DROP TABLE IF EXISTS ORDERING;
+CREATE TABLE ORDERING
 (
 	orderID integer NOT NULL AUTO_INCREMENT,
     status integer NOT NULL,
@@ -58,9 +59,9 @@ CREATE TABLE POSITION
 (
 	positionID integer NOT NULL AUTO_INCREMENT,
 	amount integer NOT NULL,
-    order_orderID integer NOT NULL,
+    ordering_orderID integer NOT NULL,
     product_productID integer NOT NULL,
 	PRIMARY KEY(positionID),
-	FOREIGN KEY(order_orderID) REFERENCES ORDER(orderID),
+	FOREIGN KEY(ordering_orderID) REFERENCES ORDERING(orderID),
 	FOREIGN KEY(product_productID) REFERENCES PRODUCT(productID)
 );
