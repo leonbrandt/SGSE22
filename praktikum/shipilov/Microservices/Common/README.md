@@ -3,7 +3,7 @@ Common libraries used by SchüCal Economy services
 
 ## Create and publish package
 ```powershell
-$version="1.0.9"
+$version="1.0.10"
 $owner="masterarbeitschueco"
 $gh_pat="[PAT HERE]"
 
