@@ -12,15 +12,22 @@ dotnet pack src\Play.Identity.Contracts\ --configuration Release -p:PackageVersi
 dotnet nuget push ..\packages\Play.Identity.Contracts.$version.nupkg --api-key $gh_pat --source "github"
 ```
 
-## Build the docker image
+## Azure other commands
+```powershell
+az login
+az account show
+```
+
+## Build the Docker image
 ```powershell
 $env:GH_OWNER="masterarbeitschueco"
 $env:GH_PAT="[PAT HERE]"
+$appname="shopeconomy"
 
-docker build --secret id=GH_OWNER --secret id=GH_PAT -t play.identity:$version .
+docker build --secret id=GH_OWNER --secret id=GH_PAT -t "shopeconomy.azurecr.io/play.identity:$version" .
 ```
 
-## Run the docker image
+## Run the Docker image
 ```powershell
 $adminPass="[PASSWORD HERE]"
 $cosmosDbConnectionString="[CONN STRING HERE]" - from Azure
@@ -31,4 +38,11 @@ docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__Host=mongo 
 
 //for connection with Azure Service Bus "SERVICEBUS" or with RabbitMQ "RABBITMQ"
 docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__ConnectionString=$cosmosDbConnectionString -e ServiceBusSettings__ConnectionString=$serviceBusConnectionString -e ServiceSettings__MessageBroker="SERVICEBUS" -e IdentitySettings__AdminUserPassword=$adminPass play.identity:$version
+```
+
+## Publishing the Docker image
+```powershell
+az acr login --name $appname
+
+docker push "shopeconomy.azurecr.io/play.identity:$version"
 ```
