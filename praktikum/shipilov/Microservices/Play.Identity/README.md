@@ -27,7 +27,7 @@ $cosmosDbConnectionString="[CONN STRING HERE]" - from Azure
 $serviceBusConnectionString="[CONN STRING HERE]" - from Azure
 
 //for connection with RabbitMQ
-docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__ConnectionString=$cosmosDbConnectionString -e RabbitMQSettings__Host=rabbitmq -e IdentitySettings__AdminUserPassword=$adminPass --network infrastructure_default play.identity:$version
+docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__Host=mongo -e RabbitMQSettings__Host=rabbitmq -e IdentitySettings__AdminUserPassword=$adminPass --network infrastructure_default play.identity:$version
 
 //for connection with Azure Service Bus "SERVICEBUS" or with RabbitMQ "RABBITMQ"
 docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__ConnectionString=$cosmosDbConnectionString -e ServiceBusSettings__ConnectionString=$serviceBusConnectionString -e ServiceSettings__MessageBroker="SERVICEBUS" -e IdentitySettings__AdminUserPassword=$adminPass play.identity:$version

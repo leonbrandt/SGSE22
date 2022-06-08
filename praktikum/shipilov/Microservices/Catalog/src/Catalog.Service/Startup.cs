@@ -3,9 +3,6 @@ using Common.Identity;
 using Common.MassTransit;
 using Common.MongoDB;
 using Common.Settings;
-using MassTransit;
-using MassTransit.Definition;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -33,7 +30,7 @@ namespace Catalog.Service
 
             services.AddMongo()
                     .AddMongoRepository<Item>("items")
-                    .AddMassTransitWithRabbitMq()
+                    .AddMassTransitWithMessageBroker(Configuration)
                     .AddJwtBearerAuthentication();
 
             services.AddAuthorization(options =>

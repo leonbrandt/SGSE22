@@ -8,7 +8,7 @@ git push -u origin main
 
 ## Create and publish NuGet package Catalog.Contracts
 ```powershell
-$version="1.0.3"
+$version="1.0.4"
 $owner="masterarbeitschueco"
 $gh_pat="[PAT HERE]"
 
@@ -26,5 +26,7 @@ docker build --secret id=GH_OWNER --secret id=GH_PAT -t catalog:$version .
 
 ## Run the docker image
 ```powershell
-docker run -it --rm -p 5000:5000 --name catalog -e MongoDbSettings__Host=mongo -e RabbitMQSettings__Host=rabbitmq --network infrastructure_default catalog:$version
+$cosmosDbConnectionString="[CONN STRING HERE]" - from Azure
+$serviceBusConnectionString="[CONN STRING HERE]" - from Azure
+docker run -it --rm -p 5000:5000 --name catalog -e MongoDbSettings__ConnectionString=$cosmosDbConnectionString -e ServiceBusSettings__ConnectionString=$serviceBusConnectionString -e ServiceSettings__MessageBroker="SERVICEBUS" --network infrastructure_default catalog:$version
 ```

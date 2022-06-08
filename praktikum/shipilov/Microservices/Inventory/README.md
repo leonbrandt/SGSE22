@@ -3,7 +3,7 @@ Inventory.Contracts libraries used by SchüCal Economy services
 
 ## Create and publish package
 ```powershell
-$version="1.0.4"
+$version="1.0.5"
 $owner="masterarbeitschueco"
 $gh_pat="[PAT HERE]"
 
@@ -21,5 +21,7 @@ docker build --secret id=GH_OWNER --secret id=GH_PAT -t inventory:$version .
 
 ## Run the docker image
 ```powershell
-docker run -it --rm -p 5004:5004 --name inventory -e MongoDbSettings__Host=mongo -e RabbitMQSettings__Host=rabbitmq --network infrastructure_default inventory:$version
+$cosmosDbConnectionString="[CONN STRING HERE]" - from Azure
+$serviceBusConnectionString="[CONN STRING HERE]" - from Azure
+docker run -it --rm -p 5004:5004 --name inventory -e MongoDbSettings__ConnectionString=$cosmosDbConnectionString -e ServiceBusSettings__ConnectionString=$serviceBusConnectionString -e ServiceSettings__MessageBroker="SERVICEBUS" --network infrastructure_default inventory:$version
 ```

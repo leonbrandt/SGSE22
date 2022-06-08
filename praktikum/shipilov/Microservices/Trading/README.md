@@ -3,7 +3,7 @@ Trading libraries used by SchüCal Economy services
 
 ## Build the docker image
 ```powershell
-$version="1.0.0"
+$version="1.0.1"
 $env:GH_OWNER="masterarbeitschueco"
 $env:GH_PAT="[PAT HERE]"
 docker build --secret id=GH_OWNER --secret id=GH_PAT -t trading:$version .
@@ -11,5 +11,7 @@ docker build --secret id=GH_OWNER --secret id=GH_PAT -t trading:$version .
 
 ## Run the docker image
 ```powershell
-docker run -it --rm -p 5006:5006 --name trading -e MongoDbSettings__Host=mongo -e RabbitMQSettings__Host=rabbitmq --network infrastructure_default trading:$version
+$cosmosDbConnectionString="[CONN STRING HERE]" - from Azure
+$serviceBusConnectionString="[CONN STRING HERE]" - from Azure
+docker run -it --rm -p 5006:5006 --name trading -e MongoDbSettings__ConnectionString=$cosmosDbConnectionString -e ServiceBusSettings__ConnectionString=$serviceBusConnectionString -e ServiceSettings__MessageBroker="SERVICEBUS" --network infrastructure_default trading:$version
 ```
