@@ -12,7 +12,7 @@ Die genauen Unterschiede, aber auch die Gemeinsamkeiten sollen untersucht werden
 
 ## Forschungsfragen
 
-Zu Beginn der Einführung von WebAssembly stellte man sich die Frage, ob es in Zukunft JavaScript weitergehend ablösen könnte. Nach einiger Erfahrung mit WebAssembly stellte sich heraus, dass WebAssembly eher als eine Ergänzung im binären Format darstellt, mit dem gewisse Aufgaben effizienter gelöst werden können. WebTransport ist eine neue Technologie, bei der die zukünftigen Anwendungsgebiete noch nicht abschließend geklärt sind. Daher sollen folgende Frage nuntersucht werden:
+Zu Beginn der Einführung von WebAssembly stellte man sich die Frage, ob es in Zukunft JavaScript weitergehend ablösen könnte. Nach einiger Erfahrung mit WebAssembly stellte sich heraus, dass WebAssembly eher als eine Ergänzung im binären Format darstellt, mit dem gewisse Aufgaben effizienter gelöst werden können. WebTransport ist eine neue Technologie, bei der die zukünftigen Anwendungsgebiete noch nicht abschließend geklärt sind. Daher sollen folgende Fragen untersucht werden:
 
 - Hat WebTransport das Potential WebSockets abzulösen oder haben die Protokolle unterschiedliche Anwendungsbereiche (wie z.B. WASM, JS)?
 - Wie unterscheiden sich WebTransport und WebSockets von einander?

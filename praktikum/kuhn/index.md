@@ -36,19 +36,19 @@
 
 ## Zeitplan
 
-| Woche|Ziel| 
-|:----------:|:---:|
-| KW 16 |Einarbeiten Design Thinking und UCD| 
-| KW 17 |Aufstellen Design Thinking Prozess| 
-| KW 18 |Design Thinking Rettungssanitäter-Problem| 
-| KW 19 |Design Thinking Spotify-Erweiterungen| 
-| KW 20 |Erstellung Mockups als Ergebnis von Design Thinking| 
-| KW 21 |Erste Feedbackrunde zu Mockups als Teil des UCD| 
-| KW 22 |Umsetzen der Mockups mit Anmerkungen in Code| 
-| KW 23 |Feedback zu Apps (UCD)| 
-| KW 24 |evtl. Einbauen der Anmerkungen| 
-| KW 25 |Puffer| 
-| KW 26 |Abgabe| 
+| Woche |                        Ziel                         | Fortschritt |
+|:-----:|:---------------------------------------------------:|:-----------:|
+| KW 16 |         Einarbeiten Design Thinking und UCD         |    Done     |
+| KW 17 |         Aufstellen Design Thinking Prozess          |    Done     |
+| KW 18 |      Design Thinking Rettungssanitäter-Problem      |    Done     | 
+| KW 19 |        Design Thinking Spotify-Erweiterungen        |    Done     |
+| KW 20 | Erstellung Mockups als Ergebnis von Design Thinking |    Done     |
+| KW 21 |   Erste Feedbackrunde zu Mockups als Teil des UCD   | In Progress |
+| KW 22 |    Umsetzen der Mockups mit Anmerkungen in Code     | In Progress |
+| KW 23 |               Feedback zu Apps (UCD)                |             |
+| KW 24 |           evtl. Einbauen der Anmerkungen            || 
+| KW 25 |                       Puffer                        |             |
+| KW 26 |                       Abgabe                        |             |
 
 ## Design Thinking
 
@@ -112,6 +112,38 @@ Folgend kommen die Ergebnisse aufgeteilt nach den verschiedenen Methoden die gen
 
 ![](assets/BrainstormingProject1.jpg)
 
+*User Journey Map*
+
+![](assets/User Journey Map.png)
+
+*Beobachten von Nutzerverhalten*
+
+NUN-Algorithmus:
+
+* Handy rausholen
+* PDF öffnen
+* Inhaltsverzeichnis nach Krankheit durchsuchen
+* zur entsprechenden Seite scrollen
+* Zoomen, um lesen zu können
+* Hin und her scrollen, durch zoomen
+* Bei Anwendung Handy immer wieder weglegen und wieder aufnehmen
+
+Ivena:
+
+* Ivena-App aufrufen
+* Bundesland aussuchen
+* PZC-Suche
+* Nach Krankheit suchen und auswählen
+* Welche Kategorie? Schwere der Krankheit
+* Alter
+* Daten müssen aktuell sein, sons kein Feedback der App
+* Wenn Leitstelle nicht ausgewählt → kein Feedback der App 
+* Auf PZC Nummer klicken
+* Anzeige freier Kliniken
+* Zoomen, um was zu erkennen
+* Informationen über mögliche Behandlungen
+
+
 #### Design Thinking Projekt 2
 
 1. Kick-off:
@@ -135,3 +167,21 @@ Folgend kommen die Ergebnisse aufgeteilt nach den verschiedenen Methoden die gen
     3. 6-3-5
 6. Prototyp erstellen: Ideen konkretisieren und daraus Prototyp erstellen Anforderungen festlegen
     1. Mockup
+
+
+#### Mockups
+
+![](assets/allRetung.png)
+
+![](assets/SpotifyAddOn.png)
+
+#### Umfragen
+
+Rettungsapp
+
+https://docs.google.com/forms/d/e/1FAIpQLSfGnZMCwoO-fw1e2gWbWeUiEw60BHiz3_q21tSUpt8xUkGnPA/viewform?usp=sf_link
+
+Spotify Erweiterung
+
+https://docs.google.com/forms/d/e/1FAIpQLSfNBwBpVjSQmY2GZ42abWYQJEzDbBtDJ5iOm_Pl33VJzWpvpA/viewform?usp=sf_link
+
