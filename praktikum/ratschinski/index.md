@@ -123,14 +123,13 @@ Die Datenübertragung in REST erfolgt in der Regel über das HTTP-Protokoll. Mit
 
 ## Zusammenfassung Datenübertragung
 
-|                      |   gRPC   |    GraphQL     |         REST         |
-| -------------------- | :------: | :------------: | :------------------: |
-| **Datenformat**      | protobuf | JSON / graphql |       Beliebig       |
-| **Dokument Stil**    |    ❌    |       ✅       | Ja bei JSON oder XML |
-| **Effizienz**        |    ✅    |       -        |          -           |
-| **Komplexität**      |   hoch   |     gering     |        mittel        |
-| **Abstraktion**      |   hoch   |     mittel     |        gering        |
-| **Language Mapping** |    ✅    |       -        |          ❌          |
+|                   |   gRPC   |    GraphQL     |         REST         |
+| ----------------- | :------: | :------------: | :------------------: |
+| **Datenformat**   | protobuf | JSON / graphql |       Beliebig       |
+| **Dokument Stil** |    ❌    |       ✅       | Ja bei JSON oder XML |
+| **Effizienz**     |    ✅    |       -        |          -           |
+| **Komplexität**   |   hoch   |     gering     |        mittel        |
+| **Abstraktion**   |   hoch   |     mittel     |        gering        |
 
 # Schnittstellenbeschreibung
 
@@ -370,82 +369,202 @@ GraphQL hat ein sehr umfangreiches Typsystem, welches sich aus den folgenden Pun
 
 6. **Interfaces**
 
-   TODO
+   Eine weitere Funktionalität von GraphQL sind Interfaces. Interfaces sind abstrakte Typen, die eine spezifische Liste an Feldern definieren. Ein Objekt, welches ein solches Interface implementiert, muss alle im Interface definierten Felder implementieren. Das führt dazu, dass verschiedene Objekte, die ein gleiches Interface implementieren, garantiert die im abstrakten Objekt definierte Liste an Feldern halten.
+
+   ```graphql
+   interface Character {
+     id: ID!
+     name: String!
+     friends: [Character]
+     appearsIn: [Episode]!
+   }
+
+   type Human implements Character {
+     id: ID!
+     name: String!
+     friends: [Character]
+     appearsIn: [Episode]!
+     starships: [Starship]
+     totalCredits: Int
+   }
+
+   type Droid implements Character {
+     id: ID!
+     name: String!
+     friends: [Character]
+     appearsIn: [Episode]!
+     primaryFunction: String
+   }
+   ```
 
 7. **Union-Typen**
 
-   TODO
+Mit Union-Typen können mehrere Objekte zu einer Gruppe hinzugefügt werden.
+
+```graphql
+union SearchResult = Human | Droid | Starship
+```
+
+In dem Beispiel werden die Objekte Human, Droid und Starship zur Gruppe SearchResult hinzugefügt und sind dann anschließend übersichtlich über einer Query abrufbar.
 
 8. **Input-Typen**
 
-   TODO
+Input-Typen funktionieren genauso wie normale Objekte, werden jedoch explizit als Input für Parameter verwendet.
+
+```graphql
+input ReviewInput {
+  stars: Int!
+  commentary: String
+}
+```
+
+Im Beispiel wird ein Objekt _ReviewInput_ mit den Feldern stars und commentary definiert. Dieser Typ kann beispielsweise in einer Mutation einem Parameter als Argument übergeben werden.
 
 ## REST
 
-Die Schnittstellenbeschreibung in REST ist komplett optional.
+Die Schnittstellenbeschreibung in REST ist komplett optional und nicht wie bei gRPC oder GraphQL vorgeschrieben. Um trotzdem eine Beschreibung für eine REST Schnittstelle erstellen zu können, gibt es eine Vielzahl von Anbietern (OpenAPI, RAML, WADL, API Blueprint, ...), die dafür Spezifikationen und Tools zur Verfügung stellen. Die OpenAPI-Spezifikation hat sich dabei als "Quasi-Standard" etabliert, Unternehmen wie Google, Microsoft oder IBM sind gemeinsam an der Weiterentwicklung der Spezifikation beteiligt <a href="#/praktikum/ratschinski/index?id=ref_11">(OpenAPI Members, 2022)</a>.
 
-- Für die Beschreibung gibt es eine Vielzahl von Tools wie RAML, WADL, API Blueprint, ...
-- **OpenAPI** hat sich hier als "Quasi-Standard" durchgesetzt.
+Mit Tools wie Swagger kann die OpenAPI-Spezifikation umgesetzt werden. Bei Swagger handelt es sich um ein Open-Source-Framework, mit dem sich Beschreibungen im JSON oder YAML-Format erstellen lassen und anschließend eine Dokumentation in z. B. HTML generieren lässt <a href="#/praktikum/ratschinski/index?id=ref_12">(Swagger UI, 2022)</a>. Dabei werden zu jedem URI-Muster die unterstützten HTTP-Methoden, eine Beschreibung und die Parameter festgelegt. In der HTML-Dokumentation kann dann die API direkt getestet und Anfragen darauf ausgeführt werden.
 
-### OpenAPI Besonderheiten
+Beispiel: YAML Beschreibung GET users/
 
-- Aufbau(Metadaten, Endpunkte, Datentypen)
+```yml
+@openapi
+path:
+/users/:
+  get:
+    summary: Lists all the users
+    tags: [Users]
+    responses:
+      "200":
+        description: The list of users.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+```
 
-- Kompatibel mit JSON Schema
+![Swagger UI](./assets/rest/rest_api_docs.png)
+Abbildung 9 - Swagger UI
 
-- Kann zur Validierung genutzt werden
+Die OpenAPI-Spezifikation bietet zudem optional die Verwendung von JSON-Schema an <a href="#/praktikum/ratschinski/index?id=ref_13">(JSON Schema, 2022)</a>. Mit JSON Schema kann das Datenformat, welches bei Anfragen angeben werden muss, genaustens beschrieben werden. Dadurch kann in der Schnittstellenbeschreibung schon eine Validierung umgesetzt werden, sodass nur gültige Anfragen, welche dem Schema entsprechen, beantwortet werden.
 
-- Datentypen
+Mit dem OpenAPI-Generator <a href="#/praktikum/ratschinski/index?id=ref_14">(OpenAPI Generator, 2022)</a>, lässt sich direkt Code für Clients und Server automatisch generieren. Der Generator bietet auch die Möglichkeit aus der Beschreibung heraus ein GraphQL Schema oder eine Protocol Buffers Datei für gRPC zu erstellen.
 
-  - Einfache
-    - integer(int32, int64)
-    - number(float, double)
-    - string(date, date-time, password, byte, binary)
-    - boolean
-  - Zusammengesetzte
-    - object
-    - array
-    - enum
+## Zusammenfassung Schnittstellenbeschreibung
 
-- Code Generator für eine Vielzahl von Programmiersprachen. ([OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator))
-
-  - Client
-  - Server
-  - Dokumentation (HTML, Markdown, Asciidoc, ...)
-  - Schema (GraphQL, protobuf, ...)
-
-- Beschreibung kann direkt in Postman geladen werden
-
-## Zusammenfassung
-
-|                                                 |         gRPC IDL         |      GraphQL Schema       |         REST(OpenAPI)          |
-| ----------------------------------------------- | :----------------------: | :-----------------------: | :----------------------------: |
-| **Vorgehen**                                    |    Beschreibung first    |    Beschreibung first     |  Beschreibung oder Code first  |
-| **Format**                                      | Domain Specific Language | Domain Specific Language  |           JSON/YAML            |
-| **Alternative Beschreibungssprachen**           |            -             |             -             | RAML, WADL, API Blueprint, ... |
-| **Nachrichtenformat**                           |         protobuf         |           JSON            |         JSON, XML, ...         |
-| **Ohne Schnittstellenbeschreibung einsetzbar?** |            ❌            |            ❌             |               ✅               |
-| **Beschreibung von Sicherheitsfeatures**        |            ❌            |            ❌             |     OAuth2, API Keys, ...      |
-| **Serveradresse angeben**                       |            ❌            |            ❌             |               ✅               |
-| **Typ-System**                                  |            ✅            |            ✅             |      ✅ <br> JSON Schema       |
-| **Min., Max., Regex.**                          |            ❌            | ❌ <br> Über Custom Types |               ✅               |
-| **Schema-Inspektion(Vorschau)**                 |            ❌            |            ✅             |               ❌               |
+|                                                 |  Protocol Buffers (gRPC)   |       GraphQL Schema       |         REST (OpenAPI)         |
+| ----------------------------------------------- | :------------------------: | :------------------------: | :----------------------------: |
+| **Ohne Schnittstellenbeschreibung einsetzbar?** |             ❌             |             ❌             |               ✅               |
+| **Format**                                      | Domänenspezifische Sprache | Domänenspezifische Sprache |           JSON/YAML            |
+| **Alternative Beschreibungssprachen**           |             -              |             -              | RAML, WADL, API Blueprint, ... |
+| **Typ-System**                                  |             ✅             |             ✅             |     ✅ <br> (JSON Schema)      |
+| **Min., Max., Regex.**                          |             ❌             | ❌ <br> Über Custom Types  |               ✅               |
+| **Codegenerierung**                             |             ✅             |             ✅             |               ✅               |
 
 # Performanz
 
-## Repository
+Ein weiteres wichtiges Kriterium, bei der Wahl der richtigen Technologie kann die Performanz bei der Datenübertragung sein.
 
-&#8594; [Github Repository Performance testing](https://github.com/Kevin-Ratschinski/rest-graphql-grpc)
+## Applikation
+
+&#8594; [GitHub Repository Performanz Test](https://github.com/Kevin-Ratschinski/rest-graphql-grpc)
+
+Für die Ermittlung der Performanz, wurde eine Beispielapplikation entwickelt, welche im oben verlinkten GitHub Repository eingesehen werden kann.
+
+Die Applikation stellt jeweils einen gRPC, GraphQL und REST-Server zur Verfügung.  
+Die verschiedenen Server greifen gemeinsam auf einen JSON-Datensatz zu, der nach dem ER-Modell in Abbildung 10 aufgebaut ist. Der Datensatz beinhaltet jeweils 1000 User(119 KB) und 1000 Messages(283 KB), die den Usern zufällig zugeordnet sind.
+
+![Datensatz ER-Modell](./assets/er_modell.png)  
+Abbildung 10 - Datensatz ER-Modell
+
+Für jede Technologie wurde zudem ein Client erstellt, der die folgenden CRUD Operation auf den Datensatz ausführen kann:
+
+- Create
+  - User erstellen
+  - Message erstellen
+- Read
+  - Informationen von allen Usern anfordern
+  - Informationen von einem User anfordern
+  - Informationen von allen Messages anfordern
+  - Informationen von einer Message anfordern
+  - Messages von einem User anfordern
+- Update
+  - User aktualisieren
+  - Message aktualisieren
+- Delete
+  - User löschen
+  - Message löschen
+
+Mit der Applikation können die verschiedenen Operationen ausgeführt und die Performanz ermittelt werden. Für die Messung der Performanz wird das in Node.js mitgelieferte Modul "perf_hooks" verwendet <a href="#/praktikum/ratschinski/index?id=ref_15">(perf_hooks, 2022)</a>. Beim perf_hooks Modul handelt es sich um eine, von Node.js bereitgestellte, Performance Measurement API, die dafür genutzt werden kann, die Laufzeit von Funktionen zu ermitteln.
 
 ## Szenario
 
-## Auswertung
+Im ersten Szenario werden verschiedene Operation auf denselben Rechner (Localhost) jeweils 100 Mal hintereinander ausgeführt und die Laufzeit bis zum Ende der letzten Funktion ermittelt.
+
+![Szenario Localhost](./assets/Aufbau_Localhost.png)  
+Abbildung 11 - Szenario Localhost
+
+---
+
+Im zweiten Szenario werden dieselben Funktionen getestet, aber diesmal wird der Server auf einem anderen Rechner im Netzwerk angesprochen, um ein etwas realistischeres Szenario zu simulieren.
+
+![Szenario WLAN](./assets/Aufbau_WLAN.png)  
+Abbildung 12 - Szenario WLAN
+
+## Ergebnisse
+
+**Localhost**
+
+| Anfrage                                    | Anzahl Anfragen |   gRPC   | GraphQL  |   REST   |
+| ------------------------------------------ | :-------------: | :------: | :------: | :------: |
+| Informationen von einem User anfordern     |       100       | 0,0515 s | 0,4275 s | 0,1129 s |
+| Informationen von allen Usern anfordern    |       100       | 0,4085 s | 1,0749 s | 0,4511 s |
+| Informationen von einer Message anfordern  |       100       | 0,0445 s | 0,2431 s | 0,1299 s |
+| Informationen von allen Messages anfordern |       100       | 0,4430 s | 0,9672 s | 0,3751 s |
+| User erstellen                             |       100       | 0,0491 s | 0,2849 s | 0,1556 s |
+
+---
+
+**WLAN**
+
+| Anfrage                                    | Anzahl Anfragen |   gRPC   | GraphQL  |   REST   |
+| ------------------------------------------ | :-------------: | :------: | :------: | :------: |
+| Informationen von einem User anfordern     |       100       | 0,0524 s | 1,4421 s | 1,0573 s |
+| Informationen von allen Usern anfordern    |       100       | 1,1232 s | 3,7832 s | 2,7122 s |
+| Informationen von einer Message anfordern  |       100       | 0,0621 s | 1,4360 s | 1,1356 s |
+| Informationen von allen Messages anfordern |       100       | 3,9012 s | 5,3508 s | 4,2654 s |
+| User erstellen                             |       100       | 0,0463 s | 1,7861 s | 1,3686 s |
 
 ### n+1 Problem
 
+TODO Anfrage und n+1 Problem beschreiben
+
+![REST Under-fetching](./assets/rest/rest_under_fetching.png)  
+Abbildung 13 - REST Under-fetching
+
+![REST Over-fetching](./assets/rest/rest_over_fetching.png)  
+Abbildung 14 - REST Over-fetching
+
+**Ergebnisse n+1**
+
+| Technologie | Anzahl Anfragen | Ergebnis Localhost | Ergebnis WLAN |
+| ----------- | --------------- | ------------------ | ------------- |
+| gRPC        | 1001            | 0,4218 s           | 0,5749 s      |
+| GraphQL     | 1               | 0,0272 s           | 0,0888 s      |
+| REST        | 1001            | 1,1205 s           | 10,8512 s     |
+
+## Zusammenfassung Performanz
+
+TODO
+
 # Skalierung
 
+TODO
+
 # Versionierbarkeit
+
+TODO
 
 ## gRPC
 
@@ -453,10 +572,10 @@ Die Schnittstellenbeschreibung in REST ist komplett optional.
 Version 1
 
 message User {
-  int64 id = 1;
-  string first_name = 2;
-  string last_name = 3;
-  string email = 4;
+int64 id = 1;
+string first_name = 2;
+string last_name = 3;
+string email = 4;
 }
 ```
 
@@ -533,9 +652,7 @@ Nachteile:
 # Literaturverzeichnis
 
 1. <span id="ref_1">gRPC: A high performance, open source universal RPC framework. (2022, 02. Juni). https://grpc.io/</span>
-<!-- (gRPC, 2022) -->
 2. <span id="ref_2">GraphQL: A query language for your API. (2022, 02. Juni). https://graphql.org/</span>
-<!-- (GraphQL, 2022) -->
 3. <span id="ref_3">Thomas Fielding, R. (2000). Architectural Styles and the Design of Network-based Software Architectures, Dissertation</span>
 <!-- (T. Fielding, 2000) -->
 4. <span id="ref_4">Tilkov, S., Eigenbrodt, M., Schreier, S. & Wolf, O. (2015). REST und HTTP (3. Aufl.). dpunkt.verlag.</span>
@@ -543,12 +660,12 @@ Nachteile:
 5. <span id="ref_5">Kress, D. (2021). GraphQL (1. Aufl.). dpunkt.verlag.</span>
 <!-- (Kress, 2015, S. xx) -->
 6. <span id="ref_6">proto Typen: Language Guide (proto3). (2022, 04. Juni). https://developers.google.com/protocol-buffers/docs/proto3</span>
-<!-- (proto Typen, 2022) -->
 7. <span id="ref_7">gRPC languages: Supported languages. (2022, 04. Juni). https://grpc.io/docs/languages/</span>
-<!-- (gRPC languages, 2022) -->
 8. <span id="ref_8">GraphQL Voyager: GRAPHQL VOYAGER. (2022, 04. Juni). https://ivangoncharov.github.io/graphql-voyager/</span>
-<!-- (GraphQL Voyager, 2022) -->
 9. <span id="ref_9">GraphQL Code Generator: Generate anything from GraphQL schema / operations! (2022, 04. Juni). https://www.graphql-code-generator.com/</span>
-<!-- (GraphQL Code Generator, 2022) -->
 10. <span id="ref_10">GraphQL-Schema: Schemas and Types (2022, 04. Juni). https://graphql.org/learn/schema/</span>
-<!-- (GraphQL-Schema, 2022) -->
+11. <span id="ref_11">OpenAPI Members: Current Members (2022, 08. Juni). https://www.openapis.org/membership/members</span>
+12. <span id="ref_12">Swagger UI: Swagger UI allows anyone (2022, 08. Juni). https://swagger.io/tools/swagger-ui/</span>
+13. <span id="ref_13">JSON Schema: JSON Schema is a vocabulary that allows you to annotate and validate JSON documents (2022, 08. Juni). https://json-schema.org/</span>
+14. <span id="ref_14">OpenAPI Generator: OpenAPI Generator Github Repository (2022, 08. Juni). https://github.com/OpenAPITools/openapi-generator</span>
+15. <span id="ref_14">perf_hooks: Node.js perf_hooks Modul (2022, 08. Juni). https://nodejs.org/api/perf_hooks.html</span>
