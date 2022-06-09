@@ -1,22 +1,5 @@
 ## Artem Shipilov
 
-# Azure Services für Microservice. Vergleich mit Google Cloud Services and Amazon Services.
-* Azure Key Vault
-* Azure Kubernetes Service
-* Azure Service Bus
-* Azure Container Registry
-
-
-
-# API-Gateway für Microservices. Vergleich von Azure, Amazon, Kong Gateway.
-* Vorteile eines API-Gateways
-* Security
-* Authentifizierung, Autorisierung und Fehlertoleranz
-* Protocol Adaptor
-
-# Aufbau eines Testprojekts mit Integration von Cloud-Service und API-Gateway
-
-
 # 1. Einführung
 
 ## Zweck dieser Studie:
@@ -124,6 +107,17 @@ Die maximalen VM-Rechenkonfigurationseinstellungen für AWS, Azure und GCP werde
 ![](img/05.png)
 
 **Tabelle 4.1: Die maximalen VM-Rechenkonfigurationseinstellungen für AWS, Azure und GCP (entnommen aus https://www.nakivo.com/blog/aws-vs-azure-vs-google-which-cloud-is-best-for-your-organization/)**
+
+# 6. Regionen und Verfügbarkeitszonen
+
+Jeder Cloud-Service-Provider ist in den wichtigsten modernen Industrieländern tätig, nämlich Europa, Nordamerika, Ost- und Südostasien und China.
+
+Eine **Region** ist ein geografisches Gebiet, in dem Rechenzentren physisch vorhanden sind. Verarbeitungszentren sind durch Netzwerke miteinander verbunden, sodass sie eine geringe Latenz haben.
+
+Eine **Availability Zone** ist ein eindeutiger Serverstandort innerhalb einer Region (z. B. Zentralaustralien, Nordaustralien, Südaustralien usw.).
+
+Nachfolgend findet eine Tabelle statt, wo die Verteilung der einzelnen Cloud-Service-Anbieter gezeigt wird.
+
 
 
 # Literaturverzeichnis
