@@ -95,7 +95,7 @@ Wenn ein Unternehmen bereits einen Vertrag mit Microsoft hat und bereits Firmenk
 
 Google ist auf dem dritten Platz, aber es ist auch gut gesponsert. Es richtet sich nicht so sehr an Firmenkunden und hat auch weniger öffentliche Dienste als Amazon. Aber Google bewegt sich in Richtung Deep Learning und in den Bereich der künstlichen Intelligenz, des maschinellen Lernens und der Datenanalyse. Daraus folgt, dass sich für Programme und Microservices, die hauptsächlich auf die Arbeit mit KI abzielen, der Einsatz von Google lohnen kann. [7]
 
-# 4.1 Vergleich virtueller Maschinen von AWS, Azure und Google
+## 4.1 Vergleich virtueller Maschinen von AWS, Azure und Google
 
 Im Jahr 2021 hat Michael Bose verichtet, dass Virtuelle Maschinen und Speicher werden von Clients am häufigsten in Cloud-Plattformen verwendet. Daraus ist ersichtlich, dass alle Cloud-Plattformen virtuelle Maschinen (VMs) ausführen können. Es ist erwähnenswert, dass nur virtuelle Microsoft Azure-Maschinen echte Prozessorkerne verwenden. Das bedeutet, wenn Sie beispielsweise eine VM mit vier Kernen erstellen möchten, erstellt nur Azure eine VM mit vier echten Kernen ohne Hyperthreading. Die VM von Amazon und Google erstellt per Hyperthreading eine VM mit zwei Kernen und vier Threads. Dies führt zu einer höheren Leistung für Azure-VM-Prozessoren als die Konkurrenz. [9] Weitere Details zu den Leistungsmerkmalen der VMs der drei Konkurrenten werden im folgenden Kapitel behandelt.
 
@@ -105,7 +105,7 @@ Die maximalen VM-Rechenkonfigurationseinstellungen für AWS, Azure und GCP werde
 
 **Tabelle 4.1: Die maximalen VM-Rechenkonfigurationseinstellungen für AWS, Azure und GCP (entnommen aus https://www.nakivo.com/blog/aws-vs-azure-vs-google-which-cloud-is-best-for-your-organization/)**
 
-# 4.2 Regionen und Verfügbarkeitszonen
+## 4.2 Regionen und Verfügbarkeitszonen
 
 Jeder Cloud-Service-Provider ist in den wichtigsten modernen Industrieländern tätig, nämlich Europa, Nordamerika, Ost- und Südostasien und China. Eine **Region** ist ein geografisches Gebiet, in dem Rechenzentren physisch vorhanden sind. Verarbeitungszentren sind durch Netzwerke miteinander verbunden, sodass sie eine geringe Latenz haben. Eine **Availability Zone** ist ein eindeutiger Serverstandort innerhalb einer Region (z. B. Zentralaustralien, Nordaustralien, Südaustralien usw.). [9]
 
@@ -116,7 +116,7 @@ Nachfolgend findet eine Tabelle statt, wo die Verteilung der einzelnen Cloud-Ser
 **Tabelle 4.2: Die Verteilung der einzelnen Cloud-Service-Anbieter (entnommen aus https://www.nakivo.com/blog/aws-vs-azure-vs-google-which-cloud-is-best-for-your-organization/)**
 
 
-# 4.3 Preise.
+## 4.3 Preise.
 
 Der Preis ist oft das entscheidende Kriterium. Ein Vergleich der Preise der drei Hauptkonkurrenten ist schwierig, da sie sich im Laufe der Zeit ändern, ständig neue Rabatte eingeführt werden und die Preise in jeder Region für jeden Cloud-Service-Anbieter stark variieren können. Der Preis hängt auch von der Konfiguration des VM-Prozessors, des Arbeitsspeichers, des Speicherplatzes und des Festplattentyps (SSD oder HDD) ab. [9]
 
@@ -136,10 +136,15 @@ Damit der Vergleich korrekt ist, müssen Sie eine Region für alle Cloud-Anbiete
 
 In diesem Beispiel ist der Preis des Servers mit der kleinsten VM-Instanz fast gleich, der Preis in der Google Cloud Platform ist geringer. Für die größte Instanz bietet AWS den niedrigsten Preis und Azure den höchsten, aber vergessen Sie nicht, dass Azure echte CPU-Kerne bietet. [9]
 
-# 4.4 Fazit
+## 4.4 Fazit
 
 Alle drei Plattformen eignen sich für die Arbeit mit einer Microservice-Architektur, aufgrund der oben beschriebenen Vorteile wurde für mein Praxisprojekt jedoch die Microsoft Azure Plattform mit einer standard_a2_v2 VM mit 4 GB RAM und 2 CPUs gewählt.
 
+# 5. Microsoft Azure-Tools.
+
+## 5.1 Azure Cosmos DB
+
+Azure Cosmos DB ist eine NoSQL-Datenbank mit Rechenzentren in vielen Ländern. Ein schneller Wechsel des Bearbeitungszentrums während der Stoßzeiten ist möglich. Es gibt eine automatische Skalierbarkeit. Eine globale Verteilung der Daten über mehrere Regionen ist möglich. Es gibt Open-Source-Code für gängige Programmiersprachen. Ein Azure Cosmos DB-Konto im Free-Tarif erhält 1.000 RU/s und 25 GB Speicherplatz kostenlos. [11]
 
 
 
@@ -154,6 +159,7 @@ Alle drei Plattformen eignen sich für die Arbeit mit einer Microservice-Archite
 * [8] - vgl. Synergy Research Group 2020, Incremental Growth in Cloud Spending Hits a New High while Amazon and Microsoft Maintain a Clear Lead. URL: https://www.srgresearch.com/articles/incremental-growth-cloud-spending-hits-new-high-while-amazon-and-microsoft-maintain-clear-lead-reno-nv-february-4-2020
 * [9] - vgl. Michael Bose, AWS vs Azure vs Google: Which Cloud Is Best for Your Organization. URL: https://www.nakivo.com/blog/aws-vs-azure-vs-google-which-cloud-is-best-for-your-organization/
 * [10] - vgl. Shanika Wickramasinghe, AWS vs Azure vs GCP: Comparing The Big 3 Cloud Platforms URL: https://www.bmc.com/blogs/aws-vs-azure-vs-google-cloud-platforms/
+* [11] - vgl. Microsoft Docs, Willkommen bei Azure Cosmos DB. URL: https://docs.microsoft.com/de-de/azure/cosmos-db/introduction
 
 # Verwendete Icons von Dritten
 * https://www.diagrams.net/
