@@ -173,7 +173,7 @@ Ivena:
 
 ![](assets/allRetung.png)
 
-![](assets/SpotifyAddOn.png)
+![](assets/SpotifyAddon.png)
 
 #### Umfragen
 
