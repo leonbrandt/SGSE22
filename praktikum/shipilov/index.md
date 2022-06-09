@@ -110,15 +110,13 @@ Die maximalen VM-Rechenkonfigurationseinstellungen für AWS, Azure und GCP werde
 
 # 6. Regionen und Verfügbarkeitszonen
 
-Jeder Cloud-Service-Provider ist in den wichtigsten modernen Industrieländern tätig, nämlich Europa, Nordamerika, Ost- und Südostasien und China.
-
-Eine **Region** ist ein geografisches Gebiet, in dem Rechenzentren physisch vorhanden sind. Verarbeitungszentren sind durch Netzwerke miteinander verbunden, sodass sie eine geringe Latenz haben.
-
-Eine **Availability Zone** ist ein eindeutiger Serverstandort innerhalb einer Region (z. B. Zentralaustralien, Nordaustralien, Südaustralien usw.).
+Jeder Cloud-Service-Provider ist in den wichtigsten modernen Industrieländern tätig, nämlich Europa, Nordamerika, Ost- und Südostasien und China. Eine **Region** ist ein geografisches Gebiet, in dem Rechenzentren physisch vorhanden sind. Verarbeitungszentren sind durch Netzwerke miteinander verbunden, sodass sie eine geringe Latenz haben. Eine **Availability Zone** ist ein eindeutiger Serverstandort innerhalb einer Region (z. B. Zentralaustralien, Nordaustralien, Südaustralien usw.).
 
 Nachfolgend findet eine Tabelle statt, wo die Verteilung der einzelnen Cloud-Service-Anbieter gezeigt wird.
 
+![](img/06.png)
 
+**Tabelle 4.2: Die Verteilung der einzelnen Cloud-Service-Anbieter (entnommen aus https://www.nakivo.com/blog/aws-vs-azure-vs-google-which-cloud-is-best-for-your-organization/)**
 
 # Literaturverzeichnis
 * [1] - vgl. Martin 2017, Kap. 15 Abschn. 1
