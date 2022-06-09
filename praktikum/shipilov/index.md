@@ -146,6 +146,23 @@ Alle drei Plattformen eignen sich für die Arbeit mit einer Microservice-Archite
 
 Azure Cosmos DB ist eine NoSQL-Datenbank mit Rechenzentren in vielen Ländern. Ein schneller Wechsel des Bearbeitungszentrums während der Stoßzeiten ist möglich. Es gibt eine automatische Skalierbarkeit. Eine globale Verteilung der Daten über mehrere Regionen ist möglich. Es gibt Open-Source-Code für gängige Programmiersprachen. Ein Azure Cosmos DB-Konto im Free-Tarif erhält 1.000 RU/s und 25 GB Speicherplatz kostenlos. [11]
 
+* Die Vorteile von **SQL** sind Datenintegrität, Strukturiertheit.
+* Die Vorteile von **NoSQL** sind Datenverarbeitungsgeschwindigkeit, Skalierbarkeit, verteilte Systeme.
+
+**Starke Seiten von NoSQL:**
+Fähigkeit, große Mengen unstrukturierter Informationen zu speichern. NoSQL hat keine Beschränkungen hinsichtlich der Typen gespeicherter Daten, und Sie können bei Bedarf neue Datentypen hinzufügen.
+NoSQL-Datenbanken sind skalierbarer. Obwohl die Skalierung auch in SQL-Datenbanken unterstützt wird, erfordert sie viel mehr Personal- und Hardwareressourcen.
+
+Die Rechenleistung ist begrenzt. Und der Preis für mehrere einfache Server ist geringer als für einen Hochleistungsserver. Durch die horizontale Skalierung (mehrere unabhängige Maschinen werden miteinander verbunden und jede von ihnen verarbeitet ihren eigenen Teil der Anfragen) können Sie die Kapazität des Clusters erhöhen, indem Sie einen neuen Server hinzufügen.
+
+**Vorleile von Azure Cosmos DB:**
+ 1. Azure Cosmos DB bietet 99,999 % SLA sowohl für die Lese- als auch die Schreibverfügbarkeit.
+ 2. Große Geschwindigkeit in jeder Größenordnung
+ 3. Vereinfachte Anwendungsentwicklung. Beschleunigte Entwicklung durch Open-Source-APIs, mehreren SDKs, schemalose Daten und Analysen ohne ETL für operative Daten.
+ 4. End-to-End-Datenbankverwaltung.
+ 5. Günstige Preise.
+ 6. Azure Synapse Link für Azure Cosmos DB ist ein cloudbasiertes HTAP-Feature (Hybrid Transactional and Analytical Processing). Dies bietet Betriebsdatenanalysen in Azure Cosmos DB nahezu in Echtzeit und eine einfache Integration zwischen Azure Cosmos DB und Azure Synapse Analytics. [11]
+
 
 
 # Literaturverzeichnis
