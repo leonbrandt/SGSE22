@@ -122,6 +122,17 @@ Der Preis ist oft das entscheidende Kriterium. Ein Vergleich der Preise der drei
 
 Preislich unterscheiden sich alle drei Plattformen kaum. In der IT-Community besteht jedoch Einigkeit darüber, dass Microsoft Azure die niedrigsten Preise bietet (wobei daran zu denken ist, dass nur virtuelle Microsoft Azure-Maschinen echte Prozessorkerne verwenden [Abschnitt 4.1]). Noch vorteilhafter ist es, wenn ein Kunde, der bereits Microsoft-Produkte (Windows, Active Directory, MS SQL etc.) nutzt, auf Azure umsteigt. [10]
 
+Damit der Vergleich korrekt ist, müssen Sie eine Region für alle Cloud-Anbieter auswählen. Es ist auch erforderlich, dieselbe VM-Konfiguration auszuwählen. Es ist zu beachten, dass keine 100 % identische VM-Konfiguration erhalten werden kann, sodass einige Werte abweichen werden. Wir betrachten 2 Beispiele. [9]
+
+**Beispiel 1.**
+
+![](img/07.png)
+
+**Tabelle 4.3: Arten von virtuelle Maschinen (entnommen aus https://www.nakivo.com/blog/aws-vs-azure-vs-google-which-cloud-is-best-for-your-organization/)**
+
+![](img/08.png)
+
+**Tabelle 4.4: On-Demand-Preise in USD (entnommen aus https://www.nakivo.com/blog/aws-vs-azure-vs-google-which-cloud-is-best-for-your-organization/)**
 
 
 # Literaturverzeichnis
@@ -132,9 +143,9 @@ Preislich unterscheiden sich alle drei Plattformen kaum. In der IT-Community bes
 * [5] - vgl. Wolff E., Microservices – Grundlagen flexibler Softwarearchitekturen, Kindle-Position 1524 ff.
 * [6] - vgl. Wolff E., Microservices – Grundlagen flexibler Softwarearchitekturen, Kindle-Position 2084 ff. und Newman S, Building microservices – Designing finegrained systems, Chapter 3
 * [7] - vgl. Cynthia Harvey 2021, AWS vs. Azure vs. Google Cloud: 2022 Cloud Platform Comparison. URL: https://www.datamation.com/cloud/aws-vs-azure-vs-google-cloud/
-* [8] - Synergy Research Group 2020, Incremental Growth in Cloud Spending Hits a New High while Amazon and Microsoft Maintain a Clear Lead. URL: https://www.srgresearch.com/articles/incremental-growth-cloud-spending-hits-new-high-while-amazon-and-microsoft-maintain-clear-lead-reno-nv-february-4-2020
-* [9] - Michael Bose, AWS vs Azure vs Google: Which Cloud Is Best for Your Organization. URL: https://www.nakivo.com/blog/aws-vs-azure-vs-google-which-cloud-is-best-for-your-organization/
-* [10] - Shanika Wickramasinghe, AWS vs Azure vs GCP: Comparing The Big 3 Cloud Platforms URL: https://www.bmc.com/blogs/aws-vs-azure-vs-google-cloud-platforms/
+* [8] - vgl. Synergy Research Group 2020, Incremental Growth in Cloud Spending Hits a New High while Amazon and Microsoft Maintain a Clear Lead. URL: https://www.srgresearch.com/articles/incremental-growth-cloud-spending-hits-new-high-while-amazon-and-microsoft-maintain-clear-lead-reno-nv-february-4-2020
+* [9] - vgl. Michael Bose, AWS vs Azure vs Google: Which Cloud Is Best for Your Organization. URL: https://www.nakivo.com/blog/aws-vs-azure-vs-google-which-cloud-is-best-for-your-organization/
+* [10] - vgl. Shanika Wickramasinghe, AWS vs Azure vs GCP: Comparing The Big 3 Cloud Platforms URL: https://www.bmc.com/blogs/aws-vs-azure-vs-google-cloud-platforms/
 
 # Verwendete Icons von Dritten
 * https://www.diagrams.net/
