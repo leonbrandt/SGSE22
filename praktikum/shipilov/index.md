@@ -1,22 +1,5 @@
 ## Artem Shipilov
 
-# Azure Services für Microservice. Vergleich mit Google Cloud Services and Amazon Services.
-* Azure Key Vault
-* Azure Kubernetes Service
-* Azure Service Bus
-* Azure Container Registry
-
-
-
-# API-Gateway für Microservices. Vergleich von Azure, Amazon, Kong Gateway.
-* Vorteile eines API-Gateways
-* Security
-* Authentifizierung, Autorisierung und Fehlertoleranz
-* Protocol Adaptor
-
-# Aufbau eines Testprojekts mit Integration von Cloud-Service und API-Gateway
-
-
 # 1. Einführung
 
 ## Zweck dieser Studie:
@@ -95,27 +78,24 @@ Dieser Magic Quadrant von Gartner zeigt die Dominanz der drei wichtigsten Cloud-
 
 **Abbildung 4.2: Magic Quadrant für Cloud-Infrastruktur und Plattformservices (entnommen aus https://www.datamation.com/cloud/aws-vs-azure-vs-google-cloud/)**
 
-## 4.1 Amazon Web Services (2006)
+## Amazon Web Services (2006)
 
 Mit einem umfangreichen Satz von Tools, der weiterhin exponentiell wächst, sind die Fähigkeiten von Amazon unübertroffen. Die Kostenstruktur kann jedoch verwirrend sein, und der Fokus auf die Public Cloud anstelle einer Hybrid- oder Private Cloud bedeutet, dass die Interaktion mit Ihrem Rechenzentrum nicht die oberste Priorität von AWS ist. [7]
 
 Amazon zeigt ein sehr umfangreiches Tool-Set, das von Jahr zu Jahr exponentiell wächst. AWS hat jedoch ein sehr komplexes Kostensystem und konzentriert sich auch auf die Public Cloud (anstelle von Hybrid oder Private). Das bedeutet, dass AWS nicht gut für die Interaktion mit dem Rechenzentrum geeignet ist.
 Es ist erwähnenswert, dass die Arbeit mit einer Hybrid Cloud und mit einem Rechenzentrum ein wichtiger Bestandteil der Microservice-Architektur ist.
 
-
-
-## 4.2 Microsoft Azure (2010)
+## Microsoft Azure (2010)
 
 Microsoft Azure ist der größte Konkurrent für AWS. Dieses Unternehmen verfügt über umfangreiche Erfahrung in der Betreuung von Firmenkunden und unterstützt auch Hybrid- und Private Clouds, arbeitet also auch mit dem Rechenzentrum zusammen. [7]
 
 Wenn ein Unternehmen bereits einen Vertrag mit Microsoft hat und bereits Firmenkunde ist, kann Microsoft auch eine ausführlichere Beratung und Rabatte für die Migration zu Microsoft Azure anbieten.
 
-
-## 4.3 Google Cloud Platform (2011)
+## Google Cloud Platform (2011)
 
 Google ist auf dem dritten Platz, aber es ist auch gut gesponsert. Es richtet sich nicht so sehr an Firmenkunden und hat auch weniger öffentliche Dienste als Amazon. Aber Google bewegt sich in Richtung Deep Learning und in den Bereich der künstlichen Intelligenz, des maschinellen Lernens und der Datenanalyse. Daraus folgt, dass sich für Programme und Microservices, die hauptsächlich auf die Arbeit mit KI abzielen, der Einsatz von Google lohnen kann. [7]
 
-# 5. Vergleich virtueller Maschinen von AWS, Azure und Google
+## 4.1 Vergleich virtueller Maschinen von AWS, Azure und Google
 
 Im Jahr 2021 hat Michael Bose verichtet, dass Virtuelle Maschinen und Speicher werden von Clients am häufigsten in Cloud-Plattformen verwendet. Daraus ist ersichtlich, dass alle Cloud-Plattformen virtuelle Maschinen (VMs) ausführen können. Es ist erwähnenswert, dass nur virtuelle Microsoft Azure-Maschinen echte Prozessorkerne verwenden. Das bedeutet, wenn Sie beispielsweise eine VM mit vier Kernen erstellen möchten, erstellt nur Azure eine VM mit vier echten Kernen ohne Hyperthreading. Die VM von Amazon und Google erstellt per Hyperthreading eine VM mit zwei Kernen und vier Threads. Dies führt zu einer höheren Leistung für Azure-VM-Prozessoren als die Konkurrenz. [9] Weitere Details zu den Leistungsmerkmalen der VMs der drei Konkurrenten werden im folgenden Kapitel behandelt.
 
@@ -124,6 +104,65 @@ Die maximalen VM-Rechenkonfigurationseinstellungen für AWS, Azure und GCP werde
 ![](img/05.png)
 
 **Tabelle 4.1: Die maximalen VM-Rechenkonfigurationseinstellungen für AWS, Azure und GCP (entnommen aus https://www.nakivo.com/blog/aws-vs-azure-vs-google-which-cloud-is-best-for-your-organization/)**
+
+## 4.2 Regionen und Verfügbarkeitszonen
+
+Jeder Cloud-Service-Provider ist in den wichtigsten modernen Industrieländern tätig, nämlich Europa, Nordamerika, Ost- und Südostasien und China. Eine **Region** ist ein geografisches Gebiet, in dem Rechenzentren physisch vorhanden sind. Verarbeitungszentren sind durch Netzwerke miteinander verbunden, sodass sie eine geringe Latenz haben. Eine **Availability Zone** ist ein eindeutiger Serverstandort innerhalb einer Region (z. B. Zentralaustralien, Nordaustralien, Südaustralien usw.). [9]
+
+Nachfolgend findet eine Tabelle statt, wo die Verteilung der einzelnen Cloud-Service-Anbieter gezeigt wird.
+
+![](img/06.png)
+
+**Tabelle 4.2: Die Verteilung der einzelnen Cloud-Service-Anbieter (entnommen aus https://www.nakivo.com/blog/aws-vs-azure-vs-google-which-cloud-is-best-for-your-organization/)**
+
+
+## 4.3 Preise.
+
+Der Preis ist oft das entscheidende Kriterium. Ein Vergleich der Preise der drei Hauptkonkurrenten ist schwierig, da sie sich im Laufe der Zeit ändern, ständig neue Rabatte eingeführt werden und die Preise in jeder Region für jeden Cloud-Service-Anbieter stark variieren können. Der Preis hängt auch von der Konfiguration des VM-Prozessors, des Arbeitsspeichers, des Speicherplatzes und des Festplattentyps (SSD oder HDD) ab. [9]
+
+Preislich unterscheiden sich alle drei Plattformen kaum. In der IT-Community besteht jedoch Einigkeit darüber, dass Microsoft Azure die niedrigsten Preise bietet (wobei daran zu denken ist, dass nur virtuelle Microsoft Azure-Maschinen echte Prozessorkerne verwenden [Abschnitt 4.1]). Noch vorteilhafter ist es, wenn ein Kunde, der bereits Microsoft-Produkte (Windows, Active Directory, MS SQL etc.) nutzt, auf Azure umsteigt. [10]
+
+Damit der Vergleich korrekt ist, müssen Sie eine Region für alle Cloud-Anbieter auswählen. Es ist auch erforderlich, dieselbe VM-Konfiguration auszuwählen. Es ist zu beachten, dass keine 100 % identische VM-Konfiguration erhalten werden kann, sodass einige Werte abweichen werden. Wir betrachten 2 Beispiele. [9]
+
+**Beispiel 1.**
+
+![](img/07.png)
+
+**Tabelle 4.3: Arten von virtuelle Maschinen (entnommen aus https://www.nakivo.com/blog/aws-vs-azure-vs-google-which-cloud-is-best-for-your-organization/)**
+
+![](img/08.png)
+
+**Tabelle 4.4: On-Demand-Preise (entnommen aus https://www.nakivo.com/blog/aws-vs-azure-vs-google-which-cloud-is-best-for-your-organization/)**
+
+In diesem Beispiel ist der Preis des Servers mit der kleinsten VM-Instanz fast gleich, der Preis in der Google Cloud Platform ist geringer. Für die größte Instanz bietet AWS den niedrigsten Preis und Azure den höchsten, aber vergessen Sie nicht, dass Azure echte CPU-Kerne bietet. [9]
+
+## 4.4 Fazit
+
+Alle drei Plattformen eignen sich für die Arbeit mit einer Microservice-Architektur, aufgrund der oben beschriebenen Vorteile wurde für mein Praxisprojekt jedoch die Microsoft Azure Plattform mit einer standard_a2_v2 VM mit 4 GB RAM und 2 CPUs gewählt.
+
+# 5. Microsoft Azure-Tools.
+
+## 5.1 Azure Cosmos DB
+
+Azure Cosmos DB ist eine NoSQL-Datenbank mit Rechenzentren in vielen Ländern. Ein schneller Wechsel des Bearbeitungszentrums während der Stoßzeiten ist möglich. Es gibt eine automatische Skalierbarkeit. Eine globale Verteilung der Daten über mehrere Regionen ist möglich. Es gibt Open-Source-Code für gängige Programmiersprachen. Ein Azure Cosmos DB-Konto im Free-Tarif erhält 1.000 RU/s und 25 GB Speicherplatz kostenlos. [11]
+
+* Die Vorteile von **SQL** sind Datenintegrität, Strukturiertheit.
+* Die Vorteile von **NoSQL** sind Datenverarbeitungsgeschwindigkeit, Skalierbarkeit, verteilte Systeme.
+
+**Starke Seiten von NoSQL:**
+Fähigkeit, große Mengen unstrukturierter Informationen zu speichern. NoSQL hat keine Beschränkungen hinsichtlich der Typen gespeicherter Daten, und Sie können bei Bedarf neue Datentypen hinzufügen.
+NoSQL-Datenbanken sind skalierbarer. Obwohl die Skalierung auch in SQL-Datenbanken unterstützt wird, erfordert sie viel mehr Personal- und Hardwareressourcen.
+
+Die Rechenleistung ist begrenzt. Und der Preis für mehrere einfache Server ist geringer als für einen Hochleistungsserver. Durch die horizontale Skalierung (mehrere unabhängige Maschinen werden miteinander verbunden und jede von ihnen verarbeitet ihren eigenen Teil der Anfragen) können Sie die Kapazität des Clusters erhöhen, indem Sie einen neuen Server hinzufügen.
+
+**Vorleile von Azure Cosmos DB:**
+ 1. Azure Cosmos DB bietet 99,999 % SLA sowohl für die Lese- als auch die Schreibverfügbarkeit.
+ 2. Große Geschwindigkeit in jeder Größenordnung
+ 3. Vereinfachte Anwendungsentwicklung. Beschleunigte Entwicklung durch Open-Source-APIs, mehreren SDKs, schemalose Daten und Analysen ohne ETL für operative Daten.
+ 4. End-to-End-Datenbankverwaltung.
+ 5. Günstige Preise.
+ 6. Azure Synapse Link für Azure Cosmos DB ist ein cloudbasiertes HTAP-Feature (Hybrid Transactional and Analytical Processing). Dies bietet Betriebsdatenanalysen in Azure Cosmos DB nahezu in Echtzeit und eine einfache Integration zwischen Azure Cosmos DB und Azure Synapse Analytics. [11]
+
 
 
 # Literaturverzeichnis
@@ -134,8 +173,10 @@ Die maximalen VM-Rechenkonfigurationseinstellungen für AWS, Azure und GCP werde
 * [5] - vgl. Wolff E., Microservices – Grundlagen flexibler Softwarearchitekturen, Kindle-Position 1524 ff.
 * [6] - vgl. Wolff E., Microservices – Grundlagen flexibler Softwarearchitekturen, Kindle-Position 2084 ff. und Newman S, Building microservices – Designing finegrained systems, Chapter 3
 * [7] - vgl. Cynthia Harvey 2021, AWS vs. Azure vs. Google Cloud: 2022 Cloud Platform Comparison. URL: https://www.datamation.com/cloud/aws-vs-azure-vs-google-cloud/
-* [8] - Synergy Research Group 2020, Incremental Growth in Cloud Spending Hits a New High while Amazon and Microsoft Maintain a Clear Lead. URL: https://www.srgresearch.com/articles/incremental-growth-cloud-spending-hits-new-high-while-amazon-and-microsoft-maintain-clear-lead-reno-nv-february-4-2020
-* [9] - Michael Bose, AWS vs Azure vs Google: Which Cloud Is Best for Your Organization. URL: https://www.nakivo.com/blog/aws-vs-azure-vs-google-which-cloud-is-best-for-your-organization/
+* [8] - vgl. Synergy Research Group 2020, Incremental Growth in Cloud Spending Hits a New High while Amazon and Microsoft Maintain a Clear Lead. URL: https://www.srgresearch.com/articles/incremental-growth-cloud-spending-hits-new-high-while-amazon-and-microsoft-maintain-clear-lead-reno-nv-february-4-2020
+* [9] - vgl. Michael Bose, AWS vs Azure vs Google: Which Cloud Is Best for Your Organization. URL: https://www.nakivo.com/blog/aws-vs-azure-vs-google-which-cloud-is-best-for-your-organization/
+* [10] - vgl. Shanika Wickramasinghe, AWS vs Azure vs GCP: Comparing The Big 3 Cloud Platforms URL: https://www.bmc.com/blogs/aws-vs-azure-vs-google-cloud-platforms/
+* [11] - vgl. Microsoft Docs, Willkommen bei Azure Cosmos DB. URL: https://docs.microsoft.com/de-de/azure/cosmos-db/introduction
 
 # Verwendete Icons von Dritten
 * https://www.diagrams.net/
