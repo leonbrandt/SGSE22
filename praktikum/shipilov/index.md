@@ -132,7 +132,13 @@ Damit der Vergleich korrekt ist, müssen Sie eine Region für alle Cloud-Anbiete
 
 ![](img/08.png)
 
-**Tabelle 4.4: On-Demand-Preise in USD (entnommen aus https://www.nakivo.com/blog/aws-vs-azure-vs-google-which-cloud-is-best-for-your-organization/)**
+**Tabelle 4.4: On-Demand-Preise (entnommen aus https://www.nakivo.com/blog/aws-vs-azure-vs-google-which-cloud-is-best-for-your-organization/)**
+
+In diesem Beispiel ist der Preis des Servers mit der kleinsten VM-Instanz fast gleich, der Preis in der Google Cloud Platform ist geringer. Für die größte Instanz bietet AWS den niedrigsten Preis und Azure den höchsten, aber vergessen Sie nicht, dass Azure echte CPU-Kerne bietet. [9]
+
+**Weitere Kriterien.**
+
+
 
 
 # Literaturverzeichnis
