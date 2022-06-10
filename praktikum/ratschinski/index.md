@@ -470,9 +470,9 @@ Ein weiteres wichtiges Kriterium, bei der Wahl der richtigen Technologie kann di
 
 &#8594; [GitHub Repository Performanz Test](https://github.com/Kevin-Ratschinski/rest-graphql-grpc)
 
-Für die Ermittlung der Performanz, wurde eine Beispielapplikation entwickelt, welche im oben verlinkten GitHub Repository eingesehen werden kann.
+Für die Ermittlung der Performanz, wurde eine Node.js Applikation entwickelt, welche im oben verlinkten GitHub Repository eingesehen werden kann.
 
-Die Applikation stellt jeweils einen gRPC, GraphQL und REST-Server zur Verfügung.  
+Die Applikation stellt jeweils einen gRPC, GraphQL und zwei REST-Server zur Verfügung.  
 Die verschiedenen Server greifen gemeinsam auf einen JSON-Datensatz zu, der nach dem ER-Modell in Abbildung 10 aufgebaut ist. Der Datensatz beinhaltet jeweils 1000 User(119 KB) und 1000 Messages(283 KB), die den Usern zufällig zugeordnet sind.
 
 ![Datensatz ER-Modell](./assets/er_modell.png)  
@@ -498,6 +498,10 @@ Für jede Technologie wurde zudem ein Client erstellt, der die folgenden CRUD Op
 
 Mit der Applikation können die verschiedenen Operationen ausgeführt und die Performanz ermittelt werden. Für die Messung der Performanz wird das in Node.js mitgelieferte Modul "perf_hooks" verwendet <a href="#/praktikum/ratschinski/index?id=ref_15">(perf_hooks, 2022)</a>. Beim perf_hooks Modul handelt es sich um eine, von Node.js bereitgestellte, Performance Measurement API, die dafür genutzt werden kann, die Laufzeit von Funktionen zu ermitteln.
 
+Für die Kommunikation zwischen Client und Server verwenden alle drei Technologien das HTTP-Protokoll. Hier muss aber zwischen den Versionen **HTTP/1.1** und **HTTP/2** unterschieden werden. gRPC benutzt das HTTP-Protokoll in Version 2, der Apollo-GraphQL-Server unterstützt zum jetzigen Zeitpunkt nur die Version 1.1 und für REST wurden zwei verschiedene Webserver erstellt, wobei einer HTTP/1.1 Anfragen und der andere HTTP/2 Anfragen entgegennimmt.
+
+Der Unterschied zwischen HTTP/1.1 und HTTP/2 liegt in der Verarbeitung der Daten. HTTP/1.1 sendet und lädt die Daten nacheinander. Im Gegensatz dazu kann HTTP/2, mehrere Datenströme gleichzeitig senden, was zu einer Verbesserung der Performanz führen kann.
+
 ## Szenario
 
 Im ersten Szenario werden verschiedene Operation auf denselben Rechner (Localhost) jeweils 100 Mal hintereinander ausgeführt und die Laufzeit bis zum Ende der letzten Funktion ermittelt.
@@ -516,43 +520,30 @@ Abbildung 12 - Szenario WLAN
 
 **Localhost**
 
-| Anfrage                                    | Anzahl Anfragen |   gRPC   | GraphQL  |   REST   |
-| ------------------------------------------ | :-------------: | :------: | :------: | :------: |
-| Informationen von einem User anfordern     |       100       | 0,0515 s | 0,4275 s | 0,1129 s |
-| Informationen von allen Usern anfordern    |       100       | 0,4085 s | 1,0749 s | 0,4511 s |
-| Informationen von einer Message anfordern  |       100       | 0,0445 s | 0,2431 s | 0,1299 s |
-| Informationen von allen Messages anfordern |       100       | 0,4430 s | 0,9672 s | 0,3751 s |
-| User erstellen                             |       100       | 0,0491 s | 0,2849 s | 0,1556 s |
+![Ergebnisse Localhost](./assets/localhost_result.png)  
+Abbildung 13 - Ergebnisse Localhost
 
 ---
 
 **WLAN**
 
-| Anfrage                                    | Anzahl Anfragen |   gRPC   | GraphQL  |   REST   |
-| ------------------------------------------ | :-------------: | :------: | :------: | :------: |
-| Informationen von einem User anfordern     |       100       | 0,0524 s | 1,4421 s | 1,0573 s |
-| Informationen von allen Usern anfordern    |       100       | 1,1232 s | 3,7832 s | 2,7122 s |
-| Informationen von einer Message anfordern  |       100       | 0,0621 s | 1,4360 s | 1,1356 s |
-| Informationen von allen Messages anfordern |       100       | 3,9012 s | 5,3508 s | 4,2654 s |
-| User erstellen                             |       100       | 0,0463 s | 1,7861 s | 1,3686 s |
+![Ergebnisse WLAN](./assets/wlan_result.png)  
+Abbildung 14 - Ergebnisse WLAN
 
 ### n+1 Problem
 
 TODO Anfrage und n+1 Problem beschreiben
 
 ![REST Under-fetching](./assets/rest/rest_under_fetching.png)  
-Abbildung 13 - REST Under-fetching
+Abbildung 15 - REST Under-fetching
 
 ![REST Over-fetching](./assets/rest/rest_over_fetching.png)  
-Abbildung 14 - REST Over-fetching
+Abbildung 16 - REST Over-fetching
 
 **Ergebnisse n+1**
 
-| Technologie | Anzahl Anfragen | Ergebnis Localhost | Ergebnis WLAN |
-| ----------- | --------------- | ------------------ | ------------- |
-| gRPC        | 1001            | 0,4218 s           | 0,5749 s      |
-| GraphQL     | 1               | 0,0272 s           | 0,0888 s      |
-| REST        | 1001            | 1,1205 s           | 10,8512 s     |
+![Ergebnisse n+1](./assets/n1_result.png)  
+Abbildung 17 - Ergebnisse n+1
 
 ## Zusammenfassung Performanz
 
@@ -668,4 +659,4 @@ Nachteile:
 12. <span id="ref_12">Swagger UI: Swagger UI allows anyone (2022, 08. Juni). https://swagger.io/tools/swagger-ui/</span>
 13. <span id="ref_13">JSON Schema: JSON Schema is a vocabulary that allows you to annotate and validate JSON documents (2022, 08. Juni). https://json-schema.org/</span>
 14. <span id="ref_14">OpenAPI Generator: OpenAPI Generator Github Repository (2022, 08. Juni). https://github.com/OpenAPITools/openapi-generator</span>
-15. <span id="ref_14">perf_hooks: Node.js perf_hooks Modul (2022, 08. Juni). https://nodejs.org/api/perf_hooks.html</span>
+15. <span id="ref_15">perf_hooks: Node.js perf_hooks Modul (2022, 08. Juni). https://nodejs.org/api/perf_hooks.html</span>
