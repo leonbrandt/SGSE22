@@ -58,6 +58,22 @@ Um die genannten Messungen durchführen zu können, soll sowohl eine kleine Fron
 
 ### Messung der Geschwindigkeit
 
+### Messung der Round Trip Time
+
+Für diesen Test wurde bei jedem Testdurchlauf immer nur **ein** Client verbunden, um Übertragung von kleinen Nachrichten. Dabei wurde eine Nachricht an den Server geschickt und gewartet, bis der Client eine Antwort erhielt. Der ersten Zeile der Ergebnisse kann entnommen werden, dass hier ein Datenpaket an den Server geschickt wurde und auch nur für dieses Paket auf die Antwort gewartet wurde. Daher kann man für diese Zeile von der tatsächlichen Latenz (Round Trip Time) sprechen. Das Prinzip 100 mal wiederholt, um verlässliche Ergebnisse zu erhalten.
+
+In den darauffolgenden Zeilen wurde gemessen, wie lange es dauert *X* Datenpakete zu versenden und für jedes eine Antwort zu erhalten. Auch hier wurde das Prinzip wurde jede Zeile 100 mal wiederholt. Die Ergebnisse sind in Millisekunden.
+
+|        | WebTransport | WebSocket |
+| ------ | ------------ | --------- |
+| 1      | 11           | 12        |
+| 10     | 31           | 117       |
+| 100    | 115          | 1094      |
+| 1.000  | 487          | 11341     |
+| 10.000 | 2280         | 114392    |
+
+WebTransport kann hier auf Client-Seite einfach parallele Aufrufe starten, während das bei WebSockets nicht ohne weiteres so auf dem selben Channel möglich ist. Deswegen sieht man bei WebSockets als Ergebnis immer nahezu die Anzahl der Datenpakete mit der ursprünglichen Latenz multipliziert. Bei WebTransport kann festgestellt werden, dass dieses Protokoll auch bei vielen gleichzeitigen Anfragen langsamer wird, auf Grund der parallelen Abfragen zeitlich deutlich vor den WebSockets liegt.
+
 ### Maximaler Austausch von Nachrichten pro Sekunde
 
 ### Austausch großer Datenmengen
