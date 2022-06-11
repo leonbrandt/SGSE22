@@ -462,6 +462,98 @@ Mit dem OpenAPI-Generator <a href="#/praktikum/ratschinski/index?id=ref_14">(Ope
 | **Min., Max., Regex.**                          |             ❌             | ❌ <br> Über Custom Types  |               ✅               |
 | **Codegenerierung**                             |             ✅             |             ✅             |               ✅               |
 
+# Versionierbarkeit
+
+Durch die unterschiedlichen Konzepte der Schnittstellenbeschreibungen bieten auch alle Technologien verschiedene Konzepte der Versionierung der Schnittstelle.
+
+## gRPC
+
+Die Versionierung in gRPC erfolgt über Änderungen in der Schnittstellenbeschreibung.
+
+```protobuf
+Version 1
+
+message User {
+int64 id = 1;
+string first_name = 2;
+string last_name = 3;
+string email = 4;
+}
+```
+
+```protobuf
+Version 2
+
+message User {
+  int64 id = 1;
+  string first_name = 2;
+  string last_name = 3;
+  string password = 5;
+}
+```
+
+Es lassen sich einfach neue Felder hinzufügen. In dem oben gezeigten Beispiel wird das Feld "email" entfernt und das Feld "password" hinzugefügt. Solange folgende Regeln eingehalten werden, bleiben die Versionen untereinander kompatibel:
+
+- Die Feldnummern dürfen niemals geändert werden.
+  - Im Beispiel muss das Feld "id" immer die Feldnummer 1 behalten.
+- Feldnummern dürfen gelöscht, aber später nicht wieder verwendet werden.
+  - Im Beispiel wird das Feld "email" gelöscht, d. h. die Feldnummer 4 darf später nicht wieder verwendet werden.
+- Namen dürfen geändert werden, da intern nur die Feldnummern verwendet werden.
+- Die Typen dürfen vertauscht werden, so lange kein **Overflow** entsteht.
+
+Werden diese Regeln befolgt, entsteht eine gute Kompatibilität zwischen den verschiedenen Schnittstellenversionen. Nachrichten lassen sich so sehr einfach von Version 1 auf Version 2 mappen. Dies wird vom protobuf Framework automatisch gemacht.
+
+## GraphQL
+
+Eine Versionierung in GraphQL ist nicht vorgesehen. Man könnte zwar den kompletten Endpunkt mit einer Versionsnummer versehen und so unterschiedliche Versionen der API unterstützen. Doch GraphQL empfiehlt durch die Möglichkeit zur effektiven API-Weiterentwicklung einen Versionslosen Ansatz <a href="#/praktikum/ratschinski/index?id=ref_16">(GraphQL Versioning, 2022)</a>.  
+In GraphQL lassen sich einfach neue Felder hinzufügen, ohne dass das zu einem Bruch der API führt. Ein Client wird so niemals ein neues Feld sehen, wenn er nicht explizit seine Query angepasst hat. Das Hinzufügen neuer Felder wird also bei GraphQL in keinem Fall die Funktionalität eines Clients beeinflussen.
+
+Felder sollten, bevor sie gelöscht werden, zuerst als _deprecated_ gekennzeichnet werden. Anschließend kann die Benutzung dieser Felder überwacht werden und erst wenn kein Client diese Felder mehr benutzt, können diese sicher entfernt werden. _Deprecated_-Felder werden in der Dokumentation von GraphQL nicht mehr angezeigt und stehen damit neuen Clients nicht mehr zur Verfügung.
+
+Die erste Version der GraphQL-API sollte dementsprechend nur die Felder zur Verfügung stellen, die von den Clients auch wirklich benötigt werden und sich anschließend Schritt für Schritt mit den neuen Anforderungen weiterentwickeln.
+
+## REST
+
+Bei REST kann die Versionierung mit unterschiedlichen Methoden gelöst werden. Die verschiedenen Methoden können einzeln angewandt werden oder sich dabei ergänzen <a href="#/praktikum/ratschinski/index?id=ref_4">(Tilkov et al., 2015, S. 187 - 189)</a>.
+
+#### Zusätzliche Ressourcen
+
+Bei neuen Anforderungen können zusätzliche Ressourcen angelegt werden, welche danach vom Client angesprochen werden können. Dies entspricht dem GraphQL-Ansatz, dass die API nicht versioniert wird und bei neuen Anforderungen immer neue Ressourcen zur Verfügung gestellt werden. Der Ansatz klingt trivial, bietet aber in sehr vielen Fällen eine einfache und sehr gut funktionierende Lösung.
+
+#### Erweiterbare Datenformate
+
+Viele Datenformate, wie XML oder JSON, lassen sich einfach erweitern. Durch die Erweiterung können leicht neue Informationen zum Client geliefert werden. Der Nachteil an der Methode ist, dass das Datenformat im Vorfeld festgelegt werden muss und bei manchen Clients ein Over-fetching entsteht, dadurch dass nicht alle angeforderten Daten benötigt werden.
+
+#### Versionsabhängige Repräsentation
+
+Die nächste Methode basiert auf einem HTTP-spezifischen Ansatz. Durch die Möglichkeit, sowohl im Request- als auch bei Response-Nachrichten im Content-Type-Header einen Medientyp zu deklarieren, kann ein und dieselbe Ressource mehr als eine Version eines Formats unterstützen.
+
+```
+Version 1:
+Accept: application/vnd.example.v1+json
+
+Version 2:
+Accept: application/vnd.example.v2+json
+```
+
+#### URI Versionierung
+
+Die URI Versionierung ist der einfachste Ansatz, hier wird bei jeder neuen Version eine neue URI generiert, über welche die API angesprochen werden kann. Diese Information muss nach Änderung der API an den Client weitergereicht werden, der anschließend auf die neue URI darauf zugreifen kann.
+
+```
+Version 1:
+http://api.example.com/v1
+
+Version 2:
+http://api.example.com/v2
+```
+
+## Zusammenfassung Versionierbarkeit
+
+|                   |                      gRPC                      |            GraphQL            |            REST            |
+| ----------------- | :--------------------------------------------: | :---------------------------: | :------------------------: |
+| **Versionierung** | Über Änderungen der Schnittstellenbeschreibung | Möglich aber nicht vorgesehen | Vielzahl von Möglichkeiten |
+
 # Performanz
 
 Ein weiteres wichtiges Kriterium, bei der Wahl der richtigen Technologie kann die Performanz bei der Datenübertragung sein.
@@ -502,7 +594,7 @@ Für die Kommunikation zwischen Client und Server verwenden alle drei Technologi
 
 Der Unterschied zwischen HTTP/1.1 und HTTP/2 liegt in der Verarbeitung der Daten. HTTP/1.1 sendet und lädt die Daten nacheinander. Im Gegensatz dazu kann HTTP/2, mehrere Datenströme gleichzeitig senden, was zu einer Verbesserung der Performanz führen kann.
 
-## Szenario
+## Szenarien
 
 Im ersten Szenario werden verschiedene Operation auf denselben Rechner (Localhost) jeweils 100 Mal hintereinander ausgeführt und die Laufzeit bis zum Ende der letzten Funktion ermittelt.
 
@@ -511,7 +603,7 @@ Abbildung 11 - Szenario Localhost
 
 ---
 
-Im zweiten Szenario werden dieselben Funktionen getestet, aber diesmal wird der Server auf einem anderen Rechner im Netzwerk angesprochen, um ein etwas realistischeres Szenario zu simulieren.
+Im zweiten Szenario werden dieselben Anfragen getestet, aber diesmal wird der Server auf einem anderen Rechner im Netzwerk angesprochen, um ein etwas realistischeres Szenario zu simulieren.
 
 ![Szenario WLAN](./assets/Aufbau_WLAN.png)  
 Abbildung 12 - Szenario WLAN
@@ -532,65 +624,32 @@ Abbildung 14 - Ergebnisse WLAN
 
 ### n+1 Problem
 
-TODO Anfrage und n+1 Problem beschreiben
+Beim n+1 Problem, benötigen bestimmte Abfragen eine hohe Anzahl von Requests. Möchte man zum Beispiel alle Messages, den die verschiedenen User zugeordnet sind ermitteln, müsste man als zuerst alle User beziehen und anschließend die einzelnen Messages der User abfragen. Das wären bei 1000 Usern genau 1001 Abfragen. Hierbei kommt es zum sogenannten Under-Fetching (Abbildung 15), beim Under-fetching liefert die Schnittstelle zu wenige Informationen, sodass erneute Aufrufe nötig sind. Das führt durch die hohe Anzahl an Aufrufen zu einem Verlust der Performanz.
 
 ![REST Under-fetching](./assets/rest/rest_under_fetching.png)  
 Abbildung 15 - REST Under-fetching
+
+Eine Möglichkeit wäre bei einem Aufruf immer alle Informationen mitzuliefern, dies würde aber zum sogenannten Over-fetching (Abbildung 16) führen, beim Over-fetching entsteht eine höhere Netzwerkauslastung dadurch, dass viele Informationen mitgeliefert werden, welche der Client mitunter nicht benötigt.
 
 ![REST Over-fetching](./assets/rest/rest_over_fetching.png)  
 Abbildung 16 - REST Over-fetching
 
 **Ergebnisse n+1**
 
+Die Ergebnisse in Abbildung 17 zeigen einen Vorteil, welcher bei der Benutzung von GraphQL entsteht. Um die Messages der User zu beziehen, ist in GraphQL nur eine Abfrage nötig, welche alle geforderten Daten zurückliefert. Bei gRPC und REST hingegen, sind jeweils 1001 Abfragen nötig.
+
 ![Ergebnisse n+1](./assets/n1_result.png)  
 Abbildung 17 - Ergebnisse n+1
 
 ## Zusammenfassung Performanz
 
-TODO
-
-# Skalierung
-
-TODO
-
-# Versionierbarkeit
-
-TODO
-
-## gRPC
-
-```protobuf
-Version 1
-
-message User {
-int64 id = 1;
-string first_name = 2;
-string last_name = 3;
-string email = 4;
-}
-```
-
-```protobuf
-Version 2
-
-message User {
-  int64 id = 1;
-  string first_name = 2;
-  string last_name = 3;
-  string password = 5;
-}
-```
-
-Feldnummern ändern sich nicht. (siehe string email = 4; / string password = 5;)  
-Nachrichten lassen sich so sehr einfach von Version 1 auf Version 2 mappen. Dies wird vom Framework automatisch gemacht.
-
-Dadurch dass die Feldnummern in den proto Dateien nicht verändert werden dürfen entsteht eine gute Kompatibilität zwischen den verschiedenen Schnittstellenversionen.
-
-- Typen dürfen vertauscht werden solange kein **Overflow** entsteht
-- Namen dürfen geändert werden, da intern nur die Feldnummern benutzt werden
-- **Wichtig** Feldnummern dürfen gelöscht, aber später nicht wieder verwendet werden
+Die Ergebnisse zeigen, dass es zwischen gRPC und REST keine großen Unterschiede in der Performanz gibt, vorausgesetzt REST wird zusammen mit dem HTTP/2 Protokoll verwendet. gRPC zeigt nur einen minimalen Vorteil in der Performanz. Somit eignen sich beide Technologien sehr gut, um Daten performant auszutauschen.  
+Wird REST zusammen mit HTTP/1.1 verwendet, zeigen sich in den Ergebnissen deutlich längere Laufzeiten für die verschiedenen Abfragen.  
+GraphQL hat bei den Ergebnissen die längsten Laufzeiten. Die Stärke von GraphQL zeigt sich erst dann, wenn es um gezielte Abfragen geht. Dadurch dass die benötigten Daten in den Queries festgelegt werden, kommt es bei GraphQL zu keinem Over- oder Under-fetching. Besonders in Fällen wo ein n+1 Problem auftreten würde, zeigen sich die Vorteile von GraphQL, durch die gezielte Abfrage wird die Performanz verbessert und die Netzwerkauslastung reduziert.
 
 # Security
+
+TODO Security
 
 # "Vorläufiges" Fazit
 
@@ -660,3 +719,4 @@ Nachteile:
 13. <span id="ref_13">JSON Schema: JSON Schema is a vocabulary that allows you to annotate and validate JSON documents (2022, 08. Juni). https://json-schema.org/</span>
 14. <span id="ref_14">OpenAPI Generator: OpenAPI Generator Github Repository (2022, 08. Juni). https://github.com/OpenAPITools/openapi-generator</span>
 15. <span id="ref_15">perf_hooks: Node.js perf_hooks Modul (2022, 08. Juni). https://nodejs.org/api/perf_hooks.html</span>
+16. <span id="ref_16">GraphQL Versioning: GraphQL Best Practices (2022, 11. Juni). https://graphql.org/learn/best-practices/</span>
