@@ -43,10 +43,10 @@
 | KW 18 |      Design Thinking Rettungssanitäter-Problem      |    Done     | 
 | KW 19 |        Design Thinking Spotify-Erweiterungen        |    Done     |
 | KW 20 | Erstellung Mockups als Ergebnis von Design Thinking |    Done     |
-| KW 21 |   Erste Feedbackrunde zu Mockups als Teil des UCD   | In Progress |
+| KW 21 |   Erste Feedbackrunde zu Mockups als Teil des UCD   |    Done     |
 | KW 22 |    Umsetzen der Mockups mit Anmerkungen in Code     | In Progress |
 | KW 23 |               Feedback zu Apps (UCD)                |             |
-| KW 24 |           evtl. Einbauen der Anmerkungen            || 
+| KW 24 |           evtl. Einbauen der Anmerkungen            |             | 
 | KW 25 |                       Puffer                        |             |
 | KW 26 |                       Abgabe                        |             |
 
@@ -173,7 +173,7 @@ Ivena:
 
 ![](assets/allRetung.png)
 
-![](assets/SpotifyAddOn.png)
+![](assets/SpotifyAddon.png)
 
 #### Umfragen
 
@@ -185,3 +185,8 @@ Spotify Erweiterung
 
 https://docs.google.com/forms/d/e/1FAIpQLSfNBwBpVjSQmY2GZ42abWYQJEzDbBtDJ5iOm_Pl33VJzWpvpA/viewform?usp=sf_link
 
+#### Demos
+
+Rettungsapp
+
+https://rettungsapp.web.app/
