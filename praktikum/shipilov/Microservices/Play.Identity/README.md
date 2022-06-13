@@ -61,3 +61,14 @@ kubectl create secret generic identity-secrets --from-literal=cosmosdb-connectio
 
 kubectl get secrets -n $namespace
 ```
+
+## Create the Kubernetes pod
+```powershell
+
+kubectl apply -f .\kubernetes\identity.yaml -n $namespace
+
+kubectl get pods -n $namespace
+kubectl describe pod [name] -n $namespace
+kubectl logs [name] -n $namespace
+kubectl get services -n $namespace
+```
