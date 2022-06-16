@@ -262,10 +262,10 @@ TBD
 
 TBD
 
-[1]: Sander Mertens. https://github.com/SanderMertens/ecs-faq.
-[2]: libGDX. https://libgdx.com/
-[3]: Laurent Gomila. https://www.sfml-dev.org/
-[4]: rewrking. https://github.com/rewrking/sfml-vscode-boilerplate
-[5]: libGDX. https://github.com/libgdx/ashley.
-[6]: David Colson. https://www.david-colson.com/2020/02/09/making-a-simple-ecs.html
-[7]: skypjack. https://github.com/skypjack/entt
+[1]: Sander Mertens. https://github.com/SanderMertens/ecs-faq  
+[2]: libGDX. https://libgdx.com/  
+[3]: Laurent Gomila. https://www.sfml-dev.org/  
+[4]: rewrking. https://github.com/rewrking/sfml-vscode-boilerplate  
+[5]: libGDX. https://github.com/libgdx/ashley  
+[6]: David Colson. https://www.david-colson.com/2020/02/09/making-a-simple-ecs.html  
+[7]: skypjack. https://github.com/skypjack/entt  
