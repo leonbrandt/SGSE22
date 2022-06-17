@@ -3,9 +3,74 @@ import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 
 import Header from '../components/Header';
 import Colors from '../constants/colors';
+import { performance } from "perf_hooks";
 
 const Benchmark = props => {
-    const [date, setDate] = useState();
+    bench = () => {
+        let result = "";
+
+            let start = performance.now();
+            let temp = 1;
+            for (let i = 0; i < 200000000; i++)
+            {
+                temp += temp;
+            }
+            let stop =  performance.now();
+            result += "Integer Addition Score (lower is better): " + (stop - start).toString() + "\n";
+
+            start = performance.now();
+            let tempd = 1.0;
+            for (let d = 0.0; d < 200000000.0; d++)
+            {
+                temp += temp;
+            }
+            stop =  performance.now();
+            result += "Double Addition Score (lower is better): " + (stop - start).toString() + "\n";
+
+            start = performance.now();
+            for (let d = 0.0; d < 100000000.0; d++)
+            {
+                tempd = Math.Log(d);
+            }
+            stop =  performance.now();
+            result += "Logarithm Score (lower is better): " + (stop - start).toString() + "\n";
+
+            start = performance.now();
+            temp = 1;
+            for (let i = 0; i < 200000000; i++)
+            {
+                temp *= i;
+            }
+            stop =  performance.now();
+            result += "Integer Multiplication Score (lower is better): " + (stop - start).toString() + "\n";
+
+            start = performance.now();
+            temp = Number.MAX_VALUE;
+            for (let i = 1; i < 200000000; i++)
+            {
+                let dummy = temp / i;
+            }
+            stop =  performance.now();
+            result += "Integer Division Score (lower is better): " + (stop - start).toString() + "\n";
+
+            start = performance.now();
+            tempd = 1.0;
+            for (let d = 0.0; d < 200000000.0; d++)
+            {
+                tempd *= d;
+            }
+            stop =  performance.now();
+            result += "Double Multiplication Score (lower is better): " + (stop - start).toString() + "\n";
+
+            start = performance.now();
+            tempd = Number.MAX_VALUE;
+            for (let d = 1.0; d < 200000000.0; d++)
+            {
+                let dummy = tempd / d;
+            }
+            stop =  performance.now();
+            result += "Double Division Score (lower is better): " + (stop - start).toString() + "\n";
+    }
     return (
         <View>
             <Header title="Benchmark" />
@@ -15,7 +80,7 @@ const Benchmark = props => {
                 </View>
                 <View style={{ ...styles.rowContainer, ...styles.button }}>
                     <View style={{ width: '100%', padding: 5 }}>
-                        <TouchableOpacity style={{ alignSelf: 'center', backgroundColor: Colors.primary, width: '100%', borderRadius: 10, elevation: 5  }} onPress={() => { onSumbitPress }}>
+                        <TouchableOpacity style={{ alignSelf: 'center', backgroundColor: Colors.primary, width: '100%', borderRadius: 10, elevation: 5  }} onPress={() => { this.bench }}>
                             <Text style={{
                                 alignSelf: 'center',
                                 color: 'black',
