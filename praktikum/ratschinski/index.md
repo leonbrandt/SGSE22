@@ -13,7 +13,7 @@
 Abbildung 1 - gRPC Paradigma
 (Quelle: gRPC Logo https://grpc.io/)
 
-gRPC ist ein von Google entwickeltes Open-Source-Framework für Remote Procedure Calls (RPC). Remote Procedure Calls sind entfernte Funktionsaufrufe, die über verschiedene Systeme hinweg ausgeführt werden können. Laut des Unternehmens ist es ein hochperformantes und leichtgewichtiges Kommunikationsprotokoll, das über allen bekannten Betriebssystemen hinweg funktioniert .gRPC basiert auf dem HTTP/2 Standard und benutzt zum Versenden der Daten das "Protocol Buffers" Datenformat, welches ebenfalls von Google entwickelt wird. Viele bekannte Unternehmen wie Netflix, Square oder Cisco stützen ihre interne Kommunikation auf das API-Framework. <a href="#/praktikum/ratschinski/index?id=ref_1">(gRPC, 2022)</a>
+gRPC ist ein von Google entwickeltes Open-Source-Framework für Remote Procedure Calls (RPC). Remote Procedure Calls sind entfernte Funktionsaufrufe, die über verschiedene Systeme hinweg ausgeführt werden können. Laut des Unternehmens ist es ein hoch performantes und leichtgewichtiges Kommunikationsprotokoll, das über allen bekannten Betriebssystemen hinweg funktioniert. gRPC basiert auf dem HTTP/2 Standard und benutzt zum Versenden der Daten das "Protocol Buffers" Datenformat, welches ebenfalls von Google entwickelt wird. Viele bekannte Unternehmen wie Netflix, Square oder Cisco stützen ihre interne Kommunikation auf das API-Framework. <a href="#/praktikum/ratschinski/index?id=ref_1">(gRPC, 2022)</a>
 
 ## GraphQL
 
@@ -95,7 +95,7 @@ Content-Type: application/graphlql
 
 ---
 
-Die Antworten der Queries und Mutationen, erfolgen immer im JSON-Format. Die Daten werden im Payload des Response zurückgesendet und können sowohl die Antworten oder auch Fehlermeldungen enthalten.
+Die Antworten der Queries und Mutationen, erfolgen immer im JSON-Format. Die Daten werden im Payload der Antwort zurückgesendet und können sowohl die Antworten oder auch Fehlermeldungen enthalten.
 
 HTTP/1.1 200 Ok  
 Content-Type: application/json
@@ -123,14 +123,13 @@ Die Datenübertragung in REST erfolgt in der Regel über das HTTP-Protokoll. Mit
 
 ## Zusammenfassung Datenübertragung
 
-|                      |   gRPC   |    GraphQL     |         REST         |
-| -------------------- | :------: | :------------: | :------------------: |
-| **Datenformat**      | protobuf | JSON / graphql |       Beliebig       |
-| **Dokument Stil**    |    ❌    |       ✅       | Ja bei JSON oder XML |
-| **Effizienz**        |    ✅    |       -        |          -           |
-| **Komplexität**      |   hoch   |     gering     |        mittel        |
-| **Abstraktion**      |   hoch   |     mittel     |        gering        |
-| **Language Mapping** |    ✅    |       -        |          ❌          |
+|                   |   gRPC   |    GraphQL     |         REST         |
+| ----------------- | :------: | :------------: | :------------------: |
+| **Datenformat**   | protobuf | JSON / graphql |       Beliebig       |
+| **Dokument Stil** |    ❌    |       ✅       | Ja bei JSON oder XML |
+| **Effizienz**     |    ✅    |       -        |          -           |
+| **Komplexität**   |   hoch   |     gering     |        mittel        |
+| **Abstraktion**   |   hoch   |     mittel     |        gering        |
 
 # Schnittstellenbeschreibung
 
@@ -146,7 +145,7 @@ Ein wichtiger Aspekt bei der Auswahl der Technologie ist die Schnittstellenbesch
    - Aus einer Schnittstellenbeschreibung lässt sich oft direkt eine Dokumentation in z. B. einem HTML-Format erstellen
 5. Validierung von Nachrichten
    - In einer Schnittstellenbeschreibung wird festgelegt, welche Datentypen und Nachrichtenformate von der Schnittstelle akzeptiert werden.
-6. Vergleich von API Versionen (Kompatibilität)
+6. Vergleich von API-Versionen (Kompatibilität)
    - Mithilfe einer Beschreibung lässt sich die aktuelle Version eine API festhalten. So lassen sich auch verschiedene Versionen einer API einfach auf Kompatibilität testen.
 7. Qualitätssicherung
    - Schnittstellenbeschreibungen lassen sich automatisiert überprüfen, somit lässt sich direkt feststellen, ob zuvor festgelegte Qualitätsregeln eingehalten wurden.
@@ -238,7 +237,7 @@ Abbildung 8 - protobuf Codegenerierung
 
 Die Schnittstelle wird in GraphQL über das GraphQL-Schema beschrieben. Das GraphQL-Schema ist eine Definition der aufrufbaren Daten, ihres Typs, ihrer Relationen sowie deren möglichen Zugriffe zur Manipulation. Das Schema legt die genaue Datenstruktur fest, gegen die eingehende Anfragen validiert werden. Entspricht eine Anfrage dem Schema, wird sie weiter verarbeitet. Das erfolgt, indem GraphQL die Anfrage zerteilt und einzelnen _Resolvern_ übergibt, welche die Anfrage auflösen und ein Ergebnis kumuliert zurücksenden.
 
-Das GraphQL-Schema liefert alle möglichen Informationen über eine Schnittstelle. Aus dem Schema lässt sich erkennen, welche Werte abgefragt werden können und welche Werte sich manipulieren lassen. Durch den Graphenansatz kann ein Schema auch einfach als Graph visualisiert werden <a href="#/praktikum/ratschinski/index?id=ref_8">(GraphQL Voyager, 2022)</a>.
+Das GraphQL-Schema liefert alle möglichen Informationen über eine Schnittstelle. Aus dem Schema lässt sich erkennen, welche Werte abgefragt werden können und welche Werte sich manipulieren lassen. Durch den Graphen basierten Ansatz kann ein Schema auch einfach als Graph visualisiert werden <a href="#/praktikum/ratschinski/index?id=ref_8">(GraphQL Voyager, 2022)</a>.
 
 Wie bereits in gRPC, lässt sich auch in GraphQL über die Schnittstellenbeschreibung direkt Code für den Client oder Server generieren <a href="#/praktikum/ratschinski/index?id=ref_9">(GraphQL Code Generator, 2022)</a>.
 
@@ -303,7 +302,7 @@ GraphQL hat ein sehr umfangreiches Typsystem, welches sich aus den folgenden Pun
    }
    ```
 
-   In dem Beispiel kann bei einer Query der Parameter unit mitgeben werden, das den Wert des Feldes in einer gewünschten Währung zurückgibt (default = EUR).
+   In dem Beispiel kann bei einer Query der Parameter unit mitgeben werden, dass den Wert des Feldes in einer gewünschten Währung zurückgibt (default = EUR).
 
 3. **Skalar-Typen**
 
@@ -370,93 +369,115 @@ GraphQL hat ein sehr umfangreiches Typsystem, welches sich aus den folgenden Pun
 
 6. **Interfaces**
 
-   TODO
+   Eine weitere Funktionalität von GraphQL sind Interfaces. Interfaces sind abstrakte Typen, die eine spezifische Liste an Feldern definieren. Ein Objekt, welches ein solches Interface implementiert, muss alle im Interface definierten Felder implementieren. Das führt dazu, dass verschiedene Objekte, die ein gleiches Interface implementieren, garantiert die im abstrakten Objekt definierte Liste an Feldern halten.
+
+   ```graphql
+   interface Character {
+     id: ID!
+     name: String!
+     friends: [Character]
+     appearsIn: [Episode]!
+   }
+
+   type Human implements Character {
+     id: ID!
+     name: String!
+     friends: [Character]
+     appearsIn: [Episode]!
+     starships: [Starship]
+     totalCredits: Int
+   }
+
+   type Droid implements Character {
+     id: ID!
+     name: String!
+     friends: [Character]
+     appearsIn: [Episode]!
+     primaryFunction: String
+   }
+   ```
 
 7. **Union-Typen**
 
-   TODO
+Mit Union-Typen können mehrere Objekte zu einer Gruppe hinzugefügt werden.
+
+```graphql
+union SearchResult = Human | Droid | Starship
+```
+
+In dem Beispiel werden die Objekte Human, Droid und Starship zur Gruppe SearchResult hinzugefügt und sind dann anschließend übersichtlich über einer Query abrufbar.
 
 8. **Input-Typen**
 
-   TODO
+Input-Typen funktionieren genauso wie normale Objekte, werden jedoch explizit als Input für Parameter verwendet.
+
+```graphql
+input ReviewInput {
+  stars: Int!
+  commentary: String
+}
+```
+
+Im Beispiel wird ein Objekt _ReviewInput_ mit den Feldern stars und commentary definiert. Dieser Typ kann beispielsweise in einer Mutation einem Parameter als Argument übergeben werden.
 
 ## REST
 
-Die Schnittstellenbeschreibung in REST ist komplett optional.
+Die Schnittstellenbeschreibung in REST ist komplett optional und nicht wie bei gRPC oder GraphQL vorgeschrieben. Um trotzdem eine Beschreibung für eine REST Schnittstelle erstellen zu können, gibt es eine Vielzahl von Anbietern (OpenAPI, RAML, WADL, API Blueprint, ...), die dafür Spezifikationen und Tools zur Verfügung stellen. Die OpenAPI-Spezifikation hat sich dabei als "Quasi-Standard" etabliert, Unternehmen wie Google, Microsoft oder IBM sind gemeinsam an der Weiterentwicklung der Spezifikation beteiligt <a href="#/praktikum/ratschinski/index?id=ref_11">(OpenAPI Members, 2022)</a>.
 
-- Für die Beschreibung gibt es eine Vielzahl von Tools wie RAML, WADL, API Blueprint, ...
-- **OpenAPI** hat sich hier als "Quasi-Standard" durchgesetzt.
+Mit Tools wie Swagger kann die OpenAPI-Spezifikation umgesetzt werden. Bei Swagger handelt es sich um ein Open-Source-Framework, mit dem sich Beschreibungen im JSON oder YAML-Format erstellen lassen und anschließend eine Dokumentation in z. B. HTML generieren lässt <a href="#/praktikum/ratschinski/index?id=ref_12">(Swagger UI, 2022)</a>. Dabei werden zu jedem URI-Muster die unterstützten HTTP-Methoden, eine Beschreibung und die Parameter festgelegt. In der HTML-Dokumentation kann dann die API direkt getestet und Anfragen darauf ausgeführt werden.
 
-### OpenAPI Besonderheiten
+Beispiel: YAML Beschreibung GET users/
 
-- Aufbau(Metadaten, Endpunkte, Datentypen)
+```yml
+@openapi
+path:
+/users/:
+  get:
+    summary: Lists all the users
+    tags: [Users]
+    responses:
+      "200":
+        description: The list of users.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+```
 
-- Kompatibel mit JSON Schema
+![Swagger UI](./assets/rest/rest_api_docs.png)
+Abbildung 9 - Swagger UI
 
-- Kann zur Validierung genutzt werden
+Die OpenAPI-Spezifikation bietet zudem optional die Verwendung von JSON-Schema an <a href="#/praktikum/ratschinski/index?id=ref_13">(JSON Schema, 2022)</a>. Mit JSON Schema kann das Datenformat, welches bei Anfragen angeben werden muss, genaustens beschrieben werden. Dadurch kann in der Schnittstellenbeschreibung schon eine Validierung umgesetzt werden, sodass nur gültige Anfragen, welche dem Schema entsprechen, beantwortet werden.
 
-- Datentypen
+Mit dem OpenAPI-Generator <a href="#/praktikum/ratschinski/index?id=ref_14">(OpenAPI Generator, 2022)</a>, lässt sich direkt Code für Clients und Server automatisch generieren. Der Generator bietet auch die Möglichkeit aus der Beschreibung heraus ein GraphQL Schema oder eine Protocol Buffers Datei für gRPC zu erstellen.
 
-  - Einfache
-    - integer(int32, int64)
-    - number(float, double)
-    - string(date, date-time, password, byte, binary)
-    - boolean
-  - Zusammengesetzte
-    - object
-    - array
-    - enum
+## Zusammenfassung Schnittstellenbeschreibung
 
-- Code Generator für eine Vielzahl von Programmiersprachen. ([OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator))
-
-  - Client
-  - Server
-  - Dokumentation (HTML, Markdown, Asciidoc, ...)
-  - Schema (GraphQL, protobuf, ...)
-
-- Beschreibung kann direkt in Postman geladen werden
-
-## Zusammenfassung
-
-|                                                 |         gRPC IDL         |      GraphQL Schema       |         REST(OpenAPI)          |
-| ----------------------------------------------- | :----------------------: | :-----------------------: | :----------------------------: |
-| **Vorgehen**                                    |    Beschreibung first    |    Beschreibung first     |  Beschreibung oder Code first  |
-| **Format**                                      | Domain Specific Language | Domain Specific Language  |           JSON/YAML            |
-| **Alternative Beschreibungssprachen**           |            -             |             -             | RAML, WADL, API Blueprint, ... |
-| **Nachrichtenformat**                           |         protobuf         |           JSON            |         JSON, XML, ...         |
-| **Ohne Schnittstellenbeschreibung einsetzbar?** |            ❌            |            ❌             |               ✅               |
-| **Beschreibung von Sicherheitsfeatures**        |            ❌            |            ❌             |     OAuth2, API Keys, ...      |
-| **Serveradresse angeben**                       |            ❌            |            ❌             |               ✅               |
-| **Typ-System**                                  |            ✅            |            ✅             |      ✅ <br> JSON Schema       |
-| **Min., Max., Regex.**                          |            ❌            | ❌ <br> Über Custom Types |               ✅               |
-| **Schema-Inspektion(Vorschau)**                 |            ❌            |            ✅             |               ❌               |
-
-# Performanz
-
-## Repository
-
-&#8594; [Github Repository Performance testing](https://github.com/Kevin-Ratschinski/rest-graphql-grpc)
-
-## Szenario
-
-## Auswertung
-
-### n+1 Problem
-
-# Skalierung
+|                                                 |  Protocol Buffers (gRPC)   |       GraphQL Schema       |         REST (OpenAPI)         |
+| ----------------------------------------------- | :------------------------: | :------------------------: | :----------------------------: |
+| **Ohne Schnittstellenbeschreibung einsetzbar?** |             ❌             |             ❌             |               ✅               |
+| **Format**                                      | Domänenspezifische Sprache | Domänenspezifische Sprache |           JSON/YAML            |
+| **Alternative Beschreibungssprachen**           |             -              |             -              | RAML, WADL, API Blueprint, ... |
+| **Typ-System**                                  |             ✅             |             ✅             |     ✅ <br> (JSON Schema)      |
+| **Min., Max., Regex.**                          |             ❌             | ❌ <br> Über Custom Types  |               ✅               |
+| **Codegenerierung**                             |             ✅             |             ✅             |               ✅               |
 
 # Versionierbarkeit
 
+Durch die unterschiedlichen Konzepte der Schnittstellenbeschreibungen bieten auch alle Technologien verschiedene Konzepte der Versionierung der Schnittstelle.
+
 ## gRPC
+
+Die Versionierung in gRPC erfolgt über Änderungen in der Schnittstellenbeschreibung.
 
 ```protobuf
 Version 1
 
 message User {
-  int64 id = 1;
-  string first_name = 2;
-  string last_name = 3;
-  string email = 4;
+int64 id = 1;
+string first_name = 2;
+string last_name = 3;
+string email = 4;
 }
 ```
 
@@ -471,84 +492,246 @@ message User {
 }
 ```
 
-Feldnummern ändern sich nicht. (siehe string email = 4; / string password = 5;)  
-Nachrichten lassen sich so sehr einfach von Version 1 auf Version 2 mappen. Dies wird vom Framework automatisch gemacht.
+Es lassen sich einfach neue Felder hinzufügen. In dem oben gezeigten Beispiel wird das Feld "email" entfernt und das Feld "password" hinzugefügt. Solange folgende Regeln eingehalten werden, bleiben die Versionen untereinander kompatibel:
 
-Dadurch dass die Feldnummern in den proto Dateien nicht verändert werden dürfen entsteht eine gute Kompatibilität zwischen den verschiedenen Schnittstellenversionen.
+- Die Feldnummern dürfen niemals geändert werden.
+  - Im Beispiel muss das Feld "id" immer die Feldnummer 1 behalten.
+- Feldnummern dürfen gelöscht, aber später nicht wieder verwendet werden.
+  - Im Beispiel wird das Feld "email" gelöscht, d. h. die Feldnummer 4 darf später nicht wieder verwendet werden.
+- Namen dürfen geändert werden, da intern nur die Feldnummern verwendet werden.
+- Die Typen dürfen vertauscht werden, solange kein **Overflow** entsteht.
 
-- Typen dürfen vertauscht werden solange kein **Overflow** entsteht
-- Namen dürfen geändert werden, da intern nur die Feldnummern benutzt werden
-- **Wichtig** Feldnummern dürfen gelöscht, aber später nicht wieder verwendet werden
-
-# Security
-
-# "Vorläufiges" Fazit
-
-TODO Fazit ausarbeiten
-
-- Einsatzgebiete für die verschiedenen Technologien ermitteln.  
-   Was eignet sich am besten für API`s, Microservices, Webanwendungen und Mobile Apps?
-
-## gRPC
-
-Vorteile:
-
-- Effizient
-- Serialisierung übernimmt protobuf
-- Type - System
-- Language Mapping (Java, c++, Go, ...)
-- Versionierbarkeit
-
-Nachteile:
-
-- Komplex
-- Lesen geht nur mit Formatbeschreibung
+Werden diese Regeln befolgt, entsteht eine gute Kompatibilität zwischen den verschiedenen Schnittstellenversionen. Nachrichten lassen sich so sehr einfach von Version 1 auf Version 2 mappen. Dies wird vom protobuf Framework automatisch gemacht.
 
 ## GraphQL
 
-Vorteile:
+Eine Versionierung in GraphQL ist nicht vorgesehen. Man könnte zwar den kompletten Endpunkt mit einer Versionsnummer versehen und so unterschiedliche Versionen der API unterstützen. Doch GraphQL empfiehlt durch die Möglichkeit zur effektiven API-Weiterentwicklung einen versionslosen Ansatz <a href="#/praktikum/ratschinski/index?id=ref_16">(GraphQL Versioning, 2022)</a>.  
+In GraphQL lassen sich einfach neue Felder hinzufügen, ohne dass das zu einem Bruch der API führt. Ein Client wird so niemals ein neues Feld sehen, wenn er nicht explizit seine Query angepasst hat. Das Hinzufügen neuer Felder wird also bei GraphQL in keinem Fall die Funktionalität eines Clients beeinflussen.
 
-- Format ist vorgegeben
-- Type - System
-- ausführliche Schnittstellenbeschreibung
-- Eignet sich gut für Microservices
+Felder sollten, bevor sie gelöscht werden, zuerst als _deprecated_ gekennzeichnet werden. Anschließend kann die Benutzung dieser Felder überwacht werden und erst wenn kein Client diese Felder mehr benutzt, können diese sicher entfernt werden. _Deprecated_-Felder werden in der Dokumentation von GraphQL nicht mehr angezeigt und stehen damit neuen Clients nicht mehr zur Verfügung.
 
-Nachteile:
-
-- Nur JSON wird zurückgegeben
-- Fehlende Unterstützung für binäre Daten
+Die erste Version der GraphQL-API sollte dementsprechend nur die Felder zur Verfügung stellen, die von den Clients auch wirklich benötigt werden und sich anschließend Schritt für Schritt mit den neuen Anforderungen weiterentwickeln.
 
 ## REST
 
-Vorteile:
+Bei REST kann die Versionierung mit unterschiedlichen Methoden gelöst werden. Die verschiedenen Methoden können einzeln angewandt werden oder sich dabei ergänzen <a href="#/praktikum/ratschinski/index?id=ref_4">(Tilkov et al., 2015, S. 187 - 189)</a>.
 
-- Beliebige Formate
-- Gut geeignet für binäre Inhalte
+**Zusätzliche Ressourcen**
 
-Nachteile:
+Bei neuen Anforderungen können zusätzliche Ressourcen angelegt werden, welche danach vom Client angesprochen werden können. Dies entspricht dem GraphQL-Ansatz, dass die API nicht versioniert wird und bei neuen Anforderungen immer neue Ressourcen zur Verfügung gestellt werden. Der Ansatz klingt trivial, bietet aber in sehr vielen Fällen eine einfache und sehr gut funktionierende Lösung.
 
-- Kein vorgegebenes Format
-- Kein "Standard-" Mapping auf Objekte
+**Erweiterbare Datenformate**
+
+Viele Datenformate, wie XML oder JSON, lassen sich einfach erweitern. Durch die Erweiterung können leicht neue Informationen zum Client geliefert werden. Der Nachteil an der Methode ist, dass das Datenformat im Vorfeld festgelegt werden muss und bei manchen Clients ein Over-fetching entsteht, dadurch dass nicht alle angeforderten Daten benötigt werden.
+
+**Versionsabhängige Repräsentation**
+
+Die nächste Methode basiert auf einem HTTP-spezifischen Ansatz. Durch die Möglichkeit, sowohl im Request- als auch bei Response-Nachrichten im Content-Type-Header einen Medientyp zu deklarieren, kann ein und dieselbe Ressource mehr als eine Version eines Formats unterstützen.
+
+```
+Version 1:
+Accept: application/vnd.example.v1+json
+
+Version 2:
+Accept: application/vnd.example.v2+json
+```
+
+**URI Versionierung**
+
+Die URI Versionierung ist der einfachste Ansatz, hier wird bei jeder neuen Version eine neue URI generiert, über welche die API angesprochen werden kann. Diese Information muss nach Änderung der API an den Client weitergereicht werden, der anschließend auf die neue URI darauf zugreifen kann.
+
+```
+Version 1:
+http://api.example.com/v1
+
+Version 2:
+http://api.example.com/v2
+```
+
+## Zusammenfassung Versionierbarkeit
+
+|                   |                      gRPC                      |            GraphQL            |            REST            |
+| ----------------- | :--------------------------------------------: | :---------------------------: | :------------------------: |
+| **Versionierung** | Über Änderungen der Schnittstellenbeschreibung | Möglich aber nicht vorgesehen | Vielzahl von Möglichkeiten |
+
+# Performanz
+
+Ein weiteres wichtiges Kriterium, bei der Wahl der richtigen Technologie kann die Performanz bei der Datenübertragung sein.
+
+## Applikation
+
+&#8594; [GitHub Repository Performanz Test](https://github.com/Kevin-Ratschinski/rest-graphql-grpc)
+
+Für die Ermittlung der Performanz, wurde eine Node.js Applikation entwickelt, welche im oben verlinkten GitHub Repository eingesehen werden kann.
+
+Die Applikation stellt jeweils einen gRPC, GraphQL und zwei REST-Server zur Verfügung.  
+Die verschiedenen Server greifen gemeinsam auf einen JSON-Datensatz zu, der nach dem ER-Modell in Abbildung 10 aufgebaut ist. Der Datensatz beinhaltet jeweils 1000 User(119 KB) und 1000 Messages(283 KB), die den Usern zufällig zugeordnet sind.
+
+![Datensatz ER-Modell](./assets/er_modell.png)  
+Abbildung 10 - Datensatz ER-Modell
+
+Für jede Technologie wurde zudem ein Client erstellt, der die folgenden CRUD Operation auf den Datensatz ausführen kann:
+
+- Create
+  - User erstellen
+  - Message erstellen
+- Read
+  - Informationen von allen Usern anfordern
+  - Informationen von einem User anfordern
+  - Informationen von allen Messages anfordern
+  - Informationen von einer Message anfordern
+  - Messages von einem User anfordern
+- Update
+  - User aktualisieren
+  - Message aktualisieren
+- Delete
+  - User löschen
+  - Message löschen
+
+Mit der Applikation können die verschiedenen Operationen ausgeführt und die Performanz ermittelt werden. Für die Messung der Performanz wird das in Node.js mitgelieferte Modul "perf_hooks" verwendet <a href="#/praktikum/ratschinski/index?id=ref_15">(perf_hooks, 2022)</a>. Beim perf_hooks Modul handelt es sich um eine, von Node.js bereitgestellte, Performance Measurement API, die dafür genutzt werden kann, die Laufzeit von Funktionen zu ermitteln.
+
+Für die Kommunikation zwischen Client und Server verwenden alle drei Technologien das HTTP-Protokoll. Hier muss aber zwischen den Versionen **HTTP/1.1** und **HTTP/2** unterschieden werden. gRPC benutzt das HTTP-Protokoll in Version 2, der Apollo-GraphQL-Server unterstützt zum jetzigen Zeitpunkt nur die Version 1.1 und für REST wurden zwei verschiedene Webserver erstellt, wobei einer HTTP/1.1 Anfragen und der andere HTTP/2 Anfragen entgegennimmt.
+
+Der Unterschied zwischen HTTP/1.1 und HTTP/2 liegt in der Verarbeitung der Daten. HTTP/1.1 sendet und lädt die Daten nacheinander. Im Gegensatz dazu kann HTTP/2, mehrere Datenströme gleichzeitig senden, was zu einer Verbesserung der Performanz führen kann.
+
+## Szenarien
+
+Im ersten Szenario werden verschiedene Operation auf denselben Rechner (Localhost) jeweils 100-mal hintereinander ausgeführt und die Laufzeit bis zum Ende der letzten Funktion ermittelt.
+
+![Szenario Localhost](./assets/Aufbau_Localhost.png)  
+Abbildung 11 - Szenario Localhost
+
+---
+
+Im zweiten Szenario werden dieselben Anfragen getestet, aber diesmal wird der Server auf einem anderen Rechner im Netzwerk angesprochen, um ein etwas realistischeres Szenario zu simulieren.
+
+![Szenario WLAN](./assets/Aufbau_WLAN.png)  
+Abbildung 12 - Szenario WLAN
+
+## Ergebnisse
+
+**Localhost**
+
+![Ergebnisse Localhost](./assets/localhost_result.png)  
+Abbildung 13 - Ergebnisse Localhost
+
+---
+
+**WLAN**
+
+![Ergebnisse WLAN](./assets/wlan_result.png)  
+Abbildung 14 - Ergebnisse WLAN
+
+### n+1 Problem
+
+Beim n+1 Problem, benötigen bestimmte Abfragen eine hohe Anzahl von Requests. Möchte man zum Beispiel alle Messages, den die verschiedenen User zugeordnet sind ermitteln, müsste man als zuerst alle User beziehen und anschließend die einzelnen Messages der User abfragen. Das wären bei 1000 Usern genau 1001 Abfragen. Hierbei kommt es zum sogenannten Under-Fetching (Abbildung 15), beim Under-fetching liefert die Schnittstelle zu wenige Informationen, sodass erneute Aufrufe nötig sind. Das führt durch die hohe Anzahl an Aufrufen zu einem Verlust der Performanz.
+
+![REST Under-fetching](./assets/rest/rest_under_fetching.png)  
+Abbildung 15 - REST Under-fetching
+
+Eine Möglichkeit wäre bei einem Aufruf immer alle Informationen mitzuliefern, dies würde aber zum sogenannten Over-fetching (Abbildung 16) führen, beim Over-fetching entsteht eine höhere Netzwerkauslastung dadurch, dass viele Informationen mitgeliefert werden, welche der Client mitunter nicht benötigt.
+
+![REST Over-fetching](./assets/rest/rest_over_fetching.png)  
+Abbildung 16 - REST Over-fetching
+
+**Ergebnisse n+1**
+
+Die Ergebnisse in Abbildung 17 zeigen einen Vorteil, welcher bei der Benutzung von GraphQL entsteht. Um die Messages der User zu beziehen, ist in GraphQL nur eine Abfrage nötig, welche alle geforderten Daten zurückliefert. Bei gRPC und REST hingegen, sind jeweils 1001 Abfragen nötig.
+
+![Ergebnisse n+1](./assets/n1_result.png)  
+Abbildung 17 - Ergebnisse n+1
+
+## Zusammenfassung Performanz
+
+Die Ergebnisse zeigen, dass es zwischen gRPC und REST keine großen Unterschiede in der Performanz gibt, vorausgesetzt REST wird zusammen mit dem HTTP/2 Protokoll verwendet. gRPC zeigt nur einen minimalen Vorteil in der Performanz. Somit eignen sich beide Technologien sehr gut, um Daten performant auszutauschen.  
+Wird REST zusammen mit HTTP/1.1 verwendet, zeigen sich in den Ergebnissen deutlich längere Laufzeiten für die verschiedenen Abfragen.  
+GraphQL hat bei den Ergebnissen die längsten Laufzeiten. Die Stärke von GraphQL zeigt sich erst dann, wenn es um gezielte Abfragen geht. Dadurch dass die benötigten Daten in den Queries festgelegt werden, kommt es bei GraphQL zu keinem Over- oder Under-fetching. Besonders in Fällen wo ein n+1 Problem auftreten würde, zeigen sich die Vorteile von GraphQL, durch die gezielte Abfrage wird die Performanz verbessert und die Netzwerkauslastung reduziert.
+
+# Security
+
+Durch die Verwendung des HTTP-Protokolls, bieten alle 3 Technologien sehr gute Möglichkeiten, um eine sichere Kommunikation zwischen Client und Server zu ermöglichen. HTTP allein bietet noch keine verschlüsselte Kommunikation. Wird HTTP zusammen mit TLS verwendet, kann eine verschlüsselte Kommunikation über HTTPS erfolgen. Eine verschlüsselte Kommunikation, kann anschließend dafür verwendet werden, um die Authentifizierung und Autorisierung der Clients sicherzustellen.
+
+- Authentifizierung: Überprüft, welcher Client auf das System zugreift.
+- Autorisierung: Legt fest, welche Rechte ein Client hat.
+
+Für die Authentifizierung lassen sich zum Beispiel Cookies oder die standardisierte HTTP Authentifizierung <a href="#/praktikum/ratschinski/index?id=ref_17">(HTTP Authentication RFC 7235)</a> verwenden. Hier kann über eine Header-Feld "Authorization", sich ein Client beim Server authentifizieren.
+
+```
+Authorization: <type> <credentials>
+```
+
+Der _type_ gibt an, welche Authentifizierung benutzt wird. HTTP unterstützt dabei eine Vielzahl von Möglichkeiten. Viele sind davon bei der IANA registriert und damit offiziell anerkannt <a href="#/praktikum/ratschinski/index?id=ref_18">(IANA Authentication)</a>.
+
+**Basic**
+
+Bei der Basic-Authentifizierung werden alle, zur Benutzererkennung benötigten, Daten base64 kodiert und anschließend zum Server gesendet.
+
+```
+Authorization: Basic base64encode(<identifier>:<secret>)
+```
+
+Da base64 keine sichere Verschlüsselung ist, darf dieses Verfahren nur unter der Verwendung von TLS erfolgen.
+
+**Bearer**
+
+Beim Bearer-Verfahren wird ein Token für die Authentifizierung verwendet. Hier wird dem Client nach erfolgreicher Authentifizierung ein Token übermittelt, welches später wieder für die Authentifizierung und Autorisierung an den Server geliefert werden kann. In der Praxis erfolgt dies oft über sogenannte JSON-Web-Token <a href="#/praktikum/ratschinski/index?id=ref_19">(JWT RFC 7519)</a>. Auch bei diesem Verfahren muss die Übertragung über TLS erfolgen.
+
+**API Keys**
+
+API Keys sind ein sehr einfacher Mechanismus, um API-Anfragen nur für bestimmte Clients zu ermöglichen. Nachdem ein Client einen API Key vom Anbieter bekommen hat, muss dieser für jede Anfrage mitgesendet werden, um sicherzustellen, dass eine gültige Anfrage an die API gestellt wird. Das Mitsenden des Keys kann zum Beispiel im Header oder in einem Cookie erfolgen.
+
+**gRPC**
+
+Durch die Verwendung von HTTP/2, erfolgt die Datenübertragung immer über TLS bei gRPC. Zudem werden noch zusätzliche Methoden zur Authentifizierung unterstützt <a href="#/praktikum/ratschinski/index?id=ref_20">(gRPC Authentication)</a>:
+
+- SSL/TLS: SSL/TLS-Integration für eine verschlüsselte Verbindung zwischen Client und Server.
+
+- ALTS (Application Layer Transport Security): Bei ALTS handelt es sich um ein Authentifizierungs- und Transportverschlüsselungssystem, um die RPC-Kommunikation zu schützen. ALTS wird anstelle von TLS verwendet, wenn die Applikation auf der Google Cloud Platform (GCP) ausgeführt wird.
+
+- Token-based authentication with Google: Hierbei handelt es sich um eine tokenbasierte Anmeldung, die von Google bereitgestellt wird.
+  ```js
+  // Authenticating with Google
+  var GoogleAuth = require('google-auth-library'); // from https://www.npmjs.com/package/google-auth-library
+  ...
+  var ssl_creds = grpc.credentials.createSsl(root_certs);
+  (new GoogleAuth()).getApplicationDefault(function(err, auth) {
+  var call_creds = grpc.credentials.createFromGoogleCredential(auth);
+  var combined_creds = grpc.credentials.combineChannelCredentials(ssl_creds, call_creds);
+  var stub = new helloworld.Greeter('greeter.googleapis.com', combined_credentials);
+  });
+  ```
+
+# Fazit
+
+gRPC, GraphQL und REST basieren alle auf unterschiedlichen Paradigmen.
+
+gRPC basiert auf Remote Procedure Calls, die es ermöglichen über Funktionsaufrufen mit entfernten Systemen zu kommunizieren, dabei kann es sich um ein System oder um verteilte Systeme handeln. Während den Funktionsaufrufen bleibt die HTTP/2-Implementierung komplett verborgen. Zudem wird mit dem protobuf-Framework ein effizientes Datenformat für die Serialisierung und Deserialisierung mitgeliefert. Das hilft dabei, sich während der Entwicklung auf die Geschäftslogik zu konzentrieren und man sich keine Gedanken um Datenformate oder Details des HTTP-Protokolls machen muss. gRPC sollte in Betracht gezogen werden, wenn es um die Entwicklung von verteilten Systemen mit geringer Latenz geht. Durch die Serialisierung mit protobuf, bietet gRPC die effizienteste Art an, um Daten zu übertragen. Zusätzlich wird von Clients weniger Rechenleistung für die Deserialisierung benötigt, das kann sich vor allem auf Mobilgeräten positiv auswirken.
+
+GraphQL versucht das Problem zu lösen, dass Clients oft verschiedene Anfragen stellen müssen, um alle Daten zu erhalten, die zum Beispiel für die Darstellung einer Ansicht erforderlich sind. Deshalb werden in GraphQL die Daten in Form eines Graphen betrachtet und die API liefert nur einen Endpunkt, über welchen sich der Client dann je nach Bedarf eine Teilmenge der Daten abfragen kann. Das Hauptmerkmal liegt also darin, dass Clients genau die Daten zurückbekommen, welche sie anfragen und benötigen. GraphQL sollte dann in Betracht gezogen werden, wenn man eine Anwendung zur Verfügung stellen möchte, die viele verschiedene Datenquellen ausliefern soll oder man verschiedene Clients hat, die gemeinsam auf eine Datenquelle zugreifen. Sobald die Clients, zum Beispiel Webanwendung und Mobilgerät für den Aufbau einer gleichen Seite, verschiedene Datensätze benötigen, könnte sich ein Einsatz von GraphQL lohnen. Dadurch dass alle Daten über einen Endpunkt bezogen werden können und nicht für jeden unterschiedlichen Client, verschiedene Endpunkte zur Verfügung gestellt werden müssen. Außerdem kann GraphQL benutzt werden, um Daten von verschiedenen Services zu beziehen und dann diese als Paket an den Client zu liefern, das ist besonders nützlich, um eine Datenschicht über den darunterliegenden Microservices zu haben.
+
+REST ist ein Architekturstil, wie sich eine Schnittstelle aufbauen lässt und hält sich dabei sehr stark an den Aufbau des World Wide Web. REST bietet zudem eine große Flexibilität, wie genau die Schnittstelle umgesetzt werden kann. Alle drei Technologien sind unabhängig von einer konkreten Programmiersprache. Eine vollständige Unabhängigkeit von der Sprache und Plattform gibt es allerdings nur für REST. Möchte man eine API zur Verfügung stellen, auf die Clients einfachen Zugriff haben sollen, bietet sich eine REST API an. Durch die gängigen HTTP-Methoden wie GET, POST, PUT oder DELETE können Clients einfach über das HTTP-Protokoll mit der Schnittstelle kommunizieren. Wird die Schnittstelle auf Basis von HTTP und konform zu den REST-Prinzipien entworfen, lassen sich zudem noch Funktionalitäten wie Caching einfach umsetzen. Eine Vielzahl von Antworten können dann aus einem Cache beantwortet werden, andere wiederum werden minimiert oder ganz vermieden. Wird REST zusammen mit HTTP/2 verwendet, bietet der Architekturstil zudem auch eine gute Performanz für Clients.
+
+Alle drei Technologien haben ihre jeweiligen Stärken und Schwächen. Bei dem Vergleich gibt es keinen eindeutigen Sieger, welche Technologie verwendet werden soll. Ob gRPC, GraphQL oder REST verwendet werden soll, hängt hauptsächlich von den Anforderungen ab, welche die Applikation erfüllen muss. Außerdem können sich die Anforderungen im Laufe der Zeit ändern, was dazu führen kann, dass ein Wechsel der Technologie oder eine Kombination aus mehreren Varianten die beste Option ist.
 
 # Literaturverzeichnis
 
 1. <span id="ref_1">gRPC: A high performance, open source universal RPC framework. (2022, 02. Juni). https://grpc.io/</span>
-<!-- (gRPC, 2022) -->
 2. <span id="ref_2">GraphQL: A query language for your API. (2022, 02. Juni). https://graphql.org/</span>
-<!-- (GraphQL, 2022) -->
 3. <span id="ref_3">Thomas Fielding, R. (2000). Architectural Styles and the Design of Network-based Software Architectures, Dissertation</span>
-<!-- (T. Fielding, 2000) -->
 4. <span id="ref_4">Tilkov, S., Eigenbrodt, M., Schreier, S. & Wolf, O. (2015). REST und HTTP (3. Aufl.). dpunkt.verlag.</span>
-<!-- (Tilkov et al., 2015, S. xx) -->
 5. <span id="ref_5">Kress, D. (2021). GraphQL (1. Aufl.). dpunkt.verlag.</span>
-<!-- (Kress, 2015, S. xx) -->
 6. <span id="ref_6">proto Typen: Language Guide (proto3). (2022, 04. Juni). https://developers.google.com/protocol-buffers/docs/proto3</span>
-<!-- (proto Typen, 2022) -->
 7. <span id="ref_7">gRPC languages: Supported languages. (2022, 04. Juni). https://grpc.io/docs/languages/</span>
-<!-- (gRPC languages, 2022) -->
 8. <span id="ref_8">GraphQL Voyager: GRAPHQL VOYAGER. (2022, 04. Juni). https://ivangoncharov.github.io/graphql-voyager/</span>
-<!-- (GraphQL Voyager, 2022) -->
 9. <span id="ref_9">GraphQL Code Generator: Generate anything from GraphQL schema / operations! (2022, 04. Juni). https://www.graphql-code-generator.com/</span>
-<!-- (GraphQL Code Generator, 2022) -->
 10. <span id="ref_10">GraphQL-Schema: Schemas and Types (2022, 04. Juni). https://graphql.org/learn/schema/</span>
-<!-- (GraphQL-Schema, 2022) -->
+11. <span id="ref_11">OpenAPI Members: Current Members (2022, 08. Juni). https://www.openapis.org/membership/members</span>
+12. <span id="ref_12">Swagger UI: Swagger UI allows anyone (2022, 08. Juni). https://swagger.io/tools/swagger-ui/</span>
+13. <span id="ref_13">JSON Schema: JSON Schema is a vocabulary that allows you to annotate and validate JSON documents (2022, 08. Juni). https://json-schema.org/</span>
+14. <span id="ref_14">OpenAPI Generator: OpenAPI Generator Github Repository (2022, 08. Juni). https://github.com/OpenAPITools/openapi-generator</span>
+15. <span id="ref_15">perf_hooks: Node.js perf_hooks Modul (2022, 08. Juni). https://nodejs.org/api/perf_hooks.html</span>
+16. <span id="ref_16">GraphQL Versioning: GraphQL Best Practices (2022, 11. Juni). https://graphql.org/learn/best-practices/</span>
+17. <span id="ref_17">HTTP Authentication RFC 7235: Hypertext Transfer Protocol (HTTP/1.1): Authentication (2022, 12. Juni). https://datatracker.ietf.org/doc/html/rfc7235</span>
+18. <span id="ref_18">IANA Authentication: Hypertext Transfer Protocol (HTTP) Authentication Scheme Registry (2022, 12. Juni). https://www.iana.org/assignments/http-authschemes/http-authschemes.xhtml</span>
+19. <span id="ref_19">JWT RFC 7519: JSON Web Token (JWT) (2022, 12. Juni). https://datatracker.ietf.org/doc/html/rfc7519</span>
+20. <span id="ref_20">gRPC Authentication: An overview of gRPC authentication, including built-in auth mechanisms, and how to plug in your own authentication systems. (2022, 14. Juni). https://grpc.io/docs/guides/auth/</span>

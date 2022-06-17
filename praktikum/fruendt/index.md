@@ -1,6 +1,6 @@
 # Maxim Fründt
 
-# Untersuchung der Vorteile des Entity-Component-System und des Data Oriented Designs
+# Untersuchung der Vorteile des Entity Component System und des Data-Oriented Designs
 
 Im Folgenden wird ein kurzer Überblick über die Praktikumsausarbeitung aus dem Modul Spezielle Gebiete zum Software Engineering gegeben.
 
@@ -8,7 +8,11 @@ Im Folgenden wird ein kurzer Überblick über die Praktikumsausarbeitung aus dem
 
 Die Videospielindustrie wächst stetig. Immer schneller und besser sollen Videospiele entwickeln werden. Der Erfolg eines Videospiels beginnt dabei schon bei der Planung. Neben der Entwicklung eines Spielekonzepts müssen auch Entscheidungen über den Aufbau der Architektur getroffen werden.
 
-Immer häufiger wird dafür das Entity-Component-System (ECS) verwendet, oft in Verbindung mit einem Data Oriented Design (DOD). Im Rahmen des Praktikums sollen die Vorteile dieser Herangehensweisen beleuchtet werden mit Fokus auf Performance.
+Immer häufiger wird dafür das Entity-Component-System (ECS) verwendet, oft in Verbindung mit einem Data Oriented Design (DOD). Im Rahmen des Praktikums sollen die Vorteile dieser Herangehensweisen beleuchtet werden mit Fokus auf Performance und Vor- und Nachteile in der Entwicklung.
+
+Das ECS-Pattern und das DOD wird neben Videospielen auch in anderen datenintensiven Anwendungen, wie beispielsweise Simulationsprogrammen, verwendet.
+
+Auf die Grundlegenden Eigenschaften und den Aufbau des ECS-Patterns und des DOD wird im Rahmen der Ausarbeitung nur beiläufig eingegangen. Für einen genaueren Überblick empfehlen sich externe Ressourcen wie beispielseweise das ECS-FAQ von Sander Mertens[1].
 
 ## Forschungsfragen
 - Wie ist das ECS aufgebaut?
@@ -19,8 +23,11 @@ Immer häufiger wird dafür das Entity-Component-System (ECS) verwendet, oft in 
 - Wie groß ist der Einfluss auf die Performance, wenn man DOD verwendet?
 
 ## Evaluierung
-- Implementierung des ECS in bestehendes Spielprojekt (PM-Dungeon), bzw neues Spielprojekt mit anschließendem Performancevergleich der Versionen
-- Umsetzung des DOD als nächsten Schritt, wieder mit Vergleich der Performance
+- Das ECS-Pattern wird in dem bestehenden Spielprojekt PM-Dungeon eingesetzt, von welchem Sourcecode in Java existiert, der nach OOP-Ansatz geschrieben wurde.
+- Zusätzlich soll in C++ ein Projekt erstellt werden. Zunächst nach OOP-Ansatz, anschließend mit ECS-Pattern.
+- Anschließend Performancevergleich zwischen den ECS- und OOP-Ansätzen.
+- Das C++ Projekt mit ECS-Ansatz wird schließlich gemäß DOD abgeändert.
+- Performancevergleich zwischen ECS- und DOD-Ansatz
 
 ## Zeitplan
 | Termin     |     Meilenstein                      |
@@ -38,27 +45,99 @@ Immer häufiger wird dafür das Entity-Component-System (ECS) verwendet, oft in 
 
 ## Aufbau des Entity Component System-Patterns
 
-Um ein Projekt vom Objektorientierten Programmierstil in das ECS-Pattern zu überführen, muss die gesamte Struktur des Projekts verändert werden.
-Zunächst soll anhand des Projekts PM-Dungeon dieser Umbau erfolgen, dafür wird im Folgenden auf die Details des Umbaus eingegangen.
+Zunächst soll auf die Frage eingegangen werden, wie das ECS aufgebaut ist. Dafür wird ein Projekt vom Objektorientierten Programmierstil in das ECS-Pattern überführt. Durch diese grundlegende Änderung in der Architektur muss die gesamte Struktur des Projekts verändert werden. Vorgenommen soll dieser Umbau an zwei Projekten:
+- Zunächst soll anhand des Projekts PM-Dungeon dieser Umbau erfolgen. Das Projekt wurde im Team zu dritt im Rahmen des Moduls Programmiermethoden erstellt. Bei dem Projekt handelt es sich um ein Rogue-Like-Spiel, in welchem der Spieler einen Helden durch ein Dungeon voller Monster navigiert und die Monster bezwingt. Das Projekt verwendet eine bereitgestellte Bibliothek, welche libGDX[2] verwendet um Aufgaben wie die Verwaltung und Generierung der Spielwelt zu übernehmen.
+- Anschließend wird in C++ ein Miniprojekt erstellt, welches nicht-Spielercharaktere simuliert. Diese sollen sich zufällig durch die Welt bewegen und beim Zusammenstoßen mit anderen Charakteren Schaden erleiden. Wenn sie zu viel Schaden erleiden werden sie aus der Spielwelt entfernt. Um die Charaktere und die Welt darzustellen wird die Bibliothek SFML[3] verwendet und das Basisprojekt von rewrking[4] wird für die einfache Verwendung von VS Code eingesetzt.
 
-### Erstellen der Komponenten und Systeme
+### Erstellen der Komponenten und Systeme aus dem bestehenden OOP-Projekt PM-Dungeon
 
-In Abbildung 1 ist das Klassendiagramm des PM-Dungeon dargestellt. Um die Klassen in das ECS-Pattern zu überführen müssen markante Variablen, wie beispielsweise
-die Gesundheit, in Komponenten überführt werden. Die Komponenten sollten neben den Daten jedoch keine Logik enthalten. Sämtliche Logik muss in Systeme
-überführt werden. Für das Beispiel der Gesundheit wird ein System angelegt, welches für jedes Entity mit einer Gesundheitskomponente prüft, ob dessen
+Detailierter soll der Umbau am Projekt PM-Dungeon erfolgen. Das erstellte C++ Projekt wird im Anschluss grob vorgestellt.
+
+Der Source des Projektes PM-Dungeon kann im entsprechenden GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Java_Dungeon_OOP
+In Abbildung 1 ist das Klassendiagramm des PM-Dungeon vereinfacht dargestellt. Exemplarisch sind die nötigen Klassen für Charaktere und Items abgebildet.
+OOP-typisch gibt es jeweils eine abstrakte Basisklasse für Items und Charaktere, welche geerbt und erweitert wird. 
+
+|![](assets/PMDKlassen.png)|
+|:--:| 
+| *Abbildung 1: Klassendiagramm des PM-Dungeon für Charaktere und Items* |
+
+Um die Klassen in das ECS-Pattern zu überführen müssen markante Variablen der Klassen, wie beispielsweise die Gesundheit, in Komponenten überführt werden. Die Komponenten sollten neben den Daten jedoch keine Logik enthalten. Sämtliche Logik muss in Systeme überführt werden. Für das Beispiel der Gesundheit wird ein System angelegt, welches für jedes Entity mit einer Gesundheitskomponente prüft, ob dessen
 Gesundheitswert größer 0 ist. Ist das nicht der Fall, wird das Entity gelöscht.
 
-|*Bild folgt*|
+|![](assets/PMDECS.png)|
 |:--:| 
-| *Abbildung 1: Klassendiagramm des PM-Dungeon* |
+| *Abbildung 2: Entity-Component-Zusammensetzung für Charaktere und Items* |
 
-Untenstehend sind die erstellten Komponenten und Systeme aufgelistet. Um mithilfe der Komponenten das ursprüngliche Verhalten von Charakteren und Items
+In Abbildung 2 ist die Zusammensetzung der Komponenten dargestellt, welche die Daten der in Abbildung 1 dargestellten Klassen übernehmen. Für die Komponenten gibt es entsprechende Systeme, die die Komponenten verwerten. Durch die Komponenten wird das erstellen eines Entities wie ein Baukastensystem.
+
+Untenstehend sind alle erstellten Komponenten. Um mithilfe der Komponenten das ursprüngliche Verhalten von Charakteren und Items
 zu erhalten, müssen Entities erstellt werden und die passenden Komponenten zugewiesen werden. Dafür bietet sich das Factory-Method-Pattern an,
-welches ein Entity als beispielsweise Monster erstellt, indem es ein neues Entitiy erstellt und die benötigten Komponenten zuweist.
+welches ein Entity als beispielsweise Monster erstellt, indem es ein neues Entitiy erstellt und die benötigten Komponenten parametrisiert zuweist.
 
-|*Komponententabelle folgt*|
-|:--:| 
-|  |
+| Komponente                | Daten|
+|:--:|:--:|
+| Animation             | Enthält die Sprites die die Animation des Entities ausmachen |
+| Experience            | Erfahrungspunkte des Entities |
+| Health                | Gesundheit des Entities |
+| Inventory             | Inventar des Entities |
+| MeleeCombatStats      | Angriffsattribute für den Nahkampf |
+| PlayerControl         | Steuerung für Spielercharaktere |
+| Position              | Position des Entities |
+| RangedCombatStats     | Angriffsattribute für den Fernkampf |
+| Sprite                | Enthält das Sprite des Entities |
+| Velocity              | Geschwindigkeit des Entities |
+| HealingPotionStats    | Attribute für Heilungsitems |
+| MeleeWeaponStats      | Attribute für Nahkampfwaffen |
+| RangedWeaponStats     | Attribute für Fernkampfwaffen |
+| Shieldstats           | Attribute für Verteidiungsitems |
+| DropRequest           | Event für das Fallenlassen von Items |
+| ItemDestroyRequest    | Event für das zerstören von Items |
+| Knockback             | Event für das Erleiden von Rückschlag |
+| MeleeAttack           | Event für eine Nahkampfattacke |
+| PickupRequest         | Event für den Versuch ein Item aufzuheben |
+| RangedAttack          | Event für eine Fernkampfattacke |
+| UseRequest            | Event für das Benutzen eines Items |
+
+Die erstellten Komponenten erhalten entweder Daten oder werden als Flag verwendet, um auf Events zu reagieren. Verwendet werden die Komponenten von den untenstehenden Systemen. Die Systeme erhalten jeweils eine Liste von Entities, welche die erforderlichen Komponenten besitzen und iterieren über diese. Jedes iterierte Entity kann manipuliert werden, indem die Daten der Komponente bearbeitet werden, neue Komponenten hinzugefügt oder bestehende gelöscht werden.
+
+| System                | Funktion|
+|:--:|:--:|
+| CameraSystem          | Bewegt die Kamera zur Spielerposition |
+| DamageSystem          | Prüft ob ein erstelltes Attack-Entity ein tötbares Entity trifft und fügt Schaden zu, falls dem so ist |
+| GuiSystem             | Aktualisiert die GUI des Spielers |
+| HealthSystem          | Löscht Entities, die keine Leben mehr haben |
+| ItemSystem            | Nimmt Item-Event-Entities an und führt entsprechende Aktion aus |
+| KiSystem              | Steuert die nicht-Spieler-Charaktere entsprechend ihrer unterschiedlichen Logik |
+| KnockbackSystem       | Berechnet die Flugbahn des Knockback von Entities |
+| MovementSystem        | Ändert die Position der Entities, entsprechend ihrer Geschwindigkeit |
+| PlayerControlSystem   | Nimmt Eingaben für den Spielercharakter an |
+| SpriteSystem          | Stellt die Sprites aller Objekte im Dungeon dar |
+
+### Implementierung des ECS-Ansatzes im PM-Dungeon
+
+Als ECS-Framework wird für das PM-Dungeon Ashley[5] eingesetzt, da es eine gute Dokumentation und Performance aufweist. Die erstellten Komponenten und Systeme werden den Vorgaben des Frameworks entsprechend umgesetzt. Für den Spieler, die Monster und die Items werden Entities mit entsprechenden Komponentenzusammensetzungen erstellt. Der Source des erstelltesn Projektes kann im entsprechenden GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Java_Dungeon_ECS
+
+### Erstellen der Komponente und Systeme für das C++ Projekt
+
+Der Source des Miniprojektes in C++ mit OOP-Ansatz kann im entsprechenden GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Cpp_OOP
+
+Aus dem Miniprojekt werden die folgenden Komponenten generiert.
+- Position: Position des Entities
+- Velocity: Geschwindigkeit des Entities
+- Health: Gesundheit des Entities
+- Collision: Schaden, den das Entity durch eine Kollision erleidet
+- Sprite: Sprite des Entities
+
+Für diese Komponenten werden die unten stehenden Systeme zur Bearbeitung derer Daten erstellt.
+- MovementSystem: Bewegt die Entities entsprechend ihrer Geschwindigkeit
+- KiSystem: Verändert zufällig die Geschwindigkeit des Entities
+- HealthSystem: Entfernt Entities, welche sämtliche Gesundheit verloren haben
+- DamageSystem: Zieht Entities Gesundheit ab, welche kollidiert sind
+- CollisionSystem: Prüft ob zwei Entities kollidieren
+
+### Implementierung des ECS-Ansatzes im C++ Projekt
+
+Da fertige Frameworks auf DOD ausgelegt sind, wird für diese Implementierung ein simples ECS-Framework selbst erstellt, welches auf dem Blogeintrag von David Colson[6] basiert. Die Charakter sind in dieser Version Entities mit zugewiesenen Komponenten, statt Instanzen von Objekten, welche von den erstellten Systemen bearbeitet werden. Der Source des erstellten C++ Projektes mit ECS-Ansatz kann im GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Cpp_ECS
 
 ## Vor- und Nachteile des Entity Component System-Patterns
 
@@ -121,9 +200,16 @@ zugehörigen Komponenten separat getestet werden können. Zudem sinkt die Komple
 muss die Klasse für das Geschoss als ganzes evaluiert werden, wodurch einige neue Tests entstehen. Im ECS-Ansatz müssen lediglich ein paar weitere Tests
 zum Kampfsystem hinzugefügt werden.
 
+Zudem kann im ECS-Ansatz oft auf Mockups verzichtet werden, die Objekte oft benötigen. Der Kerngedanke von Systemen ist es Daten zu erhalten, zu transformieren und auszugeben.
+Wenn so ein System getestet werden soll, müssen also lediglich Testdaten eingegeben und anschließend evaluiert werden.
+
 Die Modularität kommt jedoch mit dem Nachteil, dass die statische Prüfung des Codes nicht mehr darstellt, ob ein Entity mit seiner Kombination aus
 Komponenten von einem ausgewählten System bearbeitet werden kann. Wenn beispielsweise ein System erstellt wird, welches nur Entities mit Komponente A
 und Komponente B bearbeiten soll, muss der Entwickler selbst darauf achten, dass die Entities diese Komponenten aufweisen, wenn das System diese bearbeiten soll. 
+
+### Performance
+
+Systeme werden ausgelegt, ohne dass die Bearbeitungsreihenfolge der Systeme eine Rolle spielt, da diese nicht klar definiert sein muss. Dadurch, dass die Bearbeitungsreihenfolge keine Rolle spielt, können die verschiedenen Systeme einfach Multithreaded ausgeführt werden. Da zudem nur eine kleine Einheit an Daten in einem System, über viele Entities bearbeitet werden kann, bietet es sich an diese im Speicher nebeneinander zu lagern. Dadurch kann der CPU-Cache besser ausgenutzt werden. Mehr dazu im Kapitel über DOD.
 
 ### Zusammenfassung
 
@@ -134,8 +220,52 @@ Vorteile:
 - Sonderfunktionen sind einfacher umzusetzen
 - Einfach erweiterbar für Außenstehende, da nicht jedes System gleichzeitig betrachtet werden muss
 - Tests sind einfacher aufzusetzen und es werden weniger Tests benötigt
+- Multithreading und DOD einfach implementierbar
 
 Nachteile:
 - Das ECS-Pattern erfordert ein Umdenken gegenüber klassischer objektorientierter Programmierung
 - Das Einteilen, welche Daten eine eigene Komponente und welche Logiken ein eigenes System benötigen kann schwer sein
 - Statische Codeprüfung kann nicht sicherstellen, dass Entities die richtigen Komponenten haben um von einem System ausgeführt zu werden
+
+## Performancevergleich zwischen OOP- und ECS-Ansatz
+
+TBD
+
+## Anwenden des Data-Oriented-Designs
+
+Beim Data-Oriented-Design geht es darum, dass die Daten des Programms im Vordergrund stehen. Das Programm wird also so geschrieben, dass Funktionen auf die gekapselten Daten zugreifen und diese Transformieren, ohne Dabei viel Abstraktion aufzuweisen. Bei der Entwicklung der Transformationsroutinen sollte der Entwickler sich zudem Gedanken machen, wie die Transformation tatsächlich auf dem CPU ausgeführt wird, um diese performant gestalten zu können.
+Das DOD verfolgt dadurch in der Umsetzung oft das Ziel, Daten zu kapseln und so anzuordnen, dass der CPU-Cache am effektivsten verwendet wird. Als Beispiel wird ein Gesundheitssystem angenommen, welches die Gesundheit jedes Entities prüft, um dieses als tot zu markieren. Für die Abfrage der Gesundheit wird die Gesundheitskomponente des Entities in den Cache geladen, bearbeitet und wieder entladen. Wenn die Gesundheitskomponenten nun im Speicher nebeneinander liegen, können mit dem Füllen einer Cache-Zeile mehrere Gesundheitskomponenten geprüft werden, wodurch Ladezeit eingesparrt werden kann. Als Vergleich wird im klassischen OOP-Ansatz das gesamte Entity geladen, um dessen Gesundheit zu prüfen. Durch den größeren Overhead den das Objekt mit sich bringt, werden mehr ungenutzte Daten in den Cache geladen.
+
+In Java kann das DOD auf diese Weise nicht eingesetzt werden, da man keine Kontrolle darüber hat, ob die zusammenhängenden Daten tatsächlich nebeneinander im Speicher liegen. Jedoch ist der Grundgedanke der Kapselung und separaten Transformation der Daten dadurch erfüllt, dass das ECS eingesetzt worden ist. Aus diesem Grund wird das DOD konkret in dem C++ Beispiel angewendet und getestet.
+
+Um den DOD-Ansatz im erstellten C++ Projekt anzuwenden, wird das ECS-Framework EnTT[7] verwendet. EnTT ist so erstellt worden, dass es den DOD-Ansatz verfolgt und eignet sich somit für den Versuch. Die Version des C++ Miniprojektes, welches EnTT und somit das DOD implementiert kann im GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Cpp_DOD
+
+## Vor- und Nachteile des Data-Oriented-Designs
+
+Obwohl das ECS-Pattern nicht zwingend dem DOD folgt, weisen beide Ansätze Schnittmengen auf und können dementsprechend einfach zusammenverwendet werden. Aus diesem Grunde wird auf die Vor- und Nachteile in diesem Kapitel weniger stark eingegangen und auf das vorangegangene Kapitel verwiesen.
+
+Vorteile:
+- Dadurch, dass zusammengehörige Daten im Speicher nebeneinander liegen, können die CPU-Misses minimiert werden (Vereinfachtgesagt die Anzahl an Daten die unnötig in den CPU-Cache geladen werden).
+- Durch die Kappselung der Daten bietet sich zudem eine parallele Ausführung über die Daten an, indem auf zusammenhängende Daten nur an einer Stelle zugegriffen wird, wie das beispielsweise beim ECS-Pattern der Fall ist.
+- Unit-Tests können einfacher erstellt werden, da lediglich Eingabedaten benötigt werden, welche transformiert und anschließend evaluiert werden müssen.
+- Einfach erweiterbar und zu verstehen
+
+Nachteile:
+- Erfordert umdenken gegenüber klassischem OOP-Ansatz
+- Es kann schwer sein DOD mit bestehenden Systemen zu koppeln, welche nicht DOD befolgen
+
+## Performancevergleich zwischen ECS- und DOD-Ansatz
+
+TBD
+
+## Zusammenfassung
+
+TBD
+
+[1]: Sander Mertens. https://github.com/SanderMertens/ecs-faq  
+[2]: libGDX. https://libgdx.com/  
+[3]: Laurent Gomila. https://www.sfml-dev.org/  
+[4]: rewrking. https://github.com/rewrking/sfml-vscode-boilerplate  
+[5]: libGDX. https://github.com/libgdx/ashley  
+[6]: David Colson. https://www.david-colson.com/2020/02/09/making-a-simple-ecs.html  
+[7]: skypjack. https://github.com/skypjack/entt  

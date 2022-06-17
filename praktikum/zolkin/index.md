@@ -1,6 +1,12 @@
 # Christiane Zolkin
 
+Link zur Ausarbeitung:
 
+https://www.overleaf.com/read/fpdvbshfytmq
+
+Link zum Github-Repository:
+
+https://github.com/ChrisZol/RoutinedApp.git
 
 ## Fragestellung
 
@@ -17,7 +23,7 @@ Im Rahmen dieses Projektes wird daher das aufsteigende Framework Flutter in den 
 
 ## Projektidee
 
-Die formulierte Fragestellung soll anhand eines Projektes beantwortet werden, bei welchem eine Web-Applikation mit zwei unterschiedlichen Google Frameworks entwickelt wird: Flutter und [Ionic] Angular. Um einen direkten Vergleich der Frameworks zu erreichen, ist das Frontend-Design, die Funktionalitäten und die zugrundeliegende Datenbank der beiden Applikationen identisch.
+Die formulierte Fragestellung soll anhand eines Projektes beantwortet werden, bei welchem eine Web-Applikation mit zwei unterschiedlichen Google Frameworks entwickelt wird: Flutter und [Ionic] Angular. Um einen direkten Vergleich der Frameworks zu erreichen, ist das Frontend-Design, die Funktionalitäten und die zugrundeliegende Datenbank der beiden Applikationen identisch. Die Implementierung der Client-Seite soll hierbei weitestgehend parallel erfolgen, sodass die korrespondierenden Komponenten und deren Implementierung direkt gegenübergestellt werden können.
 
 Während des Entwicklungsprozesse werden einige Aspekte untersucht, die Ausschluss über die allgemeine "Developer Experience" geben soll. Dazu zählen die Framework-Dokumentation und die Erlernbarkeit der Syntax, das Aufsetzen der Entwicklungsumgebung und Applikationsarchitektur, sowie bereitgestellte Packages und Ressourcen. Der Build-, Debbuging- und der Deployment-Prozess sollen ebenfalls bewertet werden.
 
@@ -36,10 +42,6 @@ Neben der Entwickler-Erfahrung wird außerdem die Performanz der Applikation, un
 
 
 ### "Routined" Web Application
-
-Link zum Github-Repository:
-
-https://github.com/ChrisZol/RoutinedApp.git
 
 ### Frontend
 
@@ -98,6 +100,7 @@ Als lokale Datenbank für die Applikation wird Sqlite bzw. Sqlflite genutzt. Das
 | CLI:                                                         |         |
 | During runtime, hot reloads of code changes are supported -> Great developer experience, Time saving, Supports experimental coding (high learning curve) |         |
 | Works with an easy to understand Widget structure            |         |
+| CORS Error when using Node.js Backend -> Workarounds necessary to make Server HTTP Requests |         |
 
 
 
