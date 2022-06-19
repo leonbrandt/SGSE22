@@ -98,7 +98,7 @@ Der oben dargestellte Quellcodeauszug stellt zum einen die Methode dar, die die 
 
 Die Implementierung von WebSockets wurde analog zum Frontend mit Hilfe eines Socket.IO-Servers durchgeführt. Hierfür wurde die Bibliothek python-socketio [[5]](#ref5) verwendet. Die Implementierung stellte hierbei keine große Herausforderung dar, da die Anweisungen der Dokumentation einfach befolgt werden konnten. Wichtig war das Erlauben aller Zugriffpunkte in den CORS-Einstellungen, weil der Server auf einer Domain gehostet wird, jedoch das Frontend lokal zum Testen ausgeführt wird. Der untere Quellcode zeigt die einfache Initialisierung des Servers sowie das Starten durch den Aufruf der `run_websocket_server`-Funktion.
 
-```py
+```python
 io = socketio.AsyncServer(async_mode='aiohttp', cors_allowed_origins='*')
 app = web.Application()
 sio.attach(app)
