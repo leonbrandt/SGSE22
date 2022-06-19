@@ -1,3 +1,10 @@
+<style>
+    table {
+        display:table !important;
+        width: 100%;
+    }
+</style>
+
 # Implementierung und Vergleich von WebSockets und WebTransport im Hinblick auf Geschwindigkeit, Stabilität und Performanz unter Last
 
 ## Grundlagen
