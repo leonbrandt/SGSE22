@@ -52,11 +52,100 @@ Um die genannten Messungen durchführen zu können, soll sowohl eine kleine Fron
 
 ### Frontend
 
+
+
 ### Backend
 
-## Evaluation
+Das Backend wurde in der Programmiersprache Python implementiert. Weil es sich bei WebTransport um ein sehr neues Protokoll handelt, hält sich die Auswahl der möglichen Programmiersprachen aktuell noch in Grenzen. Um eventuelle Unterschiede bei den Messungen nicht auf die Performanz der Programmiersprache zurückführen zu können, wurde die Schnittstelle für WebSocket ebenfalls in Python implementiert. Der folgende Quellcode zeigt hier, dass der Server mit dem *--protocol*-Argument aufgerufen werden kann, um entweder den WebTransport Server zu starten oder den WebSocket Server. Wird dieses Argument nicht angegeben, wird der WebTransport Server gestartet.
 
-### Messung der Geschwindigkeit
+```python
+parser = argparse.ArgumentParser(description='Run a websocket or webtransport server.')
+    parser.add_argument('--protocol', type=str, default='webtransport', help='The protocol to run the server on. Default webtransport.', choices=['webtransport', 'websocket'])
+    args = parser.parse_args()
+    if args.protocol == 'webtransport':
+        run_webtransport_server()
+    elif args.protocol == 'websocket':
+        run_websocket_server()
+```
+
+Für die Bereitstellung von Daten wurde eine simple Data-Klasse implementiert, die auf das Dateisystem zugreift und die Daten an aufrufende Methoden übergibt. Ursprünglich war auch ein Zugriff auf externe Schnittstellen, wie Börsendaten oder Wetterdaten geplant. Auf Grund der begrenzten erlaubten Abfragen dieser Schnittstellen und die damit einhergehende Problematik der geringen Aktualität, wurde diese Idee jedoch verworfen. Weil es in dieser Ausarbeitung um die Erforschung der genannten Protokolle geht, stellt das Weglassen der Zugriffe auf externe APIs kein Problem dar, weil die verfügbaren Testdateien unterschiedlicher Größe auf dem Dateisystem ausreichen. Auf dem Dateisystem des Servers befinden sich binäre Testdateien in folgenden Größen, die für die späteren Messungen verwendet werden:
+
+- 1 Kilobyte
+- 1 Megabyte
+- 10 Megabyte
+- 100 Megabyte
+- 1 Gigabyte
+
+```python
+class Data:
+    @staticmethod
+    def get_file_names():
+        files = [f for f in os.listdir("/home/moritz/downloadFiles") if not f.startswith('.')]
+        return files
+    @staticmethod
+    def get_file(filename):
+        with open("/home/moritz/downloadFiles/" + filename, "rb") as f:
+            return f.read()
+```
+
+Der oben dargestellte Quellcodeauszug stellt zum einen die Methode dar, die die Dateinamen der vorhandenen Dateien ermittelt und zurückgibt. Die andere Methode liest auf Anfrage die spezifizierte Datei ein, sodass diese von den Protokoll-Servern übertragen werden kann.
+
+#### WebTransport
+
+
+
+#### WebSocket
+
+Die Implementierung von WebSockets wurde analog zum Frontend mit Hilfe eines Socket.IO-Servers durchgeführt. Hierfür wurde die Bibliothek python-socketio [[5]](#ref5) verwendet. Die Implementierung stellte hierbei keine große Herausforderung dar, da die Anweisungen der Dokumentation einfach befolgt werden konnten. Wichtig war das Erlauben aller Zugriffpunkte in den CORS-Einstellungen, weil der Server auf einer Domain gehostet wird, jedoch das Frontend lokal zum Testen ausgeführt wird. Der untere Quellcode zeigt die einfache Initialisierung des Servers sowie das Starten durch den Aufruf der `run_websocket_server`-Funktion.
+
+```py
+io = socketio.AsyncServer(async_mode='aiohttp', cors_allowed_origins='*')
+app = web.Application()
+sio.attach(app)
+def run_websocket_server():
+    web.run_app(app, host='websocket.withoeft.nz', port=4444)
+```
+
+Um jetzt per Client auf den WebSocket-Server zugreifen zu können, müssen lediglich die Zugriffspunkte (sog. Channels) definiert werden. Im unteren Codeauszug werden alle benötigten Zugriffspunkte für das spätere Testen aufgeführt, wobei die Endpunkte *connect* und *disconnect* vor allem zum Debuggen dienen. Der *ping*-Channel wird vom Frontend für die Ermittlung des Pings verwendet. Hier wird lediglich eine einfache Nachricht zurück an den Client gesendet. Der Endpunkt *download-files-list* dient der Übermittlung der zur Verfügung stehenden Dateien an den Client. *download-file* schickt eine angeforderte Datei zurück an das Frontend. *multi-client-test* schickt ebenfalls eine angeforderte Datei zurück an das Frontend, achtet aber darauf, dass nur der fordernde Client die Datei zugeschickt bekommt. Es wird auf Grund von verschiedenen Testarten im Frontend zwischen *download-file* und *multi-client-test* unterschieden. Sind diese Endpunkte definiert ist die Implementierung des WebSocket-Servers für diesen Anwendungsfall bereits abgeschlossen.
+
+```python
+@sio.event
+def connect(sid, environ, auth):
+    print('connect ', sid)
+@sio.event
+def disconnect(sid):
+    print('disconnect ', sid)
+@sio.on('ping')
+async def ping_event(sid, data):
+    print('custom event triggered with data: ' + str(data))
+    await sio.emit('ping', "Danke für die Nachricht")
+@sio.on('download-files-list')
+async def download_files_event(sid):
+    await sio.emit('download-files-list', Data.get_file_names())
+@sio.on('download-file')
+async def download_file_event(sid, filename):
+    await sio.emit('download-file', (filename, Data.get_file(filename)))
+@sio.on('multi-client-test')
+async def download_file_event(sid, filename):
+    await sio.emit('multi-client-test', (filename, Data.get_file(filename)), room=sid)
+```
+
+## Messungen
+
+### Messung der Geschwindigkeit in Abhängigkeit verbundener Clients
+
+Für diesen Test verbinden sich mehrere virtuelle Clients mit dem Server. Dabei wird von jedem Client eine 1MB große Datei angefordert. Dieser Test soll die Geschwindigkeit der beiden Protokolle in Abhängigkeit der verbundenen Clients untersuchen. Die erste Spalte gibt an, wie viele Clients sich für den Testdurchlauf mit dem Server verbunden haben. Die zweite Spalte stellt in Millisekunden dar, wie lange es gedauert hat, um über WebTransport die angeforderte Datei an jeden Client zu senden. Die dritte Spalte zeigt die Werte für WebSockets an. Wie bei allen durchgeführten Tests, wurden die Durchläufe für jede Zeile mehrmals wiederholt, um verlässlichere Werte zu erhalten.
+
+|      | WebTransport | WebSocket |
+| ---- | ------------ | --------- |
+| 1    | 514          | 449       |
+| 10   | 4733         | 1314      |
+| 64   | 29636        | 6842      |
+| 100  | -            | 10562     |
+| 250  | -            | 25551     |
+| 500  | -            | -         |
+
+
 
 ### Messung der Round Trip Time
 
@@ -74,23 +163,29 @@ In den darauffolgenden Zeilen wurde gemessen, wie lange es dauert *X* Datenpaket
 
 WebTransport kann hier auf Client-Seite einfach parallele Aufrufe starten, während das bei WebSockets nicht ohne weiteres so auf dem selben Channel möglich ist. Deswegen sieht man bei WebSockets als Ergebnis immer nahezu die Anzahl der Datenpakete mit der ursprünglichen Latenz multipliziert. Bei WebTransport kann festgestellt werden, dass dieses Protokoll auch bei vielen gleichzeitigen Anfragen langsamer wird, auf Grund der parallelen Abfragen zeitlich deutlich vor den WebSockets liegt.
 
-### Maximaler Austausch von Nachrichten pro Sekunde
-
 ### Austausch großer Datenmengen
 
 Für diesen Test wurde bei jedem Testdurchlauf immer nur **ein** Client mit dem Server verbunden, um die Zeit für den Download zu messen. Für jede Datengröße und jedes Protokoll wurde die Datei 101 mal heruntergeladen und die Durchschnittszeit in Millisekunden berechnet.
 
-|        | WebTransport        | WebSocket           |
-| ------ | ------------------- | ------------------- |
-| 1 KB   | **12.484993811881** | **11.572652382426** |
-| 1 MB   | **104.33856019879** | **124.32311649134** |
-| 10 MB  | **904.5404451578**  | **1114.5141601562** |
-| 100 MB | **9420.1602935734** | **1537.4056940362** |
-| 1 GB   | **95298.762860362** | **10263.622625376** |
+|        | WebTransport | WebSocket |
+| ------ | ------------ | --------- |
+| 1 KB   | 12           | 12        |
+| 1 MB   | 104          | 124       |
+| 10 MB  | 905          | 1115      |
+| 100 MB | 9420         | 1537      |
+| 1 GB   | 95299        | 10264     |
 
 Dateien, die größer sind als 1GB können nicht mehr Standardmäßig über WebSocket transportiert werden. Hier ist die Zunahme eines Streams erforderlich, sodass die Datei aufgeteilt werden kann und nicht komplett im Arbeitsspeicher liegen muss. Eine komplette Übertragung führt meist auf Client-Seite zu Fehlern *(Out-Of-Memory)*.
 
 <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/websocketOutOfMemory.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
+
+## Auswertung
+
+
+
+
+
+## Fazit
 
 
 
