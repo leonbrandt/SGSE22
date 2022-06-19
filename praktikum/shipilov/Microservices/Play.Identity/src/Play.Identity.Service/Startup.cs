@@ -19,6 +19,7 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using MongoDB.Driver;
 using Play.Identity.Service.HealthChecks;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.AspNetCore.Http;
 
 namespace Play.Identity.Service
 {
@@ -85,7 +86,7 @@ namespace Play.Identity.Service
                         serviceProvider =>
                         {
                             var mongoClient = new MongoClient(mongoDbSettings.ConnectionString);
-                            return new MongoDBHealthCheck(mongoClient);
+                            return new MongoDbHealthCheck(mongoClient);
                         },
                         HealthStatus.Unhealthy,
                         new[] { "ready" },
@@ -110,7 +111,8 @@ namespace Play.Identity.Service
                 });
             }
 
-            app.UseHttpsRedirection();
+            app.UseCookiePolicy(new CookiePolicyOptions { MinimumSameSitePolicy = SameSiteMode.Lax });
+            //app.UseHttpsRedirection();
 
             app.UseStaticFiles();
 
