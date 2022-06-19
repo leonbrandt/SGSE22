@@ -4,6 +4,8 @@ Als Bestandteil des Praktikums im Modul Spezielle Gebiete zum Software Engineeri
 
 [Die ausformulierte Ausarbeitung zum Thema kann hier gelesen werden.](praktikum/withöft/ausarbeitung)
 
+[Die Begründung und Dokumentation zur Wahl der Programmiersprache im Backend kann hier gelesen werden.](praktikum/withöft/backendProgrammiersprache)
+
 ## Hintergrund 
 
 WebSockets sind ein beliebtes Protokoll, wenn es darum geht eine persistente Client-Server-Kommunikation zu ermöglichen. Dabei wird die Verbindung offengehalten und auf diesem Stream können Daten ausgetauscht werden.
