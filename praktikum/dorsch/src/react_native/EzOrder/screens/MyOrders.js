@@ -4,7 +4,6 @@ import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import Header from '../components/Header';
 import Colors from '../constants/colors';
 
-
 const MyOrders = props => {
     return (
         <View>
@@ -14,7 +13,7 @@ const MyOrders = props => {
                     <Text style={styles.title}>Bestellung vom 05.01.2019</Text>
                     <Text style={styles.text}>Status: offen</Text>
                     <View style={{ width: '100%', padding: 5 }}>
-                        <TouchableOpacity style={{ alignSelf: 'center', backgroundColor: Colors.primary, width: '100%', borderRadius: 10  }} onPress={() => { onSumbitPress }}>
+                        <TouchableOpacity style={{ alignSelf: 'center', backgroundColor: Colors.primary, width: '100%', borderRadius: 10  }} onPress={() => { this.handleClick }}>
                             <Text style={{
                                 alignSelf: 'center',
                                 color: 'black',

@@ -1,3 +1,10 @@
+<style>
+    table {
+        display:table !important;
+        width: 100%;
+    }
+</style>
+
 # Implementierung und Vergleich von WebSockets und WebTransport im Hinblick auf Geschwindigkeit, Stabilität und Performanz unter Last
 
 ## Grundlagen
@@ -30,7 +37,7 @@ Die Streams sollen einen sicheren und geordneten Datentransfer sicherstellen. Da
 
 *Abbildung 2* stellt die verschiedenen Transfermöglichkeiten mit WebTransport dar. Datagrams sind ungeordnet und unzuverlässig. Streams hingegen stellen die Ordnung und die Zuverlässigkeit bei dem Transport der Daten sicher. Werden für eine Verbindung parallele Streams verwendet, so ist auch hier die Ordnung und Zustellgarantie innerhalb der einzelnen Streams gegeben. Es kann aber vorkommen, dass Daten nach der Übertragung durch parallele Streams sortiert werden müssen, weil zwischen den verschiedenen Streams keine Ordnung eingehalten wird.
 
-Für die Implementierung von WebTransport im Frontend wird auf Grund der Neuheit der Technologie keine Library verwendet. Für die Implementierung im Backend wird auf einer vorhandenen Beispielimplementierung für WebTransport von Google in Python aufgebaut [[10]](#ref10). Es wird ebenfalls auf die genaue Einbindung, Verwendung und Implementierung wird in der Sektion [Implementierung](#implementierung) eingegangen.
+Für die Implementierung von WebTransport im Frontend wird auf Grund der Neuheit der Technologie keine Library verwendet. Für die Implementierung im Backend wird auf einer vorhandenen Beispielimplementierung für WebTransport von Google in Python aufgebaut [[10]](#ref10). Auf die genaue Einbindung, Verwendung und Implementierung wird in der Sektion [Implementierung](#implementierung) eingegangen.
 
 ## Forschungserklärung
 
@@ -52,11 +59,192 @@ Um die genannten Messungen durchführen zu können, soll sowohl eine kleine Fron
 
 ### Frontend
 
+
+
 ### Backend
 
-## Evaluation
+Das Backend wurde in der Programmiersprache Python implementiert. Weil es sich bei WebTransport um ein sehr neues Protokoll handelt, hält sich die Auswahl der möglichen Programmiersprachen aktuell noch in Grenzen. Um eventuelle Unterschiede bei den Messungen nicht auf die Performanz der Programmiersprache zurückführen zu können, wurde die Schnittstelle für WebSocket ebenfalls in Python implementiert. Der folgende Quellcode zeigt hier, dass der Server mit dem *--protocol*-Argument aufgerufen werden kann, um entweder den WebTransport Server zu starten oder den WebSocket Server. Wird dieses Argument nicht angegeben, wird der WebTransport Server gestartet.
 
-### Messung der Geschwindigkeit
+```python
+parser = argparse.ArgumentParser(description='Run a websocket or webtransport server.')
+    parser.add_argument('--protocol', type=str, default='webtransport', help='The protocol to run the server on. Default webtransport.', choices=['webtransport', 'websocket'])
+    args = parser.parse_args()
+    if args.protocol == 'webtransport':
+        run_webtransport_server()
+    elif args.protocol == 'websocket':
+        run_websocket_server()
+```
+
+Für die Bereitstellung von Daten wurde eine simple Data-Klasse implementiert, die auf das Dateisystem zugreift und die Daten an aufrufende Methoden übergibt. Ursprünglich war auch ein Zugriff auf externe Schnittstellen, wie Börsendaten oder Wetterdaten geplant. Auf Grund der begrenzten erlaubten Abfragen dieser Schnittstellen und die damit einhergehende Problematik der geringen Aktualität, wurde diese Idee jedoch verworfen. Weil es in dieser Ausarbeitung um die Erforschung der genannten Protokolle geht, stellt das Weglassen der Zugriffe auf externe APIs kein Problem dar, weil die verfügbaren Testdateien unterschiedlicher Größe auf dem Dateisystem ausreichen. Auf dem Dateisystem des Servers befinden sich binäre Testdateien in folgenden Größen, die für die späteren Messungen verwendet werden:
+
+- 1 Kilobyte
+- 1 Megabyte
+- 10 Megabyte
+- 100 Megabyte
+- 1 Gigabyte
+
+```python
+class Data:
+    @staticmethod
+    def get_file_names():
+        files = [f for f in os.listdir("/home/moritz/downloadFiles") if not f.startswith('.')]
+        return files
+    @staticmethod
+    def get_file(filename):
+        with open("/home/moritz/downloadFiles/" + filename, "rb") as f:
+            return f.read()
+```
+
+Der oben dargestellte Quellcodeauszug stellt zum einen die Methode dar, die die Dateinamen der vorhandenen Dateien ermittelt und zurückgibt. Die andere Methode liest auf Anfrage die spezifizierte Datei ein, sodass diese von den Protokoll-Servern übertragen werden kann.
+
+#### WebTransport
+
+Für die Implementierung von WebTransport wurde die aktuellste Definition des Protokolls *Draft 02* verwendet. Der Server wurde hierbei nach einer Beispielimplementierung von Google [[10]](#ref10) für den Anwendungszweck angepasst. Die Implementierung für WebTransport stellte auf Grund der geringen Verfügbarkeit von Dokumentationen eine deutlich größere Herausforderung, als die WebSocket Implementierung dar. Weil WebTransport nur über HTTPS funktioniert, wurden bereits im Vorfeld Zertifikate generiert, die von dem Server genutzt werden. Weitere Informationen hierzu lassen sich in der [Begründung für die Wahl der Programmiersprache im Backend](praktikum/withöft/backendProgrammiersprache) finden.
+
+Der unten aufgeführte Quellcodeauszug zeigt die wesentlichen Aspekte der `run_webtransport_server`-Funktion. Zuerst wird die Konfiguration für das unter HTTP/3 liegende QUIC-Protokoll vorgenommen und im Anschluss die generierten Zertifikate der Konfiguration hinzugefügt. Abschließend wird der Event-Loop erzeugt. Für das Ausführen des Servers wird weiterhin die Bibliothek *asyncio* verwendet. Nach der Festlegung der Adresse und des Ports wird der Server in einer Endlosschleife gestartet.
+
+```python
+configuration = QuicConfiguration(
+        alpn_protocols=H3_ALPN,
+        is_client=False,
+        max_datagram_frame_size=6553600,
+        max_stream_data=104857600,
+        max_data=104857600
+    )
+    configuration.load_cert_chain("/etc/letsencrypt/live/webtransport.withoeft.nz/cert.pem",
+                                  "/etc/letsencrypt/live/webtransport.withoeft.nz/privkey.pem")
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(
+        serve(
+            'webtransport.withoeft.nz',
+            4433,
+            configuration=configuration,
+            create_protocol=WebTransportProtocol,
+        ))
+    loop.run_forever()
+```
+
+Die essentielle Klasse, die die Kommunikation über WebTransport ermöglicht ist die Klasse `WebTransportProtocol`, die von der *asyncio* `QuickCOnnectionProtocol`-Klasse erbt und diese wiederum für WebTransport anpasst. Bei der *H3Connection* handelt es sich um eine Verbindung über HTTP/3. Hier wird auch die noch zu implementierende Klasse `ConnectionHandler` bekannt gemacht, in der die ausgetauschten Daten verarbeitet werden. Kommt eine Verbindung über HTTP/3 an den Server, wird ausgewertet, ob es sich um eine WebTransport-Verbindung handelt und ein Handshake durchgeführt. Dabei wird in den Header von der Antwort des Servers geschrieben, dass es sich nun um eine Kommunikation mit dem WebTransport-Protokoll handelt und dabei die aktuelle Version *Draft 02* verwendet wird.
+
+```python
+class WebTransportProtocol(QuicConnectionProtocol):
+    def __init__(self, *args, **kwargs) -> None:
+        self._http: Optional[H3Connection] = None
+        self._handler: Optional[ConnectionHandler] = None
+    def _h3_event_received(self, event: H3Event) -> None:
+        [...]
+        if (headers.get(b":method") == b"CONNECT" and
+            headers.get(b":protocol") == b"webtransport"):
+            self._handshake_webtransport(event.stream_id, headers)
+     def _handshake_webtransport(self, stream_id: int, request_headers: Dict[bytes, bytes]) -> None:
+        [...]
+        authority = request_headers.get(b":authority")
+        path = request_headers.get(b":path")
+            self._send_response(stream_id, 200)
+            return
+	def _send_response(self, stream_id: int, status_code: int, end_stream=False) -> None:
+		headers = [(b":status", str(status_code).encode())]
+		if status_code == 200:
+            headers.append((b"sec-webtransport-http3-draft", b"draft02"))
+            self._http.send_headers(stream_id=stream_id, headers=headers, end_stream=end_stream)
+```
+
+Die Klasse `ConnectionHandler` wie sie in dieser Form existiert, musste komplett selbst geschrieben werden, sodass sie mit dem Frontend zusammenarbeiten kann und den Anwendungszweck erfüllt. Bekommt der Server einen Request vom Client, so wird dieser in der Methode `h3_event_received` bearbeitet. Dieser Request kann entweder die Kommunikation beenden, worauf der Stream geschlossen wird. Oder aber es handelt sich um eine Nachricht auf dem Stream, dann wird dieser Request in der Methode `handleRequest` bearbeitet und die Antwort hinterher in Chunks zurück gesendet. Weil es bei WebTransport bei unidirektionalen und bidirektionale Streams eine maximale Datengröße gibt, wird die Übertragung größerer Daten in Chunks (also in Teilen) vorgenommen und im Frontend wieder "zusammengebaut". Wie bereits in den Grundlagen erläutert, müssen auf Grund der Protokolldefinition bei der Verwendung unidirektionaler und bidirektionaler Streams keine Verluste befürchtet werden.
+
+In der Methode `handleRequest` werden entweder die verfügbaren Dateinamen zurückgeschickt, eine angeforderte Datei übertragen oder eine einfache Nachricht *(Empty response)* übermittelt. Dadurch stellt diese Methode die Anlegung von Endpunkten, analog zur der Implementierung solcher für WebSocket, dar. Nach der Implementierung dieser Methode kann der WebTransport-Server die  Aufgaben für die benötigten Messungen bewältigen.
+
+```python
+class ConnectionHandler:
+    def h3_event_received(self, event: H3Event) -> None:
+        [...]
+        if event.stream_ended:
+            payload = str(self._counters[event.stream_id]).encode('ascii')
+            self._http._quic.send_stream_data(response_id, payload, end_stream=True)
+            self.stream_closed(event.stream_id)
+        else:
+            for chunk in self.handleRequest(event.data):
+                self._http._quic.send_stream_data(
+                    event.stream_id, chunk, end_stream=False)
+    def handleRequest(self, data):
+        if (data == b'download-files-list'):
+            jsonString = str(data.decode("UTF-8")) + "$" + json.dumps(Data.get_file_names())
+            yield bytearray(jsonString, 'utf-8')
+        elif (data.decode("UTF-8").split("$")[0] == "download-file"):
+            filename = data.decode("UTF-8").split("$")[1]
+            for chunk in Data.read_file_chunks(filename):
+                yield chunk
+        else:
+            yield b'Empty response'
+```
+
+#### WebSocket
+
+Die Implementierung von WebSockets wurde analog zum Frontend mit Hilfe eines Socket.IO-Servers durchgeführt. Hierfür wurde die Bibliothek python-socketio [[5]](#ref5) verwendet. Die Implementierung stellte hierbei keine große Herausforderung dar, da die Anweisungen der Dokumentation einfach befolgt werden konnten. Wichtig war das Erlauben aller Zugriffpunkte in den CORS-Einstellungen, weil der Server auf einer Domain gehostet wird, jedoch das Frontend lokal zum Testen ausgeführt wird. Der untere Quellcode zeigt die einfache Initialisierung des Servers sowie das Starten durch den Aufruf der `run_websocket_server`-Funktion.
+
+```python
+io = socketio.AsyncServer(async_mode='aiohttp', cors_allowed_origins='*')
+app = web.Application()
+sio.attach(app)
+def run_websocket_server():
+    web.run_app(app, host='websocket.withoeft.nz', port=4444)
+```
+
+Um jetzt per Client auf den WebSocket-Server zugreifen zu können, müssen lediglich die Zugriffspunkte (sog. Channels) definiert werden. Im unteren Codeauszug werden alle benötigten Zugriffspunkte für das spätere Testen aufgeführt, wobei die Endpunkte *connect* und *disconnect* vor allem zum Debuggen dienen. Der *ping*-Channel wird vom Frontend für die Ermittlung des Pings verwendet. Hier wird lediglich eine einfache Nachricht zurück an den Client gesendet. Der Endpunkt *download-files-list* dient der Übermittlung der zur Verfügung stehenden Dateien an den Client. *download-file* schickt eine angeforderte Datei zurück an das Frontend. *multi-client-test* schickt ebenfalls eine angeforderte Datei zurück an das Frontend, achtet aber darauf, dass nur der fordernde Client die Datei zugeschickt bekommt. Es wird auf Grund von verschiedenen Testarten im Frontend zwischen *download-file* und *multi-client-test* unterschieden. Sind diese Endpunkte definiert ist die Implementierung des WebSocket-Servers für diesen Anwendungsfall bereits abgeschlossen.
+
+```python
+@sio.event
+def connect(sid, environ, auth):
+    print('connect ', sid)
+@sio.event
+def disconnect(sid):
+    print('disconnect ', sid)
+@sio.on('ping')
+async def ping_event(sid, data):
+    print('custom event triggered with data: ' + str(data))
+    await sio.emit('ping', "Danke für die Nachricht")
+@sio.on('download-files-list')
+async def download_files_event(sid):
+    await sio.emit('download-files-list', Data.get_file_names())
+@sio.on('download-file')
+async def download_file_event(sid, filename):
+    await sio.emit('download-file', (filename, Data.get_file(filename)))
+@sio.on('multi-client-test')
+async def download_file_event(sid, filename):
+    await sio.emit('multi-client-test', (filename, Data.get_file(filename)), room=sid)
+```
+
+## Messungen
+
+Die Messungen/Tests für beide Protokolle wurden jeweils für eine bessere Vergleichbarkeit selbst implementiert. Während es für WebSockets/Socket.IO schon diverse Testtools gibt, sind nach aktuellem Stand für WebTransport noch keine verfügbar. Aus diesem Grund hat man sich für eine Implementierung der Tests für beide Protokolle entschieden, auch unter dem Aspekt, dass die Tests jeweils nur für das jeweils andere Protokoll angepasst werden und nicht komplett neu implementiert werden mussten.
+
+### Messung der Geschwindigkeit in Abhängigkeit verbundener Clients
+
+Für diesen Test verbinden sich mehrere virtuelle Clients mit dem Server. Dabei wird von jedem Client eine 1MB große Datei angefordert. Dieser Test soll die Geschwindigkeit der beiden Protokolle in Abhängigkeit der verbundenen Clients untersuchen. Die erste Spalte gibt an, wie viele Clients sich für den Testdurchlauf mit dem Server verbunden haben. Die zweite Spalte stellt in Millisekunden dar, wie lange es gedauert hat, um über WebTransport die angeforderte Datei an jeden Client zu senden. Die dritte Spalte zeigt die Werte für WebSockets an. Wie bei allen durchgeführten Tests, wurden die Durchläufe für jede Zeile mehrmals wiederholt, um verlässlichere Werte zu erhalten.
+
+|      | WebTransport | WebSocket |
+| ---- | ------------ | --------- |
+| 1    | 514          | 449       |
+| 10   | 4733         | 1314      |
+| 64   | 29636        | 6842      |
+| 100  | -            | 10562     |
+| 250  | -            | 25551     |
+| 500  | -            | -         |
+
+Sowohl bei WebTransport als auch bei WebSocket kommt es ab einer bestimmten Anzahl gleichzeitiger virtueller Verbindungen auf Clientseite zu Fehlern. *Abbildung 3* zeigt die aufgetretene Fehlermeldung für WebTransport, die beschreibt, dass nicht mehr als 64 gleichzeitige Verbindungen möglich sind.
+
+<figure style="text-align: center;">
+    <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/webtransportMaxConnections.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
+    <figcaption>Abbildung 3: Fehler bei mehr als 64 gleichzeitiger Verbindungen mit WebTransport.</figcaption>
+</figure>
+
+*Abbildung 4* zeigt die aufgetretene Fehlermeldung für WebSocket. Diese trat auf, wenn mehr als 250 gleichzeitige Verbindungen aufgebaut werden sollten.
+
+<figure style="text-align: center;">
+    <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/websocketInsufficientRessources.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
+    <figcaption>Abbildung 4: Fehler bei mehr als 250 gleichzeitiger Verbindungen mit WebSocket.</figcaption>
+</figure>
+
+Für beide Protokolle muss an dieser Stelle erwähnt werden, dass diese Probleme lediglich auf Clientseite (auch beim Test mit verschiedenen Browsern) aufgetreten sind.
 
 ### Messung der Round Trip Time
 
@@ -74,23 +262,29 @@ In den darauffolgenden Zeilen wurde gemessen, wie lange es dauert *X* Datenpaket
 
 WebTransport kann hier auf Client-Seite einfach parallele Aufrufe starten, während das bei WebSockets nicht ohne weiteres so auf dem selben Channel möglich ist. Deswegen sieht man bei WebSockets als Ergebnis immer nahezu die Anzahl der Datenpakete mit der ursprünglichen Latenz multipliziert. Bei WebTransport kann festgestellt werden, dass dieses Protokoll auch bei vielen gleichzeitigen Anfragen langsamer wird, auf Grund der parallelen Abfragen zeitlich deutlich vor den WebSockets liegt.
 
-### Maximaler Austausch von Nachrichten pro Sekunde
-
 ### Austausch großer Datenmengen
 
 Für diesen Test wurde bei jedem Testdurchlauf immer nur **ein** Client mit dem Server verbunden, um die Zeit für den Download zu messen. Für jede Datengröße und jedes Protokoll wurde die Datei 101 mal heruntergeladen und die Durchschnittszeit in Millisekunden berechnet.
 
-|        | WebTransport        | WebSocket           |
-| ------ | ------------------- | ------------------- |
-| 1 KB   | **12.484993811881** | **11.572652382426** |
-| 1 MB   | **104.33856019879** | **124.32311649134** |
-| 10 MB  | **904.5404451578**  | **1114.5141601562** |
-| 100 MB | **9420.1602935734** | **1537.4056940362** |
-| 1 GB   | **95298.762860362** | **10263.622625376** |
+|        | WebTransport | WebSocket |
+| ------ | ------------ | --------- |
+| 1 KB   | 12           | 12        |
+| 1 MB   | 104          | 124       |
+| 10 MB  | 905          | 1115      |
+| 100 MB | 9420         | 1537      |
+| 1 GB   | 95299        | 10264     |
 
-Dateien, die größer sind als 1GB können nicht mehr Standardmäßig über WebSocket transportiert werden. Hier ist die Zunahme eines Streams erforderlich, sodass die Datei aufgeteilt werden kann und nicht komplett im Arbeitsspeicher liegen muss. Eine komplette Übertragung führt meist auf Client-Seite zu Fehlern *(Out-Of-Memory)*.
+Dateien, die größer sind als 1GB können nicht mehr standardmäßig über WebSocket transportiert werden. Hier ist die Zunahme eines Streams erforderlich, sodass die Datei aufgeteilt werden kann und nicht komplett im Arbeitsspeicher liegen muss. Eine komplette Übertragung führt meist auf Client-Seite zu Fehlern *(Out-Of-Memory)*.
 
 <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/websocketOutOfMemory.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
+
+## Auswertung
+
+
+
+
+
+## Fazit
 
 
 

@@ -1,0 +1,701 @@
+swagger: "2.0"
+info:
+  description: "API Description for EzOrder Rest-Backend"
+  version: "1.0.0"
+  title: "EzOrder Backend"
+host: "192.168.178.44:3000"
+basePath: "/api/"
+tags:
+- name: "product"
+  description: "Everything about products"
+- name: "ordering"
+  description: "Access to orders"
+- name: "user"
+  description: "Operations about user"
+- name: "category"
+  description: "Operations about categories"
+- name: "position"
+  description: "Orders consist of positions"
+schemes:
+- "http"
+paths:
+  /product:
+    post:
+      tags:
+      - "product"
+      summary: "Add a new product"
+      description: ""
+      operationId: "add"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "product object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/Product"
+      responses:
+        "405":
+          description: "Invalid input"
+    put:
+      tags:
+      - "product"
+      summary: "Update an existing product"
+      description: ""
+      operationId: "updateProduct"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Product object that needs to be added"
+        required: true
+        schema:
+          $ref: "#/definitions/Product"
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Product not found"
+        "405":
+          description: "Validation exception"
+    get:
+      tags:
+      - "product"
+      summary: "Get all products"
+      description: ""
+      operationId: "getProducts"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Product"
+        "400":
+          description: "No Auth"
+  /product/{productID}:
+    get:
+      tags:
+      - "product"
+      summary: "Find product by ID"
+      description: "Returns a single product"
+      operationId: "getProductById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "productID"
+        in: "path"
+        description: "ID of product to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Product"
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Product not found"
+    post:
+      tags:
+      - "product"
+      summary: "Updates a product with form data"
+      description: ""
+      operationId: "updateProductWithForm"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "productID"
+        in: "path"
+        description: "ID of product that needs to be updated"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "name"
+        in: "formData"
+        description: "Updated name of the product"
+        required: false
+        type: "string"
+      - name: "status"
+        in: "formData"
+        description: "Updated status of the product"
+        required: false
+        type: "string"
+      responses:
+        "405":
+          description: "Invalid input"
+    delete:
+      tags:
+      - "product"
+      summary: "Deletes a product"
+      description: ""
+      operationId: "deleteProduct"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "productID"
+        in: "path"
+        description: "product id to delete"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Product not found"
+  /ordering:
+    post:
+      tags:
+      - "ordering"
+      summary: "Place an order"
+      description: ""
+      operationId: "placeOrder"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "order placed"
+        required: true
+        schema:
+          $ref: "#/definitions/Ordering"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Ordering"
+        "400":
+          description: "Invalid Order"
+    get:
+      tags:
+      - "ordering"
+      summary: "Get all orders"
+      description: ""
+      operationId: "getOrders"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Ordering"
+        "400":
+          description: "No Auth"
+  /ordering/{orderId}:
+    get:
+      tags:
+      - "ordering"
+      summary: "Find purchase order by ID"
+      description: "For valid response try integer IDs with value >= 1 and <= 10.         Other values will generated exceptions"
+      operationId: "getOrderById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "orderId"
+        in: "path"
+        description: "ID of pet that needs to be fetched"
+        required: true
+        type: "integer"
+        maximum: 10.0
+        minimum: 1.0
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Ordering"
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Order not found"
+    delete:
+      tags:
+      - "ordering"
+      summary: "Delete purchase order by ID"
+      description: "For valid response try integer IDs with positive integer value.         Negative or non-integer values will generate API errors"
+      operationId: "deleteOrder"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "orderId"
+        in: "path"
+        description: "ID of the order that needs to be deleted"
+        required: true
+        type: "integer"
+        minimum: 1.0
+        format: "int64"
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Order not found"
+  /user:
+    post:
+      tags:
+      - "user"
+      summary: "Create user"
+      description: "This can only be done by the logged in user."
+      operationId: "createUser"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Created user object"
+        required: true
+        schema:
+          $ref: "#/definitions/User"
+      responses:
+        default:
+          description: "successful operation"
+    get:
+      tags:
+      - "user"
+      summary: "Get all users"
+      description: ""
+      operationId: "getUsers"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/User"
+        "400":
+          description: "No Auth"
+      
+  /user/{userid}:
+    get:
+      tags:
+      - "user"
+      summary: "Get user by user id"
+      description: ""
+      operationId: "getUserByName"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "userid"
+        in: "path"
+        description: "The user id that needs to be fetched. Use 1 for testing."
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/User"
+        "400":
+          description: "Invalid username supplied"
+        "404":
+          description: "User not found"
+    put:
+      tags:
+      - "user"
+      summary: "Updated user"
+      description: "This can only be done by the logged in user."
+      operationId: "updateUser"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "userid"
+        in: "path"
+        description: "id that needs to be updated"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Updated user object"
+        required: true
+        schema:
+          $ref: "#/definitions/User"
+      responses:
+        "400":
+          description: "Invalid user supplied"
+        "404":
+          description: "User not found"
+    delete:
+      tags:
+      - "user"
+      summary: "Delete user"
+      description: "This can only be done by the logged in user."
+      operationId: "deleteUser"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "userid"
+        in: "path"
+        description: "The id that needs to be deleted"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Invalid username supplied"
+        "404":
+          description: "User not found"
+  /category:
+    post:
+      tags:
+      - "category"
+      summary: "Add a new category"
+      description: ""
+      operationId: "addCategory"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "category object that needs to be added"
+        required: true
+        schema:
+          $ref: "#/definitions/Category"
+      responses:
+        "405":
+          description: "Invalid input"
+    put:
+      tags:
+      - "category"
+      summary: "Update an existing category"
+      description: ""
+      operationId: "updateCategory"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Category object that needs to be added"
+        required: true
+        schema:
+          $ref: "#/definitions/Category"
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Category not found"
+        "405":
+          description: "Validation exception"
+    get:
+      tags:
+      - "category"
+      summary: "Get all categories"
+      description: ""
+      operationId: "getCategories"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Category"
+        "400":
+          description: "No Auth"
+  /category/{catID}:
+    get:
+      tags:
+      - "category"
+      summary: "Find category by ID"
+      description: "Returns a single category"
+      operationId: "getCategoryById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "catID"
+        in: "path"
+        description: "ID of category to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Category"
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Category not found"
+    post:
+      tags:
+      - "category"
+      summary: "Updates a category with form data"
+      description: ""
+      operationId: "updateCategoryWithForm"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "catID"
+        in: "path"
+        description: "ID of category that needs to be updated"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "name"
+        in: "formData"
+        description: "Updated name of the category"
+        required: false
+        type: "string"
+      - name: "status"
+        in: "formData"
+        description: "Updated status of the category"
+        required: false
+        type: "string"
+      responses:
+        "405":
+          description: "Invalid input"
+    delete:
+      tags:
+      - "category"
+      summary: "Deletes a category"
+      description: ""
+      operationId: "deleteCategory"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "catID"
+        in: "path"
+        description: "category id to delete"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Category not found"
+  /position:
+    post:
+      tags:
+      - "position"
+      summary: "Place an position"
+      description: ""
+      operationId: "placePosition"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "position placed"
+        required: true
+        schema:
+          $ref: "#/definitions/Position"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Position"
+        "400":
+          description: "Invalid Order"
+    get:
+      tags:
+      - "position"
+      summary: "Get all positions"
+      description: ""
+      operationId: "getPositions"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Position"
+        "400":
+          description: "No Auth"
+  /position/{positionID}:
+    get:
+      tags:
+      - "position"
+      summary: "Find position by ID"
+      description: "Returns a single position"
+      operationId: "getPositionById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "positionID"
+        in: "path"
+        description: "ID of position to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Position"
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Position not found"
+    post:
+      tags:
+      - "position"
+      summary: "Updates a position with form data"
+      description: ""
+      operationId: "updatePositionWithForm"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "positionID"
+        in: "path"
+        description: "ID of position that needs to be updated"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "name"
+        in: "formData"
+        description: "Updated name of the position"
+        required: false
+        type: "string"
+      - name: "status"
+        in: "formData"
+        description: "Updated status of the position"
+        required: false
+        type: "string"
+      responses:
+        "405":
+          description: "Invalid input"
+    delete:
+      tags:
+      - "position"
+      summary: "Deletes a position"
+      description: ""
+      operationId: "deletePosition"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "positionID"
+        in: "path"
+        description: "position id to delete"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "position not found"
+definitions:
+  Ordering:
+    type: "object"
+    properties:
+      orderID:
+        type: "integer"
+        format: "int64"
+      status:
+        type: "integer"
+        format: "int64"
+      dateOrder:
+        type: "string"
+        format: "date-time"
+      dateDelivery:
+        type: "string"
+        format: "date-time"
+      user_userID:
+        type: "integer"
+        format: "int64"
+  Category:
+    type: "object"
+    properties:
+      catID:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+      isBookAble:
+        type: "boolean"
+      bookableChkText:
+        type: "string"
+  User:
+    type: "object"
+    required:
+    - "userID"
+    properties:
+      userID:
+        type: "integer"
+        format: "int64"
+      lastname:
+        type: "string"
+      firstname:
+        type: "string"
+      email:
+        type: "string"
+      phone:
+        type: "string"
+      authToken:
+        type: "string"
+      street:
+        type: "string"
+      zip:
+        type: "string"
+      city:
+        type: "string"
+      company:
+        type: "string"
+      department:
+        type: "string"
+  Product:
+    type: "object"
+    required:
+    - "productID"
+    properties:
+      productID:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+      maxAmount:
+        type: "integer"
+        format: "int64"
+      packDescription:
+        type: "string"
+      category_catID:
+        type: "integer"
+        format: "int64"
+      imgURL:
+        type: "string"
+  Position:
+    type: "object"
+    required:
+    - "positionID"
+    properties:
+      positionID:
+        type: "integer"
+        format: "int64"
+      amount:
+        type: "integer"
+        format: "int64"
+      product_productID:
+        type: "integer"
+        format: "int64"
+      ordering_orderID:
+        type: "integer"
+        format: "int64"
