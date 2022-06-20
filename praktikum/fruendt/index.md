@@ -45,7 +45,7 @@ Auf die Grundlegenden Eigenschaften und den Aufbau des ECS-Patterns und des DOD 
 
 ## Aufbau des Entity Component System-Patterns
 
-Zunächst soll auf die Frage eingegangen werden, wie das ECS aufgebaut ist. Dafür wird ein Projekt vom Objektorientierten Programmierstil in das ECS-Pattern überführt. Durch diese grundlegende Änderung in der Architektur muss die gesamte Struktur des Projekts verändert werden. Vorgenommen soll dieser Umbau an zwei Projekten:
+Zunächst soll auf die Frage eingegangen werden, wie das ECS aufgebaut ist. Dafür werden Projekte vom Objektorientierten Programmierstil in das ECS-Pattern überführt. Durch diese grundlegende Änderung in der Architektur muss die gesamte Struktur des Projekts verändert werden. Vorgenommen soll dieser Umbau an zwei Projekten:
 - Zunächst soll anhand des Projekts PM-Dungeon dieser Umbau erfolgen. Das Projekt wurde im Team zu dritt im Rahmen des Moduls Programmiermethoden erstellt. Bei dem Projekt handelt es sich um ein Rogue-Like-Spiel, in welchem der Spieler einen Helden durch ein Dungeon voller Monster navigiert und die Monster bezwingt. Das Projekt verwendet eine bereitgestellte Bibliothek, welche libGDX[2] verwendet um Aufgaben wie die Verwaltung und Generierung der Spielwelt zu übernehmen.
 - Anschließend wird in C++ ein Miniprojekt erstellt, welches nicht-Spielercharaktere simuliert. Diese sollen sich zufällig durch die Welt bewegen und beim Zusammenstoßen mit anderen Charakteren Schaden erleiden. Wenn sie zu viel Schaden erleiden werden sie aus der Spielwelt entfernt. Um die Charaktere und die Welt darzustellen wird die Bibliothek SFML[3] verwendet und das Basisprojekt von rewrking[4] wird für die einfache Verwendung von VS Code eingesetzt.
 
@@ -54,27 +54,34 @@ Zunächst soll auf die Frage eingegangen werden, wie das ECS aufgebaut ist. Daf�
 Detailierter soll der Umbau am Projekt PM-Dungeon erfolgen. Das erstellte C++ Projekt wird im Anschluss grob vorgestellt.
 
 Der Source des Projektes PM-Dungeon kann im entsprechenden GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Java_Dungeon_OOP
-In Abbildung 1 ist das Klassendiagramm des PM-Dungeon vereinfacht dargestellt. Exemplarisch sind die nötigen Klassen für Charaktere und Items abgebildet.
-OOP-typisch gibt es jeweils eine abstrakte Basisklasse für Items und Charaktere, welche geerbt und erweitert wird. 
+In Abbildung 1 ist das Klassendiagramm des PM-Dungeon vereinfacht dargestellt. Exemplarisch sind die nötigen Klassen für Charaktere abgebildet.
+OOP-typisch gibt es jeweils eine abstrakte Basisklasse für Charaktere, welche geerbt und erweitert wird. Besonders an der `Hero`-Klasse wird deutlich, dass diese durch überschriebene Funktionen der Basisklasse, durch die Getter und Setter und durch die komplexe Steuerungslogik des Heros aufgebläht wird.
 
 |![](assets/PMDKlassen.png)|
 |:--:| 
-| *Abbildung 1: Klassendiagramm des PM-Dungeon für Charaktere und Items* |
+| *Abbildung 1: Klassendiagramm des PM-Dungeon für Charaktere* |
 
 Um die Klassen in das ECS-Pattern zu überführen müssen markante Variablen der Klassen, wie beispielsweise die Gesundheit, in Komponenten überführt werden. Die Komponenten sollten neben den Daten jedoch keine Logik enthalten. Sämtliche Logik muss in Systeme überführt werden. Für das Beispiel der Gesundheit wird ein System angelegt, welches für jedes Entity mit einer Gesundheitskomponente prüft, ob dessen
 Gesundheitswert größer 0 ist. Ist das nicht der Fall, wird das Entity gelöscht.
 
+
 |![](assets/PMDECS.png)|
 |:--:| 
-| *Abbildung 2: Entity-Component-Zusammensetzung für Charaktere und Items* |
+| *Abbildung 2: Komponenten und Systeme, welche die Logik der Klassen im OOP-Ansatz ersetzen* |
 
-In Abbildung 2 ist die Zusammensetzung der Komponenten dargestellt, welche die Daten der in Abbildung 1 dargestellten Klassen übernehmen. Für die Komponenten gibt es entsprechende Systeme, die die Komponenten verwerten. Durch die Komponenten wird das erstellen eines Entities wie ein Baukastensystem.
+Die Systeme und Komponenten, welche die in Abbildung 1 dargestellten Klassen ersetzen sollen, sind in Abbildung 2 dargestellt. Durch die Verwendung von Komponenten wird das erstellen eines Entities wie ein Baukastensystem, dadurch entsteht eine hohe Wiederverwendbarkeit. Da auf die Daten in den Komponenten direkt zugegriffen wird, fallen Getter und Setter weg. Die Komplexe Logik der Klassen wird in mehrere Systeme aufgebrochen, in welchen die Entities gleichbehandelt werden können, indem die benötigten Komponenten spezifiziert werden, die die Entities für die Bearbeitung aufweisen müssen. Die nötige Komponenten-Zusammensetzung der vorherigen Klassen sieht wie folgt aus:
+
+|![](assets/PMDECS_Zusammensetzung.png)|
+|:--:| 
+| *Abbildung 3: Entity-Component-Zusammensetzung für Charaktere* |
+
+Die Zusammensetzung ist dynamisch gestaltet und kann sich während der Laufzeit ändern, um bestimmte Verhalten zu erzeugen. Wenn beispielsweise der Held angegriffen wird, soll er einen Rückstoß erhalten. Dafür wird ihm die `PlayerControl`-Komponenten weggenommen, wodurch er sich nicht mehr bewegen kann. Zudem wird ihm die `Knockback`-Komponente hinzugefügt, wodurch das `KnockbackSystem` diesen bearbeiten kann. Wenn der erhaltene Rückstoß ausgeführt wurde, kann die `PlayerControl`-Komponenten wieder zugewiesen werden, wodurch der Held wieder spielbar wird.
 
 Untenstehend sind alle erstellten Komponenten. Um mithilfe der Komponenten das ursprüngliche Verhalten von Charakteren und Items
 zu erhalten, müssen Entities erstellt werden und die passenden Komponenten zugewiesen werden. Dafür bietet sich das Factory-Method-Pattern an,
 welches ein Entity als beispielsweise Monster erstellt, indem es ein neues Entitiy erstellt und die benötigten Komponenten parametrisiert zuweist.
 
-| Komponente                | Daten|
+| Komponente | Daten|
 |:--:|:--:|
 | Animation             | Enthält die Sprites die die Animation des Entities ausmachen |
 | Experience            | Erfahrungspunkte des Entities |
@@ -137,7 +144,7 @@ Für diese Komponenten werden die unten stehenden Systeme zur Bearbeitung derer 
 
 ### Implementierung des ECS-Ansatzes im C++ Projekt
 
-Da fertige Frameworks auf DOD ausgelegt sind, wird für diese Implementierung ein simples ECS-Framework selbst erstellt, welches auf dem Blogeintrag von David Colson[6] basiert. Die Charakter sind in dieser Version Entities mit zugewiesenen Komponenten, statt Instanzen von Objekten, welche von den erstellten Systemen bearbeitet werden. Der Source des erstellten C++ Projektes mit ECS-Ansatz kann im GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Cpp_ECS
+Da fertige Frameworks auf DOD ausgelegt sind, wird für diese Implementierung ein simples ECS-Framework selbst erstellt, welches auf dem Blogeintrag von David Colson[6] basiert. Es wurde jedoch so umgebaut, dass die Komponenten nicht nebeneinander im Speicher angelegt werden, um die ECS-Umsetzung von der DOD-Umsetzung abzugrenzen. Die Charakter sind in dieser Version Entities mit zugewiesenen Komponenten, statt Instanzen von Objekten, welche von den erstellten Systemen bearbeitet werden. Der Source des erstellten C++ Projektes mit ECS-Ansatz kann im GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Cpp_ECS
 
 ## Vor- und Nachteile des Entity Component System-Patterns
 
@@ -236,22 +243,16 @@ Nach Vollendigung der ECS-Implementierungen, sollen diese mit dem ursprüngliche
 Für das PM-Dungeon werden jeweils drei Versuche mit 100, 500 und 1000 Monstern im Dungeon durchgeführt. Folgende Messreihen wurden dabei aufgenommen.
 
 |![](assets/measurements/Java_OOP_100.png)|
-|:--:| 
 | *Abbildung 3: Messreihe für den Versuch mit 100 Monstern im Java-Projekt mit OOP-Ansatz* |
 |![](assets/measurements/Java_OOP_500.png)|
-|:--:| 
 | *Abbildung 4: Messreihe für den Versuch mit 500 Monstern im Java-Projekt mit OOP-Ansatz* |
 |![](assets/measurements/Java_OOP_1000.png)|
-|:--:| 
 | *Abbildung 5: Messreihe für den Versuch mit 1000 Monstern im Java-Projekt mit OOP-Ansatz* |
 |![](assets/measurements/Java_ECS_100.png)|
-|:--:| 
 | *Abbildung 6: Messreihe für den Versuch mit 100 Monstern im Java-Projekt mit ECS-Ansatz* |
-|![](assets/measurements/Java_ECS_500.png)|
-|:--:| 
+|![](assets/measurements/Java_ECS_500.png)| 
 | *Abbildung 7: Messreihe für den Versuch mit 500 Monstern im Java-Projekt mit ECS-Ansatz* |
-|![](assets/measurements/Java_ECS_1000.png)|
-|:--:| 
+|![](assets/measurements/Java_ECS_1000.png)| 
 | *Abbildung 8: Messreihe für den Versuch mit 1000 Monstern im Java-Projekt mit ECS-Ansatz* |
 
 Aus den Messreihen wird der Mittelwert, Median und die Standardabweichung bestimmt.
@@ -273,23 +274,17 @@ TODO: Ausführen
 
 Für das C++-Projekt werden drei Versuche mit jeweils 500, 1000 und 2000 Simulierten Charakteren erstellt. Dabei wurden folgende Messereihen aufgenommen.
 
-|![](assets/measurements/Cpp_OOP_500.png)|
-|:--:| 
+|![](assets/measurements/Cpp_OOP_500.png)| 
 | *Abbildung 9: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit OOP-Ansatz* |
 |![](assets/measurements/Cpp_OOP_1000.png)|
-|:--:| 
 | *Abbildung 10: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit OOP-Ansatz* |
-|![](assets/measurements/Cpp_OOP_2000.png)|
-|:--:| 
+|![](assets/measurements/Cpp_OOP_2000.png)| 
 | *Abbildung 11: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit OOP-Ansatz* |
 |![](assets/measurements/Cpp_ECS_500.png)|
-|:--:| 
 | *Abbildung 12: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit ECS-Ansatz* |
 |![](assets/measurements/Cpp_ECS_1000.png)|
-|:--:| 
 | *Abbildung 13: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit ECS-Ansatz* |
 |![](assets/measurements/Cpp_ECS_2000.png)|
-|:--:| 
 | *Abbildung 14: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit ECS-Ansatz* |
 
 Aus den Messreihen wird der Mittelwert, Median und die Standardabweichung bestimmt.
