@@ -229,7 +229,81 @@ Nachteile:
 
 ## Performancevergleich zwischen OOP- und ECS-Ansatz
 
-TBD
+Nach Vollendigung der ECS-Implementierungen, sollen diese mit dem ursprünglichen, mittels OOP-Ansatzes entwickelten, Projekten verglichen werden.
+
+## Java-Projekt
+
+Für das PM-Dungeon werden jeweils drei Versuche mit 100, 500 und 1000 Monstern im Dungeon durchgeführt. Folgende Messreihen wurden dabei aufgenommen.
+
+|![](assets/measurements/Java_OOP_100.png)|
+|:--:| 
+| *Abbildung 3: Messreihe für den Versuch mit 100 Monstern im Java-Projekt mit OOP-Ansatz* |
+|![](assets/measurements/Java_OOP_500.png)|
+|:--:| 
+| *Abbildung 4: Messreihe für den Versuch mit 500 Monstern im Java-Projekt mit OOP-Ansatz* |
+|![](assets/measurements/Java_OOP_1000.png)|
+|:--:| 
+| *Abbildung 5: Messreihe für den Versuch mit 1000 Monstern im Java-Projekt mit OOP-Ansatz* |
+|![](assets/measurements/Java_ECS_100.png)|
+|:--:| 
+| *Abbildung 6: Messreihe für den Versuch mit 100 Monstern im Java-Projekt mit ECS-Ansatz* |
+|![](assets/measurements/Java_ECS_500.png)|
+|:--:| 
+| *Abbildung 7: Messreihe für den Versuch mit 500 Monstern im Java-Projekt mit ECS-Ansatz* |
+|![](assets/measurements/Java_ECS_1000.png)|
+|:--:| 
+| *Abbildung 8: Messreihe für den Versuch mit 1000 Monstern im Java-Projekt mit ECS-Ansatz* |
+
+Aus den Messreihen wird der Mittelwert, Median und die Standardabweichung bestimmt.
+
+| Versuch | Median / µs | Mittelwert / µs | Standardabweichung / µs |
+|:--:|:--:|:--:|:--:|
+| OOP 100 Monster | 970 | 1305 | 809 |
+| OOP 500 Monster | 1606 | 2012 | 1127 |
+| OOP 1000 Monster | 1773 | 2276 | 1692 |
+| ECS 100 Monster | 807 | 1194 | 1119 |
+| ECS 500 Monster | 1574 | 2089 | 1457 |
+| ECS 1000 Monster | 1769 | 2346 | 1616 |
+
+Aus dem Versuch wird ermittelt, dass der reine ECS-Ansatz wenig bis gar keinen Leistungsvorsprung gegenüber dem OOP-Ansatz bietet.
+
+TODO: Ausführen
+
+## C++-Projekt
+
+Für das C++-Projekt werden drei Versuche mit jeweils 500, 1000 und 2000 Simulierten Charakteren erstellt. Dabei wurden folgende Messereihen aufgenommen.
+
+|![](assets/measurements/Cpp_OOP_500.png)|
+|:--:| 
+| *Abbildung 9: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit OOP-Ansatz* |
+|![](assets/measurements/Cpp_OOP_1000.png)|
+|:--:| 
+| *Abbildung 10: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit OOP-Ansatz* |
+|![](assets/measurements/Cpp_OOP_2000.png)|
+|:--:| 
+| *Abbildung 11: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit OOP-Ansatz* |
+|![](assets/measurements/Cpp_ECS_500.png)|
+|:--:| 
+| *Abbildung 12: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit ECS-Ansatz* |
+|![](assets/measurements/Cpp_ECS_1000.png)|
+|:--:| 
+| *Abbildung 13: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit ECS-Ansatz* |
+|![](assets/measurements/Cpp_ECS_2000.png)|
+|:--:| 
+| *Abbildung 14: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit ECS-Ansatz* |
+
+Aus den Messreihen wird der Mittelwert, Median und die Standardabweichung bestimmt.
+
+| Versuch | Median / µs | Mittelwert / µs | Standardabweichung / µs |
+|:--:|:--:|:--:|:--:|
+| OOP 500 Charaktere | 24 | 26 | 4.5 |
+| OOP 1000 Charaktere | 89 | 92.6 | 7.5 |
+| OOP 2000 Charaktere | 345 | 348.3 | 10.7 |
+| ECS 500 Charaktere | 28 | 28.4 | 3.3 |
+| ECS 1000 Charaktere | 93 | 94.3 | 9.6 |
+| ECS 2000 Charaktere | 367 | 366.8 | 36.3 |
+
+TODO: Ausführen
 
 ## Anwenden des Data-Oriented-Designs
 
@@ -238,7 +312,7 @@ Das DOD verfolgt dadurch in der Umsetzung oft das Ziel, Daten zu kapseln und so 
 
 In Java kann das DOD auf diese Weise nicht eingesetzt werden, da man keine Kontrolle darüber hat, ob die zusammenhängenden Daten tatsächlich nebeneinander im Speicher liegen. Jedoch ist der Grundgedanke der Kapselung und separaten Transformation der Daten dadurch erfüllt, dass das ECS eingesetzt worden ist. Aus diesem Grund wird das DOD konkret in dem C++ Beispiel angewendet und getestet.
 
-Um den DOD-Ansatz im erstellten C++ Projekt anzuwenden, wird das ECS-Framework EnTT[7] verwendet. EnTT ist so erstellt worden, dass es den DOD-Ansatz verfolgt und eignet sich somit für den Versuch. Die Version des C++ Miniprojektes, welches EnTT und somit das DOD implementiert kann im GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Cpp_DOD
+Um den DOD-Ansatz im erstellten C++-Projekt anzuwenden, wird das Projekt, welches den ECS-Ansatz umsetzt so umgebaut, dass die Komponenten nicht mehr in jedem Entity separat gespeichert werden. Stattdessen wird es ein Array geben, welches alle Komponenten desselben Typs speichert. Die Version des C++ Miniprojektes, welches DOD implementiert kann im GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Cpp_DOD
 
 ## Vor- und Nachteile des Data-Oriented-Designs
 
@@ -268,4 +342,3 @@ TBD
 [4]: rewrking. https://github.com/rewrking/sfml-vscode-boilerplate  
 [5]: libGDX. https://github.com/libgdx/ashley  
 [6]: David Colson. https://www.david-colson.com/2020/02/09/making-a-simple-ecs.html  
-[7]: skypjack. https://github.com/skypjack/entt  
