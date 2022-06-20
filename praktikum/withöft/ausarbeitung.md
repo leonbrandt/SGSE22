@@ -101,14 +101,14 @@ Die andere Komponente ist die `TestComponent` mit der über das Klicken der jewe
 
 <figure style="text-align: center;">
     <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/pingTestMultiClientTestVisual.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
-    <figcaption>Abbildung 4: Buttons zum Starten von Ping und Multi-Client Test im Browser im Browser.</figcaption>
+    <figcaption>Abbildung 4: Buttons zum Starten von Ping und Multi-Client Test im Browser.</figcaption>
 </figure>
 
 Die Ergebnisse der Tests wurde auf Grund der häufigen Anpassung in der Konsole ausgegeben. Abbildung 5 zeigt, wie alle drei Versuchsarten nacheinander einmal ausgeführt wurden. Während für WebSocket externe Tools zur Messung in Erwägung gezogen wurden, wurde dieser Gedanke auf Grund der Vergleichbarkeit mit WebTransport - hier stehen noch keine Messtools zur Verfügung - verworfen.
 
 <figure style="text-align: center;">
     <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/resultsBrowser.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
-    <figcaption>Abbildung 5: Buttons zum Starten von Ping und Multi-Client Test im Browser im Browser.</figcaption>
+    <figcaption>Abbildung 5: Buttons zum Starten von Ping und Multi-Client Test im Browser.</figcaption>
 </figure>
 
 #### WebTransport
@@ -284,19 +284,20 @@ Für diesen Test verbinden sich mehrere virtuelle Clients mit dem Server. Dabei 
 | 250 Verbindungen | -            | 25551     |
 | 500 Verbindungen | -            | -         |
 
-Sowohl bei WebTransport als auch bei WebSocket kommt es ab einer bestimmten Anzahl gleichzeitiger virtueller Verbindungen auf Clientseite zu Fehlern. *Abbildung 3* zeigt die aufgetretene Fehlermeldung für WebTransport, die beschreibt, dass nicht mehr als 64 gleichzeitige Verbindungen möglich sind.
+Sowohl bei WebTransport als auch bei WebSocket kommt es ab einer bestimmten Anzahl gleichzeitiger virtueller Verbindungen auf Clientseite zu Fehlern. *Abbildung 6* zeigt die aufgetretene Fehlermeldung für WebTransport, die beschreibt, dass nicht mehr als 64 gleichzeitige Verbindungen möglich sind.
 
 <figure style="text-align: center;">
     <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/webtransportMaxConnections.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
-    <figcaption>Abbildung 3: Fehler bei mehr als 64 gleichzeitiger Verbindungen mit WebTransport.</figcaption>
+    <figcaption>Abbildung 6: Fehler bei mehr als 64 gleichzeitiger Verbindungen mit WebTransport.</figcaption>
 </figure>
 
-*Abbildung 4* zeigt die aufgetretene Fehlermeldung für WebSocket. Diese trat auf, wenn mehr als 250 gleichzeitige Verbindungen aufgebaut werden sollten.
+*Abbildung 7* zeigt die aufgetretene Fehlermeldung für WebSocket. Diese trat auf, wenn mehr als 250 gleichzeitige Verbindungen aufgebaut werden sollten.
 
 <figure style="text-align: center;">
     <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/websocketInsufficientRessources.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
-    <figcaption>Abbildung 4: Fehler bei mehr als 250 gleichzeitiger Verbindungen mit WebSocket.</figcaption>
+    <figcaption>Abbildung 7: Fehler bei mehr als 250 gleichzeitiger Verbindungen mit WebSocket.</figcaption>
 </figure>
+
 
 Für beide Protokolle muss an dieser Stelle erwähnt werden, dass diese Probleme lediglich auf Clientseite (auch beim Test mit verschiedenen Browsern) aufgetreten sind.
 
