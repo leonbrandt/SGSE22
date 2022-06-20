@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzOrder.Android", "EzOrder\EzOrder.Android\EzOrder.Android.csproj", "{163B7246-D006-48DD-94EF-42A52576E60F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzOrder", "EzOrder\EzOrder\EzOrder.csproj", "{2CC71A28-463C-4E22-A162-12E4D9083EB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{163B7246-D006-48DD-94EF-42A52576E60F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{163B7246-D006-48DD-94EF-42A52576E60F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{163B7246-D006-48DD-94EF-42A52576E60F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{163B7246-D006-48DD-94EF-42A52576E60F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{163B7246-D006-48DD-94EF-42A52576E60F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{163B7246-D006-48DD-94EF-42A52576E60F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2CC71A28-463C-4E22-A162-12E4D9083EB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CC71A28-463C-4E22-A162-12E4D9083EB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CC71A28-463C-4E22-A162-12E4D9083EB4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2CC71A28-463C-4E22-A162-12E4D9083EB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CC71A28-463C-4E22-A162-12E4D9083EB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CC71A28-463C-4E22-A162-12E4D9083EB4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86091E4D-0F16-4852-8660-BCCCE70E2C2C}
+	EndGlobalSection
+EndGlobal

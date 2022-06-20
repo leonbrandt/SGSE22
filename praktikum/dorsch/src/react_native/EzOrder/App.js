@@ -8,6 +8,8 @@ import ViewOrder from './screens/ViewOrder';
 import NewOrder from './screens/NewOrder';
 import OrderListing from './screens/OrderListing';
 import MyOrders from './screens/MyOrders';
+import Benchmark from './screens/Benchmark';
+var EzOrderBackend = require('ez_order_backend');
 
 export default function App() {
   return (
@@ -18,6 +20,7 @@ export default function App() {
         <RegisterScreen></RegisterScreen>
         <OrderListing></OrderListing>
         <MyOrders></MyOrders>
+        <Benchmark></Benchmark>
       </ScrollView>
     </KeyboardAvoidingView>
   );

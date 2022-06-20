@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: identity
-          image: shopeconomy.azurecr.io/play.identity:1.0.5
+          image: shopeconomy.azurecr.io/play.identity:1.0.7
           env:
             - name: ServiceSettings__MessageBroker
               value: SERVICEBUS
