@@ -251,18 +251,23 @@ Für das PM-Dungeon werden jeweils drei Versuche mit 100, 500 und 1000 Monstern 
 |![](assets/measurements/Java_OOP_100.png)|
 |:--:|
 | *Abbildung 4: Messreihe für den Versuch mit 100 Monstern im Java-Projekt mit OOP-Ansatz* |  
+
 |![](assets/measurements/Java_OOP_500.png)|
 |:--:|
 | *Abbildung 5: Messreihe für den Versuch mit 500 Monstern im Java-Projekt mit OOP-Ansatz* |  
+
 |![](assets/measurements/Java_OOP_1000.png)|
 |:--:|
 | *Abbildung 6: Messreihe für den Versuch mit 1000 Monstern im Java-Projekt mit OOP-Ansatz* |  
+
 |![](assets/measurements/Java_ECS_100.png)|
 |:--:|
 | *Abbildung 7: Messreihe für den Versuch mit 100 Monstern im Java-Projekt mit ECS-Ansatz* |  
+
 |![](assets/measurements/Java_ECS_500.png)|
 |:--:|
 | *Abbildung 8: Messreihe für den Versuch mit 500 Monstern im Java-Projekt mit ECS-Ansatz* |  
+
 |![](assets/measurements/Java_ECS_1000.png)|
 |:--:|
 | *Abbildung 9: Messreihe für den Versuch mit 1000 Monstern im Java-Projekt mit ECS-Ansatz* |  
@@ -287,18 +292,23 @@ Für das C++-Projekt werden drei Versuche mit jeweils 500, 1000 und 2000 Simulie
 |![](assets/measurements/Cpp_OOP_500.png)|
 |:--:|
 | *Abbildung 10: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit OOP-Ansatz* |  
+
 |![](assets/measurements/Cpp_OOP_1000.png)|
 |:--:|
 | *Abbildung 11: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit OOP-Ansatz* |  
+
 |![](assets/measurements/Cpp_OOP_2000.png)|
 |:--:|
 | *Abbildung 12: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit OOP-Ansatz* |  
+
 |![](assets/measurements/Cpp_ECS_500.png)|
 |:--:|
 | *Abbildung 13: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit ECS-Ansatz* |  
+
 |![](assets/measurements/Cpp_ECS_1000.png)|
 |:--:|
 | *Abbildung 14: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit ECS-Ansatz* |  
+
 |![](assets/measurements/Cpp_ECS_2000.png)|
 |:--:|
 | *Abbildung 15: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit ECS-Ansatz* |  
@@ -347,9 +357,11 @@ Die drei Versuche mit 500, 1000 und 2000 Charakteren, welche im C++-Projekt für
 |![](assets/measurements/Cpp_DOD_500.png)|
 |:--:|
 | *Abbildung 16: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit DOD-Ansatz* |  
+
 |![](assets/measurements/Cpp_DOD_1000.png)|
 |:--:|
 | *Abbildung 17: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit DOD-Ansatz* |  
+
 |![](assets/measurements/Cpp_DOD_2000.png)|
 |:--:|
 | *Abbildung 18: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit DOD-Ansatz* |  
