@@ -129,18 +129,24 @@ Als ECS-Framework wird für das PM-Dungeon Ashley[5] eingesetzt, da es eine gute
 Der Source des Miniprojektes in C++ mit OOP-Ansatz kann im entsprechenden GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Cpp_OOP
 
 Aus dem Miniprojekt werden die folgenden Komponenten generiert.
-- Position: Position des Entities
-- Velocity: Geschwindigkeit des Entities
-- Health: Gesundheit des Entities
-- Collision: Schaden, den das Entity durch eine Kollision erleidet
-- Sprite: Sprite des Entities
+
+| Komponente | Daten|
+|:--:|:--:|
+|Position|Position des Entities|
+|Velocity|Geschwindigkeit des Entities|
+|Health|Gesundheit des Entities|
+|Collision|Schaden, den das Entity durch eine Kollision erleidet|
+|Sprite|Sprite des Entities|
 
 Für diese Komponenten werden die unten stehenden Systeme zur Bearbeitung derer Daten erstellt.
-- MovementSystem: Bewegt die Entities entsprechend ihrer Geschwindigkeit
-- KiSystem: Verändert zufällig die Geschwindigkeit des Entities
-- HealthSystem: Entfernt Entities, welche sämtliche Gesundheit verloren haben
-- DamageSystem: Zieht Entities Gesundheit ab, welche kollidiert sind
-- CollisionSystem: Prüft ob zwei Entities kollidieren
+
+| System                | Funktion|
+|:--:|:--:|
+|MovementSystem|Bewegt die Entities entsprechend ihrer Geschwindigkeit|
+|KiSystem|Verändert zufällig die Geschwindigkeit des Entities|
+|HealthSystem|Entfernt Entities, welche sämtliche Gesundheit verloren haben|
+|DamageSystem|Zieht Entities Gesundheit ab, welche kollidiert sind|
+|CollisionSystem|Prüft ob zwei Entities kollidieren|
 
 ### Implementierung des ECS-Ansatzes im C++ Projekt
 
@@ -243,17 +249,17 @@ Nach Vollendigung der ECS-Implementierungen, sollen diese mit dem ursprüngliche
 Für das PM-Dungeon werden jeweils drei Versuche mit 100, 500 und 1000 Monstern im Dungeon durchgeführt. Folgende Messreihen wurden dabei aufgenommen.
 
 |![](assets/measurements/Java_OOP_100.png)|
-| *Abbildung 3: Messreihe für den Versuch mit 100 Monstern im Java-Projekt mit OOP-Ansatz* |
+| *Abbildung 4: Messreihe für den Versuch mit 100 Monstern im Java-Projekt mit OOP-Ansatz* |
 |![](assets/measurements/Java_OOP_500.png)|
-| *Abbildung 4: Messreihe für den Versuch mit 500 Monstern im Java-Projekt mit OOP-Ansatz* |
+| *Abbildung 5: Messreihe für den Versuch mit 500 Monstern im Java-Projekt mit OOP-Ansatz* |
 |![](assets/measurements/Java_OOP_1000.png)|
-| *Abbildung 5: Messreihe für den Versuch mit 1000 Monstern im Java-Projekt mit OOP-Ansatz* |
+| *Abbildung 6: Messreihe für den Versuch mit 1000 Monstern im Java-Projekt mit OOP-Ansatz* |
 |![](assets/measurements/Java_ECS_100.png)|
-| *Abbildung 6: Messreihe für den Versuch mit 100 Monstern im Java-Projekt mit ECS-Ansatz* |
+| *Abbildung 7: Messreihe für den Versuch mit 100 Monstern im Java-Projekt mit ECS-Ansatz* |
 |![](assets/measurements/Java_ECS_500.png)| 
-| *Abbildung 7: Messreihe für den Versuch mit 500 Monstern im Java-Projekt mit ECS-Ansatz* |
+| *Abbildung 8: Messreihe für den Versuch mit 500 Monstern im Java-Projekt mit ECS-Ansatz* |
 |![](assets/measurements/Java_ECS_1000.png)| 
-| *Abbildung 8: Messreihe für den Versuch mit 1000 Monstern im Java-Projekt mit ECS-Ansatz* |
+| *Abbildung 9: Messreihe für den Versuch mit 1000 Monstern im Java-Projekt mit ECS-Ansatz* |
 
 Aus den Messreihen wird der Mittelwert, Median und die Standardabweichung bestimmt.
 
@@ -266,39 +272,37 @@ Aus den Messreihen wird der Mittelwert, Median und die Standardabweichung bestim
 | ECS 500 Monster | 1574 | 2089 | 1457 |
 | ECS 1000 Monster | 1769 | 2346 | 1616 |
 
-Aus dem Versuch wird ermittelt, dass der reine ECS-Ansatz wenig bis gar keinen Leistungsvorsprung gegenüber dem OOP-Ansatz bietet.
-
-TODO: Ausführen
+Aus dem Versuch wird ermittelt, dass der reine ECS-Ansatz wenig bis gar keinen Leistungsvorsprung gegenüber dem OOP-Ansatz bietet. Der Grund hierfür wird die mangelnde Implementierung des DOD-Prinzips sein. Dadurch erfolgen Datenzugriffe weiterhin durch das Laden von Objekten, welche nicht hintereinander im Speicher angeordnet sind, also müssen eventuell viele Speicherzugriffe für die Bearbeitung aller Entities erfolgen. Durch die Implementierung des ECS-Ansatzes, könnte im nächsten Schritt jedoch einfacher vom Multithreaded-Design gebrauch gemacht werden, wodurch die Performance gesteigert werden kann.
 
 ## C++-Projekt
 
 Für das C++-Projekt werden drei Versuche mit jeweils 500, 1000 und 2000 Simulierten Charakteren erstellt. Dabei wurden folgende Messereihen aufgenommen.
 
 |![](assets/measurements/Cpp_OOP_500.png)| 
-| *Abbildung 9: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit OOP-Ansatz* |
+| *Abbildung 10: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit OOP-Ansatz* |
 |![](assets/measurements/Cpp_OOP_1000.png)|
-| *Abbildung 10: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit OOP-Ansatz* |
+| *Abbildung 11: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit OOP-Ansatz* |
 |![](assets/measurements/Cpp_OOP_2000.png)| 
-| *Abbildung 11: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit OOP-Ansatz* |
+| *Abbildung 12: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit OOP-Ansatz* |
 |![](assets/measurements/Cpp_ECS_500.png)|
-| *Abbildung 12: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit ECS-Ansatz* |
+| *Abbildung 13: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit ECS-Ansatz* |
 |![](assets/measurements/Cpp_ECS_1000.png)|
-| *Abbildung 13: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit ECS-Ansatz* |
+| *Abbildung 14: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit ECS-Ansatz* |
 |![](assets/measurements/Cpp_ECS_2000.png)|
-| *Abbildung 14: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit ECS-Ansatz* |
+| *Abbildung 15: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit ECS-Ansatz* |
 
 Aus den Messreihen wird der Mittelwert, Median und die Standardabweichung bestimmt.
 
 | Versuch | Median / µs | Mittelwert / µs | Standardabweichung / µs |
 |:--:|:--:|:--:|:--:|
-| OOP 500 Charaktere | 24 | 26 | 4.5 |
-| OOP 1000 Charaktere | 89 | 92.6 | 7.5 |
-| OOP 2000 Charaktere | 345 | 348.3 | 10.7 |
-| ECS 500 Charaktere | 28 | 28.4 | 3.3 |
-| ECS 1000 Charaktere | 93 | 94.3 | 9.6 |
-| ECS 2000 Charaktere | 367 | 366.8 | 36.3 |
+| OOP 500 Charaktere | 25 | 25.5 | 1.7 |
+| OOP 1000 Charaktere | 89 | 89.9 | 1.9 |
+| OOP 2000 Charaktere | 342 | 342.7 | 3.2 |
+| ECS 500 Charaktere | 30 | 30.2 | 2.4 |
+| ECS 1000 Charaktere | 100 | 102.1 | 4.8 |
+| ECS 2000 Charaktere | 396 | 394.8 | 11 |
 
-TODO: Ausführen
+Die Versuche zeigen auf, dass der ECS-Ansatz der Performance nicht hilft. Da es sich bei dem Testprojekt um ein Miniprojekt handelt, schadet der dadurch erzeugte Overhead der Performance sogar. Auffälig ist, dass der ECS-Ansatz zudem über die Zeit an Leistung dazu gewinnt, je mehr Charaktere im Spiel sind. Der Grund dafür wird sein, dass ab einem bestimmten Punkt die Rechenlast der Charaktere größeren Einfluss hat, als der Overhead. Der gemeinte Overhead ist die Kapselung von Daten innerhalb der Entities, welcher im OOP-Ansatz nicht gegeben ist, stattdessen liegen die Daten ungekapselt in den Objekten. Wenn Charaktere dann aus dem Spiel entfernt werden, steigt die Performance langsam an. Auf den OOP-Ansatz trifft das jedoch nicht zu, da dieser nicht mit Iteratoren arbeitet, um die Charaktere zu berechnen.
 
 ## Anwenden des Data-Oriented-Designs
 
@@ -307,7 +311,7 @@ Das DOD verfolgt dadurch in der Umsetzung oft das Ziel, Daten zu kapseln und so 
 
 In Java kann das DOD auf diese Weise nicht eingesetzt werden, da man keine Kontrolle darüber hat, ob die zusammenhängenden Daten tatsächlich nebeneinander im Speicher liegen. Jedoch ist der Grundgedanke der Kapselung und separaten Transformation der Daten dadurch erfüllt, dass das ECS eingesetzt worden ist. Aus diesem Grund wird das DOD konkret in dem C++ Beispiel angewendet und getestet.
 
-Um den DOD-Ansatz im erstellten C++-Projekt anzuwenden, wird das Projekt, welches den ECS-Ansatz umsetzt so umgebaut, dass die Komponenten nicht mehr in jedem Entity separat gespeichert werden. Stattdessen wird es ein Array geben, welches alle Komponenten desselben Typs speichert. Die Version des C++ Miniprojektes, welches DOD implementiert kann im GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Cpp_DOD
+Um den DOD-Ansatz im erstellten C++-Projekt anzuwenden, wird das Projekt, welches den ECS-Ansatz umsetzt so umgebaut, dass die Komponenten nicht mehr in jedem Entity separat gespeichert werden. Stattdessen wird es ein Array geben, welches alle Komponenten desselben Typs speichert. Weiter wird die Stelle ermittelt, welche den größten Einfluss auf die Laufzeit hat. Im Falle dieses Projektes handelt es sich dabei um das `CollisionSystem`, welches über alle Charaktere iteriert, um Zusammenstöße zu ermitteln. Im ECS-Ansatz ist dafür ein Iterator verwendet worden, dieser wird ersetzt durch einen klassischen Array-Zugriff, wodurch Zugriffszeit eingesparrt wird. Die Version des C++ Miniprojektes, welches DOD implementiert kann im GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Cpp_DOD
 
 ## Vor- und Nachteile des Data-Oriented-Designs
 
@@ -322,10 +326,28 @@ Vorteile:
 Nachteile:
 - Erfordert umdenken gegenüber klassischem OOP-Ansatz
 - Es kann schwer sein DOD mit bestehenden Systemen zu koppeln, welche nicht DOD befolgen
+- Optimierungen an der Datentranformation zu finden, benötigt zusätzliche Entwicklungszeit
 
 ## Performancevergleich zwischen ECS- und DOD-Ansatz
 
-TBD
+Die drei Versuche mit 500, 1000 und 2000 Charakteren, welche im C++-Projekt für den OOP- und ECS-Ansatz umgesetzt wurden, werden für den DOD-Ansatz aufgenommen. Folgende Messdaten ergeben sich.
+
+|![](assets/measurements/Cpp_DOD_500.png)|
+| *Abbildung 16: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit DOD-Ansatz* |
+|![](assets/measurements/Cpp_DOD_1000.png)|
+| *Abbildung 17: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit DOD-Ansatz* |
+|![](assets/measurements/Cpp_DOD_2000.png)|
+| *Abbildung 18: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit DOD-Ansatz* |
+
+Wieder werden Median, Mittelwert und Standardabweichung aus den Messdaten ermittelt.
+
+| Versuch | Median / µs | Mittelwert / µs | Standardabweichung / µs |
+|:--:|:--:|:--:|:--:|
+| DOD 500 Charaktere | 16 | 16.2 | 0.7 |
+| DOD 1000 Charaktere | 16 | 16.3 | 1.2 |
+| DOD 2000 Charaktere | 45 | 44.7 | 1.4 |
+
+Durch die Implementierung des DOD-Ansatzes im ECS-Projekt, wird dem Overhead entgegen gewirkt. Das Projekt ist jetzt um Längen schneller als das OOP-Projekt und wird nur noch von der Grafikbibliothek ausgebremst.
 
 ## Zusammenfassung
 
