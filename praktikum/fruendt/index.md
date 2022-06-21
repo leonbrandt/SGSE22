@@ -249,17 +249,23 @@ Nach Vollendigung der ECS-Implementierungen, sollen diese mit dem ursprüngliche
 Für das PM-Dungeon werden jeweils drei Versuche mit 100, 500 und 1000 Monstern im Dungeon durchgeführt. Folgende Messreihen wurden dabei aufgenommen.
 
 |![](assets/measurements/Java_OOP_100.png)|
-| *Abbildung 4: Messreihe für den Versuch mit 100 Monstern im Java-Projekt mit OOP-Ansatz* |
+|:--:|
+| *Abbildung 4: Messreihe für den Versuch mit 100 Monstern im Java-Projekt mit OOP-Ansatz* |  
 |![](assets/measurements/Java_OOP_500.png)|
-| *Abbildung 5: Messreihe für den Versuch mit 500 Monstern im Java-Projekt mit OOP-Ansatz* |
+|:--:|
+| *Abbildung 5: Messreihe für den Versuch mit 500 Monstern im Java-Projekt mit OOP-Ansatz* |  
 |![](assets/measurements/Java_OOP_1000.png)|
-| *Abbildung 6: Messreihe für den Versuch mit 1000 Monstern im Java-Projekt mit OOP-Ansatz* |
+|:--:|
+| *Abbildung 6: Messreihe für den Versuch mit 1000 Monstern im Java-Projekt mit OOP-Ansatz* |  
 |![](assets/measurements/Java_ECS_100.png)|
-| *Abbildung 7: Messreihe für den Versuch mit 100 Monstern im Java-Projekt mit ECS-Ansatz* |
-|![](assets/measurements/Java_ECS_500.png)| 
-| *Abbildung 8: Messreihe für den Versuch mit 500 Monstern im Java-Projekt mit ECS-Ansatz* |
-|![](assets/measurements/Java_ECS_1000.png)| 
-| *Abbildung 9: Messreihe für den Versuch mit 1000 Monstern im Java-Projekt mit ECS-Ansatz* |
+|:--:|
+| *Abbildung 7: Messreihe für den Versuch mit 100 Monstern im Java-Projekt mit ECS-Ansatz* |  
+|![](assets/measurements/Java_ECS_500.png)|
+|:--:|
+| *Abbildung 8: Messreihe für den Versuch mit 500 Monstern im Java-Projekt mit ECS-Ansatz* |  
+|![](assets/measurements/Java_ECS_1000.png)|
+|:--:|
+| *Abbildung 9: Messreihe für den Versuch mit 1000 Monstern im Java-Projekt mit ECS-Ansatz* |  
 
 Aus den Messreihen wird der Mittelwert, Median und die Standardabweichung bestimmt.
 
@@ -278,18 +284,24 @@ Aus dem Versuch wird ermittelt, dass der reine ECS-Ansatz wenig bis gar keinen L
 
 Für das C++-Projekt werden drei Versuche mit jeweils 500, 1000 und 2000 Simulierten Charakteren erstellt. Dabei wurden folgende Messereihen aufgenommen.
 
-|![](assets/measurements/Cpp_OOP_500.png)| 
-| *Abbildung 10: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit OOP-Ansatz* |
+|![](assets/measurements/Cpp_OOP_500.png)|
+|:--:|
+| *Abbildung 10: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit OOP-Ansatz* |  
 |![](assets/measurements/Cpp_OOP_1000.png)|
-| *Abbildung 11: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit OOP-Ansatz* |
-|![](assets/measurements/Cpp_OOP_2000.png)| 
-| *Abbildung 12: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit OOP-Ansatz* |
+|:--:|
+| *Abbildung 11: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit OOP-Ansatz* |  
+|![](assets/measurements/Cpp_OOP_2000.png)|
+|:--:|
+| *Abbildung 12: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit OOP-Ansatz* |  
 |![](assets/measurements/Cpp_ECS_500.png)|
-| *Abbildung 13: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit ECS-Ansatz* |
+|:--:|
+| *Abbildung 13: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit ECS-Ansatz* |  
 |![](assets/measurements/Cpp_ECS_1000.png)|
-| *Abbildung 14: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit ECS-Ansatz* |
+|:--:|
+| *Abbildung 14: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit ECS-Ansatz* |  
 |![](assets/measurements/Cpp_ECS_2000.png)|
-| *Abbildung 15: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit ECS-Ansatz* |
+|:--:|
+| *Abbildung 15: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit ECS-Ansatz* |  
 
 Aus den Messreihen wird der Mittelwert, Median und die Standardabweichung bestimmt.
 
@@ -333,11 +345,14 @@ Nachteile:
 Die drei Versuche mit 500, 1000 und 2000 Charakteren, welche im C++-Projekt für den OOP- und ECS-Ansatz umgesetzt wurden, werden für den DOD-Ansatz aufgenommen. Folgende Messdaten ergeben sich.
 
 |![](assets/measurements/Cpp_DOD_500.png)|
-| *Abbildung 16: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit DOD-Ansatz* |
+|:--:|
+| *Abbildung 16: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit DOD-Ansatz* |  
 |![](assets/measurements/Cpp_DOD_1000.png)|
-| *Abbildung 17: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit DOD-Ansatz* |
+|:--:|
+| *Abbildung 17: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit DOD-Ansatz* |  
 |![](assets/measurements/Cpp_DOD_2000.png)|
-| *Abbildung 18: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit DOD-Ansatz* |
+|:--:|
+| *Abbildung 18: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit DOD-Ansatz* |  
 
 Wieder werden Median, Mittelwert und Standardabweichung aus den Messdaten ermittelt.
 
