@@ -59,7 +59,61 @@ Um die genannten Messungen durchführen zu können, soll sowohl eine kleine Fron
 
 ### Frontend
 
+Das Frontend wurde mit dem Framework Angular und der Sprache Typescript geschrieben. Um nicht zwei Anwendungen schreiben zu müssen, wurden in der `package.json` des Projekts zwei Build-Skripte definiert. Einen zum Starten des Projekts mit dem WebSocket-Protokoll und eines zum Starten des Projekts mit WebTransport. Weil noch keine Vorerfahrung mit Angular vorhanden war, musste sich zuerst angeschaut werden, wie sich die in der package.json festgelegten Optionen im Code anwenden lassen. Dafür mussten in der `angular.json` zwei neue Konfigurationen erstellt werden. Im Folgenden ist ein Auszug einer solchen Konfiguration dargestellt. Wenn das Projekt nun mit dem Skript `ng serve --configuration=websocket --port=4201` gestartet wird, wird die `environment.ts` mit der `environment.websocket.ts` ersetzt. In den environment-Dateien befindet sich eine Flag, durch die unterschieden werden kann, ob WebTransport oder WebSockets genutzt werden sollen.
 
+```json
+"websocket": {
+    [...]
+    "fileReplacements": [{
+        "replace": "src/environments/environment.ts",
+        "with": "src/environments/environment.websocket.ts"
+	}]
+}
+```
+
+#### CommunicationService
+
+Von den im Projekt bestehenden Komponenten wird stets nur der `CommunicationService` genutzt und nicht die Services, der einzelnen Protokolle. Durch diese Schnittstelle nach außen, muss lediglich an einer Stelle unterschieden werden, welches Protokoll nun verwendet wird. Wie im unteren Beispiel dargestellt, wird hierfür die zuvor erläuterte Flag, in den Umgebungsvariablen genutzt. Der `protocolService` dient als generalisiertes Objekt und stellt den gerade verwendeten Service dar. Der `WebsocketService` und der `WebtransportService` müssen für diesen Zugriff also die gleichen Methoden implementieren, da nur nur bei Initialisierung das Protokoll festgelegt wird und anschließend das `protocolService`-Objekt genutzt wird.
+
+```typescript
+export class CommunicationService {
+	private protocolService! : WebsocketService | WebtransportService;
+	constructor(private injector: Injector) {
+    	if (environment.websocket) {
+			this.protocolService = <WebsocketService>this.injector.get(WebsocketService);
+        } else {
+			this.protocolService = <WebtransportService>this.injector.get(WebtransportService);
+        }
+    }
+}
+```
+
+#### Komponenten
+
+Die Komponente, mit der der Austausch großer Datenmengen gemessen wird, ist die `LargeFilesComponent`. Diese zeigt eine Liste, der im Backend verfügbaren Dateien zum Download an (siehe Abbildung 3). Durch das Doppelklicken auf eine Datei wird ein Messversuch für diese Datei gestartet, indem eine Aufforderung der Komponente an den `protocolService` erfolgt.
+
+<figure style="text-align: center;">
+    <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/largeFilesComponentVisual.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
+    <figcaption>Abbildung 3: Visuelle Darstellung der Dateien zum Herunterladen im Browser.</figcaption>
+</figure>
+
+Die andere Komponente ist die `TestComponent` mit der über das Klicken der jeweiligen Buttons (siehe Abbildung 4) der Ping Test oder der Multi-Client Test gestartet werden kann. Analog zur Komponente für den Download großer Dateien, erfolgt auch hier für die jeweilige Testart eine Anfrage an den `protocolService`, durch die der Test anschließend gestartet wird.
+
+<figure style="text-align: center;">
+    <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/pingTestMultiClientTestVisual.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
+    <figcaption>Abbildung 4: Buttons zum Starten von Ping und Multi-Client Test im Browser.</figcaption>
+</figure>
+
+Die Ergebnisse der Tests wurde auf Grund der häufigen Anpassung in der Konsole ausgegeben. Abbildung 5 zeigt, wie alle drei Versuchsarten nacheinander einmal ausgeführt wurden. Während für WebSocket externe Tools zur Messung in Erwägung gezogen wurden, wurde dieser Gedanke auf Grund der Vergleichbarkeit mit WebTransport - hier stehen noch keine Messtools zur Verfügung - verworfen.
+
+<figure style="text-align: center;">
+    <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/resultsBrowser.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
+    <figcaption>Abbildung 5: Buttons zum Starten von Ping und Multi-Client Test im Browser.</figcaption>
+</figure>
+
+#### WebTransport
+
+#### WebSocket
 
 ### Backend
 
@@ -221,28 +275,29 @@ Die Messungen/Tests für beide Protokolle wurden jeweils für eine bessere Vergl
 
 Für diesen Test verbinden sich mehrere virtuelle Clients mit dem Server. Dabei wird von jedem Client eine 1MB große Datei angefordert. Dieser Test soll die Geschwindigkeit der beiden Protokolle in Abhängigkeit der verbundenen Clients untersuchen. Die erste Spalte gibt an, wie viele Clients sich für den Testdurchlauf mit dem Server verbunden haben. Die zweite Spalte stellt in Millisekunden dar, wie lange es gedauert hat, um über WebTransport die angeforderte Datei an jeden Client zu senden. Die dritte Spalte zeigt die Werte für WebSockets an. Wie bei allen durchgeführten Tests, wurden die Durchläufe für jede Zeile mehrmals wiederholt, um verlässlichere Werte zu erhalten.
 
-|      | WebTransport | WebSocket |
-| ---- | ------------ | --------- |
-| 1    | 514          | 449       |
-| 10   | 4733         | 1314      |
-| 64   | 29636        | 6842      |
-| 100  | -            | 10562     |
-| 250  | -            | 25551     |
-| 500  | -            | -         |
+|                  | WebTransport | WebSocket |
+| ---------------- | ------------ | --------- |
+| 1 Verbindung     | 514          | 449       |
+| 10 Verbindungen  | 4733         | 1314      |
+| 64 Verbindungen  | 29636        | 6842      |
+| 100 Verbindungen | -            | 10562     |
+| 250 Verbindungen | -            | 25551     |
+| 500 Verbindungen | -            | -         |
 
-Sowohl bei WebTransport als auch bei WebSocket kommt es ab einer bestimmten Anzahl gleichzeitiger virtueller Verbindungen auf Clientseite zu Fehlern. *Abbildung 3* zeigt die aufgetretene Fehlermeldung für WebTransport, die beschreibt, dass nicht mehr als 64 gleichzeitige Verbindungen möglich sind.
+Sowohl bei WebTransport als auch bei WebSocket kommt es ab einer bestimmten Anzahl gleichzeitiger virtueller Verbindungen auf Clientseite zu Fehlern. *Abbildung 6* zeigt die aufgetretene Fehlermeldung für WebTransport, die beschreibt, dass nicht mehr als 64 gleichzeitige Verbindungen möglich sind.
 
 <figure style="text-align: center;">
     <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/webtransportMaxConnections.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
-    <figcaption>Abbildung 3: Fehler bei mehr als 64 gleichzeitiger Verbindungen mit WebTransport.</figcaption>
+    <figcaption>Abbildung 6: Fehler bei mehr als 64 gleichzeitiger Verbindungen mit WebTransport.</figcaption>
 </figure>
 
-*Abbildung 4* zeigt die aufgetretene Fehlermeldung für WebSocket. Diese trat auf, wenn mehr als 250 gleichzeitige Verbindungen aufgebaut werden sollten.
+*Abbildung 7* zeigt die aufgetretene Fehlermeldung für WebSocket. Diese trat auf, wenn mehr als 250 gleichzeitige Verbindungen aufgebaut werden sollten.
 
 <figure style="text-align: center;">
     <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/websocketInsufficientRessources.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
-    <figcaption>Abbildung 4: Fehler bei mehr als 250 gleichzeitiger Verbindungen mit WebSocket.</figcaption>
+    <figcaption>Abbildung 7: Fehler bei mehr als 250 gleichzeitiger Verbindungen mit WebSocket.</figcaption>
 </figure>
+
 
 Für beide Protokolle muss an dieser Stelle erwähnt werden, dass diese Probleme lediglich auf Clientseite (auch beim Test mit verschiedenen Browsern) aufgetreten sind.
 
@@ -252,13 +307,13 @@ Für diesen Test wurde bei jedem Testdurchlauf immer nur **ein** Client verbunde
 
 In den darauffolgenden Zeilen wurde gemessen, wie lange es dauert *X* Datenpakete zu versenden und für jedes eine Antwort zu erhalten. Auch hier wurde das Prinzip wurde jede Zeile 100 mal wiederholt. Die Ergebnisse sind in Millisekunden.
 
-|        | WebTransport | WebSocket |
-| ------ | ------------ | --------- |
-| 1      | 11           | 12        |
-| 10     | 31           | 117       |
-| 100    | 115          | 1094      |
-| 1.000  | 487          | 11341     |
-| 10.000 | 2280         | 114392    |
+|                    | WebTransport | WebSocket |
+| ------------------ | ------------ | --------- |
+| 1 Datenpaket       | 11           | 12        |
+| 10 Datenpakete     | 31           | 117       |
+| 100 Datenpakete    | 115          | 1094      |
+| 1.000 Datenpakete  | 487          | 11341     |
+| 10.000 Datenpakete | 2280         | 114392    |
 
 WebTransport kann hier auf Client-Seite einfach parallele Aufrufe starten, während das bei WebSockets nicht ohne weiteres so auf dem selben Channel möglich ist. Deswegen sieht man bei WebSockets als Ergebnis immer nahezu die Anzahl der Datenpakete mit der ursprünglichen Latenz multipliziert. Bei WebTransport kann festgestellt werden, dass dieses Protokoll auch bei vielen gleichzeitigen Anfragen langsamer wird, auf Grund der parallelen Abfragen zeitlich deutlich vor den WebSockets liegt.
 

@@ -45,7 +45,7 @@ Auf die Grundlegenden Eigenschaften und den Aufbau des ECS-Patterns und des DOD 
 
 ## Aufbau des Entity Component System-Patterns
 
-Zunächst soll auf die Frage eingegangen werden, wie das ECS aufgebaut ist. Dafür wird ein Projekt vom Objektorientierten Programmierstil in das ECS-Pattern überführt. Durch diese grundlegende Änderung in der Architektur muss die gesamte Struktur des Projekts verändert werden. Vorgenommen soll dieser Umbau an zwei Projekten:
+Zunächst soll auf die Frage eingegangen werden, wie das ECS aufgebaut ist. Dafür werden Projekte vom Objektorientierten Programmierstil in das ECS-Pattern überführt. Durch diese grundlegende Änderung in der Architektur muss die gesamte Struktur des Projekts verändert werden. Vorgenommen soll dieser Umbau an zwei Projekten:
 - Zunächst soll anhand des Projekts PM-Dungeon dieser Umbau erfolgen. Das Projekt wurde im Team zu dritt im Rahmen des Moduls Programmiermethoden erstellt. Bei dem Projekt handelt es sich um ein Rogue-Like-Spiel, in welchem der Spieler einen Helden durch ein Dungeon voller Monster navigiert und die Monster bezwingt. Das Projekt verwendet eine bereitgestellte Bibliothek, welche libGDX[2] verwendet um Aufgaben wie die Verwaltung und Generierung der Spielwelt zu übernehmen.
 - Anschließend wird in C++ ein Miniprojekt erstellt, welches nicht-Spielercharaktere simuliert. Diese sollen sich zufällig durch die Welt bewegen und beim Zusammenstoßen mit anderen Charakteren Schaden erleiden. Wenn sie zu viel Schaden erleiden werden sie aus der Spielwelt entfernt. Um die Charaktere und die Welt darzustellen wird die Bibliothek SFML[3] verwendet und das Basisprojekt von rewrking[4] wird für die einfache Verwendung von VS Code eingesetzt.
 
@@ -54,27 +54,34 @@ Zunächst soll auf die Frage eingegangen werden, wie das ECS aufgebaut ist. Daf�
 Detailierter soll der Umbau am Projekt PM-Dungeon erfolgen. Das erstellte C++ Projekt wird im Anschluss grob vorgestellt.
 
 Der Source des Projektes PM-Dungeon kann im entsprechenden GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Java_Dungeon_OOP
-In Abbildung 1 ist das Klassendiagramm des PM-Dungeon vereinfacht dargestellt. Exemplarisch sind die nötigen Klassen für Charaktere und Items abgebildet.
-OOP-typisch gibt es jeweils eine abstrakte Basisklasse für Items und Charaktere, welche geerbt und erweitert wird. 
+In Abbildung 1 ist das Klassendiagramm des PM-Dungeon vereinfacht dargestellt. Exemplarisch sind die nötigen Klassen für Charaktere abgebildet.
+OOP-typisch gibt es jeweils eine abstrakte Basisklasse für Charaktere, welche geerbt und erweitert wird. Besonders an der `Hero`-Klasse wird deutlich, dass diese durch überschriebene Funktionen der Basisklasse, durch die Getter und Setter und durch die komplexe Steuerungslogik des Heros aufgebläht wird.
 
 |![](assets/PMDKlassen.png)|
 |:--:| 
-| *Abbildung 1: Klassendiagramm des PM-Dungeon für Charaktere und Items* |
+| *Abbildung 1: Klassendiagramm des PM-Dungeon für Charaktere* |
 
 Um die Klassen in das ECS-Pattern zu überführen müssen markante Variablen der Klassen, wie beispielsweise die Gesundheit, in Komponenten überführt werden. Die Komponenten sollten neben den Daten jedoch keine Logik enthalten. Sämtliche Logik muss in Systeme überführt werden. Für das Beispiel der Gesundheit wird ein System angelegt, welches für jedes Entity mit einer Gesundheitskomponente prüft, ob dessen
 Gesundheitswert größer 0 ist. Ist das nicht der Fall, wird das Entity gelöscht.
 
+
 |![](assets/PMDECS.png)|
 |:--:| 
-| *Abbildung 2: Entity-Component-Zusammensetzung für Charaktere und Items* |
+| *Abbildung 2: Komponenten und Systeme, welche die Logik der Klassen im OOP-Ansatz ersetzen* |
 
-In Abbildung 2 ist die Zusammensetzung der Komponenten dargestellt, welche die Daten der in Abbildung 1 dargestellten Klassen übernehmen. Für die Komponenten gibt es entsprechende Systeme, die die Komponenten verwerten. Durch die Komponenten wird das erstellen eines Entities wie ein Baukastensystem.
+Die Systeme und Komponenten, welche die in Abbildung 1 dargestellten Klassen ersetzen sollen, sind in Abbildung 2 dargestellt. Durch die Verwendung von Komponenten wird das erstellen eines Entities wie ein Baukastensystem, dadurch entsteht eine hohe Wiederverwendbarkeit. Da auf die Daten in den Komponenten direkt zugegriffen wird, fallen Getter und Setter weg. Die Komplexe Logik der Klassen wird in mehrere Systeme aufgebrochen, in welchen die Entities gleichbehandelt werden können, indem die benötigten Komponenten spezifiziert werden, die die Entities für die Bearbeitung aufweisen müssen. Die nötige Komponenten-Zusammensetzung der vorherigen Klassen sieht wie folgt aus:
+
+|![](assets/PMDECS_Zusammensetzung.png)|
+|:--:| 
+| *Abbildung 3: Entity-Component-Zusammensetzung für Charaktere* |
+
+Die Zusammensetzung ist dynamisch gestaltet und kann sich während der Laufzeit ändern, um bestimmte Verhalten zu erzeugen. Wenn beispielsweise der Held angegriffen wird, soll er einen Rückstoß erhalten. Dafür wird ihm die `PlayerControl`-Komponenten weggenommen, wodurch er sich nicht mehr bewegen kann. Zudem wird ihm die `Knockback`-Komponente hinzugefügt, wodurch das `KnockbackSystem` diesen bearbeiten kann. Wenn der erhaltene Rückstoß ausgeführt wurde, kann die `PlayerControl`-Komponenten wieder zugewiesen werden, wodurch der Held wieder spielbar wird.
 
 Untenstehend sind alle erstellten Komponenten. Um mithilfe der Komponenten das ursprüngliche Verhalten von Charakteren und Items
 zu erhalten, müssen Entities erstellt werden und die passenden Komponenten zugewiesen werden. Dafür bietet sich das Factory-Method-Pattern an,
 welches ein Entity als beispielsweise Monster erstellt, indem es ein neues Entitiy erstellt und die benötigten Komponenten parametrisiert zuweist.
 
-| Komponente                | Daten|
+| Komponente | Daten|
 |:--:|:--:|
 | Animation             | Enthält die Sprites die die Animation des Entities ausmachen |
 | Experience            | Erfahrungspunkte des Entities |
@@ -122,22 +129,28 @@ Als ECS-Framework wird für das PM-Dungeon Ashley[5] eingesetzt, da es eine gute
 Der Source des Miniprojektes in C++ mit OOP-Ansatz kann im entsprechenden GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Cpp_OOP
 
 Aus dem Miniprojekt werden die folgenden Komponenten generiert.
-- Position: Position des Entities
-- Velocity: Geschwindigkeit des Entities
-- Health: Gesundheit des Entities
-- Collision: Schaden, den das Entity durch eine Kollision erleidet
-- Sprite: Sprite des Entities
+
+| Komponente | Daten|
+|:--:|:--:|
+|Position|Position des Entities|
+|Velocity|Geschwindigkeit des Entities|
+|Health|Gesundheit des Entities|
+|Collision|Schaden, den das Entity durch eine Kollision erleidet|
+|Sprite|Sprite des Entities|
 
 Für diese Komponenten werden die unten stehenden Systeme zur Bearbeitung derer Daten erstellt.
-- MovementSystem: Bewegt die Entities entsprechend ihrer Geschwindigkeit
-- KiSystem: Verändert zufällig die Geschwindigkeit des Entities
-- HealthSystem: Entfernt Entities, welche sämtliche Gesundheit verloren haben
-- DamageSystem: Zieht Entities Gesundheit ab, welche kollidiert sind
-- CollisionSystem: Prüft ob zwei Entities kollidieren
+
+| System                | Funktion|
+|:--:|:--:|
+|MovementSystem|Bewegt die Entities entsprechend ihrer Geschwindigkeit|
+|KiSystem|Verändert zufällig die Geschwindigkeit des Entities|
+|HealthSystem|Entfernt Entities, welche sämtliche Gesundheit verloren haben|
+|DamageSystem|Zieht Entities Gesundheit ab, welche kollidiert sind|
+|CollisionSystem|Prüft ob zwei Entities kollidieren|
 
 ### Implementierung des ECS-Ansatzes im C++ Projekt
 
-Da fertige Frameworks auf DOD ausgelegt sind, wird für diese Implementierung ein simples ECS-Framework selbst erstellt, welches auf dem Blogeintrag von David Colson[6] basiert. Die Charakter sind in dieser Version Entities mit zugewiesenen Komponenten, statt Instanzen von Objekten, welche von den erstellten Systemen bearbeitet werden. Der Source des erstellten C++ Projektes mit ECS-Ansatz kann im GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Cpp_ECS
+Da fertige Frameworks auf DOD ausgelegt sind, wird für diese Implementierung ein simples ECS-Framework selbst erstellt, welches auf dem Blogeintrag von David Colson[6] basiert. Es wurde jedoch so umgebaut, dass die Komponenten nicht nebeneinander im Speicher angelegt werden, um die ECS-Umsetzung von der DOD-Umsetzung abzugrenzen. Die Charakter sind in dieser Version Entities mit zugewiesenen Komponenten, statt Instanzen von Objekten, welche von den erstellten Systemen bearbeitet werden. Der Source des erstellten C++ Projektes mit ECS-Ansatz kann im GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Cpp_ECS
 
 ## Vor- und Nachteile des Entity Component System-Patterns
 
@@ -229,7 +242,89 @@ Nachteile:
 
 ## Performancevergleich zwischen OOP- und ECS-Ansatz
 
-TBD
+Nach Vollendigung der ECS-Implementierungen, sollen diese mit dem ursprünglichen, mittels OOP-Ansatzes entwickelten, Projekten verglichen werden.
+
+## Java-Projekt
+
+Für das PM-Dungeon werden jeweils drei Versuche mit 100, 500 und 1000 Monstern im Dungeon durchgeführt. Folgende Messreihen wurden dabei aufgenommen.
+
+|![](assets/measurements/Java_OOP_100.png)|
+|:--:|
+| *Abbildung 4: Messreihe für den Versuch mit 100 Monstern im Java-Projekt mit OOP-Ansatz* |  
+
+|![](assets/measurements/Java_OOP_500.png)|
+|:--:|
+| *Abbildung 5: Messreihe für den Versuch mit 500 Monstern im Java-Projekt mit OOP-Ansatz* |  
+
+|![](assets/measurements/Java_OOP_1000.png)|
+|:--:|
+| *Abbildung 6: Messreihe für den Versuch mit 1000 Monstern im Java-Projekt mit OOP-Ansatz* |  
+
+|![](assets/measurements/Java_ECS_100.png)|
+|:--:|
+| *Abbildung 7: Messreihe für den Versuch mit 100 Monstern im Java-Projekt mit ECS-Ansatz* |  
+
+|![](assets/measurements/Java_ECS_500.png)|
+|:--:|
+| *Abbildung 8: Messreihe für den Versuch mit 500 Monstern im Java-Projekt mit ECS-Ansatz* |  
+
+|![](assets/measurements/Java_ECS_1000.png)|
+|:--:|
+| *Abbildung 9: Messreihe für den Versuch mit 1000 Monstern im Java-Projekt mit ECS-Ansatz* |  
+
+Aus den Messreihen wird der Mittelwert, Median und die Standardabweichung bestimmt.
+
+| Versuch | Median / µs | Mittelwert / µs | Standardabweichung / µs |
+|:--:|:--:|:--:|:--:|
+| OOP 100 Monster | 970 | 1305 | 809 |
+| OOP 500 Monster | 1606 | 2012 | 1127 |
+| OOP 1000 Monster | 1773 | 2276 | 1692 |
+| ECS 100 Monster | 807 | 1194 | 1119 |
+| ECS 500 Monster | 1574 | 2089 | 1457 |
+| ECS 1000 Monster | 1769 | 2346 | 1616 |
+
+Aus dem Versuch wird ermittelt, dass der reine ECS-Ansatz wenig bis gar keinen Leistungsvorsprung gegenüber dem OOP-Ansatz bietet. Der Grund hierfür wird die mangelnde Implementierung des DOD-Prinzips sein. Dadurch erfolgen Datenzugriffe weiterhin durch das Laden von Objekten, welche nicht hintereinander im Speicher angeordnet sind, also müssen eventuell viele Speicherzugriffe für die Bearbeitung aller Entities erfolgen. Durch die Implementierung des ECS-Ansatzes, könnte im nächsten Schritt jedoch einfacher vom Multithreaded-Design gebrauch gemacht werden, wodurch die Performance gesteigert werden kann.
+
+## C++-Projekt
+
+Für das C++-Projekt werden drei Versuche mit jeweils 500, 1000 und 2000 Simulierten Charakteren erstellt. Dabei wurden folgende Messereihen aufgenommen.
+
+|![](assets/measurements/Cpp_OOP_500.png)|
+|:--:|
+| *Abbildung 10: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit OOP-Ansatz* |  
+
+|![](assets/measurements/Cpp_OOP_1000.png)|
+|:--:|
+| *Abbildung 11: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit OOP-Ansatz* |  
+
+|![](assets/measurements/Cpp_OOP_2000.png)|
+|:--:|
+| *Abbildung 12: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit OOP-Ansatz* |  
+
+|![](assets/measurements/Cpp_ECS_500.png)|
+|:--:|
+| *Abbildung 13: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit ECS-Ansatz* |  
+
+|![](assets/measurements/Cpp_ECS_1000.png)|
+|:--:|
+| *Abbildung 14: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit ECS-Ansatz* |  
+
+|![](assets/measurements/Cpp_ECS_2000.png)|
+|:--:|
+| *Abbildung 15: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit ECS-Ansatz* |  
+
+Aus den Messreihen wird der Mittelwert, Median und die Standardabweichung bestimmt.
+
+| Versuch | Median / µs | Mittelwert / µs | Standardabweichung / µs |
+|:--:|:--:|:--:|:--:|
+| OOP 500 Charaktere | 25 | 25.5 | 1.7 |
+| OOP 1000 Charaktere | 89 | 89.9 | 1.9 |
+| OOP 2000 Charaktere | 342 | 342.7 | 3.2 |
+| ECS 500 Charaktere | 30 | 30.2 | 2.4 |
+| ECS 1000 Charaktere | 100 | 102.1 | 4.8 |
+| ECS 2000 Charaktere | 396 | 394.8 | 11 |
+
+Die Versuche zeigen auf, dass der ECS-Ansatz der Performance nicht hilft. Da es sich bei dem Testprojekt um ein Miniprojekt handelt, schadet der dadurch erzeugte Overhead der Performance sogar. Auffälig ist, dass der ECS-Ansatz zudem über die Zeit an Leistung dazu gewinnt, je mehr Charaktere im Spiel sind. Der Grund dafür wird sein, dass ab einem bestimmten Punkt die Rechenlast der Charaktere größeren Einfluss hat, als der Overhead. Der gemeinte Overhead ist die Kapselung von Daten innerhalb der Entities, welcher im OOP-Ansatz nicht gegeben ist, stattdessen liegen die Daten ungekapselt in den Objekten. Wenn Charaktere dann aus dem Spiel entfernt werden, steigt die Performance langsam an. Auf den OOP-Ansatz trifft das jedoch nicht zu, da dieser nicht mit Iteratoren arbeitet, um die Charaktere zu berechnen.
 
 ## Anwenden des Data-Oriented-Designs
 
@@ -238,7 +333,7 @@ Das DOD verfolgt dadurch in der Umsetzung oft das Ziel, Daten zu kapseln und so 
 
 In Java kann das DOD auf diese Weise nicht eingesetzt werden, da man keine Kontrolle darüber hat, ob die zusammenhängenden Daten tatsächlich nebeneinander im Speicher liegen. Jedoch ist der Grundgedanke der Kapselung und separaten Transformation der Daten dadurch erfüllt, dass das ECS eingesetzt worden ist. Aus diesem Grund wird das DOD konkret in dem C++ Beispiel angewendet und getestet.
 
-Um den DOD-Ansatz im erstellten C++ Projekt anzuwenden, wird das ECS-Framework EnTT[7] verwendet. EnTT ist so erstellt worden, dass es den DOD-Ansatz verfolgt und eignet sich somit für den Versuch. Die Version des C++ Miniprojektes, welches EnTT und somit das DOD implementiert kann im GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Cpp_DOD
+Um den DOD-Ansatz im erstellten C++-Projekt anzuwenden, wird das Projekt, welches den ECS-Ansatz umsetzt so umgebaut, dass die Komponenten nicht mehr in jedem Entity separat gespeichert werden. Stattdessen wird es ein Array geben, welches alle Komponenten desselben Typs speichert. Weiter wird die Stelle ermittelt, welche den größten Einfluss auf die Laufzeit hat. Im Falle dieses Projektes handelt es sich dabei um das `CollisionSystem`, welches über alle Charaktere iteriert, um Zusammenstöße zu ermitteln. Im ECS-Ansatz ist dafür ein Iterator verwendet worden, dieser wird ersetzt durch einen klassischen Array-Zugriff, wodurch Zugriffszeit eingesparrt wird. Die Version des C++ Miniprojektes, welches DOD implementiert kann im GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Cpp_DOD
 
 ## Vor- und Nachteile des Data-Oriented-Designs
 
@@ -253,10 +348,33 @@ Vorteile:
 Nachteile:
 - Erfordert umdenken gegenüber klassischem OOP-Ansatz
 - Es kann schwer sein DOD mit bestehenden Systemen zu koppeln, welche nicht DOD befolgen
+- Optimierungen an der Datentranformation zu finden, benötigt zusätzliche Entwicklungszeit
 
 ## Performancevergleich zwischen ECS- und DOD-Ansatz
 
-TBD
+Die drei Versuche mit 500, 1000 und 2000 Charakteren, welche im C++-Projekt für den OOP- und ECS-Ansatz umgesetzt wurden, werden für den DOD-Ansatz aufgenommen. Folgende Messdaten ergeben sich.
+
+|![](assets/measurements/Cpp_DOD_500.png)|
+|:--:|
+| *Abbildung 16: Messreihe für den Versuch mit 500 Charakteren im C++-Projekt mit DOD-Ansatz* |  
+
+|![](assets/measurements/Cpp_DOD_1000.png)|
+|:--:|
+| *Abbildung 17: Messreihe für den Versuch mit 1000 Charakteren im C++-Projekt mit DOD-Ansatz* |  
+
+|![](assets/measurements/Cpp_DOD_2000.png)|
+|:--:|
+| *Abbildung 18: Messreihe für den Versuch mit 2000 Charakteren im C++-Projekt mit DOD-Ansatz* |  
+
+Wieder werden Median, Mittelwert und Standardabweichung aus den Messdaten ermittelt.
+
+| Versuch | Median / µs | Mittelwert / µs | Standardabweichung / µs |
+|:--:|:--:|:--:|:--:|
+| DOD 500 Charaktere | 16 | 16.2 | 0.7 |
+| DOD 1000 Charaktere | 16 | 16.3 | 1.2 |
+| DOD 2000 Charaktere | 45 | 44.7 | 1.4 |
+
+Durch die Implementierung des DOD-Ansatzes im ECS-Projekt, wird dem Overhead entgegen gewirkt. Das Projekt ist jetzt um Längen schneller als das OOP-Projekt und wird nur noch von der Grafikbibliothek ausgebremst.
 
 ## Zusammenfassung
 
@@ -268,4 +386,3 @@ TBD
 [4]: rewrking. https://github.com/rewrking/sfml-vscode-boilerplate  
 [5]: libGDX. https://github.com/libgdx/ashley  
 [6]: David Colson. https://www.david-colson.com/2020/02/09/making-a-simple-ecs.html  
-[7]: skypjack. https://github.com/skypjack/entt  
