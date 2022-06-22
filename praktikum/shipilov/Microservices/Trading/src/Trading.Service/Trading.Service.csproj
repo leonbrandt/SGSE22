@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Catalog.Contracts" Version="1.0.3" />
-    <PackageReference Include="Common" Version="1.0.10" />
+    <PackageReference Include="Common" Version="1.0.12" />
     <PackageReference Include="Inventory.Contracts" Version="1.0.4" />
     <PackageReference Include="Play.Identity.Contracts" Version="1.0.3" />
     <PackageReference Include="MassTransit.MongoDB" Version="7.3.1" />

@@ -3,7 +3,7 @@ Identity libraries used by SchüCal Economy services
 
 ## Create and publish package
 ```powershell
-$version="1.0.7"
+$version="1.0.10"
 $owner="masterarbeitschueco"
 $gh_pat="[PAT HERE]"
 
@@ -31,13 +31,13 @@ docker build --secret id=GH_OWNER --secret id=GH_PAT -t play.identity:$version .
 ## Run the Docker image
 ```powershell
 $adminPass="[PASSWORD HERE]"
-$cosmosDbConnString="[CONN STRING HERE]" - from Azure
-$serviceBusConnString="[CONN STRING HERE]" - from Azure
+$cosmosDbConnString="[CONN STRING HERE]" - #from Azure
+$serviceBusConnString="[CONN STRING HERE]" - #from Azure
 
-//for local connection with RabbitMQ
+#for local connection with RabbitMQ
 docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__Host=mongo -e RabbitMQSettings__Host=rabbitmq -e IdentitySettings__AdminUserPassword=$adminPass --network infrastructure_default play.identity:$version
 
-//for connection with Azure Service Bus "SERVICEBUS" or with RabbitMQ "RABBITMQ"
+#for connection with Azure Service Bus "SERVICEBUS" or with RabbitMQ "RABBITMQ"
 docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__ConnectionString=$cosmosDbConnString -e ServiceBusSettings__ConnectionString=$serviceBusConnString -e ServiceSettings__MessageBroker="SERVICEBUS" -e IdentitySettings__AdminUserPassword=$adminPass play.identity:$version
 ```
 
@@ -74,4 +74,21 @@ kubectl describe pod [name] -n $namespace
 kubectl logs [name] -n $namespace
 kubectl get services -n $namespace
 kubectl get events -n $namespace
+```
+
+## Create Azure Active Directory (AAD) the pod managed identity
+```powershell
+$IDENTITY_RESOURCE_ID=az identity show -g $appname -n $namespace --query id -otsv
+
+az identity create --resource-group $appname --name $namespace
+az aks pod-identity add --resource-group $appname --cluster-name $appname --namespace $namespace --name $namespace --identity-resource-id $IDENTITY_RESOURCE_ID
+
+kubectl get azureidentity -n $namespace -o yaml
+```
+
+## Grant access to Key Vault secrets
+```powershell
+$IDENTITY_CLIENT_ID=az identity show -g $appname -n $namespace --query clientId -otsv
+
+az keyvault set-policy -n $appname --secret-permissions get list --spn $IDENTITY_CLIENT_ID
 ```

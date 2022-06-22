@@ -1,10 +1,12 @@
 using Catalog.Service.Entities;
+using Common.HealthChecks;
 using Common.Identity;
 using Common.MassTransit;
 using Common.MongoDB;
 using Common.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -59,6 +61,9 @@ namespace Catalog.Service
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Catalog.Service", Version = "v1" });
             });
+
+            services.AddHealthChecks()
+                    .AddMongoDb();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -77,7 +82,8 @@ namespace Catalog.Service
                 });
             }
 
-            app.UseHttpsRedirection();
+            app.UseCookiePolicy(new CookiePolicyOptions { MinimumSameSitePolicy = SameSiteMode.Lax });
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
@@ -87,6 +93,7 @@ namespace Catalog.Service
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapPlayEconomyHealthChecks();
             });
         }
     }
