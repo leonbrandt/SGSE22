@@ -2,6 +2,8 @@
 
 # Design Thinking und User Centered Design - Der Nutzer im Fokus der Entwicklung
 
+[Doku](praktikum/kuhn/doku.md)
+
 * Vorstellung der beiden Ansätze
 * Entwicklung von zwei Projekten je nach einem Ansatz
 
@@ -44,8 +46,8 @@
 | KW 19 |        Design Thinking Spotify-Erweiterungen        |    Done     |
 | KW 20 | Erstellung Mockups als Ergebnis von Design Thinking |    Done     |
 | KW 21 |   Erste Feedbackrunde zu Mockups als Teil des UCD   |    Done     |
-| KW 22 |    Umsetzen der Mockups mit Anmerkungen in Code     | In Progress |
-| KW 23 |               Feedback zu Apps (UCD)                |             |
+| KW 22 |    Umsetzen der Mockups mit Anmerkungen in Code     |    Done     |
+| KW 23 |               Feedback zu Apps (UCD)                | In Progress |
 | KW 24 |           evtl. Einbauen der Anmerkungen            |             | 
 | KW 25 |                       Puffer                        |             |
 | KW 26 |                       Abgabe                        |             |
