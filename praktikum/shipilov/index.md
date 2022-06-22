@@ -193,7 +193,7 @@ Die Rechenleistung ist begrenzt. Und der Preis für mehrere einfache Server ist 
 |:----------:|:------------------------------------:|
 | 05.05.2022 | Finalisierung der Aufgabenstellung   |
 | 12.05.2022 | (Ausarbeitung Buch / Präsentation)  |
-| 19.05.2022 | Gründlegende Theorie, Kurze Vergleich der Cloud-Dienste von AWS, Azure und Google   |
+| 19.05.2022 | Grundlegende Theorie, Kurze Vergleich der Cloud-Dienste von AWS, Azure und Google   |
 | 26.05.2022 | Erstellung von Azure-Konto, Installation von Azure CLI, Erstellung von Ressource-Gruppen   |
 | 02.06.2022 | Umsetzung von Azure CosmosDB und Azure Service Bus  |
 | 09.06.2022 | Umsetzung von Azure Container Registry, Veröffentlichung des Microservices im Azure Kubernetes Service  |
