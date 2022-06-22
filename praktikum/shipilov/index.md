@@ -187,3 +187,16 @@ Die Rechenleistung ist begrenzt. Und der Preis für mehrere einfache Server ist 
 * https://identityserver4.readthedocs.io/en/latest/
 * https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png
 * https://github.com/emissary-ingress
+
+# Zeitplan
+| Termin     |     Meilenstein                      |
+|:----------:|:------------------------------------:|
+| 05.05.2022 | Finalisierung der Aufgabenstellung   |
+| 12.05.2022 | (Ausarbeitung Buch / Präsentation)  |
+| 19.05.2022 | Grundlegende Theorie, Kurze Vergleich der Cloud-Dienste von AWS, Azure und Google   |
+| 26.05.2022 | Erstellung von Azure-Konto, Installation von Azure CLI, Erstellung von Ressource-Gruppen   |
+| 02.06.2022 | Umsetzung von Azure CosmosDB und Azure Service Bus  |
+| 09.06.2022 | Umsetzung von Azure Container Registry, Veröffentlichung des Microservices im Azure Kubernetes Service  |
+| 16.06.2022 | Erstellung von Kubernetes Secrets, Umsetzung von Healt-Check  |
+| 23.06.2022 | Umsetzung von Azure Key Vault und API-Gateway, Aktivieren von https- und tls-Terminierung, Übertragung des Front-Ends im Azure |
+| 30.06.2022 | Bescreibung des Prozesses in GitHub, Abgabe |
