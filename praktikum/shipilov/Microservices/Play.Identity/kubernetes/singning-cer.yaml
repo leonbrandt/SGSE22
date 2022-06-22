@@ -1,0 +1,15 @@
+# This file is needed to make a stable sign in token.
+# In case when our version (pod) is updated, the sign in token wouldn't change
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: signing-cert
+spec:
+  secretName: signing-cert
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+    - shopeconomy.australiacentral.cloudapp.azure.com
+#It is also needed to create volumeMounts, volumes/-name: certificate-volume
+#and env/-name IdentitySettings__CertificateCerFilePath, IdentitySettings__CertificateKeyFilePath in identity.yaml

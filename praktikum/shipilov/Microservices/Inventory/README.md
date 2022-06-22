@@ -62,3 +62,14 @@ $INVENTORY_CLIENT_ID=az identity show -g $appname -n $namespace --query clientId
 
 az keyvault set-policy -n $appname --secret-permissions get list --spn $INVENTORY_CLIENT_ID
 ```
+
+## Creating the Kubernetes resources
+```powershell
+kubectl apply -f .\kubernetes\inventory.yaml -n $namespace
+
+kubectl get pods -n $namespace
+kubectl describe pod [name] -n $namespace
+kubectl logs [name] -n $namespace
+kubectl get services -n $namespace
+kubectl get events -n $namespace
+```
