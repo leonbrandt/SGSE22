@@ -1,11 +1,26 @@
 # Vergleich von verschiedenen Architekturstilen für eine Programmierschnittstelle
 
-# Einführung in die verschiedenen Technologien
+# Inhalt
 
-- Technologien: **gRPC**, **GraphQL** und **REST**
+1. [Einführung](#einführung)
+2. [Technologien](#technologien)
+3. [Datenübertragung](#datenübertragung)
+4. [Schnittstellenbeschreibung](#schnittstellenbeschreibung)
+5. [Versionierbarkeit](#versionierbarkeit)
+6. [Performanz](#performanz)
+7. [Security](#security)
+8. [Fazit](#fazit)
+9. [Literaturverzeichnis](#literaturverzeichnis)
 
-  Mittels gRPC, GraphQL und REST werden Programmierschnittstellen entwickelt, damit Client und Server miteinander kommunizieren können. Für den Transport verwenden alle drei Technologien das HTTP Protokoll. Abgesehen vom Transportprotokoll, sind die drei Technologien grundverschieden und bieten alle unterschiedliche Konzepte, um eine Kommunikation zwischen Client und Server zu ermöglichen.  
-  Während des Praktikums soll ermittelt werden, für welche Einsatzgebiete die verschiedenen Technologien am besten geeignet sind.
+# Einführung
+
+Mittels gRPC, GraphQL und REST werden Programmierschnittstellen entwickelt, damit Client und Server miteinander kommunizieren können. Für den Transport der Daten verwenden alle drei Technologien das HTTP Protokoll. Abgesehen vom Transportprotokoll, sind die drei Technologien jedoch komplett verschieden und bieten alle unterschiedliche Konzepte, um eine Kommunikation zwischen Client und Server zu ermöglichen.  
+Während des Praktikums soll ermittelt werden, für welche Einsatzgebiete die verschiedenen Technologien am besten geeignet sind.
+
+Zuerst werden die verschiedenen Technologien vorgestellt und die verschiedenen Paradigmen aufgezeigt. Um konkrete Messwerte für einen Vergleich zu ermitteln, wurde eine Software entwickelt, welche die Performanz der Technologien in verschiedenen Szenarien misst ([GitHub Repository REST / GraphQL / gRPC Performance testing](https://github.com/Kevin-Ratschinski/rest-graphql-grpc)).  
+Die Ergebnisse hierzu werden in dem Kapitel [Performanz](#Performanz) dargestellt.
+
+# Technologien
 
 ## gRPC
 
@@ -21,7 +36,7 @@ gRPC ist ein von Google entwickeltes Open-Source-Framework für Remote Procedure
 Abbildung 2 - GraphQL Paradigma
 (Quelle: GraphQL Logo https://graphql.org/brand/)
 
-GraphQL wurde 2015 von Meta, ehemals Facebook, für die eigene Facebook-API veröffentlicht und ist die Spezifikation einer plattformunabhängigen Abfragesprache für APIs. Mit GraphQL können vom Client genau definierte Abfragen an den Server gestellt werden. Die Abfrage wird anschließend vom Server verarbeitet und die Antwort zum Client zurückgesendet. Besonders an GraphQL ist, dass die API nicht für jedes Objekt einen eigenen Endpunkt, den der Client für die entsprechende Ressource ansprechen kann, zur Verfügung stellt. Vielmehr stellt die API nur einen einzigen Endpunkt zur Verfügung, über den der Client mit Queries lesende oder mittels Mutationen schreibende Operationen durchführen kann. <a href="#/praktikum/ratschinski/index?id=ref_2">(GraphQL, 2022)</a>
+GraphQL wurde 2015 von Meta, ehemals Facebook, für die eigene Facebook-API veröffentlicht und ist die Spezifikation einer plattformunabhängigen Abfragesprache für APIs. Mit GraphQL können vom Client genau definierte Abfragen an den Server gestellt werden. Die Abfrage wird anschließend vom Server verarbeitet und die Antwort zum Client zurückgesendet. Besonders an GraphQL ist, dass die API nicht für jedes Objekt einen eigenen Endpunkt, den der Client für die entsprechende Ressource ansprechen kann, zur Verfügung stellt. Sondern die API nur einen einzigen Endpunkt zur Verfügung, über den der Client mit Queries lesende oder mittels Mutationen schreibende Operationen durchführen kann. <a href="#/praktikum/ratschinski/index?id=ref_2">(GraphQL, 2022)</a>
 
 ## REST
 
@@ -57,86 +72,93 @@ Ein Vorteil einer solchen Übertragung in Bytes liegt in der Nachrichtengröße.
 
 ## GraphQL
 
-Für die Datenübertragung wird bei GraphQL das JSON-Format oder das _graphql_-Format verwendet. Welches Format verwendet wird, wird im Content-Type des HTTP-Request festgelegt. Für die Übermittlung der Daten werden in GraphQL nur die HTTP-Methoden GET und POST eingesetzt. In der Regel wird überwiegend die POST Methode für die Kommunikation verwendet. Alle relevanten Informationen zu einem Request, ob nun Query oder Mutation, können innerhalb des Payloads eines Post Requests gehalten werden. Mit der GET Requests lassen sich bei GraphQL nur Queries abbilden. Ein weiterer Nachteil ist noch, dass die Query dabei als URI-Parameter des Requests angeben werden muss. Das reduziert deutlich die Lesbarkeit der Queries.
+Für die Datenübertragung wird in GraphQL das JSON-Format oder das _graphql_-Format verwendet. Welches Format verwendet wird, wird im Content-Type des HTTP-Request festgelegt. Für die Übermittlung der Daten werden in GraphQL nur die HTTP-Methoden GET und POST eingesetzt. In der Regel wird überwiegend die POST Methode für die Kommunikation verwendet. Alle relevanten Informationen zu einem Request, ob nun Query oder Mutation, können innerhalb des Payloads eines Post Requests geschrieben werden. Mit einem GET Request lassen sich in GraphQL nur Queries abbilden. Ein Nachteil hierbei ist, dass die Query dabei als URI-Parameter des Requests angeben werden muss. Das reduziert deutlich die Lesbarkeit der Queries.
 
-POST /test HTTP/1.1  
-Content-Type: application/json
+- POST Request im JSON-Format:
 
-```json
-{
-   "query": "{
-     user(id:1) {
-       id first_name last_name email messages{
-         id text userId
+  POST /test HTTP/1.1  
+  Content-Type: application/json
+
+  ```json
+  {
+    "query": "{
+      user(id:1) {
+        id first_name last_name email messages{
+          id text userId
+          }
         }
-      }
-    }"
-}
-```
+      }"
+  }
+  ```
 
-POST /test HTTP/1.1  
-Content-Type: application/graphlql
+- POST Request im _graphql_-Format:
 
-```graphql
-{
-  user(id: 1) {
-    id
-    first_name
-    last_name
-    email
-    messages {
+  POST /test HTTP/1.1  
+  Content-Type: application/graphlql
+
+  ```graphql
+  {
+    user(id: 1) {
       id
-      text
-      userId
+      first_name
+      last_name
+      email
+      messages {
+        id
+        text
+        userId
+      }
     }
   }
-}
-```
+  ```
 
 ---
 
-Die Antworten der Queries und Mutationen, erfolgen immer im JSON-Format. Die Daten werden im Payload der Antwort zurückgesendet und können sowohl die Antworten oder auch Fehlermeldungen enthalten.
+Die Antworten der Queries und Mutationen, erfolgen immer im JSON-Format. Die Daten werden im Payload der Antwort zurückgesendet und können sowohl die Antworten als auch Fehlermeldungen enthalten.
 
-HTTP/1.1 200 Ok  
-Content-Type: application/json
+- Antwort einer Query:
 
-```json
-{
-  "data": {
-    "user": {
-      "id": "1",
-      "first_name": "Markos",
-      "last_name": "O'Sirin",
-      "email": "mosirin0@vk.com",
-      "messages": []
+  HTTP/1.1 200 Ok  
+  Content-Type: application/json
+
+  ```json
+  {
+    "data": {
+      "user": {
+        "id": "1",
+        "first_name": "Markos",
+        "last_name": "O'Sirin",
+        "email": "mosirin0@vk.com",
+        "messages": []
+      }
     }
   }
-}
-```
+  ```
 
 ## REST
 
 ![REST Ressource / Repräsentation](./assets/rest/rest_datenformat.png)  
 Abbildung 7 - REST Datenübertragung
 
-Die Datenübertragung in REST erfolgt in der Regel über das HTTP-Protokoll. Mit den verschiedenen HTTP-Methoden (GET, POST, PUT, DELETE, ...) können die Ressourcen, über zuvor festgelegte URIs angesprochen werden. Ressourcen bilden die zentrale Abstraktion im REST-Architekturstil. Sie sind eindeutig identifizierbar und die Interaktion mit ihnen erfolgt immer über den Austausch von Repräsentationen <a href="#/praktikum/ratschinski/index?id=ref_4">(Tilkov et al., 2015, S. 52)</a>. Das Datenformat, wie die Daten ausgetauscht werden sollen, ist in REST nicht vorgeschrieben und kann beliebig im Content-Type des HTTP-Request festgelegt werden (JSON, XML, IMAGE, PDF, CSV, ...).
+Die Datenübertragung in REST erfolgt in der Regel über das HTTP-Protokoll. Mit den verschiedenen HTTP-Methoden (GET, POST, PUT, DELETE, ...) können die Ressourcen, über zuvor festgelegte URIs angesprochen werden.  
+Ressourcen bilden die zentrale Abstraktion im REST-Architekturstil. Sie sind eindeutig identifizierbar und die Interaktion mit ihnen erfolgt immer über den Austausch von Repräsentationen <a href="#/praktikum/ratschinski/index?id=ref_4">(Tilkov et al., 2015, S. 52)</a>. Das Datenformat, wie die Daten ausgetauscht werden sollen, ist in REST nicht vorgeschrieben und kann beliebig im Content-Type des HTTP-Request festgelegt werden (JSON, XML, IMAGE, PDF, CSV, ...). Im Gegensatz zu den anderen Technologien ist REST sehr flexibel und macht nur wenig Vorgaben, wenn es darum geht, wie die Daten übertragen werden sollen.
 
 ## Zusammenfassung Datenübertragung
 
-|                   |   gRPC   |    GraphQL     |         REST         |
-| ----------------- | :------: | :------------: | :------------------: |
-| **Datenformat**   | protobuf | JSON / graphql |       Beliebig       |
-| **Dokument Stil** |    ❌    |       ✅       | Ja bei JSON oder XML |
-| **Effizienz**     |    ✅    |       -        |          -           |
-| **Komplexität**   |   hoch   |     gering     |        mittel        |
-| **Abstraktion**   |   hoch   |     mittel     |        gering        |
+|                   |   gRPC   |    GraphQL     |                  REST                  |
+| ----------------- | :------: | :------------: | :------------------------------------: |
+| **Datenformat**   | protobuf | JSON / graphql |                Beliebig                |
+| **Dokument Stil** |    ❌    |       ✅       | Ja (wenn JSON oder XML verwendet wird) |
+| **Effizienz**     |    ✅    |       -        |                   -                    |
+| **Komplexität**   |   hoch   |     gering     |                 mittel                 |
+| **Abstraktion**   |   hoch   |     mittel     |                 gering                 |
 
 # Schnittstellenbeschreibung
 
 Ein wichtiger Aspekt bei der Auswahl der Technologie ist die Schnittstellenbeschreibung. Mithilfe der Beschreibung weiß ein Client, welche Funktionen die Schnittstelle anbietet, welche Nachrichtenformate erwartet und welche Fehler bei der Übertragung auftreten können. Außerdem bietet eine Beschreibung noch eine Reihe weiterer Vorteile:
 
 1. Aufrufe erleichtern
-   - Durch die Beschreibung weiß der Client welche, Aufrufe er durchführen kann.
+   - Durch die Beschreibung weiß der Client, welche Aufrufe er durchführen kann.
 2. Entwicklung Client und Server
    - Eine Beschreibung kann, mit der Hilfe eines Codegenerators, direkt in Client oder Servercode übersetzt werden, was die Entwicklung der Schnittstelle vereinfacht.
 3. Einhaltung eines Vertrages
@@ -306,7 +328,8 @@ GraphQL hat ein sehr umfangreiches Typsystem, welches sich aus den folgenden Pun
 
 3. **Skalar-Typen**
 
-   Jedes Objekt hat Namen und Felder, am Ende einer Abfrage muss aber jedes Feld in einen konkreten Datentyp aufgelöst werden. Diese Datentypen sind in GraphQL die Skalar-Typen. Die möglichen Skalar-Typen von GraphQL sind:
+   Jedes Objekt hat Namen und Felder, am Ende einer Abfrage muss aber jedes Feld in einen konkreten Datentyp aufgelöst werden. Diese Datentypen sind in GraphQL die Skalar-Typen.  
+   Die möglichen Skalar-Typen von GraphQL sind:
 
    - Int: Eine positive oder negative 32-Bit-Ganzzahl
    - Float: Eine positive oder negative Gleitkommazahl
@@ -345,7 +368,7 @@ GraphQL hat ein sehr umfangreiches Typsystem, welches sich aus den folgenden Pun
 
    Mit den Listen-Modifikator lassen sich Listen von Objekten, Feldern oder Enumerationen erstellen und mit den Non-Null-Modifikator kann definiert werden, dass ein Feld, Objekt oder Enum immer einen Wert enthält und somit nie den Wert _null_ zurückgibt.
 
-   Ein Element wird durch eckige Klammern um dessen Typ zu einer Liste. Damit wird nicht mehr ein einzelnes Element, sondern eine Liste des jeweiligen Objektes, Feldes oder Enums zurückgeliefert. Der Non-Null-Modifikator wird durch ein Ausrufezeichen bei der Typdefinition direkt am entsprechenden Feld, Objekt oder Enum gekennzeichnet.
+   Ein Element wird durch eckige Klammern([]) um dessen Typ zu einer Liste. Damit wird nicht mehr ein einzelnes Element, sondern eine Liste des jeweiligen Objektes, Feldes oder Enums zurückgeliefert. Der Non-Null-Modifikator wird durch ein Ausrufezeichen(!) bei der Typdefinition direkt am entsprechenden Feld, Objekt oder Enum gekennzeichnet.
 
    ```graphql
    type Category {
@@ -424,7 +447,7 @@ Im Beispiel wird ein Objekt _ReviewInput_ mit den Feldern stars und commentary d
 
 Die Schnittstellenbeschreibung in REST ist komplett optional und nicht wie bei gRPC oder GraphQL vorgeschrieben. Um trotzdem eine Beschreibung für eine REST Schnittstelle erstellen zu können, gibt es eine Vielzahl von Anbietern (OpenAPI, RAML, WADL, API Blueprint, ...), die dafür Spezifikationen und Tools zur Verfügung stellen. Die OpenAPI-Spezifikation hat sich dabei als "Quasi-Standard" etabliert, Unternehmen wie Google, Microsoft oder IBM sind gemeinsam an der Weiterentwicklung der Spezifikation beteiligt <a href="#/praktikum/ratschinski/index?id=ref_11">(OpenAPI Members, 2022)</a>.
 
-Mit Tools wie Swagger kann die OpenAPI-Spezifikation umgesetzt werden. Bei Swagger handelt es sich um ein Open-Source-Framework, mit dem sich Beschreibungen im JSON oder YAML-Format erstellen lassen und anschließend eine Dokumentation in z. B. HTML generieren lässt <a href="#/praktikum/ratschinski/index?id=ref_12">(Swagger UI, 2022)</a>. Dabei werden zu jedem URI-Muster die unterstützten HTTP-Methoden, eine Beschreibung und die Parameter festgelegt. In der HTML-Dokumentation kann dann die API direkt getestet und Anfragen darauf ausgeführt werden.
+Mit Tools wie Swagger kann die OpenAPI-Spezifikation umgesetzt werden. Bei Swagger handelt es sich um ein Open-Source-Framework, mit dem sich Beschreibungen im JSON oder YAML-Format erstellen lassen und anschließend eine Dokumentation in z. B. HTML generieren lässt <a href="#/praktikum/ratschinski/index?id=ref_12">(Swagger UI, 2022)</a>. Dabei werden zu jedem URI-Muster die unterstützten HTTP-Methoden, eine Beschreibung und die Parameter festgelegt. In der HTML-Dokumentation kann dann die API direkt getestet und Anfragen darüber ausgeführt werden.
 
 Beispiel: YAML Beschreibung GET users/
 
@@ -459,12 +482,11 @@ Mit dem OpenAPI-Generator <a href="#/praktikum/ratschinski/index?id=ref_14">(Ope
 | **Format**                                      | Domänenspezifische Sprache | Domänenspezifische Sprache |           JSON/YAML            |
 | **Alternative Beschreibungssprachen**           |             -              |             -              | RAML, WADL, API Blueprint, ... |
 | **Typ-System**                                  |             ✅             |             ✅             |     ✅ <br> (JSON Schema)      |
-| **Min., Max., Regex.**                          |             ❌             | ❌ <br> Über Custom Types  |               ✅               |
 | **Codegenerierung**                             |             ✅             |             ✅             |               ✅               |
 
 # Versionierbarkeit
 
-Durch die unterschiedlichen Konzepte der Schnittstellenbeschreibungen bieten auch alle Technologien verschiedene Konzepte der Versionierung der Schnittstelle.
+Durch die unterschiedlichen Konzepte der Schnittstellenbeschreibungen bieten auch alle Technologien verschiedene Konzepte, um die Schnittstelle zu versionieren.
 
 ## gRPC
 
@@ -542,17 +564,18 @@ Die URI Versionierung ist der einfachste Ansatz, hier wird bei jeder neuen Versi
 
 ```
 Version 1:
-http://api.example.com/v1
+http://api.example.com/v1/user
 
 Version 2:
-http://api.example.com/v2
+http://api.example.com/v2/user
 ```
 
 ## Zusammenfassung Versionierbarkeit
 
-|                   |                      gRPC                      |            GraphQL            |            REST            |
-| ----------------- | :--------------------------------------------: | :---------------------------: | :------------------------: |
-| **Versionierung** | Über Änderungen der Schnittstellenbeschreibung | Möglich aber nicht vorgesehen | Vielzahl von Möglichkeiten |
+|                                    |                      gRPC                      |            GraphQL            |            REST            |
+| ---------------------------------- | :--------------------------------------------: | :---------------------------: | :------------------------: |
+| **Versionierung**                  | Über Änderungen der Schnittstellenbeschreibung | Möglich aber nicht vorgesehen | Vielzahl von Möglichkeiten |
+| **Mapping zwischen den Versionen** |                Mittels protobuf                |               -               |             -              |
 
 # Performanz
 
@@ -560,7 +583,7 @@ Ein weiteres wichtiges Kriterium, bei der Wahl der richtigen Technologie kann di
 
 ## Applikation
 
-&#8594; [GitHub Repository Performanz Test](https://github.com/Kevin-Ratschinski/rest-graphql-grpc)
+&#8594; [GitHub Repository REST / GraphQL / gRPC Performance testing](https://github.com/Kevin-Ratschinski/rest-graphql-grpc)
 
 Für die Ermittlung der Performanz, wurde eine Node.js Applikation entwickelt, welche im oben verlinkten GitHub Repository eingesehen werden kann.
 
@@ -610,21 +633,32 @@ Abbildung 12 - Szenario WLAN
 
 ## Ergebnisse
 
-**Localhost**
+Die folgenden Abbildungen zeigen die Ergebnisse der oben gezeigten Szenarien.
+Es wurden die Laufzeiten von folgenden Abfragen ermittelt:
+
+- Read User: Informationen von einem User anfordern
+- Read all Users: Informationen von 1000 Usern anfordern
+- Read Message: Informationen von einer Message anfordern
+- Read all Messages: Informationen von 1000 Messages anfordern
+- Create User: Einen User erstellen
+
+Die Abfragen wurden jeweils 100-mal hintereinander ausgeführt und die Laufzeit bis zum Ende der letzten Abfrage ermittelt. Getestet wurde das ganze für gRPC, GraphQL, REST(HTTP/1.1) und Rest(HTTP/2). Die Laufzeit kann anhand der Balkendiagramme abgelesen werden und ist immer in Sekunden angegeben.
+
+**Szenario Localhost:**
 
 ![Ergebnisse Localhost](./assets/localhost_result.png)  
 Abbildung 13 - Ergebnisse Localhost
 
 ---
 
-**WLAN**
+**Szenario WLAN:**
 
 ![Ergebnisse WLAN](./assets/wlan_result.png)  
 Abbildung 14 - Ergebnisse WLAN
 
 ### n+1 Problem
 
-Beim n+1 Problem, benötigen bestimmte Abfragen eine hohe Anzahl von Requests. Möchte man zum Beispiel alle Messages, den die verschiedenen User zugeordnet sind ermitteln, müsste man als zuerst alle User beziehen und anschließend die einzelnen Messages der User abfragen. Das wären bei 1000 Usern genau 1001 Abfragen. Hierbei kommt es zum sogenannten Under-Fetching (Abbildung 15), beim Under-fetching liefert die Schnittstelle zu wenige Informationen, sodass erneute Aufrufe nötig sind. Das führt durch die hohe Anzahl an Aufrufen zu einem Verlust der Performanz.
+Beim n+1 Problem, benötigen bestimmte Abfragen eine hohe Anzahl von Requests. Möchte man zum Beispiel alle Messages, die den verschiedenen User zugeordnet sind ermitteln, müsste man als zuerst alle User beziehen und anschließend die einzelnen Messages der User abfragen. Das wären bei 1000 Usern genau 1001 Abfragen. Hierbei kommt es zum sogenannten Under-Fetching (Abbildung 15), beim Under-fetching liefert die Schnittstelle zu wenige Informationen, sodass erneute Aufrufe nötig sind. Das führt durch die hohe Anzahl an Aufrufen zu einem Verlust der Performanz.
 
 ![REST Under-fetching](./assets/rest/rest_under_fetching.png)  
 Abbildung 15 - REST Under-fetching
@@ -707,7 +741,7 @@ gRPC, GraphQL und REST basieren alle auf unterschiedlichen Paradigmen.
 
 gRPC basiert auf Remote Procedure Calls, die es ermöglichen über Funktionsaufrufen mit entfernten Systemen zu kommunizieren, dabei kann es sich um ein System oder um verteilte Systeme handeln. Während den Funktionsaufrufen bleibt die HTTP/2-Implementierung komplett verborgen. Zudem wird mit dem protobuf-Framework ein effizientes Datenformat für die Serialisierung und Deserialisierung mitgeliefert. Das hilft dabei, sich während der Entwicklung auf die Geschäftslogik zu konzentrieren und man sich keine Gedanken um Datenformate oder Details des HTTP-Protokolls machen muss. gRPC sollte in Betracht gezogen werden, wenn es um die Entwicklung von verteilten Systemen mit geringer Latenz geht. Durch die Serialisierung mit protobuf, bietet gRPC die effizienteste Art an, um Daten zu übertragen. Zusätzlich wird von Clients weniger Rechenleistung für die Deserialisierung benötigt, das kann sich vor allem auf Mobilgeräten positiv auswirken.
 
-GraphQL versucht das Problem zu lösen, dass Clients oft verschiedene Anfragen stellen müssen, um alle Daten zu erhalten, die zum Beispiel für die Darstellung einer Ansicht erforderlich sind. Deshalb werden in GraphQL die Daten in Form eines Graphen betrachtet und die API liefert nur einen Endpunkt, über welchen sich der Client dann je nach Bedarf eine Teilmenge der Daten abfragen kann. Das Hauptmerkmal liegt also darin, dass Clients genau die Daten zurückbekommen, welche sie anfragen und benötigen. GraphQL sollte dann in Betracht gezogen werden, wenn man eine Anwendung zur Verfügung stellen möchte, die viele verschiedene Datenquellen ausliefern soll oder man verschiedene Clients hat, die gemeinsam auf eine Datenquelle zugreifen. Sobald die Clients, zum Beispiel Webanwendung und Mobilgerät für den Aufbau einer gleichen Seite, verschiedene Datensätze benötigen, könnte sich ein Einsatz von GraphQL lohnen. Dadurch dass alle Daten über einen Endpunkt bezogen werden können und nicht für jeden unterschiedlichen Client, verschiedene Endpunkte zur Verfügung gestellt werden müssen. Außerdem kann GraphQL benutzt werden, um Daten von verschiedenen Services zu beziehen und dann diese als Paket an den Client zu liefern, das ist besonders nützlich, um eine Datenschicht über den darunterliegenden Microservices zu haben.
+GraphQL versucht das Problem zu lösen, dass Clients oft verschiedene Anfragen stellen müssen, um alle Daten zu erhalten, die zum Beispiel für die Darstellung einer Ansicht erforderlich sind. Deshalb werden in GraphQL die Daten in Form eines Graphen betrachtet und die API liefert nur einen Endpunkt, über welchen sich der Client dann je nach Bedarf eine Teilmenge der Daten abfragen kann. Das Hauptmerkmal liegt also darin, dass Clients genau die Daten zurückbekommen, welche sie anfragen und benötigen. GraphQL sollte dann in Betracht gezogen werden, wenn man eine Anwendung zur Verfügung stellen möchte, die viele verschiedene Datenquellen ausliefern soll oder man verschiedene Clients hat, die gemeinsam auf eine Datenquelle zugreifen. Sobald die Clients, zum Beispiel ein Web-Client und ein Mobil-Client für den Aufbau einer gleichen Seite, verschiedene Datensätze benötigen. Könnte sich der Einsatz von GraphQL dadurch lohnen, dass alle Daten über einen einzigen Endpunkt bezogen werden können und nicht für jeden Client, verschiedene Endpunkte zur Verfügung gestellt werden müssen.
 
 REST ist ein Architekturstil, wie sich eine Schnittstelle aufbauen lässt und hält sich dabei sehr stark an den Aufbau des World Wide Web. REST bietet zudem eine große Flexibilität, wie genau die Schnittstelle umgesetzt werden kann. Alle drei Technologien sind unabhängig von einer konkreten Programmiersprache. Eine vollständige Unabhängigkeit von der Sprache und Plattform gibt es allerdings nur für REST. Möchte man eine API zur Verfügung stellen, auf die Clients einfachen Zugriff haben sollen, bietet sich eine REST API an. Durch die gängigen HTTP-Methoden wie GET, POST, PUT oder DELETE können Clients einfach über das HTTP-Protokoll mit der Schnittstelle kommunizieren. Wird die Schnittstelle auf Basis von HTTP und konform zu den REST-Prinzipien entworfen, lassen sich zudem noch Funktionalitäten wie Caching einfach umsetzen. Eine Vielzahl von Antworten können dann aus einem Cache beantwortet werden, andere wiederum werden minimiert oder ganz vermieden. Wird REST zusammen mit HTTP/2 verwendet, bietet der Architekturstil zudem auch eine gute Performanz für Clients.
 
