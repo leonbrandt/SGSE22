@@ -15,21 +15,22 @@ using Play.Identity.Service.HostedServices;
 using Common.MassTransit;
 using GreenPipes;
 using Play.Identity.Service.Exceptions;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
-using MongoDB.Driver;
-using Play.Identity.Service.HealthChecks;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Http;
+using Common.HealthChecks;
+using Microsoft.AspNetCore.HttpOverrides;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Play.Identity.Service
 {
     public class Startup
     {
         private const string AllowedOriginSetting = "AllowedOrigin";
+        private readonly IHostEnvironment environment;
 
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostEnvironment environment)
         {
             Configuration = configuration;
+            this.environment = environment;
         }
 
         public IConfiguration Configuration { get; }
@@ -40,7 +41,6 @@ namespace Play.Identity.Service
             BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
             var serviceSettings = Configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
             var mongoDbSettings = Configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>();
-            var identityServerSettings = Configuration.GetSection(nameof(IdentityServerSettings)).Get<IdentityServerSettings>();
 
             services.Configure<IdentitySettings>(Configuration.GetSection(nameof(IdentitySettings)))
                 .AddDefaultIdentity<ApplicationUser>()
@@ -58,18 +58,7 @@ namespace Play.Identity.Service
                 retryConfigurator.Ignore(typeof(InsufficientFundsException));
             });
 
-            services.AddIdentityServer(options =>
-            {
-                options.Events.RaiseSuccessEvents = true;
-                options.Events.RaiseFailureEvents = true;
-                options.Events.RaiseErrorEvents = true;
-            })
-                .AddAspNetIdentity<ApplicationUser>()
-                .AddInMemoryApiScopes(identityServerSettings.ApiScopes)
-                .AddInMemoryApiResources(identityServerSettings.ApiResources)
-                .AddInMemoryClients(identityServerSettings.Clients)
-                .AddInMemoryIdentityResources(identityServerSettings.IdentityResources)
-                .AddDeveloperSigningCredential();
+            AddIdentityServer(services);
 
             services.AddLocalApiAuthentication();
 
@@ -81,22 +70,22 @@ namespace Play.Identity.Service
             });
 
             services.AddHealthChecks()
-                    .Add(new HealthCheckRegistration(
-                        "mongodb",
-                        serviceProvider =>
-                        {
-                            var mongoClient = new MongoClient(mongoDbSettings.ConnectionString);
-                            return new MongoDbHealthCheck(mongoClient);
-                        },
-                        HealthStatus.Unhealthy,
-                        new[] { "ready" },
-                        TimeSpan.FromSeconds(3)
-                    ));
+                    .AddMongoDb();
+
+            services.Configure<ForwardedHeadersOptions>(options =>
+            {
+                options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+                options.KnownNetworks.Clear();
+                options.KnownProxies.Clear();
+            });
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseForwardedHeaders();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -114,6 +103,14 @@ namespace Play.Identity.Service
             app.UseCookiePolicy(new CookiePolicyOptions { MinimumSameSitePolicy = SameSiteMode.Lax });
             //app.UseHttpsRedirection();
 
+            app.Use((context, next) =>
+            {
+                var identitySettings = Configuration.GetSection(nameof(IdentitySettings))
+                                                    .Get<IdentitySettings>();
+                context.Request.PathBase = new PathString(identitySettings.PathBase);
+                return next();
+            });
+
             app.UseStaticFiles();
 
             app.UseRouting();
@@ -125,15 +122,42 @@ namespace Play.Identity.Service
             {
                 endpoints.MapControllers();
                 endpoints.MapRazorPages();
-                endpoints.MapHealthChecks("/health/ready", new HealthCheckOptions()
-                {
-                    Predicate = (check) => check.Tags.Contains("ready")
-                });
-                endpoints.MapHealthChecks("/health/live", new HealthCheckOptions()
-                {
-                    Predicate = (check) => false
-                });
+                endpoints.MapPlayEconomyHealthChecks();
             });
+        }
+
+        private void AddIdentityServer(IServiceCollection services)
+        {
+            var identityServerSettings = Configuration.GetSection(nameof(IdentityServerSettings))
+                                                    .Get<IdentityServerSettings>();
+
+            var builder = services.AddIdentityServer(options =>
+            {
+                options.Events.RaiseSuccessEvents = true;
+                options.Events.RaiseFailureEvents = true;
+                options.Events.RaiseErrorEvents = true;
+            })
+                .AddAspNetIdentity<ApplicationUser>()
+                .AddInMemoryApiScopes(identityServerSettings.ApiScopes)
+                .AddInMemoryApiResources(identityServerSettings.ApiResources)
+                .AddInMemoryClients(identityServerSettings.Clients)
+                .AddInMemoryIdentityResources(identityServerSettings.IdentityResources);
+
+            if (environment.IsDevelopment())
+            {
+                builder.AddDeveloperSigningCredential();
+            }
+            else
+            {
+                var identitySettings = Configuration.GetSection(nameof(IdentitySettings))
+                                                          .Get<IdentitySettings>();
+                var cert = X509Certificate2.CreateFromPemFile(
+                    identitySettings.CertificateCerFilePath,
+                    identitySettings.CertificateKeyFilePath
+                );
+
+                builder.AddSigningCredential(cert);
+            }
         }
     }
 }

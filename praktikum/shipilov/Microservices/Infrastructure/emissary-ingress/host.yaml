@@ -1,0 +1,10 @@
+apiVersion: getambassador.io/v3alpha1
+kind: Host
+metadata:
+  name: shopeconomy-host
+spec:
+  hostname: shopeconomy.australiacentral.cloudapp.azure.com
+  acmeProvider:
+    email: shipilovrub@gmail.com
+  tlsSecret:
+    name: shopeconomy-tls

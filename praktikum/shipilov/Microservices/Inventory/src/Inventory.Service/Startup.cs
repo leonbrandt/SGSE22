@@ -1,5 +1,6 @@
 using System;
 using System.Net.Http;
+using Common.HealthChecks;
 using Common.Identity;
 using Common.MassTransit;
 using Common.MongoDB;
@@ -9,6 +10,7 @@ using Inventory.Service.Entities;
 using Inventory.Service.Exceptions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -56,6 +58,9 @@ namespace Inventory.Service
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Inventory.Service", Version = "v1" });
             });
+
+            services.AddHealthChecks()
+                    .AddMongoDb();
         }
 
 
@@ -76,7 +81,8 @@ namespace Inventory.Service
                 });
             }
 
-            app.UseHttpsRedirection();
+            app.UseCookiePolicy(new CookiePolicyOptions { MinimumSameSitePolicy = SameSiteMode.Lax });
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
@@ -86,6 +92,7 @@ namespace Inventory.Service
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapPlayEconomyHealthChecks();
             });
         }
 

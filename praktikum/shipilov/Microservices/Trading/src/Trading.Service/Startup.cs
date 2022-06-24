@@ -1,5 +1,6 @@
 using System;
 using System.Reflection;
+using Common.HealthChecks;
 using Common.Identity;
 using Common.MassTransit;
 using Common.MongoDB;
@@ -9,6 +10,7 @@ using Inventory.Contracts;
 using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -58,6 +60,9 @@ namespace Trading.Service
             services.AddSingleton<IUserIdProvider, UserIdProvider>()
                     .AddSingleton<MessageHub>()
                     .AddSignalR();
+
+            services.AddHealthChecks()
+                    .AddMongoDb();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -78,7 +83,8 @@ namespace Trading.Service
                 });
             }
 
-            app.UseHttpsRedirection();
+            app.UseCookiePolicy(new CookiePolicyOptions { MinimumSameSitePolicy = SameSiteMode.Lax });
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
@@ -89,6 +95,7 @@ namespace Trading.Service
             {
                 endpoints.MapControllers();
                 endpoints.MapHub<MessageHub>("/messagehub");
+                endpoints.MapPlayEconomyHealthChecks();
             });
         }
 
