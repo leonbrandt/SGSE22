@@ -55,3 +55,7 @@ TODO: aus research.md zusammenfassen
 
 TODO: siehe research
 TODO: validieren
+
+## Kompilierung von LLVM ##
+
+[LLVM kompilieren](praktikum/reinsch_raitzig/llvm-compile.md)
