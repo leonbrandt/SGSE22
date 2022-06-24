@@ -393,4 +393,4 @@ an ein ECS-Projekt auf Multithreading auszulegen und DOD-Prinzipien zu implement
 [6]: Adrian Papari. https://github.com/junkdog/entity-system-benchmarks  
 [7]: David Colson. https://www.david-colson.com/2020/02/09/making-a-simple-ecs.html  
 [8]: Richard Lord. https://www.richardlord.net/blog/ecs/why-use-an-entity-framework.html  
-[9]: FTWinston. https://stackoverflow.com/questions/15449811/is-there-any-advantage-in-building-a-business-application-with-an-entity-compone  
+[9]: FTWinston. https://stackoverflow.com/a/28628000  
