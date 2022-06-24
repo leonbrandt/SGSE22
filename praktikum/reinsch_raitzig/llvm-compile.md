@@ -10,7 +10,7 @@ Wie LLVM gebaut wird, wird in [*Getting Started with the LLVM System*](https://l
 
 Hier wird LLVM innerhalb eines [Docker](https://www.docker.com/)-Containers gebaut. Dadurch kann die kompilierte LLVM-Toolchain überall benutzt werden. (Docker ist für Linux, Windows und MacOS verfügbar.)
 
-Ein Docker-Container wird mittels eines Dockerfiles erstellt. Das von uns erstellte Dockerfile ist [hier](/praktikum/reinsch_raitzig/Dockerfile) hinterlegt.
+Ein Docker-Container wird mittels eines Dockerfiles erstellt. Das von uns erstellte Dockerfile ist [hier](https://github.com/mwithoeft/SGSE22/blob/main/praktikum/reinsch_raitzig/Dockerfile) hinterlegt.
 
 Der Container kann mit folgendem Befehl erstellt werden (wenn man sich im gleichen Ordner wie das Dockerfile befindet):
 ```bash
