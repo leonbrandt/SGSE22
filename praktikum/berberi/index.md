@@ -36,15 +36,16 @@ JavaScript ist eine Programmiersprache, die oft als clientseitige Skriptsprache 
 ### 2.3 Ähnlichkeiten zwischen PHP und JavaScript
 
 Sowohl PHP als auch JavaScript sind objektorientierte und interpretierte Sprachen. Sie sind Open-Source, plattformunabhängig und bieten Speicherverwaltungsfunktionen. Sie unterscheiden bei Variablen zwischen Groß- und Kleinschreibung, unterstützen Frameworks und benötigen zur Ausführung immer HTTP. PHP ist bekannt für seine objektorientierten Skripting-Funktionen. Andererseits kann JavaScript diese Eigenschaften mit gekapselten Funktionen nachahmen, die in PHP als lokale Variablen und Methoden erkannt werden. In der folgenden Tabelle sind die Gemeinsamkeiten zwischen PHP und JavaScript aufgeführt:
-|Eigenschaften| PHP |Javascript |
-|--|--|--|
-| Objektorientiert | Ja | Ja |
-| Einfache Verwendung von bestehendem Code | Ja | Ja |
-| Beachtung der Groß- und Kleinschreibung bei Variablen | Ja | Ja |
-| Erfordert HTTP zur Ausführung | Ja | Ja |
-| Unterstützt Framework | Ja | Ja |
-| Plattformunabhängig | Ja | Ja |
-| Speicherverwaltung (Garbage Collection) | Ja | Ja |
+
+| Eigenschaften                                         | PHP | Javascript |
+| :---------------------------------------------------- | :-: | :--------: |
+| Objektorientiert                                      | Ja  |     Ja     |
+| Einfache Verwendung von bestehendem Code              | Ja  |     Ja     |
+| Beachtung der Groß- und Kleinschreibung bei Variablen | Ja  |     Ja     |
+| Erfordert HTTP zur Ausführung                         | Ja  |     Ja     |
+| Unterstützt Framework                                 | Ja  |     Ja     |
+| Plattformunabhängig                                   | Ja  |     Ja     |
+| Speicherverwaltung (Garbage Collection)               | Ja  |     Ja     |
 
 Abgesehen von den Ähnlichkeiten zwischen PHP und JavaScript sind diese beiden Sprachen eine leistungsstarke Kombination, wenn sie zusammen verwendet werden. Viele Websites kombinieren PHP und JavaScript - JavaScript für das Frontend und PHP für das Backend, da sie eine große Unterstützung durch die Community, verschiedene Bibliotheken und eine große Codebasis von Frameworks bieten.
 
