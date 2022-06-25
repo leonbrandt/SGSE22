@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JsonSubTypes.1.2.0.0.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:JsonSubTypes.Fakes.ShimJsonSubtypes">
+            <summary>Shim-Typ von JsonSubTypes.JsonSubtypes</summary>
+        </member>
+        <member name="M:JsonSubTypes.Fakes.ShimJsonSubtypes.#ctor">
+            <summary>Initialisiert eine neue Shim-Instanz.</summary>
+        </member>
+        <member name="M:JsonSubTypes.Fakes.ShimJsonSubtypes.#ctor(JsonSubTypes.JsonSubtypes)">
+            <summary>Initialisiert einen neuen Shim für die gegebene Instanz.</summary>
+        </member>
+        <member name="T:JsonSubTypes.Fakes.ShimJsonSubtypes.AllInstances">
+            <summary>Shims für alle Instanzenmember definieren</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.AllInstances.CanConvertType">
+            <summary>Legt die Shim von JsonSubtypes.CanConvert(JsonSubtypes this, Type objectType) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.AllInstances.CanReadGet">
+            <summary>Legt die Shim von JsonSubtypes.get_CanRead(JsonSubtypes this) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.AllInstances.CanWriteGet">
+            <summary>Legt die Shim von JsonSubtypes.get_CanWrite(JsonSubtypes this) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.AllInstances.GetTypeFromDiscriminatorValueJObjectType">
+            <summary>Legt die Shim von JsonSubtypes.GetTypeFromDiscriminatorValue(JsonSubtypes this, JObject jObject, Type parentType) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.AllInstances.GetTypeJObjectType">
+            <summary>Legt die Shim von JsonSubtypes.GetType(JsonSubtypes this, JObject jObject, Type parentType) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.AllInstances.ReadArrayJsonReaderTypeJsonSerializer">
+            <summary>Legt die Shim von JsonSubtypes.ReadArray(JsonSubtypes this, JsonReader reader, Type targetType, JsonSerializer serializer) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.AllInstances.ReadJsonJsonReaderTypeJsonSerializer">
+            <summary>Legt die Shim von JsonSubtypes.ReadJson(JsonSubtypes this, JsonReader reader, Type objectType, JsonSerializer serializer) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.AllInstances.ReadJsonJsonReaderTypeObjectJsonSerializer">
+            <summary>Legt die Shim von JsonSubtypes.ReadJson(JsonSubtypes this, JsonReader reader, Type objectType, Object existingValue, JsonSerializer serializer) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.AllInstances.ReadObjectJsonReaderTypeJsonSerializer">
+            <summary>Legt die Shim von JsonSubtypes.ReadObject(JsonSubtypes this, JsonReader reader, Type objectType, JsonSerializer serializer) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.AllInstances.WriteJsonJsonWriterObjectJsonSerializer">
+            <summary>Legt die Shim von JsonSubtypes.WriteJson(JsonSubtypes this, JsonWriter writer, Object value, JsonSerializer serializer) fest.</summary>
+        </member>
+        <member name="M:JsonSubTypes.Fakes.ShimJsonSubtypes.BehaveAsCurrent">
+            <summary>Weist das &apos;Current&apos;-Verhalten für alle Methoden des Shim-Typs zu.</summary>
+        </member>
+        <member name="M:JsonSubTypes.Fakes.ShimJsonSubtypes.BehaveAsNotImplemented">
+            <summary>Weist das &apos;NotImplemented&apos;-Verhalten für alle Methoden des Shim-Typs zu.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.Behavior">
+            <summary>Weist das Verhalten für alle Methoden des Shim-Typs zu.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.CanConvertType">
+            <summary>Legt die Shim von JsonSubtypes.CanConvert(JsonSubtypes this, Type objectType) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.CanReadGet">
+            <summary>Legt die Shim von JsonSubtypes.get_CanRead(JsonSubtypes this) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.CanWriteGet">
+            <summary>Legt die Shim von JsonSubtypes.get_CanWrite(JsonSubtypes this) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.Constructor">
+            <summary>Legt die Shim von JsonSubtypes.JsonSubtypes(JsonSubtypes this) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ConstructorString">
+            <summary>Legt die Shim von JsonSubtypes.JsonSubtypes(JsonSubtypes this, String typeMappingPropertyName) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.CreateAnotherReaderJTokenJsonReader">
+            <summary>Legt die Shim von JsonSubtypes.CreateAnotherReader(JToken jToken, JsonReader reader) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.CreateCompatibleListTypeType">
+            <summary>Legt die Shim von JsonSubtypes.CreateCompatibleList(Type targetContainerType, Type elementType) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.GetElementTypeType">
+            <summary>Legt die Shim von JsonSubtypes.GetElementType(Type arrayOrGenericContainer) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.GetSubTypeMappingType">
+            <summary>Legt die Shim von JsonSubtypes.GetSubTypeMapping(Type type) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.GetTypeByNameStringType">
+            <summary>Legt die Shim von JsonSubtypes.GetTypeByName(String typeName, Type parentType) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.GetTypeByPropertyPresenceJObjectType">
+            <summary>Legt die Shim von JsonSubtypes.GetTypeByPropertyPresence(JObject jObject, Type parentType) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.GetTypeFromDiscriminatorValueJObjectType">
+            <summary>Legt die Shim von JsonSubtypes.GetTypeFromDiscriminatorValue(JsonSubtypes this, JObject jObject, Type parentType) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.GetTypeFromMappingIReadOnlyDictionaryOfObjectTypeJToken">
+            <summary>Legt die Shim von JsonSubtypes.GetTypeFromMapping(IReadOnlyDictionary`2 typeMapping, JToken discriminatorToken) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.GetTypeJObjectType">
+            <summary>Legt die Shim von JsonSubtypes.GetType(JsonSubtypes this, JObject jObject, Type parentType) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ReadArrayJsonReaderTypeJsonSerializer">
+            <summary>Legt die Shim von JsonSubtypes.ReadArray(JsonSubtypes this, JsonReader reader, Type targetType, JsonSerializer serializer) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ReadJsonJsonReaderTypeJsonSerializer">
+            <summary>Legt die Shim von JsonSubtypes.ReadJson(JsonSubtypes this, JsonReader reader, Type objectType, JsonSerializer serializer) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ReadJsonJsonReaderTypeObjectJsonSerializer">
+            <summary>Legt die Shim von JsonSubtypes.ReadJson(JsonSubtypes this, JsonReader reader, Type objectType, Object existingValue, JsonSerializer serializer) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ReadObjectJsonReaderTypeJsonSerializer">
+            <summary>Legt die Shim von JsonSubtypes.ReadObject(JsonSubtypes this, JsonReader reader, Type objectType, JsonSerializer serializer) fest.</summary>
+        </member>
+        <member name="T:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeAttribute">
+            <summary>Shim-Typ von JsonSubTypes.JsonSubtypes.KnownSubTypeAttribute</summary>
+        </member>
+        <member name="M:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeAttribute.#ctor">
+            <summary>Initialisiert eine neue Shim-Instanz.</summary>
+        </member>
+        <member name="M:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeAttribute.#ctor(JsonSubTypes.JsonSubtypes.KnownSubTypeAttribute)">
+            <summary>Initialisiert einen neuen Shim für die gegebene Instanz.</summary>
+        </member>
+        <member name="T:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeAttribute.AllInstances">
+            <summary>Shims für alle Instanzenmember definieren</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeAttribute.AllInstances.AssociatedValueGet">
+            <summary>Legt die Shim von KnownSubTypeAttribute.get_AssociatedValue(KnownSubTypeAttribute this) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeAttribute.AllInstances.AssociatedValueSetObject">
+            <summary>Legt die Shim von KnownSubTypeAttribute.set_AssociatedValue(KnownSubTypeAttribute this, Object value) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeAttribute.AllInstances.SubTypeGet">
+            <summary>Legt die Shim von KnownSubTypeAttribute.get_SubType(KnownSubTypeAttribute this) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeAttribute.AllInstances.SubTypeSetType">
+            <summary>Legt die Shim von KnownSubTypeAttribute.set_SubType(KnownSubTypeAttribute this, Type value) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeAttribute.AssociatedValueGet">
+            <summary>Legt die Shim von KnownSubTypeAttribute.get_AssociatedValue(KnownSubTypeAttribute this) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeAttribute.AssociatedValueSetObject">
+            <summary>Legt die Shim von KnownSubTypeAttribute.set_AssociatedValue(KnownSubTypeAttribute this, Object value) fest.</summary>
+        </member>
+        <member name="M:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeAttribute.BehaveAsCurrent">
+            <summary>Weist das &apos;Current&apos;-Verhalten für alle Methoden des Shim-Typs zu.</summary>
+        </member>
+        <member name="M:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeAttribute.BehaveAsNotImplemented">
+            <summary>Weist das &apos;NotImplemented&apos;-Verhalten für alle Methoden des Shim-Typs zu.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeAttribute.Behavior">
+            <summary>Weist das Verhalten für alle Methoden des Shim-Typs zu.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeAttribute.ConstructorTypeObject">
+            <summary>Legt die Shim von KnownSubTypeAttribute.KnownSubTypeAttribute(KnownSubTypeAttribute this, Type subType, Object associatedValue) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeAttribute.SubTypeGet">
+            <summary>Legt die Shim von KnownSubTypeAttribute.get_SubType(KnownSubTypeAttribute this) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeAttribute.SubTypeSetType">
+            <summary>Legt die Shim von KnownSubTypeAttribute.set_SubType(KnownSubTypeAttribute this, Type value) fest.</summary>
+        </member>
+        <member name="T:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeWithPropertyAttribute">
+            <summary>Shim-Typ von JsonSubTypes.JsonSubtypes.KnownSubTypeWithPropertyAttribute</summary>
+        </member>
+        <member name="M:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeWithPropertyAttribute.#ctor">
+            <summary>Initialisiert eine neue Shim-Instanz.</summary>
+        </member>
+        <member name="M:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeWithPropertyAttribute.#ctor(JsonSubTypes.JsonSubtypes.KnownSubTypeWithPropertyAttribute)">
+            <summary>Initialisiert einen neuen Shim für die gegebene Instanz.</summary>
+        </member>
+        <member name="T:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeWithPropertyAttribute.AllInstances">
+            <summary>Shims für alle Instanzenmember definieren</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeWithPropertyAttribute.AllInstances.PropertyNameGet">
+            <summary>Legt die Shim von KnownSubTypeWithPropertyAttribute.get_PropertyName(KnownSubTypeWithPropertyAttribute this) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeWithPropertyAttribute.AllInstances.PropertyNameSetString">
+            <summary>Legt die Shim von KnownSubTypeWithPropertyAttribute.set_PropertyName(KnownSubTypeWithPropertyAttribute this, String value) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeWithPropertyAttribute.AllInstances.SubTypeGet">
+            <summary>Legt die Shim von KnownSubTypeWithPropertyAttribute.get_SubType(KnownSubTypeWithPropertyAttribute this) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeWithPropertyAttribute.AllInstances.SubTypeSetType">
+            <summary>Legt die Shim von KnownSubTypeWithPropertyAttribute.set_SubType(KnownSubTypeWithPropertyAttribute this, Type value) fest.</summary>
+        </member>
+        <member name="M:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeWithPropertyAttribute.BehaveAsCurrent">
+            <summary>Weist das &apos;Current&apos;-Verhalten für alle Methoden des Shim-Typs zu.</summary>
+        </member>
+        <member name="M:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeWithPropertyAttribute.BehaveAsNotImplemented">
+            <summary>Weist das &apos;NotImplemented&apos;-Verhalten für alle Methoden des Shim-Typs zu.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeWithPropertyAttribute.Behavior">
+            <summary>Weist das Verhalten für alle Methoden des Shim-Typs zu.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeWithPropertyAttribute.ConstructorTypeString">
+            <summary>Legt die Shim von KnownSubTypeWithPropertyAttribute.KnownSubTypeWithPropertyAttribute(KnownSubTypeWithPropertyAttribute this, Type subType, String propertyName) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeWithPropertyAttribute.PropertyNameGet">
+            <summary>Legt die Shim von KnownSubTypeWithPropertyAttribute.get_PropertyName(KnownSubTypeWithPropertyAttribute this) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeWithPropertyAttribute.PropertyNameSetString">
+            <summary>Legt die Shim von KnownSubTypeWithPropertyAttribute.set_PropertyName(KnownSubTypeWithPropertyAttribute this, String value) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeWithPropertyAttribute.SubTypeGet">
+            <summary>Legt die Shim von KnownSubTypeWithPropertyAttribute.get_SubType(KnownSubTypeWithPropertyAttribute this) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ShimKnownSubTypeWithPropertyAttribute.SubTypeSetType">
+            <summary>Legt die Shim von KnownSubTypeWithPropertyAttribute.set_SubType(KnownSubTypeWithPropertyAttribute this, Type value) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.ThreadStaticReadObjectJsonReaderJsonSerializerJTokenType">
+            <summary>Legt die Shim von JsonSubtypes.ThreadStaticReadObject(JsonReader reader, JsonSerializer serializer, JToken jToken, Type targetType) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.ShimJsonSubtypes.WriteJsonJsonWriterObjectJsonSerializer">
+            <summary>Legt die Shim von JsonSubtypes.WriteJson(JsonSubtypes this, JsonWriter writer, Object value, JsonSerializer serializer) fest.</summary>
+        </member>
+        <member name="T:JsonSubTypes.Fakes.StubJsonSubtypes">
+            <summary>Stub-Typ von JsonSubTypes.JsonSubtypes</summary>
+        </member>
+        <member name="M:JsonSubTypes.Fakes.StubJsonSubtypes.#ctor">
+            <summary>Initialisiert eine neue Instanz.</summary>
+        </member>
+        <member name="M:JsonSubTypes.Fakes.StubJsonSubtypes.#ctor(System.String)">
+            <summary>Initialisiert eine neue Instanz.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.StubJsonSubtypes.CallBase">
+            <summary>Ruft einen Wert ab, der angibt, ob die Basismethode anstelle des Fallback-Verhaltens abgerufen werden soll, oder legt diesen fest.</summary>
+        </member>
+        <member name="M:JsonSubTypes.Fakes.StubJsonSubtypes.CanConvert(System.Type)">
+            <summary>Legt die Stub von JsonSubtypes.CanConvert(JsonSubtypes this, Type objectType) fest.</summary>
+        </member>
+        <member name="F:JsonSubTypes.Fakes.StubJsonSubtypes.CanConvertType">
+            <summary>Legt die stub von JsonSubtypes.CanConvert(JsonSubtypes this, Type objectType) fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.StubJsonSubtypes.CanRead">
+            <summary>Legt die stub von JsonSubtypes.get_CanRead(JsonSubtypes this) fest.</summary>
+        </member>
+        <member name="F:JsonSubTypes.Fakes.StubJsonSubtypes.CanReadGet">
+            <summary>Legt die stub von JsonSubtypes.get_CanRead(JsonSubtypes this) fest.</summary>
+        </member>
+        <member name="M:JsonSubTypes.Fakes.StubJsonSubtypes.InitializeStub">
+            <summary>Initialisiert eine neue Instanz von type StubJsonSubtypes.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.StubJsonSubtypes.InstanceBehavior">
+            <summary>Ruft das Instanzverhalten ab, oder legt dieses fest.</summary>
+        </member>
+        <member name="P:JsonSubTypes.Fakes.StubJsonSubtypes.InstanceObserver">
+            <summary>Ruft den Instanzbeobachter ab, oder legt ihn fest.</summary>
+        </member>
+        <member name="M:JsonSubTypes.Fakes.StubJsonSubtypes.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <summary>Legt die Stub von JsonSubtypes.ReadJson(JsonSubtypes this, JsonReader reader, Type objectType, Object existingValue, JsonSerializer serializer) fest.</summary>
+        </member>
+        <member name="F:JsonSubTypes.Fakes.StubJsonSubtypes.ReadJsonJsonReaderTypeObjectJsonSerializer">
+            <summary>Legt die stub von JsonSubtypes.ReadJson(JsonSubtypes this, JsonReader reader, Type objectType, Object existingValue, JsonSerializer serializer) fest.</summary>
+        </member>
+        <member name="M:JsonSubTypes.Fakes.StubJsonSubtypes.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <summary>Legt die Stub von JsonSubtypes.WriteJson(JsonSubtypes this, JsonWriter writer, Object value, JsonSerializer serializer) fest.</summary>
+        </member>
+        <member name="F:JsonSubTypes.Fakes.StubJsonSubtypes.WriteJsonJsonWriterObjectJsonSerializer">
+            <summary>Legt die stub von JsonSubtypes.WriteJson(JsonSubtypes this, JsonWriter writer, Object value, JsonSerializer serializer) fest.</summary>
+        </member>
+    </members>
+</doc>

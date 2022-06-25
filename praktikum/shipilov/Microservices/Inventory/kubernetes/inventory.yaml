@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inventory-deployment
+spec:
+  selector:
+    matchLabels:
+      app: inventory
+  template:
+    metadata:
+      labels:
+        app: inventory
+        aadpodidbinding: inventory # name in Azure ressource group
+    spec:
+      containers:
+        - name: inventory
+          image: shopeconomy.azurecr.io/inventory:1.0.6
+          env:
+            - name: ServiceSettings__MessageBroker
+              value: SERVICEBUS
+            - name: ServiceSettings__KeyVaultName
+              value: shopeconomy
+            - name: ServiceSettings__Authority
+              value: https://shopeconomy.australiacentral.cloudapp.azure.com/identity-svc
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "150m"
+          ports:
+            - containerPort: 5004 # same as in Dockerfile
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: inventory-service
+spec:
+  type: ClusterIP
+  selector:
+    app: inventory
+  ports:
+    - port: 80
+      targetPort: 5004 # same as in Dockerfile

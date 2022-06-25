@@ -2,6 +2,10 @@
 
 Als Bestandteil des Praktikums im Modul Spezielle Gebiete zum Software Engineering soll ein Praktikum mit wissenschaftlicher Arbeitsweise durchgeführt werden. Dafür werden im Folgenden sowohl Titel der Arbeit als auch Anforderungen und Forschungsfragen formuliert.
 
+[Die ausformulierte Ausarbeitung zum Thema kann hier gelesen werden.](praktikum/withöft/ausarbeitung)
+
+[Die Begründung und Dokumentation zur Wahl der Programmiersprache im Backend kann hier gelesen werden.](praktikum/withöft/backendProgrammiersprache)
+
 ## Hintergrund 
 
 WebSockets sind ein beliebtes Protokoll, wenn es darum geht eine persistente Client-Server-Kommunikation zu ermöglichen. Dabei wird die Verbindung offengehalten und auf diesem Stream können Daten ausgetauscht werden.
@@ -12,7 +16,7 @@ Die genauen Unterschiede, aber auch die Gemeinsamkeiten sollen untersucht werden
 
 ## Forschungsfragen
 
-Zu Beginn der Einführung von WebAssembly stellte man sich die Frage, ob es in Zukunft JavaScript weitergehend ablösen könnte. Nach einiger Erfahrung mit WebAssembly stellte sich heraus, dass WebAssembly eher als eine Ergänzung im binären Format darstellt, mit dem gewisse Aufgaben effizienter gelöst werden können. WebTransport ist eine neue Technologie, bei der die zukünftigen Anwendungsgebiete noch nicht abschließend geklärt sind. Daher sollen folgende Frage nuntersucht werden:
+Zu Beginn der Einführung von WebAssembly stellte man sich die Frage, ob es in Zukunft JavaScript weitergehend ablösen könnte. Nach einiger Erfahrung mit WebAssembly stellte sich heraus, dass WebAssembly eher als eine Ergänzung im binären Format darstellt, mit dem gewisse Aufgaben effizienter gelöst werden können. WebTransport ist eine neue Technologie, bei der die zukünftigen Anwendungsgebiete noch nicht abschließend geklärt sind. Daher sollen folgende Fragen untersucht werden:
 
 - Hat WebTransport das Potential WebSockets abzulösen oder haben die Protokolle unterschiedliche Anwendungsbereiche (wie z.B. WASM, JS)?
 - Wie unterscheiden sich WebTransport und WebSockets von einander?
@@ -44,8 +48,6 @@ Die bereits genannten Fragen sollen unter folgendem Arbeitstitel untersucht werd
 **Implementierung und Vergleich von WebSockets und WebTransport im Hinblick auf Geschwindigkeit, Stabilität und Performanz unter Last**
 
 Der aktuelle Implementierungsfortschritt kann [HIER](https://github.com/mwithoeft/Spezielle-Gebiete-zum-Softwareengineering) eingesehen werden.
-
-Die ausformulierte Ausarbeitung zum Thema kann [HIER](praktikum/withöft/ausarbeitung) gelesen werden.
 
 ## Zeitplan
 

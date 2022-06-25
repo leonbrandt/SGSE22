@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <PackageDescription>Catalog.Contracts libraries used by SchüCal Economy services</PackageDescription>
+    <Authors>Artem Shipilov</Authors>
+    <Company>Schueco</Company>
+  </PropertyGroup>
+
+</Project>

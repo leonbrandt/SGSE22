@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: identity-deployment
+spec:
+  selector:
+    matchLabels:
+      app: identity
+  template:
+    metadata:
+      labels:
+        app: identity
+        aadpodidbinding: identity # name in Azure ressource group
+    spec:
+      containers:
+        - name: identity
+          image: shopeconomy.azurecr.io/play.identity:1.0.12
+          env:
+            - name: ServiceSettings__MessageBroker # Common.Settings
+              value: SERVICEBUS
+            - name: ServiceSettings__KeyVaultName
+              value: shopeconomy
+            - name: IdentitySettings__PathBase # Play.Identity.Service.Settings
+              value: /identity-svc
+            - name: IdentitySettings__CertificateCerFilePath
+              value: "/certificates/certificate.crt" # same as "volumeMounts/mountPath" / "volumes/items" in this file
+            - name: IdentitySettings__CertificateKeyFilePath
+              value: "/certificates/certificate.key" # same as "volumeMounts/mountPath" / "volumes/items" in this file
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "150m"
+          ports:
+            - containerPort: 5002 # same as in Dockerfile
+          volumeMounts:
+            - name: certificate-volume # from signin-cer.yaml
+              mountPath: /certificates
+      volumes:
+        - name: certificate-volume
+          secret:
+            secretName: signing-cert # from signin-cer.yaml
+            items:
+              - key: tls.key
+                path: certificate.key
+              - key: tls.crt
+                path: certificate.crt
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: identity-service
+spec:
+  type: ClusterIP
+  selector:
+    app: identity
+  ports:
+    - port: 80
+      targetPort: 5002 # same as in Dockerfile

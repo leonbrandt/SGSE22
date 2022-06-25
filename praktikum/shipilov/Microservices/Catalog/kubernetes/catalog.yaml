@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalog-deployment
+spec:
+  selector:
+    matchLabels:
+      app: catalog
+  template:
+    metadata:
+      labels:
+        app: catalog
+        aadpodidbinding: catalog # name in Azure ressource group
+    spec:
+      containers:
+        - name: catalog
+          image: shopeconomy.azurecr.io/catalog:1.0.5
+          env:
+            - name: ServiceSettings__MessageBroker
+              value: SERVICEBUS
+            - name: ServiceSettings__KeyVaultName
+              value: shopeconomy
+            - name: ServiceSettings__Authority
+              value: https://shopeconomy.australiacentral.cloudapp.azure.com/identity-svc
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "150m"
+          ports:
+            - containerPort: 5000 # same as in Dockerfile
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: catalog-service
+spec:
+  type: ClusterIP
+  selector:
+    app: catalog
+  ports:
+    - port: 80
+      targetPort: 5000 # same as in Dockerfile
