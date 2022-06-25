@@ -55,6 +55,11 @@ Abgesehen von den Ähnlichkeiten zwischen PHP und JavaScript haben beide untersc
 
 #### 2.4.1 Verwendung von PHP gegenüber JavaScript für die Webentwicklung
 
+![image](https://user-images.githubusercontent.com/58107983/175786474-91d67c3c-45fa-4cbe-807c-bcb352ae5ba5.png)
+https://w3techs.com/technologies/comparison/pl-js,pl-php
+![image](https://user-images.githubusercontent.com/58107983/175786478-0e01aaf2-0459-4899-997f-d8f4c58a601d.png)
+https://w3techs.com/technologies/overview/client_side_language
+
 #### 2.4.2 PHP vs. JavaScript: Verfügbarkeit
 
 #### 2.4.3 PHP vs. JavaScript: Nebenläufigkeit
