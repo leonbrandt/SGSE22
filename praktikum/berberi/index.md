@@ -1,78 +1,79 @@
-# Rei Berberi
+# Web-Entwicklung für kommerzielle Content-Websites: PHP vs. JavaScript
 
-- Thema: Web-Entwicklung für kommerzielle Content-Websites: PHP vs. JavaScript
+Autor: Rei Berberi
 
-- Forschungsfragen:
+## 1 Einleitung
 
-  - Wie wird WordPress-Themes und PHP verwendet, um kommerzielle Content-Websites im Vergleich zu JavaScript-Frameworks ?
-  - Ist es für digitale Marketing- und Webentwicklungunternehmen kostengünstiger, ihren Entwicklungsprozess auf WordPress und PHP statt auf JavaScript-Lösungen zu stützen?
+Im Rahmen dieser wissenschaftlichen Ausarbeitung, die das Forschungsthema "Web-Entwicklung für kommerzielle Content-Websites: PHP vs. JavaScript" behandelt, wird versucht, zwei Forschungsfragen zu beantworten:
 
-- Gliederung:
+1.  Wie wird WordPress-Themes und PHP verwendet, um kommerzielle Content-Websites im Vergleich zu JavaScript-Frameworks?
+2.  Ist es für digitale Marketing- und Webentwicklungunternehmen kostengünstiger, ihren Entwicklungsprozess auf WordPress und PHP statt auf JavaScript-Lösungen zu stützen?
 
-  - Einleitung
-  - Vergleich PHP vs JavaScript
+Zu Beginn dieser Ausarbeitung werden die Eckpunkte, Gemeinsamkeiten und Unterschiede zwischen PHP und JavaScript dargestellt. Anschließend wird die Entwicklung von kommerziellen Websites mit Wordpress und PHP sowie die Entwicklung mit Javascript und Angular erläutert. Abschließend wird die Sichtweise eines Unternehmens auf die Entwicklung mit PHP oder Javascript dargelegt.
 
-    - Simplizität (Lernkurve und Syntax)
+## 2 PHP vs. JavaScript
 
-      - Welche der beiden Skriptsprachen ist einfacher zu erlernen?
-      - Wie sind die Syntaxen im Vergleich zueinander?
+Einige Programmierer behaupten immer noch, dass es sinnlos sei, die Unterschiede zwischen PHP und JavaScript zu diskutieren, da beide einen unterschiedlichen Zweck bei der Website-Entwicklung erfüllen. Wenn es um die Frage PHP vs. JavaScript für die Website-Entwicklung geht, ist die Antwort einfach: PHP ist eine serverseitige Skriptsprache und JavaScript ist eine clientseitige Skriptsprache. PHP und JavaScript zusammen ergeben dynamische Websites. Mit dem Aufkommen von Node.js, Angular.js und React.js kann JavaScript jedoch auch für serverseitige Skripte verwendet werden. Daher ist PHP im Vergleich zu JavaScript ein ernsthaftes Diskussionsthema geworden. Fahren wir fort mit den Gemeinsamkeiten und Unterschieden zwischen PHP und JavaScript.
 
-        Typisierung von Variablen
+### 2.1 PHP
 
-        PHP und JavaScript sind beides Skriptsprachen, die in der Regel interpretiert und nicht kompiliert werden. Das bedeutet, dass sie nicht direkt, sondern über eine dritte Partei in Maschinencode übersetzt werden. Dies wirkt sich auf ihre Laufzeit aus. Aus diesem Grund sind kompilierte Sprachen in der Regel schneller als interpretierte Sprachen.
-        Eine Gemeinsamkeit ist, dass PHP und JavaScript schwach typisiert sind. Das heißt, wenn eine Variable in einer der beiden Sprachen erstellt wird, muss ihr Datentyp nicht zugewiesen werden: Er wird vorausgesetzt.
-        Man kann also Folgendes in PHP schreiben:
-        `$x = 'Hello world';`
-        `$y = 'Goodbye world';`
+PHP - Hypertext Preprocessor ist eine serverseitige Skriptsprache. Sie ist eine der grundlegenden Webtechnologien und wird von den meisten Websites verwendet. Sie ermöglicht es Entwicklern, dynamisch ausgeführte Webseiten zu erstellen. PHP enthält mehrere präzise Funktionen und herausragende Merkmale, die es PHP-Entwicklern ermöglichen, funktionsreiche Webseiten und datenbankgestützte Websites zu erstellen. Es hilft bei der Erstellung interaktiver Webseiten auf hohem Niveau wie Bildergalerien, Anmeldeseiten usw. Da PHP ein Open-Source-Programm ist, kann es auf den meisten der heute verfügbaren Betriebssysteme wie Windows, Mac OS, Linux oder UNIX usw. ausgeführt werden.
 
-        Oder in JavaScript:
-        `var x = 'Hello world';`
-        `let y = 'Goodbye world';`
+**PHP-Instanzen:**
 
-        In beiden Sprachen werden diese Variablen als Zeichenketten erkannt. Dies steht im Gegensatz zu einer stark typisierten Sprache wie Java, wo Sie bei der Deklaration einer Variablen angeben müssen, welchen Typ Sie verwenden.
-        Sowohl PHP als auch JavaScript sind dynamisch typisiert, d. h., der Typ kann leicht geändert werden, indem er im Code neu definiert wird:
-        `$x = 5;`
-        In PHP ist $x jetzt eine ganze Zahl.
-        `x = 3.14195;`
-        In JavaScript ist x jetzt eine Zahl.
+- Content Management Systeme (CMS) wie Word Press
+- Server wie SQL, MariaDB, Postgresql, usw.
 
-        Da die Typen in PHP oder JavaScript nicht explizit definiert sind, werden Funktionen benötigt, um zu erkennen, mit welchem Datentyp gearbeitet wird. In JavaScript gibt es dafür die Funktion typeof. In PHP gibt es die Funktion gettype, die den Typ einer Variablen zurückgibt. Eine neue, verbesserte Version von gettype, get_debug_type, ist Teil der PHP 8 Version.
+### 2.2 JavaScript
 
-    - Performanz und Geschwindigkeit
-      - JavaScript: ereignisgesteuertes, einfädiges, nicht blockierendes E/A-Ausführungsmodell, asynchron
-      - PHP: Multithreading, blockierendes E/A-Ausführungsmodell, synchron
-    - Integration (Erweiterbarkeit)
-      - JavaScript kann mit HTML, XML und Ajax kombiniert werden. Front-end Technologien wie Vue, Angular, React. Node js als server-side framework. NPM als Package Manager.
-      - PHP kann nur mit HTML kombiniert werden. Integration mit CMS (z.B. WordPress) und LAMP Stack Technologien wie MySQL und PostgreSQL. PEAR und Composer als Package Managers.
-    - Universalität
-      - JavaScript: Full Stack
-      - PHP: Back End only. LAMP Stack als Nachteil?
-    - Community und Arbeitsmarkt
+JavaScript ist eine Programmiersprache, die oft als clientseitige Skriptsprache bezeichnet wird und im Allgemeinen in Browsern ausgeführt wird, um interaktive und dynamische Webseiten zu erstellen. Sie wird häufig für die Erstellung benutzerfreundlicher, kreativer Websites sowie für Nicht-Web-Projekte wie die Entwicklung von Spielen, mobilen Anwendungen, PDF-Dateien und mehr verwendet. Es muss nicht neu kompiliert werden, was die Zeiteffizienz erhöht. Es gibt auch fortgeschrittene serverseitige Versionen von JavaScript wie Node.js und Angular.js, die die Gestaltung von Websites mit mehr Funktionen als nur dem Herunterladen von Dateien ermöglichen.
 
-  - Entwicklung von kommerzielle Websites mit WordPress und PHP
-    - ...
-  - Entwicklung von kommerzielle Websites mit JavaScript und Angular
-    - ...
-  - WordPress und PHP im Unternehmen
+**JavaScript-Instanzen:**
 
-    - Verfügbarkeit von Arbeitskräften
-    - Kosten
-    - ...
+- Frontend-Technologien wie Angular JS, JQuery, Reactjs, usw.
+- Serverseitige Technologien wie MongoDB, Node.js, Express.js, etc.
 
-  - Rückblick auf Forschungsfragen
-  - Fazit
+### 2.3 Ähnlichkeiten zwischen PHP und JavaScript
 
-- ToDo[Progress 1-10]:
+Sowohl PHP als auch JavaScript sind objektorientierte und interpretierte Sprachen. Sie sind Open-Source, plattformunabhängig und bieten Speicherverwaltungsfunktionen. Sie unterscheiden bei Variablen zwischen Groß- und Kleinschreibung, unterstützen Frameworks und benötigen zur Ausführung immer HTTP. PHP ist bekannt für seine objektorientierten Skripting-Funktionen. Andererseits kann JavaScript diese Eigenschaften mit gekapselten Funktionen nachahmen, die in PHP als lokale Variablen und Methoden erkannt werden. In der folgenden Tabelle sind die Gemeinsamkeiten zwischen PHP und JavaScript aufgeführt:
+|Eigenschaften| PHP |Javascript |
+|--|--|--|
+| Objektorientiert | Ja | Ja |
+| Einfache Verwendung von bestehendem Code | Ja | Ja |
+| Beachtung der Groß- und Kleinschreibung bei Variablen | Ja | Ja |
+| Erfordert HTTP zur Ausführung | Ja | Ja |
+| Unterstützt Framework | Ja | Ja |
+| Plattformunabhängig | Ja | Ja |
+| Speicherverwaltung (Garbage Collection) | Ja | Ja |
 
-  - Theorieteil PHP vs JavaScript ausarbeiten [5]
-  - Entwicklung von kommerzielle Website WordPress/Php - JavaScript/Angular [1]
-  - Gespräche mit den Arbeitnehmer [3]
+Abgesehen von den Ähnlichkeiten zwischen PHP und JavaScript sind diese beiden Sprachen eine leistungsstarke Kombination, wenn sie zusammen verwendet werden. Viele Websites kombinieren PHP und JavaScript - JavaScript für das Frontend und PHP für das Backend, da sie eine große Unterstützung durch die Community, verschiedene Bibliotheken und eine große Codebasis von Frameworks bieten.
 
-- Zeitplan:
-  - [+] KW 14: Einführung SGSE Modul
-  - [+] KW 15: Themenauswahl
-  - [+] Bis KW19: Einarbeitung in PHP und WordPress Themes mit PHP durch Tutorials/Online-Kurse, Selbstlernen und Arbeitsprojekte.
-  - [+] KW20: Anpassung der Forschungsfragen, Besprechung mit Herrn Brunsmann, Endgültige Thema der Ausarbeitung steht fest.
-  - [] KW21 bis KW24: Ausarbeitung Vergleich PHP-JavaScript mit Theorie und Code Beispiele, Ausarbeitung Entwicklung von kommerzielle Website WordPress/Php - JavaScript/Angular, Gespräche mit dem Arbeitnehmer.
-  - [] KW25 bis KW26: Finalisierung/Antwort auf Forschungsfragen, Korrektur, Anpassung Format.
-  - [] KW26: Abgabe
+### 2.4 Unterschiede zwischen PHP und JavaScript
+
+Abgesehen von den Ähnlichkeiten zwischen PHP und JavaScript haben beide unterschiedliche Vorteile und Nutzen, je nachdem wie und wann sie eingesetzt werden. Bei der Gegenüberstellung von PHP und JavaScript ist bekannt, dass PHP das führende serverseitige Skript ist und JavaScript der Herrscher über die Front-End-Webentwicklung ist.
+
+#### 2.4.1 Verwendung von PHP gegenüber JavaScript für die Webentwicklung
+
+#### 2.4.2 PHP vs. JavaScript: Verfügbarkeit
+
+#### 2.4.3 PHP vs. JavaScript: Nebenläufigkeit
+
+#### 2.4.4 PHP vs. JavaScript: Integration mit externem Code
+
+#### 2.4.5 PHP vs. JavaScript: Laufzeitumgebungen
+
+#### 2.4.6 PHP und JavaScript: Einfachheit
+
+#### 2.4.7 PHP vs. JavaScript: Kommentare
+
+#### 2.4.8 PHP und JavaScript: Variablen
+
+#### 2.4.9 PHP und JavaScript: Objekte und Arrays
+
+## Entwicklung von kommerzielle Websites mit WordPress und PHP
+
+## Entwicklung von kommerzielle Websites mit JavaScript und Angular
+
+## WordPress und PHP im Unternehmen
+
+## Fazit
