@@ -1,15 +1,15 @@
-# Web-Entwicklung für kommerzielle Content-Websites: PHP vs. JavaScript
+# Web-Entwicklung: WordPress und PHP vs. JavaScript und React.js
 
 Autor: Rei Berberi
 
 ## 1 Einleitung
 
-Im Rahmen dieser wissenschaftlichen Ausarbeitung, die das Forschungsthema "Web-Entwicklung für kommerzielle Content-Websites: PHP vs. JavaScript" behandelt, wird versucht, zwei Forschungsfragen zu beantworten:
+Im Rahmen dieser wissenschaftlichen Ausarbeitung, die das Forschungsthema "Web-Entwicklung: PHP vs. JavaScript" behandelt, wird versucht, zwei Forschungsfragen zu beantworten:
 
-1.  Wie wird WordPress-Themes und PHP verwendet, um kommerzielle Content-Websites im Vergleich zu JavaScript-Frameworks?
-2.  Ist es für digitale Marketing- und Webentwicklungunternehmen kostengünstiger, ihren Entwicklungsprozess auf WordPress und PHP statt auf JavaScript-Lösungen zu stützen?
+1.  Wie wird WordPress-Themes und PHP verwendet, um Websites zu entwickeln im Vergleich zu JavaScript und React.js?
+2.  Welche Technologie zwischen WordPress und React.js sollte bei der Entwicklung einer Website bevorzugt werden?
 
-Zu Beginn dieser Ausarbeitung werden die Eckpunkte, Gemeinsamkeiten und Unterschiede zwischen PHP und JavaScript dargestellt. Anschließend wird die Entwicklung von kommerziellen Websites mit Wordpress und PHP sowie die Entwicklung mit Javascript und Angular erläutert. Abschließend wird die Sichtweise eines Unternehmens auf die Entwicklung mit PHP oder Javascript dargelegt.
+Zu Beginn dieser Ausarbeitung werden die Eckpunkte, Gemeinsamkeiten und Unterschiede zwischen PHP und JavaScript dargestellt. Anschließend wird die Entwicklung von Websites mit Wordpress und PHP sowie die Entwicklung mit Javascript und Angular erläutert. Abschließend wird wird ein Vergleich zwischen WordPress und React.js durch ihre Vor- und Nachteile dargelegt.
 
 ## 2 PHP vs. JavaScript
 
@@ -217,15 +217,15 @@ var obj = {
  };
 ```
 
-## Entwicklung von kommerzielle Websites mit WordPress und PHP
+## 3 Entwicklung von Websites mit JavaScript und React.js
 
-## Entwicklung von kommerzielle Websites mit JavaScript und Angular
+## 4 Entwicklung von Websites mit WordPress und PHP
 
-## WordPress und PHP im Unternehmen
+## 5 WordPress vs React.js: Vor- und Nachteile
 
-## Fazit
+## 6 Fazit
 
-## Quellen
+## 7 Quellen
 
 [1]: https://w3techs.com/technologies/comparison/pl-js,pl-php
 [2]: https://w3techs.com/technologies/overview/client_side_language
