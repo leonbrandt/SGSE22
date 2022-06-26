@@ -58,13 +58,16 @@ Abgesehen von den Ähnlichkeiten zwischen PHP und JavaScript haben beide untersc
 Ein Bericht von W3tech.com zeigt den Prozentsatz der Websites, die mit PHP- und JavaScript-Technologien erstellt wurden:
 
 ![image](https://user-images.githubusercontent.com/58107983/175786474-91d67c3c-45fa-4cbe-807c-bcb352ae5ba5.png)
-**Abbildung 1** - Prozentsatz der Websites, die mit PHP- und JavaScript-Technologien erstellt wurden [1]
 
-Die Grafik zeigt, dass etwa 79 % aller Websites PHP als serverseitige Programmiersprache verwenden, während nur 0,7 % der Websites JavaScript als serverseitige Sprache verwenden. Ebenso verwenden 77,4 % aller Websites, die in den Top 1.000.000 aufgeführt sind, PHP.
-Berücksichtigt man jedoch die Verwendung von clientseitigen Skriptsprachen für Websites, so übertrifft JavaScript die anderen Sprachen. Laut der Technologieumfrage von W3techs.com ist JavaScript die führende client-seitige Sprache und wird von 95,2 % aller Websites verwendet.
+**Abbildung 1** - Prozentsatz der Websites, die mit PHP- und JavaScript-Technologien erstellt wurden[1]
+
+Die Grafik zeigt, dass etwa 77.6 % aller Websites PHP als serverseitige Programmiersprache verwenden, während nur 2.1 % der Websites JavaScript als serverseitige Sprache verwenden. Ebenso verwenden 76.1 % aller Websites, die in den Top 1.000.000 aufgeführt sind, PHP.
+
+Berücksichtigt man jedoch die Verwendung von clientseitigen Skriptsprachen für Websites, so übertrifft JavaScript die anderen Sprachen. Laut der Technologieumfrage von W3techs.com ist JavaScript die führende client-seitige Sprache und wird von 98 % aller Websites verwendet.
 
 ![image](https://user-images.githubusercontent.com/58107983/175786478-0e01aaf2-0459-4899-997f-d8f4c58a601d.png)
-**Abbildung 2** - Verwendung von clientseitigen Skriptsprachen für Websites [1]
+
+**Abbildung 2** - Verwendung von clientseitigen Skriptsprachen für Websites[1]
 
 #### 2.4.2 PHP vs. JavaScript: Verfügbarkeit
 
@@ -182,21 +185,15 @@ Der Hauptunterschied zwischen PHP und JavaScript besteht darin, dass PHP Objekte
 
 ```php
 // Array-Definition.
-
 $arr = array(); // Neues leeres Array.
-
 $arr = array('a', 'b', 'c');
-
 $arr = array('a' => '1', 'a' => '2', 'c' => '3'); // Assoziativ.
 
 // Objekt-Definition.
-
 $obj = new stdClass(); // Neues leeres Objekt.
 
 $obj->a = '1';
-
 $obj->b = '2';
-
 $obj->c = '3';
 ```
 
@@ -204,29 +201,19 @@ $obj->c = '3';
 
 ```javascript
 // Array-Definition.
-
 var arr = new Array(); // Neues leeres Array.
-
 var arr = new Array('a', 'b', 'c');
 
 // Array-Definition. (kurzschriftlich, gebräuchlicher).
-
 var arr = []; // Neues leeres Array.
-
 var arr = ['a', 'b', 'c'];
 
 // Objekt-Definition.
-
 var obj = {}; // Neues leeres Objekt.
-
 var obj = {
-
    a: '1',
-
    b: '2',
-
    c: '3‘
-
  };
 ```
 
