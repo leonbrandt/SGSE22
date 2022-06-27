@@ -1,0 +1,8 @@
+hostname: "testserver"
+bootstrapPassword: "password"
+ingress:
+  enabled: true
+  tls:
+    source: "secret"
+additionalTrustedCAs: true
+privateCA: true
