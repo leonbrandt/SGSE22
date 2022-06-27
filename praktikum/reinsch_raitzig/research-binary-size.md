@@ -14,15 +14,15 @@ Um den Einfluss von MLGO zu untersuchen, wurden mehrere Programme einmal nur mit
 
 Die Ergebnisse sind in folgender Tabelle zusammengefasst. Die Größen sind jeweils in Bytes:
 
-| Programm                                                             | nur `-Oz` | `-Oz` und MLGO |
-| -------------------------------------------------------------------- | --------- | -------------- |
-| [VLC media player](https://www.videolan.org/vlc/)                    | 21168     | 21168          |
-| [Firefox](https://www.mozilla.org/en-US/firefox/) (nur Haupt-Binary) | 5995576   | 5752536        | 
-| Firefox (inklusive Bibliotheken)                                     | 69531415  | 68351749       |
-| [Thunderbird](https://www.thunderbird.net/) (nur Haupt-Binary)       | 5969976   | 5727176        |
-| Thunderbird (inklusive Bibliotheken)                                 | 105529227 | 103787207      |
-| [Linux Kernel](https://www.kernel.org/)                              | 568156016 | 568156016      |
-| [jp2a](https://github.com/Talinx/jp2a)                               | 57976     | 57976          |
+| Programm                                                             | nur `-Oz` | `-Oz` und MLGO | Verkleinerung durch MLGO in % |
+| -------------------------------------------------------------------- | --------- | -------------- | ----------------------------- |
+| [VLC media player](https://www.videolan.org/vlc/)                    | 21168     | 21168          | 0                             |
+| [Firefox](https://www.mozilla.org/en-US/firefox/) (nur Haupt-Binary) | 5995576   | 5752536        | 4,05                          |
+| Firefox (inklusive Bibliotheken)                                     | 69531415  | 68351749       | 1,70                          |
+| [Thunderbird](https://www.thunderbird.net/) (nur Haupt-Binary)       | 5969976   | 5727176        | 4,07                          |
+| Thunderbird (inklusive Bibliotheken)                                 | 105529227 | 103787207      | 1,65                          |
+| [Linux Kernel](https://www.kernel.org/)                              | 568156016 | 568156016      | 0                             |
+| [jp2a](https://github.com/Talinx/jp2a)                               | 57976     | 57976          | 0                             |
 
 Teilweise sind durch MLGO (zu `-Oz` zusätzliche) Größenreduktionen im einstelligen Prozentbereich sichtbar. Ob die Größe der Binaries durch MLGO reduziert werden kann, hängt stark vom jeweiligen Programm ab.
 
