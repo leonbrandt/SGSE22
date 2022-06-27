@@ -163,7 +163,17 @@ Die Rechenleistung ist begrenzt. Und der Preis für mehrere einfache Server ist 
  5. Günstige Preise.
  6. Azure Synapse Link für Azure Cosmos DB ist ein cloudbasiertes HTAP-Feature (Hybrid Transactional and Analytical Processing). Dies bietet Betriebsdatenanalysen in Azure Cosmos DB nahezu in Echtzeit und eine einfache Integration zwischen Azure Cosmos DB und Azure Synapse Analytics. [11]
 
+-----------
 
+# 6. Realisierung von der Microservice-Architektur.
+
+Zur Implementierung der Microservice-Architektur wurde ein neues Microsoft Azure-Konto erstellt. Azure bietet die Möglichkeit, ein Konto für Studenten zu erstellen. Dieses Konto ist kostenlos. Doch ein solches Angebot ist mit Vorsicht zu genießen, denn der Microservice benötigt sehr viele Ressourcen (nämlich mindestens 2 vCPUs und 4 GB RAM). Andernfalls tritt ein Fehler auf: “The System node pool must use VM sku with more than 2 cores and 4GB memory.” Glücklicherweise erlaubt Ihnen Azure, viele Ressourcen kostenlos zu nutzen, aber oft sind die Azure-Server ziemlich ausgelastet und es gibt keine freien virtuellen Maschinen mehr, die Sie kostenlos nutzen können. Daher waren zum Zeitpunkt der Untersuchung nicht alle virtuellen Maschinen mit dieser Ressource in Deutschland verfügbar. Wie in Amerika, Kanada. Daher wurde nach langer Suche eine virtuelle Maschine in Australien im zentralen Teil gefunden. Daher wurde für diese Arbeit der Standard_a2_v2-Cluster innerhalb des Azure Kubernetes Service ausgewählt.
+
+Adresse des erstellten Microservices: https://shopeconomy.australiacentral.cloudapp.azure.com/
+
+Ein Studentenabonnement wurde erstellt. Dem Studentenabonnement wurde eine Ressourcengruppe angehängt. Eine Ressourcengruppe besteht aus geladenen Microservices und Ressourcen, die von Azure bereitgestellt werden, um mit den Microservices zu kommunizieren (wie z.B. Azure Kubernetes Service, Azure Key Vault, VM-Skalierungsgruppe, Containerregistrierung, öffentliche IP-Adresse u.s.w.). 
+
+![](img/09.png)
 
 # Literaturverzeichnis
 * [1] - vgl. Martin 2017, Kap. 15 Abschn. 1
