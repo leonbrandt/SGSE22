@@ -175,6 +175,18 @@ Ein Studentenabonnement wurde erstellt. Dem Studentenabonnement wurde eine Resso
 
 ![](img/09.png)
 
+Die Azure Cloud-Ressourcen wurde hauptsächlich über die Befehlszeile verwaltet, sodass würde jeden Azure-Befehlsgebrauch zum Erstellen oder Verwalten von Cloud-Ressourcen in unseren Lesedateien leicht nachverfolgt. Dafür wird die Azure Command-Line Interface oder Azure CLI benötigt. 
+
+Um beispielsweise den Trading-Microservice zu laden, ist es erforderlich sich zu registrieren und einen Befehl an Docker zu senden:
+```powershell
+$appname="[Name]"
+
+az acr login --name $appname
+docker push "$appname.azurecr.io/trading:$version"
+```
+
+
+
 # Literaturverzeichnis
 * [1] - vgl. Martin 2017, Kap. 15 Abschn. 1
 * [2] - vgl. Wolff E., Microservices – Grundlagen flexibler Softwarearchitekturen. 183ff. und Newman S, Building microservices – Designing fine-grained systems, Chapter 1
