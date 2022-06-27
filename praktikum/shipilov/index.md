@@ -219,7 +219,9 @@ Zur Messung der Seitenladegeschwindigkeit wurde eine Homepage mit einem Slider b
 * Germany West Central (Frankfurt)  **Standard_F4s_v2.** 4 vCPU, 8 GiB - 0.1940 €/St.
 * Germany West Central (Frankfurt)  **Standard_D2_v4.** 2 vCPU, 8 GiB - 0.1150 €/St.
 
-Dabei wurde die Abhängigkeit von Anzahl der Prozessorkerne und Arbeitsspeicher sowie Seitenladegeschwindigkeit betrachtet.
+Dabei wurde die Abhängigkeit von Anzahl der Prozessorkerne und Arbeitsspeicher sowie Seitenladegeschwindigkeit betrachtet. Das Ergebnis der Studie war die folgende Grafik:
+
+![](img/10.png)
 
 Es ist schwierig, die Leistungsobergrenze für VMs zu messen, da sie als DDos-Angriff erkannt wird. Es wird benötigt, um VMs mit der realen CPU lokal zu testen. Allerdings gibt es eine Tabelle von Microsoft, die die Abhängigkeit von Performance Cap vom Arbeitsspeicher zeigt. Anhand dieser Tabelle können Sie grob die Last berechnen, die die VM bewältigen kann. [15]
 
@@ -239,7 +241,7 @@ Es ist schwierig, die Leistungsobergrenze für VMs zu messen, da sie als DDos-An
 * [12] - URL: https://pagespeed.web.dev/?hl=de
 * [13] - URL: https://tools.pingdom.com/
 * [14] - URL: https://gtmetrix.com/
-* [15] - URL: https://docs.microsoft.com/nb-no/azure/virtual-machines/disks-types#premium-ssd
+* [15] - Microsoft Docs, Azure managed disk types. URL: https://docs.microsoft.com/nb-no/azure/virtual-machines/disks-types#premium-ssd
 
 # Verwendete Icons von Dritten
 * https://www.diagrams.net/
