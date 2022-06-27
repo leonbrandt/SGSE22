@@ -175,7 +175,8 @@ export class Home extends Component
           <li>Visit the <Link to={ApplicationPaths.StorePath}>Store</Link></li>
           <li>Check your <Link to={ApplicationPaths.InventoryPath}>Inventory</Link></li>
           {this.adminView()}
-  </ul>*/}
+        </ul>
+        {this.devOnlyLinks()}*/}
 
         <div className="flex-row flex-wrap flex-gap">
           <p style={{ width: "200px", fontFamily: "univers-light,sans-serif" }}>
@@ -220,6 +221,27 @@ export class Home extends Component
       return (<Fragment>
         <li>Manage the <Link to={ApplicationPaths.CatalogPath}>Catalog</Link></li>
         <li>Manage registered <Link to={ApplicationPaths.UsersPath}>Users</Link></li>
+      </Fragment>);
+    }
+  }
+
+  devOnlyLinks()
+  {
+    if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development')
+    {
+      return (<Fragment>
+        <p>You can also</p>
+        <ul>
+          <li>Manage the <a href={window.RABBITMQ_URL} target="_blank" rel="noreferrer">message queues</a></li>
+          <li>Explore the Open API documentation:
+            <ul>
+              <li><a href={`${window.CATALOG_SERVICE_URL}/swagger`} target="_blank" rel="noreferrer">Catalog service</a></li>
+              <li><a href={`${window.INVENTORY_SERVICE_URL}/swagger`} target="_blank" rel="noreferrer">Inventory service</a></li>
+              <li><a href={`${window.IDENTITY_SERVICE_URL}/swagger`} target="_blank" rel="noreferrer">Identity service</a></li>
+              <li><a href={`${window.TRADING_SERVICE_URL}/swagger`} target="_blank" rel="noreferrer">Trading service</a></li>
+            </ul>
+          </li>
+        </ul>
       </Fragment>);
     }
   }
