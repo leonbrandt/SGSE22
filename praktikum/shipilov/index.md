@@ -209,6 +209,19 @@ docker push "$appname.azurecr.io/trading:$version"
 
 
 
+# 7. Auswahl einer virtuellen Maschine für einer Microservice-Architektur.
+
+Der kurze Prozess zum Erstellen einer Microservice-Architektur basierend auf der virtuellen Maschine Australien Centre Standard_a2_v2, die für ein Studentenkonto verfügbar ist, wurde oben beschrieben. 2 CPUs, 4 GB. Dieses Kapitel beschreibt die Implementierung von drei weiteren virtuellen Maschinen und beschreibt, wie die Zugriffsgeschwindigkeiten von Microservices verglichen werden, die auf allen VMs erstellt wurden. Um die Ladegeschwindigkeit der Website zu bewerten, wurden Online-Ressourcen verwendet, um die Geschwindigkeit von Webverbindungen von Google [12], Solarwinds Pingdom [13] und GTmetrix [14] zu messen. Alle Seiten lieferten jedoch ungefähr die gleichen Ergebnisse. Daher wurden die Ergebnisse des bekanntesten Dienstes von Google als Grundlage für die Messung genommen.
+
+Zur Messung der Seitenladegeschwindigkeit wurde eine Homepage mit einem Slider bestehend aus vier Fotos ausgewählt. Beim Laden dieser Seite wird eine Anfrage an den Identity-Microservice gesendet und je nachdem, ob der Benutzer ein registrierter Benutzer, Administrator oder Gast ist, unterschiedliche Inhalte erstellt. Vier virtuelle Maschinen wurden zum Vergleich ausgewählt: 
+* Australien Center **Standard_a2_v2.** 2 CPU, 4GB - 0.1060 €/St.
+* Germany West Central (Frankfurt) **Standard_a2_v2.** 2 CPU, 4GB - 0.0870 €/St.
+* Germany West Central (Frankfurt)  **Standard_F4s_v2.** 4 CPU, 8 GB - 0.1940 €/St.
+* Germany West Central (Frankfurt)  **Standard_D2_v4.** 2CPU, 8 GB - 0.1150 €/St.
+
+Dabei wurde die Abhängigkeit von Anzahl der Prozessorkerne und Arbeitsspeicher sowie Seitenladegeschwindigkeit betrachtet.
+
+
 # Literaturverzeichnis
 * [1] - vgl. Martin 2017, Kap. 15 Abschn. 1
 * [2] - vgl. Wolff E., Microservices – Grundlagen flexibler Softwarearchitekturen. 183ff. und Newman S, Building microservices – Designing fine-grained systems, Chapter 1
@@ -221,6 +234,9 @@ docker push "$appname.azurecr.io/trading:$version"
 * [9] - vgl. Michael Bose, AWS vs Azure vs Google: Which Cloud Is Best for Your Organization. URL: https://www.nakivo.com/blog/aws-vs-azure-vs-google-which-cloud-is-best-for-your-organization/
 * [10] - vgl. Shanika Wickramasinghe, AWS vs Azure vs GCP: Comparing The Big 3 Cloud Platforms URL: https://www.bmc.com/blogs/aws-vs-azure-vs-google-cloud-platforms/
 * [11] - vgl. Microsoft Docs, Willkommen bei Azure Cosmos DB. URL: https://docs.microsoft.com/de-de/azure/cosmos-db/introduction
+* [12] - URL: https://pagespeed.web.dev/?hl=de
+* [13] - URL: https://tools.pingdom.com/
+* [14] - URL: https://gtmetrix.com/
 
 # Verwendete Icons von Dritten
 * https://www.diagrams.net/
