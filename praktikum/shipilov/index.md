@@ -190,6 +190,18 @@ Als Nächstes ist es nötig zum Erstellen einer Datenbank ein Cosmos DB-Konto zu
 az cosmosdb create --name $appname --resource-group $appname --kind MongoDB 
 ```
 
+Im nächsten Schritt wird ein Service-Bus-Namespace angelegt. Es ist erforderlich um asynchrone Kommunikation zwischen Microservices zu ermöglichen: 
+```powershell
+az servicebus namespace create --name $appname --resource-group $appname --sku Standard
+```
+
+Jedes Microservice soll eine Verbindung mit Cosmos DB und Service Bus haben. Dafür wird eine Verbindungsstring gebraucht, die später in Azure Key Vault gespechert wird. Azure Key Vault ist eine bequeme Möglichkeit von Microsoft Azure alle Passwörter, Verbindungsstrings und Tokens zu speichern.
+
+Zum Speichern der Docker-Images in Microsoft Azure existiert die Microsoft Azure Container Registry. Wie üblich wird dafür die Azure CLI verwendet. Der Befehl einer solchen Containerregistrierung sieht folgendermaßen aus:
+```powershell
+az acr create --name $appname --resource-group $appname --sku Basic
+```
+
 # Literaturverzeichnis
 * [1] - vgl. Martin 2017, Kap. 15 Abschn. 1
 * [2] - vgl. Wolff E., Microservices – Grundlagen flexibler Softwarearchitekturen. 183ff. und Newman S, Building microservices – Designing fine-grained systems, Chapter 1
