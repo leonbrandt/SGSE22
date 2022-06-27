@@ -55,3 +55,11 @@ TODO: aus research.md zusammenfassen
 
 TODO: siehe research
 TODO: validieren
+
+## Kompilierung von LLVM ##
+
+[LLVM kompilieren](praktikum/reinsch_raitzig/llvm-compile.md)
+
+## Einfluss von MLGO auf Codegröße ##
+
+[Untersuchung des Einflusses von MLGO auf die Codegröße](praktikum/reinsch_raitzig/research-binary-size.md).
