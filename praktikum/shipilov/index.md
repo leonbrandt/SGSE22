@@ -185,7 +185,10 @@ az acr login --name $appname
 docker push "$appname.azurecr.io/trading:$version"
 ```
 
-
+Als Nächstes ist es nötig zum Erstellen einer Datenbank ein Cosmos DB-Konto zu erstellen. In Cosmos DB ist es möglich, die Datenbank zu übertragen und Mongo DB von einem lokalen Computer mit der Möglichkeit zur Verwendung der Mongo DB-API zu verwenden:
+```powershell
+az cosmosdb create --name $appname --resource-group $appname --kind MongoDB 
+```
 
 # Literaturverzeichnis
 * [1] - vgl. Martin 2017, Kap. 15 Abschn. 1
