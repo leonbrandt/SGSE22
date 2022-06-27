@@ -223,6 +223,12 @@ Dabei wurde die Abhängigkeit von Anzahl der Prozessorkerne und Arbeitsspeicher 
 
 ![](img/10.png)
 
+Die Grafik zeigt, dass das Laden der ersten Seite immer viel länger dauert als nachfolgende Ladevorgänge. Dies geschieht meiner Meinung nach, weil einige der Prozesse im lokalen Cache des Browsers und im Cache des Servers gespeichert werden.
+
+Die Grafik zeigt, dass eine VM, die sich in großer Entfernung vom Client befindet, 0,3-0,45 Sekunden langsamer läuft. Bei mehreren REST-API-Anfragen kann sich diese Zeit erheblich verlängern und dies kann den Betrieb des Microservices kritisch beeinträchtigen. Daher ist es zumindest für solche Microservices wie Trading notwendig, möglichst viele virtuelle Maschinen in verschiedenen Ländern mit der dichtesten Abdeckung zu erstellen.
+
+Die Grafik zeigt auch, wie viele Ressourcen die Microservice-Architektur benötigt. Offensichtlich lohnt es sich für die Konzepte von Microservice-Architekturen und Microservices für kleine oder geschlossene Nutzung, eine VM mit mindestens 4 vCPUs und 8 GiB zu wählen. Die Kosten für eine solche VM sind doppelt so hoch wie die billigste der angebotenen Optionen, aber die Geschwindigkeit ist viel höher. Dies geschieht, weil 2 vCPUs und 4 GiB Speicher für eine Microservice-Architektur Rücken an Rücken ausreichen. Außerdem kann bei einem billigen Microservice beim Warten auf das Laden einer Seite länger als zwei oder drei Sekunden ein Fehler beim Laden der Website auftreten, der vom Microservice ausgegeben wird. Dies ist konfigurierbar, aber es ist am besten, Kunden nicht so lange warten zu lassen.
+
 Es ist schwierig, die Leistungsobergrenze für VMs zu messen, da sie als DDos-Angriff erkannt wird. Es wird benötigt, um VMs mit der realen CPU lokal zu testen. Allerdings gibt es eine Tabelle von Microsoft, die die Abhängigkeit von Performance Cap vom Arbeitsspeicher zeigt. Anhand dieser Tabelle können Sie grob die Last berechnen, die die VM bewältigen kann. [15]
 
 
