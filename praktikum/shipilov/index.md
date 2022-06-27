@@ -138,7 +138,7 @@ In diesem Beispiel ist der Preis des Servers mit der kleinsten VM-Instanz fast g
 
 ## 4.4 Fazit
 
-Alle drei Plattformen eignen sich für die Arbeit mit einer Microservice-Architektur, aufgrund der oben beschriebenen Vorteile wurde für mein Praxisprojekt jedoch die Microsoft Azure Plattform mit einer standard_a2_v2 VM mit 4 GB RAM und 2 CPUs gewählt.
+Alle drei Plattformen eignen sich für die Arbeit mit einer Microservice-Architektur, aufgrund der oben beschriebenen Vorteile wurde für mein Praxisprojekt jedoch die Microsoft Azure Plattform mit einer standard_a2_v2 VM mit 4 GB Ultra-Disc-Speicher und 2 vCPUs gewählt.
 
 # 5. Microsoft Azure-Tools.
 
@@ -167,7 +167,7 @@ Die Rechenleistung ist begrenzt. Und der Preis für mehrere einfache Server ist 
 
 # 6. Realisierung von der Microservice-Architektur.
 
-Zur Implementierung der Microservice-Architektur wurde ein neues Microsoft Azure-Konto erstellt. Azure bietet die Möglichkeit, ein Konto für Studenten zu erstellen. Dieses Konto ist kostenlos. Doch ein solches Angebot ist mit Vorsicht zu genießen, denn der Microservice benötigt sehr viele Ressourcen (nämlich mindestens 2 vCPUs und 4 GB RAM). Andernfalls tritt ein Fehler auf: “The System node pool must use VM sku with more than 2 cores and 4GB memory.” Glücklicherweise erlaubt Ihnen Azure, viele Ressourcen kostenlos zu nutzen, aber oft sind die Azure-Server ziemlich ausgelastet und es gibt keine freien virtuellen Maschinen mehr, die Sie kostenlos nutzen können. Daher waren zum Zeitpunkt der Untersuchung nicht alle virtuellen Maschinen mit dieser Ressource in Deutschland verfügbar. Wie in Amerika, Kanada. Daher wurde nach langer Suche eine virtuelle Maschine in Australien im zentralen Teil gefunden. Daher wurde für diese Arbeit der Standard_a2_v2-Cluster innerhalb des Azure Kubernetes Service ausgewählt.
+Zur Implementierung der Microservice-Architektur wurde ein neues Microsoft Azure-Konto erstellt. Azure bietet die Möglichkeit, ein Konto für Studenten zu erstellen. Dieses Konto ist kostenlos. Doch ein solches Angebot ist mit Vorsicht zu genießen, denn der Microservice benötigt sehr viele Ressourcen (nämlich mindestens 2 vCPUs und 4 GiB Ultra-Disc-Speicher). Andernfalls tritt ein Fehler auf: “The System node pool must use VM sku with more than 2 cores and 4GB memory.” Glücklicherweise erlaubt Ihnen Azure, viele Ressourcen kostenlos zu nutzen, aber oft sind die Azure-Server ziemlich ausgelastet und es gibt keine freien virtuellen Maschinen mehr, die Sie kostenlos nutzen können. Daher waren zum Zeitpunkt der Untersuchung nicht alle virtuellen Maschinen mit dieser Ressource in Deutschland verfügbar. Wie in Amerika, Kanada. Daher wurde nach langer Suche eine virtuelle Maschine in Australien im zentralen Teil gefunden. Daher wurde für diese Arbeit der Standard_a2_v2-Cluster innerhalb des Azure Kubernetes Service ausgewählt.
 
 Adresse des erstellten Microservices: https://shopeconomy.australiacentral.cloudapp.azure.com/
 
@@ -211,15 +211,17 @@ docker push "$appname.azurecr.io/trading:$version"
 
 # 7. Auswahl einer virtuellen Maschine für einer Microservice-Architektur.
 
-Der kurze Prozess zum Erstellen einer Microservice-Architektur basierend auf der virtuellen Maschine Australien Centre Standard_a2_v2, die für ein Studentenkonto verfügbar ist, wurde oben beschrieben. 2 CPUs, 4 GB. Dieses Kapitel beschreibt die Implementierung von drei weiteren virtuellen Maschinen und beschreibt, wie die Zugriffsgeschwindigkeiten von Microservices verglichen werden, die auf allen VMs erstellt wurden. Um die Ladegeschwindigkeit der Website zu bewerten, wurden Online-Ressourcen verwendet, um die Geschwindigkeit von Webverbindungen von Google [12], Solarwinds Pingdom [13] und GTmetrix [14] zu messen. Alle Seiten lieferten jedoch ungefähr die gleichen Ergebnisse. Daher wurden die Ergebnisse des bekanntesten Dienstes von Google als Grundlage für die Messung genommen.
+Der kurze Prozess zum Erstellen einer Microservice-Architektur basierend auf der virtuellen Maschine Australien Centre Standard_a2_v2, die für ein Studentenkonto verfügbar ist, wurde oben beschrieben. 2 vCPUs, 4 GiB. Dieses Kapitel beschreibt die Implementierung von drei weiteren virtuellen Maschinen und beschreibt, wie die Zugriffsgeschwindigkeiten von Microservices verglichen werden, die auf allen VMs erstellt wurden. Um die Ladegeschwindigkeit der Website zu bewerten, wurden Online-Ressourcen verwendet, um die Geschwindigkeit von Webverbindungen von Google [12], Solarwinds Pingdom [13] und GTmetrix [14] zu messen. Alle Seiten lieferten jedoch ungefähr die gleichen Ergebnisse. Daher wurden die Ergebnisse des bekanntesten Dienstes von Google als Grundlage für die Messung genommen.
 
 Zur Messung der Seitenladegeschwindigkeit wurde eine Homepage mit einem Slider bestehend aus vier Fotos ausgewählt. Beim Laden dieser Seite wird eine Anfrage an den Identity-Microservice gesendet und je nachdem, ob der Benutzer ein registrierter Benutzer, Administrator oder Gast ist, unterschiedliche Inhalte erstellt. Vier virtuelle Maschinen wurden zum Vergleich ausgewählt: 
-* Australien Center **Standard_a2_v2.** 2 CPU, 4GB - 0.1060 €/St.
-* Germany West Central (Frankfurt) **Standard_a2_v2.** 2 CPU, 4GB - 0.0870 €/St.
-* Germany West Central (Frankfurt)  **Standard_F4s_v2.** 4 CPU, 8 GB - 0.1940 €/St.
-* Germany West Central (Frankfurt)  **Standard_D2_v4.** 2CPU, 8 GB - 0.1150 €/St.
+* Australien Center **Standard_a2_v2.** 2 vCPU, 4GiB - 0.1060 €/St.
+* Germany West Central (Frankfurt) **Standard_a2_v2.** 2 vCPU, 4GiB - 0.0870 €/St.
+* Germany West Central (Frankfurt)  **Standard_F4s_v2.** 4 vCPU, 8 GiB - 0.1940 €/St.
+* Germany West Central (Frankfurt)  **Standard_D2_v4.** 2 vCPU, 8 GiB - 0.1150 €/St.
 
 Dabei wurde die Abhängigkeit von Anzahl der Prozessorkerne und Arbeitsspeicher sowie Seitenladegeschwindigkeit betrachtet.
+
+Es ist schwierig, die Leistungsobergrenze für VMs zu messen, da sie als DDos-Angriff erkannt wird. Es wird benötigt, um VMs mit der realen CPU lokal zu testen. Allerdings gibt es eine Tabelle von Microsoft, die die Abhängigkeit von Performance Cap vom Arbeitsspeicher zeigt. Anhand dieser Tabelle können Sie grob die Last berechnen, die die VM bewältigen kann. [15]
 
 
 # Literaturverzeichnis
@@ -237,6 +239,7 @@ Dabei wurde die Abhängigkeit von Anzahl der Prozessorkerne und Arbeitsspeicher 
 * [12] - URL: https://pagespeed.web.dev/?hl=de
 * [13] - URL: https://tools.pingdom.com/
 * [14] - URL: https://gtmetrix.com/
+* [15] - URL: https://docs.microsoft.com/nb-no/azure/virtual-machines/disks-types#premium-ssd
 
 # Verwendete Icons von Dritten
 * https://www.diagrams.net/
