@@ -67,7 +67,7 @@ Centered Design weiterentwickelt und umgesetzt werden.
 In der ersten Phase wird Design Thinking angewendet. Dafür werden die entsprechenden sechs Schritte durchlaufen. Im
 Kick-off wir die vorläufige Aufgabenstellung aufgestellt, die dann diskutiert und verfeinert werden soll.
 
-Für das Verstehen sollen Brainstorming und die User Journey map zum Einsatz kommen. Bei der User Journey Map handelt es
+Für das Verstehen sollen Brainstorming und die User Journey Map zum Einsatz kommen. Bei der User Journey Map handelt es
 sich um eine Methode bei der ein bekannter Ablauf, der mit dem Projekt optimiert werden soll, analysiert wird und
 jeder Schritt vom Nutzer eingeschätzt wird. Dadurch kann herausgefunden werden, an welchen Stellen Probleme aufkommen
 können und entsprechende Verbesserungen ansetzen können.
@@ -107,17 +107,86 @@ Aus den Antworten des Fragebogens werden die neuen Spezifikationen erstellt. Als
 ersten Prototypen gestaltet werden sollen. mit diesen Anforderungen kann dann eine erste Version der jeweiligen
 Anwendung implementiert werden. Mit dieser Version kann dann eine zweite iteration des User Centered Design durchgeführt
 werden. Also wieder das Feedback über einen Fragebogen einholen, um daraus neue Anforderungen zu bilden. Je nach
-zeitlicher Verfügbarkeit können diese Anforderungen noch einmal umgesetzt werden. 
+zeitlicher Verfügbarkeit können diese Anforderungen noch einmal umgesetzt werden.
 
-Diese Iteration können beliebig weiter geführt werden, um eine Anwendung weiter zu optimieren. 
+Diese Iteration können beliebig weiter geführt werden, um eine Anwendung weiter zu optimieren.
 
 ## Durchführung
 
+In diesem kapitel soll die Durchführung der beiden Projekte beleuchtet werden. Dafür wird die gleiche Einteilung in zwei
+Phasen wie bei der Projektplanung genutzt.
+
 ### Design Thinking
+
+Die Design Thinking Prozesse werden hier in chronologischer Reihenfolge aufgeführt. Das hat den Grund, dass der Ablauf
+nach dem ersten Durchlauf angepasst wurde, um die gemachten Erfahrungen mit einfließen zu lassen.
 
 #### Rettungsapp
 
+Für das Design Thinking zur Rettungsapp bestand das Team nur aus zwei Personen. Dies liegt daran, dass die Zielgruppe,
+also Notfallsanitäter sehr speziell ist und somit Personen mit entsprechendem Domänenwissen rar gesät sind.
+
+***Kick-off***
+
+Für den Kick-Off wird zuerst eine Design Thinking Challenge aufgestellt, die bearbeitet werden sollte. Diese wird
+möglichst einfach und offen gestaltet, um viel Gestaltungsraum zu lassen: **System zur Unterstützung des
+Rettungsdiensts entwickeln**. Die einzelnen Bestandteile werden dann genauer besprochen, um daraus eine neue Challenge
+aufzustellen. Durch dieses Vorgehen kann ein erster Kontakt zu dem Projekt aufgebaut und ein allgemeines Verständnis
+etabliert werden. Die daraus resultierende Aufgabenstellung lautet: **Entwicklung einer mobilen App zum Nachschlagen von
+Algorithmen(Behandlungen) für Notfallsanitäter**. Diese Challenge grenzt die Aufgabe deutlich weiter ein und ist die
+Basis für die nächsten Schritte.
+
+***Verstehen***
+
+Zum Schritt des Verstehens wird Brainstorming genutzt. Dabei wird sich an den einzelnen Begriffen der Aufgabenstellung
+orientiert, um möglichst viele Stichpunkte zu dem Projekt zu finden. Sämtliche Einfälle werden auf Post-Its notiert, um
+sie nach bekannten und unbekannten Wissen einzuteilen. Dadurch kann ein Überblick darüber erhalten werden, an welchen
+Stellen weitere nachforschungen sinnvoll sind. In [Abbildung 1] ist die entsprechende Aufstellung zu sehen.
+
+![](assets/BrainstormingProject1.jpg)
+
+[Abbildung 1]
+*Brainstorming Rettungsapp*
+
+Neben dem Brainstorming wird die Methode der User Journey Map angewendet. Hier wird der aktuelle Ablauf im Falle eines
+Rettungseinsatzes betrachtet. Jeder einzelne Schritt wird nach dem dabei empfunden Gefühl bewertet. Geht es dem
+Sanitäter dabei gut und er kann die Aufgabe optimal bearbeiten oder geht es ihm schlecht und es kommt zu Problemen bei
+der Bearbeitung?
+
+![](assets/User Journey Map.png)
+
+[Abbildung 2]
+*User Journey Map Rettungsapp*
+
+Die entsprechenden Resultate sind in [Abbildung 2] zu sehen. Hierbei fällt bereits auf, dass vor allem der Einsatz der
+Algorithmen Probleme verursacht.
+
+
+*Beobachten*
+
+*Standpunkt definieren*
+
+*Ideen generieren*
+
+*Prototyp erstellen*
+
+![](assets/allRetung.png)
+
 #### Erweiterung zu Spotify
+
+*Kick-off*
+
+*Verstehen*
+
+*Beobachten*
+
+*Standpunkt definieren*
+
+*Ideen generieren*
+
+*Prototyp erstellen*
+
+![](assets/SpotifyAddon.png)
 
 ### User Centered Design
 
@@ -127,11 +196,21 @@ Diese Iteration können beliebig weiter geführt werden, um eine Anwendung weite
 
 ## Fazit
 
-## Quellen
+## Anhang
+
+### Abbildungsverzeichnis
+
+[Abbildung 1] - Brainstorming Rettungsapp
+
+[Abbildung 1]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/BrainstormingProject1.jpg
+
+### Literaturverzeichnis
 
 [Flutter]
 
 [Flutter]: https://flutter.dev/
+
+
 
 
 
