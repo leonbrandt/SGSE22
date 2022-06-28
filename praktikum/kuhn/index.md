@@ -116,7 +116,7 @@ Folgend kommen die Ergebnisse aufgeteilt nach den verschiedenen Methoden die gen
 
 *User Journey Map*
 
-![](assets/User Journey Map.png)
+![](assets/UserJourneyMap.png)
 
 *Beobachten von Nutzerverhalten*
 

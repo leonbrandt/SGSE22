@@ -46,7 +46,7 @@ Als Beispiel wird der Prozess des Hasso Plattner Instituts vorgestellt, der aus 
 Flutter ist ein Multiplattform-Framework, dass es ermöglicht mit einer Codebasis viele Plattformen zu bespielen. Als
 Programmiersprache wird Dart benutzt, eine als Alternative zu Javascript erdachte Sprache. Das von Google geführte
 Projekt konnte zum Start in 2017 nur Android und iOS als Plattformen bedienen. Inzwischen sind mit Web, Windows und
-Linux eine große Auswahl an Plattformen hinzugekommen. [Flutter]
+Linux eine große Auswahl an Plattformen hinzugekommen. [[Flutter]]
 
 Neben der großen Auswahl an Plattformen bietet Flutter die Möglichkeit schnell und einfach ansprechende Anwendungen zu
 entwerfen. Hierbei helfen eine Vielzahl von Haus aus verfügbaren Widgets, die im Material Design konzipiert sind.
@@ -116,12 +116,17 @@ Diese Iteration können beliebig weiter geführt werden, um eine Anwendung weite
 In diesem kapitel soll die Durchführung der beiden Projekte beleuchtet werden. Dafür wird die gleiche Einteilung in zwei
 Phasen wie bei der Projektplanung genutzt.
 
-### Design Thinking
+### Rettungsapp
 
-Die Design Thinking Prozesse werden hier in chronologischer Reihenfolge aufgeführt. Das hat den Grund, dass der Ablauf
-nach dem ersten Durchlauf angepasst wurde, um die gemachten Erfahrungen mit einfließen zu lassen.
+Bei dem ersten Projekt handelt es sich um eine Anwendung, die den Zugriff auf Algorithmen für Notfallsanitäter
+vereinfachen soll, im Folgenden Rettungsapp genannt. Bei den Algorithmen handelt es sich um Abläufe von Maßnahmen, die
+angewendet werden können, wenn
+bestimmte Diagnose am Einsatzort gestellt werden. Die Algorithmen werden durch den deutschen Berufsverband
+Rettungsdienst e.V. [[DBRD]] und dem Landesausschuss Rettungsdienst Niedersachsen [[NUN]] bereitgestellt. Sie sind in
+PDFs aufgeführt. Für beide Dateien wurde im Vorfeld der Entwicklung eine schriftliche Erlaubnis zur Verwendung
+eingeholt.
 
-#### Rettungsapp
+#### Design Thinking
 
 Für das Design Thinking zur Rettungsapp bestand das Team nur aus zwei Personen. Dies liegt daran, dass die Zielgruppe,
 also Notfallsanitäter sehr speziell ist und somit Personen mit entsprechendem Domänenwissen rar gesät sind.
@@ -153,26 +158,101 @@ Rettungseinsatzes betrachtet. Jeder einzelne Schritt wird nach dem dabei empfund
 Sanitäter dabei gut und er kann die Aufgabe optimal bearbeiten oder geht es ihm schlecht und es kommt zu Problemen bei
 der Bearbeitung?
 
-![](assets/User Journey Map.png)
+![](assets/UserJourneyMap.png)
 
 [Abbildung 2]
 *User Journey Map Rettungsapp*
 
 Die entsprechenden Resultate sind in [Abbildung 2] zu sehen. Hierbei fällt bereits auf, dass vor allem der Einsatz der
-Algorithmen Probleme verursacht.
+Algorithmen für Unzufriedenheit sorgt. Neben den Algorithmen kann an dieser Stelle erkannt werden, dass Ivena von den
+Sanitätern genutzt wird. Dies ist eine Anwendung mit der freie Krankenhäuser gefunden werden können, die für den
+aktuellen Patienten ausgestattet sind. Diese Anwendung bereitet ebenfalls Probleme bei der Nutzung.
 
+***Beobachten***
 
-*Beobachten*
+Für den Schritt Beobachten wird ein Nutzer zuerst still beobachtet. Dabei konten vor allem die zuvor erwartbaren
+Tätigkeiten erkannt werden, wie Smartphone herausholen, PDF öffnen oder die entsprechende Krankheit heraussuchen.
+Daneben sind allerdings auch kleinere Dinge aufgefallen. Zum Beispiel gibt es in dem PDF keine Verlinkung vom
+Inhaltsverzeichnis zu der richtigen Seite, es muss dahin gescrollt werden. Außerdem muss gezoomt werden, um details
+lesen zu können, was wiederum dazu führt, dass auf einer Seite gescrollt werden muss, um alles zu erkennen. Dies sind
+Punkte, die im späteren Verlauf relevant werden können.
 
-*Standpunkt definieren*
+Nachdem stillen Beobachten wird ein Interview mit dem Nutzer geführt. Dabei können viele Punkte nochmal tiefer
+ergründet werden. Außerdem gibt es einen deutlich größeren Einblick in diverse Aspekte des Rettungsdients, vor allem
+inwiefern Neuerungen umgesetzt werden können. Die wichtigsten Aussagen sind folgende:
 
-*Ideen generieren*
+* Die Anwendung sollte offline erreichbar sein, um an jedem Einsatzort verfügbar zu sein.
+* Die Suche sollte optimiert werden, um schneller zum Ergebnis, also dem gesuchten Algorithmus zu kommen.
+* Die Algorithmen sollten automatisch aktualisiert werden, einmal im jahr gibt es eine neue Version
+* Die Darstellung in den PDFs ist nicht optimal, häufig kleine texte, die nicht für kleine Bildschirme optimiert sind.
+* Im Allgemeinen gibt es im krankensystem viele Stellen die digitalisiert werden könnten, beispielsweise gäbe es die
+  Möglichkeit Daten für die Diagnose bereits während der Fahrt ans Krankenhaus zu schicken.
+
+Ein besonders überraschendes Ergebnis bei dem interview ist, an wie vielen Stellen im gesundheitswesen noch
+Optimierungen durch Digitalisierung möglich sind und wie schwierig es gleichzeitig ist, Änderungen umzusetzen. Vor allem
+die Hürde Änderungen möglichst flächendeckend einzusetzen und ein mangelndes Budget stellen häufig Probleme dar.
+
+***Standpunkt definieren***
+
+Um den Standpunkt zu definieren werden einige Nutzertypen oder auch Personas aufgestellt. Diese sind relativ knapp
+gehalten, da durch den eingeschränkten Nutzerkreis viele Punkte bei den Personas überschneiden.
+
+**Vorsichtig:** Dieser Nutzertyp greift grundsätzlich eher später zu den Algorithmen. Er wartet eher ab, ob eine
+Besserung
+durch Standardprozeduren erreicht werden können, bevor er beispielsweise zu Medikamenten greift.
+
+**Proaktiv:** Ein proaktiver Nutzer stellt das Gegenteil des vorsichtigen dar. Er greift schnell zu den Algorithmen, um
+im besten Fall einen zeitlichen Vorsprung bei der Behandlung zu bekommen. Dementsprechend nutzt er auch schneller
+Medikamente.
+
+**Verweigerer:** Hierbei handelt es sich häufig um Sanitäter, die bereits lange im Dienst sind. Sie haben den Umgang mit
+Patienten noch größtenteils ohne Medikamente gelernt und sind dementsprechend nicht sicher im umgang mit ihnen. Die
+Algorithmen sind ebenfalls noch sehr neu, weshalb ihnen nicht vertraut wird.
+
+Mit diesem Wissen kann eine neue Design Thinking Challenge aufgestellt werden, die als Basis für die Ideenfindung
+genutzt wird. Nachdem alle wichtigen Aspekte der vergangenen Schritte betrachtet wurden, kann folgende Challenge
+aufgestellt werden: **Entwicklung einer Anwendung für Notfallsanitäter, um schnell und unabhängig über aktuelle
+Behandlungen zu informieren**
+
+***Ideen generieren***
+
+Für die Ideengenerierung wird die Crazy 8 Methode angewendet, beide Teammitglieder erdenken also acht Ideen in 8
+Minuten. Bei der Bewertung der Ideen durch das Dot Voting wurden vor allem die Ideen hoch bewertet, die während des
+ganzen Prozesses naheliegend waren. Dazu zählen die Umsetzung als mobile App oder ein Suchfeld für die Algorithmen.
+Allerdings kamm auch eine komplett neue Idee auf: Eine karte auf der die nächsten verfügbaren Krankenhäuser angezeigt
+werden, um die Distanz abschätzen zu können. Aktuell lassen sich die Krankenhäuser in Ivena nur nach Landkreisen
+filtern, was nicht unbedingt die kürzeste Distanz bedeutet.
+
+Mithilfe dieser Ideen werden die konkreten Anforderungen aufgestellt. Diese bestehen aus drei Überpunkten, die umgesetzt
+werden sollen:
+
+1. Mobile App: Die Anwendung soll offline erreichbar sein. Deshalb soll sie als native Android und iOS App umgesetzt
+   werden. Es ist außerdem möglich eine WebApp anzubieten, um eine niedrigere Einstiegshürde zu schaffen.
+2. Suche: Mithilfe eines Suchfeldes lassen sich die vorhandenen Algorithmen durchsuchen und auswählen. Beim Antippen
+   eines
+   Algorithmus wird das entsprechende PDF auf der richtigen Seite geöffnet.
+3. Auswahl von NUN/DBRD: Bei Algorithmen die durch beide Anbieter abgedeckt werden kann ausgewählt werden, welcher
+   angezeigt werden soll. In dieser Anzeige besteht die Möglichkeit zwischen den beiden Versionen zu wechseln, um
+   schnell alle möglichen informationen zu erreichen.
 
 *Prototyp erstellen*
 
+Aufgrund dieser Anforderungen wurden folgende Mockups mithilfe von balsamiq [[balsamiq]] erstellt.
+
 ![](assets/allRetung.png)
 
-#### Erweiterung zu Spotify
+[Abbildung 3]
+*Mockup der Rettungsapp*
+
+Diese Mockups sind das Endergebnis des Design Thinking Prozesses. Sie geben einen guten Eindruck davon wie die Anwendung
+aussehen sollen und erfüllen die zuvor aufgestellten Anforderungen. Sie dienen als Grundlagen für die nächste Phase: der
+Entwicklung der App nach User Centered Design.
+
+#### User Centered Design
+
+
+
+### Erweiterung zu Spotify
 
 *Kick-off*
 
@@ -188,11 +268,7 @@ Algorithmen Probleme verursacht.
 
 ![](assets/SpotifyAddon.png)
 
-### User Centered Design
-
-#### Rettungsapp
-
-#### Erweiterung zu Spotify
+#### User Centered Design
 
 ## Fazit
 
@@ -204,11 +280,31 @@ Algorithmen Probleme verursacht.
 
 [Abbildung 1]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/BrainstormingProject1.jpg
 
+[Abbildung 2] - User Journey Map Rettungsapp
+
+[Abbildung 2]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/UserJourneyMap.png
+
+[Abbildung 3] - Mockup der Rettungsapp
+
+[Abbildung 3]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/allRetung.png
+
 ### Literaturverzeichnis
+
+[balsamiq]
+
+[balsamiq]: https://balsamiq.com/
+
+[DBRD] - Deutscher Berufsverband Rettungsdienst e.V.
+
+[DBRD]: https://www.dbrd.de/index.php/aktuell/aktuelles/557-muster-algorithmen-2021-online
 
 [Flutter]
 
 [Flutter]: https://flutter.dev/
+
+[NUN] - Landesausschuss Rettungsdienst Niedersachsen
+
+[NUN]: https://lard-nds.de/download/nun-algorithmen-2022/
 
 
 
