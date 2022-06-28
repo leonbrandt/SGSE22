@@ -243,7 +243,7 @@ In meinem Fall die virtuelle Machine mit 2 vCPUs und 8 GiB Speicher zeigt sich r
 
 Es ist schwierig, die Leistungsobergrenze für VMs zu messen, da sie als DDos-Angriff erkannt wird. Es ist nötig in diesem Fall VMs mit der realen CPU lokal zu testen. Allerdings gibt es eine Tabelle von Microsoft, die die Abhängigkeit von "Performance Cap" vom Arbeitsspeicher zeigt. Anhand dieser Tabelle können Sie grob die Last berechnen, die die VM bewältigen kann. [15]
 
-Daher folgt, dass die am besten geeignete virtuelle Maschine in der Anfangsphase die "Standard_F4s_v2" VM ist, die sich in der Nähe des Standorts der Clients befindet. Da die Microservice-Anfragen zunehmen, wird empfohlen, leistungsfähigere VMs in Betracht zu ziehen.
+Daher folgt, dass die am besten geeignete virtuelle Maschine in der Anfangsphase die "Standard_F4s_v2" VM ist, die sich in der Nähe des Standorts der Clients befindet. Da die Microservice-Anfragen zunehmen, wird empfohlen, leistungsfähigere VMs in Betracht zu ziehen. Eine Liste aller verfügbaren VMs in Mitteldeutschland ist unter folgender URL verfügbar: https://azureprice.net/?region=germanywestcentral&sortField=memoryInMB&sortOrder=true
 
 
 # Literaturverzeichnis
