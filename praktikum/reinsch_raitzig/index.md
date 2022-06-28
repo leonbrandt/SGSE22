@@ -1,5 +1,22 @@
 # Christoph Raitzig & Malte Reinsch #
 
+## Frage ##
+
+Es soll MLGO untersucht werden. MLGO ist ein KI-gestütztes Verfahren, um Code beim Kompilieren zu verbessern.
+
+Insbesondere soll untersucht werden, welchen Einfluss MLGO auf die Codegröße hat.
+
+## Wissenschaftliche Problemstellung ##
+
+Folgende Aspekte sollen untersucht/erläutert werden:
+
+- Wie funktioniert MLGO?
+- Wie wird MLGO trainiert?
+- Was kann mit MLGO optimiert werden?
+- Wie wird MLGO in LLVM intergriert?
+- Welchen Einfluss hat MLGO theoretisch auf Codegröße und Performanz?
+- Welchen Änderungen der Codegröße lassen sich in der Praxis beobachten?
+
 ## Evaluierung der Anwendungsmöglichkeiten von Machine Learning gestützten Compiler-Optimierungsverfahren bezüglich WebAssembly ##
 
 Ziel:

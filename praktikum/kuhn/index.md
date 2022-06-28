@@ -47,8 +47,8 @@
 | KW 20 | Erstellung Mockups als Ergebnis von Design Thinking |    Done     |
 | KW 21 |   Erste Feedbackrunde zu Mockups als Teil des UCD   |    Done     |
 | KW 22 |    Umsetzen der Mockups mit Anmerkungen in Code     |    Done     |
-| KW 23 |               Feedback zu Apps (UCD)                | In Progress |
-| KW 24 |           evtl. Einbauen der Anmerkungen            |             | 
+| KW 23 |               Feedback zu Apps (UCD)                |    Done     |
+| KW 24 |           evtl. Einbauen der Anmerkungen            |  entfällt   | 
 | KW 25 |                       Puffer                        |             |
 | KW 26 |                       Abgabe                        |             |
 

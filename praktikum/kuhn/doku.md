@@ -4,11 +4,17 @@ Diese Arbeit beschäftigt sich damit, wie sich der Nutzer am besten in den Fokus
 diesem Zweck werden zwei Ansätze betrachtet. Einerseits das Design Thinking und zum Anderen das User Centered Design.
 Diese Ansätze werden auf zwei Projekte angewendet, um einen möglichst vielseitigen Blick auf die Vor- und Nachteile zu
 erlangen. Da beide Ansätze an verschiedenen Punkten der Entwicklung angesetzt werden können, werden sie für das
-jeweilige Projekt nacheinander ausgeführt. 
+jeweilige Projekt nacheinander ausgeführt.
+
+## Aufgabenstellung
+
+Für dieses Projekt soll zuerst Design Thinking und User Centered Design ergründet werden. Mit diesem Wissen kann dann
+ein Projektplan erstellt werden, nach dem die beiden Anwendungen entwickelt werden. Bei den beiden Anwendungen handelt
+es sich um Apps. Abschließend soll eine qualitative Einschätzung der Vor- und Nachteile der beiden Ansätze passieren.
 
 ## Grundlagen
 
-Dieses kapitel soll die Grundlagen für die Arbeit legen. Dafür werden primär die beiden Entwicklungsansätze betrachtet.
+Dieses Kapitel soll die Grundlagen für die Arbeit legen. Dafür werden primär die beiden Entwicklungsansätze betrachtet.
 
 ### Design Thinking
 
@@ -37,17 +43,174 @@ Als Beispiel wird der Prozess des Hasso Plattner Instituts vorgestellt, der aus 
 
 ### Flutter
 
+Flutter ist ein Multiplattform-Framework, dass es ermöglicht mit einer Codebasis viele Plattformen zu bespielen. Als
+Programmiersprache wird Dart benutzt, eine als Alternative zu Javascript erdachte Sprache. Das von Google geführte
+Projekt konnte zum Start in 2017 nur Android und iOS als Plattformen bedienen. Inzwischen sind mit Web, Windows und
+Linux eine große Auswahl an Plattformen hinzugekommen. [Flutter]
+
+Neben der großen Auswahl an Plattformen bietet Flutter die Möglichkeit schnell und einfach ansprechende Anwendungen zu
+entwerfen. Hierbei helfen eine Vielzahl von Haus aus verfügbaren Widgets, die im Material Design konzipiert sind.
+Außerdem gibt es die Möglichkeit des *Hot Reloads*, der Änderungen am Design direkt in der Anwendung anzeigt, ohne die
+App komplett neu bauen zu müssen.
+
+Im Vorfeld zu diesem Projekt wurden bereits gute Erfahrungen mit Flutter gemacht, weshalb beide Anwendungen mit dem
+Framework entwickelt werden.
+
 ## Projektdesign
+
+Der grundlegende Aufbau des Projekts besteht aus zwei Phasen. Zuerst wird Design Thinking eingesetzt, um die
+grundlegenden Anforderungen zu finden und einen Prototyp zu entwerfen. Dieser Prototyp soll dann mithilfe des User
+Centered Design weiterentwickelt und umgesetzt werden.
+
+### Phase 1: Design Thinking
+
+In der ersten Phase wird Design Thinking angewendet. Dafür werden die entsprechenden sechs Schritte durchlaufen. Im
+Kick-off wir die vorläufige Aufgabenstellung aufgestellt, die dann diskutiert und verfeinert werden soll.
+
+Für das Verstehen sollen Brainstorming und die User Journey Map zum Einsatz kommen. Bei der User Journey Map handelt es
+sich um eine Methode bei der ein bekannter Ablauf, der mit dem Projekt optimiert werden soll, analysiert wird und
+jeder Schritt vom Nutzer eingeschätzt wird. Dadurch kann herausgefunden werden, an welchen Stellen Probleme aufkommen
+können und entsprechende Verbesserungen ansetzen können.
+
+Für den Schritt des Beobachtens wird das stille Beobachten genutzt. Dabei wird ein nutzer beobachtet, wie er den
+bisherigen Ablauf durchführt. Hierbei soll vor allem auf Details geachtet werden, häufig können Verhaltensweisen erkannt
+werden, die ein nutzer selber gar nicht registered. Im Anschluss wird noch ein Interview geführt, das weiteren
+Aufschluss über das Verhalten und die dazugehörigen Beweggründe geben soll. Um die Antworten auszuwerten, soll die Dark
+Horse zum Einsatz kommen. Dabei werden die Ergebnisse in Paaren nach Bedürfnisse und Hürden eingeteilt, die wiederum in
+der nächsten Phase verwendet werden können.
+
+Um einen Standpunkt zu definieren sind Personas ein wichtiges Mittel. Dabei spielen vor allem extreme Nutzer eine große
+Rolle. Da die Abbildung dieser helfen kann die Extremen eines Problems zu betrachten. Mithilfe der Personas kann dann
+eine neue Challenge aufgestellt werden, auf welcher die Ideenfindung beruht.
+
+Im Nächten Schritt werden Ideen generiert. Um möglichst viele Ideen zu finden, wird die Crazy 8 methode angewendet.
+Dabei hat jedes Teammitglied eine Minute Zeit um sich eine Idee auszudenken. Danach muss er zur nächsten idee weiter
+gehen. Das wird dann achtmal wiederholt. Mithilfe von Dot Voting werden die besten Ideen ausgesucht. Beim Dot Voting
+erhält jedes Teammitglied eine bestimmte Anzahl von Punkten, die dann beliebig verteilt werden können. Die Ideen mit den
+meisten Punkten werden dann ausgewählt.
+
+Mithilfe der besten Ideen kann dann ein Prototyp erstellt werden. Zu diesem zweck werden die ideen zuerst konkretisiert
+und zu Anforderungen formuliert. Mithilfe der Anforderungen werden dann Mockups erstellt, die die komplette Anwendung
+darstellen.
+
+### Phase 2: User Centered Design
+
+In der zweiten Phase wird der Prototyp aus Phase 1 genutzt, um ihn mithilfe von User Centered Design weiterzuentwickeln
+und umzusetzen.
+
+Da bereits ein Prototyp besteht, wird mit der Phase der Evaluation begonnen. Zu diesem zweck wird direktes Feedback von
+potenziellen Nutzern über ein Fragebogen eingeholt. Das hat den Vorteil, dass möglichst viele Menschen innerhalb von
+einem kleinen Zeitraum antworten können. So können trotz der Kürze des Projektzeitraums mehrere Iterationen durchgeführt
+werden.
+
+Aus den Antworten des Fragebogens werden die neuen Spezifikationen erstellt. Also welche Punkte konkret anders zum
+ersten Prototypen gestaltet werden sollen. mit diesen Anforderungen kann dann eine erste Version der jeweiligen
+Anwendung implementiert werden. Mit dieser Version kann dann eine zweite iteration des User Centered Design durchgeführt
+werden. Also wieder das Feedback über einen Fragebogen einholen, um daraus neue Anforderungen zu bilden. Je nach
+zeitlicher Verfügbarkeit können diese Anforderungen noch einmal umgesetzt werden.
+
+Diese Iteration können beliebig weiter geführt werden, um eine Anwendung weiter zu optimieren.
 
 ## Durchführung
 
+In diesem kapitel soll die Durchführung der beiden Projekte beleuchtet werden. Dafür wird die gleiche Einteilung in zwei
+Phasen wie bei der Projektplanung genutzt.
+
 ### Design Thinking
+
+Die Design Thinking Prozesse werden hier in chronologischer Reihenfolge aufgeführt. Das hat den Grund, dass der Ablauf
+nach dem ersten Durchlauf angepasst wurde, um die gemachten Erfahrungen mit einfließen zu lassen.
+
+#### Rettungsapp
+
+Für das Design Thinking zur Rettungsapp bestand das Team nur aus zwei Personen. Dies liegt daran, dass die Zielgruppe,
+also Notfallsanitäter sehr speziell ist und somit Personen mit entsprechendem Domänenwissen rar gesät sind.
+
+***Kick-off***
+
+Für den Kick-Off wird zuerst eine Design Thinking Challenge aufgestellt, die bearbeitet werden sollte. Diese wird
+möglichst einfach und offen gestaltet, um viel Gestaltungsraum zu lassen: **System zur Unterstützung des
+Rettungsdiensts entwickeln**. Die einzelnen Bestandteile werden dann genauer besprochen, um daraus eine neue Challenge
+aufzustellen. Durch dieses Vorgehen kann ein erster Kontakt zu dem Projekt aufgebaut und ein allgemeines Verständnis
+etabliert werden. Die daraus resultierende Aufgabenstellung lautet: **Entwicklung einer mobilen App zum Nachschlagen von
+Algorithmen(Behandlungen) für Notfallsanitäter**. Diese Challenge grenzt die Aufgabe deutlich weiter ein und ist die
+Basis für die nächsten Schritte.
+
+***Verstehen***
+
+Zum Schritt des Verstehens wird Brainstorming genutzt. Dabei wird sich an den einzelnen Begriffen der Aufgabenstellung
+orientiert, um möglichst viele Stichpunkte zu dem Projekt zu finden. Sämtliche Einfälle werden auf Post-Its notiert, um
+sie nach bekannten und unbekannten Wissen einzuteilen. Dadurch kann ein Überblick darüber erhalten werden, an welchen
+Stellen weitere nachforschungen sinnvoll sind. In [Abbildung 1] ist die entsprechende Aufstellung zu sehen.
+
+![](assets/BrainstormingProject1.jpg)
+
+[Abbildung 1]
+*Brainstorming Rettungsapp*
+
+Neben dem Brainstorming wird die Methode der User Journey Map angewendet. Hier wird der aktuelle Ablauf im Falle eines
+Rettungseinsatzes betrachtet. Jeder einzelne Schritt wird nach dem dabei empfunden Gefühl bewertet. Geht es dem
+Sanitäter dabei gut und er kann die Aufgabe optimal bearbeiten oder geht es ihm schlecht und es kommt zu Problemen bei
+der Bearbeitung?
+
+![](assets/User Journey Map.png)
+
+[Abbildung 2]
+*User Journey Map Rettungsapp*
+
+Die entsprechenden Resultate sind in [Abbildung 2] zu sehen. Hierbei fällt bereits auf, dass vor allem der Einsatz der
+Algorithmen Probleme verursacht.
+
+
+*Beobachten*
+
+*Standpunkt definieren*
+
+*Ideen generieren*
+
+*Prototyp erstellen*
+
+![](assets/allRetung.png)
+
+#### Erweiterung zu Spotify
+
+*Kick-off*
+
+*Verstehen*
+
+*Beobachten*
+
+*Standpunkt definieren*
+
+*Ideen generieren*
+
+*Prototyp erstellen*
+
+![](assets/SpotifyAddon.png)
+
+### User Centered Design
 
 #### Rettungsapp
 
 #### Erweiterung zu Spotify
 
 ## Fazit
+
+## Anhang
+
+### Abbildungsverzeichnis
+
+[Abbildung 1] - Brainstorming Rettungsapp
+
+[Abbildung 1]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/BrainstormingProject1.jpg
+
+### Literaturverzeichnis
+
+[Flutter]
+
+[Flutter]: https://flutter.dev/
+
+
 
 
 

@@ -57,7 +57,7 @@ Nach der Serialisierung werden die Bytes über das Netzwerk verschickt und auf d
 Abbildung 4 - protobuf Daten versenden
 
 Für die Deserialisierung beim Empfänger wird die Schnittstellenbeschreibung benötigt, in der Schnittstellenbeschreibung sind alle wesentlichen Merkmale enthalten, damit Client und Server die Daten austauschen können.  
-Die Abbildung zeigt, wie ein User decodiert wird. Das erste Byte wird in eine Feldnummer und den Wire Type aufgeteilt (siehe Abbildung 6). Im Beispiel handelt es sich bei der _id_, um die Feldnummer 1 und den Wire Type 0. Das zweite Byte gibt den Wert 2 der _id_ an.  
+Die Abbildung 5 zeigt, wie ein User decodiert wird. Das erste Byte wird in eine Feldnummer und den Wire Type aufgeteilt (siehe Abbildung 6). Im Beispiel handelt es sich bei der _id_, um die Feldnummer 1 und den Wire Type 0. Das zweite Byte gibt den Wert 2 der _id_ an.  
 Würde der Wert der _id_ größer als 128 sein, müssten weitere Bytes mit hinzugenommen werden. Somit lassen sich in protobuf auch größere Zahlen abbilden.  
 Die restlichen Bytes beschreiben den Vornamen des Users. Das erste Byte wird wieder in Feldnummer(2) und in Wire Type(2) aufgeteilt. Das zweite Byte gibt die Länge der Bytes an und die restlichen Bytes bilden die direkten Werte ab.
 
@@ -658,7 +658,7 @@ Abbildung 14 - Ergebnisse WLAN
 
 ### n+1 Problem
 
-Beim n+1 Problem, benötigen bestimmte Abfragen eine hohe Anzahl von Requests. Möchte man zum Beispiel alle Messages, die den verschiedenen User zugeordnet sind ermitteln, müsste man als zuerst alle User beziehen und anschließend die einzelnen Messages der User abfragen. Das wären bei 1000 Usern genau 1001 Abfragen. Hierbei kommt es zum sogenannten Under-Fetching (Abbildung 15), beim Under-fetching liefert die Schnittstelle zu wenige Informationen, sodass erneute Aufrufe nötig sind. Das führt durch die hohe Anzahl an Aufrufen zu einem Verlust der Performanz.
+Beim n+1 Problem, benötigen bestimmte Abfragen eine hohe Anzahl von Requests. Möchte man zum Beispiel alle Messages, die den verschiedenen User zugeordnet sind ermitteln, müsste man als zuerst alle User beziehen und anschließend die einzelnen Messages der User abfragen. Das wären bei 1000 Usern genau 1001 Abfragen. Hierbei kommt es zum sogenannten Under-Fetching (Abbildung 15), beim Under-fetching liefert die Schnittstelle zu wenig Informationen, sodass erneute Aufrufe nötig sind. Das führt durch die hohe Anzahl an Aufrufen zu einem Verlust der Performanz.
 
 ![REST Under-fetching](./assets/rest/rest_under_fetching.png)  
 Abbildung 15 - REST Under-fetching
