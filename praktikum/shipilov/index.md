@@ -175,6 +175,26 @@ Angenommen, der Inventar-Pod möchte den Katalog-Pod aufrufen. Um dies zu ermög
 
 Alles, was hier beschrieben wird, ist also ein sogenannter Kubernetes-Cluster. In Microsoft Azure dieser Cluster hat die Name "Azure Kubernete Kluster (AKS)".
 
+## 5.3 API-Gateway.
+
+Ein API-Gateway ist ein Dienst, der den Einstiegspunkt in die Anwendungs-REST-API von außen darstellt. Das Hauptanliegen in einer Microservices-Umgebung ist die Zuordnung von Anforderungen externer Parteien zu internen Microservices, aber es kann auch viele andere Querschnittsprobleme lösen. Um den Zweck des API-Gateways besser zu verstehen, untersuchen wir einige der Probleme, die bei der Verwendung einer direkten Client-zu-Microservice-Kommunikation auftreten können. Wenn ein Load-Balancer-Service im Kubernetes-Cluster konfiguriert ist, gibt er dem Identity-Microservice eine öffentliche IP, wodurch Clients von überall darauf zugreifen können. Dies funktioniert gut für einen Microservice, aber es wird Probleme für zukünftige Microservices geben. Wenn der Programmierer weitere Load-Balancer-Dienste für andere Microservices hinzufügt, erhält jeder eine neue öffentliche IP, und da die Clients wahrscheinlich über DNS-Adressen anstelle von IPs auf Microservices zugreifen, werden alle diese DNS-Adressen IPs zugeordnet. Dies ist eindeutig nicht skalierbar, und je nach Cloud-Anbieter verursacht jede neue öffentliche IP zusätzliche Kosten, die mit neuen Microservices nur weiter steigen werden.
+
+Da die Microservices direkt aus dem öffentlichen Internet erreichbar sind, sind sie verschiedenen Arten von Angreifern ausgesetzt. Einige von ihnen senden möglicherweise mehrere Anfragen ohne jegliche Form der Authentifizierung oder Autorisierung. Dies wird niemals dazu führen, dass die Angreifer unbefugten Zugriff auf Microservices erhalten, da alle REST-APIs ordnungsgemäß konfiguriert sind, um eine Autorisierung anzufordern. Es verbraucht jedoch Ressourcen, die die Microservices für etwas Nützliches verwenden könnten.
+
+Die Angreifer könnten auch DDoS-Angriffe versuchen, die einen oder mehrere der Microservices überwältigen und normale Clients daran hindern könnten, sie sinnvoll zu nutzen.
+
+Es ist wichtig, die gesamte Kommunikation mit https zu verschlüsseln, aber da alle Microservices direkt dem Internet ausgesetzt sind, muss für jeden von ihnen ein TLS-Zertifikat eingerichtet werden, außerdem müssen alle Microservices den https-Datenverkehr entschlüsseln, was sich auf die Leistung von auswirkt alle von ihnen.
+
+Schließlich führt die direkte Client-zu-Microservice-Kommunikation zu einer unerwünschten Kopplung. Beispielsweise können Kunden heute einen Kauf über den Kaufvorgang des Trading-Microservices starten und sich auch einen Überblick über die Artikel verschaffen, die über den Store-Vorgang auf demselben Microservice gekauft werden können. Wenn die Organisation schließlich entscheidet, dass der Trading-Microservice zu viel leistet und in mehrere Microservices aufgeteilt werden muss, wird der Kaufvorgang nun Teil eines neuen Purchase-Microservices und der Store-Vorgang wird jetzt in den Store-Microservice verschoben. Da der Trading-Microservice nicht mehr existiert, können alle bestehenden Clients die Kauf- und Speichervorgänge nicht aufrufen und müssen aktualisiert werden, um die neuen Microservices aufrufen zu können, was eine Herausforderung darstellt und in einigen Fällen sogar unmöglich sein kann.
+
+Vorteile eines API-Gateways.
+
+Sobald der Programmierer ein API-Gateway hinzufügt, wird es zum Einstiegspunkt in die Microservices-REST-API von außen. Das bedeutet, dass außer dem Gateway niemand Zugriff auf die Microservices hat. Dies führt zu mehreren Vorteilen, beginnend mit der Schlüsselfähigkeit, Anforderungsrouting durchzuführen.
+
+Angenommen, einer der Clients möchte die Liste der Katalogelemente abrufen. Der Client ruft den Pfad „Katalog/Elemente“ auf dem Gateway auf, und dieses leitet diese Anforderung wiederum an die Artikeloperation im Microservice „Katalog“ weiter. Das Gleiche gilt für den Handels-/Geschäftspfad, der an den Geschäftsbetrieb im Trading-Microservice weitergeleitet wird. Dank dieser Fähigkeit wird eine öffentliche IP nur für das API-Gateway selbst benötigt, nicht für einen der Microservices, die nur interne IPs und DNS-Adressen innerhalb des Kubernetes-Clusters haben. Dadurch werden die Kosten für die Verwaltung öffentlicher IPs erheblich gesenkt und die Dinge für Kunden vereinfacht.
+
+Das API-Gateway kann so konfiguriert werden, dass der autorisierte Zugriff auf Microservices sichergestellt ist. Wenn also ein Client den Handels-/Kaufpfad anruft und das erforderliche Zugriffstoken nicht präsentiert, kann das Gateway den Ablauf initiieren, der ein Zugriffstoken über den Identitätsanbieter anfordert, und zwar erst, wenn das Zugriffstoken erworben wurde , kann er sie verwenden, um die ursprüngliche Anfrage an den Trading-Microservice weiterzuleiten. Auf diese Weise muss sich keiner der Microservices mit nicht autorisierten Anfragen befassen, wodurch wertvolle Ressourcen für weitere Aufgaben gespart werden. Das API-Gateway kann auch Ratenbegrenzungen erzwingen.
+
 -----------
 
 # 6. Realisierung von der Microservice-Architektur.
