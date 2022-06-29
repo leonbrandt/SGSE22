@@ -6,7 +6,8 @@
 1. Herausfinden, wie Cloud-Ressourcen zum Aufbau einer Microservice-Architektur verwendet werden können.
 2. Die Hauptvorteile der drei wichtigsten Anbieter von Cloud-Ressourcen (Azure Services, Google Cloud Services und Amazon Services) kennen.
 3. Herausfinden, welche Module zum Aufbau von Microservices benötigt werden und erfahren, wie diese Module in der Praxis am Beispiel mindestens eines Cloud-Ressourcenanbieters funktionieren
-4. (Optional) Untersuchen die Betriebskosten einer Microservice-Architektur für ein Unternehmen.
+4. Untersuchen die Betriebskosten einer Microservice-Architektur für ein Unternehmen.
+5. Die Leistung virtueller Maschinen vergleichen und die am besten geeignete Option für die Microservice-Architektur ermitteln.
 
 # 2.	Theoretische Grundlagen
 
@@ -138,7 +139,7 @@ In diesem Beispiel ist der Preis des Servers mit der kleinsten VM-Instanz fast g
 
 ## 4.4 Fazit
 
-Alle drei Plattformen eignen sich für die Arbeit mit einer Microservice-Architektur, aufgrund der oben beschriebenen Vorteile wurde für mein Praxisprojekt jedoch die Microsoft Azure Plattform mit einer standard_a2_v2 VM mit 4 GB RAM und 2 CPUs gewählt.
+Alle drei Plattformen eignen sich für die Arbeit mit einer Microservice-Architektur, aufgrund der oben beschriebenen Vorteile wurde für mein Praxisprojekt jedoch die Microsoft Azure Plattform mit einer standard_a2_v2 VM mit 4 GB Ultra-Disc-Speicher und 2 vCPUs gewählt.
 
 # 5. Microsoft Azure-Tools.
 
@@ -163,6 +164,86 @@ Die Rechenleistung ist begrenzt. Und der Preis für mehrere einfache Server ist 
  5. Günstige Preise.
  6. Azure Synapse Link für Azure Cosmos DB ist ein cloudbasiertes HTAP-Feature (Hybrid Transactional and Analytical Processing). Dies bietet Betriebsdatenanalysen in Azure Cosmos DB nahezu in Echtzeit und eine einfache Integration zwischen Azure Cosmos DB und Azure Synapse Analytics. [11]
 
+-----------
+
+# 6. Realisierung von der Microservice-Architektur.
+
+Zur Implementierung der Microservice-Architektur wurde ein neues Microsoft Azure-Konto erstellt. Azure bietet die Möglichkeit, ein Konto für Studenten zu erstellen. Dieses Konto ist kostenlos. Doch ein solches Angebot ist mit Vorsicht zu genießen, denn der Microservice benötigt sehr viele Ressourcen (nämlich mindestens 2 vCPUs und 4 GiB Ultra-Disc-Speicher). Andernfalls tritt ein Fehler auf: “The System node pool must use VM sku with more than 2 cores and 4GB memory.” Glücklicherweise erlaubt Ihnen Azure, viele Ressourcen kostenlos zu nutzen, aber oft sind die Azure-Server ziemlich ausgelastet und es gibt keine freien virtuellen Maschinen mehr, die Sie kostenlos nutzen können. Daher waren zum Zeitpunkt der Untersuchung nicht alle virtuellen Maschinen mit dieser Ressource in Deutschland verfügbar. Wie in Amerika, Kanada. Daher wurde nach langer Suche eine virtuelle Maschine in Australien im zentralen Teil gefunden. Daher wurde für diese Arbeit der Standard_a2_v2-Cluster innerhalb des Azure Kubernetes Service ausgewählt.
+
+Adresse des erstellten Microservices: https://shopeconomy.australiacentral.cloudapp.azure.com/
+
+Ein Studentenabonnement wurde erstellt. Dem Studentenabonnement wurde eine Ressourcengruppe angehängt. Eine Ressourcengruppe besteht aus geladenen Microservices und Ressourcen, die von Azure bereitgestellt werden, um mit den Microservices zu kommunizieren (wie z.B. Azure Kubernetes Service, Azure Key Vault, VM-Skalierungsgruppe, Containerregistrierung, öffentliche IP-Adresse u.s.w.). 
+
+![](img/09.png)
+
+Die Azure Cloud-Ressourcen wurde hauptsächlich über die Befehlszeile verwaltet, sodass würde jeden Azure-Befehlsgebrauch zum Erstellen oder Verwalten von Cloud-Ressourcen in unseren Lesedateien leicht nachverfolgt. Dafür wird die Azure Command-Line Interface oder Azure CLI benötigt. 
+
+Um beispielsweise den Trading-Microservice zu laden, ist es erforderlich sich zu registrieren und einen Befehl an Docker zu senden:
+```powershell
+az acr login --name $appname
+```
+
+Als Nächstes ist es nötig zum Erstellen einer Datenbank ein Cosmos DB-Konto zu erstellen. In Cosmos DB ist es möglich, die Datenbank zu übertragen und Mongo DB von einem lokalen Computer mit der Möglichkeit zur Verwendung der Mongo DB-API zu verwenden:
+```powershell
+az cosmosdb create --name $appname --resource-group $appname --kind MongoDB 
+```
+
+Im nächsten Schritt wird ein Service-Bus-Namespace angelegt. Es ist erforderlich um asynchrone Kommunikation zwischen Microservices zu ermöglichen: 
+```powershell
+az servicebus namespace create --name $appname --resource-group $appname --sku Standard
+```
+
+Jedes Microservice soll eine Verbindung mit Cosmos DB und Service Bus haben. Dafür wird eine Verbindungsstring gebraucht, die später in Azure Key Vault gespechert wird. Azure Key Vault ist eine bequeme Möglichkeit von Microsoft Azure alle Passwörter, Verbindungsstrings und Tokens zu speichern.
+
+Zum Speichern der Docker-Images in Microsoft Azure existiert die Microsoft Azure Container Registry. Wie üblich wird dafür die Azure CLI verwendet. Der Befehl einer solchen Containerregistrierung sieht folgendermaßen aus:
+```powershell
+az acr create --name $appname --resource-group $appname --sku Basic
+```
+
+Um das Docker-Image per Push in die Azure-Containerregistrierung zu übertragen, wird der folgende Code verwendet:
+```powershell
+$appname="[Name]"
+
+az acr login --name $appname
+docker push "$appname.azurecr.io/trading:$version"
+```
+
+
+
+# 7. Auswahl einer virtuellen Maschine für einer Microservice-Architektur.
+
+Der kurze Prozess zum Erstellen einer Microservice-Architektur basierend auf der virtuellen Maschine Australien Centre Standard_a2_v2, die für ein Studentenkonto verfügbar ist, wurde oben beschrieben. 2 vCPUs, 4 GiB. Dieses Kapitel beschreibt die Implementierung von drei weiteren virtuellen Maschinen und beschreibt, wie die Zugriffsgeschwindigkeiten von Microservices verglichen werden, die auf allen VMs erstellt wurden. Um die Ladegeschwindigkeit der Website zu bewerten, wurden Online-Ressourcen verwendet, um die Geschwindigkeit von Webverbindungen von Google [12], Solarwinds Pingdom [13] und GTmetrix [14] zu messen. Alle Seiten lieferten jedoch ungefähr die gleichen Ergebnisse. Daher wurden die Ergebnisse des bekanntesten Dienstes von Google als Grundlage für die Messung genommen.
+
+Da das Studentenkonto Einschränkungen hinsichtlich der Größe der VM hat, wurde ein Abonnement für Standardbenutzer abgeschlossen. Als nächstes wurde die VM ersetzt. Dies kann über die Azure-Befehlszeilenschnittstelle mit dem Befehl erfolgen:
+```powershell
+az feature register --name EnablePodIdentityPreview --namespace Microsoft.ContainerService
+az extension add --name aks-preview
+
+az aks create -n $appname -g $appname --node-vm-size standard_a2_v2 --node-count 2 --attach-acr $appname --enable-pod-identity --network-plugin azure --generate-ssh-keys --location germanywestcentral
+```
+Wo "aks" bedeutet Azure Kubernetes Service.
+
+Zur Messung der Seitenladegeschwindigkeit wurde eine Homepage mit einem Slider bestehend aus vier Fotos ausgewählt. Beim Laden dieser Seite wird eine Anfrage an den Identity-Microservice gesendet und je nachdem, ob der Benutzer ein registrierter Benutzer, Administrator oder Gast ist, unterschiedliche Inhalte erstellt. Vier virtuelle Maschinen wurden zum Vergleich ausgewählt: 
+* Australien Center **Standard_a2_v2.** 2 vCPU, 4GiB - 0.1060 €/St.
+* Germany West Central (Frankfurt) **Standard_a2_v2.** 2 vCPU, 4GiB - 0.0870 €/St.
+* Germany West Central (Frankfurt)  **Standard_F4s_v2.** 4 vCPU, 8 GiB - 0.1940 €/St.
+* Germany West Central (Frankfurt)  **Standard_D2_v4.** 2 vCPU, 8 GiB - 0.1150 €/St.
+
+Dabei wurde die Abhängigkeit von Anzahl der Prozessorkerne und Arbeitsspeicher sowie Seitenladegeschwindigkeit betrachtet. Das Ergebnis der Studie war die folgende Grafik:
+
+![](img/10.png)
+
+Die Grafik zeigt, dass das Laden der ersten Seite immer viel länger dauert als nachfolgende Ladevorgänge. Dies geschieht meiner Meinung nach, weil einige der Prozesse im lokalen Cache des Browsers und im Cache des Servers gespeichert werden.
+
+Die Grafik zeigt, dass eine VM, die sich in großer Entfernung vom Client befindet, 0.3-0.45 Sekunden langsamer läuft. Bei mehreren REST-API-Anfragen kann sich diese Zeit erheblich verlängern und dies kann den Betrieb des Microservices kritisch beeinträchtigen. Daher ist es notwendig, möglichst viele virtuelle Maschinen in verschiedenen Ländern mit der dichtesten Abdeckung zu erstellen und API-Gateway zu verwenden.
+
+Die Grafik zeigt auch, wie viele Ressourcen die Microservice-Architektur benötigt. Offensichtlich lohnt es sich für die Konzepte von Microservice-Architekturen und Microservices für kleine oder geschlossene Nutzung, eine VM mit mindestens 4 vCPUs und 8 GiB zu wählen. Die Kosten für eine solche VM sind doppelt so hoch wie die günstigere der angebotenen Optionen, aber die Geschwindigkeit ist viel höher. Dies geschieht, weil 2 vCPUs und 4 GiB Speicher für eine Microservice-Architektur zu knapp ausreichen. Außerdem kann bei einer günstigeren Option des Microservices beim Warten auf das Laden einer Seite länger als zwei oder drei Sekunden ein Fehler beim Laden der Website auftreten, der vom Microservice ausgegeben wird. Dies ist konfigurierbar, aber es ist am besten, Kunden nicht so lange warten zu lassen.
+
+In meinem Fall die virtuelle Machine mit 2 vCPUs und 8 GiB Speicher zeigt sich relativ langsam im Vergleich mit Standard_D2_v4 (4 vCPU, 8 GiB), aber kostet auch fast zweimal günstiger. Meine Meinung nach ist, dass der Kund nicht 600-800 ms warten muss. Das ist eine umbequeme Funktionalität.
+
+Es ist schwierig, die Leistungsobergrenze für VMs zu messen, da sie als DDos-Angriff erkannt wird. Es ist nötig in diesem Fall VMs mit der realen CPU lokal zu testen. Allerdings gibt es eine Tabelle von Microsoft, die die Abhängigkeit von "Performance Cap" vom Arbeitsspeicher zeigt. Anhand dieser Tabelle können Sie grob die Last berechnen, die die VM bewältigen kann. [15]
+
+Daher folgt, dass die am besten geeignete virtuelle Maschine in der Anfangsphase die "Standard_F4s_v2" VM ist, die sich in der Nähe des Standorts der Clients befindet. Da die Microservice-Anfragen zunehmen, wird empfohlen, leistungsfähigere VMs in Betracht zu ziehen. Eine Liste aller verfügbaren VMs in Mitteldeutschland ist unter folgender URL verfügbar: https://azureprice.net/?region=germanywestcentral&sortField=memoryInMB&sortOrder=true
 
 
 # Literaturverzeichnis
@@ -177,6 +258,10 @@ Die Rechenleistung ist begrenzt. Und der Preis für mehrere einfache Server ist 
 * [9] - vgl. Michael Bose, AWS vs Azure vs Google: Which Cloud Is Best for Your Organization. URL: https://www.nakivo.com/blog/aws-vs-azure-vs-google-which-cloud-is-best-for-your-organization/
 * [10] - vgl. Shanika Wickramasinghe, AWS vs Azure vs GCP: Comparing The Big 3 Cloud Platforms URL: https://www.bmc.com/blogs/aws-vs-azure-vs-google-cloud-platforms/
 * [11] - vgl. Microsoft Docs, Willkommen bei Azure Cosmos DB. URL: https://docs.microsoft.com/de-de/azure/cosmos-db/introduction
+* [12] - URL: https://pagespeed.web.dev/?hl=de
+* [13] - URL: https://tools.pingdom.com/
+* [14] - URL: https://gtmetrix.com/
+* [15] - Microsoft Docs, Azure managed disk types. URL: https://docs.microsoft.com/nb-no/azure/virtual-machines/disks-types#premium-ssd
 
 # Verwendete Icons von Dritten
 * https://www.diagrams.net/
