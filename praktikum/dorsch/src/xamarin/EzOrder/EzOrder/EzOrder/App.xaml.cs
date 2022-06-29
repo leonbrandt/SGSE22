@@ -19,10 +19,10 @@ namespace EzOrder
         {
             InitializeComponent();
             CarouselPage mainView = new CarouselPage();
-            //mainView.Children.Add(new RegisterScreen());
-            //mainView.Children.Add(new NewOrder());
-            //mainView.Children.Add(new OrderListing());
-            //mainView.Children.Add(new MyOrders());
+            mainView.Children.Add(new RegisterScreen());
+            mainView.Children.Add(new NewOrder());
+            mainView.Children.Add(new OrderListing());
+            mainView.Children.Add(new MyOrders());
             mainView.Children.Add(new Benchmark());
             MainPage = mainView;
             MainView = mainView;
