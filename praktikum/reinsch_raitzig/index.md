@@ -130,7 +130,7 @@ der Optimierungspässe starke Auswirkungen auf die Optimierungsergebnisse haben 
 
 
 
-## Inlining Pass##
+## Inlining Pass ##
 
 - Was macht der?
 - Wie funktioniert der allgemein?
