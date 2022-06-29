@@ -41,6 +41,15 @@ des CFG (control flow graph) an einer bestimmten Call Site zu einer optimalen L�
 - eine Alternative stellen Evolution Strategies dar (Teil der Black Box Optimierungstechniken)
 	- lernt auch durch trial and error
 
+### MLGO und LLVM ###
+
+MLGO besteht aus zwei Teilen:
+
+- Innerhalb von LLVM werden die KI-Modelle für Optimierungen genutzt
+- Training von KI-Modellen, dieser Code ist im [MLGO-Repository](https://github.com/google/ml-compiler-opt)
+
+Mit dem MLGO-Repository können KI-Modelle trainiert werden, welche dann in LLVM integriert werden. Dazu gibt es allgemeinen Code in LLVM, z.B. [MLInlineAdvisor.cpp](https://github.com/llvm/llvm-project/blob/main/llvm/lib/Analysis/MLInlineAdvisor.cpp). Dieser Code ist in so fern allgemein, als dass kein trainiertes KI-Modell im Source Code von LLVM ist. Erst beim Kompilieren von LLVM wird ein konkretes Modell in LLVM eingebaut.
+
 # Offene Fragen #
 
 - Welche LLVM-Pässe haben Einfluss auf die executable size?
