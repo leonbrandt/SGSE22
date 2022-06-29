@@ -335,7 +335,7 @@ Die Versuche zeigen auf, dass der ECS-Ansatz der Performance nicht hilft. Da es 
 
 ## Anwenden des Data-Oriented-Designs
 
-Beim Data-Oriented-Design geht es darum, dass die Daten des Programms im Vordergrund stehen. Das Programm wird also so geschrieben, dass Funktionen auf die gekapselten Daten zugreifen und diese transformieren, ohne Dabei viel Abstraktion aufzuweisen. Bei der Entwicklung der Transformationsroutinen sollte der Entwickler sich zudem Gedanken machen, wie die Transformation tatsächlich auf dem CPU ausgeführt wird, um diese performant gestalten zu können.
+Beim Data-Oriented-Design geht es darum, dass die Daten des Programms im Vordergrund stehen. Das Programm wird also so geschrieben, dass Funktionen auf die gekapselten Daten zugreifen und diese transformieren, ohne dabei viel Abstraktion aufzuweisen. Bei der Entwicklung der Transformationsroutinen sollte der Entwickler sich zudem Gedanken machen, wie die Transformation tatsächlich auf dem CPU ausgeführt wird, um diese performant gestalten zu können.
 Das DOD verfolgt dadurch in der Umsetzung oft das Ziel, Daten zu kapseln und so anzuordnen, dass der CPU-Cache am effektivsten verwendet wird. Als Beispiel wird ein Gesundheitssystem angenommen, welches die Gesundheit jedes Entities prüft, um dieses als tot zu markieren. Für die Abfrage der Gesundheit wird die Gesundheitskomponente des Entities in den Cache geladen, bearbeitet und wieder entladen. Wenn die Gesundheitskomponenten nun im Speicher nebeneinander liegen, können mit dem Füllen einer Cache-Zeile mehrere Gesundheitskomponenten geprüft werden, wodurch Ladezeit eingesparrt werden kann. Als Vergleich wird im klassischen OOP-Ansatz das gesamte Entity geladen, um dessen Gesundheit zu prüfen. Durch den größeren Overhead, den das Objekt mit sich bringt, werden mehr ungenutzte Daten in den Cache geladen.
 
 In Java kann das DOD auf diese Weise nicht eingesetzt werden, da man keine Kontrolle darüber hat, ob die zusammenhängenden Daten tatsächlich nebeneinander im Speicher liegen. Jedoch ist der Grundgedanke der Kapselung und separaten Transformation der Daten dadurch erfüllt, dass das ECS eingesetzt worden ist. Aus diesem Grund wird das DOD konkret in dem C++ Beispiel angewendet und getestet.
@@ -385,12 +385,15 @@ Durch die Implementierung des DOD-Ansatzes im ECS-Projekt, wird dem Overhead ent
 
 ## Zusammenfassung
 
+Im Rahmen des Forschungsprojektes wurden die Vor- und Nachteile vom ECS-Pattern und dem DOD gegenüber dem klassischen OOP-Ansatz untersucht. Auf Grundlage der Ergebnisse kann die Auswahl der zu verwendenden Architektur für anstehende Projekte erleichtert werden.
 Durch das Anwenden des ECS-Patterns gegenüber der klassischen objektorientieren Programmierung wird zunächst mehr Zeit benötigt, um sich an die Verwendung zu gewöhnen. Zudem kann es je nach Entwickler-Team sein, dass kaum
 bis keine Erfahrung in dem Bereich vorliegt. Wenn man jedoch diesen Weg geht (vorausgesetzt die Anwendung eignet sich überhaupt für das ECS-Pattern, sprich sie ist sehr datenintensiv), kann sich dadurch langfristig die
 Wartbarkeit, Erweiterbarkeit und auch das Erstellen von Tests leichter gestalten. Bei der Verwendung des ECS-Patterns sollte man sich jedoch bewusst sein, dass dieses nicht sofort bessere Performance bietet, es bietet sich jedoch
 an ein ECS-Projekt auf Multithreading auszulegen und DOD-Prinzipien zu implementieren, da das ECS-Pattern diese Implementierungen erleichtert. 
 
 Das DOD kann sowohl allein als auch zusammen mit dem ECS-Pattern eingesetzt werden. Dabei geht es vor allem darum Daten von der Logik zu trennen und sich bei der Transformation von Daten darüber Gedanken zu machen, wie diese optimal auf dem Prozessor ausgeführt werden können. Besonders in datenintensiven Anwendungen kann viel Performance gewonnen werden, dadurch dass Zugriffszeit beim Bearbeiten von Daten des gleichen Typs eingespart wird.
+
+Um die Forschungsarbeit weiter zu führen würde es sich anbieten die durchgeführten Tests für weitere Sprachen und vor allem größere Projekte zu wiederholen. Weiter könnte es interessant sein neben dem durchgeführten Laufzeitvergleich einen Speichervergleich durchzuführen. Zuletzt könnte auch ein Test über die Cache-Misses interessant sein, da das DOD erzielt diese zu minimieren.
 
 ## Quellen
 
