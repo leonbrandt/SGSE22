@@ -41,9 +41,9 @@ Als Beispiel wird der Prozess des Hasso Plattner Instituts vorgestellt, der aus 
 
 ### User Centered Design
 
-Das USer Centered Design bindet den Nutzer in den Entwicklungsprozess ein. Es sit darauf ausgelegt möglichst früh auf
+Das User Centered Design bindet den Nutzer in den Entwicklungsprozess ein. Es ist darauf ausgelegt möglichst früh auf
 Wünsche und Anregungen der Nutzer einzugehen. Um den Wünschen der Nutzer entsprechen zu können, müssen diese Wünsche
-erstmal erfasst werden. Dafür wird beim user Centered Design zuerst eine Phase eingeräumt,
+erstmal erfasst werden. Dafür wird beim User Centered Design zuerst eine Phase eingeräumt,
 in der der Nutzer befragt werden muss. Hier geht es vor allem darum, Input von
 außerhalb des Entwicklerkreises zu bekommen. Je ausführlicher und genauer diese
 Umfragen ausfallen, desto besser kann sich danach nach den Wünschen gerichtet
@@ -69,7 +69,7 @@ man ihn aus agilen Entwicklungsmethoden kennt. Die Anwendung wird zyklisch
 entwickelt und dementsprechend zyklischen Abständen veröffentlicht. Auffällig ist,
 dass der Fokus nicht, wie sonst üblich, auf der Implementierung liegt, sondern
 bei dem Nutzer und der Planung der Implementierung.
-Neben dem eigentlichen Software-Tests, ist das Usability-Testing ein wichtiger Teil des Prozesses. Bei diesem
+Neben den eigentlichen Software-Tests ist das Usability-Testing ein wichtiger Teil des Prozesses. Bei diesem
 ist es wichtig, dass auch der Endnutzer mit eingebunden wird.
 Des Weiteren ist auffällig, dass die Entwicklung von Prototypen innerhalb der
 Entwicklung eine Rolle spielt. Dadurch soll gewährleistet werden, dass möglichst
@@ -84,17 +84,17 @@ In [Abbildung 2] wird eine weitere Möglichkeit aufgeführt, den Prozess des Use
 Hier werden fünf Phasen aufgestellt, die iterativ durchlaufen werden.
 
 1. Strategie: Zuerst muss der komplette Prozess geplant werden, bevor er gestartet wird.
-2. Analyse: Der Nutzerkontext wird untersucht, indem die Eignerschaften, Verhaltensweisen und Erwartungshaltungen der
+2. Analyse: Der Nutzerkontext wird untersucht, indem die Eigenschaften, Verhaltensweisen und Erwartungshaltungen der
    Nutzer analysiert werden. An dieser Stelle wird Feedback von den Nutzern eingeholt.
 3. Spezifikation: Hier werden die Erkenntnisse aus dem letzten Schritt in konkrete Anforderungen gegossen.
 4. Design/Implementierung: Je nach Projekt wird hier weiter an einem Prototyp designt oder die Anforderungen werden in
    das Produkt implementiert.
 5. Evaluation: Es wird überprüft, ob die Anforderungen erfüllt wurden und alle Elemente bedienbar sind.
 
-Durch diese Phasen kann dan so häufig iteriert werden, bis das Produkt einen zufriedenstellenden Zustand erreicht.
+Durch diese Phasen kann so häufig iteriert werden, bis das Produkt einen zufriedenstellenden Zustand erreicht.
 Dieser Ablauf dient als Vorbild für dieses Praktikum.
 
-Das user Centered Design ist also ein Prinzip, dass versucht den Nutzer in die Mitte der Entwicklung
+Das User Centered Design ist also ein Prinzip, dass versucht den Nutzer in die Mitte der Entwicklung
 zu rücken. Es gibt keine konkreten Regeln vor, sondern versucht durch
 allgemeine Vorgaben den Entwicklungsprozess zu optimieren. Vor allem eine detaillierte
 Planung und regelmäßiges Feedback des Endnutzers sollen dabei helfen,
@@ -104,7 +104,7 @@ das Erlebnis des Nutzers zu verbessern.
 
 Flutter ist ein Multiplattform-Framework, dass es ermöglicht mit einer Codebasis viele Plattformen zu bespielen. Als
 Programmiersprache wird Dart benutzt, eine als Alternative zu JavaScript erdachte Sprache. Das von Google geführte
-Projekt konnte zum Start in 2017 nur Android und iOS als Plattformen bedienen. Inzwischen sind mit Web, Windows und
+Projekt konnte zum Start im Jahr 2017 nur Android und iOS als Plattformen bedienen. Inzwischen sind mit Web, Windows und
 Linux eine große Auswahl an Plattformen hinzugekommen. [[Flutter]]
 
 Neben der großen Auswahl an Plattformen bietet Flutter die Möglichkeit schnell und einfach ansprechende Anwendungen zu
@@ -163,7 +163,7 @@ einem kleinen Zeitraum antworten können. So können trotz der Kürze des Projek
 werden.
 
 Aus den Antworten des Fragebogens werden die neuen Spezifikationen erstellt. Also welche Punkte konkret anders zu dem
-ersten Prototypen gestaltet werden sollen. Mit diesen Anforderungen kann dann eine erste Version der jeweiligen
+ersten Prototyp gestaltet werden sollen. Mit diesen Anforderungen kann dann eine erste Version der jeweiligen
 Anwendung implementiert werden. Mit dieser Version kann dann eine zweite Iteration des User Centered Design durchgeführt
 werden. Also wieder das Feedback über einen Fragebogen einholen, um daraus neue Anforderungen zu bilden. Je nach
 zeitlicher Verfügbarkeit können diese Anforderungen noch einmal umgesetzt werden.
@@ -313,32 +313,32 @@ Entwicklung der App nach User Centered Design.
 
 #### User Centered Design
 
-In diesem Projekt beginnt das user Centered Design mit der Evaluation begonnen. Zu diesem Zweck wird eine Google Umfrage
+In diesem Projekt beginnt das User Centered Design mit der Evaluation begonnen. Zu diesem Zweck wird eine Google Umfrage
 erstellt. Es wurde sich für Google entschieden, da hier ein etablierter und funktionsreicher Editor für Umfragen zur
 Verfügung gestellt wird, der es ermöglicht schnell zu arbeiten. [[Google Forms]]
 
-Die erste Umfrage hat vor allem das Ziel, den Prototypen aus dem Design Thinking von einer größeren Menge von nutzern
+Die erste Umfrage hat vor allem das Ziel, den Prototypen aus dem Design Thinking von einer größeren Menge von Nutzern
 bestätigen zu lassen. Als Beispiel dafür, dass die meisten Nutzer mit dem grundsätzlichen Konzept zufrieden waren, lässt
-sich [Abbildung 7] heranziehen. Hier sind der Großteil der Antworten positiv, was auf eine gute orientierung in der App
+sich [Abbildung 7] heranziehen. Hier sind der Großteil der Antworten positiv, was auf eine gute Orientierung in der App
 schließen lässt.
 
 ![](assets/FrageZurechtgefunden.png)
 
 [Abbildung 7]
-*Rettungsapp: Wie gut hast du dich in dem Prototypen zurechtgefunden?*
+*Rettungsapp: Wie gut hast du dich in dem Prototyp zurechtgefunden?*
 
 Die meisten anderen Fragen bestätigen ebenfalls die Entwicklungsrichtung. Einzig bei der offenen Frage nach fehlenden
 Funktionen kann eine neue Anforderung abgeleitet werden. hier wird gefordert, dass es die Möglichkeit geben soll das
 komplette PDF anzuzeigen, ohne vorher einen bestimmten Algorithmus gesucht zu haben. Außerdem wurde durch den Ersteller
 der NUN-Algorithmen gefordert, die Quelle in der App anzugeben.
 
-Daraus lassen sich im Endeffekt drei Anforderungen spezifizieren:
+Daraus lassen sich drei Anforderungen spezifizieren:
 
 1. Umsetzen der bestehenden Mockups
 2. Zusätzliche Möglichkeit direkt komplette PDF zu betrachten
 3. Angabe der Quellen innerhalb der App
 
-Diese Anforderungen konnten im nächsten Schritt implementiert werden. Auf die konkrete Implementierung mithilfe von
+Diese Anforderungen können im nächsten Schritt implementiert werden. Auf die konkrete Implementierung mithilfe von
 Flutter wird an dieser Stelle nur auf die Rahmenbedingungen eingegangen, da der Prozess für dieses Praktikum im
 Vordergrund steht. Da Flutter ein Multiplattformframework ist und es entsprechend einfach ist im Verlauf der Entwicklung
 die Zielplattform zu ändern, wurde sich entschieden vorerst eine Webapp zu entwickeln. Das hat den großen Vorteil, dass
@@ -354,7 +354,7 @@ Dadurch fallen für das Testen keine Kosten an.
 
 In [Abbildung 8] sind Screenshots der implementierten App abgebildet. Die Mockups aus [Abbildung 3] lassen sich hier
 deutlich wieder erkennen. Die Suche der Algorithmen, die Auswahl zwischen NUN und DBRD Algorithmen und die Anzeige des
-PDFs konnten alle umgesetzt werden. Außerdem lässt sich auf der ersten Seite ein Menü erkennen, dass es ermöglicht die
+PDFs konnten alle umgesetzt werden. Außerdem lässt sich auf der ersten Seite ein Menü erkennen, das es ermöglicht die
 vollständigen PDFs direkt zu sehen und Information über die App und ihre Quellen zu erlangen. Somit konnten alle
 Funktionen, die zuvor als Anforderungen aufgestellt wurden umgesetzt werden.
 
@@ -374,7 +374,7 @@ interessante und aufschlussreiche Fragen eingegangen werden.
 
 Zuerst ist die Frage nach der Farbgestaltung zu nennen. Das ursprüngliche Orange wurde aufgrund der Signalwirkung
 gewählt, die zum Rettungsdienst passt. Die beiden alternativen Farbgebungen Grün und Blau aus [Abbildung 9] konnten
-alleridngs genauso viele Stimmen erlangen ([Abbildung 10]). Da alle Farbgestaltungen gleich beliebt sind, wird die
+allerdings genauso viele Stimmen erlangen ([Abbildung 10]). Da alle Farbgestaltungen gleich beliebt sind, wird die
 Anwendung in dem Orange belassen.
 
 ![](assets/ScreenTag.png)
@@ -415,9 +415,9 @@ Im Endeffekt hat das Design Thinking seinen Zweck erfüllt, das Problem besser z
 zu entwickeln.
 
 Für das User Centered Design müssen die zwei Iterationen einzeln betrachtet werden. Bei der ersten Umfrage, die zu dem
-zuvor erstellten Prototypen gemacht wurde, konnten vor allem die Ergebnisse aus dem Design Thinking bestätigt werden.
+zuvor erstellten Prototyp gemacht wurde, konnten vor allem die Ergebnisse aus dem Design Thinking bestätigt werden.
 Konkrete Design-Fragen konnten hier nur schwierig beantwortet werden, da die Mockups einfach gehalten wurden. Hier wäre
-es möglich die mockups bereits genauer zu gestalten oder Fragen zum Design zu fragen, ohne konkrete Vorlagen zu haben.
+es möglich die Mockups bereits genauer zu gestalten oder Fragen zum Design zu fragen, ohne konkrete Vorlagen zu haben.
 Bei der zweiten Möglichkeit ist allerdings die Aussagekraft fraglich, da der Befragte die Fragen schnell falsch
 verstehen kann oder sich ein falsches Bild des vorgeschlagenen Designs macht. Hilfreich war außerdem die Frag nach
 fehlenden Features, da so noch eine Anforderung gefunden werden konnte.
@@ -430,7 +430,7 @@ guter Eindruck davon gewinnen, ob potenzielle Nutzer die Anwendung in der Form g
 ### Erweiterung zu Spotify
 
 Für das zweite Projekt soll eine Anwendung zur Erweiterung von Spotify erstellt werden. Spotify ist ein
-Musikstreaminganbieter, der eine große reichweite genießt. Spotify bietet dabei eine API für Entwickler an durch die auf
+Musikstreaminganbieter, der eine große Reichweite genießt. Spotify bietet dabei eine API für Entwickler an durch die auf
 Daten über viele Elemente wie Playlists, einzelne Songs oder Podcasts zugegriffen werden kann. Es lassen sich genauso
 Inhalte über die API erstellen. Diese Möglichkeiten lassen sich nutzen, um eigene Anwendungen zu entwickeln, die die
 Plattform von Spotify nutzen und um Funktionalitäten zu erweitern.
@@ -445,13 +445,13 @@ Außerdem können so mehr Methoden für die einzelnen Schritte ausprobiert werde
 Zu diesem Zweck wird in der Kick-Off Phase nur noch die Design Thinking Challenge aufgestellt. Angepasst wird sie erst
 am Ende des Schritts "Standpunkt definieren". Außerdem wird nach dem Brainstorming die Sweet-und-Sour-Methode
 angewendet, um die einzelnen Punkte einzuordnen. Die Methoden der User Journey Map und des stillen Beobachtens werden
-weggelassen, da es in diesem projekt keinen konkreten Ablauf gibt, der optimiert werden soll. Für die Ideengenerierung
-wird zusätzlich die 6-3-5 methode genutzt, um Ideen genauer ergründen zu können. Insgesamt sollen durch die neuen
-Methoden weniger Wiederholungen der gleichen inhalte erreicht werden.
+weggelassen, da es in diesem Projekt keinen konkreten Ablauf gibt, der optimiert werden soll. Für die Ideengenerierung
+wird zusätzlich die 6-3-5 Methode genutzt, um Ideen genauer ergründen zu können. Insgesamt sollen durch die neuen
+Methoden weniger Wiederholungen der gleichen Inhalte erreicht werden.
 
 ***Kick-Off***
 
-Für den Kick-Off wird wieder eine Aufgabenstellung erstellt, die möglichst viele Möglichkeiten für das projekt offen
+Für den Kick-Off wird wieder eine Aufgabenstellung erstellt, die möglichst viele Möglichkeiten für das Projekt offen
 hält. Sie lautet: **System zur Erweiterung von Spotify, um Probleme zu beheben**
 
 ***Verstehen***
@@ -464,9 +464,9 @@ wichtigen Begriffen der Challenge orientiert: System, Erweiterung, Spotify und P
 [Abbildung 14]
 *Brainstorming Spotifyerweiterung*
 
-Das Ergebnis des brainstormings lässt sich in [Abbildung 14] erkennen. Vor allem im bereich der Probleme wurde bereits
-viele Dinge aufgezählt, die im Verlauf des Projekts zu Ideen weiterentwickelt werden können. Insgesamt konnte mit deser
-methode wieder ein gutes Grundverständnis der Aufgabenstellung geschaffen werden und bildet eine gute Basis für die
+Das Ergebnis des Brainstormings lässt sich in [Abbildung 14] erkennen. Vor allem im Bereich der Probleme wurde bereits
+viele Dinge aufgezählt, die im Verlauf des Projekts zu Ideen weiterentwickelt werden können. Insgesamt konnte mit dieser
+Methode wieder ein gutes Grundverständnis der Aufgabenstellung geschaffen werden und bildet eine gute Basis für die
 weiteren Schritte.
 
 Um das Produkt Spotify genauer zu ergründen und gleichzeitig mit Konkurrenzprodukten zu vergleichen, wird die
@@ -481,21 +481,20 @@ Angebot angesehen, da diese App erweitert werden soll.
 *Sweet-und-Sour-Spot-Methode*
 
 In [Abbildung 15] ist die entsprechende Grafik mit den wichtigsten punkten zu sehen. Viele der Funktion sind in der
-Mitte
-der Kreise. Das heißt, dass diese sowohl im eigenen Angebot, als auch bei der Konkurrenz vorhanden sind und gleichzeitig
-Wünsche der Kunden erfüllen. Interessant für dieses Projekt ist vor allem der Sour Spot. Hier finden sich Funktionen
-wieder, die durch die konkurrenz umgesetzt werden, im eigenen Angebot allerdings fehlen. Sie lassen sich also potenziell
-in das eigene Angebot integrieren. Hier lassen sich Funktionen wiederfinden, wie das Anzeigen von Musikvideos oder die
-automatische Erkennung von Liedern über das Mikrofon.
+Mitte der Kreise. Das heißt, dass diese sowohl im eigenen Angebot, als auch bei der Konkurrenz vorhanden sind und
+gleichzeitig Wünsche der Kunden erfüllen. Interessant für dieses Projekt ist vor allem der Sour Spot. Hier finden sich
+Funktionen wieder, die durch die Konkurrenz umgesetzt werden, im eigenen Angebot allerdings fehlen. Sie lassen sich also
+potenziell in das eigene Angebot integrieren. Hier lassen sich Funktionen wiederfinden, wie das Anzeigen von Musikvideos
+oder die automatische Erkennung von Liedern über das Mikrofon.
 
-*Beobachten*
+***Beobachten***
 
 Für das Beobachten sollten ursprünglich Interviews durchgeführt werden. Da für das Design Thinking allerdings nur ein
-Nachmittag zur Verfügung stand, konnten keinen externen nutzer angesprochen werden. Die Erkenntnisse innerhalb des
-Teams, die durch gegenseitiges interviewen erlangt werden könnten, flossen bereits in alle anderen Methoden ein und
+Nachmittag zur Verfügung stand, konnten keinen externen Nutzer angesprochen werden. Die Erkenntnisse innerhalb des
+Teams, die durch gegenseitiges Interviewen erlangt werden könnten, flossen bereits in alle anderen Methoden ein und
 stellen somit keine Ergänzung dar. Deshalb wird das Beobachten übersprungen und mit dem nächsten Schritt fortgefahren.
 
-*Standpunkt definieren*
+***Standpunkt definieren***
 
 Um den Standpunkt zu definieren wurden diverse Nutzergruppen mit ihren Wünschen und Nutzerverhalten aufgestellt. An
 dieser Stelle werden einige davon aufgeführt, sie werden außerdem in die Häufigkeit der Nutzung eingeteilt:
@@ -529,26 +528,26 @@ dieser Stelle werden einige davon aufgeführt, sie werden außerdem in die Häuf
     * lange Playlisten
 
 Bei den Personas wird an einigen Stellen die Automatisierung der Musikauswahl angesprochen. Auch eine einfache Bedienung
-scheint gefragt zus sein. Insgesamt ist der Inhalt und die Nutzung von Playlisten ein wichtiges Thema.
+scheint gefragt zu sein. Insgesamt ist der Inhalt und die Nutzung von Playlisten ein wichtiges Thema.
 
 Aus diesen Informationen kann anschließend eine neue Design Thinking Challenge aufgestellt werden: **Entwicklung einer
-leicht verfügbare externe Anwendung zur Umsetzung von Nutzerwünschen in Spotify**. Auf Basis dieser Aufgabenstellung,
+leicht verfügbaren externen Anwendung zur Umsetzung von Nutzerwünschen in Spotify**. Auf Basis dieser Aufgabenstellung,
 welche die zuvor aufgekommenen Aspekte vereint, können nun Ideen generiert werden.
 
-*Ideen generieren*
+***Ideen generieren***
 
 Um zu Beginn der Ideengenerierung möglichst viele Ideen zu finden, wird wieder Crazy 8 als Methode angewendet. Die vier
-besten Ideen die weiter verfolgt werden, sind:
+besten Ideen, die weiter verfolgtwerden, sind:
 
 * Playlist zusammen mischen, um neue Playlist zu erhalten
 * mehrere Plattformen bedienen
 * Songerkennung mit Verlinkung zu Spotify
 * Gleiche Lieder innerhalb einer Playlist aussortieren
 
-Mit diesen vier Ideen wird die 6-3-5 methode angewendet. Dafür wird jeder dieser Ideen auf einem leeren Zettel notiert.
-Jedes Teammitglied bekommt einen der zettel und hat drei Minuten Zeit diese zu vertiefen. Nach den drei Minuten wird der
-Zettel weitergegeben und das nächste Teammitglied baut die Idee auf dem zettel vor ihm weiter aus. Dabei können
-vorherige Gedanken aufgegriffen oder neue Aspekte hinzugefügt werden. Um einen Eindruck für diesen Ablauf zu gewinnen
+Mit diesen vier Ideen wird die 6-3-5 Methode angewendet. Dafür wird jeder dieser Ideen auf einem leeren Zettel notiert.
+Jedes Teammitglied bekommt einen der Zettel und hat drei Minuten Zeit diese zu vertiefen. Nach den drei Minuten wird der
+Zettel weitergegeben und das nächste Teammitglied baut die Idee auf dem Zettel vor ihm weiter aus. Dabei können
+vorherige Gedanken aufgegriffen oder neue Aspekte hinzugefügt werden. Um einen Eindruck für diesen Ablauf zu gewinnen,
 wird folgend der entsprechende Prozess für die Idee Playlisten zu mischen aufgezeigt.
 
 1. Person:
@@ -559,7 +558,7 @@ wird folgend der entsprechende Prozess für die Idee Playlisten zu mischen aufge
     * Auswahl mehrerer Playlisten zum Zusammenmischen oder Genre
     * Vorschläge zu Aktualisierungen
 4. Person:
-    * bestimmen wie vile Lieder einer playlist hintereinander gemischt werden sollen
+    * bestimmen wie viele Lieder einer Playlist hintereinander gemischt werden sollen
     * Wann soll welche Playlist genutzt werden? (Party erst später)
     * Maximallänge
 
@@ -574,12 +573,12 @@ formulieren. Aus den vier Ideen werden fünf Anforderungen aufgestellt:
    Mischen können zusätzliche Angaben gemacht werden, wie die Maximallänge der resultierenden Playlist, wie viele Lieder
    einer Playlist hintereinander gemischt werden sollen und in welchem Zeitraum welche Playlist reingemischt werden soll
 4. Gleiche Lieder aussortieren: zuerst müssen ähnliche Lieder erkannt werden. Dazu lässt sich die Ähnlichkeit der Titel,
-   gleiche Interpreten und Schlüsselwörter wie "Remix" betrachten. Über ein Pop-Up soll der nutzer die Möglichkeit haben
+   gleiche Interpreten und Schlüsselwörter wie "Remix" betrachten. Über ein Pop-Up soll der Nutzer die Möglichkeit haben
    zu entscheiden, ob ein Lied in der Playlist bleibt oder nicht.
 5. Songerkennung über Audio mit Verlinkung zu Spotify: Über eine externe Songerkennungssoftware soll der Song erkannt
    werden. Danach muss der Song in Spotify gesucht werden, um dann dahin zu verlinken.
 
-*Prototyp erstellen*
+***Prototyp erstellen***
 
 Für den Prototypen werden nur die ersten drei Anforderungen eingebaut, da der Aufwand für die Songerkennung als zu groß
 eingeschätzt wird.
@@ -591,15 +590,14 @@ eingeschätzt wird.
 
 Die Mockups aus [Abbildung 16] sind das Endergebnis des Design Thinking Prozess, sie wurden wieder mit [balsamiq]
 erstellt. Sie dienen als Prototyp für die weitere Entwicklung. Die ersten vier Anforderungen sind eingearbeitet. Anhand
-dieser Mockups, kann die Phase des User Centered
-Designs beginnen.
+dieser Mockups kann die Phase des User Centered Designs beginnen.
 
 #### User Centered Design
 
 Für die Spotify-Erweiterung gilt der gleiche Ablauf wie für die Rettungsapp: Evaluation, Spezifikation,
 Design/Implementierung, Evaluation und eventuell erneut Spezifikation und Design/Implementierung.
 
-Um Feedback von Nutzern einzuholen wurde wieder ein Google Form erstellt. Neben Fragen zu den konkreten Mockups, wurde
+Um Feedback von Nutzern einzuholen, wurde wieder ein Google Form erstellt. Neben Fragen zu den konkreten Mockups, wurde
 das aktuelle Nutzerverhalten mit Spotify erkundet. An dieser Stelle wird wieder nur auf die interessantesten und
 aufschlussreichsten Fragen eingegangen.
 
@@ -609,9 +607,8 @@ aufschlussreichsten Fragen eingegangen.
 *Wie werden Playlisten genutzt?*
 
 Eine Nachfrage zum allgemeinen Nutzerverhalten betrifft die aktuelle Nutzung von Playlisten ([Abbildung 17]). Dabei kam
-heraus, dass vor
-allem selbsterstellte und von Spotify erstellte Playlisten genutzt werden. Das ergibt die Erkenntnis, dass das Erstellen
-von Playlisten, welches mit diesem projekt erweitert werden soll, auf jeden Fall genutzt wird.
+heraus, dass vor allem selbsterstellte und von Spotify erstellte Playlisten genutzt werden. Das ergibt die Erkenntnis,
+dass das Erstellen von Playlisten, welches mit diesem Projekt erweitert werden soll, auf jeden Fall genutzt wird.
 
 ![](assets/Mischoptionen.png)
 
@@ -642,7 +639,7 @@ umgesetzt werden, ohne viel Aufwand in die Hintergrundprozesse zu stecken. Währ
 entschlossen die Funktion doppelte Lieder aus Playlisten auszuschließen vorerst nicht umzusetzen.
 
 Für die Entwicklung wurde ebenfalls Flutter eingesetzt. Um die Anwendung möglichst einfach bereitzustellen, wurde wieder
-Firebase Hosting genutzt, um sie als Webapp für die umfrage zur Verfügung zu stellen.
+Firebase Hosting genutzt, um sie als Webapp für die Umfrage zur Verfügung zu stellen.
 
 ![](assets/completeSpotify.png)
 
@@ -654,7 +651,7 @@ rechts zeigt die Darstellung der finalen Playlist. Es wurde beim Login noch ein 
 echten Daten eingegeben werden müssen, da keine Anbindung an die Spotify-API besteht. Die Anforderungen konnten also,
 zumindest visuell, umgesetzt werden.
 
-Mit Implementierung wird die nächste iteration gestartet. Diese startet wieder mit einer Umfrage. Genauso wie bei der
+Mit Implementierung wird die nächste Iteration gestartet. Diese startet wieder mit einer Umfrage. Genauso wie bei der
 Rettungsapp, konnten an dieser Stelle deutlich detailliertere Fragen zum Design gestellt werden.
 
 ![](assets/SpotifyDarkmode.png)
@@ -688,17 +685,17 @@ würden. [Abbildung 23] zeigt da ein klares und positives Bild auf, alle befragt
 Zum Abschluss der Spotifyerweiterung sollen ebenfalls die Erkenntnisse über den Ablauf festgehalten werden.
 
 Das Design Thinking hat für dieses Projekt sehr gut funktioniert. Einerseits konnte durch den veränderten Ablauf viele
-Wiederholungen vermieden werden, so dass das Ziel direkter erreicht werden konnte. Zum Anderen bot die Aufgabenstellung
-deutlich mehr Freiheiten, so dass während der Erkundung des Problems noch gar keine lösung im Raum stand. Dadurch
+Wiederholungen vermieden werden, so dass das Ziel direkter erreicht werden konnte. Zum anderen bot die Aufgabenstellung
+deutlich mehr Freiheiten, so dass während der Erkundung des Problems noch gar keine Lösung im Raum stand. Dadurch
 konnten deutlich mehr Einwände gebracht werden, um an der Aufgabenstellung zu arbeiten. Hilfreich war außerdem, dass
-dieser Design Thinking Prozess mit vier Leuten bestritten wurde, die alle unterschiedliche Erfahrungen und Probleme mit
+dieser Design Thinking Prozess mit vier Leuten bestritten wurde, die alle unterschiedlichen Erfahrungen und Probleme mit
 Spotify gemacht haben. Dadurch konnten mehr Blickwinkel eingenommen werden. Dies half auch bei der finalen Ideenfindung,
 bei der eine Vielzahl an Ideen aufkamen. Vor allem die 6-3-5 Methode hat zum Abschluss sehr geholfen konkrete
 Anforderungen zu bilden.
 
 Für die Spotifyerweiterung war das Design Thinking ein kompletter Erfolg, um einen sinnvollen Prototyp zu entwickeln.
 
-Der Prozess des User Centered Design hat inder ersten Iteration vor allem bestätigt, was im Design Thinking erarbeitet
+Der Prozess des User Centered Design hat in der ersten Iteration vor allem bestätigt, was im Design Thinking erarbeitet
 wurde. Außerdem konnte sich ein allgemeiner Eindruck von der Spotifynutzung gemacht werden, was hilfreich war, um
 abzuschätzen, welche Funktionen hilfreich sein könnten.
 
@@ -710,7 +707,7 @@ werden, in dem die Benutzerführung optimiert und Erklärungen eingeführt werde
 
 ## Auswertung
 
-Um eine möglichst objektive und nachvollziebare Auswertung zu ermöglichen, werden die beiden Entwicklungsansätze in
+Um eine möglichst objektive und nachvollziehbare Auswertung zu ermöglichen, werden die beiden Entwicklungsansätze in
 verschiedenen Kriterien betrachtet und bewertet.
 
 | Kriterium | Design Thinking                                                                                                                | User Centered Design                                                                                                        |
@@ -749,7 +746,7 @@ verschiedenen Kriterien betrachtet und bewertet.
 
 [Abbildung 6]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/allRetung.png
 
-[Abbildung 7] - Rettungsapp: Wie gut hast du dich in dem Prototypen zurechtgefunden?
+[Abbildung 7] - Rettungsapp: Wie gut hast du dich in dem Prototyp zurechtgefunden?
 
 [Abbildung 7]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/FrageZurechtgefunden.png
 
