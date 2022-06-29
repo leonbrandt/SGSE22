@@ -361,13 +361,13 @@ wp_redirect(get_site_url(), 301);exit;
 
 Die `index.php` enthält die Dateien `header.php` und `footer.php` mit den Funktionen `get_header()` und `get_footer()`, und dasselbe gilt für die Fußzeile. Dann gibt es eine WordPress-Schleife, die nach den Beiträgen sucht und den Inhalt für jeden einzelnen ausgibt. So sieht das Theme für Millennials Digitaldesign GmbH im WordPress-Backend aus:
 
-IMAGE HERE
+![Screenshot 2022-06-27 190128](https://user-images.githubusercontent.com/58107983/176181897-d35246ea-e565-4276-be3f-c0d0c5fe7e01.png)
 
 **Abbildung 3** - Millennials Digitaldesign Theme im WordPress-Backend
 
 Das Theme sollte nun zum Aktivieren und Testen bereit sein. Der nächste Schritt besteht darin, eine Vorlagendatei für die Startseite zu erstellen und sie entsprechend der Vorlagenhierarchie `front-page.php` zu nennen. Dies ist nur der Anfang, und jetzt kann man zu allen Vorlagen zurückgehen und Inhalte wie Bilder und Text hinzufügen.
 
-## 6 Fazit
+## 5 Fazit
 
 React.js ist eine gute Option für JavaScript-Entwickler, die Single-Page-Webanwendungen erstellen. Es ermöglicht Entwicklern, komplexe Websites mit wiederverwendbaren Komponenten zu erstellen. Ein großer Vorteil ist die Möglichkeit, nur die Komponente mit den relevanten Daten zu aktualisieren. Anstatt die gesamte Seite neu zu laden, verfolgt React über sein virtuelles DOM genau, was sich geändert hat. React ist schnell, skalierbar und flexibel, da es sich um eine Bibliothek und nicht um ein Framework handelt. Außerdem gibt es eine große und aktive Entwicklergemeinde und eine gute Dokumentation.
 
@@ -375,7 +375,7 @@ WordPress ist eine gute Lösung für eine breite Palette von Anwendungen. Sowohl
 
 Eine eindeutige Meinung darüber, welches Tool für die Entwicklung von "Content" besser ist, kann nicht geäußert werden. Sowohl WordPress als auch React.js verfügen über unterschiedliche Funktionalitäten und Frameworks und bieten somit unterschiedliche Möglichkeiten. Folglich müssen die Entwickler je nach ihren Anforderungen und Erfahrungen entscheiden, welches Tool sie verwenden möchten.
 
-## 7 Referenzen
+## 6 Referenzen
 
 [1]: Comparison of the usage statistics of PHP vs. JavaScript for websites - https://w3techs.com/technologies/comparison/pl-js,pl-php
 

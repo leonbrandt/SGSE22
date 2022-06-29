@@ -6,7 +6,8 @@
 1. Herausfinden, wie Cloud-Ressourcen zum Aufbau einer Microservice-Architektur verwendet werden können.
 2. Die Hauptvorteile der drei wichtigsten Anbieter von Cloud-Ressourcen (Azure Services, Google Cloud Services und Amazon Services) kennen.
 3. Herausfinden, welche Module zum Aufbau von Microservices benötigt werden und erfahren, wie diese Module in der Praxis am Beispiel mindestens eines Cloud-Ressourcenanbieters funktionieren
-4. (Optional) Untersuchen die Betriebskosten einer Microservice-Architektur für ein Unternehmen.
+4. Untersuchen die Betriebskosten einer Microservice-Architektur für ein Unternehmen.
+5. Die Leistung virtueller Maschinen vergleichen und die am besten geeignete Option für die Microservice-Architektur ermitteln.
 
 # 2.	Theoretische Grundlagen
 
@@ -163,6 +164,45 @@ Die Rechenleistung ist begrenzt. Und der Preis für mehrere einfache Server ist 
  5. Günstige Preise.
  6. Azure Synapse Link für Azure Cosmos DB ist ein cloudbasiertes HTAP-Feature (Hybrid Transactional and Analytical Processing). Dies bietet Betriebsdatenanalysen in Azure Cosmos DB nahezu in Echtzeit und eine einfache Integration zwischen Azure Cosmos DB und Azure Synapse Analytics. [11]
 
+## 5.2 Azure Kubernetes Kluster (AKS)
+
+Der Knoten ist eine Produktionsbox, die die Docker-Engine ausführt, die es ihr ermöglicht, Docker-Container wie unseren Katalog-Container und unseren Inventar-Container auszuführen. [16]
+
+Z.b. es gibt ein paar Knoten, und es wird benötigt, um die Docker-Container dort auszuführen. Die Hauptaufgabe von Kubernetes besteht darin, die Container in Pods zu platzieren, die in den Knoten ausgeführt werden können. Ein Pod ist die kleinste bereitstellbare Recheneinheit in Kubernetes und besteht aus einer Gruppe von einem oder mehreren Containern, die Speicher- und Netzwerkressourcen gemeinsam nutzen. Um den Container in einen Pod in einem Knoten zu bringen, kann der Benutzer eine Bereitstellung erstellen, in der er den Namen des bereitzustellenden Images, die Anzahl der Repliken des Pods, die er erstellen möchte, und viele andere Details angibt. Er stellt diese Bereitstellung für die Kubernetes-Steuerungsebene bereit, die die Dienste enthält, die zum Ausführen von Pods erforderlich sind. Die Steuerungsebene fährt fort und zieht das angegebene Docker-Image aus der entsprechenden Containerregistrierung in den Knoten herunter und verwendet es dann, um den angeforderten Pod zu erstellen. Kubernetes kann auch die Auswahl der Knoten für die Pods übernehmen. Wenn ein zweites Replikat des Katalog-Pods hinzugefügt werden muss, muss der Benutzer die Anzahl der Replikate in der Bereitstellung ändern, und Kubernetes startet einen zweiten Pod in dem Knoten, der über freie Ressourcen verfügt. Dies soll eine Vorstellung davon vermitteln, wie einfach die Auswahl der Microservices in Kubernetes ist. Für einen automatisierteren Ansatz ist es möglich, die automatische Skalierung mit einem horizontalen Pod-Autoscaler oder HPA zu aktivieren. Es besteht die Möglichkeit, Ressourcenschwellenwerte zu definieren, die die Erstellung neuer Pods automatisch auslösen können. Beispielsweise könnte definiert werden, dass keiner der Pods mehr als 50 % der CPU verwenden sollte, und wenn ein Pod diese Auslastung erreicht, sollte automatisch ein neuer Pod erstellt werden, um den Überschuss zu bewältigen, wobei mindestens ein Pod beibehalten und erweitert wird bis zu insgesamt 10 Pods in diesem Beispiel. Ein weiteres wichtiges Merkmal von Kubernetes ist seine Fähigkeit zur Selbstheilung. Wenn einer der Pods abstürzt, stellt Kubernetes sofort fest, dass die angeforderte Anzahl an Replikaten nicht mit der Anzahl der vorhandenen Pods übereinstimmt, und stellt daher sofort einen neuen Pod bereit, ohne dass in irgendeiner Weise eingegriffen werden muss. Kubernetes kann auch sowohl Konfigurationsdaten als auch geheime Werte speichern und sie den Pods als Umgebungsvariablen zur Verfügung stellen. [17]
+
+**Diensterkennung.**
+Angenommen, der Inventar-Pod möchte den Katalog-Pod aufrufen. Um dies zu ermöglichen, könnte ein Kubernetes-Dienst erstellt werden. Diesem Dienst wird ein Name und eine IP-Adresse zugewiesen, die von jedem Pod erkannt werden können, der in den von Kubernetes verwalteten Knoten ausgeführt wird. Hier kann Inventory den für Katalog konfigurierten Dienst aufrufen, und der Dienst leitet ihn an einen der Katalog-Pods weiter. Dies unterstreicht auch die Lastausgleichsfähigkeit von Kubernetes, denn wenn mehrere Pods den Microservice ausführen, entscheidet der Dienst, wie der Lastausgleich zwischen ihnen erfolgt. Wenn ein externer Client benötigt wird, um über das Internet auf die Katalog-Pods zuzugreifen, muss der Kubernetes-Dienst auf den Load-Balancer-Typ geändert werden, und er erhält eine externe IP, die Clients erreichen können, vorausgesetzt, Kubernetes ist dies läuft bei einem Public-Cloud-Anbieter. Ein weiteres Merkmal von Kubernetes ist die schrittweise Einführung neuer Containerversionen ohne Ausfallzeiten. Wenn der Benutzer also die Inventory-Bereitstellung geändert hat, um das Inventory V2-Image zu verwenden, wird Kubernetes zunächst einen neuen Inventory-Pod mit der neuen Containerversion starten, anstatt den vorhandenen Inventory-Pod zu zerstören und einen neuen zu erstellen Es kann bestätigen, dass dieser neue Pod fehlerfrei und bereit ist, Anfragen zu empfangen, und erst dann wird es fortfahren und den alten Pod löschen. Die Inventarclients werden diese Versionsaktualisierung nie bemerken.
+
+Alles, was hier beschrieben wird, ist also ein sogenannter Kubernetes-Cluster. In Microsoft Azure dieser Cluster hat die Name "Azure Kubernete Kluster (AKS)".
+
+## 5.3 API-Gateway.
+
+Ein API-Gateway ist ein Dienst, der den Einstiegspunkt in die Anwendungs-REST-API von außen darstellt. Das Hauptanliegen in einer Microservices-Umgebung ist die Zuordnung von Anforderungen externer Parteien zu internen Microservices, aber es kann auch viele andere Querschnittsprobleme lösen. Um den Zweck des API-Gateways besser zu verstehen, untersuchen wir einige der Probleme, die bei der Verwendung einer direkten Client-zu-Microservice-Kommunikation auftreten können. Wenn ein Load-Balancer-Service im Kubernetes-Cluster konfiguriert ist, gibt er dem Identity-Microservice eine öffentliche IP, wodurch Clients von überall darauf zugreifen können. Dies funktioniert gut für einen Microservice, aber es wird Probleme für zukünftige Microservices geben. Wenn der Programmierer weitere Load-Balancer-Dienste für andere Microservices hinzufügt, erhält jeder eine neue öffentliche IP, und da die Clients wahrscheinlich über DNS-Adressen anstelle von IPs auf Microservices zugreifen, werden alle diese DNS-Adressen IPs zugeordnet. Dies ist eindeutig nicht skalierbar, und je nach Cloud-Anbieter verursacht jede neue öffentliche IP zusätzliche Kosten, die mit neuen Microservices nur weiter steigen werden.
+
+Da die Microservices direkt aus dem öffentlichen Internet erreichbar sind, sind sie verschiedenen Arten von Angreifern ausgesetzt. Einige von ihnen senden möglicherweise mehrere Anfragen ohne jegliche Form der Authentifizierung oder Autorisierung. Dies wird niemals dazu führen, dass die Angreifer unbefugten Zugriff auf Microservices erhalten, da alle REST-APIs ordnungsgemäß konfiguriert sind, um eine Autorisierung anzufordern. Es verbraucht jedoch Ressourcen, die die Microservices für etwas Nützliches verwenden könnten.
+
+Die Angreifer könnten auch DDoS-Angriffe versuchen, die einen oder mehrere der Microservices überwältigen und normale Clients daran hindern könnten, sie sinnvoll zu nutzen.
+
+Es ist wichtig, die gesamte Kommunikation mit https zu verschlüsseln, aber da alle Microservices direkt dem Internet ausgesetzt sind, muss für jeden von ihnen ein TLS-Zertifikat eingerichtet werden, außerdem müssen alle Microservices den https-Datenverkehr entschlüsseln, was sich auf die Leistung von auswirkt alle von ihnen.
+
+Schließlich führt die direkte Client-zu-Microservice-Kommunikation zu einer unerwünschten Kopplung. Beispielsweise können Kunden heute einen Kauf über den Kaufvorgang des Trading-Microservices starten und sich auch einen Überblick über die Artikel verschaffen, die über den Store-Vorgang auf demselben Microservice gekauft werden können. Wenn die Organisation schließlich entscheidet, dass der Trading-Microservice zu viel leistet und in mehrere Microservices aufgeteilt werden muss, wird der Kaufvorgang nun Teil eines neuen Purchase-Microservices und der Store-Vorgang wird jetzt in den Store-Microservice verschoben. Da der Trading-Microservice nicht mehr existiert, können alle bestehenden Clients die Kauf- und Speichervorgänge nicht aufrufen und müssen aktualisiert werden, um die neuen Microservices aufrufen zu können, was eine Herausforderung darstellt und in einigen Fällen sogar unmöglich sein kann.
+
+**Vorteile eines API-Gateways.**
+
+Sobald der Programmierer ein API-Gateway hinzufügt, wird es zum Einstiegspunkt in die Microservices-REST-API von außen. Das bedeutet, dass außer dem Gateway niemand Zugriff auf die Microservices hat. Dies führt zu mehreren Vorteilen, beginnend mit der Schlüsselfähigkeit, Anforderungsrouting durchzuführen.
+
+Angenommen, einer der Clients möchte die Liste der Katalogelemente abrufen. Der Client ruft den Pfad „Katalog/Elemente“ auf dem Gateway auf, und dieses leitet diese Anforderung wiederum an die Artikeloperation im Microservice „Katalog“ weiter. Das Gleiche gilt für den Handels-/Geschäftspfad, der an den Geschäftsbetrieb im Trading-Microservice weitergeleitet wird. Dank dieser Fähigkeit wird eine öffentliche IP nur für das API-Gateway selbst benötigt, nicht für einen der Microservices, die nur interne IPs und DNS-Adressen innerhalb des Kubernetes-Clusters haben. Dadurch werden die Kosten für die Verwaltung öffentlicher IPs erheblich gesenkt und die Dinge für Kunden vereinfacht.
+
+Das API-Gateway kann so konfiguriert werden, dass der autorisierte Zugriff auf Microservices sichergestellt ist. Wenn also ein Client den Handels-/Kaufpfad anruft und das erforderliche Zugriffstoken nicht präsentiert, kann das Gateway den Ablauf initiieren, der ein Zugriffstoken über den Identitätsanbieter anfordert, und zwar erst, wenn das Zugriffstoken erworben wurde , kann er sie verwenden, um die ursprüngliche Anfrage an den Trading-Microservice weiterzuleiten. Auf diese Weise muss sich keiner der Microservices mit nicht autorisierten Anfragen befassen, wodurch wertvolle Ressourcen für weitere Aufgaben gespart werden. Das API-Gateway kann auch Ratenbegrenzungen erzwingen.
+
+Wenn also beispielsweise ein Angreifer damit beginnt, eine große Menge an Anfragen an den Identitäts-/Benutzerpfad zu senden, was zu einem DDoS-Angriff wird, kann die Ratenbegrenzungskomponente des Gateways sicherstellen, dass nur die Anfragen, die bestimmten Kriterien entsprechen, Microservices erreichen können , wodurch sichergestellt wird, dass sie nicht überfordert werden und für zukünftige Anfragen verfügbar bleiben. Ein weiterer wichtiger Vorteil ist die Möglichkeit, TLS-Terminierung durchzuführen. Der Programmierer kann jetzt verlangen, dass der gesamte Datenverkehr HTTPS verwendet, indem er ein TLS-Zertifikat nur auf dem API-Gateway installiert. Nachdem das Gateway die Anfrage erhalten hat, beschreibt es sie und sendet eine neue Anfrage an den entsprechenden Microservice, diesmal mit einfachem HTTP-Datenverkehr, und keine externe Entität hat Zugriff auf Dienste innerhalb des Kubernetes-Clusters.
+
+Da die TLS-Verschlüsselung am API-Gateway beendet wird, müssen die Microservices keine Ressourcen mehr für die Entschlüsselung des Datenverkehrs aufwenden, was wiederum ihre Ressourcen für weitere Aufgaben spart. Auch das Problem der Kopplung von Client und Microservices ist mit einem API-Gateway weg.
+
+Kommen wir noch einmal auf den Fall des Handels-/Kaufpfads zurück, der dem Kaufvorgang auf dem Trading-Microservice zugeordnet ist, und dem Handels-/Geschäftspfad, der dem Geschäftsvorgang auf demselben Microservice zugeordnet ist. Entscheidet sich der Programmierer schließlich dafür, Trading in drei neue Microservices aufzuteilen, muss er lediglich das im API-Gateway konfigurierte Routing so ändern, dass die Kauf- und Speicherpfade nun auf die neuen Microservices zeigen. Die Clients müssen nicht einmal wissen, dass eine solche interne Konfiguration geändert wurde, und sie können die Operationen so lange wie nötig auf den gleichen Pfaden wie zuvor aufrufen.
+
+Schließlich könnten die Überwachung und Protokollierung im API-Gateway aktiviert werden, um einen besseren Überblick über die Anforderungen zu erhalten, die das System durchlaufen.
+
 -----------
 
 # 6. Realisierung von der Microservice-Architektur.
@@ -213,6 +253,15 @@ docker push "$appname.azurecr.io/trading:$version"
 
 Der kurze Prozess zum Erstellen einer Microservice-Architektur basierend auf der virtuellen Maschine Australien Centre Standard_a2_v2, die für ein Studentenkonto verfügbar ist, wurde oben beschrieben. 2 vCPUs, 4 GiB. Dieses Kapitel beschreibt die Implementierung von drei weiteren virtuellen Maschinen und beschreibt, wie die Zugriffsgeschwindigkeiten von Microservices verglichen werden, die auf allen VMs erstellt wurden. Um die Ladegeschwindigkeit der Website zu bewerten, wurden Online-Ressourcen verwendet, um die Geschwindigkeit von Webverbindungen von Google [12], Solarwinds Pingdom [13] und GTmetrix [14] zu messen. Alle Seiten lieferten jedoch ungefähr die gleichen Ergebnisse. Daher wurden die Ergebnisse des bekanntesten Dienstes von Google als Grundlage für die Messung genommen.
 
+Da das Studentenkonto Einschränkungen hinsichtlich der Größe der VM hat, wurde ein Abonnement für Standardbenutzer abgeschlossen. Als nächstes wurde die VM ersetzt. Dies kann über die Azure-Befehlszeilenschnittstelle mit dem Befehl erfolgen:
+```powershell
+az feature register --name EnablePodIdentityPreview --namespace Microsoft.ContainerService
+az extension add --name aks-preview
+
+az aks create -n $appname -g $appname --node-vm-size standard_a2_v2 --node-count 2 --attach-acr $appname --enable-pod-identity --network-plugin azure --generate-ssh-keys --location germanywestcentral
+```
+Wo "aks" bedeutet Azure Kubernetes Service.
+
 Zur Messung der Seitenladegeschwindigkeit wurde eine Homepage mit einem Slider bestehend aus vier Fotos ausgewählt. Beim Laden dieser Seite wird eine Anfrage an den Identity-Microservice gesendet und je nachdem, ob der Benutzer ein registrierter Benutzer, Administrator oder Gast ist, unterschiedliche Inhalte erstellt. Vier virtuelle Maschinen wurden zum Vergleich ausgewählt: 
 * Australien Center **Standard_a2_v2.** 2 vCPU, 4GiB - 0.1060 €/St.
 * Germany West Central (Frankfurt) **Standard_a2_v2.** 2 vCPU, 4GiB - 0.0870 €/St.
@@ -225,11 +274,15 @@ Dabei wurde die Abhängigkeit von Anzahl der Prozessorkerne und Arbeitsspeicher 
 
 Die Grafik zeigt, dass das Laden der ersten Seite immer viel länger dauert als nachfolgende Ladevorgänge. Dies geschieht meiner Meinung nach, weil einige der Prozesse im lokalen Cache des Browsers und im Cache des Servers gespeichert werden.
 
-Die Grafik zeigt, dass eine VM, die sich in großer Entfernung vom Client befindet, 0,3-0,45 Sekunden langsamer läuft. Bei mehreren REST-API-Anfragen kann sich diese Zeit erheblich verlängern und dies kann den Betrieb des Microservices kritisch beeinträchtigen. Daher ist es zumindest für solche Microservices wie Trading notwendig, möglichst viele virtuelle Maschinen in verschiedenen Ländern mit der dichtesten Abdeckung zu erstellen.
+Die Grafik zeigt, dass eine VM, die sich in großer Entfernung vom Client befindet, 0.3-0.45 Sekunden langsamer läuft. Bei mehreren REST-API-Anfragen kann sich diese Zeit erheblich verlängern und dies kann den Betrieb des Microservices kritisch beeinträchtigen. Daher ist es notwendig, möglichst viele virtuelle Maschinen in verschiedenen Ländern mit der dichtesten Abdeckung zu erstellen und API-Gateway zu verwenden.
 
-Die Grafik zeigt auch, wie viele Ressourcen die Microservice-Architektur benötigt. Offensichtlich lohnt es sich für die Konzepte von Microservice-Architekturen und Microservices für kleine oder geschlossene Nutzung, eine VM mit mindestens 4 vCPUs und 8 GiB zu wählen. Die Kosten für eine solche VM sind doppelt so hoch wie die billigste der angebotenen Optionen, aber die Geschwindigkeit ist viel höher. Dies geschieht, weil 2 vCPUs und 4 GiB Speicher für eine Microservice-Architektur Rücken an Rücken ausreichen. Außerdem kann bei einem billigen Microservice beim Warten auf das Laden einer Seite länger als zwei oder drei Sekunden ein Fehler beim Laden der Website auftreten, der vom Microservice ausgegeben wird. Dies ist konfigurierbar, aber es ist am besten, Kunden nicht so lange warten zu lassen.
+Die Grafik zeigt auch, wie viele Ressourcen die Microservice-Architektur benötigt. Offensichtlich lohnt es sich für die Konzepte von Microservice-Architekturen und Microservices für kleine oder geschlossene Nutzung, eine VM mit mindestens 4 vCPUs und 8 GiB zu wählen. Die Kosten für eine solche VM sind doppelt so hoch wie die günstigere der angebotenen Optionen, aber die Geschwindigkeit ist viel höher. Dies geschieht, weil 2 vCPUs und 4 GiB Speicher für eine Microservice-Architektur zu knapp ausreichen. Außerdem kann bei einer günstigeren Option des Microservices beim Warten auf das Laden einer Seite länger als zwei oder drei Sekunden ein Fehler beim Laden der Website auftreten, der vom Microservice ausgegeben wird. Dies ist konfigurierbar, aber es ist am besten, Kunden nicht so lange warten zu lassen.
 
-Es ist schwierig, die Leistungsobergrenze für VMs zu messen, da sie als DDos-Angriff erkannt wird. Es wird benötigt, um VMs mit der realen CPU lokal zu testen. Allerdings gibt es eine Tabelle von Microsoft, die die Abhängigkeit von Performance Cap vom Arbeitsspeicher zeigt. Anhand dieser Tabelle können Sie grob die Last berechnen, die die VM bewältigen kann. [15]
+In meinem Fall die virtuelle Machine mit 2 vCPUs und 8 GiB Speicher zeigt sich relativ langsam im Vergleich mit Standard_D2_v4 (4 vCPU, 8 GiB), aber kostet auch fast zweimal günstiger. Meine Meinung nach ist, dass der Kund nicht 600-800 ms warten muss. Das ist eine umbequeme Funktionalität.
+
+Es ist schwierig, die Leistungsobergrenze für VMs zu messen, da sie als DDos-Angriff erkannt wird. Es ist nötig in diesem Fall VMs mit der realen CPU lokal zu testen. Allerdings gibt es eine Tabelle von Microsoft, die die Abhängigkeit von "Performance Cap" vom Arbeitsspeicher zeigt. Anhand dieser Tabelle können Sie grob die Last berechnen, die die VM bewältigen kann. [15]
+
+Daher folgt, dass die am besten geeignete virtuelle Maschine in der Anfangsphase die "Standard_F4s_v2" VM ist, die sich in der Nähe des Standorts der Clients befindet. Da die Microservice-Anfragen zunehmen, wird empfohlen, leistungsfähigere VMs in Betracht zu ziehen. Eine Liste aller verfügbaren VMs in Mitteldeutschland ist unter folgender URL verfügbar: https://azureprice.net/?region=germanywestcentral&sortField=memoryInMB&sortOrder=true
 
 
 # Literaturverzeichnis
@@ -248,6 +301,8 @@ Es ist schwierig, die Leistungsobergrenze für VMs zu messen, da sie als DDos-An
 * [13] - URL: https://tools.pingdom.com/
 * [14] - URL: https://gtmetrix.com/
 * [15] - Microsoft Docs, Azure managed disk types. URL: https://docs.microsoft.com/nb-no/azure/virtual-machines/disks-types#premium-ssd
+* [16] - vgl. Docker Docs. URL: https://docs.docker.com/engine/swarm/how-swarm-mode-works/nodes/
+* [17] - vgl. Grundlegende Kubernetes-Konzepte für Azure Kubernetes Service (AKS). Microsoft Docs. URL: https://docs.microsoft.com/de-de/azure/aks/concepts-clusters-workloads
 
 # Verwendete Icons von Dritten
 * https://www.diagrams.net/

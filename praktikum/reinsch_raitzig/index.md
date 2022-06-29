@@ -64,14 +64,9 @@ TODOs:
 	- Feature-Engineering
 - Training und Bauen mit fuchsia
 
-## Register Allocation Pass ##
 
-TODO: aus research.md zusammenfassen
 
-## experimentelle Toolchain ##
 
-TODO: siehe research
-TODO: validieren
 
 ## Kompilierung von LLVM ##
 
@@ -80,3 +75,65 @@ TODO: validieren
 ## Einfluss von MLGO auf Codegröße ##
 
 [Untersuchung des Einflusses von MLGO auf die Codegröße](praktikum/reinsch_raitzig/research-binary-size.md).
+
+
+
+
+
+
+
+
+
+## LLVM ##
+
+TODO:
+- Allgemeiner Überblick
+- clang
+- Architektonischer Überblick
+- Optimierer
+- Wie funktioniert allgemein der Aufruf und die Einbindung von Optimierungspässen?
+
+Compiler sind komplexe Programme, deren Aufgabe die Übersetzung von (High Level)
+Programmiersprachen in Maschinencode für eine spezifische Prozessorarchitektur ist.
+Während dieses Übersetzungsprozesses werden häufig Optimierungsschritte vorgenommen,
+die den Programmcode verändern, sodass der generierte Maschinencode kleiner, schneller
+und energieeffizienter wird (zwischen diesen drei Zielen muss allerdings eine Balance
+gefunden werden).
+
+Compiler werden allgemein in zwei Schichten unterteilt. Das sprachspezifische
+Frontend, welches lexikalische, syntaktische und semantische Analysen vornimmmt und
+das Backend, welches Optimierungsschritte vornimmt und Maschinencode generiert.
+
+TODO: Nystrom Bild einbauen.
+
+LLVM (**L**ow **L**evel **V**irtual **M**achine) ist ein Framework welches die
+Implementierung eines Compilers erleichtert. Kern dieses Frameworks ist die
+LLVM Intermediate Representation (LLVM-IR), die eine generische High Level
+Maschinensprache repräsentiert, die an keine Zielarchitektur gebunden ist.
+
+TODOs:
+- LLVM-IR Hierarchie
+- SSA?
+- Aufruf-Schaubild
+
+Neben der Definition der LLLVM-IR beeinhaltet das LLVM Projekt viele Komponenten,
+die das Compiler-Backend implementieren, unter anderem einen Optimierer, einen Linker
+und die Generierung von architekturspezifischem Maschinencode. Diese Komponenten
+operieren auf der LLVM-IR, sodass das generische Backend von dem sprachspezifischen
+Frontend losgelöst ist.
+
+Der Optimierer ist modular in einzelnen Optimierungspässen aufgebaut, die jeweile eine
+einzelne Optimierung (bspw. Constant-Propagation oder Dead-Code Elimination)
+ausführen. Diese Optimierungspässe können für verschiedene Optimierungslevel
+kombiniert werden (hierbei ist allerdings darauf zu achten, dass die Reihenfolge
+der Optimierungspässe starke Auswirkungen auf die Optimierungsergebnisse haben kann).
+
+
+
+## Inlining Pass##
+
+- Was macht der?
+- Wie funktioniert der allgemein?
+- Was trifft der Pass für Annahmen?
+- In welchen Szenarien hat der Pass Probleme?
+

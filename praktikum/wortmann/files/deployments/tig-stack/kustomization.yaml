@@ -1,0 +1,12 @@
+resources:
+  - namespace.yml
+  - volume-grafana.yml
+  - volume-influxdb.yml
+  - secret-influxdb_token.yml
+  - configmap-grafana.yml
+  - configmap-telegraf.yml
+  - deployment.yml
+  - service.yml
+  - ingress-grafana.yml
+  - ingress-influxdb.yml
+namespace: sgse22-tig
