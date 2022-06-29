@@ -12,7 +12,7 @@ namespace EzOrder.Views
     {
         public Benchmark()
         {
-            var btnBenchmark = new Button { Text = "Benchmark" };
+            var btnBenchmark = new Button { Text = "Benchmark", BackgroundColor = Constants.Constants.primaryColor };
             btnBenchmark.Clicked += BtnBenchmark_Clicked;
             Content = new StackLayout
             {
@@ -26,7 +26,7 @@ namespace EzOrder.Views
 
         private void BtnBenchmark_Clicked(object sender, EventArgs e)
         {
-            var btnBenchmark = new Button { Text = "Benchmark" };
+            var btnBenchmark = new Button { Text = "Benchmark", BackgroundColor = Constants.Constants.primaryColor };
             btnBenchmark.Clicked += BtnBenchmark_Clicked;
             string result = "";
 

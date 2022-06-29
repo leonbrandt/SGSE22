@@ -334,7 +334,7 @@ Ein Beispiel für eine `header.php`-Datei:
 </html>
 ```
 
-Und schließlich die Hauptvorlagendatei `index.php`
+Und schließlich die Hauptvorlagendatei `index.php`:
 
 ```php
 <?php
@@ -378,12 +378,17 @@ Eine eindeutige Meinung darüber, welches Tool für die Entwicklung von "Content
 ## 6 Referenzen
 
 [1]: Comparison of the usage statistics of PHP vs. JavaScript for websites - https://w3techs.com/technologies/comparison/pl-js,pl-php
+
 [2]: Usage statistics of client-side programming languages for websites - https://w3techs.com/technologies/overview/client_side_language
+
 [3]: WordPress market share - https://kinsta.com/wordpress-market-share/
+
 [4]: Template Hierarchy - https://developer.wordpress.org/themes/basics/template-hierarchy/
+
 [5]: WordPress Codex - https://codex.wordpress.org
 
 **Andere Quellen:**
 
 Tutorial: Intro to React - https://reactjs.org/tutorial/tutorial.html
+
 WordPress Theme Development - https://codex.wordpress.org/Theme_Development
