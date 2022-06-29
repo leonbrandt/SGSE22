@@ -61,10 +61,10 @@ allerdings ein sehr ähnliches Vorgehen beschrieben.
 
 ![](assets/User-Experience-Design.png)
 
-[Abbildung 2]
+[Abbildung 1]
 *User-Experience-Design-Prozess nach [Mos12] S.14*
 
-In [Abbildung 2] wird der Prozess visualisiert. Er ähnelt dabei einem Ablauf wie
+In [Abbildung 1] wird der Prozess visualisiert. Er ähnelt dabei einem Ablauf wie
 man ihn aus agilen Entwicklungsmethoden kennt. Die Anwendung wird zyklisch
 entwickelt und dementsprechend zyklischen Abständen veröffentlicht. Auffällig ist,
 dass der Fokus nicht, wie sonst üblich, auf der Implementierung liegt, sondern
@@ -77,15 +77,15 @@ wenige Fehler während der Implementierung passieren.
 
 ![](assets/UserCenteredDesignProzess.png)
 
-[Abbildung 3]
+[Abbildung 2]
 *User-Centered-Design nach [IPI]*
 
-In [Abbildung 3] wird eine weitere Möglichkeit aufgeführt, den Prozess des User Centered Design auszuführen [[IPI]].
+In [Abbildung 2] wird eine weitere Möglichkeit aufgeführt, den Prozess des User Centered Design auszuführen [[IPI]].
 Hier werden fünf Phasen aufgestellt, die iterativ durchlaufen werden.
 
 1. Strategie: Zuerst muss der komplette Prozess geplant werden, bevor er gestartet wird.
 2. Analyse: Der Nutzerkontext wird untersucht, indem die Eignerschaften, Verhaltensweisen und Erwartungshaltungen der
-   Nutzer analysiert werden. An dieser Stelle wird Feedback von dne nutzern eingeholt.
+   Nutzer analysiert werden. An dieser Stelle wird Feedback von den Nutzern eingeholt.
 3. Spezifikation: Hier werden die Erkenntnisse aus dem letzten Schritt in konkrete Anforderungen gegossen.
 4. Design/Implementierung: Je nach Projekt wird hier weiter an einem Prototyp designt oder die Anforderungen werden in
    das Produkt implementiert.
@@ -169,6 +169,11 @@ werden. Also wieder das Feedback über einen Fragebogen einholen, um daraus neue
 zeitlicher Verfügbarkeit können diese Anforderungen noch einmal umgesetzt werden.
 
 Diese Iteration können beliebig weitergeführt werden, um eine Anwendung weiter zu optimieren.
+
+![](assets/kompletterAblauf.png)
+
+[Abbildung 3]
+*Geplanter Projektablauf*
 
 ## Durchführung
 
@@ -409,7 +414,7 @@ anzulasten, bei einem größeren Team kommen mehr Eindrücke auf, die immer neue
 Im Endeffekt hat das Design Thinking seinen Zweck erfüllt, das Problem besser zu durchdringen und einen guten Prototyp
 zu entwickeln.
 
-Für das User Centered Design müssen die zwei iterationen einzeln betrachtet werden. Bei der ersten Umfrage, die zu dem
+Für das User Centered Design müssen die zwei Iterationen einzeln betrachtet werden. Bei der ersten Umfrage, die zu dem
 zuvor erstellten Prototypen gemacht wurde, konnten vor allem die Ergebnisse aus dem Design Thinking bestätigt werden.
 Konkrete Design-Fragen konnten hier nur schwierig beantwortet werden, da die Mockups einfach gehalten wurden. Hier wäre
 es möglich die mockups bereits genauer zu gestalten oder Fragen zum Design zu fragen, ohne konkrete Vorlagen zu haben.
@@ -603,7 +608,8 @@ aufschlussreichsten Fragen eingegangen.
 [Abbildung 17]
 *Wie werden Playlisten genutzt?*
 
-Eine Nachfrage zum allgemeinen Nutzerverhalten betrifft die aktuelle Nutzung von Playlisten ([Abbildung 17]). Dabei kam heraus, dass vor
+Eine Nachfrage zum allgemeinen Nutzerverhalten betrifft die aktuelle Nutzung von Playlisten ([Abbildung 17]). Dabei kam
+heraus, dass vor
 allem selbsterstellte und von Spotify erstellte Playlisten genutzt werden. Das ergibt die Erkenntnis, dass das Erstellen
 von Playlisten, welches mit diesem projekt erweitert werden soll, auf jeden Fall genutzt wird.
 
@@ -612,39 +618,124 @@ von Playlisten, welches mit diesem projekt erweitert werden soll, auf jeden Fall
 [Abbildung 18]
 *Optionen zum Mischen*
 
+In [Abbildung 18] ist die Frage nach Mischoptionen zu erkennen. Hier lässt sich erkennen, dass alle drei Optionen
+potenziell genutzt werden. Vor allem die Möglichkeit einzustellen, wie viele hintereinander aus einer Playlist gemischt
+werden, ist für viele Befragte sinnvoll.
+
 ![](assets/fertigePlaylistAnzeigen.png)
 
 [Abbildung 19]
-*Potenzielle Nutzung der Spotifyerweiterung*
+*Anzeige der fertigen Playlist*
+
+Eine Idee, die beim Erstellen der Mockups aufgekommen ist, ist es die fertige Playlist innerhalb der App noch einmal
+anzuzeigen. Ein Großteil der Befragten findet die Idee sinnvoll und sie wird somit als Anforderung für die
+Implementierung aufgenommen.
+
+Aus diesen Ergebnissen lassen sich folgende Anforderungen aufstellen:
+
+1. Umsetzen der bestehenden Mockups
+2. Anzeige der fertigen Playlist, nachdem sie erstellt wurde
+
+Diese Anforderung sollen im nächsten Schritt implementiert werden. Da die Anbindung an die echte Spotify-API einen
+großen Mehraufwand bedeuten würde, wird in der App mit Fakedaten gearbeitet. Dadurch können die visuellen Elemente
+umgesetzt werden, ohne viel Aufwand in die Hintergrundprozesse zu stecken. Während der Entwicklung wurde außerdem
+entschlossen die Funktion doppelte Lieder aus Playlisten auszuschließen vorerst nicht umzusetzen.
+
+Für die Entwicklung wurde ebenfalls Flutter eingesetzt. Um die Anwendung möglichst einfach bereitzustellen, wurde wieder
+Firebase Hosting genutzt, um sie als Webapp für die umfrage zur Verfügung zu stellen.
+
+![](assets/completeSpotify.png)
+
+[Abbildung 20]
+*Screenshots der kompletten Spotifyerweiterung*
+
+[Abbildung 20] zeigt die Anwendung am Ende des ersten Zyklus. Die Mockups wurden alle umgesetzt und der Screen unten
+rechts zeigt die Darstellung der finalen Playlist. Es wurde beim Login noch ein Hinweis hinzugefügt, dass hier keine
+echten Daten eingegeben werden müssen, da keine Anbindung an die Spotify-API besteht. Die Anforderungen konnten also,
+zumindest visuell, umgesetzt werden.
+
+Mit Implementierung wird die nächste iteration gestartet. Diese startet wieder mit einer Umfrage. Genauso wie bei der
+Rettungsapp, konnten an dieser Stelle deutlich detailliertere Fragen zum Design gestellt werden.
 
 ![](assets/SpotifyDarkmode.png)
 
-[Abbildung 20]
+[Abbildung 21]
 *Sinnvolle Orientierung an Spotifydesign*
+
+Zuerst wurde die Entscheidung bewertet, sich mit dem Darkmode und der Primärfarbe Grün an dem Spotifydesign
+anzulehnen ([Abbildung 21]). Diese Designentscheidung kam sehr positiv an, kann also beibehalten werden.
 
 ![](assets/AnzeigePlaylist.png)
 
-[Abbildung 21]
+[Abbildung 22]
 *Anzeige von Playlisten*
+
+Einige der Fragen beschäftigen sich mit der konkreten Darstellung der Playlisten, Lieder und Mixe. Interessant ist hier
+vor allem, welche Infos von Nutzern auf der Übersicht benötigt werden. Beispielhaft wird in [Abbildung 22] die
+entsprechende Frage nach der Darstellung einer Playlist abgebildet. Hier lässt sich erkennen, dass vor allem der Titel
+und die Beschreibung für die Befragten relevant ist.
 
 ![](assets/NutzungSpotify.png)
 
-[Abbildung 22]
+[Abbildung 23]
 *Potenzielle Nutzung der Spotifyerweiterung*
 
-## Fazit
+Besonders interessant ist auch für die Spotifyerweiterung, ob die Befragten die entsprechende Anwendung nutzen
+würden. [Abbildung 23] zeigt da ein klares und positives Bild auf, alle befragten würden die App nutzen.
+
+#### Erkenntnisse
+
+Zum Abschluss der Spotifyerweiterung sollen ebenfalls die Erkenntnisse über den Ablauf festgehalten werden.
+
+Das Design Thinking hat für dieses Projekt sehr gut funktioniert. Einerseits konnte durch den veränderten Ablauf viele
+Wiederholungen vermieden werden, so dass das Ziel direkter erreicht werden konnte. Zum Anderen bot die Aufgabenstellung
+deutlich mehr Freiheiten, so dass während der Erkundung des Problems noch gar keine lösung im Raum stand. Dadurch
+konnten deutlich mehr Einwände gebracht werden, um an der Aufgabenstellung zu arbeiten. Hilfreich war außerdem, dass
+dieser Design Thinking Prozess mit vier Leuten bestritten wurde, die alle unterschiedliche Erfahrungen und Probleme mit
+Spotify gemacht haben. Dadurch konnten mehr Blickwinkel eingenommen werden. Dies half auch bei der finalen Ideenfindung,
+bei der eine Vielzahl an Ideen aufkamen. Vor allem die 6-3-5 Methode hat zum Abschluss sehr geholfen konkrete
+Anforderungen zu bilden.
+
+Für die Spotifyerweiterung war das Design Thinking ein kompletter Erfolg, um einen sinnvollen Prototyp zu entwickeln.
+
+Der Prozess des User Centered Design hat inder ersten Iteration vor allem bestätigt, was im Design Thinking erarbeitet
+wurde. Außerdem konnte sich ein allgemeiner Eindruck von der Spotifynutzung gemacht werden, was hilfreich war, um
+abzuschätzen, welche Funktionen hilfreich sein könnten.
+
+In der zweiten Iterationen konnten anhand konkreter Fragen, konkrete Anforderungen ausgemacht werden. So wurde das
+Grunddesign bestätigt und wurde festgelegt wie Playlisten und Lieder dargestellt werden sollen. In dieser Phase ist das
+Feedback der Nutzer sehr sinnvoll, da hier Designentscheidungen noch einfach geändert werden können. Interessant war
+außerdem die Erkenntnis, dass wenige Funktionen nicht selbsterklärend sind. Hier muss in späteren Versionen angepackt
+werden, in dem die Benutzerführung optimiert und Erklärungen eingeführt werden, wo es nötig ist.
+
+## Auswertung
+
+Um eine möglichst objektive und nachvollziebare Auswertung zu ermöglichen, werden die beiden Entwicklungsansätze in
+verschiedenen Kriterien betrachtet und bewertet.
+
+| Kriterium | Design Thinking                                                                                                                | User Centered Design                                                                                                        |
+|-----------|--------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| Ansatz    | Fördern von Innovation, um komplett neue Ideen zu finden. Dabei strikte Trennung zwischen Problemerkundung und Lösungsfindung. | Agiler Ansatz, um Endnutzer möglichst früh in Entwicklung einzubeziehen. Jede Prozessiteration enthält Feedback vom Nutzer. |
+| Team      | Möglichst breit aufgestelltes Team, aus verschiedenen Domänen. 3-6 Personen sind optimal.                                      | Größe des Entwicklungsteams egal. Zielgruppe muss möglichst direkt erreichbar sein                                          |
+| Effizienz | Kann zu Wiederholungen im Prozess kommen, dafür können unerwartete Ideen aufkommen                                             | Je nach Zyklusdauer und Feedbackmethode, kann Effizienz variieren. Bei direkter Auswertung von Umfragebögen, hohe Effizienz |
+| Stärken   | Kennenlernen eines neuen und potenziell komplexen Problems. Finden von komplett neuen Ideen                                    | Aufbauen einer nutzerfreundlichen UI. Direktes Feedback zu Designentscheidungen                                             |
+| Schwächen | Je nach Problemstellung, schwierig zwischen Problem und Lösung zu trennen. Kann während des Prozess repititv werden            | Auf Endnutzer angewiesen                                                                                                    |
 
 ## Anhang
 
 ### Abbildungsverzeichnis
 
-[Abbildung 2] - User-Experience-Design-Prozess nach [Mos12] S.14
+[Abbildung 1] - User-Experience-Design-Prozess nach [Mos12] S.14
 
-[Abbildung 2]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/User-Experience-Design.png
+[Abbildung 1]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/User-Experience-Design.png
 
-[Abbildung 3] - User-Centered-Design nach [IPI]
+[Abbildung 2] - User-Centered-Design nach [IPI]
 
-[Abbildung 3]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/UserCenteredDesignProzess.png
+[Abbildung 2]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/UserCenteredDesignProzess.png
+
+[Abbildung 3] - Geplanter Projektablauf
+
+[Abbildung 3]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/kompletterAblauf.png
 
 [Abbildung 4] - Brainstorming Rettungsapp
 
@@ -712,15 +803,19 @@ von Playlisten, welches mit diesem projekt erweitert werden soll, auf jeden Fall
 
 [Abbildung 20] - Sinnvolle Orientierung an Spotifydesign
 
-[Abbildung 20]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/SpotifyDarkmode.png
+[Abbildung 20]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/completeSpotify.png
 
-[Abbildung 21] - Anzeige von Playlisten
+[Abbildung 21] - Screenshots der kompletten Spotifyerweiterung
 
-[Abbildung 21]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/AnzeigePlaylist.png
+[Abbildung 21]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/SpotifyDarkmode.png
 
-[Abbildung 22] - Potenzielle Nutzung der Spotifyerweiterung
+[Abbildung 22] - Anzeige von Playlisten
 
-[Abbildung 22]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/NutzungSpotify.png
+[Abbildung 22]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/AnzeigePlaylist.png
+
+[Abbildung 23] - Potenzielle Nutzung der Spotifyerweiterung
+
+[Abbildung 23]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/NutzungSpotify.png
 
 ### Literaturverzeichnis
 
