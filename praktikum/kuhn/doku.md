@@ -294,11 +294,69 @@ PDFs konnten alle umgesetzt werden. Außerdem lässt sich auf der ersten Seite e
 vollständigen PDFs direkt zu sehen und Information über die App und ihre Quellen zu erlangen. Somit konnten alle
 Funktionen, die zuvor als Anforderungen aufgestellt wurden umgesetzt werden.
 
+Im Anschluss an die Implementierung folgt wieder die Evaluation der Ergebnisse. Mit der bereits implementierten App
+lassen sich deutlich detailliertere Fragen zu einzelnen Designentscheidungen stellen.
+
 ### Erweiterung zu Spotify
 
-*Kick-off*
+Für das zweite Projekt soll eine Anwendung zur Erweiterung von Spotify erstellt werden. Spotify ist ein
+Musikstreaminganbieter, der eine große reichweite genießt. Spotify bietet dabei eine API für Entwickler an durch die auf
+Daten über viele Elemente wie Playlists, einzelne Songs oder Podcasts zugegriffen werden kann. Es lassen sich genauso
+Inhalte über die API erstellen. Diese Möglichkeiten lassen sich nutzen, um eigene Anwendungen zu entwickeln, die die
+Plattform von Spotify nutzen und um Funktionalitäten zu erweitern.
 
-*Verstehen*
+#### Design Thinking
+
+Für den Design Thinking Prozess wird ein Team von vier Leuten aufgestellt. Die einzelnen Personen haben dabei
+verschiedene Hintergründe, wie es beim Design Thinking gewünscht ist. Der Prozess und die angewandten Methoden werden
+gegenüber dem Design Thinking abgeändert, um die Erfahrung aus dem ersten Mal zu nutzen und auf das Projekt anzupassen.
+Außerdem können so mehr Methoden für die einzelnen Schritte ausprobiert werden.
+
+Zu diesem Zweck wird in der Kick-Off Phase nur noch die Design Thinking Challenge aufgestellt. Angepasst wird sie erst
+am Ende des Schritts "Standpunkt definieren". Außerdem wird nach dem Brainstorming die Sweet-und-Sour-Methode
+angewendet, um die einzelnen Punkte einzuordnen. Die Methoden der User Journey Map und des stillen Beobachtens werden
+weggelassen, da es in diesem projekt keinen konkreten Ablauf gibt, der optimiert werden soll. Für die Ideengenerierung
+wird zusätzlich die 6-3-5 methode genutzt, um Ideen genauer ergründen zu können. Insgesamt sollen durch die neuen
+Methoden weniger Wiederholungen der gleichen inhalte erreicht werden.
+
+***Kick-Off***
+
+Für den Kick-Off wird wieder eine Aufgabenstellung erstellt, die möglichst viele Möglichkeiten für das projekt offen
+hält. Sie lautet: **System zur Erweiterung von Spotify, um Probleme zu beheben**
+
+***Verstehen***
+
+Zum Verstehen und sich der Problemstellung zu nähern wird wieder Brainstorming verwendet. Dafür wird sich an den
+wichtigen Begriffen der Challenge orientiert: System, Erweiterung, Spotify und Probleme.
+
+![](assets/BrainstormingProject2.jpg)
+
+[Abbildung 6]
+*Brainstorming Spotifyerweiterung*
+
+Das Ergebnis des brainstormings lässt sich in [Abbildung 6] erkennen. Vor allem im bereich der Probleme wurde bereits
+viele Dinge aufgezählt, die im Verlauf des Projekts zu Ideen weiterentwickelt werden können. Insgesamt konnte mit deser
+methode wieder ein gutes Grundverständnis der Aufgabenstellung geschaffen werden und bildet eine gute Basis für die
+weiteren Schritte.
+
+Um das Produkt Spotify genauer zu ergründen und gleichzeitig mit Konkurrenzprodukten zu vergleichen, wird die
+Sweet-und-Sour-Spot-Methode angewendet. Dabei werden drei Kreise aufgezeichnet: Einer steht für das eigene Angebot,
+einer für das Angebot der Konkurrenz und einer für die Wünsche der Kunden. Danach werden Features und Merkmale in diese
+Kategorien eingeordnet und entsprechend auf den Kreisen eingeordnet. Für dieses Projekt wurde Spotify als das eigene
+Angebot angesehen, da diese App erweitert werden soll.
+
+![](assets/SweetSourMethode.png)
+
+[Abbildung 7]
+*Sweet-und-Sour-Spot-Methode*
+
+In [Abbildung 7] ist die entsprechende Grafik mit den wichtigsten punkten zu sehen. Viele der Funktion sind in der Mitte
+der Kreise. Das heißt, dass diese sowohl im eigenen Angebot, als auch bei der Konkurrenz vorhanden sind und gleichzeitig
+Wünsche der Kunden erfüllen. Interessant für dieses Projekt ist vor allem der Sour Spot. Hier finden sich Funktionen
+wieder, de durch die konkurrenz umgesetzt werden, im eigenen Angebot aber fehlen. Sie lassen sich also potenziell in das
+eigene Angebot integrieren. Hier lassen sich Funktionen wie das Anzeigen von Musikvideos, sowie die automatische
+Erkennung von Liedern über das Mikrofon wiederfinden. 
+
 
 *Beobachten*
 
@@ -338,6 +396,14 @@ Funktionen, die zuvor als Anforderungen aufgestellt wurden umgesetzt werden.
 
 [Abbildung 5]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/ScreenshotRettungsApp.png
 
+[Abbildung 6] - Brainstorming Spotifyerweiterung
+
+[Abbildung 6]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/BrainstormingProject2.jpg
+
+[Abbildung 7] - Sweet-und-Sour-Spot-Methode
+
+[Abbildung 7]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/SweetSourMethode.png
+
 ### Literaturverzeichnis
 
 [balsamiq]
@@ -363,6 +429,10 @@ Funktionen, die zuvor als Anforderungen aufgestellt wurden umgesetzt werden.
 [NUN] - Landesausschuss Rettungsdienst Niedersachsen
 
 [NUN]: https://lard-nds.de/download/nun-algorithmen-2022/
+
+[Spotify]
+
+[Spotify]: https://www.spotify.com/de/about-us/contact/
 
 
 
