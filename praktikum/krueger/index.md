@@ -5,9 +5,9 @@
 ## Hintergrund:
 Im Unternehmen stellen Webapplikationen einen zunehmenden Anteil der Applikationen dar. Derzeit sind automatische Softwaretests hierbei nur nebenläufig und lediglich serverseitig umgesetzt und das Frontend ausschließlich manuell getestet worden, wodurch keine bis wenig Kenntnisse hinsichtlich Frontend-Tests vorhanden sind.
 
-Im Rahmen des Praktikums sollen daher Kenntnisse für das `automatisierte Testen von Frontends` gesammelt werden. Es gilt, anhand eines aktuell entwickelten Projekts (erste lauffähige Version) weit verbreitete Testframeworks zu vergleichen und erste [**Unit- und End-to-end-Tests**](https://www.geeksforgeeks.org/difference-between-end-to-end-testing-and-unit-testing/) zu entwickeln. 
+Im Rahmen des Praktikums sollen daher Kenntnisse für das *automatisierte Testen von Frontends* gesammelt werden. Es gilt, anhand eines aktuell entwickelten Projekts (erste lauffähige Version) weit verbreitete Testframeworks zu vergleichen und erste [**Unit- und End-to-end-Tests**](https://www.geeksforgeeks.org/difference-between-end-to-end-testing-and-unit-testing/) zu entwickeln. 
 
-Da die allgemeingültigen Qualitätsmerkmale von Software auch bei Softwaretests einen besonders hohen Stellenwert einnehmen, sollen hierbei `Methodiken zum Entwurf von wiederverwendbaren und erweiterbaren Code` ermittelt und bei der Entwicklung erster Tests verwendet werden.
+Da die allgemeingültigen Qualitätsmerkmale von Software auch bei Softwaretests einen besonders hohen Stellenwert einnehmen, sollen hierbei **Methodiken zum Entwurf von wiederverwendbaren und erweiterbaren Code** ermittelt und bei der Entwicklung erster Tests verwendet werden.
 
 ## Inhalte/Fragestellung:
 - Wie und in welchem Umfang kann unabhängiger, wiederverwendbarer Code beim Design von Softwaretests umgesetzt werden?
@@ -42,7 +42,7 @@ Da die allgemeingültigen Qualitätsmerkmale von Software auch bei Softwaretests
 # Relevante Rahmenbedingung(en)
 
 ## Innerbetriebliche Bedingungen
-Die im Unternehmen bestehenden Webapplikationen sind überwiegend unter Verwendung des Applikationsframeworks [Angular](https://angular.io/) umgesetzt. Darüber hinaus besteht die Anordnung, neu entwickelte Webapplikationen unter Verwendung eines konzenintern entwickelten, `Angular-spezifischen` [Software Development Kit (SDK)](https://www.dev-insider.de/was-ist-ein-sdk-a-730921/) umzusetzen. Es gilt somit davon auszugehen, dass zukünftige Webapplikationen ebenfalls mithilfe von Angular entwickelt werden.  
+Die im Unternehmen bestehenden Webapplikationen sind überwiegend unter Verwendung des Applikationsframeworks [Angular](https://angular.io/) umgesetzt. Darüber hinaus besteht die Anordnung, neu entwickelte Webapplikationen unter Verwendung eines konzenintern entwickelten, Angular-spezifischen [Software Development Kit (SDK)](https://www.dev-insider.de/was-ist-ein-sdk-a-730921/) umzusetzen. Es gilt somit davon auszugehen, dass zukünftige Webapplikationen ebenfalls mithilfe von Angular entwickelt werden.  
 
 ## Kurzübersicht der zugrundeliegenden Webapplikation
 Die Umsetzung der aus der Recherche resultierenden Konzepte erfolgt für und mit einer im Unternehmen bereits bestehenden Webapplikation, welche bisher keine automatischen Softwaretests für das Frontend aufweist. Die Webapplikation bietet den Benutzern im Wesentlichen zwei Funktionalitäten:
@@ -100,7 +100,7 @@ Erstellung einer Einheit (=> Meta Framework), welche frameworkübergreifende bzw
 
 Bei End-to-end-Tests erfolgen testseitige Interaktionen mit den Seiten der Benutzeroberfläche, insofern, dass bspw. der Status gewisser Anzeigeelemente geprüft wird. Damit gleiche Interaktionen nicht über mehrere Testfälle hinweg neu definiert werden, werden diese gemäß des Page Object Models in Seiten-Klassen (= Page Object) ausgelagert. Dadurch erfolgt eine Trennung zwischen test- und seitenspezifischem Code, wodurch Änderungen nur an einer Stelle vorgenommen werden müssen und Duplizierung von Code reduziert wird. [4]  
 
-Eine Erweiterung des Page Object Models ist das `Fluent Page Object Model`. Bei Modifikationen / Aktionen wird das Objektselbst bzw. der neue Zustand des Objekts zurückgegeben, wodurch eine Verkettung der Methoden erfolgen kann und der Code insgesamt vereinfacht und leserlicher wird. [5]  
+Eine Erweiterung des Page Object Models ist das **Fluent Page Object Model**. Bei Modifikationen / Aktionen wird das Objektselbst bzw. der neue Zustand des Objekts zurückgegeben, wodurch eine Verkettung der Methoden erfolgen kann und der Code insgesamt vereinfacht und leserlicher wird. [5]  
 
 ## Design Patterns der Gang of Four
 
@@ -110,7 +110,7 @@ Bei der Entwicklung von automatischen Softwaretests für Webapplikationen zeichn
 
 ## Verwendung diverser Automatisierungs-Frameworks
 
-Zur Umsetzung eines qualitativen Testsystems werden Automations-Frameworks verwendet, da diese beispielsweise einen Rahmen für die bereits beleuchteten Ansätze vorgeben. Man unterscheidet zwischen `modulbasierten, Bibliotheks-Architektur, Daten-gesteuerten, Schlüsselwort-gesteuerten, Hybrid und Verhaltens-gesteuerten Frameworks`. [8]
+Zur Umsetzung eines qualitativen Testsystems werden Automations-Frameworks verwendet, da diese beispielsweise einen Rahmen für die bereits beleuchteten Ansätze vorgeben. Man unterscheidet zwischen **modulbasierten, Bibliotheks-Architektur, Daten-gesteuerten, Schlüsselwort-gesteuerten, Hybrid und Verhaltens-gesteuerten Frameworks**. [8]
 
 - **Modulbasiert**: Aufteilung der Applikation in logische und isolierte Module und separates Testen der Module. Da dieser Ansatz auf der objekt-orientierten Programmierung basiert, gehen hierbei die bekannten Eigenschaften hervor, welche wiederverwendbaren und wartbaren Code begünstigen. Hierbei sind in der Regel, für die Tests notwendige, Daten jedoch Bestandteil der einzelnen Testskripte, wodurch Anpassungen für jede Manipulation der Testdaten notwendig wird.
 - **Bibliotheks-Architektur**: Aufbauend auf dem modulbasierten Ansatz, zusätzlich mit der Idee der Kapselung und Bereitstellung allgemeingültiger Funktionen (Funktionen, welche für mehrerere Testfälle durchlaufen/ausgeführt werden müssen) wie Login, Logout, Benutzerregistrierung, etc., sodass diese in mehreren Testfällen verwendet werden können.
@@ -131,7 +131,7 @@ Abbildung 1 zeigt die am weit verbreitetsten End-to-end-Testframeworks hinsichtl
 |:--:| 
 | *Abbildung 1: Anteile weit verbreitetster End-to-End-Testframeworks* [9] |
 
-Bei den Anteilen ist zu beachten, dass `Protractor`, welches wiederrum selbst Selenium WebDriver implementiert und nutzt und bis heute jahrelanger Standard für Angular-Applikationen war, keine weiteren Updates und Support zur Verfügung stellen wird. Dem liegt zu Grunde, dass Protractor [Control Flow](https://www.protractortest.org/#/control-flow) nutzt, um Promises zu handhaben, dies jedoch aufgrund neuer JavaScript-Standards bzw. JavaScript-Technologien (async/await) von Selenium WebDriver V4.0 nicht mehr unterstützt wird und somit weitgreifende Anpassungen seitens Protractor erfolgen müssten. Das Entwicklerteam hat letzendlich dazu entschieden, den notwendigen Anpassungen nicht mehr nachzukommen. [10]  
+Bei den Anteilen ist zu beachten, dass **Protractor**, welches wiederrum selbst Selenium WebDriver implementiert und nutzt und bis heute jahrelanger Standard für Angular-Applikationen war, keine weiteren Updates und Support zur Verfügung stellen wird. Dem liegt zu Grunde, dass Protractor [Control Flow](https://www.protractortest.org/#/control-flow) nutzt, um Promises zu handhaben, dies jedoch aufgrund neuer JavaScript-Standards bzw. JavaScript-Technologien (async/await) von Selenium WebDriver V4.0 nicht mehr unterstützt wird und somit weitgreifende Anpassungen seitens Protractor erfolgen müssten. Das Entwicklerteam hat letzendlich dazu entschieden, den notwendigen Anpassungen nicht mehr nachzukommen. [10]  
 
 Grundsätzlich ist somit davon auszugehen, dass sich der Anteil an Tests, den Protractor ausmacht, deutlich reduzieren wird und Migrationen zu anderen Frameworks erfolgen werden. Auch das Angular-Team hat sich aufgrund dessen dazu entschieden, Protractor als Standard-Framework nur noch bis Angular Version 15 zu unterstützen - ein Nachfolge-Standard ist bisher nicht bekannt gegeben.  
 
@@ -169,7 +169,7 @@ Gemäß [The State of Javascript 2021](https://2021.stateofjs.com/en-US/librarie
 | Built-in Mocks | Ja, built-in | Ja, built-in | Nein. Implementierbar durch entsprechende Bibliotheken |
 | Build-in Code Coverage | Ja | Ja | Ja |
 
-*Tabelle 3: Charakteristika Jest, Jasmine, Mocha* [11]
+*Tabelle 3: Charakteristika Jest, Jasmine, Mocha*
 
 # Testentwicklung
 
