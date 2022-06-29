@@ -354,7 +354,73 @@ vollständigen PDFs direkt zu sehen und Information über die App und ihre Quell
 Funktionen, die zuvor als Anforderungen aufgestellt wurden umgesetzt werden.
 
 Im Anschluss an die Implementierung folgt wieder die Evaluation der Ergebnisse. Mit der bereits implementierten App
-lassen sich deutlich detailliertere Fragen zu einzelnen Designentscheidungen stellen.
+lassen sich deutlich detailliertere Fragen zu einzelnen Designentscheidungen stellen. Im Folgenden soll auf einige
+interessante und aufschlussreiche Fragen eingegangen werden.
+
+![](assets/FarbScreenshot.png)
+
+[Abbildung 9]
+*Rettungsapp: Farbauswahl*
+
+![](assets/WelcheFarbeRettung.png)
+
+[Abbildung 10]
+*Welche Farbe gefällt dir am besten?*
+
+Zuerst ist die Frage nach der Farbgestaltung zu nennen. Das ursprüngliche Orange wurde aufgrund der Signalwirkung
+gewählt, die zum Rettungsdienst passt. Die beiden alternativen Farbgebungen Grün und Blau aus [Abbildung 9] konnten
+alleridngs genauso viele Stimmen erlangen ([Abbildung 10]). Da alle Farbgestaltungen gleich beliebt sind, wird die
+Anwendung in dem Orange belassen.
+
+![](assets/ScreenTag.png)
+
+[Abbildung 11]
+*Beispiel für Markierung*
+
+![](assets/AlgorithmusTag.png)
+
+[Abbildung 12]
+*Markierung der Algorithmen*
+
+Eine Funktion, die erst während der Erstellung der Umfrage aufgekommen ist, ist in [Abbildung 11] zu sehen. Es geht
+darum bereits in der Suche erkennen zu können, aus welchem Algorithmus-Satz das Suchergebnis stammt. Die Idee stößt auf
+breite Zustimmung mit einer kompletten Zustimmung aller Befragten ([Abbildung 12]). Diese Funktion wird also in die
+nächsten Anforderungen mit aufgenommen.
+
+![](assets/NutzungRettung.png)
+
+[Abbildung 13]
+*Potenzielle Nutzung der Rettungsapp*
+
+Ein besonders erfreuliches Ergebnis konnte in der letzten Frage erreicht werden. Wie in [Abbildung 13] zu erkennen ist,
+sind sich alle Befragten einig, dass sie die App in dieser Form bereits verwenden würden.
+
+#### Erkenntnisse
+
+An dieser Stelle sollen erste Erkenntnisse über den Ablauf des Design Thinking und des User Centered Designs für die
+Rettungsapp festgehalten werden.
+
+Als die Idee für die Rettungsapp entstanden ist, war bereits relativ klar welche Aufgabe die Anwendung erfüllen soll.
+Deshalb war es im Design Thinking schwierig, offen für alle Problematiken und Lösungsansätze zu bleiben. Trotzdem konnte
+eine deutliche Vertiefung das Verständnis für das Problem erreicht werden. Während des Design Thinkings kam es in den
+verschiedenen Schritten häufig zu Wiederholungen der gleichen Probleme. Dies ist sicherlich auch der geringen Teamgröße
+anzulasten, bei einem größeren Team kommen mehr Eindrücke auf, die immer neue Facetten aufzeigen können.
+
+Im Endeffekt hat das Design Thinking seinen Zweck erfüllt, das Problem besser zu durchdringen und einen guten Prototyp
+zu entwickeln.
+
+Für das User Centered Design müssen die zwei iterationen einzeln betrachtet werden. Bei der ersten Umfrage, die zu dem
+zuvor erstellten Prototypen gemacht wurde, konnten vor allem die Ergebnisse aus dem Design Thinking bestätigt werden.
+Konkrete Design-Fragen konnten hier nur schwierig beantwortet werden, da die Mockups einfach gehalten wurden. Hier wäre
+es möglich die mockups bereits genauer zu gestalten oder Fragen zum Design zu fragen, ohne konkrete Vorlagen zu haben.
+Bei der zweiten Möglichkeit ist allerdings die Aussagekraft fraglich, da der Befragte die Fragen schnell falsch
+verstehen kann oder sich ein falsches Bild des vorgeschlagenen Designs macht. Hilfreich war außerdem die Frag nach
+fehlenden Features, da so noch eine Anforderung gefunden werden konnte.
+
+Mit der zweiten Umfrage und der dafür entwickelten Webapp konnte viel genauer nach Designentscheidungen oder
+Funktionen gefragt werden. Dadurch lassen sich hier im nächsten Schritt konkretere und kleinere Anforderungen
+aufzustellen. Da sich das Produkt in diesem Stadium bereits nah an der Fertigstellung befindet, lässt sich außerdem ein
+guter Eindruck davon gewinnen, ob potenzielle Nutzer die Anwendung in der Form gebrauchen können.
 
 ### Erweiterung zu Spotify
 
@@ -390,10 +456,10 @@ wichtigen Begriffen der Challenge orientiert: System, Erweiterung, Spotify und P
 
 ![](assets/BrainstormingProject2.jpg)
 
-[Abbildung 9]
+[Abbildung 14]
 *Brainstorming Spotifyerweiterung*
 
-Das Ergebnis des brainstormings lässt sich in [Abbildung 9] erkennen. Vor allem im bereich der Probleme wurde bereits
+Das Ergebnis des brainstormings lässt sich in [Abbildung 14] erkennen. Vor allem im bereich der Probleme wurde bereits
 viele Dinge aufgezählt, die im Verlauf des Projekts zu Ideen weiterentwickelt werden können. Insgesamt konnte mit deser
 methode wieder ein gutes Grundverständnis der Aufgabenstellung geschaffen werden und bildet eine gute Basis für die
 weiteren Schritte.
@@ -406,10 +472,11 @@ Angebot angesehen, da diese App erweitert werden soll.
 
 ![](assets/SweetSourMethode.png)
 
-[Abbildung 10]
+[Abbildung 15]
 *Sweet-und-Sour-Spot-Methode*
 
-In [Abbildung 10] ist die entsprechende Grafik mit den wichtigsten punkten zu sehen. Viele der Funktion sind in der Mitte
+In [Abbildung 15] ist die entsprechende Grafik mit den wichtigsten punkten zu sehen. Viele der Funktion sind in der
+Mitte
 der Kreise. Das heißt, dass diese sowohl im eigenen Angebot, als auch bei der Konkurrenz vorhanden sind und gleichzeitig
 Wünsche der Kunden erfüllen. Interessant für dieses Projekt ist vor allem der Sour Spot. Hier finden sich Funktionen
 wieder, die durch die konkurrenz umgesetzt werden, im eigenen Angebot allerdings fehlen. Sie lassen sich also potenziell
@@ -514,10 +581,10 @@ eingeschätzt wird.
 
 ![](assets/SpotifyAddon.png)
 
-[Abbildung 11]
+[Abbildung 16]
 *Mockup der Spotifyerweiterung*
 
-Die Mockups aus [Abbildung 11] sind das Endergebnis des Design Thinking Prozess, sie wurden wieder mit [balsamiq]
+Die Mockups aus [Abbildung 16] sind das Endergebnis des Design Thinking Prozess, sie wurden wieder mit [balsamiq]
 erstellt. Sie dienen als Prototyp für die weitere Entwicklung. Die ersten vier Anforderungen sind eingearbeitet. Anhand
 dieser Mockups, kann die Phase des User Centered
 Designs beginnen.
@@ -525,7 +592,45 @@ Designs beginnen.
 #### User Centered Design
 
 Für die Spotify-Erweiterung gilt der gleiche Ablauf wie für die Rettungsapp: Evaluation, Spezifikation,
-Design/Implementierung, Evaluation, Spezifikation und eventuell erneut Design/Implementierung.
+Design/Implementierung, Evaluation und eventuell erneut Spezifikation und Design/Implementierung.
+
+Um Feedback von Nutzern einzuholen wurde wieder ein Google Form erstellt. Neben Fragen zu den konkreten Mockups, wurde
+das aktuelle Nutzerverhalten mit Spotify erkundet. An dieser Stelle wird wieder nur auf die interessantesten und
+aufschlussreichsten Fragen eingegangen.
+
+![](assets/WieNutztDuPlaylisten.png)
+
+[Abbildung 17]
+*Wie werden Playlisten genutzt?*
+
+Eine Nachfrage zum allgemeinen Nutzerverhalten betrifft die aktuelle Nutzung von Playlisten ([Abbildung 17]). Dabei kam heraus, dass vor
+allem selbsterstellte und von Spotify erstellte Playlisten genutzt werden. Das ergibt die Erkenntnis, dass das Erstellen
+von Playlisten, welches mit diesem projekt erweitert werden soll, auf jeden Fall genutzt wird.
+
+![](assets/Mischoptionen.png)
+
+[Abbildung 18]
+*Optionen zum Mischen*
+
+![](assets/fertigePlaylistAnzeigen.png)
+
+[Abbildung 19]
+*Potenzielle Nutzung der Spotifyerweiterung*
+
+![](assets/SpotifyDarkmode.png)
+
+[Abbildung 20]
+*Sinnvolle Orientierung an Spotifydesign*
+
+![](assets/AnzeigePlaylist.png)
+
+[Abbildung 21]
+*Anzeige von Playlisten*
+
+![](assets/NutzungSpotify.png)
+
+[Abbildung 22]
+*Potenzielle Nutzung der Spotifyerweiterung*
 
 ## Fazit
 
@@ -561,17 +666,61 @@ Design/Implementierung, Evaluation, Spezifikation und eventuell erneut Design/Im
 
 [Abbildung 8]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/ScreenshotRettungsApp.png
 
-[Abbildung 9] - Brainstorming Spotifyerweiterung
+[Abbildung 9] - Rettungsapp: Farbauswahl
 
-[Abbildung 9]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/BrainstormingProject2.jpg
+[Abbildung 9]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/FarbScreenshot.png
 
-[Abbildung 10] - Sweet-und-Sour-Spot-Methode
+[Abbildung 10] - Welche Farbe gefällt dir am besten?
 
-[Abbildung 10]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/SweetSourMethode.png
+[Abbildung 10]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/WelcheFarbeRettung.png
 
-[Abbildung 11] - Mockup der Spotifyerweiterung
+[Abbildung 11] - Beispiel für Markierung
 
-[Abbildung 12]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/SpotifyAddon.png
+[Abbildung 11]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/ScreenTag.png
+
+[Abbildung 12] - Markierung der Algorithmen
+
+[Abbildung 12]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/AlgorithmusTag.png
+
+[Abbildung 13] - Potenzielle Nutzung der Rettungsapp
+
+[Abbildung 13]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/NutzungRettung.png
+
+[Abbildung 14] - Brainstorming Spotifyerweiterung
+
+[Abbildung 14]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/BrainstormingProject2.jpg
+
+[Abbildung 15] - Sweet-und-Sour-Spot-Methode
+
+[Abbildung 15]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/SweetSourMethode.png
+
+[Abbildung 16] - Mockup der Spotifyerweiterung
+
+[Abbildung 16]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/SpotifyAddon.png
+
+[Abbildung 17] - Wie werden Playlisten genutzt?
+
+[Abbildung 17]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/WieNutztDuPlaylisten.png
+
+[Abbildung 18] - Optionen zum Mischen
+
+[Abbildung 18]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/Mischoptionen.png
+
+[Abbildung 19] - Potenzielle Nutzung der Spotifyerweiterung
+
+[Abbildung 19]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/fertigePlaylistAnzeigen.png
+
+[Abbildung 20] - Sinnvolle Orientierung an Spotifydesign
+
+[Abbildung 20]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/SpotifyDarkmode.png
+
+[Abbildung 21] - Anzeige von Playlisten
+
+[Abbildung 21]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/AnzeigePlaylist.png
+
+[Abbildung 22] - Potenzielle Nutzung der Spotifyerweiterung
+
+[Abbildung 22]: https://mwithoeft.github.io/SGSE22/praktikum/kuhn/assets/NutzungSpotify.png
 
 ### Literaturverzeichnis
 
