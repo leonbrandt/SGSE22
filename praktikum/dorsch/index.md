@@ -495,7 +495,7 @@ Die Wahl der geeigneten Struktur ist ganz und gar eine Frage der persönlichen E
 (2) Android-App Binary (.apk) Xamarin: https://github.com/mwithoeft/SGSE22/tree/main/praktikum/dorsch/src/xamarin/EzOrder/EzOrder/binary/com.companyname.ezorder-Signed.apk<br>
 (3) Database SQL-File: https://github.com/mwithoeft/SGSE22/tree/main/praktikum/dorsch/src/database.sql<br>
 (4) Swagger API Documentation yaml: https://github.com/mwithoeft/SGSE22/tree/main/praktikum/dorsch/src/swagger_backend_rest_documentation.yaml<br>
-(5) ER-Diagramme: https://github.com/mwithoeft/SGSE22/tree/main/praktikum/dorsch/media/ER-Diagramm.png<br>
+(5) ER-Diagramm: https://github.com/mwithoeft/SGSE22/tree/main/praktikum/dorsch/media/ER-Diagramm.png<br>
 (6) Mockups: https://github.com/mwithoeft/SGSE22/tree/main/praktikum/dorsch/media/mockups/<br>
 (7) Implementierung React Native (Source): https://github.com/mwithoeft/SGSE22/tree/main/praktikum/dorsch/src/react_native/EzOrder/
 (8) Implementierung Xamarin (Source): https://github.com/mwithoeft/SGSE22/tree/main/praktikum/dorsch/src/xamarin/EzOrder
