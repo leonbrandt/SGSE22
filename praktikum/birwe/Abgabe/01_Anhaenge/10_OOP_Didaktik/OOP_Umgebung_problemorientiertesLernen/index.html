@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #main_wrapper {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+      }
+
+      svg {
+        width: 70vw;
+        height: auto;
+
+        max-height: 70vh;
+      }
+
+      .room_group {
+        z-index: -1;
+      }
+
+      .room_label {
+        font-size: 0.5px;
+        text-anchor: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main_wrapper">
+      <svg id="main_svg" width="50px" height="50px" viewBox="0 0 50 50"></svg>
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
