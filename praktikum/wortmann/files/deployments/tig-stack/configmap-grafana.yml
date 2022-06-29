@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-config
+  namespace: sgse22-tig
+data:
+  grafana.ini: |
+    app_mode = production
+    instance_name = "sgse22"
+
+    [paths]
+    data = data
+    temp_data_lifetime = 24h
+    logs = data/log
+    plugins = data/plugins
+    provisioning = /etc/grafana/provisioning
+
+    [server]
+    protocol = http
+    http_port = 3000
+    domain = sgse22-grafana
+    enforce_domain = false
+    router_logging = false
+    static_root_path = public
+    enable_gzip = false
+    socket = /tmp/grafana.sock
+
+    [session]
+    provider = file
+    provider_config = sessions
+    cookie_name = grafana_sess
+    cookie_secure = false
+    session_life_time = 86400
+    gc_interval_time = 86400
+    conn_max_lifetime = 14400
+
+    [users]
+    allow_sign_up = true
+
+    [auth]
+    disable_login_form = false
+    login_maximum_inactive_lifetime_days = 2
+    login_maximum_lifetime_days = 2
+    token_rotation_interval_minutes = 720
+
+    [auth.anonymous]
+    enabled = true
+
+    [unified_alerting]
+    enabled = true
+
+    [alerting]
+    enabled = false

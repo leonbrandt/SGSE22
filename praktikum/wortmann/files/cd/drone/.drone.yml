@@ -1,0 +1,42 @@
+kind: pipeline
+type: docker
+name: deploy kubernetes
+
+trigger:
+  branch:
+    - main
+  event:
+    - push
+    - custom
+
+steps:
+  - name: write kubeconfig to file
+    image: alpine:3.16.0
+    commands:
+      - echo $KUBECONFIG_FILE | base64 -d > kubeconfig.yml
+    environment:
+      KUBECONFIG_FILE:
+        from_secret: KUBECONFIG
+
+  - name: apply deployment for webapp
+    image: bitnami/kubectl:1.23.5
+    commands:
+      - kubectl apply -k deployment/webapp
+    environment:
+      KUBECONFIG: kubeconfig.yml
+
+  - name: apply deployment for harbor
+    image: alpine/k8s:1.21.12
+    commands:
+      - helm repo add harbor https://helm.goharbor.io
+      - kubectl apply -f deployment/harbor/volumes.yml
+      - helm upgrade --install harbor harbor/harbor -f deployment/harbor/values.yml
+    environment:
+      KUBECONFIG: kubeconfig.yml
+
+  - name: apply deployment for tig-stack
+    image: bitnami/kubectl:1.23.5
+    commands:
+      - kubectl apply -k deployment/tig-stack
+    environment:
+      KUBECONFIG: kubeconfig.yml

@@ -1,0 +1,12 @@
+project: default
+source:
+  repoURL: "https://git-url/kubernetes_deployment"
+  path: deployment/tig-stack
+  targetRevision: main
+destination:
+  server: "https://kubernetes.default.svc"
+  namespace: sgse22-tig
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true

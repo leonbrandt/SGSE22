@@ -1,0 +1,131 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sgse22-grafana
+  namespace: sgse22-tig
+  labels:
+    app: sgse22-grafana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sgse22-grafana
+  template:
+    metadata:
+      labels:
+        app: sgse22-grafana
+    spec:
+      containers:
+        - name: sgse22-grafana
+          image: grafana/grafana:9.0.1
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: ca-certs
+              mountPath: /etc/ssl/certs/ca-certificates.crt
+              readOnly: true
+            - name: grafana-config
+              mountPath: /etc/grafana
+              readOnly: true
+      volumes:
+        - name: ca-certs
+          hostPath:
+            path: /etc/ssl/certs/ca-certificates.crt
+            type: File
+        - name: grafana-config
+          configMap:
+            name: grafana-config
+            items:
+              - key: grafana.ini
+                path: grafana.ini
+        - name: grafana-data
+          persistentVolumeClaim:
+            claimName: grafana-data-claim
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sgse22-influxdb
+  namespace: sgse22-tig
+  labels:
+    app: sgse22-influxdb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sgse22-influxdb
+  template:
+    metadata:
+      labels:
+        app: sgse22-influxdb
+    spec:
+      containers:
+        - name: sgse22-influxdb
+          image: influxdb:2.3.0
+          ports:
+            - containerPort: 8086
+          volumeMounts:
+            - name: ca-certs
+              mountPath: /etc/ssl/certs/ca-certificates.crt
+              readOnly: true
+            - name: influxdb-data
+              mountPath: /var/lib/influxdb
+          env:
+            - name: INFLUXD_BOLT_PATH
+              value: /var/lib/influxdb/influxd.bolt
+            - name: INFLUXD_ENGINE_PATH
+              value: /var/lib/influxdb/engine
+      volumes:
+        - name: ca-certs
+          hostPath:
+            path: /etc/ssl/certs/ca-certificates.crt
+            type: File
+        - name: influxdb-data
+          persistentVolumeClaim:
+            claimName: influxdb-data-claim
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sgse22-telegraf
+  namespace: sgse22-tig
+  labels:
+    app: sgse22-telegraf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sgse22-telegraf
+  template:
+    metadata:
+      labels:
+        app: sgse22-telegraf
+    spec:
+      containers:
+        - name: sgse22-telegraf
+          image: telegraf:1.23.0
+          volumeMounts:
+            - name: ca-certs
+              mountPath: /etc/ssl/certs/ca-certificates.crt
+              readOnly: true
+            - name: telegraf-config
+              mountPath: /etc/telegraf
+              readOnly: true
+          env:
+            - name: INFLUXDB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: influxdb-token
+                  key: INFLUXDB_TOKEN
+                  optional: false
+      volumes:
+        - name: ca-certs
+          hostPath:
+            path: /etc/ssl/certs/ca-certificates.crt
+            type: File
+        - name: telegraf-config
+          configMap:
+            name: telegraf-config
+            items:
+              - key: telegraf.conf
+                path: telegraf.conf
