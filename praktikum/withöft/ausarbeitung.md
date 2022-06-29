@@ -110,6 +110,8 @@ Die Ergebnisse der Tests wurde auf Grund der häufigen Anpassung in der Konsole 
     <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/resultsBrowser.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
     <figcaption>Abbildung 5: Buttons zum Starten von Ping und Multi-Client Test im Browser.</figcaption>
 </figure>
+
+
 #### WebTransport
 
 Für WebTransport sollen Messungen durchgeführt werden, die ebenfalls für WebSocket implementiert werden. Die Messergebnisse können im Abschnitt [Messungen](#messungen) gefunden werden.
@@ -500,13 +502,35 @@ Für diesen Test wurde bei jedem Testdurchlauf immer nur **ein** Client mit dem 
 | 100 MB | 9420         | 1537      |
 | 1 GB   | 95299        | 10264     |
 
-Dateien, die größer sind als 1GB können nicht mehr standardmäßig über WebSocket transportiert werden. Hier ist die Zunahme eines Streams erforderlich, sodass die Datei aufgeteilt werden kann und nicht komplett im Arbeitsspeicher liegen muss. Eine komplette Übertragung führt meist auf Client-Seite zu Fehlern *(Out-Of-Memory)*.
+Dateien, die größer sind als 1GB können nicht mehr standardmäßig über WebSocket transportiert werden. Hier ist die Zunahme eines Streams erforderlich, sodass die Datei aufgeteilt werden kann und nicht komplett im Arbeitsspeicher liegen muss. Eine komplette Übertragung führt meist auf Client-Seite zu Fehlern *(Out-Of-Memory, Abbildung 8)*.
 
-<img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/websocketOutOfMemory.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
+<figure style="text-align: center;">
+    <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/websocketOutOfMemory.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
+    <figcaption>Abbildung 8: Out-Of-Memory Fehler in Chrome.</figcaption>
+</figure>
 
 ## Auswertung
 
+Nachdem die Unterschiede in der Implementierung bereits beleuchtet wurden, soll es nun um die Unterschiede bei den Messergebnisse gehen. Dazu soll auch die Forschungsfrage berücksichtigt werden, welche Schnittstelle unter welchen Bedingungen performanter ist. Dafür werden die drei durchgeführten Testmessungen ausgewertet und analysiert. Abschließend soll noch die Forschungsfrage diskutiert werden, ob WebTransport wirklich das Potential hat, WebSockets abzulösen oder sich ggf. unterschiedliche Einsatzbereiche bieten.
 
+### Messergebnisse
+
+**Messung der Geschwindigkeit in Abhängigkeit verbundener Clients:** Zuerst werden die Messergebnisse der Geschwindigkeit in Abhängigkeit verbundener Clients betrachtet. Schaut man sich hier die Ergebnisse an, so fällt auf, dass WebTransport bei Zunahme der Verbindungen abfällt. Bei 64 gleichzeitigen Verbindungen braucht es mit dem Protokoll in etwa vierfach solange, bis alle Verbindungen das angeforderte Datenpaket erhalten haben. Allerdings fällt ebenfalls auf, dass sich WebTransport und WebSocket bei der Verwendung von einer Verbindung nicht stark unterscheiden. Hier bewegen sich die Unterschiede in einem so kleinen Rahmen, dass sie sich nicht verlässlich auf das Protokoll zurückführen lassen.
+
+Für beide Protokolle fällt auf, dass die Erzeugung von virtuellen Clients (durch den Browser) limitiert sind. Für WebTransport können in einem Browser nicht mehr als 64 Verbindungen erzeugt werden, bei WebSocket nicht mehr als 250. An dieser Stelle müsste ein weiterer Test mit der Verwendung mehrerer (physischer) Clients durchgeführt werden, um eine genauere Belastbarkeitsangabe der Protokolle im Backend machen zu können.
+
+**Messung der RoundTripTime:** Betrachtet man die Ergebnisse bei der Messung der RoundTripTime, sind die beiden Protokolle gleich auf. Der Unterschied von 1 Millisekunde beim Austausch von einem Datenpaket lässt sich nicht sicher auf das Protokoll zurückführen, weil dieser Wert in der Toleranz bei Messungen liegt. Der Vorteil von WebTransport zeigt sich hingegen beim Austausch von mehreren Datenpaketen auf dem selben Channel. Auch bei WebSockets ist es möglich einen gleichzeitigen Austausch von mehreren Datenpaketen zu erzielen. Allerdings müssen dafür mehrere Kanäle auf dem Socket genutzt werden, was für diesen Test nicht vorgesehen war. Durch die gleichzeitige (parallele) Übertragung, kann WebTransport hier deutlich bessere Zeiten erzielen, als WebSocket mit der sequentiellen Übertragung.
+
+**Messung Austausch großer Datenmengen:** Beim Austausch großer Datenmengen sind bis zu einer Dateigröße von 10 MB kaum Unterschiede festzustellen. Hier liegen die Unterschiede in einem Bereich weniger Millisekunden, sodass die dortigen Differenzen sich nicht zwingend auf das jeweilige Protokoll zurückführen lassen. Ab einer Dateigröße von 100MB werden die unterschiede jedoch sichtbar. Hier braucht WebTransport deutlich länger als WebSocket, wobei die Ursache für dieses Phänomen nicht geklärt werden konnte.
+
+Auffällig war bei der Verwendung beider Protokolle für den Download, dass hier keine Größen von mehr als 1GB erreicht werden konnten. Für den Download solcher großen Dateien, sind die beiden Protokolle nicht gedacht. Es bietet sich hier die Verwendung eines klassischen Download-Streams, sodass die Datei nicht komplett im Arbeitsspeicher gehalten werden muss und als Ganzes auf die Festplatte geschrieben wird. Viel mehr kann dann eine Datei in Stücken (Chunks) heruntergeladen werden und wird dabei nach und nach auf die Festplatte geschrieben, sodass nicht die Datei als Ganzes im Arbeitsspeicher liegen muss.
+
+### Einsatzbereiche
+
+<figure style="text-align: center;">
+    <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/decisionDiagram.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
+    <figcaption>Abbildung 9: Selbst erstelles Entscheidungsdiagramm zur Hilfe bei der Protokollwahl.</figcaption>
+</figure>
 
 
 

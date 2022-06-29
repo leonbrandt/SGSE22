@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: sgse22
+  namespace: sgse22
+spec:
+  selector:
+    app: sgse22
+  ports:
+    - port: 80

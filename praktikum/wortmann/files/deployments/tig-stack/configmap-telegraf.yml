@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: telegraf-config
+  namespace: sgse22-tig
+data:
+  telegraf.conf: |
+    [agent]
+    collection_jitter = "0s"
+    flush_interval = "15s"
+    flush_jitter = "5s"
+    hostname = "sgse22-kubernetes"
+    interval = "15s"
+    metric_batch_size = 1000
+    metric_buffer_limit = 10000
+    omit_hostname = false
+    round_interval = true
+
+    [[outputs.influxdb_v2]]
+    urls = ["http://sgse22-influxdb"]
+    token = "token"
+    organization = "default"
+    bucket = "default"
+    tls_ca = "/etc/ssl/certs/ca-certificates.crt"
+
+    [[inputs.internal]]
+    name_override = "telegraf"
+    [inputs.internal.tags]
+    source = "kubernetes.sgse22-tig"

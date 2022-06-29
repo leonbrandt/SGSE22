@@ -1,0 +1,12 @@
+resources:
+  - volumes.yml
+
+helmCharts:
+  - name: harbor
+    repo: https://helm.goharbor.io
+    version: 1.9.1
+    releaseName: harbor
+    namespace: harbor
+    valuesFile: values.yml
+
+namespace: harbor

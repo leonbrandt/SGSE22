@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sgse22
+  namespace: sgse22
+spec:
+  rules:
+    - host: sgse22-webapp
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: sgse22
+                port:
+                  number: 80

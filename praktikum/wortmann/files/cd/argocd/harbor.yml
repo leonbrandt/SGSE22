@@ -1,0 +1,12 @@
+project: default
+source:
+  repoURL: "https://git-url/kubernetes_deployment"
+  path: deployment/harbor
+  targetRevision: main
+destination:
+  server: "https://kubernetes.default.svc"
+  namespace: sgse22-harbor
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
