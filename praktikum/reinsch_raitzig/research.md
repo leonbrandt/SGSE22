@@ -41,6 +41,41 @@ des CFG (control flow graph) an einer bestimmten Call Site zu einer optimalen L�
 - eine Alternative stellen Evolution Strategies dar (Teil der Black Box Optimierungstechniken)
 	- lernt auch durch trial and error
 
+### Reinforcement Learning in MLGO ###
+
+Dieser Abschnitt fasst Reinforcement Learning in MLGO zusammen. Dabei wurde das Paper [MLGO: a Machine Learning Guided Compiler Optimizations Framework](https://arxiv.org/abs/2101.04808) als Quelle genutzt.
+
+Bei Reinforcement Learning werden Agenten betrachtet, welche Entscheidungen treffen. Diese können positiv oder negativ sein, was zum Anpassen des Agenten genutzt wird.
+Hier ist der Agent der Compiler. Der Compiler führt entweder Inlining durch oder nicht. Je nachdem, ob sich Inlining als gute Entscheidung oder als Fehler erwiesen hat, wird der Agent angepasst.
+Eine Code-Basis wird vom Agenten immer wieder kompiliert, bis möglichst gute Taktiken gefunden wurden.
+
+Das Problem wurde als Markov-Decision-Process (MDP) modelliert. Beim MDP gibt es Zustände, deren Übergänge mit Wahrscheinlichkeiten versehen sind. Zudem gibt es eine Reward-Funktion. Der Agent führt Aktionen aus.
+Die Umgebung befindet sich an einem Zeitpunkt *t* in einem bestimmten Zustand *s(t)* und der Agent führt eine Aktion *a(t)* aus. Der Agent erhält eine Belohnung durch die Reward-Funktion *R(s(t), a(t))*. Der nächste Zustand *s(t+1)* wird mit Hilfe einer Wahrscheinlichkeisdistribution ausgewählt, welche vom Zustand und der Aktion des Agenten abhängt, d.h. *P(s(t+1) | s(t), a(t))*. Es werden solange Aktionen ausgeführt, bis ein Endzustand erreicht ist.
+Der Agent ist so modelliert, dass dieser eine (weitere) Wahrscheinlichkeitsdistribution nutzt, um die nächste Aktion auszuwählen im aktuellen Zustand auszuwählen, *pi = Pr(a(t) | s(t))*. Die Funktion *pi* ist durch ein neuronales Netz gegeben. Ziel des Agenten ist es, die Belohnung insgesamt *R = \Sigma_{t=0}^T R(s(t), a(t))* zu maximieren. Dazu wird der Gradient von *R* mittels Monte-Carlo-Methoden approximiert und Gradient Ascent durchgeführt.
+Die Reward-Funktion ist theoretisch so modelliert, dass bei keinem Inlining die Belohnung 0 ist und bei Inlining die erreichte Größenreduktion der beteiligten Funktionen ist. Die tatsächlich erreichte Größenreduktion wird erst in einer späteren Phase des Compilers ersichtlich, so dass hier zum Training 11 Features genommen werden, um das theoretisch gewünschte *R(s, a)* zu approximieren:
+- caller_basic_block_count
+- caller_conditionally_executed_blocks
+- caller_users
+- callee_basic_block_count
+- callee_conditionally_executed_blocks
+- callee_users
+- callsite_height
+- cost_estimate
+- number_constant_params
+- edge_count
+- node_count
+Diese Features entsprochen in etwa den Informationen, die die bisherigen Heuristiken verwenden.
+Anstatt *R(s, a)* zu approximieren, kann die insgesamte Belohnung *R* verwendet werden, weil diese nach der Kompilierung sich einfach aus der Größe der kompilierten Binary ergibt. Es wurde sich im Paper dagegen entschieden dieses zu verwenden, weil mehr Daten für die gleiche Performanz notwendig gewesen wären und trotzdem keine bessere Qualität des Modells garantiert ist.
+
+Um das Training zu verschnellern, wird *pi* nicht zufällig initialisiert, sondern mittels eines Cloning-Algorithmus so initialisiert, dass die bisherigen LLVM-Inlining-Heuristiken nachgebildet werden.
+
+### Evolution in MLGO ###
+
+Dieser Abschnitt fasst Reinforcement Learning in MLGO zusammen. Dabei wurde das Paper [MLGO: a Machine Learning Guided Compiler Optimizations Framework](https://arxiv.org/abs/2101.04808) als Quelle genutzt.
+
+Bei diesem Ansatz wird anstatt der insgesamten Belohnung *R* eine geglättete Version von *R* maximiert. Die Belohnung *R* hängt von den Parametern *theta* des Modells *pi* ab. Anstatt *R(theta)* zu maximieren, wird auch die Umgebung von *theta* betrachtet, d.h. naheliegende Werte für *theta*. Dabei wird die Größe *epsilon* der Umgebung durch eine Multivariable-Normal-Distribution bestimmt sowie mit einem weiteren Faktor *sigma*. Die so zu maximierende Funktion wird *J(theta)* genannt.
+Wie bei Reinforcement Learning, werden Monte-Carlo-Methoden genutzt, um *J(theta)* zu approximieren.
+
 ### MLGO und LLVM ###
 
 MLGO besteht aus zwei Teilen:
