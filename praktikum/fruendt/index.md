@@ -113,18 +113,18 @@ welches ein Entity als beispielsweise Monster erstellt, indem es ein neues Entit
 
 Die erstellten Komponenten erhalten entweder Daten oder werden als Flag verwendet, um auf Events zu reagieren. Verwendet werden die Komponenten von den untenstehenden Systemen. Die Systeme erhalten jeweils eine Liste von Entities, welche die erforderlichen Komponenten besitzen und iterieren über diese. Jedes iterierte Entity kann manipuliert werden, indem die Daten der Komponente bearbeitet werden, neue Komponenten hinzugefügt oder bestehende gelöscht werden.
 
-| System                | Funktion|
-|:--:|:--:|
-| CameraSystem          | Bewegt die Kamera zur Spielerposition |
-| DamageSystem          | Prüft, ob ein erstelltes Attack-Entity ein tötbares Entity trifft und fügt Schaden zu, falls dem so ist |
-| GuiSystem             | Aktualisiert die GUI des Spielers |
-| HealthSystem          | Löscht Entities, die keine Leben mehr haben |
-| ItemSystem            | Nimmt Item-Event-Entities an und führt entsprechende Aktion aus |
-| KiSystem              | Steuert die nicht-Spieler-Charaktere entsprechend ihrer unterschiedlichen Logik |
-| KnockbackSystem       | Berechnet die Flugbahn des Knockback von Entities |
-| MovementSystem        | Ändert die Position der Entities, entsprechend ihrer Geschwindigkeit |
-| PlayerControlSystem   | Nimmt Eingaben für den Spielercharakter an |
-| SpriteSystem          | Stellt die Sprites aller Objekte im Dungeon dar |
+| System                | Funktion| Benötigte Komponenten |
+|:--:|:--:|:--:|
+| CameraSystem          | Bewegt die Kamera zur Spielerposition | `Player`, `Position`|
+| DamageSystem          | Prüft, ob ein erstelltes Attack-Entity ein tötbares Entity trifft und fügt Schaden zu, falls dem so ist | `Health`, `Position`, `MeleeAttack`, `RangedAttack` |
+| GuiSystem             | Aktualisiert die GUI des Spielers | `Player` |
+| HealthSystem          | Löscht Entities, die keine Leben mehr haben | `Health` |
+| ItemSystem            | Nimmt Item-Event-Entities an und führt entsprechende Aktion aus | `Position`, `Pickup`, `PickupRequest`, `DropRequest`, `UseRequest`, `ItemDestroyRequest` |
+| KiSystem              | Steuert die nicht-Spieler-Charaktere entsprechend ihrer unterschiedlichen Logik | `Position`, `Velocity`, `PassiveKi`, `HostileKi`, `BossKi`, `Player`, `MeleeCombatStats`, `RangedCombatStats` |
+| KnockbackSystem       | Berechnet die Flugbahn des Knockback von Entities | `Velocity`, `Knockback` |
+| MovementSystem        | Ändert die Position der Entities, entsprechend ihrer Geschwindigkeit | `Position`, `Velocity` |
+| PlayerControlSystem   | Nimmt Eingaben für den Spielercharakter an | `PlayerControl`, `Position`, `Velocity`, `MeleeCombatStats`, `RangedCombatStats` |
+| SpriteSystem          | Stellt die Sprites aller Objekte im Dungeon dar | `Position`, `Velocity`, `Sprite`, `Animation` |
 
 ### Implementierung des ECS-Ansatzes im PM-Dungeon
 
@@ -146,13 +146,14 @@ Aus dem Miniprojekt werden die folgenden Komponenten generiert. Diese enthalten 
 
 Für diese Komponenten werden die untenstehenden Systeme zur Bearbeitung derer Daten erstellt, um die Logik der Charakterklasse zu imitieren.
 
-| System                | Funktion|
-|:--:|:--:|
-|MovementSystem|Bewegt die Entities entsprechend ihrer Geschwindigkeit|
-|KiSystem|Verändert zufällig die Geschwindigkeit des Entities|
-|HealthSystem|Entfernt Entities, welche sämtliche Gesundheit verloren haben|
-|DamageSystem|Zieht Entities Gesundheit ab, welche kollidiert sind|
-|CollisionSystem|Prüft ob zwei Entities kollidieren|
+| System                | Funktion | Benötigte Komponenten |
+|:--:|:--:|:--:|
+|MovementSystem|Bewegt die Entities entsprechend ihrer Geschwindigkeit|`Position`, `Velocity`|
+|KiSystem|Verändert zufällig die Geschwindigkeit des Entities|`Velocity`|
+|HealthSystem|Entfernt Entities, welche sämtliche Gesundheit verloren haben|`Health`|
+|DamageSystem|Zieht Entities Gesundheit ab, welche kollidiert sind|`Health`, `Collision`|
+|CollisionSystem|Prüft ob zwei Entities kollidieren|`Position`|
+|RenderSystem|Stellt die Sprites aller Entities dar|`Position`, `Sprite`|
 
 ### Implementierung des ECS-Ansatzes im C++ Projekt
 
