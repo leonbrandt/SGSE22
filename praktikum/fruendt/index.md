@@ -51,7 +51,7 @@ Das Projekt wird anhand folgender Aspekte evaluiert.
 
 ## Aufbau des Entity Component System-Patterns
 
-Zunächst darauf eingegangen werden wie das ECS aufgebaut ist. Dafür werden Projekte vom Objektorientierten Programmierstil in das ECS-Pattern überführt. Durch diese grundlegende Änderung in der Architektur muss die gesamte Struktur des Projekts verändert werden. Vorgenommen soll dieser Umbau an zwei Projekten:
+Zunächst wird darauf eingegangen wie das ECS aufgebaut ist. Dafür werden Projekte vom Objektorientierten Programmierstil in das ECS-Pattern überführt. Durch diese grundlegende Änderung in der Architektur muss die gesamte Struktur des Projekts verändert werden. Vorgenommen soll dieser Umbau an zwei Projekten:
 - Zunächst soll anhand des Projekts PM-Dungeon dieser Umbau erfolgen. Das Projekt wurde im Team zu dritt im Rahmen des Moduls Programmiermethoden erstellt. Bei dem Projekt handelt es sich um ein Rogue-Like-Spiel, in welchem der Spieler einen Helden durch ein Dungeon voller Monster navigiert und die Monster bezwingt. Das Projekt verwendet eine bereitgestellte Bibliothek, welche libGDX[2] verwendet um Aufgaben wie die Verwaltung und Generierung der Spielwelt zu übernehmen.
 - Anschließend wird in C++ ein Miniprojekt erstellt, welches nicht-Spielercharaktere simuliert. Diese sollen sich zufällig durch die Welt bewegen und beim Zusammenstoßen mit anderen Charakteren Schaden erleiden. Wenn sie zu viel Schaden erleiden, werden sie aus der Spielwelt entfernt. Um die Charaktere und die Welt darzustellen wird die Bibliothek SFML[3] verwendet und das Basisprojekt von rewrking[4] wird für die einfache Verwendung von VS Code eingesetzt.
 
@@ -174,7 +174,7 @@ den Spieler werfen, wenn dieser nicht in Nahkampfreichweite ist.
 Im OOP-Ansatz würde ein Lösungsansatz so aussehen:
 - **Beispiel A**: Es existiert eine Basisklasse mit Attributen wie `Position` und `Health` und Methoden wie `move()` und `takeDamage()`. Für den neuen Gegenspieler
 wird eine neue Klasse angelegt, welche die Basisklasse erbt und den Attributen Werte zuweist.
-- **Beispiel B**: Es muss eine neue Klasse für das Geschossen angelegt und mit Logik gefüllt werden. Der Gegenspieler muss neue Methoden erhalten, die entscheiden
+- **Beispiel B**: Es muss eine neue Klasse für das Geschoss angelegt und mit Logik gefüllt werden. Der Gegenspieler muss neue Methoden erhalten, die entscheiden
 wann und wie das Geschoss abgefeuert wird. Geschosse müssen in die bestehende Infrastruktur eingebaut werden (Sprite muss gezeichnet werden, Geschoss muss bewegt werden,
 Geschoss muss bei Kontakt mit dem Spieler Schaden anrichten).
 
@@ -192,8 +192,8 @@ bestehenden Komponenten gefüllt, welche ebenfalls die Parameter des neuen Gegen
 jedoch schon die Notwendigkeit einer weiteren Klasse eingespart werden, wodurch die Komplexität des Projekts verringert wird.
 
 Im Beispiel B hingegen wird der Unterschied der Ansätze deutlicher. Jetzt benötigt der OOP-Ansatz neue und überladene Methoden in der neuen Klasse. Zudem muss
-neue Infrastruktur für das Geschosse geschaffen und alte Infrastruktur angepasst werden. Im ECS-Ansatz muss auch bestehende Infrastruktur angepasst werden, an dem
-Punkt wo das Geschoss erzeugt werden soll. Durch die Modularität, welche die Komponenten dem Entwickler geben können jedoch die bestehenden Systeme zum Bewegen,
+neue Infrastruktur für das Geschoss geschaffen und alte Infrastruktur angepasst werden. Im ECS-Ansatz muss auch bestehende Infrastruktur angepasst werden, an dem
+Punkt wo das Geschoss erzeugt werden soll. Durch die Modularität, welche die Komponenten dem Entwickler geben, können jedoch die bestehenden Systeme zum Bewegen,
 Animieren und der Erkennung einer Kollision ohne weitere Änderungen verwendet werden.
 
 Durch die Weiterverwendung von bestehenden Systemen ist es unter Umständen nicht einmal nötig, Kenntnisse über diese zu haben, um neue Funktionalitäten in das Projekt einzubauen.
@@ -350,7 +350,7 @@ Vorteile:
 - Dadurch, dass zusammengehörige Daten im Speicher nebeneinander liegen, können die CPU-Misses minimiert werden (Vereinfacht gesagt die Anzahl an Daten die unnötig in den CPU-Cache geladen werden)
 - Durch die Kapselung der Daten bietet sich zudem eine parallele Ausführung über die Daten an, indem auf zusammenhängende Daten nur an einer Stelle zugegriffen wird, wie das beispielsweise beim ECS-Pattern der Fall ist
 - Unit-Tests können einfacher erstellt werden, da lediglich Eingabedaten benötigt werden, welche transformiert und anschließend evaluiert werden müssen
-- Durch die Datenkapselung, ist es einfacher diese zu erweitern und zu verstehen
+- Durch die Datenkapselung ist es einfacher diese zu erweitern und zu verstehen
 
 Nachteile:
 - Erfordert umdenken gegenüber klassischem OOP-Ansatz
@@ -389,11 +389,11 @@ Im Rahmen des Forschungsprojektes wurden die Vor- und Nachteile vom ECS-Pattern 
 Durch das Anwenden des ECS-Patterns gegenüber der klassischen objektorientieren Programmierung wird zunächst mehr Zeit benötigt, um sich an die Verwendung zu gewöhnen. Zudem kann es je nach Entwickler-Team sein, dass kaum
 bis keine Erfahrung in dem Bereich vorliegt. Wenn man jedoch diesen Weg geht (vorausgesetzt die Anwendung eignet sich überhaupt für das ECS-Pattern, sprich sie ist sehr datenintensiv), kann sich dadurch langfristig die
 Wartbarkeit, Erweiterbarkeit und auch das Erstellen von Tests leichter gestalten. Bei der Verwendung des ECS-Patterns sollte man sich jedoch bewusst sein, dass dieses nicht sofort bessere Performance bietet, es bietet sich jedoch
-an ein ECS-Projekt auf Multithreading auszulegen und DOD-Prinzipien zu implementieren, da das ECS-Pattern diese Implementierungen erleichtert. 
+an, ein ECS-Projekt auf Multithreading auszulegen und DOD-Prinzipien zu implementieren, da das ECS-Pattern diese Implementierungen erleichtert. 
 
-Das DOD kann sowohl allein als auch zusammen mit dem ECS-Pattern eingesetzt werden. Dabei geht es vor allem darum Daten von der Logik zu trennen und sich bei der Transformation von Daten darüber Gedanken zu machen, wie diese optimal auf dem Prozessor ausgeführt werden können. Besonders in datenintensiven Anwendungen kann viel Performance gewonnen werden, dadurch dass Zugriffszeit beim Bearbeiten von Daten des gleichen Typs eingespart wird.
+Das DOD kann sowohl allein als auch zusammen mit dem ECS-Pattern eingesetzt werden. Dabei geht es vor allem darum, Daten von der Logik zu trennen und sich bei der Transformation von Daten darüber Gedanken zu machen, wie diese optimal auf dem Prozessor ausgeführt werden können. Besonders in datenintensiven Anwendungen kann viel Performance gewonnen werden, dadurch, dass Zugriffszeit beim Bearbeiten von Daten des gleichen Typs eingespart wird.
 
-Um die Forschungsarbeit weiter zu führen würde es sich anbieten die durchgeführten Tests für weitere Sprachen und vor allem größere Projekte zu wiederholen. Weiter könnte es interessant sein neben dem durchgeführten Laufzeitvergleich einen Speichervergleich durchzuführen. Zuletzt könnte auch ein Test über die Cache-Misses interessant sein, da das DOD erzielt diese zu minimieren.
+Um die Forschungsarbeit weiter zu führen, würde es sich anbieten, die durchgeführten Tests für weitere Sprachen und vor allem größere Projekte zu wiederholen. Weiter könnte es interessant sein, neben dem durchgeführten Laufzeitvergleich, einen Speichervergleich durchzuführen. Zuletzt könnte auch ein Test über die Cache-Misses interessant sein, da das DOD erzielt, diese zu minimieren.
 
 ## Quellen
 
