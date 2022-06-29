@@ -110,10 +110,171 @@ Die Ergebnisse der Tests wurde auf Grund der häufigen Anpassung in der Konsole 
     <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/resultsBrowser.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
     <figcaption>Abbildung 5: Buttons zum Starten von Ping und Multi-Client Test im Browser.</figcaption>
 </figure>
-
 #### WebTransport
 
+Für WebTransport sollen Messungen durchgeführt werden, die ebenfalls für WebSocket implementiert werden. Die Messergebnisse können im Abschnitt [Messungen](#messungen) gefunden werden.
+
+Um eine Verbindung zum Server mit WebTransport aufzubauen, muss eine Instanz der WebTransport-Klasse erzeugt werden. Die besondere Herausforderung bei dem Nutzen des Standards war, dass Typescript noch keine Typen-Unterstützung für WebTransport bietet. Der Standard ist allerdings in JavaScript verfügbar und nutzbar. Durch den Fakt, dass es keine Typen-Unterstützung gibt und Typescript bei unbekannten Typen einen Fehler ausgibt, muss die Variable bekannt gemacht werden `declare var WebTransport: any;`. Der Nachteil besteht darin, dass es nicht möglich ist, sich in der Entwicklungsumgebung zur Verfügung stehende Funktionen anzeigen zu lassen, sowie eventuelle Fehler in der Nutzung nicht angestrichen werden, weil die Variable als *any* gekennzeichnet werden musste.
+
+Für die Nutzung von WebTransport wurden drei Methoden geschrieben, die allesamt von den drei verschiedenen Tests genutzt werden konnten. In der ersten Methode des Services wird eine Verbindung hergestellt. Der Aufbau einer Verbindung wird im folgenden Auszug dargestellt.
+
+```typescript
+async connect() {
+    try {
+      this.transport = new WebTransport(this.url);
+      console.log('Initiating connection...');
+    } catch (e) {[...]}
+    try {
+      await this.transport.ready;
+      console.log('Connection ready.');
+    } catch (e) {[...]}
+    this.transport.closed
+      .then(() => {console.log('Connection closed normally.');})
+      .catch(() => {[...]});
+  }
+```
+
+Die zweite Methode übernimmt das Senden einer Nachricht über die nun aufgebaute Verbindung, während die dritte Methode sich um das Empfangen von Nachrichten kümmert. Wie hier zu sehen, wird ein bidirektionaler Stream erzeugt, auf dem Nachrichten ausgetauscht werden können. Weil die Antworten vom Server sowohl als Text als auch als binäre Nachrichten versendet werden können, wird das Empfangen auf zwei Streams - je nach erwarteter Antwort - aufgeteilt. Diese beiden unterscheiden sich jedoch lediglich in der Verarbeitung der Antwort.
+
+```typescript
+async send(message: string, type: "string" | "binary") {
+    let encoder = new TextEncoder();
+    let data = encoder.encode(message);
+    let stream = await this.transport.createBidirectionalStream(); 
+    switch (type) {
+      case "string":
+        this.readFromIncomingStream(stream);
+        break;
+      case ("binary"):
+        this.readFromIncomingBinaryStream(stream);
+        break;
+    } 
+    let writer = stream.writable.getWriter();
+    await writer.write(data);
+    await writer.close();
+  }
+```
+
+Das Empfangen wird hier exemplarisch an der Verarbeitung einer Antwort als Text dargestellt (siehe folgender Auszug). Noch bevor eine Nachricht versendet wird, wird auf der bidirektionalen Verbindung der Read-Stream solange durchlaufen, bis dieser vom Server geschlossen wird. Dabei wird die Antwort dekodiert und kann im Anschluss verarbeitet werden.
+
+```typescript
+async readFromIncomingStream(stream: any) {
+    let decoder = new TextDecoder();
+    let reader = stream.readable.getReader();
+    try {
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) {
+          console.log('Stream #' + ' closed');
+          return;
+        }
+        let data = decoder.decode(value);
+        [...]
+        console.log('Received data on stream #' + ': ' + data);
+      }
+    } catch (e) {[...]}
+}
+```
+
+Das Nutzen der Methoden `send` und `readFromIncomingStream` wird von den Tests verwendet. Für den *Multi-Client-Test*, werden mit der Eröffnung mehrerer Verbindungen, eine verschiedene Anzahl an Client (sog. virtuelle Clients) simuliert. Der folgende Auszug stellt die elementaren Schritt zur Durchführung dieses Tests dar. Die Methode `multiClientTestAsync()` wird dabei so häufig aufgerufen, wie virtuelle Clients erzeugt werden sollen. Wenn alle Nachrichten ausgetauscht wurden, wird die Zeit gestoppt.
+
+```typescript
+public async startMultiClientTest(connections: number) {      
+    console.time("downloadFile");
+    this.max = connections;
+    for (let i = 0; i < connections; i++) {
+        this.multiClientTestAsync();
+    }
+}
+async multiClientTestAsync() {
+	let connection: any;
+try { connection = new WebTransport(this.url); [...] console.timeEnd("downloadFile");}
+```
+
+Der nächste Auszug zeigt die wichtigsten Schritte, die durchgeführt werden müssen, um die RoundTripTime messen zu können. Analog zur Implementierung bei dem gleichnamigen WebSocket-Test, kann hier die Anzahl der zu übermittelnden Datenpakete (Nachrichten) angegeben werden. Wird nur ein Datenpaket übermittelt, kann man von dem tatsächlichen Ping sprechen. Bei mehreren Datenpaketen ist nicht mehr vom Ping die Rede, weil es sich dabei um die Zeit zwischen dem Versenden einer Nachricht und dem Erhalt einer Antwort landet. Dennoch soll auch die verstrichene Zeit bei mehrere gleich großen Paketen über einen Stream gemessen werden. Innerhalb der Klasse besteht ein Zähler, der die Anzahl der Pakete mitzählt. In der Methode `readFromIncomingStream` wird die Zeit gestoppt, sobald alle Pakete beim Client angelangt sind.
+
+```typescript
+public async startPingTest(i:number, max=this.max) {
+    await this.transport.ready;
+    console.time("pingTest")
+    this.counterActive = true;
+    for (let i = 0; i < max; i++) {
+        this.send('message', 'string');
+        this.counter = i;
+    }
+}
+```
+
+Für den letzten Test, der die Zeit beim Austausch von großen Datenmengen messen soll, wurde die Methode `downloadFile` implementiert. Diese erhält den Namen der Datei, die heruntergeladen werden soll und startet die Zeitmessung. In der Methode `readFromIncomingStream` wird die Zeit gestoppt, sobald die angefragte Datei heruntergeladen wurde.
+
+```typescript
+public async downloadFile(filename: string) {
+    await this.transport.ready;
+    console.time("downloadFile");    
+    this.fileName = filename;
+    this.send('download-file'+'$'+filename, 'binary');
+}
+```
+
 #### WebSocket
+
+Für WebSocket sollen die gleichen Tests durchgeführt werden, wie für WebTransport. Auch hierfür sind die Messergebnisse im Abschnitt [Messungen](#messungen) zu finden. Für die Verwendung von WebSockets wurde ein eigener Service `WebSocketService` implementiert, der das *socket-io*-Socket per *Dependency Injection* nutzt.
+
+Beim ersten Test handelt es sich um den *Multi-Client-Test*. Hier soll die Geschwindigkeit, in Abhängigkeit von den verbundenen Clients getestet werden. Mit *socket-io* lassen sich mehrere virtuelle Clients simulieren, indem mehrere Sockets geöffnet werden. Der folgende Code-Auszug zeigt die dafür implementierte Methode. Je nach Test werden unterschiedlich viele Verbindungen aufgebaut und die der Startzeitpunkt wird erfasst. Wenn alle Verbindungen ihre Antwort, in Form einer 1MB großen Datei, erhalten haben, wird die Zeit gestoppt.
+
+```typescript
+public startMultiClientTest(connections: number) {
+    const config: SocketIoConfig = { url: 'http://websocket.withoeft.nz:4444', options: {} };
+    console.time("multiClientTest");
+    let counter = 0;
+    for (let i = 0; i < connections; i++) {
+      let socket = new Socket(config);
+      socket.emit('multi-client-test', "2_1MB.bin");
+      socket.on('multi-client-test', (filename: string, file: Uint8Array) => {
+        let blob = new Blob([file], { type: 'application/octet-stream' });
+        let url = window.URL.createObjectURL(blob);
+        let a = document.createElement('a');
+        a.href = url; a.download = filename; a.click();
+        counter++;
+        if (counter >= connections) console.timeEnd("multiClientTest");
+      });
+    }
+  }
+```
+
+Beim zweiten Test soll der Ping (Round Trip Time) gemessen werden. Weil es beim Ping um die Zeit vom Versenden bis zum Erhalt einer Nachricht geht, wird hierbei keine Datei angefordert, sondern lediglich eine kleine Antwort als Text. Es soll jedoch zusätzlich zum Ping (Anfrage von nur einem Datenpaket) auch gemessen werden, wie lange mehrere kleine Datenpakete auf einer Verbindung für die Übertragung benötigen. Der folgende Code-Auszug zeigt die implementierte Methode für diesen Test. Dabei kann vorgegeben werden, wie viele Pakete (Nachrichten) für diesen Test übertragen werden sollen. Sind alle Pakete übertragen, wird die Zeit gestoppt.
+
+```typescript
+public startPingTest(i:number, max=1) {
+    console.time("pingTest");
+    let that = this;
+    this.socket.on('ping', function(data: string){
+      if (i >= max) {
+        console.timeEnd("pingTest");
+        that.socket.removeListener('ping')
+        return;
+      }
+      that.socket.emit('ping', i+=1);
+    })
+    this.socket.emit('ping', i)
+  }
+```
+
+Der letzte Test besteht in der Messung der Downloadzeit von Dateien verschiedener Größe (siehe folgenden Code-Auszug). Wie bereits beschrieben, werden im Browser die für den Download zur Verfügung stehenden Dateien angezeigt. Durch einen Doppelklick auf diese wird ein Testdurchlauf gestartet. Für den Start des Tests wird ein `downloadCounter` gesetzt, der festlegt, wie oft die Datei heruntergeladen werden soll (100 + 1 Mal). Für jede Datei wird die Zeit gemessen, sodass hinterher ein Durchschnitt gebildet werden kann. Ist eine Datei heruntergeladen worden, wird automatisch der Download der nächsten Datei gestartet, bis die maximale Anzahl an festgelegten Downloads erreicht worden ist.
+
+```typescript
+this.socket.on('download-file', (filename: string, file: Uint8Array) => {
+    let blob = new Blob([file], { type: 'application/octet-stream' });
+    let url = window.URL.createObjectURL(blob);
+    let a = document.createElement('a');
+    a.href = url; a.download = filename; a.click();
+    console.timeEnd("downloadFile"); 
+    if (this.testDownloadSpeed && this.downloadCounter < 100) {
+        this.downloadCounter++;
+        this.downloadFile(filename);
+    }
+});
+```
 
 ### Backend
 
@@ -266,6 +427,16 @@ async def download_file_event(sid, filename):
 async def download_file_event(sid, filename):
     await sio.emit('multi-client-test', (filename, Data.get_file(filename)), room=sid)
 ```
+
+### Zwischenfazit
+
+An dieser Stelle kann ein kleines Zwischenfazit zur Implementierung gezogen werden. Dieses soll Bezug auf die zu Beginn gestellte Forschungsfrage **Unterschiede in der Implementierung** nehmen. Während sich die Implementierung der Verbindungen mit WebSocket als keine große Herausforderung herausstellte, war die Nutzung der WebTransport-Protokolls deutlich aufwändiger. Dies gilt sowohl für die Verwendung im Frontend als auch für die Nutzung im Backend.
+
+Dies lag zum Einen daran, dass für die Nutzung von WebSockets, die seit langem bestehende Bibliothek *socket-io* verwendet werden konnte. Hier musste lediglich das npm-Paket bzw. die Python-Library installiert werden und zusätzlich das `@types/socket.io` für die Nutzung mit Typescript nachgerüstet werden.
+
+Für die Verwendung von WebTransport gibt es solche Bibliotheken aktuell noch nicht. Wie beschrieben, gibt es für Python eine bereits implementierte Nutzung des Protokolls. Diese musste aber stark auf den benötigten Anwendungszweck angepasst werden und stellt noch keine eigenständige Bibliothek dar. Auch die Initialisierung und der Aufbau einer Verbindung ist aktuell noch deutlich aufwändiger, wodurch deutlich mehr Schritte in der Implementierung berücksichtigt werden müssen. Hinzu kommt das aktuelle Fehlen der Typen in Typescript. So muss jede neue Variable selbst bekannt gemacht werden, da keine `@types/webtransport` zur Verfügung stehen. Der große Nachteil ist dabei auch das Fehlen von Fehlermeldungen in der Entwicklungsumgebung, durch die Bugs und Schwachstellen direkt vermieden werden können und normalerweise eine der großen Stärken von Typescript gegenüber Javascript ist.
+
+Ohne hierbei bereits auf die Messergebnisse einzugehen zu wollen, kann festgehalten werden, dass es rein aus der Perspektive der Implementierung leichter ist und viel Zeit spart, WebSocket zu verwenden. Auf die Unterschiede in der Performanz wird im Folgenden noch eingegangen.
 
 ## Messungen
 
