@@ -129,7 +129,7 @@ Abbildung 1 zeigt die am weit verbreitetsten End-to-end-Testframeworks hinsichtl
 
 |![](assets/end-to-end-frameworks_distribution.png)|
 |:--:| 
-| *Abbildung 1: Anteile weit verbreitetster End-to-End-Testframeworks* [9] |
+| *Abbildung 1: Anteile am weitesten verbreiteter End-to-End-Testframeworks* [9] |
 
 Bei den Anteilen ist zu beachten, dass **Protractor**, welches wiederrum selbst Selenium WebDriver implementiert und nutzt und bis heute jahrelanger Standard für Angular-Applikationen war, keine weiteren Updates und Support zur Verfügung stellen wird. Dem liegt zu Grunde, dass Protractor [Control Flow](https://www.protractortest.org/#/control-flow) nutzt, um Promises zu handhaben, dies jedoch aufgrund neuer JavaScript-Standards bzw. JavaScript-Technologien (async/await) von Selenium WebDriver V4.0 nicht mehr unterstützt wird und somit weitgreifende Anpassungen seitens Protractor erfolgen müssten. Das Entwicklerteam hat letzendlich dazu entschieden, den notwendigen Anpassungen nicht mehr nachzukommen. [10]  
 
@@ -166,10 +166,15 @@ Gemäß [The State of Javascript 2021](https://2021.stateofjs.com/en-US/librarie
 | Eigenschaft | Jest | Jasmine | Mocha |
 |:-----------|:----|:-----|:-------|
 | Test von asynchronen Code | Ja | Ja | Ja |
-| Built-in Mocks | Ja, built-in | Ja, built-in | Nein. Implementierbar durch entsprechende Bibliotheken |
-| Build-in Code Coverage | Ja | Ja | Ja |
+| Built-in Mocks | Ja | Ja | Nein. Implementierbar durch entsprechende Bibliotheken |
+| Built-in Stubs | Ja | Ja | Nein. Implementierbar durch entsprechende Bibliotheken |
+| Built-in Spies | Ja | Ja | Nein. Implementierbar durch entsprechende Bibliotheken |
+| Build-in Code Coverage | Ja | Ja | Nein. Implementierbar durch entsprechende Bibliotheken |
+| Build-in Assertion Checks | Ja | Ja | Nein. Implementierbar durch entsprechende Bibliotheken |
+| Built-in Code Coverage | Ja | Nein | Nein. Implementierbar durch entsprechende Bibliotheken |
+| Verwendbar ohne weitere Abhängigkeiten/Bibliotheken | Ja | Ja | Nein |
 
-*Tabelle 3: Charakteristika Jest, Jasmine, Mocha*
+*Tabelle 3: Charakteristika Jest, Jasmine, Mocha* [12]
 
 # Testentwicklung
 
@@ -278,3 +283,7 @@ zuletzt geprüft am: 27.06.2022
 [11]: Cathal Max Donnacha  
 https://cathalmacdonnacha.com/cypress-vs-playwright-which-is-best-for-e2e-testing  
 zuletzt geprüft am: 27.06.2022  
+
+[12]: Shashikala Parakramasinghe  
+https://blog.bitsrc.io/angular-9-testing-a-comparison-between-jasmine-jest-and-mocha-acc57bcab836  
+zuletzt geprüft an: 27.06.2022
