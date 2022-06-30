@@ -290,7 +290,7 @@ Ob die Größe der Binaries durch MLGO reduziert werden kann, hängt allerdings 
 
 Ursprünglich war der Scope des Projekts so ausgelegt, dass ein bisher nicht von
 MLGO behandelter Optimierungspass durch ein vollständig neu trainiertes KI-Modell
-erweitert werden sollte (der GreedyRegAlloc Pass TODO: referenz). Für diesen
+erweitert werden sollte (der [GreedyRegAlloc Pass](https://llvm.org/devmtg/2018-04/slides/Yatsina-LLVM%20Greedy%20Register%20Allocator.pdf)). Für diesen
 Pass sollte anschließend der Effekt auf die Binärdateigröße mit WebAssembly als
 Zielarchitektur evaluiert werden.
 Das Aufsetzen
