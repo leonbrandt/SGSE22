@@ -227,6 +227,17 @@ Gemäß der [beleuchteten Design-Ansätze](#ansätze-für-wiederverwendbarenwart
 |:--:| 
 | *Abbildung 2: Vorgesehene Page Objects* |
 
+Die für die Tests notwendige Daten werden ausgelagert, sodass diese bei Bedarf nur an einer Stelle verändert und innerhalb mehrerer Testfälle verwendet werden können.
+
+- user.json  
+=> Der Zugriff auf die Webseite erfolgt mittels NTML-Authentifizierung. FÜr das Testen des Vorgangs wird ein existierender User und nicht existierender bzw. user mit nicht ausreichenden Rechten vorgesehen
+    - validUser: { username, password }
+    - invalidUser: [ { username, password }, {username, password }, ... ] 
+- machines.json  
+  => Enthält existierende Machinen unterschiedlichen Typs sowie invalide Machinennummern (nicht existierend und invalides Format für Anzeigechecks)
+    - existingMachines [ machineNumber1, machineNumber 2 ]  
+    - invalidMachineNumbers [ machineNumber1, machineNumber2 ]
+
 (Vorgesehene Kapselung der Testdaten schildern)
 
 **Cypress**
