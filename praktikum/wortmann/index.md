@@ -70,13 +70,17 @@ Bei dem ersten Deployment handelt es sich um eine containerisierte Webanwendung 
 
 Bei dem TIG-Stack handelt es sich um einen Monitoring-Stack bestehend aus den Programmen Telegraf, InfluxDB und Grafana. Telegraf ist ein Agent, welcher Messwerte über ein bestimmtes System sammelt, z.B. Verbrauch von CPU und Arbeitsspeicher. Durch den Telegraf Agent werden die Daten in die InfluxDB geschrieben. Es handelt sich dabei um eine Datenbank für Zeitreihendaten. Das Grafan verbindet sich mit der InfluxDB und kann mit Hilfe von Dashboards und Graphen die gesammelten Daten visualisieren. Das Ziel ist es, einen lauffähigen Stack zu deployen, in dem die drei Komponenten automatisch miteinander verbunden sind und Daten untereinander austauschen können.
 
+![](./images/tig_architecture.png)
+
+*Abbildung 1: Architektur des TIG-Stacks auf Kubernetes*
+
 ### Sonstige Software
 
 Als zusätzliche Software wird auf dem Cluster das Management-Portal [Rancher](https://rancher.com/) installiert. Rancher ist eine Open Source Software und bietet ein Webinterface zum Verwalten eines oder mehrerer Kubernetes Cluster. Es dient für diese Aufgabe lediglich zur Unterstützuung bei Fehlern und zur besseren Darstellung und Überwachung der aktuellen Deployments. Rancher wird nicht über die Continuous Deployment Software installiert, sondern manuell.
 
 ## Bewertungskriterien
 
-Der Vergleich der CD-Programme wird anhand verschiedener Bewertungskriterien durchgeführt. Diese sind Lead Time for Changes (wie lange es vom Commit im Git zur laufenden Anwendung dauert) [[12]](#ref-12), Time to Restore Service (wie lange es dauert, bis ein ausgefallener Dienst wieder hergestellt werden kann) [[12]](#ref-12), der benötigte Aufwand bei Skalierung (hinzufügen neuer Repositories, Kubernetes Ressourcen und Cluster), Nutzbarkeit des Programms und Sicherheit (Zugriffsrechte, Absicherung, etc.). 
+Der Vergleich der CD-Programme wird anhand verschiedener Bewertungskriterien durchgeführt. Diese sind Lead Time for Changes (wie lange es vom Commit im Git zur laufenden Anwendung dauert) [[6]](#ref-6), Time to Restore Service (wie lange es dauert, bis ein ausgefallener Dienst wieder hergestellt werden kann) [[6]](#ref-6), der benötigte Aufwand bei Skalierung (hinzufügen neuer Repositories, Kubernetes Ressourcen und Cluster), Nutzbarkeit des Programms und Sicherheit (Zugriffsrechte, Absicherung, etc.). 
 
 Für die Time for Lead Changes wird die Zeit gemessen, wie schnell Änderungen an den Ressourcen im Kubernetes Cluster nach einem Commit im Git-Repository durchgeführt werden.
 
@@ -96,7 +100,7 @@ Der erste Schritt der Durchführung ist die Installation des Kubernetes Clusters
 
 ![Ausschnitt des Befehls rke config](./images/rke_config_command.png)
 
-*Abbildung 1: Ausschnitt des Befehls `rke config`*
+*Abbildung 2: Ausschnitt des Befehls `rke config`*
 
 Daraufhin kann durch die entstandene [Konfigurationsdatei](./files/rke_config.yml) mit dem Befehl `rke up` der Cluster erstellt werden. Dabei wird die Datei `kubeconfig.yml` erstellt, welche die Zugriffdaten auf den Cluster und seine IP-Adresse beinhalten. Alle Aufrufe der Kommandozeile von Befehlen wie `kubectl` oder `helm` verwenden diese Datei. Durch den Befehl `export KUBECONFIG=kubeconfig.yml` wird die Datei als aktuelle Konfiguration gesetzt.
 
@@ -151,7 +155,7 @@ Für Drone ist keine weitere Installation notwendig, da es bereits eine unterneh
 
 #### Argo CD und Flux CD
 
-Die Installation von Argo CD und FLux CD wurden nach den Anleitungen aus der jeweiligen Dokumentation [[6](#ref-6), [7](#ref-7)] übernommen:
+Die Installation von Argo CD und FLux CD wurden nach den Anleitungen aus der jeweiligen Dokumentation [[7](#ref-7), [8](#ref-8)] übernommen:
 
 Durch den Befehl `kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml` werden die vordefinierten Ressourcen für Argo CD installiert. Danach kann auf das Programm entweder über die Kommandozeile oder die Weboberfläche von Argo CD zugegriffen werden.
 
@@ -159,7 +163,7 @@ Für Flux CD muss zuerst die CLI heruntergeladen werden. Diese kann mit dem Befe
 
 ![](./images/flux_check.png)
 
-*Abbildung 2: Ausgabe des Befehls `flux check -n flux`*
+*Abbildung 3: Ausgabe des Befehls `flux check -n flux`*
 
 
 ### Deployment der Anwendungen
@@ -226,43 +230,43 @@ Nach einem Commit auf den Branch wird der Drone Server durch den Webhook von Git
 
 ![](./images/drone_pipeline.png)
 
-*Abbildung X: Ansicht der Pipeline nach Ausführung in der Weboberfläche von Drone*
+*Abbildung 4: Ansicht der Pipeline nach Ausführung in der Weboberfläche von Drone*
 
 #### Argo CD
 
 Das Deployment der Ressourcen über Argo CD kann über die Weboberfläche oder Kommandozeile erfolgen. Für dieses Praktikum wird die Weboberfläche verwendet.
 
-im ersten Schritt erfolgt die Anmeldung auf der Weboberfläche. Da kein externer Identity Provider eingestellt ist, wird nur das Initialpassword benötigt, welches mit dem Befehl `kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo` ausgelesen werden kann [[6]](#ref-6). 
+im ersten Schritt erfolgt die Anmeldung auf der Weboberfläche. Da kein externer Identity Provider eingestellt ist, wird nur das Initialpassword benötigt, welches mit dem Befehl `kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo` ausgelesen werden kann [[7]](#ref-7). 
 
 Daraufhin wird das Repository hinzugefügt, aus dem die Definitionen der Kubernetes Ressourcen stammen. Das Hinzufügen erfolgt in der Weboberfläche über `Manage your repositories, projects, settings -> Repositories -> Connect Repository using HTTPS`. In einer produktiven Nutzung ist es empfehlenswert, für die hinterlegten Zugriffsdaten auf das Repository entweder eine GitHub App zu registrieren oder einen Account zu verwenden, der keiner realen Person zugeordnet ist. Dadurch gibt es eine strikte Trennung der Zugriffsrechte (z.B. nur lesenden Zugriff) und es gibt keine Probleme, wenn ein Entwickler aus dem Repository entfernt wird.
 
 ![Hinzurügen eines Repositories bei Argo CD](./images/argocd_create_repo.png)
 
-*Abbildung 2: Hinzufügen eines Repositories bei Argo CD*
+*Abbildung 5: Hinzufügen eines Repositories bei Argo CD*
 
 Auf der Übersichtsseite der Repositories kann nun direkt eine Applikation aus dem Repository erstellt werden:
 
 ![Hinzurügen einer Applikation bei Argo CD](./images/argocd_create_application.png)
 
-*Abbildung 3: Hinzurügen einer Applikation bei Argo CD*
+*Abbildung 6: Hinzurügen einer Applikation bei Argo CD*
 
 In der darauf geöffneten Übersicht können Optionen bezüglich des Git-Branches und Ordners und der Sync-Policy eingestellt werden:
 
 ![Konfiguration einer Applikation bei Argo CD](./images/argocd_configure_application.png)
 
-*Abbildung 4: Konfiguration einer Applikation bei Argo CD*
+*Abbildung 7: Konfiguration einer Applikation bei Argo CD*
 
 Für das Praktikum ist die Sync Policy `Automatic` mit den Optionen `Prune Resources` und `Self Heal` ausgewählte. Durch die automatische Synchronisation werdne Änderungen im Git-Repository erkannt. Durch `Prune Resources` werden nicht mehr vorhandene Ressourcen gelöscht und durch `Self Heal` werden alle Änderungen, die nicht dem Stand im Repository entsprechen, sofort überschrieben. Diese Optionen wurden so gewählt, damit es möglichst keine Unterschiede zwischen dem Stand im Repository und der Wirklichkeit entsteht (Prinzip nach GitOps).
 
 Das Anlegen einer Applikation bei Argo CD erfolgt dreimal, für die Webanwendung, Harbor und den TIG-Stack. Der Unterschied ist nur der Name der Applikation, der Kubernetes Namespace und der Ordnerpfad im Git-Repository.
 
-Das Deployment von Harbor erfolgt als Helm-Chart. Anstelle eines Git-Repositories kann bei Argo CD auch ein Helm-Chart Repository als Quelle ausgewählt werden. Dabei muss sich die Konfigurationsdatei `values.yml`, wodurch die Anwendung konfiguriert wird, sich im gleichen Repository befinden, wie die Helm Chart. Da sich die Harbor Helm-Chart in einem öffentlichen Repository befindet, wird als Quelle das interne Git-Repository verwendet, in dem durch die Datei `kustomization.yml` auf das öffentliche Repository referenziert wird. Damit dies funktioniert, muss in dem Kubernetes Secret `argocd-cm` der Key `kustomize.buildOptions` auf den Wert `--enable-helm` gesetzt werden, da das Deployment ohne die Option fehlschlägt [[8]](#ref-8).
+Das Deployment von Harbor erfolgt als Helm-Chart. Anstelle eines Git-Repositories kann bei Argo CD auch ein Helm-Chart Repository als Quelle ausgewählt werden. Dabei muss sich die Konfigurationsdatei `values.yml`, wodurch die Anwendung konfiguriert wird, sich im gleichen Repository befinden, wie die Helm Chart. Da sich die Harbor Helm-Chart in einem öffentlichen Repository befindet, wird als Quelle das interne Git-Repository verwendet, in dem durch die Datei `kustomization.yml` auf das öffentliche Repository referenziert wird. Damit dies funktioniert, muss in dem Kubernetes Secret `argocd-cm` der Key `kustomize.buildOptions` auf den Wert `--enable-helm` gesetzt werden, da das Deployment ohne die Option fehlschlägt [[9]](#ref-9).
 
 Nach der Einrichtung der Applikationen werden die definierten Ressourcen erfolgreich auf dem Cluster deployed. In der Weboberfläche von Argo CD befindet sich auch eine Übersicht der Applikationen mit Status, welche Komponenten noch nicht erfolgreich sind.
 
 ![Übersicht der Argo CD Applikationen mit Health Status](./images/argocd_applications.png)
 
-*Abbildung 5: Übersicht der Argo CD Applikationen mit Health Status* 
+*Abbildung 8: Übersicht der Argo CD Applikationen mit Health Status* 
 
 #### Flux CD
 
@@ -322,7 +326,7 @@ Nach dem Deployment kann der Befehl `flux get all -n flux` verwendet werden, um 
 
 ![](./images/flux_get_all.png)
 
-*Abbildung 5: Ausgabe des Befehls `flux get all -n flux`* 
+*Abbildung 9: Ausgabe des Befehls `flux get all -n flux`* 
 
 Bei dem Deployment von Argo CD wurde die Helm Chart von Harbor mit Hilfe von Kustomize deployed, da Argo CD keine Konfiguration aus einem anderen Repository erlaubt. Flux CD bietet diese Möglichkeit. Dazu muss statt einer `GitRepository` Ressource ein `HelmRepository` erstellt werden, welches durch ein `HelmRelease` referenziert werden kann. Die Konfiguration der Helm-Chart kann dann über eine `ConfigMap` eingespielt werden.
 
@@ -377,11 +381,11 @@ Da die Projekte bei Argo CD mit der Sync Policy `Automatic` konfiguriert sind, w
 
 ![](./images/argocd_sync.png)
 
-*Abbildung 6: Sync status der Argo CD Applikation*
+*Abbildung 10: Sync status der Argo CD Applikation*
 
 #### Flux CD
 
-Die Time for Lead Changes bei Flux Cd ist konfigurierbar. Die Ressource `GitRepository` besitzt das Feld `interval`, welches frei wählbar ist. Nach Ablauf des Intervalls wird das Git-Repository in einem der Container gecloned und auf Änderungen überprüft. Außerdem wird ein Intervall in der Ressource `Kustomization` angegeben. Nach diesem Intervall wird das Deployment auf Änderungen mit dem heruntergeladenen Repo überprüft [[11](#ref-11)].
+Die Time for Lead Changes bei Flux Cd ist konfigurierbar. Die Ressource `GitRepository` besitzt das Feld `interval`, welches frei wählbar ist. Nach Ablauf des Intervalls wird das Git-Repository in einem der Container gecloned und auf Änderungen überprüft. Außerdem wird ein Intervall in der Ressource `Kustomization` angegeben. Nach diesem Intervall wird das Deployment auf Änderungen mit dem heruntergeladenen Repo überprüft [[10](#ref-10)].
 
 Durch das konfigurierbare Intervall ist die Time for Lead Changes frei wählbar. Die in der Ausarbeitung gewählten 30 Sekunden wurden in den Deployment Vorgängen nicht überschritten.
 
@@ -448,7 +452,7 @@ Die Übersicht der aktuellen Kubernetes Ressourcen ist übersichtlich gehalten u
 
 ![](./images/argocd_system_architecture.png)
 
-*Abbildung 6: Diagramm einer Applikation bei Argo CD*
+*Abbildung 11: Diagramm einer Applikation bei Argo CD*
 
 Zusammengefasst ist die Bedienbarkeit der  Weboberfläche von Argo CD sehr hoch. Es ist keine große Einarbeitung notwendig, um die Oberfläche zu verstehen. Für automatisierte Systeme oder Entwickler ohne Webzugriff kann auch die Kommandozeile verwendet werden. Zusätzlich lassen sich alle über die Weboberfläche angelegten Ressourcen durch YAML-Dateien beschreiben und können über unterschiedliche Wege auf dem Cluster gestartet werden.
 
@@ -464,27 +468,27 @@ Die Installation von Flux CD ist einfach gehalten und gut dokumentiert. Das Anle
 
 Sensible Daten, z.B. Passwörter und Zertifikate, werden bei Drone als Secreta hinterlegt. Diese können nur einmalig angelegt werden und nur durch die Ausführung einer Pipeline gelesen werden. Sie liegen zusätzlich verschlüsselt in der Datenbank von Drone. Die Kommunikation mit dem Drone Server erfolgt über HTTPS und ist damit auch verschlüsselt [[10](#ref-10)].
 
-Drone an sich besitzt keine genaue Steuerung von Zugriffsrechten. Stattdessen werden die Rechte einzelner Benutzer bei Drone durch die Rechte in der verbundenen GitHub-Instanz vergeben. Das bedeutet, ein Benutzer hat bei Drone nur Zugriff auf Repositories, auf die auf bei GitHub Zugriff besteht. Sobald ein Benutzer Dateien in dem Git-Repo hochladen kann, darf er auch Pipelines ausführen [[10](#ref-10)]. Der Nachteil dabei ist, dass es zu ungewollten Änderungen kommen kann, wenn z.B. ein Entwickler eine Pipeline ausführt, auf die er keinen Zugriff haben soll.
+Drone an sich besitzt keine genaue Steuerung von Zugriffsrechten. Stattdessen werden die Rechte einzelner Benutzer bei Drone durch die Rechte in der verbundenen GitHub-Instanz vergeben. Das bedeutet, ein Benutzer hat bei Drone nur Zugriff auf Repositories, auf die auf bei GitHub Zugriff besteht. Sobald ein Benutzer Dateien in dem Git-Repo hochladen kann, darf er auch Pipelines ausführen [[11](#ref-11)]. Der Nachteil dabei ist, dass es zu ungewollten Änderungen kommen kann, wenn z.B. ein Entwickler eine Pipeline ausführt, auf die er keinen Zugriff haben soll.
 
 Ein weiterer Nachteil ist, dass der Cluster von dem Drone Server und der Drone Server von der GitHub Instanz erreichbar sein muss. Der Drone Server muss den Kubernetes Cluster erreichen, um der Push ein Deployment zu starten. Der Drone Server muss durch die GitHub-Instanz erreichbar sein, um durch einen Webhook Pipelines auszulösen. Dadurch gibt es zwei potenzielle Angriffsziele. Es ist daher empfehlenswert, externe Sicherheitsmechanismen, wie z.B. eine Web-Application Firewall oder virtuelle Netze und Netzwerkbeschränkungen zu verwenden.
 
 #### Argo CD
 
-Argo CD bietet Sicherheit in verschiedenen Kategorien. Die Authentifizierung an Argo CD erfolgt über JSON Webtoken. Benutzer können entweder manuell angelegt werden (wie der Standardadmin in dieser Ausarbeitung), oder über Single Sign-on durch einen externen Identity Provider durch beispielsweise OIDC oder Microsoft Active Directory angebunden werden. Die Kommunikation mit dem Server erfolgt verschlüsselt über TLS [[9](#ref-9)].
+Argo CD bietet Sicherheit in verschiedenen Kategorien. Die Authentifizierung an Argo CD erfolgt über JSON Webtoken. Benutzer können entweder manuell angelegt werden (wie der Standardadmin in dieser Ausarbeitung), oder über Single Sign-on durch einen externen Identity Provider durch beispielsweise OIDC oder Microsoft Active Directory angebunden werden. Die Kommunikation mit dem Server erfolgt verschlüsselt über TLS [[12](#ref-12)].
 
-Die Zugangsdaten, die Argo CD verwendet, um auf Git-Repositories zuzugreifen, werden als Secrets im Kubernetes Cluster gespeichert. Aufgrund der Funktionsweise von Kubernetes kann der Zugriff darauf durch Kubernetes Role Based Access Control (RBAC) gesteuert werden [[9](#ref-9)]. Da im Unternehmen standardmäßig Rancher für den Zugriff auf Cluster verwendet wird, kann der Zugriff durch die Rechtevergabe von Rancher weiter eingeschränkt werden. Dies passiert unabhängig von Argo CD.
+Die Zugangsdaten, die Argo CD verwendet, um auf Git-Repositories zuzugreifen, werden als Secrets im Kubernetes Cluster gespeichert. Aufgrund der Funktionsweise von Kubernetes kann der Zugriff darauf durch Kubernetes Role Based Access Control (RBAC) gesteuert werden [[12](#ref-12)]. Da im Unternehmen standardmäßig Rancher für den Zugriff auf Cluster verwendet wird, kann der Zugriff durch die Rechtevergabe von Rancher weiter eingeschränkt werden. Dies passiert unabhängig von Argo CD.
 
-Neben der Steurung der Authorisierung und Authentifizierung bietet Argo CD die Möglichkeit, Audit Logs zu sammeln [[9](#ref-9)].
+Neben der Steurung der Authorisierung und Authentifizierung bietet Argo CD die Möglichkeit, Audit Logs zu sammeln [[12](#ref-9)].
 
 Zusammengefasst bietet Argo CD viele Möglichkeiten der Absicherung durch Authorisierung, Authentifizierung, Verschlüsselung und Audit Logging. Dazu kommt, dass ein Cluster, der durch Argo CD betrieben wird, nicht aus dem Internet erreichbar sein muss, da Argo CD ein Pull-Deployment ausführt. 
 
 #### Flux CD
 
-Flux CD bietet keine eigene Benutzerverwaltung, sondern integriert sich mit dem RBAC des Kubernetes Clusters. In der Grundausstattung reicht das System aus, um die Rechteverteilung an einzelne Benutzer zu vergeben. Bei der Verwendung mit vielen Benutzer mit unterschiedlichen Rollen, sollte ein externer Identity Provider (z.B. OAuth oder Microsoft Active Directory) durch Programme wie Rancher hinzugefügt werden. Flux CD bietet diese Möglichkeit nicht [[11](#ref-11)].
+Flux CD bietet keine eigene Benutzerverwaltung, sondern integriert sich mit dem RBAC des Kubernetes Clusters. In der Grundausstattung reicht das System aus, um die Rechteverteilung an einzelne Benutzer zu vergeben. Bei der Verwendung mit vielen Benutzer mit unterschiedlichen Rollen, sollte ein externer Identity Provider (z.B. OAuth oder Microsoft Active Directory) durch Programme wie Rancher hinzugefügt werden. Flux CD bietet diese Möglichkeit nicht [[10](#ref-11)].
 
 Ein Vorteil von Flux CD ist, dass der Cluster keinen öffentlichen Zugriff durch das Versionskontrollsystem oder eine CI Pipeline benötigt, da Flux CD nach dem Pull-Prinzip arbeitet.
 
-Die Zugangsdaten, die Flux CD zum Zugriff auf das Versionskontrollsystem verwendet, werden als Kubernetes Secrets im Cluster gespeichert. Auch hier wird der Zugriff über RBAC gesteuert [[11](#ref-11)].
+Die Zugangsdaten, die Flux CD zum Zugriff auf das Versionskontrollsystem verwendet, werden als Kubernetes Secrets im Cluster gespeichert. Auch hier wird der Zugriff über RBAC gesteuert [[10](#ref-10)].
 
 Da die meisten sicherheitsrelevanten Punkte von Flux CD (Authentifizierung, Authorisierung, Zugriff auf Secrets) nicht von Flux CD erfüllt werden, sondern dafür ein externes System bzw. eine externe Konfiguration notwendig ist, wird die Sicherheit von Flux CD nur als mittelmäßig bewertet.
 
@@ -524,19 +528,19 @@ Falls das Ergebnis der Arbeit ausreichend ist, kann Argo CD in einer produktiven
 
 <span id="ref-5">[5]: *Flux CD GitHub*. Verfügbar unter https://github.com/fluxcd/flux2, zuletzt zugegriffen am 20.06.22</span>
 
-<span id="ref-6">[6]: *Argo CD Getting started*. Verfügbar unter https://argo-cd.readthedocs.io/en/stable/getting_started/, zuletzt zugegriffen am 22.06.22</span>
+<span id="ref-6">[6]: D. G. Portman, *Are you an Elite DevOps performer? Find out with the Four Keys Project*, 2020. Verfügbar unter https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance, zuletzt zugegriffen am 23.06.22</span>
 
-<span id="ref-7">[7]: *Flux CD Installation*. Verfügbar unter https://fluxcd.io/docs/installation/, zuletzt zugegriffen am 22.06.22</span>
+<span id="ref-7">[7]: *Argo CD Getting started*. Verfügbar unter https://argo-cd.readthedocs.io/en/stable/getting_started/, zuletzt zugegriffen am 22.06.22</span>
 
-<span id="ref-8">[8]: *Argo CD Issue: Support --enable-helm flag for kustomize*. Verfügbar unter https://github.com/argoproj/argo-cd/issues/7835, zuletzt zugegriffen am 23.06.22</span>
+<span id="ref-8">[8]: *Flux CD Installation*. Verfügbar unter https://fluxcd.io/docs/installation/, zuletzt zugegriffen am 22.06.22</span>
 
-<span id="ref-9">[9]: *Argo CD: Security*. Verfügbar unter https://argo-cd.readthedocs.io/en/stable/operator-manual/security/, zuletzt zugegriffen am 23.06.22</span>
+<span id="ref-9">[9]: *Argo CD Issue: Support --enable-helm flag for kustomize*. Verfügbar unter https://github.com/argoproj/argo-cd/issues/7835, zuletzt zugegriffen am 23.06.22</span>
 
-<span id="ref-10">[10]: *Drone CI / CD: Docs*. Verfügbar unter https://docs.drone.io/, zuletzt zugegriffen am 23.06.22</span>
+<span id="ref-10">[10]: *Flux CD: Docs*. Verfügbar unter https://fluxcd.io/docs/, zuletzt zugegriffen am 23.06.22</span>
 
-<span id="ref-11">[11]: *Flux CD: Docs*. Verfügbar unter https://fluxcd.io/docs/, zuletzt zugegriffen am 23.06.22</span>
+<span id="ref-11">[11]: *Drone CI / CD: Docs*. Verfügbar unter https://docs.drone.io/, zuletzt zugegriffen am 23.06.22</span>
 
-<span id="ref-12">[12]: D. G. Portman, *Are you an Elite DevOps performer? Find out with the Four Keys Project*, 2020. Verfügbar unter https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance, zuletzt zugegriffen am 23.06.22</span>
+<span id="ref-12">[12]: *Argo CD: Security*. Verfügbar unter https://argo-cd.readthedocs.io/en/stable/operator-manual/security/, zuletzt zugegriffen am 23.06.22</span>
 
 ## Anhang
 
