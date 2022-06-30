@@ -268,6 +268,8 @@ Zur Messung der Seitenladegeschwindigkeit wurde eine Homepage mit einem Slider b
 * Germany West Central (Frankfurt)  **Standard_F4s_v2.** 4 vCPU, 8 GiB - 0.1940 €/St.
 * Germany West Central (Frankfurt)  **Standard_D2_v4.** 2 vCPU, 8 GiB - 0.1150 €/St.
 
+## 7.1 Abhängigkeit der Erstreaktionszeit von dem Typ der VM
+
 Dabei wurde die Abhängigkeit von Anzahl der Prozessorkerne und Arbeitsspeicher sowie Seitenladegeschwindigkeit betrachtet. Das Ergebnis der Studie war die folgende Grafik:
 
 ![](img/10.png)
@@ -279,6 +281,14 @@ Die Grafik zeigt, dass eine VM, die sich in großer Entfernung vom Client befind
 Die Grafik zeigt auch, wie viele Ressourcen die Microservice-Architektur benötigt. Offensichtlich lohnt es sich für die Konzepte von Microservice-Architekturen und Microservices für kleine oder geschlossene Nutzung, eine VM mit mindestens 4 vCPUs und 8 GiB zu wählen. Die Kosten für eine solche VM sind doppelt so hoch wie die günstigere der angebotenen Optionen, aber die Geschwindigkeit ist viel höher. Dies geschieht, weil 2 vCPUs und 4 GiB Speicher für eine Microservice-Architektur zu knapp ausreichen. Außerdem kann bei einer günstigeren Option des Microservices beim Warten auf das Laden einer Seite länger als zwei oder drei Sekunden ein Fehler beim Laden der Website auftreten, der vom Microservice ausgegeben wird. Dies ist konfigurierbar, aber es ist am besten, Kunden nicht so lange warten zu lassen.
 
 In meinem Fall die virtuelle Machine mit 2 vCPUs und 8 GiB Speicher zeigt sich relativ langsam im Vergleich mit Standard_D2_v4 (4 vCPU, 8 GiB), aber kostet auch fast zweimal günstiger. Meine Meinung nach ist, dass der Kund nicht 600-800 ms warten muss. Das ist eine umbequeme Funktionalität.
+
+## 7.2 Abhängigkeit des Transaktiondauers von dem Typ der VM
+
+![](img/11.png)
+
+Die Transaktionsoperation ist die komplexeste Operation im Microservice, zusätzlich zur Autorisierungsauthentifizierung ist es notwendig, eine Reihe von Operationen auszuführen, die in der folgenden Abbildung gezeigt werden:
+
+![](img/12.png)
 
 Es ist schwierig, die Leistungsobergrenze für VMs zu messen, da sie als DDos-Angriff erkannt wird. Es ist nötig in diesem Fall VMs mit der realen CPU lokal zu testen. Allerdings gibt es eine Tabelle von Microsoft, die die Abhängigkeit von "Performance Cap" vom Arbeitsspeicher zeigt. Anhand dieser Tabelle können Sie grob die Last berechnen, die die VM bewältigen kann. [15]
 
