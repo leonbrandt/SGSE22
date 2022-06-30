@@ -246,6 +246,19 @@ $appname="[Name]"
 az acr login --name $appname
 docker push "$appname.azurecr.io/trading:$version"
 ```
+Nach jedem Code-Update wurde die Version ($version) aktualisiert und der Code auf Microsoft Azure hochgeladen.
+
+Das Erstellen eines Azure Kubernetes Service (AKS)-Clusters und das Auswählen einer virtuellen Maschine für diesen Cluster erfolgte mit dem folgenden Code:
+```powershell
+az feature register --name EnablePodIdentityPreview --namespace Microsoft.ContainerService
+az extension add --name aks-preview
+
+az aks create -n $appname -g $appname --node-vm-size standard_a2_v2 --node-count 2 --attach-acr $appname --enable-pod-identity --network-plugin azure --generate-ssh-keys --location australiacentral
+
+az aks get-credentials --name $appname --resource-group $appname
+```
+Wo "standart_a2_v2" - VM-Typ ist; "australiacentral" - name des Regions, wo VM stattfindet.
+
 
 
 
