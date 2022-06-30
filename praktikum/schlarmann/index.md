@@ -30,6 +30,7 @@ dabei natürlich von Endnutzer konfigurieren lassen.
    * Sensoren, Aktoren etc.
  * [Prototypische Implementierung und Evaluierung](praktikum/schlarmann/implementierung_evaluierung.md)
    * Evaluierungsgrundlage: Bestehende Systeme - Vergleich mit eigener Implementierung
+ * [Referenzen und Quellen](praktikum/schlarmann/quellen.md)
 
 ## Konkrete Fragestellungen
  1. Was speziell muss bei der Entwicklung eines Meshnetzes im Gegensatz zu traditionellen Architekturen für Drahtlose Netze beachtet werden?
