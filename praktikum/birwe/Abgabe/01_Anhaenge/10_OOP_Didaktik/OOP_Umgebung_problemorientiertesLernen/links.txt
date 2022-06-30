@@ -1,0 +1,2 @@
+https://www.demirjasarevic.com/oop-javascript/ (Deutsch)
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_programming (Englisch)

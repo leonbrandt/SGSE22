@@ -46,17 +46,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="IO.Swagger">
-      <HintPath>..\..\..\..\csharp-client\bin\IO.Swagger.dll</HintPath>
+      <HintPath>..\csharp-client\bin\IO.Swagger.dll</HintPath>
     </Reference>
     <Reference Include="JsonSubTypes">
-      <HintPath>..\..\..\..\csharp-client\bin\JsonSubTypes.dll</HintPath>
+      <HintPath>..\csharp-client\bin\JsonSubTypes.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\csharp-client\bin\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\csharp-client\bin\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp">
-      <HintPath>..\..\..\..\csharp-client\bin\RestSharp.dll</HintPath>
+      <HintPath>..\csharp-client\bin\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

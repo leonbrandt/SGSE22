@@ -1,0 +1,80 @@
+expose:
+  type: ingress
+  tls:
+    enabled: true
+    certSource: auto
+    auto:
+      commonName: "sgse22-harbor"
+  ingress:
+    hosts:
+      core: sgse22-harbor
+      notary: sgse22-harbor-notary
+
+    controller: default
+    annotations:
+      ingress.kubernetes.io/ssl-redirect: "true"
+      ingress.kubernetes.io/proxy-body-size: "0"
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/proxy-body-size: "0"
+  clusterIP:
+    name: harbor
+    ports:
+      httpPort: 80
+      httpsPort: 443
+      notaryPort: 4443
+
+externalURL: https://sgse22-harbor2
+
+internalTLS:
+  enabled: false
+
+persistence:
+  enabled: true
+  resourcePolicy: "keep"
+  persistentVolumeClaim:
+    registry:
+      existingClaim: "harbor-registry-claim"
+      accessMode: ReadWriteOnce
+      size: 5Gi
+    chartmuseum:
+      existingClaim: "harbor-chartmuseum-claim"
+      accessMode: ReadWriteOnce
+      size: 5Gi
+    jobservice:
+      existingClaim: "harbor-jobservice-claim"
+      accessMode: ReadWriteOnce
+      size: 1Gi
+    database:
+      existingClaim: "harbor-database-claim"
+      accessMode: ReadWriteOnce
+      size: 1Gi
+    redis:
+      existingClaim: "harbor-redis-claim"
+      accessMode: ReadWriteOnce
+      size: 1Gi
+    trivy:
+      existingClaim: "harbor-trivy-claim"
+      accessMode: ReadWriteOnce
+      size: 1Gi
+  imageChartStorage:
+    type: filesystem
+    filesystem:
+      rootdirectory: /storage
+      #maxthreads: 100
+
+imagePullPolicy: IfNotPresent
+
+updateStrategy:
+  type: RollingUpdate
+
+logLevel: info
+
+harborAdminPassword: "admin"
+
+registry:
+  credentials:
+    username: "admin"
+    password: "admin"
+
+trivy:
+  enabled: true

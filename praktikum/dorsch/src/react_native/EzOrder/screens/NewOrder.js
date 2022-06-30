@@ -42,7 +42,7 @@ const NewOrder = props => {
                 <View style={{ ...styles.rowContainer, ...{ borderBottomWidth: 0 } }}>
                     <Text style={{ ...styles.text, ...styles.textLeft }}>1. Kaffee:</Text>
                 </View><View style={styles.rowContainer}>
-                    <Image source={{ uri: 'https://dorsch.it/Products/Kaffee.png' }} style={{ width: 200, height: 200, marginRight: 10 }} />
+                    <Image source={{ uri: 'https://i.epvpimg.com/VIhBgab.png' }} style={{ width: 200, height: 200, marginRight: 10 }} />
                     <View style={{ paddingTop: '10%' }}><NumericInput onChange={coffeeInputHandler}></NumericInput><Text style={{ ...{ ...styles.text, ...{ paddingTop: 20 }, ...styles.textRight } }}>* 1 kg</Text></View>
                 </View>
                 <View style={{ ...styles.rowContainer, ...{ borderBottomWidth: 0 } }}>
@@ -52,21 +52,21 @@ const NewOrder = props => {
                     <Text style={styles.text}>Milchsystem-Reiniger</Text>
                 </View>
                 <View style={styles.rowContainer}>
-                    <Image source={{ uri: 'https://dorsch.it/Products/Milchsystem-Reiniger.png' }} style={{ width: 200, height: 200, marginRight: 10 }} />
+                    <Image source={{ uri: 'https://i.epvpimg.com/hHk9bab.jpg' }} style={{ width: 200, height: 200, marginRight: 10 }} />
                     <View style={{ paddingTop: '10%' }}><NumericInput onChange={milkCleanerInputHandler}></NumericInput><Text style={{ ...{ ...styles.text, ...{ paddingTop: 20 }, ...styles.textRight } }}>* Flaschen je 1l</Text></View>
                 </View>
                 <View>
                     <Text style={styles.text}>Reinigungstabletten</Text>
                 </View>
                 <View style={styles.rowContainer}>
-                    <Image source={{ uri: 'https://dorsch.it/Products/Reinigungstabletten.png' }} style={{ width: 200, height: 200, marginRight: 10 }} />
+                    <Image source={{ uri: 'https://i.epvpimg.com/nczjcab.png' }} style={{ width: 200, height: 200, marginRight: 10 }} />
                     <View style={{ paddingTop: '10%' }}><NumericInput onChange={cleaningTabletsInputHandler}></NumericInput><Text style={{ ...{ ...styles.text, ...{ paddingTop: 20 }, ...styles.textRight } }}>* 6 Tabletten</Text></View>
                 </View>
                 <View>
                     <Text style={styles.text}>Entkalkungstabletten</Text>
                 </View>
                 <View style={styles.rowContainer}>
-                    <Image source={{ uri: 'https://dorsch.it/Products/Entkalkungstabletten.png' }} style={{ width: 200, height: 200, marginRight: 10 }} />
+                    <Image source={{ uri: 'https://i.epvpimg.com/IlYceab.png' }} style={{ width: 200, height: 200, marginRight: 10 }} />
                     <View style={{ paddingTop: '10%' }}><NumericInput onChange={decalcTabletsInputHandler}></NumericInput><Text style={{ ...{ ...styles.text, ...{ paddingTop: 20 }, ...styles.textRight } }}>* 3 x 3 Tabletten</Text></View>
                 </View>
                 <View style={{ ...styles.rowContainer, ...{ borderBottomWidth: 0 } }}>
