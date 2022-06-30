@@ -2,8 +2,8 @@
 
 ## Einleitung
 
-Grundsätzlich werden Raytracer in der 3D-Computergrafik verwendet, um 3D-Szenen darzustellen. Der
-Algorithmus von Raytracern gelten dabei als sehr zeitintensiv und werden deshalb meist auf High-End- Computern 
+Grundsätzlich werden Raytracer in der 3D-Computergrafik verwendet, um 3D-Szenen darzustellen. Die
+Algorithmen von Raytracern gelten dabei als sehr zeitintensiv und werden deshalb meist auf High-End- Computern 
 ausgefürt. Diese Raytracer verlassen sich für optimale Leistung auf dedizierte und native Bibliotheken
 <a href="#/praktikum/luecking/index?id=ref_1">[1]</a>. Progamme, welche Raytracing-Algorithmen implementieren,
 sind dabei meist platformabhängig. Wenn Unternehmen von ihrer Webseite aufrufbare Services anbieten wollen,
@@ -17,7 +17,7 @@ direkt vom Browser aufrufbar an <a href="#/praktikum/luecking/index?id=ref_2">[2
 keine dedizierte Software herunterladen oder installieren.
 
 Um rechenintensive Algorithmen wie beispielsweise Raytracer im Browser anbieten zu können, kann dieser 
-beispielsweise mit Hilfe von WebAssembly angeboten werden. WebAssembly wird in Folgendem Kapitel kurz
+beispielsweise mit Hilfe von WebAssembly angeboten werden. WebAssembly wird in folgendem Kapitel kurz
 erläutert. Es gibt mehrere Möglichkeiten nach WebAssembly zu kompilieren oder zu konvertieren. Mit 
 Hilfe von Emscripten kann beispielsweise C++ Quellcode implementiert und nach WebAssembly kompiliert werden.
 Eine weiter Möglichkeit ist es, das WebAssembly Text Format zu verwenden um hardwarenah zu programmieren. Das
@@ -26,12 +26,12 @@ die Grundlagen erklärt.
 
 ### WebAssembly
 
-WebAssembly (kurz Wasm) stellt eine Ergänzung zu Javascript im Browser dar <a href="#/praktikum/luecking/index?id=ref_3">[3]</a>. WebAssembly ist ein
+WebAssembly (kurz WASM) stellt eine Ergänzung zu Javascript im Browser dar <a href="#/praktikum/luecking/index?id=ref_3">[3]</a>. WebAssembly ist ein
 binärers Instruktionsformat für eine stack-basierte viertuelle Maschine. Es ist als portables 
 Kompilierungs-Target für verschiedene Programmiersprachen designed und ermöglicht die Bereitstellung 
-im Web für Client- und Serveranwendungen. WebAssembly versucht, mit nativer Geschwindigkeit ausgefürt
+im Web für Client- und Serveranwendungen. WebAssembly versucht mit nativer Geschwindigkeit ausgefürt
 werden zu können, indem allgemeine Hardwarefunktionen verwendet werden, die auf einer Vielzahl von 
-Plattformen verfügbar ist. So wird eine bessere Performance erreicht, als bei auschliesslich mit 
+Plattformen verfügbar sind. So wird eine bessere Performance erreicht, als bei auschliesslich mit 
 Javascript implementierten Webseiten. WebAssembly Module können dabei sowohl JavaScript Module aufrufen,
 als auch von diesen aufgerufen werden. Ebenfalls können die selben Browserfunktionalitäten durch die
 gleichen Web API's wie mit JavaScript verwendet werden. <a href="#/praktikum/luecking/index?id=ref_4">[4]</a>
@@ -41,14 +41,14 @@ gleichen Web API's wie mit JavaScript verwendet werden. <a href="#/praktikum/lue
 WebAssembly ist wie bereits beschrieben ein binäres Instruktionsformat. Um dieses Format menschenlesbar
 zu machen kann WebAssembly ebenfalls in einem Text Format ausgegeben werde. Dies dient dem Debuggen, Testen,
 Optimieren und Lernen des Programms in einer lesbaren Form. Es können ebenfalls Programme direkt in
-dem Textformat geschrieben und anschliessend mit Tools wie beispielsweise "Wat2Wasm" nach Wasm konvertiert
+dem Textformat geschrieben und anschliessend mit Tools wie beispielsweise "Wat2Wasm" nach WASM konvertiert
 werden. <a href="#/praktikum/luecking/index?id=ref_4">[4]</a>
 
 ### Emscipten
 
 Emscripten ist eine komplette Compilertoolchain hin zu WebAssebly. Emscripten verwendet dabei LLVM und 
 setzt den Fokus auf Geschwindigkeit, Grösse und der Webplatform. In C++ programmierter Code kann
-beispielsweise mit Hilfe von Emscripten übersetzt werden und passende HTML-, JavaScript- und WASM-Dateien
+beispielsweise mit Hilfe von Emscripten übersetzt und passende HTML-, JavaScript- und WASM-Dateien
 generiert werden. Emscripten liefert dabei beispielsweise die Möglichkeit innerhalb vom C++-Code
 JavaScript-Funktionen und -Code zu definieren und aufzurufen. <a href="#/praktikum/luecking/index?id=ref_5">[5]</a>
 
@@ -125,7 +125,7 @@ Die neuen Forschungsfragen werden im Folgenden dargestellt.
 
 Zur Messung der Zeit wird in C++ ein Objekt einer selbstgeschriebenen Klasse namens "Canvas" erstellt. Der 
 Canvas speichert intern eine Menge an "Colors"; für jeden Pixel wird ein Objekt gespeichert. Die 
-Farbobjekte beinhalten drei floating Werte für die Farben Rot, Grün und Blau. Diese Werte können einen 
+Farbobjekte beinhalten drei Floating-Werte für die Farben Rot, Grün und Blau. Diese Werte können einen 
 Wert zwischen 0.0 und 1.0 annehmen. Dies vereinfacht das Rechnen mit Farben. Der Canvas von Emscipten 
 bzw. von Javascript verwendet jedoch Werte zwischen 0 und 255 pro Farbe. Eine Konvertierungsfunktion,
 welche die Farbwerte konvertiert wird benötigt. Diese Funktion iteriert über alle Farben im Canvas
@@ -162,19 +162,19 @@ Im Folgenden werden die gemessenen Ergebnisse dargestellt und erläutert.
 
 ![Keine Optimierung (O0)](assets/O0.PNG)
 
-Bei der übersetzung ohne Optimierung lässt sich eindeutig erkennen, dass die gemessene Zeit von
+Bei der Übersetzung ohne Optimierung lässt sich eindeutig erkennen, dass die gemessene Zeit von
 Firefox am geringsten ist. Dabei muss erwähnt werden, dass Firefox als einziger Browser nur Zeiten
 mit Millisekunden-Genauigkeit ausgegeben hat. Alle anderen Browser waren bei gleicher Codebasis in 
-der Lage, mindestens in zehntel Millisekunden- bzw. in 100 µs Schritten anzugeben, wie lange die Ausfürung
-gedauert hat. Chrome ist mit einer relativ konstanten Ausführungsdauer der zweitschnellste Browswer bei
+der Lage, mindestens in zehntel Millisekunden- bzw. in 100 µs Schritten anzugeben, wie lange die Ausführung
+gedauert hat. Chrome ist mit einer relativ konstanten Ausführungsdauer der zweitschnellste Browser bei
 der Ausführung. Die restlichen drei Browser verhielten sich vergleichsweise schnell, Vivaldi hingegen
 benötigte bei einer Ausführung ca. 8,5 ms, was als Ausrutscher gewertet wird.
 
 ![Optimierung O1](assets/O1.PNG)
 
 Bei der Version, die mit O1 optimiert wurde, lassen sich Unterschiede in den Ausführungszeiten 
-feststellen. Die Ausführungszeit mit Chrome verbessert sich, wobei die Ausführungszeit mit Firefox
-sich marginal verbessert. Die Ausführzeit mit Opera variiert stärker, bleibt im Durchschnitt gleich.
+feststellen. Die Ausführungszeit mit Chrome verbessert sich und die Ausführungszeit mit Firefox
+verbessert sich marginal. Die Ausführzeit mit Opera variiert stärker, bleibt im Durchschnitt gleich.
 Bei Edge verbessert sich der Durchschnitt, die Ausführungszeit weist jedoch eine grössere Varianz auf.
 Die Ausführzeit mit Vivaldi verschlechtert sich bei der ersten Optimierung. Es werden Zeiten von bis zu
 9500 µs erreicht.
@@ -212,14 +212,14 @@ stark.
 
 ![Vergleich Firefox bezogen auf verschiedene Optimierungen](assets/firefox.PNG)
 
-Firefox bietet bei verschiedenen Optimierungsstufen ähnliche geringe Ausführzeiten. Die fehlende
+Firefox bietet bei verschiedenen Optimierungsstufen ähnlich geringe Ausführzeiten. Die fehlende
 Schwankung kann durch die Beschränkung der Messung erklärt werden. Wie bereits oben erwähnt, 
 lässt Firefox nur eine Zeitmessung in Millisekunden-Intervallen zu.
 
 ![Vergleich Opera bezogen auf verschiedene Optimierungen](assets/opera.PNG)
 
 Bei den Ausführungszeiten von Opera lässt sich feststellen, dass die ersten beiden Optimierungsstufen
-die Ausführzeit verringert. O3 fürht im Durschschnitt zu einer ähnlichen Ausführzeit. Die beiden
+die Ausführzeit verringert. O3 führt im Durschschnitt zu einer ähnlichen Ausführzeit. Die beiden
 Optimierungen Os und Oz vergrössern die Zeit erneut.
 
 ![Vergleich Edge bezogen auf verschiedene Optimierungen](assets/edge.PNG)
@@ -240,7 +240,7 @@ Emscripten erstellt dann ausschliesslich JavaScript und HTML.
 
 Es ist deutlich zu sehen, dass das gleiche Programm, welches nur in Javascript ausgefürt wird, deutlich
 langsamer auf allen Browsern läuft. Der Browser Chrome ist bei der Ausführunszeit von durchschnittlich
-über 32 ms ahnlich langsam wie der Browser Vivaldi. Firefox ist dabei mit Abstand der schnellste der 
+über 32 ms ähnlich langsam wie der Browser Vivaldi. Firefox ist dabei mit Abstand der schnellste der 
 ausgewahlten Browser und benötigt für das Programm ca. 13 ms im Durchschnitt. Firefox' Ausführungszeiten
 sind dabei sehr konstant im Gegensatz zu den anderen Browsern.
 
@@ -255,18 +255,18 @@ kann zum Beispiel daran liegen, dass intern bei der Auswertung des WASM eine and
 der aktuellen Zeit verwendet wird. Bei den meisten Browsern führen die Optimierungen zu einer Verkürzung
 der Ausfürzeit. Wie in der Dokumentation von Emscripten beschrieben, werden ab O3 die Dateigrössen
 optimiert. Dies kann dabei zu einer erhöhten Ausführdauer führen. Der Browser Vivaldi hingegen
-wies bei dem optimierten Code keinerlei Zeitersparnisse auf; Im Gegenteil, die Ausführdauer verlängerte
+weist bei dem optimierten Code keinerlei Zeitersparnisse auf; Im Gegenteil, die Ausführdauer verlängerte
 sich teils. Der kompilierte Code mit WASM ist schneller als der Code, welcher nach der Kompilierung nur 
 aus JavaScript und HTML besteht.
 
 ## Zusammenfassung
 
 Verschiedene Browser werden auf die Geschwindigkeit bezüglich der Ausführung von WebAssembly getestet.
-Dazu wird ein Teil eines Raytracers in C++ implementiert und ein Algorithmus ausgefürht, welcher
+Dazu wird ein Teil eines Raytracers in C++ implementiert und ein Algorithmus ausgeführt, welcher
 eine bestimmte Datenmenge konvertiert. Das Projekt wird mit Emscripten kompiliert und mit Hilfe eines
 lokalen Webservers von verschiedenen Browsern aufgerufen. Nach dem Aufruf, wird die benötigte Zeit 
 auf der Konsole ausgegeben. Nach dem Testen aller Browser mit einer Codebasis, wird eine andere 
-Optimierungsstufe bei der Kompilierung ausgewählt, das Projekt erneut gebaut und erneut mit allen 
+Optimierungsstufe bei der Kompilierung ausgewählt, das Projekt erneut gebaut und mit allen 
 ausgewählten Browsern geöffnet.
 
 Es stellt sich heraus, dass Firefox mit Abstand die kürzeste Ausführungszeit des Tests hat. Verschiedene
@@ -277,7 +277,7 @@ hingegen die benötigt Zeit. Der Browser Vivaldi stellt den langsamsten Browser 
 Optimierungsstufen verlängern die Ausführungszeit. Auffällig sind bei Vivaldi ebenfalls die starken
 Ausreisser. Vergleicht man die benötigte Zeit des Projekts mit der Verwendung von WASM mit einer 
 gebauten Version des Projekts ohne WASM bzw. ausschliesslich JavaScript lässt sich eine Vergrösserung
-der Dateigrösse feststellen. Des Weiteren benötigt die JavaScript-Version ein vielfaches der Zeit, die
+der Dateigrösse feststellen. Des Weiteren benötigt die JavaScript-Version ein Vielfaches der Zeit, die
 die WASM-Version für den gleichen Code benötigt.
 
 # Literaturverzeichnis
@@ -289,3 +289,7 @@ die WASM-Version für den gleichen Code benötigt.
 5. <span id="ref_5">Main — Emscripten 3.1.9-git (dev) documentation. (2022, 29. Juni). https://emscripten.org/index.html</span>
 6. <span id="ref_6">Emscripten Compiler Frontend (emcc) — Emscripten 3.1.9-git (dev) documentation. (2022, 29. Juni). https://emscripten.org/docs/tools_reference/emcc.html#emcc-os</span>
 7. <span id="ref_7">The Ray Tracer Challenge. The Programatic Programmer. (2019). ISBN 978-1-68050-271-8</span>
+
+# Anhang
+
+Die Messergebnisse befinden sich im Ordner \luecking\assets\measurement .
