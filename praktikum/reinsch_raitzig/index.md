@@ -134,7 +134,6 @@ Mit dem MLGO-Repository können KI-Modelle trainiert werden, welche dann in LLVM
 integriert werden.
 
 MLGO besteht aus zwei Teilen:
-
 - Innerhalb von LLVM werden die KI-Modelle für Optimierungen genutzt.
 Dazu gibt es allgemeinen Code in LLVM, z.B. in [MLInlineAdvisor.cpp](https://github.com/llvm/llvm-project/blob/main/llvm/lib/Analysis/MLInlineAdvisor.cpp).
 Dieser Code ist in so fern allgemein, als dass kein trainiertes KI-Modell im
@@ -162,6 +161,7 @@ Reward-Funktion *R(s(t), a(t))*. Der nächste Zustand *s(t+1)* wird mit Hilfe ei
 Wahrscheinlichkeisdistribution ausgewählt, welche vom Zustand und der Aktion des
 Agenten abhängt, d.h. *P(s(t+1) | s(t), a(t))*. Es werden solange Aktionen ausgeführt,
 bis ein Endzustand erreicht ist.
+
 Der Agent ist so modelliert, dass dieser eine (weitere) Wahrscheinlichkeitsdistribution
 nutzt, um die nächste Aktion im aktuellen Zustand auszuwählen, *pi = Pr(a(t) | s(t))*.
 Die Funktion *pi* ist durch ein neuronales Netz gegeben. Ziel des Agenten ist es,
@@ -183,6 +183,7 @@ werden, um das theoretisch gewünschte *R(s, a)* zu approximieren:
 - number_constant_params
 - edge_count
 - node_count
+
 Diese Features entsprechen in etwa den Informationen, die die bisherigen Heuristiken verwenden.
 Anstatt *R(s, a)* zu approximieren, kann die insgesamte Belohnung *R* verwendet
 werden, weil diese sich nach der Kompilierung einfach aus der Größe der kompilierten
