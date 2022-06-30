@@ -44,7 +44,9 @@ das Backend, welches Optimierungsschritte vornimmt und Maschinencode generiert.
 Die beiden Schichten sind mit den einzelnen beteiligten Phasen in der nachfolgenden
 Abbildung anschaulich als zwei Seiten eines Bergs dargestellt. [6]
 
-![Überblick über unterschiedliche Kompilierungsphasen aus [2]](./media/compiler_mountain.png )
+|![](./media/compiler_mountain.png )|
+|:--:|
+| *Abbildung 1: Überblick über unterschiedliche Kompilierungsphasen aus [2]* |
 
 LLVM (**L**ow **L**evel **V**irtual **M**achine) ist ein Framework welches die
 Implementierung eines Compilers erleichtert. Kern dieses Frameworks ist die
@@ -57,7 +59,9 @@ und die Generierung von architekturspezifischem Maschinencode. Diese Komponenten
 operieren auf der LLVM-IR, sodass das generische Backend von dem sprachspezifischen
 Frontend losgelöst ist. [4]
 
-![LLVM-IR Hierarchie (nach [3])](./media/Hierarchy.png)
+|![](./media/Hierarchy.png)|
+|:--:|
+| *Abbildung 2: LLVM-IR Hierarchie (nach [3])* |
 
 Die LLVM-IR ist hierarchisch aufgebaut (wie in der obenstehenden Abbildung dargestellt)
 und wird in Module (entsprechen einer
@@ -84,7 +88,9 @@ Graph genannt). [6]
 Der C und C++ Compiler `clang` ist ebenfalls Teil des LLVM Projekts und nutzt den
 zuvor beschriebenen modularen Ansatz, um wie im untenstehenden Bild schematisch dargestellt,
 eine C-Quelldatei in ein ausführbares Programm zu übersetzen.
-![LLVM Toolchain am Beispiel von clang (nach [3])](./media/toolchain_overview.drawio.png)
+|![](./media/toolchain_overview.drawio.png)|
+|:--:|
+| *Abbildung 3: LLVM Toolchain am Beispiel von clang (nach [3])* |
 
 
 ## Inlining Pass ##
