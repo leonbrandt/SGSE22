@@ -259,8 +259,72 @@ az aks get-credentials --name $appname --resource-group $appname
 ```
 Wo "standart_a2_v2" - VM-Typ ist; "australiacentral" - name des Regions, wo VM stattfindet.
 
+Für jeden Microservice wurde eine Bereitstellungsdatei erstellt. Diese Konfigurationsdatei ist in YAML-Format. Diese Datei sieht folgendermaßen aus:
+```powershell
+apiVersion: apps/v1 # declares the API-Version
+kind: Deployment # type of creating file
+metadata:
+  name: identity-deployment # the name of deployment
+spec: # details of this deployment
+  selector:
+    matchLabels:
+      app: identity # this deployment manages any of ports that have the label that has the name "identity"
+  template: 
+    metadata:
+      labels:
+        app: identity # template for this file "identity"
+        aadpodidbinding: identity # name in Azure ressource group
+    spec: # details of this temlate
+      containers:
+        - name: identity # the name assigned to the AKS Container
+          image: shopeconomy.azurecr.io/play.identity:1.0.12 # the name and the version of the image that wewant to use
+          env: # overwrites the environtment values
+            - name: ServiceSettings__MessageBroker # Common.Settings
+              value: SERVICEBUS
+            - name: ServiceSettings__KeyVaultName
+              value: shopeconomy
+            - name: IdentitySettings__PathBase # Play.Identity.Service.Settings
+              value: /identity-svc
+            - name: IdentitySettings__CertificateCerFilePath
+              value: "/certificates/certificate.crt" # same as "volumeMounts/mountPath" / "volumes/items" in this file
+            - name: IdentitySettings__CertificateKeyFilePath
+              value: "/certificates/certificate.key" # same as "volumeMounts/mountPath" / "volumes/items" in this file
+            - name: IdentityServerSettings__Clients__0__RedirectUris__0 # from appsettings.json, 0 - is the first element in the array
+              value: https://shopeconomy.australiacentral.cloudapp.azure.com/authentication/login-callback
+            - name: IdentityServerSettings__Clients__0__PostLogoutRedirectUris__0
+              value: https://shopeconomy.australiacentral.cloudapp.azure.com/authentication/logout-callback
+          resources: # how many ressources can the Kubernetes ports use in cluster
+            limits:
+              memory: "128Mi" # 128 Megabytes
+              cpu: "150m" # 0.150 % od CPU
+          ports:
+            - containerPort: 5002 # same as in Dockerfile. Which is the port that our container is listening on
+          volumeMounts:
+            - name: certificate-volume # from signin-cer.yaml
+              mountPath: /certificates
+      volumes:
+        - name: certificate-volume
+          secret:
+            secretName: signing-cert # from signin-cer.yaml
+            items:
+              - key: tls.key
+                path: certificate.key
+              - key: tls.crt
+                path: certificate.crt
 
-
+--- # separates ressources for the single YAML file
+apiVersion: v1
+kind: Service
+metadata:
+  name: identity-service # name of the service
+spec:
+  type: ClusterIP # cluster IP don't provide external IP and DNS-Adress (case of API-Gateway), if type == LoadBalancer - it will provide
+  selector:
+    app: identity  # this deployment manages any of ports that have the label that has the name "identity"
+  ports:
+    - port: 80 # this port will be availeble in case of reaching grom the outside. 80 is the standartport
+      targetPort: 5002 # same as in Dockerfile. Which is the port that our service is listening on
+```
 
 # 7. Auswahl einer virtuellen Maschine für einer Microservice-Architektur.
 
