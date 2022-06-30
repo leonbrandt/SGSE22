@@ -114,7 +114,8 @@ Maschinensprache repräsentiert, die an keine Zielarchitektur gebunden ist.
 TODOs:
 - LLVM-IR Hierarchie
 - SSA?
-- Aufruf-Schaubild
+- Aufruf-Schaubild (clang-> opt-> backend)
+- lokale & globale Optimierungen
 
 Neben der Definition der LLLVM-IR beeinhaltet das LLVM Projekt viele Komponenten,
 die das Compiler-Backend implementieren, unter anderem einen Optimierer, einen Linker
@@ -122,15 +123,44 @@ und die Generierung von architekturspezifischem Maschinencode. Diese Komponenten
 operieren auf der LLVM-IR, sodass das generische Backend von dem sprachspezifischen
 Frontend losgelöst ist.
 
-Der Optimierer ist modular in einzelnen Optimierungspässen aufgebaut, die jeweile eine
-einzelne Optimierung (bspw. Constant-Propagation oder Dead-Code Elimination)
-ausführen. Diese Optimierungspässe können für verschiedene Optimierungslevel
+Der Optimierer ist modular aufgebaut. Die einzelnen Optimierungsverfahren
+(bspw. Constant-Propagation oder Dead-Code Elimination) sind isolierten Optimierungspässen
+realisiert, welche von einem PassManager aufgerufen werden. Die Optimierungspässe können
+für verschiedene Optimierungslevel auf unterschiedliche Arten
 kombiniert werden (hierbei ist allerdings darauf zu achten, dass die Reihenfolge
 der Optimierungspässe starke Auswirkungen auf die Optimierungsergebnisse haben kann).
 
+Die LLVM-IR ist hierarchisch aufgebaut und wird in Module (entsprechen einer
+Übersetzungseinheit des Programms), Funktionen und Basic Blocks aufgeteilt.
+Basic Blocks enthalten die einzelnen Operationen des Programms, und eine Terminator-Operation,
+welche einen bedingten oder unbedingten Sprung des Kontrollflusses in einen anderen
+Basic Block erlaubt (innerhalb des Basic Blocks sind solche Sprünge nicht erlaubt).
+
+Während der gesamten Optimierungsphase verwaltet LLVM den Programmfluss in einem
+Graphen, welcher durch die Sprung-Operationen der Basic-Blocks bestimmt wird (auch Calling
+Graph genannt).
 
 
 ## Inlining Pass ##
+
+Es ist gängige Praxis im Software Engineering, oft verwendete Programmlogik in
+Funktionen auszulagern. Hierdurch wird Progrmamcode übersichtlicher, leichter zu
+warten und zu erweitern. Allerdings erfordern Funktionaufrufe zur Laufzeit einen
+gewissen Overhead (Anlegen eines neuen Stack-Frames, Kopieren der Parameter, Registerrestaurierung
+nach Funktionsende, etc.). Zusätzlich wird der Calling Graph durch Funktionsaufrufe
+deutlich komplexer, was globale Optimierungen erschwert. Das Optimierungsverfahren
+des Funktionsinlining behandelt diese Probleme, indem der Funktionscode direkt
+an die Stelle des Funktionsaufrufs kopiert wird. Die Stelle im Progammcode, an der
+eine Funktion aufgerufen wird, wird auch Callsite der Funktion genannt.
+
+Durch das Inlining einer Funktion können neue Probleme entstehen, bspw. müssen
+Namenskonflikte zwischen den in der Funktion deklarierten Variablen und den Variablen
+der Umgebung der Callsite aufgelöst werden. Darüber hinaus ist das Inlining einer Funktion
+Teil des Speicherplatz/Programmlaufzeit-Tradeoffs, da durch Inlining einer Funktion mit
+vielen Operationen potenziell die Größe der erzeugten Binärdatei stark ansteigen kann.
+Die Entscheidung, wann Funktionsinlining ausgeführt werden soll, ist daher nicht
+trivial und erfordert Wissen um die Umgebung der Callsite und die Funktion selbst.
+
 
 - Was macht der?
 - Wie funktioniert der allgemein?
