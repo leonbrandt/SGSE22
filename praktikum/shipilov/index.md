@@ -290,9 +290,13 @@ Die Transaktionsoperation ist die komplexeste Operation im Microservice, zusätz
 
 ![](img/12.png)
 
-Es ist schwierig, die Leistungsobergrenze für VMs zu messen, da sie als DDos-Angriff erkannt wird. Es ist nötig in diesem Fall VMs mit der realen CPU lokal zu testen. Allerdings gibt es eine Tabelle von Microsoft, die die Abhängigkeit von "Performance Cap" vom Arbeitsspeicher zeigt. Anhand dieser Tabelle können Sie grob die Last berechnen, die die VM bewältigen kann. [15]
+Daher erfolgte die Transaktionsoperation nicht immer ohne Neuladen des Fensters bei der Auswahl der schwächsten VM. Daraus folgt, dass sich die VM **Standard_a2_v2.** 2 vCPU, 4GiB am Ende als zu schwach für das komfortable Verhalten des Transaktions- und Kaufvorgangs herausstellte. In der Grafik bedeutet die Zahl 10000 ms, dass innerhalb von 10 Sekunden keine Seitenaktualisierung erfolgte und ein Ladefehler aufgetreten ist.
 
 Daher folgt, dass die am besten geeignete virtuelle Maschine in der Anfangsphase die "Standard_F4s_v2" VM ist, die sich in der Nähe des Standorts der Clients befindet. Da die Microservice-Anfragen zunehmen, wird empfohlen, leistungsfähigere VMs in Betracht zu ziehen. Eine Liste aller verfügbaren VMs in Mitteldeutschland ist unter folgender URL verfügbar: https://azureprice.net/?region=germanywestcentral&sortField=memoryInMB&sortOrder=true
+
+**Bemerkung:**
+
+Es ist schwierig, die Leistungsobergrenze für VMs zu messen, da sie als DDos-Angriff erkannt wird. Es ist nötig in diesem Fall VMs mit der realen CPU lokal zu testen. Allerdings gibt es eine Tabelle von Microsoft, die die Abhängigkeit von "Performance Cap" vom Arbeitsspeicher zeigt. Anhand dieser Tabelle können Sie grob die Last berechnen, die die VM bewältigen kann. [15]
 
 
 # Literaturverzeichnis
