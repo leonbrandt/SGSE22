@@ -88,6 +88,7 @@ Graph genannt). [6]
 Der C und C++ Compiler `clang` ist ebenfalls Teil des LLVM Projekts und nutzt den
 zuvor beschriebenen modularen Ansatz, um wie im untenstehenden Bild schematisch dargestellt,
 eine C-Quelldatei in ein ausführbares Programm zu übersetzen.
+
 |![](./media/toolchain_overview.drawio.png)|
 |:--:|
 | *Abbildung 3: LLVM Toolchain am Beispiel von clang (nach [3])* |
@@ -311,11 +312,11 @@ weniger Projekte.
 
 ## Quellen
 
-[1]: MLGO: https://arxiv.org/abs/2101.04808
-[2]: Nystrom: https://craftinginterpreters.com/a-map-of-the-territory.html
-[3]: Bridgers: https://llvm.org/devmtg/2019-04/slides/Tutorial-Bridgers-LLVM_IR_tutorial.pdf
-[4]: LLVM: https://llvm.org/
-[5]: Mekkat: https://www.cs.cornell.edu/courses/cs6120/2019fa/blog/llvm-function-inlining/
-[6]: Aho: Compilers - Principles, Techniques and Tools
-[7]: LLVM-IR: https://llvm.org/docs/LangRef.html
-[8]: LLVM-opt: https://llvm.org/docs/CommandGuide/opt.html
+[1]: MLGO https://arxiv.org/abs/2101.04808
+[2]: Nystrom https://craftinginterpreters.com/a-map-of-the-territory.html
+[3]: Bridgers https://llvm.org/devmtg/2019-04/slides/Tutorial-Bridgers-LLVM_IR_tutorial.pdf
+[4]: LLVM https://llvm.org/
+[5]: Mekkat https://www.cs.cornell.edu/courses/cs6120/2019fa/blog/llvm-function-inlining/
+[6]: Aho Compilers - Principles, Techniques and Tools
+[7]: LLVM-IR https://llvm.org/docs/LangRef.html
+[8]: LLVM-opt https://llvm.org/docs/CommandGuide/opt.html
