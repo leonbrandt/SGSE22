@@ -93,6 +93,11 @@ TODO:
 - Optimierer
 - Wie funktioniert allgemein der Aufruf und die Einbindung von Optimierungspässen?
 
+TODOs:
+- LLVM-IR Hierarchie
+- SSA?
+- lokale & globale Optimierungen
+
 Compiler sind komplexe Programme, deren Aufgabe die Übersetzung von (High Level)
 Programmiersprachen in Maschinencode für eine spezifische Prozessorarchitektur ist.
 Während dieses Übersetzungsprozesses werden häufig Optimierungsschritte vorgenommen,
@@ -105,17 +110,12 @@ Frontend, welches lexikalische, syntaktische und semantische Analysen vornimmmt 
 das Backend, welches Optimierungsschritte vornimmt und Maschinencode generiert.
 
 TODO: Nystrom Bild einbauen.
+![Überblick über unterschiedliche Kompilierungsphasen aus TODO: quelle](./media/compiler_mountain.png )
 
 LLVM (**L**ow **L**evel **V**irtual **M**achine) ist ein Framework welches die
 Implementierung eines Compilers erleichtert. Kern dieses Frameworks ist die
 LLVM Intermediate Representation (LLVM-IR), die eine generische High Level
 Maschinensprache repräsentiert, die an keine Zielarchitektur gebunden ist.
-
-TODOs:
-- LLVM-IR Hierarchie
-- SSA?
-- Aufruf-Schaubild (clang-> opt-> backend)
-- lokale & globale Optimierungen
 
 Neben der Definition der LLLVM-IR beeinhaltet das LLVM Projekt viele Komponenten,
 die das Compiler-Backend implementieren, unter anderem einen Optimierer, einen Linker
@@ -129,6 +129,10 @@ realisiert, welche von einem PassManager aufgerufen werden. Die Optimierungspäs
 für verschiedene Optimierungslevel auf unterschiedliche Arten
 kombiniert werden (hierbei ist allerdings darauf zu achten, dass die Reihenfolge
 der Optimierungspässe starke Auswirkungen auf die Optimierungsergebnisse haben kann).
+
+Der C und C++ Compiler clang ist ebenfalls Teil des LLVM Projekts und nutzt den
+zuvor beschriebenen modularen Ansatz, wie im untenstehenden Bild schematisch dargestellt.
+![LLVM Toolchain am Beispiel von clang](./media/toolchain_overview.drawio.png)
 
 Die LLVM-IR ist hierarchisch aufgebaut und wird in Module (entsprechen einer
 Übersetzungseinheit des Programms), Funktionen und Basic Blocks aufgeteilt.
@@ -157,13 +161,22 @@ Durch das Inlining einer Funktion können neue Probleme entstehen, bspw. müssen
 Namenskonflikte zwischen den in der Funktion deklarierten Variablen und den Variablen
 der Umgebung der Callsite aufgelöst werden. Darüber hinaus ist das Inlining einer Funktion
 Teil des Speicherplatz/Programmlaufzeit-Tradeoffs, da durch Inlining einer Funktion mit
-vielen Operationen potenziell die Größe der erzeugten Binärdatei stark ansteigen kann.
+vielen Operationen potenziell die Größe der erzeugten Binärdatei stark ansteigen
+kann (unter Umständen exponentiell TODO: aho quelle).
 Die Entscheidung, wann Funktionsinlining ausgeführt werden soll, ist daher nicht
 trivial und erfordert Wissen um die Umgebung der Callsite und die Funktion selbst.
 
+Das LLVM Inlining Pass nutzt viele Heuristiken, um zu beurteilen,
+ob das Inlining für einen bestimmten Funktionsaufruf positive Auswirkungen hat.
+Hierfür wird beispielsweise ein "Kostenwert" berechnet, der durch den Aufruf von
+Cleanup-Pässen oder die Vereinfachung des Callgraph entsteht, falls ein Funktionsaufruf
+geinlined wird, indem das Inlining simuliert wird.
+Der Kostenwert wird mit einem Grenzwert verglichen, welcher wiederum von Faktoren
+wie "Callsite hotness" (wie oft die Callsite durchlaufen wird) und Anzahl der
+Basic Blocks im Funktionsrumpf bestimmt wird. Selbst wenn die so berechneten Kosten und
+der Grenzwert für das Inlining sprechen, können evtl. bessere Ergebnisse erzielt
+werden, falls kein Inlining des betrachteten Funktionsaufrufs vorgenommen wird, sondern
+eine Callsite geinlined wird, die an höherer Stelle im Callgraph liegt.
 
-- Was macht der?
-- Wie funktioniert der allgemein?
-- Was trifft der Pass für Annahmen?
-- In welchen Szenarien hat der Pass Probleme?
-
+TODO: hierzu Bild!
+TODO: wann hat der Pass Probleme
