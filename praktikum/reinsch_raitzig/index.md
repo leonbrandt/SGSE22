@@ -11,7 +11,7 @@ ist daher sehr zeit- und kostenintensiv. Durch die Fortschritte in der Methode
 des maschinellen Lernens im 21. Jahrhundert steigt daher das Interesse, diese Methode
 auch auf Optimierungsprobleme im Compilerbau anzuwenden. Ein Beispiel hierfür
 stellt das MLGO-Framework dar, welches das Training und den Einsatz von KI-Modellen
-als Ersatz handgeschriebener Heuristiken in LLVM Optimierungspässen ermöglicht.
+als Ersatz handgeschriebener Heuristiken in LLVM Optimierungspässen ermöglicht. [1]
 
 ## Wissenschaftliche Fragestellung
 
