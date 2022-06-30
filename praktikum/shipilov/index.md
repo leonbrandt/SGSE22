@@ -281,7 +281,7 @@ spec: # details of this deployment
           env: # overwrites the environtment values
             - name: ServiceSettings__MessageBroker # Common.Settings
               value: SERVICEBUS
-            - name: ServiceSettings__KeyVaultName
+            - name: ServiceSettings__KeyVaultName # using secrets from the azure key vault
               value: shopeconomy
             - name: IdentitySettings__PathBase # Play.Identity.Service.Settings
               value: /identity-svc
@@ -324,6 +324,47 @@ spec:
   ports:
     - port: 80 # this port will be availeble in case of reaching grom the outside. 80 is the standartport
       targetPort: 5002 # same as in Dockerfile. Which is the port that our service is listening on
+```
+
+Und die Erstellung des Kubernetes-Pods kann mit dem folgenden Code erfolgen:
+```powershell
+kubectl apply -f .\kubernetes\identity.yaml -n $namespace
+```
+Schließlich erfolgt die Erstellung und Konfiguration des API-Gateways mit der folgenden Reihenfolge:
+
+**Emissary-ingress installieren**
+```powershell
+helm repo add datawire https://app.getambassador.io
+helm repo update
+helm repo list
+
+kubectl apply -f https://app.getambassador.io/yaml/emissary/2.3.1/emissary-crds.yaml
+kubectl wait --timeout=90s --for=condition=available deployment emissary-apiext -n emissary-system
+
+$namespace="emissary"
+helm install emissary-ingress datawire/emissary-ingress --set service.annotations."service\.beta\.kubernetes\.io/azure-dns-label-name"=$appname -n $namespace --create-namespace
+```
+
+**Emissary-Ingress-Routing konfigurieren**
+```powershell
+kubectl apply -f .\emissary-ingress\listener.yaml -n $namespace
+kubectl apply -f .\emissary-ingress\mappings.yaml -n $namespace
+```
+**Cert-Manager installieren**
+```powershell
+helm repo add jetstack https://charts.jetstack.io
+helm repo update
+
+helm install cert-manager jetstack/cert-manager --version v1.8.0 --set installCRDs=true --namespace $namespace
+```
+**Erstellen des tls-Zertifikats**
+```powershell
+kubectl apply -f .\emissary-ingress\tls-certificate.yaml -n $namespace
+```
+
+**Aktivieren von TLS und HTTPS**
+```powershell
+kubectl apply -f .\emissary-ingress\host.yaml -n $namespace
 ```
 
 # 7. Auswahl einer virtuellen Maschine für einer Microservice-Architektur.
