@@ -6,7 +6,7 @@ Im Folgenden wird ein kurzer Überblick über die Praktikumsausarbeitung aus dem
 
 ## Hintergrund
 
-Die Videospielindustrie wächst stetig. Immer schneller und besser sollen Videospiele entwickeln werden. Der Erfolg eines Videospiels beginnt dabei schon bei der Planung. Neben der Entwicklung eines Spielekonzepts müssen auch Entscheidungen über den Aufbau der Architektur getroffen werden.
+Die Videospielindustrie wächst stetig. Immer schneller und besser sollen Videospiele entwickelt werden. Der Erfolg eines Videospiels beginnt dabei schon bei der Planung. Neben der Entwicklung eines Spielekonzepts müssen auch Entscheidungen über den Aufbau der Architektur getroffen werden.
 
 Immer häufiger wird dafür das Entity-Component-System (ECS) verwendet, oft in Verbindung mit einem Data Oriented Design (DOD). Im Rahmen des Praktikums sollen die Vorteile dieser Herangehensweisen beleuchtet werden mit Fokus auf Performance und Vor- und Nachteile in der Entwicklung.
 
@@ -51,15 +51,15 @@ Das Projekt wird anhand folgender Aspekte evaluiert.
 
 ## Aufbau des Entity Component System-Patterns
 
-Zunächst wird darauf eingegangen wie das ECS aufgebaut ist. Dafür werden Projekte vom Objektorientierten Programmierstil in das ECS-Pattern überführt. Durch diese grundlegende Änderung in der Architektur muss die gesamte Struktur des Projekts verändert werden. Vorgenommen soll dieser Umbau an zwei Projekten:
-- Zunächst soll anhand des Projekts PM-Dungeon dieser Umbau erfolgen. Das Projekt wurde im Team zu dritt im Rahmen des Moduls Programmiermethoden erstellt. Bei dem Projekt handelt es sich um ein Rogue-Like-Spiel, in welchem der Spieler einen Helden durch ein Dungeon voller Monster navigiert und die Monster bezwingt. Das Projekt verwendet eine bereitgestellte Bibliothek, welche libGDX[2] verwendet um Aufgaben wie die Verwaltung und Generierung der Spielwelt zu übernehmen.
-- Anschließend wird in C++ ein Miniprojekt erstellt, welches nicht-Spielercharaktere simuliert. Diese sollen sich zufällig durch die Welt bewegen und beim Zusammenstoßen mit anderen Charakteren Schaden erleiden. Wenn sie zu viel Schaden erleiden, werden sie aus der Spielwelt entfernt. Um die Charaktere und die Welt darzustellen wird die Bibliothek SFML[3] verwendet und das Basisprojekt von rewrking[4] wird für die einfache Verwendung von VS Code eingesetzt.
+Zunächst wird darauf eingegangen, wie das ECS aufgebaut ist. Dafür werden Projekte vom Objektorientierten Programmierstil in das ECS-Pattern überführt. Durch diese grundlegende Änderung in der Architektur muss die gesamte Struktur des Projekts verändert werden. Vorgenommen soll dieser Umbau an zwei Projekten:
+- Zunächst soll anhand des Projekts PM-Dungeon dieser Umbau erfolgen. Das Projekt wurde im Team zu dritt im Rahmen des Moduls Programmiermethoden erstellt. Bei dem Projekt handelt es sich um ein Rogue-Like-Spiel, in welchem der Spieler einen Helden durch ein Dungeon voller Monster navigiert und die Monster bezwingt. Das Projekt verwendet eine bereitgestellte Bibliothek, welche libGDX[2] verwendet, um Aufgaben wie die Verwaltung und Generierung der Spielwelt zu übernehmen.
+- Anschließend wird in C++ ein Miniprojekt erstellt, welches nicht-Spielercharaktere simuliert. Diese sollen sich zufällig durch die Welt bewegen und beim Zusammenstoßen mit anderen Charakteren Schaden erleiden. Wenn sie zu viel Schaden erleiden, werden sie aus der Spielwelt entfernt. Um die Charaktere und die Welt darzustellen, wird die Bibliothek SFML[3] verwendet und das Basisprojekt von rewrking[4] wird für die einfache Verwendung von VS Code eingesetzt.
 
 ### Erstellen der Komponenten und Systeme aus dem bestehenden OOP-Projekt PM-Dungeon
 
 Detaillierter soll der Umbau am Projekt PM-Dungeon erfolgen. Das erstellte C++ Projekt wird im Anschluss grob vorgestellt.
 
-Der Source des Projektes PM-Dungeon kann im entsprechenden GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Java_Dungeon_OOP
+Der Source des Projektes PM-Dungeon kann im entsprechenden GitHub-Repository eingesehen werden https://github.com/mfruendt/SGSE2022_Java_Dungeon_OOP  
 In Abbildung 1 ist das Klassendiagramm des PM-Dungeon vereinfacht dargestellt. Exemplarisch sind die nötigen Klassen für Charaktere abgebildet.
 OOP-typisch gibt es jeweils eine abstrakte Basisklasse für Charaktere, welche geerbt und erweitert wird. Besonders an der `Hero`-Klasse wird deutlich, dass diese durch überschriebene Funktionen der Basisklasse, durch die Getter und Setter und durch die komplexe Steuerungslogik des Heros aufgebläht wird.
 
@@ -75,13 +75,13 @@ Gesundheitswert größer 0 ist. Ist das nicht der Fall, wird das Entity gelösch
 |:--:| 
 | *Abbildung 2: Komponenten und Systeme, welche die Logik der Klassen im OOP-Ansatz ersetzen* |
 
-Die Systeme und Komponenten, welche die in Abbildung 1 dargestellten Klassen ersetzen sollen, sind in Abbildung 2 dargestellt. Durch die Verwendung von Komponenten wird das Erstellen eines Entities wie ein Baukastensystem, dadurch entsteht eine hohe Wiederverwendbarkeit. Da auf die Daten in den Komponenten direkt zugegriffen wird, fallen Getter und Setter weg. Die Komplexe Logik der Klassen wird in mehrere Systeme aufgebrochen, in welchen die Entities gleichbehandelt werden können, indem die benötigten Komponenten spezifiziert werden, die die Entities für die Bearbeitung aufweisen müssen. Die nötige Komponenten-Zusammensetzung der vorherigen Klassen sieht wie folgt aus:
+Die Systeme und Komponenten, welche die in Abbildung 1 dargestellten Klassen ersetzen sollen, sind in Abbildung 2 dargestellt. Durch die Verwendung von Komponenten wird das Erstellen eines Entities wie ein Baukastensystem, wodurch eine hohe Wiederverwendbarkeit entsteht. Da auf die Daten in den Komponenten direkt zugegriffen wird, fallen Getter und Setter weg. Die komplexe Logik der Klassen wird in mehrere Systeme aufgebrochen, in welchen die Entities gleichbehandelt werden können, indem die benötigten Komponenten spezifiziert werden, die die Entities für die Bearbeitung aufweisen müssen. Die nötige Komponenten-Zusammensetzung der vorherigen Klassen sieht wie folgt aus:
 
 |![](assets/PMDECS_Zusammensetzung.png)|
 |:--:| 
 | *Abbildung 3: Entity-Component-Zusammensetzung für Charaktere* |
 
-Die Zusammensetzung ist dynamisch gestaltet und kann sich während der Laufzeit ändern, um bestimmte Verhalten zu erzeugen. Wenn beispielsweise der Held angegriffen wird, soll er einen Rückstoß erhalten. Dafür wird ihm die `PlayerControl`-Komponenten weggenommen, wodurch er sich nicht mehr bewegen kann. Zudem wird ihm die `Knockback`-Komponente hinzugefügt, wodurch das `KnockbackSystem` diesen bearbeiten kann. Wenn der erhaltene Rückstoß ausgeführt wurde, kann die `PlayerControl`-Komponenten wieder zugewiesen werden, wodurch der Held wieder spielbar wird.
+Die Zusammensetzung ist dynamisch gestaltet und kann sich während der Laufzeit ändern, um bestimmte Verhalten zu erzeugen. Wenn beispielsweise der Held angegriffen wird, soll er einen Rückstoß erhalten. Dafür wird ihm die `PlayerControl`-Komponente weggenommen, wodurch er sich nicht mehr bewegen kann. Zudem wird ihm die `Knockback`-Komponente hinzugefügt, wodurch das `KnockbackSystem` diesen bearbeiten kann. Wenn der erhaltene Rückstoß ausgeführt wurde, kann die `PlayerControl`-Komponente wieder zugewiesen werden, wodurch der Held wieder spielbar wird.
 
 Untenstehend sind alle erstellten Komponenten. Um mithilfe der Komponenten das ursprüngliche Verhalten von Charakteren und Items
 zu erhalten, müssen Entities erstellt werden und die passenden Komponenten zugewiesen werden. Dafür bietet sich das Factory-Method-Pattern an,
@@ -174,7 +174,7 @@ den Spieler werfen, wenn dieser nicht in Nahkampfreichweite ist.
 Im OOP-Ansatz würde ein Lösungsansatz so aussehen:
 - **Beispiel A**: Es existiert eine Basisklasse mit Attributen wie `Position` und `Health` und Methoden wie `move()` und `takeDamage()`. Für den neuen Gegenspieler
 wird eine neue Klasse angelegt, welche die Basisklasse erbt und den Attributen Werte zuweist.
-- **Beispiel B**: Es muss eine neue Klasse für das Geschoss angelegt und mit Logik gefüllt werden. Der Gegenspieler muss neue Methoden erhalten, die entscheiden
+- **Beispiel B**: Es muss eine neue Klasse für das Geschoss angelegt und mit Logik gefüllt werden. Der Gegenspieler muss neue Methoden erhalten, die entscheiden,
 wann und wie das Geschoss abgefeuert wird. Geschosse müssen in die bestehende Infrastruktur eingebaut werden (Sprite muss gezeichnet werden, Geschoss muss bewegt werden,
 Geschoss muss bei Kontakt mit dem Spieler Schaden anrichten).
 
