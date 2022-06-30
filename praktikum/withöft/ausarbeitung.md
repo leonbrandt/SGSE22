@@ -527,9 +527,19 @@ Auffällig war bei der Verwendung beider Protokolle für den Download, dass hier
 
 ### Einsatzbereiche
 
+Anhand der Messergebnisse lassen sich verschiedene Einsatzbereiche für die Protokolle feststellen. Anhand dieser Einsatzbereiche wird ebenfalls deutlich, dass es gewisse Überschneidungen zwischen den Protokollen gibt. In bestimmten Bereichen ergänzen sie sich jedoch auch, sodass bezüglich der Forschungsfrage nicht zwingend von einer Ersatz oder einem "besseren" Protokoll gesprochen werden kann. Hier kommt es ganz auf die spezifischen Anforderungen an, die für ein Projekt umgesetzt werden sollen.
+
+*Abbildung 9* zeigt ein Entscheidungsdiagramm, mit dessen Hilfe das passende Protokoll für bestimmte Anforderungen ermittelt werden kann. Trotzdem ist zu erwähnen, dass es von Vorteil ist, für jede Anforderung das Entscheidungsdiagramm erneut zu durchlaufen, da sich die passenden Protokolle für jede Anforderung unterscheiden können. Aus diesem Grund kann es eben auch zum Einsatz von mehreren Protokollen kommen, die sich gegenseitig ergänzen.
+
+Das Entscheidungsdiagramm beginnt mit der Startfrage *Welches Protokoll soll für mein Projekt verwendet werden?*. Nun muss sich der Entwickler / das Entwicklungsteam Gedanken über die Anforderungen des Backend machen. Sollen Dateien, die größer sind als 1GB zum Download angeboten werden? Dann bietet sich hierfür ein normaler Download-Filestream an. Sollen viele Dateien, die größer als 1MB sind zum Download angeboten werden? Dann kommt WebSocket in Frage, da es gleichzeitig auch für andere Anfragen genutzt werden kann.
+
+Wie bereits beschrieben, gibt es aktuell keine einfache Vorgehensweise zur Implementierung von WebTransport (z.B. mit Hilfe von Bibliotheken). Steht also eine einfach Implementierung an erster Stelle, ist von der Verwendung von WebTransport abzuraten und es sollten lieber WebSockets gewählt werden, für die es bereits eine große Zahl an Bibliotheken gibt. WebTransport hat extrem gut bei der schnellen Übertragung von kleinen Datenpaketen abgeschnitten. Sollen also viele kleine Daten übertragen werden (z.B. Fahrgastinformationen, Flugdaten etc.) bietet sich die Verwendung von WebTransport an dieser Stelle an.
+
+Wenn keine große Menge an kleinen Datenpaketen gleichzeitig ausgetauscht werden muss, gelangt man zum letzten Entscheidungsknoten. WebTransport konnte im Test eine gewisse Menge an gleichzeitigen Client-Anfragen händeln, bei sehr vielen gleichzeitigen Clients scheint allerdings WebSocket (aktuell) das robustere Protokoll zu sein. Sollen gewisse Daten also für viele Leute gleichzeitig zur Verfügung stehen (z.B. Social Media, LiveTicker etc.), sind WebSockets hier vorzuziehen. Andernfalls kann das Protokoll frei nach Belieben und persönlichen Präferenzen ausgewählt werden. Ist ein Protokoll gewünscht, dass sich schon lange etabliert hat, robust ist und viel Dokumentation aufweisen kann, sind WebSockets im Vorteil. Möchte man jedoch eine neue Technologie etablieren, Forschen und gewissen Systeme weiterentwickeln, lohnt es sich, sich mit WebTransport auseinanderzusetzen.
+
 <figure style="text-align: center;">
     <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/decisionDiagram.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
-    <figcaption>Abbildung 9: Selbst erstelles Entscheidungsdiagramm zur Hilfe bei der Protokollwahl.</figcaption>
+    <figcaption>Abbildung 9: Selbst erstelltes Entscheidungsdiagramm zur Hilfe bei der Protokollwahl.</figcaption>
 </figure>
 
 
