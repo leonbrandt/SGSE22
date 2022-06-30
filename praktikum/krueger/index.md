@@ -230,7 +230,7 @@ Gemäß der [beleuchteten Design-Ansätze](#ansätze-für-wiederverwendbarenwart
 Die für die Tests notwendige Daten werden ausgelagert, sodass diese bei Bedarf nur an einer Stelle verändert und innerhalb mehrerer Testfälle verwendet werden können.
 
 - user.json  
-=> Der Zugriff auf die Webseite erfolgt mittels NTML-Authentifizierung. FÜr das Testen des Vorgangs wird ein existierender User und nicht existierender bzw. user mit nicht ausreichenden Rechten vorgesehen
+=> Der Zugriff auf die Webseite erfolgt mittels NTLM-Authentifizierung. FÜr das Testen des Vorgangs wird ein existierender User und nicht existierender bzw. user mit nicht ausreichenden Rechten vorgesehen
     - validUser: { username, password }
     - invalidUser: [ { username, password }, {username, password }, ... ] 
 - machines.json  
