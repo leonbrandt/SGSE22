@@ -37,15 +37,16 @@ Da für die Implementierung nicht mehr viel Zeit zur Verfügung stand, sind nich
 
 ### Probleme bei der Umsetzung
 Von dem entwickelten Konzept konnten nicht alle Funktionen implementiert werden, hauptsächlich aus Zeitgründen. Der Stand zur Abgabe dieser Arbeit ist in folgender Tabelle zusammengefasst:
+
  Funktion | Implementiert | Details
  --- | --- | ---
  Messwerte | + | Vollständig
  Aktor-Daten | + | Vollständig
  Geräte-Identifikation | - | Noch nicht angefangen
- Geräte-Information | - | "
- Value-Identifikation (Beide) | - | "
- Konfiguration Geräte-Daten | - | "
- Konfiguration Value-Daten | -  | "
+ Geräte-Information | - | ''
+ Value-Identifikation (Beide) | - | ''
+ Konfiguration Geräte-Daten | - | ''
+ Konfiguration Value-Daten | -  | ''
  Konfiguration Automatisierung Sensor | ~ | Nur für Schwellwerte implementiert (automationType = 0x01). Abfrage nicht implementiert.
  Konfiguration Automatisierung Aktor | ~ | Erlaubt nur das Verwenden von einem Sensor-Wert. Außerdem nur An / Aus möglich, analoge Werte und bleMeshConfigActorOutput sind genauso wie das abrufen der Konfiguration nicht implementiert. Die Operatoren sind implementiert, aber wenig sinnvoll, da der Akkumulator mit 0 Initialisiert wird. Die Skalierung der Werte wird ebenfalls noch nicht unterstützt.
 
