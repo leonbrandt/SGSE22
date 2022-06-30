@@ -1,12 +1,19 @@
-# Christoph Raitzig & Malte Reinsch #
+# Evaluierung der Anwendungsmöglichkeiten von Machine Learning gestützten Compiler-Optimierungsverfahren
 
-## Frage ##
+## Motivation ##
 
-Es soll MLGO untersucht werden. MLGO ist ein KI-gestütztes Verfahren, um Code beim Kompilieren zu verbessern.
+Moderne Compiler sind in der Lage umfassende Optimierungen am Programmcode vorzunehmen (bspw.
+das Löschen von nicht verwendeten Variablen, um die Größe des produzierten Binärcodes
+zu reduzieren). Die hierbei eingesetzten Optimierungsverfahren basieren häufig auf
+komplexen Heuristiken, die über viele Jahre entwickelt und parametriert werden.
+Die Entwicklung und Wartung dieser Heuristiken setzt viel Expertise voraus und
+ist daher sehr zeit- und kostenintensiv. Durch die Fortschritte in der Methode
+des maschinellen Lernens im 21. Jahrhundert steigt daher das Interesse, diese Methode
+auch auf Optimierungsprobleme im Compilerbau anzuwenden. Ein Beispiel hierfür
+stellt das MLGO-Framework dar, welches das Training und den Einsatz von KI-Modellen
+als Ersatz handgeschriebener Heuristiken in LLVM Optimierungspässen ermöglicht.
 
-Insbesondere soll untersucht werden, welchen Einfluss MLGO auf die Codegröße hat.
-
-## Wissenschaftliche Problemstellung ##
+## Wissenschaftliche Fragestellung
 
 Folgende Aspekte sollen untersucht/erläutert werden:
 
@@ -17,77 +24,15 @@ Folgende Aspekte sollen untersucht/erläutert werden:
 - Welchen Einfluss hat MLGO theoretisch auf Codegröße und Performanz?
 - Welchen Änderungen der Codegröße lassen sich in der Praxis beobachten?
 
-## Evaluierung der Anwendungsmöglichkeiten von Machine Learning gestützten Compiler-Optimierungsverfahren bezüglich WebAssembly ##
-
-Ziel:
-- Untersuchung zweier Fälle:
-	- Optimierung hinsichtlich Codegröße (Begründung: .wasm muss immer an Client geschickt werden)
-	- Optimierung hinsichtlich Performance (Begründung: Kernidee von WebAssembly ist das Versprechen von Performance)
-- Mögliche Ausprägungen:
-	- Anwendung von MLGO mit .wasm und beobachten, wie sich Codegröße ändert
-	- Erweiterung von MLGO mit weiterem Modell für weiteren Pass
-	und Effekt auf Codegröße beobachten
-		- Annahme eines Passes, der analysiert werden soll
-- kein wissenschaftliches Paper
-- Nutzung / Erweiterung von [MLGO](https://arxiv.org/pdf/2101.04808.pdf)
-
-TODOs:
-- Pass festlegen, der hinsichtlich Codegröße und Performance relevant ist und Ergebnisse verspricht
-- Benchmark-Projekt finden
-	- Wie integriert man custom-LLVM mit KI-Modell in die Toolchain?
-		- Unity: nutzt "complex toolchain" aus IL2CPP, emscripten, binaryen
-- Welche Projekte zum trainieren nutzen?
-- Wie können MLGO und LLVM erweitert werden, sodass eigener Pass trainiert werden kann?
-	- [feature-doc](https://github.com/google/ml-compiler-opt/blob/main/docs/adding_features.md)
-	- [demo-doc](https://github.com/google/ml-compiler-opt/blob/main/docs/demo/demo.md)
-- Welche Features sind für Training bzgl. ausgewähltem Pass wichtig?
-- Realisierung
 
 ## Projektplanung ##
 
 [Meilensteinplan](https://crocus-island-7de.notion.site/e698d92cbf0a476d8f044fe727f03ea3?v=29abe0d1019e4d908513bf765bc34eff)
 
-## Recherche ##
 
-[Recherche zum MLGO Paper/Framework](praktikum/reinsch_raitzig/research.md)
-
-## Nächste Aufgaben ##
-
-### LLVM-Seite ###
-
-- Integration von KI-Modell in RegAllocAdvisor
-- Wrapper (z.B. Adapter-Pattern) um KI-Modell mit gemeinsamem Interface
-
-### KI-Seite ###
-
-- Reinforcement Learning
-	- Feature-Engineering
-- Training und Bauen mit fuchsia
-
-
-
-
-
-## Kompilierung von LLVM ##
-
-[LLVM kompilieren](praktikum/reinsch_raitzig/llvm-compile.md)
-
-## Einfluss von MLGO auf Codegröße ##
-
-[Untersuchung des Einflusses von MLGO auf die Codegröße](praktikum/reinsch_raitzig/research-binary-size.md).
-
-
-
-
-
-
-
-
-
-## LLVM ##
+## Hintergrund: LLVM ##
 
 TODO:
-- Allgemeiner Überblick
 - clang
 - Architektonischer Überblick
 - Optimierer
@@ -109,7 +54,6 @@ Compiler werden allgemein in zwei Schichten unterteilt. Das sprachspezifische
 Frontend, welches lexikalische, syntaktische und semantische Analysen vornimmmt und
 das Backend, welches Optimierungsschritte vornimmt und Maschinencode generiert.
 
-TODO: Nystrom Bild einbauen.
 ![Überblick über unterschiedliche Kompilierungsphasen aus TODO: quelle](./media/compiler_mountain.png )
 
 LLVM (**L**ow **L**evel **V**irtual **M**achine) ist ein Framework welches die
@@ -180,3 +124,133 @@ eine Callsite geinlined wird, die an höherer Stelle im Callgraph liegt.
 
 TODO: hierzu Bild!
 TODO: wann hat der Pass Probleme
+
+## MLGO ##
+
+### Reinforcement Learning in MLGO ###
+
+Dieser Abschnitt fasst Reinforcement Learning in MLGO zusammen. Dabei wurde das Paper [MLGO: a Machine Learning Guided Compiler Optimizations Framework](https://arxiv.org/abs/2101.04808) als Quelle genutzt.
+
+Bei Reinforcement Learning werden Agenten betrachtet, welche Entscheidungen treffen. Diese können positiv oder negativ sein, was zum Anpassen des Agenten genutzt wird.
+Hier ist der Agent der Compiler. Der Compiler führt entweder Inlining durch oder nicht. Je nachdem, ob sich Inlining als gute Entscheidung oder als Fehler erwiesen hat, wird der Agent angepasst.
+Eine Code-Basis wird vom Agenten immer wieder kompiliert, bis möglichst gute Taktiken gefunden wurden.
+
+Das Problem wurde als Markov-Decision-Process (MDP) modelliert. Beim MDP gibt es Zustände, deren Übergänge mit Wahrscheinlichkeiten versehen sind. Zudem gibt es eine Reward-Funktion. Der Agent führt Aktionen aus.
+Die Umgebung befindet sich an einem Zeitpunkt *t* in einem bestimmten Zustand *s(t)* und der Agent führt eine Aktion *a(t)* aus. Der Agent erhält eine Belohnung durch die Reward-Funktion *R(s(t), a(t))*. Der nächste Zustand *s(t+1)* wird mit Hilfe einer Wahrscheinlichkeisdistribution ausgewählt, welche vom Zustand und der Aktion des Agenten abhängt, d.h. *P(s(t+1) | s(t), a(t))*. Es werden solange Aktionen ausgeführt, bis ein Endzustand erreicht ist.
+Der Agent ist so modelliert, dass dieser eine (weitere) Wahrscheinlichkeitsdistribution nutzt, um die nächste Aktion auszuwählen im aktuellen Zustand auszuwählen, *pi = Pr(a(t) | s(t))*. Die Funktion *pi* ist durch ein neuronales Netz gegeben. Ziel des Agenten ist es, die Belohnung insgesamt *R = \Sigma_{t=0}^T R(s(t), a(t))* zu maximieren. Dazu wird der Gradient von *R* mittels Monte-Carlo-Methoden approximiert und Gradient Ascent durchgeführt.
+Die Reward-Funktion ist theoretisch so modelliert, dass bei keinem Inlining die Belohnung 0 ist und bei Inlining die erreichte Größenreduktion der beteiligten Funktionen ist. Die tatsächlich erreichte Größenreduktion wird erst in einer späteren Phase des Compilers ersichtlich, so dass hier zum Training 11 Features genommen werden, um das theoretisch gewünschte *R(s, a)* zu approximieren:
+- caller_basic_block_count
+- caller_conditionally_executed_blocks
+- caller_users
+- callee_basic_block_count
+- callee_conditionally_executed_blocks
+- callee_users
+- callsite_height
+- cost_estimate
+- number_constant_params
+- edge_count
+- node_count
+Diese Features entsprochen in etwa den Informationen, die die bisherigen Heuristiken verwenden.
+Anstatt *R(s, a)* zu approximieren, kann die insgesamte Belohnung *R* verwendet werden, weil diese nach der Kompilierung sich einfach aus der Größe der kompilierten Binary ergibt. Es wurde sich im Paper dagegen entschieden dieses zu verwenden, weil mehr Daten für die gleiche Performanz notwendig gewesen wären und trotzdem keine bessere Qualität des Modells garantiert ist.
+
+Um das Training zu verschnellern, wird *pi* nicht zufällig initialisiert, sondern mittels eines Cloning-Algorithmus so initialisiert, dass die bisherigen LLVM-Inlining-Heuristiken nachgebildet werden.
+
+### Evolution in MLGO ###
+
+Dieser Abschnitt fasst Reinforcement Learning in MLGO zusammen. Dabei wurde das Paper [MLGO: a Machine Learning Guided Compiler Optimizations Framework](https://arxiv.org/abs/2101.04808) als Quelle genutzt.
+
+Bei diesem Ansatz wird anstatt der insgesamten Belohnung *R* eine geglättete Version von *R* maximiert. Die Belohnung *R* hängt von den Parametern *theta* des Modells *pi* ab. Anstatt *R(theta)* zu maximieren, wird auch die Umgebung von *theta* betrachtet, d.h. naheliegende Werte für *theta*. Dabei wird die Größe *epsilon* der Umgebung durch eine Multivariable-Normal-Distribution bestimmt sowie mit einem weiteren Faktor *sigma*. Die so zu maximierende Funktion wird *J(theta)* genannt.
+Wie bei Reinforcement Learning, werden Monte-Carlo-Methoden genutzt, um *J(theta)* zu approximieren.
+
+### MLGO und LLVM ###
+
+MLGO besteht aus zwei Teilen:
+
+- Innerhalb von LLVM werden die KI-Modelle für Optimierungen genutzt
+- Training von KI-Modellen, dieser Code ist im [MLGO-Repository](https://github.com/google/ml-compiler-opt)
+
+Mit dem MLGO-Repository können KI-Modelle trainiert werden, welche dann in LLVM integriert werden. Dazu gibt es allgemeinen Code in LLVM, z.B. [MLInlineAdvisor.cpp](https://github.com/llvm/llvm-project/blob/main/llvm/lib/Analysis/MLInlineAdvisor.cpp). Dieser Code ist in so fern allgemein, als dass kein trainiertes KI-Modell im Source Code von LLVM ist. Erst beim Kompilieren von LLVM wird ein konkretes Modell in LLVM eingebaut.
+
+## LLVM Build System
+
+LLVM umfasst mehrere Komponenten. Für die weiteren Untersuchungen ist Clang wichtig. Clang ist der LLVM-Compiler für C/C++.
+
+Wie LLVM gebaut wird, wird in [*Getting Started with the LLVM System*](https://llvm.org/docs/GettingStarted.html) beschrieben. LLVM benutzt [CMake](https://cmake.org/) zum Konfigurieren. Mit CMake können Ninja-Build-Dateien, Makefiles sowie Visual Studio und XCode-Projekte erstellt werden. Beim Aufruf von CMake können Konfigurations-Parameter mitgegeben werden.
+
+### Bauen mit Docker
+
+Hier wird LLVM innerhalb eines [Docker](https://www.docker.com/)-Containers gebaut. Dadurch kann die kompilierte LLVM-Toolchain überall benutzt werden. (Docker ist für Linux, Windows und MacOS verfügbar.)
+
+Ein Docker-Container wird mittels eines Dockerfiles erstellt. Das von uns erstellte Dockerfile ist [hier](https://github.com/mwithoeft/SGSE22/blob/main/praktikum/reinsch_raitzig/Dockerfile) hinterlegt.
+
+Der Container kann mit folgendem Befehl erstellt werden (wenn man sich im gleichen Ordner wie das Dockerfile befindet):
+```bash
+docker build . -t llvm-mlgo
+```
+
+Der Container kann dann z.B. mit folgendem Befehl gestartet werden:
+```bash
+docker run --rm -it llvm-mlgo
+```
+
+### Beschreibung des LLVM-Builds
+Das Bauen besteht aus folgenden Schritten:
+
+- Es wird die zum Bauen benötigte Software installiert. Die umfasst Clang (Version 12) als Compiler und [Tensorflow](https://www.tensorflow.org/) als Machine Learning Framework für MLGO.
+- Clang wird als System-Compiler (an Stelle von GCC) konfiguriert.
+- Die LLVM-Sources werden heruntergeladen und die neueste stabile Version (Version 14) ausgecheckt.
+- Tensorflow wird so konfiguriert, wie es für MLGO zum Bauen von LLVM nötig ist.
+- Mit CMake wird LLVM konfiguriert. LLVM wird mit allen Komponenten gebaut, die zur Kompilation wie Firefox notwendig sind, wie z.B. WebAssembly-Support. Hier werden Makefiles generiert.
+- LLVM wird gebaut und installiert.
+[LLVM kompilieren](praktikum/reinsch_raitzig/llvm-compile.md)
+
+## Einfluss von MLGO auf die Größe von Binaries
+
+Es wurde untersucht, welcher Einfluss die Benutzung von MLGO auf die Größe der kompilierten Programme (Binaries) hat.
+
+### MLGO beim Einsatz von LLVM/Clang
+
+Beim Clang kompilieren mit Clang können unterschiedliche Optimierungsstufen eingestellt werden. Dabei ist `-Oz` die Option, die hinsichtlich Code-Größe optimiert.
+
+MLGO wird standardmäßig nicht benutzt und kann mit `-mllvm -enable-ml-inliner=release` aktiviert werden.
+
+## Bash-Script
+
+Das Kompieleren der Programme wurde mit dem [hier](https://github.com/mwithoeft/SGSE22/blob/main/praktikum/reinsch_raitzig/mlgoscript.sh) verfügbaren Bash-Script durchgeführt. Es kann in dem [hier](praktikum/reinsch_raitzig/llvm-compile.md#Bauen-mit-Docker) beschriebenen Docker-Container ausgeführt werden.
+
+Neben diesem Script ist auch noch eine Konfigurationsdatei für das Bauen des Linux-Kernels notwendig. Diese kann [hier](https://github.com/mwithoeft/SGSE22/blob/main/praktikum/reinsch_raitzig/linuxconfig) gefunden werden und muss unter `/linuxconfig` im Container hinterlegt werden.
+
+Das Bash-Script kann z.B. unter dem Namen `mlgoscript.sh` gespeichert werden und wrid wie folgt ausgeführt:
+```bash
+chmod +x mlgoscript.sh
+. mlgoscript.sh
+```
+
+Nach dem Ausführen werden die Größen der Binaries ausgegeben. Sie werden zudem in die Text-Datei `~/sizes.txt` geschrieben.
+
+Das Script ist so aufgebaut, dass die einzelnen Programme einzeln kompiliert werden können. Z.B. kann nur Thunderbird kompiliert werden, indem der entsprechende Abschnitt des Scriptes ausgeführt wird.
+
+
+### Ergebnisse
+
+Um den Einfluss von MLGO zu untersuchen, wurden mehrere Programme einmal nur mit `-Oz` und einmal mit `-Oz` sowie `-mllvm -enable-ml-inliner=release` kompiliert.
+
+Die Ergebnisse sind in folgender Tabelle zusammengefasst. Die Größen sind jeweils in Bytes:
+
+| Programm                                                             | nur `-Oz` | `-Oz` und MLGO | Verkleinerung durch MLGO in % |
+| -------------------------------------------------------------------- | --------- | -------------- | ----------------------------- |
+| [VLC media player](https://www.videolan.org/vlc/)                    | 21168     | 21168          | 0                             |
+| [Firefox](https://www.mozilla.org/en-US/firefox/) (nur Haupt-Binary) | 5995576   | 5752536        | 4,05                          |
+| Firefox (inklusive Bibliotheken)                                     | 69531415  | 68351749       | 1,70                          |
+| [Thunderbird](https://www.thunderbird.net/) (nur Haupt-Binary)       | 5969976   | 5727176        | 4,07                          |
+| Thunderbird (inklusive Bibliotheken)                                 | 105529227 | 103787207      | 1,65                          |
+| [Linux Kernel](https://www.kernel.org/)                              | 568156016 | 568156016      | 0                             |
+| [jp2a](https://github.com/Talinx/jp2a)                               | 57976     | 57976          | 0                             |
+
+Teilweise sind durch MLGO (zu `-Oz` zusätzliche) Größenreduktionen im einstelligen Prozentbereich sichtbar. Ob die Größe der Binaries durch MLGO reduziert werden kann, hängt stark vom jeweiligen Programm ab.
+
+
+
+
+
+

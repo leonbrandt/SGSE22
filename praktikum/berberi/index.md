@@ -9,11 +9,11 @@ Im Rahmen dieser wissenschaftlichen Ausarbeitung, die das Forschungsthema "Web-E
 1.  Wie wird WordPress-Themes und PHP verwendet, um Websites zu entwickeln im Vergleich zu JavaScript und React.js?
 2.  Welche Technologie zwischen WordPress und React.js sollte bei der Entwicklung einer Website bevorzugt werden?
 
-Zu Beginn dieser Ausarbeitung werden die Eckpunkte, Gemeinsamkeiten und Unterschiede zwischen PHP und JavaScript dargestellt. Anschließend wird die Entwicklung von Websites mit Javascript und React sowie die Entwicklung mit Wordpress und PHP erläutert. Abschließend werden die wichtigsten Eckpunkte in der Schlussfolgerung zusammengefasst.
+Zu Beginn dieser Ausarbeitung werden die Eckpunkte, Gemeinsamkeiten und Unterschiede zwischen PHP und JavaScript dargestellt. Daraufhin wird die Entwicklung von Websites mit Javascript und React sowie die Entwicklung mit Wordpress und PHP erläutert. Abschließend werden die wichtigsten Eckpunkte in der Schlussfolgerung zusammengefasst.
 
 ## 2 PHP vs. JavaScript
 
-Einige Programmierer behaupten immer noch, dass es sinnlos sei, die Unterschiede zwischen PHP und JavaScript zu diskutieren, da beide einen unterschiedlichen Zweck bei der Website-Entwicklung erfüllen. Wenn es um die Frage PHP vs. JavaScript für die Website-Entwicklung geht, ein Teil der Antwort ist einfach: PHP ist eine serverseitige Skriptsprache und JavaScript ist eine clientseitige Skriptsprache. Mit dem Aufkommen von Node.js, Angular.js und React.js kann JavaScript jedoch auch für serverseitige Skripte verwendet werden. Daher ist PHP im Vergleich zu JavaScript ein ernsthaftes Diskussionsthema geworden.
+Einige Programmierer behaupten immer noch, dass es sinnlos sei, die Unterschiede zwischen PHP und JavaScript zu diskutieren, da beide einen unterschiedlichen Zweck bei der Website-Entwicklung erfüllen. Wenn es um die Frage PHP vs. JavaScript für die Website-Entwicklung geht, ist ein Teil der Antwort einfach: PHP ist eine serverseitige Skriptsprache und JavaScript ist eine clientseitige Skriptsprache. Mit dem Aufkommen von Node.js, Angular.js und React.js kann JavaScript jedoch auch für serverseitige Skripte verwendet werden. Daher ist PHP im Vergleich zu JavaScript ein ernsthaftes Diskussionsthema geworden.
 
 ### 2.1 PHP
 
@@ -21,7 +21,7 @@ PHP - Hypertext Preprocessor ist eine serverseitige Skriptsprache. Sie ist eine 
 
 ### 2.2 JavaScript
 
-JavaScript ist eine Programmiersprache, die oft als clientseitige Skriptsprache bezeichnet wird und im Allgemeinen in Browsern ausgeführt wird, um interaktive und dynamische Webseiten zu erstellen. Sie wird häufig für die Erstellung benutzerfreundlicher, kreativer Websites sowie für Nicht-Web-Projekte wie die Entwicklung von Spielen, mobilen Anwendungen, PDF-Dateien und mehr verwendet. Es muss nicht neu kompiliert werden, was die Zeiteffizienz erhöht. Es gibt auch fortgeschrittene serverseitige Versionen von JavaScript wie Node.js und React.js, die die Gestaltung von Websites mit mehr Funktionen als nur dem Herunterladen von Dateien ermöglichen. JavaScript verfügt auch über verschiede Instanzen: Frontend-Technologien wie Angular JS, JQuery, Reactjs, usw. sowie Serverseitige Technologien wie MongoDB, Node.js, Express.js, etc.
+JavaScript ist eine Programmiersprache, die oft als clientseitige Skriptsprache bezeichnet wird und im Allgemeinen in Browsern ausgeführt wird, um interaktive und dynamische Webseiten zu erstellen. Sie wird häufig für die Erstellung benutzerfreundlicher, kreativer Websites sowie für Nicht-Web-Projekte wie die Entwicklung von Spielen, mobilen Anwendungen, PDF-Dateien und mehr verwendet. Es muss nicht neu kompiliert werden, was somit die Zeiteffizienz erhöht. Es gibt auch fortgeschrittene serverseitige Versionen von JavaScript wie Node.js und React.js, welche die Gestaltung von Websites mit mehr Funktionen als nur dem Herunterladen von Dateien ermöglichen. JavaScript verfügt auch über verschiedene Instanzen: Frontend-Technologien wie Angular JS, JQuery, Reactjs, usw. sowie Serverseitige Technologien wie MongoDB, Node.js, Express.js, etc.
 
 ### 2.3 Ähnlichkeiten zwischen PHP und JavaScript
 
@@ -169,7 +169,7 @@ Der Unterschied zwischen PHP und JavaScript wirkt sich auch auf die Groß- und K
 
 #### 2.4.9 PHP und JavaScript: Objekte und Arrays
 
-Der Hauptunterschied zwischen PHP und JavaScript besteht darin, dass PHP Objekte und Arrays als unterschiedliche Einheiten mit unterschiedlicher Syntax behandelt, während in JavaScript die beiden austauschbar sind. In JavaScript kann man die Syntax von Objekten und Arrays beliebig vertauschen. Außerdem gibt es in JavaScript keine assoziativen Arrays. Assoziative Arrays, auch Maps oder Dictionaries genannt, sind ein abstrakter Datentyp, der Daten in Schlüssel-Paaren speichern kann.
+Der Hauptunterschied zwischen PHP und JavaScript besteht darin, dass PHP Objekte und Arrays als unterschiedliche Einheiten mit unterschiedlicher Syntax behandelt, während in JavaScript beide austauschbar sind. In JavaScript kann man die Syntax von Objekten und Arrays beliebig vertauschen. Außerdem gibt es in JavaScript keine assoziativen Arrays. Assoziative Arrays, auch Maps oder Dictionaries genannt, sind ein abstrakter Datentyp, der Daten in Schlüssel-Paaren speichern kann.
 
 **PHP Objekte und Arrays:**
 
@@ -223,14 +223,14 @@ Heutzutage ist der Webinhalt dynamisch. Er ändert sich je nach Verhalten, Vorli
 
 **Virtuelles DOM**
 
-Um das DOM zu aktualisieren, ohne dass der Benutzer die Seite aktualisieren muss, um die Änderungen zu sehen, muss das gesamte DOM neu geladen werden. Dies ist sehr ineffizient, aber ohne diese Funktion wird der Benutzer eine schlechte Erfahrung machen. An dieser Stelle kommt das virtuelle DOM ins Spiel. Wenn die Seite JSX-Elemente verwendet, erstellt React eine Kopie des DOM, genannt Virtual DOM.
+Um das DOM zu aktualisieren, ohne dass der Benutzer die Seite aktualisieren muss, um die Änderungen zu sehen, muss das gesamte DOM neu geladen werden. Dies ist zwar sehr ineffizient, jedoch macht der Benutzer ohne diese Funktion eine schlechte Erfahrung. An dieser Stelle kommt das virtuelle DOM ins Spiel. Wenn die Seite JSX-Elemente verwendet, erstellt React eine Kopie des DOM, genannt Virtual DOM.
 
 Dieses virtuelle DOM verfolgt die Elemente, mit denen der Benutzer interagiert, und aktualisiert nur diejenigen, die relevant sind. Da nicht bei jeder Interaktion das gesamte DOM neu geladen wird, verbessert dies die Leistung.
 
-### 3.2 React Komponenten
+### 3.2 React Komponente
 
-Eine React-Anwendung besteht aus Bausteine welche Komponenten gennant sind. Die Entwickler zerlegen die Benutzeroberfläche in wiederverwendbare Code-Bausteine.
-Auf einer E-Commerce-Website kann es zum Beispiel viele einzelne Artikelseiten für jedes Produkt geben. Anstatt jede einzelne Artikelseite zu erstellen, es wird nur eine Artikelkomponente erstellt und diese auch wiederverwendet.
+Eine React-Anwendung besteht aus Bausteinen, welche Komponente genannt werden. Die Entwickler zerlegen die Benutzeroberfläche in wiederverwendbare Code-Bausteine.
+Auf einer E-Commerce-Website kann es zum Beispiel viele einzelne Artikelseiten für jedes Produkt geben. Anstatt jede einzelne Artikelseite zu erstellen, wird nur eine Artikelkomponente erstellt und diese auch wiederverwendet.
 
 Jede Komponente hat ihren eigenen Satz von Eigenschaften und Funktionen. Die Daten fließen von der übergeordneten Komponente zur untergeordneten Komponente, um Werte zu definieren. In diesem Fall ist die Eltern-Komponente die Produktliste und die "Top-Level"-Komponente ist die App-Komponente.
 
@@ -242,7 +242,7 @@ Um auf das Beispiel einer E-Commerce-Website zurückzukommen: Beim Durchsuchen e
 
 ### 3.3 Props
 
-Props, kurz für Eigenschaften(Properties), ermöglichen es Benutzern, Daten oder Argumente an React-Komponenten zu übergeben.Props helfen dabei, eine React-Komponente dynamischer zu machen, sind schreibgeschützt und können nicht geändert werden obwohl sich der Zustand ändern kann.
+Props, kurz für Eigenschaften (Properties), ermöglichen es Benutzern, Daten oder Argumente an React-Komponenten zu übergeben. Props helfen dabei, eine React-Komponente dynamischer zu machen, sind schreibgeschützt und können nicht geändert werden obwohl sich der Zustand ändern kann.
 React ermöglicht dem Entwickler die Wiederverwendung von Code bzw. von Komponenten, aber im Allgemeinen werden nicht für jede Komponente die gleichen Daten benötigt.
 
 Um auf die Seite mit der Produktliste zurückzukommen, muss der Inhalt der Komponente je nach dem vom Benutzer ausgewählten Produkt geändert werden. Hier kommen die Props ins Spiel. Wenn der Benutzer auf ein Produkt auf der Produktlistenseite klickt, wird die Komponente für den Produktartikel angezeigt. Diese Komponente Artikelliste gibt Props an ihre untergeordnete Komponente Produktartikel weiter. Die Komponente hat dieselbe Struktur, aber ihr Inhalt ändert sich in Abhängigkeit von ihren Eigenschaften. Diese Props können Daten wie Preis, Farbe oder Verfügbarkeit sein.
@@ -251,9 +251,9 @@ Um auf die Seite mit der Produktliste zurückzukommen, muss der Inhalt der Kompo
 
 Seit seiner ersten Veröffentlichung im Jahr 2003 hat sich WordPress von einer einfachen und leicht zu bedienenden Blogging-Plattform zum beliebtesten und am weitesten verbreiteten Open-Source-Website-Builder und CMS (Content Management System) entwickelt. Die Einfachheit von WordPress liegt in seinem WYSIWYG-Builder und seinem modularen Design mit Vorlagen. WYSIWYG steht für "what you see is what you get". Dieses Format für die Web-Entwicklung funktioniert über ein erkennbares Editor-System, das an Microsoft Word und andere beliebte Textverarbeitungsprogramme erinnert. Diese Art der Website-Gestaltung ist heute alltäglicher, aber zu der Zeit, als sie entwickelt wurde, stellte sie eine bedeutende Demokratisierung der Webentwicklung dar.
 
-Heute macht die WordPress-Plattform 43 % aller Websites aus und hat einen Anteil von 65 % am CMS-Markt[3]. Jede dieser WordPress-Websites basiert auf einem Theme, bei dem es sich um eine von drei Arten handelt - ein individuelles "custom" WordPress-Theme, ein Premium-Theme oder ein kostenloses Theme. Kostenlose Themes haben in der Regel nur begrenzte Anpassungsmöglichkeiten und erhalten weniger Unterstützung für neue WordPress-Updates und benutzerdefinierte Plugin-Updates, wodurch die Website besonders anfällig für Hackerangriffe und Spam ist. Premium-WordPress-Themes sind solche, die von einem Entwickler entwickelt und aktualisiert und zum Verkauf angeboten werden.
+Heute macht die WordPress-Plattform 43 % aller Websites aus und hat einen Anteil von 65 % am CMS-Markt[3]. Jede dieser WordPress-Websites basiert auf einem „Theme“, bei dem es sich um eine von drei Arten handelt - ein individuelles "custom" WordPress-Theme, ein Premium-Theme oder ein kostenloses Theme. Kostenlose Themes haben in der Regel nur begrenzte Anpassungsmöglichkeiten und erhalten weniger Unterstützung für neue WordPress-Updates und benutzerdefinierte Plugin-Updates, wodurch die Website besonders anfällig für Hackerangriffe und Spam ist. Premium-WordPress-Themes sind solche, die von einem Entwickler entwickelt und aktualisiert und zum Verkauf angeboten werden.
 
-Die Entwicklung von WordPress-Plugins wie WooCommerce für den elektronischen Handel, Yoast für die Suchmaschinenoptimierung(SEO - search engine optimization), Akismet für die Spam-Blockierung und Jetpack für Sicherheit und Website-Analyse haben die Geschäftsfunktionen von WordPress weiter verbessert. Die Plattform verfügt über ein robustes Backend, das es professionellen Webentwicklern ermöglicht, den Code anzupassen, Funktionen hinzuzufügen und die Funktionalität zu optimieren, um einzigartige Websites zu erstellen.
+Die Entwicklung von WordPress-Plugins wie WooCommerce für den elektronischen Handel, Yoast für die Suchmaschienenoptimierung (SEO - search engine optimization), Akismet für die Spam-Blockierung und Jetpack für Sicherheit und Website-Analyse haben die Geschäftsfunktionen von WordPress weiter verbessert. Die Plattform verfügt über ein robustes Backend, welches professionellen Webentwicklern ermöglicht, den Code anzupassen, Funktionen hinzuzufügen und die Funktionalität zu optimieren, um einzigartige Websites zu erstellen.
 
 ### 4.1 WordPress Custom Themes
 
@@ -261,7 +261,7 @@ Ein custom WordPress-Theme ist ein Theme, das von Grund auf für eine bestimmte 
 
 Durch die Verwendung benutzerdefinierter Module und die direkte Bearbeitung des Website-Codes kann ein WordPress-Entwickler das volle Potenzial von WordPress ausschöpfen. Das Backend kann so angepasst werden, dass Plugins in bestehende Geschäftssysteme und -ressourcen integriert werden können, z. B. in Bestandsverwaltungssysteme, CRMs, Verkaufsstellen, Callcenter, Kundendienstabteilungen, Social-Media-Verwaltung und vieles mehr.
 
-PHP-, HTML- und CSS-Kenntnisse sind die Grundvoraussetzung für die Entwicklung von Websites mit benutzerdefinierten Themen unter Verwendung von WordPress. Je höcher die Kenntnisse in diesen Sprachen sind, desto mehr kann ein Entwickler die zu entwickelnde Website an die Bedürfnisse seiner Kunden anpassen. Das bedeutet, dass selbst Programmierer mit grundlegenden Kenntnissen und Erfahrungen, mit der Entwicklung benutzerdefinierter Themes in WordPress beginnen können. Man kann mit der Installation von WordPress beginnen, lokal oder auf einem Server. Ein WordPress-Theme besteht aus der Vorlagendatei index.php und einem Stylesheet, und alles andere ist optional.
+PHP-, HTML- und CSS-Kenntnisse sind die Grundvoraussetzung für die Entwicklung von Websites mit benutzerdefinierten Themen unter Verwendung von WordPress. Je höcher die Kenntnisse in diesen Sprachen sind, desto mehr kann ein Entwickler die zu entwickelnde Website an die Bedürfnisse seiner Kunden anpassen. Das bedeutet, dass selbst Programmierer mit grundlegenden Kenntnissen und Erfahrungen, mit der Entwicklung benutzerdefinierter Themes in WordPress beginnen können. Man kann mit der Installation von WordPress lokal oder auf einem Server beginnen. Ein WordPress-Theme besteht aus der Vorlagendatei index.php und einem Stylesheet. Alles andere ist optional.
 
 **Style.css**
 
@@ -314,7 +314,7 @@ Ein Beispiel für eine `header.php`-Datei:
   <?php get_template_part('template-parts/header/header', 'default', $args);?>
 ```
 
-`language_attributes()` gibt den Sprachtyp für den <html>-Tag aus. `wp_head()` gibt die Javascript-Links und andere Header-Funktionen aus. `body_class()` zeigt die Klassennamen für das body-Element an. `get_template_part()` bietet einen einfachen Mechanismus für Themes, um wiederverwendbare Codeabschnitte im Theme zu laden. Alle oben genannten Tags und viele weitere sind im WordPress Codex[5] gut dokumentiert.
+`language_attributes()` gibt den Sprachtyp für den <html>-Tag an. `wp_head()` gibt die Javascript-Links und andere Header-Funktionen an. `body_class()` zeigt die Klassennamen für das body-Element an. `get_template_part()` bietet einen einfachen Mechanismus für Themes, um wiederverwendbare Codeabschnitte im Theme zu laden. Alle oben genannten Tags und viele weitere sind im WordPress Codex[5] gut dokumentiert.
 
 `footer.php` ist eine einfachere Datei. Sie enthält benutzerdefinierte Inhalte und eine `wp_footer()`-Funktion, die WordPress häufig für Plugins und Skripte verwendet.
 
@@ -334,7 +334,7 @@ Ein Beispiel für eine `header.php`-Datei:
 </html>
 ```
 
-Und schließlich die Hauptvorlagendatei `index.php`:
+Und schließlich die Hauptvorlagendatei `index.php`
 
 ```php
 <?php
@@ -369,7 +369,7 @@ Das Theme sollte nun zum Aktivieren und Testen bereit sein. Der nächste Schritt
 
 ## 5 Fazit
 
-React.js ist eine gute Option für JavaScript-Entwickler, die Single-Page-Webanwendungen erstellen. Es ermöglicht Entwicklern, komplexe Websites mit wiederverwendbaren Komponenten zu erstellen. Ein großer Vorteil ist die Möglichkeit, nur die Komponente mit den relevanten Daten zu aktualisieren. Anstatt die gesamte Seite neu zu laden, verfolgt React über sein virtuelles DOM genau, was sich geändert hat. React ist schnell, skalierbar und flexibel, da es sich um eine Bibliothek und nicht um ein Framework handelt. Außerdem gibt es eine große und aktive Entwicklergemeinde und eine gute Dokumentation.
+React.js ist eine gute Option für JavaScript-Entwickler, welche Single-Page-Webanwendungen erstellen. Es ermöglicht Entwicklern, komplexe Websites mit wiederverwendbaren Komponenten zu erstellen. Ein großer Vorteil ist die Möglichkeit, nur die Komponente mit den relevanten Daten zu aktualisieren. Anstatt die gesamte Seite neu zu laden, verfolgt React über sein virtuelles DOM genau, was sich geändert hat. React ist schnell, skalierbar und flexibel, da es sich um eine Bibliothek und nicht um einen Framework handelt. Außerdem gibt es eine große und aktive Entwicklergemeinde und eine gute Dokumentation.
 
 WordPress ist eine gute Lösung für eine breite Palette von Anwendungen. Sowohl Anfänger als auch erfahrene Entwickler können damit kleine Blogs, große E-Commerce-Sites und alles dazwischen erstellen. Wenn ein Entwickler über PHP-Erfahrung verfügt, egal auf welchem Niveau, ist WordPress und insbesondere die benutzerdefinierte Theme-Entwicklung mit WordPress eine gute Wahl, um mit der Entwicklung von Websites zu beginnen.
 
@@ -392,3 +392,5 @@ Eine eindeutige Meinung darüber, welches Tool für die Entwicklung von "Content
 Tutorial: Intro to React - https://reactjs.org/tutorial/tutorial.html
 
 WordPress Theme Development - https://codex.wordpress.org/Theme_Development
+
+
