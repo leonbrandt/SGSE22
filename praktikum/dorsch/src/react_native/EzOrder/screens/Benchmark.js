@@ -1,12 +1,26 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Alert } from 'react-native';
 
 import Header from '../components/Header';
 import Colors from '../constants/colors';
-import { performance } from "perf_hooks";
+import { Logs } from 'expo';
+Logs.enableExpoCliLogging();
+
+import EzOrderBackend from '../javascript-client';
+
+
 
 const Benchmark = props => {
-    bench = () => {
+
+    
+    const [benchmarkResult, setBenchmarkResult] = useState("Kein Benchmark ausgeführt!");
+
+    const benchmarkResultInputHandler = inputValue => {
+        setBenchmarkResult(inputValue);
+    }
+    const bench = () => {
+        var api = new EzOrderBackend.PositionApi();
+        let categories = api.getPositions((categories) => { console.log(categories)});
         let result = "";
 
             let start = performance.now();
@@ -30,7 +44,7 @@ const Benchmark = props => {
             start = performance.now();
             for (let d = 0.0; d < 100000000.0; d++)
             {
-                tempd = Math.Log(d);
+                tempd = Math.log(d);
             }
             stop =  performance.now();
             result += "Logarithm Score (lower is better): " + (stop - start).toString() + "\n";
@@ -70,24 +84,26 @@ const Benchmark = props => {
             }
             stop =  performance.now();
             result += "Double Division Score (lower is better): " + (stop - start).toString() + "\n";
-    }
+            console.log(result);
+            setBenchmarkResult(result);
+    };
     return (
         <View>
             <Header title="Benchmark" />
             <View style={styles.screen}>
                 <View style={{ ...styles.rowContainer, ...{ borderBottomWidth: 0 } }}>
-                    <Text style={{ ...styles.text, ...styles.textLeft, ...styles.fill }}>Ergebnisse:</Text>
+                    <Text style={{ ...styles.text, ...styles.textLeft, ...styles.fill }}>Ergebnisse: {benchmarkResult}</Text>
                 </View>
                 <View style={{ ...styles.rowContainer, ...styles.button }}>
                     <View style={{ width: '100%', padding: 5 }}>
-                        <TouchableOpacity style={{ alignSelf: 'center', backgroundColor: Colors.primary, width: '100%', borderRadius: 10, elevation: 5  }} onPress={() => { this.bench }}>
+                        <TouchableOpacity style={{ alignSelf: 'center', backgroundColor: Colors.primary, width: '100%', borderRadius: 10, elevation: 5  }} onPress={bench}>
                             <Text style={{
                                 alignSelf: 'center',
                                 color: 'black',
                                 fontSize: 20,
                                 fontWeight: 'bold',
                                 padding: 10
-                            }}>Benchmark</Text>
+                            }}>Benchmark!</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
