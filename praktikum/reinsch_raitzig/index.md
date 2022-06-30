@@ -31,48 +31,47 @@ Folgende Aspekte sollen untersucht/erläutert werden:
 
 ## Hintergrund: Compiler und LLVM ##
 
-
 Compiler sind komplexe Programme, deren Aufgabe die Übersetzung von (High Level)
 Programmiersprachen in Maschinencode für eine spezifische Prozessorarchitektur ist.
 Während dieses Übersetzungsprozesses werden häufig Optimierungsschritte vorgenommen,
 die den Programmcode verändern, sodass der generierte Maschinencode kleiner, schneller
 und energieeffizienter wird (zwischen diesen drei Zielen muss allerdings eine Balance
-gefunden werden).
+gefunden werden). [6]
 
 Compiler werden allgemein in zwei Schichten unterteilt. Das sprachspezifische
 Frontend, welches lexikalische, syntaktische und semantische Analysen vornimmmt und
 das Backend, welches Optimierungsschritte vornimmt und Maschinencode generiert.
 Die beiden Schichten sind mit den einzelnen beteiligten Phasen in der nachfolgenden
-Abbildung anschaulich als zwei Seiten eines Bergs dargestellt.
+Abbildung anschaulich als zwei Seiten eines Bergs dargestellt. [6]
 
-![Überblick über unterschiedliche Kompilierungsphasen aus TODO: quelle](./media/compiler_mountain.png )
+![Überblick über unterschiedliche Kompilierungsphasen aus [2]](./media/compiler_mountain.png )
 
 LLVM (**L**ow **L**evel **V**irtual **M**achine) ist ein Framework welches die
 Implementierung eines Compilers erleichtert. Kern dieses Frameworks ist die
 LLVM Intermediate Representation (LLVM-IR), die eine generische High Level
-Maschinensprache repräsentiert, die an keine Zielarchitektur gebunden ist.
+Maschinensprache repräsentiert, die an keine Zielarchitektur gebunden ist. [4]
 
 Neben der Definition der LLLVM-IR beeinhaltet das LLVM Projekt viele Komponenten,
 die das Compiler-Backend implementieren, unter anderem einen Optimierer, einen Linker
 und die Generierung von architekturspezifischem Maschinencode. Diese Komponenten
 operieren auf der LLVM-IR, sodass das generische Backend von dem sprachspezifischen
-Frontend losgelöst ist.
+Frontend losgelöst ist. [4]
 
-![LLVM-IR Hierarchie](./media/Hierarchy.png)
+![LLVM-IR Hierarchie (nach [3])](./media/Hierarchy.png)
 
 Die LLVM-IR ist hierarchisch aufgebaut (wie in der obenstehenden Abbildung dargestellt)
 und wird in Module (entsprechen einer
 Übersetzungseinheit des Programms), Funktionen und Basic Blocks aufgeteilt.
 Basic Blocks enthalten die einzelnen Instruktionen des Programms, und eine Terminator-Operation,
 welche einen bedingten oder unbedingten Sprung des Kontrollflusses in einen anderen
-Basic Block erlaubt (innerhalb des Basic Blocks sind solche Sprünge nicht erlaubt).
+Basic Block erlaubt (innerhalb des Basic Blocks sind solche Sprünge nicht erlaubt). [7]
 
 Der Optimierer (`opt`) ist modular aufgebaut. Die einzelnen Optimierungsverfahren
 (bspw. Constant-Propagation oder Dead-Code Elimination) sind in isolierten Optimierungspässen
 realisiert, welche von einem PassManager aufgerufen werden. Die Optimierungspässe können
 für verschiedene Optimierungslevel auf unterschiedliche Arten
 kombiniert werden (hierbei ist allerdings darauf zu achten, dass die Reihenfolge
-der Optimierungspässe starke Auswirkungen auf die Optimierungsergebnisse haben kann).
+der Optimierungspässe starke Auswirkungen auf die Optimierungsergebnisse haben kann). [8]
 
 Optimierungen können grob in lokale und globale Optimierungen unterteilt werden.
 Lokale Optimierungen arbeiten in den Grenzen einzelner Basic Blocks, während globale
@@ -80,12 +79,12 @@ Optimierungen über diese Grenzen hinaus (und teilweise auch über die Grenzen v
 hinaus arbeiten).
 Während der gesamten Optimierungsphase verwaltet LLVM den Programmfluss in einem
 Graphen, welcher durch die Sprung-Operationen der Basic-Blocks bestimmt wird (auch Calling
-Graph genannt).
+Graph genannt). [6]
 
 Der C und C++ Compiler `clang` ist ebenfalls Teil des LLVM Projekts und nutzt den
 zuvor beschriebenen modularen Ansatz, um wie im untenstehenden Bild schematisch dargestellt,
 eine C-Quelldatei in ein ausführbares Programm zu übersetzen.
-![LLVM Toolchain am Beispiel von clang](./media/toolchain_overview.drawio.png)
+![LLVM Toolchain am Beispiel von clang (nach [3])](./media/toolchain_overview.drawio.png)
 
 
 ## Inlining Pass ##
@@ -98,16 +97,16 @@ nach Funktionsende, etc.). Zusätzlich wird der Calling Graph durch Funktionsauf
 deutlich komplexer, was globale Optimierungen erschwert. Das globale Optimierungsverfahren
 des Funktionsinlining behandelt diese Probleme, indem der Funktionscode direkt
 an die Stelle des Funktionsaufrufs kopiert wird. Die Stelle im Progammcode, an der
-eine Funktion aufgerufen wird, wird auch Callsite der Funktion genannt.
+eine Funktion aufgerufen wird, wird auch Callsite der Funktion genannt. [5]
 
 Durch das Inlining einer Funktion können neue Probleme entstehen, bspw. müssen
 Namenskonflikte zwischen den in der Funktion deklarierten Variablen und den Variablen
 der Umgebung der Callsite aufgelöst werden. Darüber hinaus ist das Inlining einer Funktion
 Teil des Speicherplatz/Programmlaufzeit-Tradeoffs, da durch Inlining einer Funktion mit
 vielen Operationen potenziell die Größe der erzeugten Binärdatei stark ansteigen
-kann (unter Umständen exponentiell TODO: aho quelle).
+kann (unter Umständen exponentiell [6]).
 Die Entscheidung, wann Funktionsinlining ausgeführt werden soll, ist daher nicht
-trivial und erfordert Wissen um die Umgebung der Callsite und die Funktion selbst.
+trivial und erfordert Wissen um die Umgebung der Callsite und die Funktion selbst. [5]
 
 Das LLVM Inlining Pass nutzt viele Heuristiken, um zu beurteilen,
 ob das Inlining für einen bestimmten Funktionsaufruf positive Auswirkungen hat.
@@ -119,10 +118,8 @@ wie "Callsite hotness" (wie oft die Callsite durchlaufen wird) und Anzahl der
 Basic Blocks im Funktionsrumpf bestimmt wird. Selbst wenn die so berechneten Kosten und
 der Grenzwert für das Inlining sprechen, können evtl. bessere Ergebnisse erzielt
 werden, falls kein Inlining des betrachteten Funktionsaufrufs vorgenommen wird, sondern
-eine Callsite geinlined wird, die an höherer Stelle im Callgraph liegt.
+eine Callsite geinlined wird, die an höherer Stelle im Callgraph liegt. [1]
 
-TODO: hierzu Bild!
-TODO: wann hat der Pass Probleme
 
 ## Machine Learning Guided Compiler Optimizations Framework (MLGO)
 
@@ -305,3 +302,14 @@ bezüglich verschiedener Softwareprojekte zu beurteilen. Da es sich teilweise um
 Projekte mit komplexen Toolchains handelt, in deren Build-Prozesse eine mit MLGO
 kompilierte LLVM-Version eingebettet werden muss, blieb nur Zeit für die Evaluierung
 weniger Projekte.
+
+## Quellen
+
+[1]: MLGO: https://arxiv.org/abs/2101.04808
+[2]: Nystrom: https://craftinginterpreters.com/a-map-of-the-territory.html
+[3]: Bridgers: https://llvm.org/devmtg/2019-04/slides/Tutorial-Bridgers-LLVM_IR_tutorial.pdf
+[4]: LLVM: https://llvm.org/
+[5]: Mekkat: https://www.cs.cornell.edu/courses/cs6120/2019fa/blog/llvm-function-inlining/
+[6]: Aho: Compilers - Principles, Techniques and Tools
+[7]: LLVM-IR: https://llvm.org/docs/LangRef.html
+[8]: LLVM-opt: https://llvm.org/docs/CommandGuide/opt.html
