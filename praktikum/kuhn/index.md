@@ -8,7 +8,7 @@ jeweilige Projekt nacheinander ausgeführt.
 
 ## Hinweis
 
-In dieser Datei ist der komplette Projektbericht zu finden. Die Projektplanung und Dokumentation, die während des
+In dieser Datei ist der komplette Praktikumsbericht zu finden. Die Projektplanung und Dokumentation, die während des
 Praktikums angefertigt wurde, lässt sich hier finden: [Planung und Dokumentation](praktikum/kuhn/PlanungUndDoku.md)
 
 Aus Gründen der besseren Lesbarkeit wird auf die gleichzeitige Verwendung der Sprachformen männlich, weiblich und
@@ -24,7 +24,7 @@ Ansätze erfolgen.
 ## Grundlagen
 
 Dieses Kapitel soll die Grundlagen für die Arbeit legen. Dafür werden primär die beiden Entwicklungsansätze betrachtet.
-Außerdem wird Flutter als Entwicklungsframework betrachtet.
+Außerdem wird Flutter als Entwicklungsframework vorgestellt.
 
 ### Design Thinking
 
@@ -130,7 +130,7 @@ Framework entwickelt werden.
 Der grundlegende Aufbau des Projekts besteht aus zwei Phasen. Zuerst wird Design Thinking eingesetzt, um die
 grundlegenden Anforderungen zu finden und einen Prototyp zu entwerfen. Dieser Prototyp soll dann mithilfe des User
 Centered Design weiterentwickelt und umgesetzt werden. Alle Informationen stammen aus der vorausgegangenen Grundlagen
-und ihren Quellen.
+und ihren Quellen. Speziell die Information über die verschiedenen Methoden stammen aus [Sim19]
 
 ### Phase 1: Design Thinking
 
@@ -154,7 +154,7 @@ Um einen Standpunkt zu definieren, sind Personas ein wichtiges Mittel. Dabei spi
 Rolle, da die Abbildung dieser helfen kann, die Extremen eines Problems zu betrachten. Mithilfe der Personas kann dann
 eine neue Challenge aufgestellt werden, auf welcher die Ideenfindung beruht.
 
-Im Nächten Schritt werden Ideen generiert. Um möglichst viele Ideen zu finden, wird die Crazy 8 Methode angewendet.
+Im nächsten Schritt werden Ideen generiert. Um möglichst viele Ideen zu finden, wird die Crazy 8 Methode angewendet.
 Dabei hat jedes Teammitglied eine Minute Zeit, um sich eine Idee auszudenken. Danach muss er zur nächsten Idee weiter
 gehen. Das wird dann achtmal wiederholt. Mithilfe von Dot Voting werden die besten Ideen ausgesucht. Beim Dot Voting
 erhält jedes Teammitglied eine bestimmte Anzahl von Punkten, die dann beliebig verteilt werden können. Die Ideen mit den
@@ -207,7 +207,7 @@ eingeholt. ([Erlaubniserklärungen](#erlaubniserklärungen))
 #### Design Thinking
 
 Für das Design Thinking zur Rettungsapp bestand das Team nur aus zwei Personen. Dies liegt daran, dass die Zielgruppe,
-also Notfallsanitäter sehr speziell ist und somit Personen mit entsprechendem Domänenwissen rar gesät sind.
+also Notfallsanitäter, sehr speziell ist und somit Personen mit entsprechendem Domänenwissen rar gesät sind.
 
 ***Kick-Off***
 
@@ -276,7 +276,7 @@ Um den Standpunkt zu definieren werden einige Nutzertypen oder auch Personas auf
 knappgehalten, da durch den eingeschränkten Nutzerkreis viele Punkte bei den Personas überschneiden.
 
 **Vorsichtig:** Dieser Nutzertyp greift grundsätzlich eher später zu den Algorithmen. Er wartet eher ab, ob eine
-Besserung durch Standardprozeduren erreicht werden können, bevor er beispielsweise zu Medikamenten greift.
+Besserung durch Standardprozeduren erreicht werden kann, bevor er beispielsweise zu Medikamenten greift.
 
 **Proaktiv:** Ein proaktiver Nutzer stellt das Gegenteil des vorsichtigen dar. Er greift schnell zu den Algorithmen, um
 im besten Fall einen zeitlichen Vorsprung bei der Behandlung zu bekommen. Dementsprechend nutzt er auch schneller
@@ -284,7 +284,7 @@ Medikamente.
 
 **Verweigerer:** Hierbei handelt es sich häufig um Sanitäter, die bereits lange im Dienst sind. Sie haben den Umgang mit
 Patienten noch größtenteils ohne Medikamente gelernt und sind dementsprechend nicht sicher im Umgang mit ihnen. Die
-Algorithmen sind ebenfalls noch sehr neu, weshalb ihnen nicht vertraut wird.
+Algorithmen sind ebenfalls noch sehr neu, weshalb sie ihnen nicht vertrauen.
 
 Mit diesem Wissen kann eine neue Design Thinking Challenge aufgestellt werden, die als Basis für die Ideenfindung
 genutzt wird. Nachdem alle wichtigen Aspekte der vergangenen Schritte betrachtet wurden, kann folgende Challenge
@@ -312,7 +312,7 @@ werden sollen:
    angezeigt werden soll. In dieser Anzeige besteht die Möglichkeit zwischen den beiden Versionen zu wechseln, um
    schnell alle möglichen Informationen zu erreichen.
 
-*Prototyp erstellen*
+***Prototyp erstellen***
 
 Aufgrund dieser Anforderungen wurden folgende Mockups mithilfe von balsamiq [[balsamiq]] erstellt.
 
@@ -322,12 +322,12 @@ Aufgrund dieser Anforderungen wurden folgende Mockups mithilfe von balsamiq [[ba
 *Mockup der Rettungsapp*
 
 Diese Mockups sind das Endergebnis des Design Thinking Prozesses. Sie geben einen guten Eindruck davon wie die Anwendung
-aussehen sollen und erfüllen die zuvor aufgestellten Anforderungen. Sie dienen als Grundlagen für die nächste Phase: der
+aussehen soll und erfüllen die zuvor aufgestellten Anforderungen. Sie dienen als Grundlagen für die nächste Phase: der
 Entwicklung der App nach User Centered Design.
 
 #### User Centered Design
 
-In diesem Projekt beginnt das User Centered Design mit der Evaluation begonnen. Zu diesem Zweck wird eine Google Umfrage
+In diesem Projekt beginnt das User Centered Design mit der Evaluation. Zu diesem Zweck wird eine Google Umfrage
 erstellt. Es wurde sich für Google entschieden, da hier ein etablierter und funktionsreicher Editor für Umfragen zur
 Verfügung gestellt wird, der es ermöglicht schnell zu arbeiten. [[Google Forms]]
 
@@ -342,7 +342,7 @@ schließen lässt.
 *Rettungsapp: Wie gut hast du dich in dem Prototyp zurechtgefunden? (5:Sehr gut - 1:Schlecht)*
 
 Die meisten anderen Fragen bestätigen ebenfalls die Entwicklungsrichtung. Einzig bei der offenen Frage nach fehlenden
-Funktionen kann eine neue Anforderung abgeleitet werden. hier wird gefordert, dass es die Möglichkeit geben soll das
+Funktionen kann eine neue Anforderung abgeleitet werden. Hier wird gefordert, dass es die Möglichkeit geben soll das
 komplette PDF anzuzeigen, ohne vorher einen bestimmten Algorithmus gesucht zu haben. Außerdem wurde durch den Ersteller
 der NUN-Algorithmen gefordert, die Quelle in der App anzugeben.
 
@@ -353,12 +353,13 @@ Daraus lassen sich drei Anforderungen spezifizieren:
 3. Angabe der Quellen innerhalb der App
 
 Diese Anforderungen können im nächsten Schritt implementiert werden. Auf die konkrete Implementierung mithilfe von
-Flutter wird an dieser Stelle nur auf die Rahmenbedingungen eingegangen, da der Prozess für dieses Praktikum im
+Flutter wird an dieser Stelle nicht eingegangen, nur auf die Rahmenbedingungen, da der Prozess für dieses Praktikum im
 Vordergrund steht. Da Flutter ein Multiplattformframework ist und es entsprechend einfach ist im Verlauf der Entwicklung
 die Zielplattform zu ändern, wurde sich entschieden vorerst eine Webapp zu entwickeln. Das hat den großen Vorteil, dass
 diese über einen Link zu Verfügung gestellt werden kann. Dadurch lässt sich einfacher Feedback von Nutzern einholen, da
 sie nichts auf ihrem Endgerät installieren müssen. Um die Webapp zu hosten, wird Firebase Hosting verwendet
-[[Firebase]]. Hier lassen sich kostenlos kleine Projekte hosten und sind direkt über eine Domain von Firebase verfügbar.
+[[Firebase]]. Hier lassen sich kostenlos kleine Projekte hosten und sie sind direkt über eine Domain von Firebase
+verfügbar.
 Dadurch fallen für das Testen keine Kosten an.
 
 ![](assets/ScreenshotRettungsApp.png)
@@ -366,11 +367,14 @@ Dadurch fallen für das Testen keine Kosten an.
 [Abbildung 8]
 *Screenshots der Rettungsapp*
 
-In [Abbildung 8] sind Screenshots der implementierten App abgebildet. Die Mockups aus [Abbildung 3] lassen sich hier
+In [Abbildung 8] sind Screenshots der implementierten App abgebildet, die komplette Anwendung kann hier angeschaut
+werden: [Rettungsapp]. Die Mockups aus [Abbildung 6] lassen sich hier
 deutlich wieder erkennen. Die Suche der Algorithmen, die Auswahl zwischen NUN und DBRD Algorithmen und die Anzeige des
 PDFs konnten alle umgesetzt werden. Außerdem lässt sich auf der ersten Seite ein Menü erkennen, das es ermöglicht die
 vollständigen PDFs direkt zu sehen und Information über die App und ihre Quellen zu erlangen. Somit konnten alle
 Funktionen, die zuvor als Anforderungen aufgestellt wurden umgesetzt werden.
+
+[Rettungsapp]: https://rettungsapp.web.app/
 
 Im Anschluss an die Implementierung folgt wieder die Evaluation der Ergebnisse. Mit der bereits implementierten App
 lassen sich deutlich detailliertere Fragen zu einzelnen Designentscheidungen stellen. Im Folgenden soll auf einige
@@ -433,7 +437,7 @@ zuvor erstellten Prototyp gemacht wurde, konnten vor allem die Ergebnisse aus de
 Konkrete Design-Fragen konnten hier nur schwierig beantwortet werden, da die Mockups einfach gehalten wurden. Hier wäre
 es möglich die Mockups bereits genauer zu gestalten oder Fragen zum Design zu fragen, ohne konkrete Vorlagen zu haben.
 Bei der zweiten Möglichkeit ist allerdings die Aussagekraft fraglich, da der Befragte die Fragen schnell falsch
-verstehen kann oder sich ein falsches Bild des vorgeschlagenen Designs macht. Hilfreich war außerdem die Frag nach
+verstehen kann oder sich ein falsches Bild des vorgeschlagenen Designs macht. Hilfreich war außerdem die Frage nach
 fehlenden Features, da so noch eine Anforderung gefunden werden konnte.
 
 Mit der zweiten Umfrage und der dafür entwickelten Webapp konnte viel genauer nach Designentscheidungen oder
@@ -453,7 +457,7 @@ Plattform von Spotify nutzen und um Funktionalitäten zu erweitern.
 
 Für den Design Thinking Prozess wird ein Team von vier Leuten aufgestellt. Die einzelnen Personen haben dabei
 verschiedene Hintergründe, wie es beim Design Thinking gewünscht ist. Der Prozess und die angewandten Methoden werden
-gegenüber dem Design Thinking abgeändert, um die Erfahrung aus dem ersten Mal zu nutzen und auf das Projekt anzupassen.
+gegenüber der Rettungsapp abgeändert, um die Erfahrung aus dem ersten Mal zu nutzen und auf das Projekt anzupassen.
 Außerdem können so mehr Methoden für die einzelnen Schritte ausprobiert werden.
 
 Zu diesem Zweck wird in der Kick-Off Phase nur noch die Design Thinking Challenge aufgestellt. Angepasst wird sie erst
@@ -470,7 +474,7 @@ hält. Sie lautet: **System zur Erweiterung von Spotify, um Probleme zu beheben*
 
 ***Verstehen***
 
-Zum Verstehen und sich der Problemstellung zu nähern wird wieder Brainstorming verwendet. Dafür wird sich an den
+Zum Verstehen und um sich der Problemstellung zu nähern, wird wieder Brainstorming verwendet. Dafür wird sich an den
 wichtigen Begriffen der Challenge orientiert: System, Erweiterung, Spotify und Probleme.
 
 ![](assets/BrainstormingProject2.jpg)
@@ -494,12 +498,12 @@ Angebot angesehen, da diese App erweitert werden soll.
 [Abbildung 15]
 *Sweet-und-Sour-Spot-Methode*
 
-In [Abbildung 15] ist die entsprechende Grafik mit den wichtigsten punkten zu sehen. Viele der Funktion sind in der
+In [Abbildung 15] ist die entsprechende Grafik mit den wichtigsten Punkten zu sehen. Viele der Funktionen sind in der
 Mitte der Kreise. Das heißt, dass diese sowohl im eigenen Angebot, als auch bei der Konkurrenz vorhanden sind und
 gleichzeitig Wünsche der Kunden erfüllen. Interessant für dieses Projekt ist vor allem der Sour Spot. Hier finden sich
 Funktionen wieder, die durch die Konkurrenz umgesetzt werden, im eigenen Angebot allerdings fehlen. Sie lassen sich also
-potenziell in das eigene Angebot integrieren. Hier lassen sich Funktionen wiederfinden, wie das Anzeigen von Musikvideos
-oder die automatische Erkennung von Liedern über das Mikrofon.
+potenziell in das eigene Angebot integrieren. Hier sind das Anzeigen von Musikvideos oder die automatische Erkennung von
+Liedern über das Mikrofon wiederzufinden.
 
 ***Beobachten***
 
@@ -511,7 +515,7 @@ stellen somit keine Ergänzung dar. Deshalb wird das Beobachten übersprungen un
 ***Standpunkt definieren***
 
 Um den Standpunkt zu definieren wurden diverse Nutzergruppen mit ihren Wünschen und Nutzerverhalten aufgestellt. An
-dieser Stelle werden einige davon aufgeführt, sie werden außerdem in die Häufigkeit der Nutzung eingeteilt:
+dieser Stelle werden einige davon aufgeführt. Sie werden außerdem in die Häufigkeit der Nutzung eingeteilt:
 
 * Feierwillige - Normalnutzer
     * Partymusik
@@ -551,15 +555,15 @@ welche die zuvor aufgekommenen Aspekte vereint, können nun Ideen generiert werd
 ***Ideen generieren***
 
 Um zu Beginn der Ideengenerierung möglichst viele Ideen zu finden, wird wieder Crazy 8 als Methode angewendet. Die vier
-besten Ideen, die weiter verfolgtwerden, sind:
+besten Ideen, die weiter verfolgt werden, sind:
 
-* Playlist zusammen mischen, um neue Playlist zu erhalten
+* Playlisten zusammen mischen, um neue Playlist zu erhalten
 * mehrere Plattformen bedienen
 * Songerkennung mit Verlinkung zu Spotify
 * Gleiche Lieder innerhalb einer Playlist aussortieren
 
 Mit diesen vier Ideen wird die 6-3-5 Methode angewendet. Dafür wird jeder dieser Ideen auf einem leeren Zettel notiert.
-Jedes Teammitglied bekommt einen der Zettel und hat drei Minuten Zeit diese zu vertiefen. Nach den drei Minuten wird der
+Jedes Teammitglied bekommt einen der Zettel und hat drei Minuten Zeit die entsprechende Idee zu vertiefen. Nach den drei Minuten wird der
 Zettel weitergegeben und das nächste Teammitglied baut die Idee auf dem Zettel vor ihm weiter aus. Dabei können
 vorherige Gedanken aufgegriffen oder neue Aspekte hinzugefügt werden. Um einen Eindruck für diesen Ablauf zu gewinnen,
 wird folgend der entsprechende Prozess für die Idee Playlisten zu mischen aufgezeigt.
@@ -585,11 +589,11 @@ formulieren. Aus den vier Ideen werden fünf Anforderungen aufgestellt:
    zuzugreifen und fertige Playlisten abzuspeichern.
 3. Playlisten zusammen mischen: Zuerst müssen Playlisten ausgesucht werden können, die vermischt werden sollen. Zum
    Mischen können zusätzliche Angaben gemacht werden, wie die Maximallänge der resultierenden Playlist, wie viele Lieder
-   einer Playlist hintereinander gemischt werden sollen und in welchem Zeitraum welche Playlist reingemischt werden soll
+   einer Playlist hintereinander gemischt werden sollen und in welchem Zeitraum welche Playlist reingemischt werden soll.
 4. Gleiche Lieder aussortieren: zuerst müssen ähnliche Lieder erkannt werden. Dazu lässt sich die Ähnlichkeit der Titel,
    gleiche Interpreten und Schlüsselwörter wie "Remix" betrachten. Über ein Pop-Up soll der Nutzer die Möglichkeit haben
    zu entscheiden, ob ein Lied in der Playlist bleibt oder nicht.
-5. Songerkennung über Audio mit Verlinkung zu Spotify: Über eine externe Songerkennungssoftware soll der Song erkannt
+5. Songerkennung über Audio mit Verlinkung zu Spotify: Über eine externe Songerkennungssoftware soll ein Lied erkannt
    werden. Danach muss der Song in Spotify gesucht werden, um dann dahin zu verlinken.
 
 ***Prototyp erstellen***
@@ -630,8 +634,8 @@ dass das Erstellen von Playlisten, welches mit diesem Projekt erweitert werden s
 *Optionen zum Mischen*
 
 In [Abbildung 18] ist die Frage nach Mischoptionen zu erkennen. Hier lässt sich erkennen, dass alle drei Optionen
-potenziell genutzt werden. Vor allem die Möglichkeit einzustellen, wie viele hintereinander aus einer Playlist gemischt
-werden, ist für viele Befragte sinnvoll.
+potenziell genutzt werden. Vor allem die Möglichkeit einzustellen, wie viele Lieder hintereinander aus einer Playlist gemischt
+werden sollen, ist für viele Befragte sinnvoll.
 
 ![](assets/fertigePlaylistAnzeigen.png)
 
@@ -660,12 +664,15 @@ Firebase Hosting genutzt, um sie als Webapp für die Umfrage zur Verfügung zu s
 [Abbildung 20]
 *Screenshots der kompletten Spotifyerweiterung*
 
-[Abbildung 20] zeigt die Anwendung am Ende des ersten Zyklus. Die Mockups wurden alle umgesetzt und der Screen unten
+[Abbildung 20] zeigt die Anwendung am Ende des ersten Zyklus, die komplette Anwendung kann hier angeschaut
+werden: [MixPlaylist]. Die Mockups wurden alle umgesetzt und der Screen unten
 rechts zeigt die Darstellung der finalen Playlist. Es wurde beim Login noch ein Hinweis hinzugefügt, dass hier keine
 echten Daten eingegeben werden müssen, da keine Anbindung an die Spotify-API besteht. Die Anforderungen konnten also,
 zumindest visuell, umgesetzt werden.
 
-Mit Implementierung wird die nächste Iteration gestartet. Diese startet wieder mit einer Umfrage. Genauso wie bei der
+[MixPlaylist]: https://mixplaylist-5c296.web.app/
+
+Mit der Implementierung wird die nächste Iteration mit einer Umfrage gestartet. Genauso wie bei der
 Rettungsapp, konnten an dieser Stelle deutlich detailliertere Fragen zum Design gestellt werden.
 
 ![](assets/SpotifyDarkmode.png)
@@ -691,8 +698,8 @@ und die Beschreibung für die Befragten relevant ist.
 [Abbildung 23]
 *Potenzielle Nutzung der Spotifyerweiterung*
 
-Besonders interessant ist auch für die Spotifyerweiterung, ob die Befragten die entsprechende Anwendung nutzen
-würden. [Abbildung 23] zeigt da ein klares und positives Bild auf, alle befragten würden die App nutzen.
+Besonders interessant ist für die Spotifyerweiterung, ob die Befragten die entsprechende Anwendung nutzen
+würden. [Abbildung 23] zeigt da ein klares und positives Bild auf, alle Befragten würden die App nutzen.
 
 #### Erkenntnisse
 
@@ -711,10 +718,10 @@ Für die Spotifyerweiterung war das Design Thinking ein kompletter Erfolg, um ei
 
 Der Prozess des User Centered Design hat in der ersten Iteration vor allem bestätigt, was im Design Thinking erarbeitet
 wurde. Außerdem konnte sich ein allgemeiner Eindruck von der Spotifynutzung gemacht werden, was hilfreich war, um
-abzuschätzen, welche Funktionen hilfreich sein könnten.
+abzuschätzen, welche Funktionen sinnvoll sein könnten.
 
 In der zweiten Iterationen konnten anhand konkreter Fragen, konkrete Anforderungen ausgemacht werden. So wurde das
-Grunddesign bestätigt und wurde festgelegt wie Playlisten und Lieder dargestellt werden sollen. In dieser Phase ist das
+Grunddesign bestätigt und festgelegt wie Playlisten und Lieder dargestellt werden sollen. In dieser Phase ist das
 Feedback der Nutzer sehr sinnvoll, da hier Designentscheidungen noch einfach geändert werden können. Interessant war
 außerdem die Erkenntnis, dass wenige Funktionen nicht selbsterklärend sind. Hier muss in späteren Versionen angepackt
 werden, in dem die Benutzerführung optimiert und Erklärungen eingeführt werden, wo es nötig ist.
@@ -738,7 +745,7 @@ Bezogen auf die in diesem Praktikum umgesetzten Projekte, war vor allem das User
 Sobald ein erster Prototyp entwickelt ist, kann sehr konkretes Feedback vom Nutzer eingeholt werden. Dadurch kann die
 weitere Entwicklung sehr gut auf die Nutzerbedürfnisse ausgerichtet werden. Durch die Iterationen kann bei jeder
 Entwicklung überprüft werden, ob es weiter in die richtige Richtung geht. Das User Centered Design lässt sich für alle
-Projekte empfehlen, die den Fokus auf die UI legen und Zugang zu den Endnutzern hat.
+Projekte empfehlen, die den Fokus auf die UI legen und Zugang zu den Endnutzern haben.
 
 Der Design Thinking Prozess war ebenfalls in beiden Projekten hilfreich. Allerdings ist aufgefallen, dass es deutlich
 effektiver ist, wenn zu Beginn des Projekts das genau Ziel noch nicht feststeht. Wenn bereits eine klare Idee besteht,
@@ -756,8 +763,8 @@ entwickeln. Mithilfe von User Centered Design können hingegen Detailfragen zum 
 genau auf die Nutzer abzustimmen. Dieses Vorgehen ist zu empfehlen.
 
 Neben den beiden Prozessen, hat Flutter bewiesen, dass es ein sehr gutes Framework ist, um UIs zu entwickeln. Die
-Implementierung der beiden konnte innerhalb von zwei bis drei Wochen umgesetzt werden. Hier ist besonders die große
-Auswahl an Widgets im Material Design zu betonen. Außerdem ist es in der weiteren
+Implementierung der beiden Anwendungen konnte innerhalb von zwei bis drei Wochen umgesetzt werden. Hier ist besonders die große
+Auswahl an Widgets im Material Design als hilfreich zu betonen. Außerdem ist es in der weiteren
 Entwicklung einfach auf native mobile Anwendung umzusteigen, ohne den Code anpassen zu müssen.
 
 ### Ausblick
