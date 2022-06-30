@@ -446,7 +446,7 @@ Die Messungen/Tests für beide Protokolle wurden jeweils für eine bessere Vergl
 
 ### Messung der Geschwindigkeit in Abhängigkeit verbundener Clients
 
-Für diesen Test verbinden sich mehrere virtuelle Clients mit dem Server. Dabei wird von jedem Client eine 1MB große Datei angefordert. Dieser Test soll die Geschwindigkeit der beiden Protokolle in Abhängigkeit der verbundenen Clients untersuchen. Die erste Spalte gibt an, wie viele Clients sich für den Testdurchlauf mit dem Server verbunden haben. Die zweite Spalte stellt in Millisekunden dar, wie lange es gedauert hat, um über WebTransport die angeforderte Datei an jeden Client zu senden. Die dritte Spalte zeigt die Werte für WebSockets an. Wie bei allen durchgeführten Tests, wurden die Durchläufe für jede Zeile mehrmals wiederholt, um verlässlichere Werte zu erhalten.
+Für diesen Test verbinden sich mehrere virtuelle Clients mit dem Server. Dabei wird von jedem Client eine 1MB große Datei angefordert. Dieser Test soll die Geschwindigkeit der beiden Protokolle in Abhängigkeit der verbundenen Clients untersuchen. Die erste Spalte gibt an, wie viele Clients sich für den Testdurchlauf mit dem Server verbunden haben. Die zweite Spalte stellt in Millisekunden dar, wie lange es gedauert hat, um über WebTransport die angeforderte Datei an jeden Client zu senden. Die dritte Spalte zeigt die Werte für WebSockets an. Wie bei allen durchgeführten Tests, wurden die Durchläufe für jede Zeile mehrmals wiederholt, um verlässlichere Werte zu erhalten. *Abbildung 6* zeigt die Messung in Form eines Graphen an. Hier wird die Diskrepanz zwischen WebSocket und WebTransport visuell deutlich.
 
 |                  | WebTransport | WebSocket |
 | ---------------- | ------------ | --------- |
@@ -457,19 +457,25 @@ Für diesen Test verbinden sich mehrere virtuelle Clients mit dem Server. Dabei 
 | 250 Verbindungen | -            | 25551     |
 | 500 Verbindungen | -            | -         |
 
-Sowohl bei WebTransport als auch bei WebSocket kommt es ab einer bestimmten Anzahl gleichzeitiger virtueller Verbindungen auf Clientseite zu Fehlern. *Abbildung 6* zeigt die aufgetretene Fehlermeldung für WebTransport, die beschreibt, dass nicht mehr als 64 gleichzeitige Verbindungen möglich sind.
+<figure style="text-align: center;">
+    <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/connectionGraph.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
+    <figcaption>Abbildung 6: Verbindungsmessung als Scatter-Graph.</figcaption>
+</figure>
+
+Sowohl bei WebTransport als auch bei WebSocket kommt es ab einer bestimmten Anzahl gleichzeitiger virtueller Verbindungen auf Clientseite zu Fehlern. *Abbildung 7* zeigt die aufgetretene Fehlermeldung für WebTransport, die beschreibt, dass nicht mehr als 64 gleichzeitige Verbindungen möglich sind.
 
 <figure style="text-align: center;">
     <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/webtransportMaxConnections.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
-    <figcaption>Abbildung 6: Fehler bei mehr als 64 gleichzeitiger Verbindungen mit WebTransport.</figcaption>
+    <figcaption>Abbildung 7: Fehler bei mehr als 64 gleichzeitiger Verbindungen mit WebTransport.</figcaption>
 </figure>
 
-*Abbildung 7* zeigt die aufgetretene Fehlermeldung für WebSocket. Diese trat auf, wenn mehr als 250 gleichzeitige Verbindungen aufgebaut werden sollten.
+*Abbildung 8* zeigt die aufgetretene Fehlermeldung für WebSocket. Diese trat auf, wenn mehr als 250 gleichzeitige Verbindungen aufgebaut werden sollten.
 
 <figure style="text-align: center;">
     <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/websocketInsufficientRessources.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
-    <figcaption>Abbildung 7: Fehler bei mehr als 250 gleichzeitiger Verbindungen mit WebSocket.</figcaption>
+    <figcaption>Abbildung 8: Fehler bei mehr als 250 gleichzeitiger Verbindungen mit WebSocket.</figcaption>
 </figure>
+
 
 
 Für beide Protokolle muss an dieser Stelle erwähnt werden, dass diese Probleme lediglich auf Clientseite (auch beim Test mit verschiedenen Browsern) aufgetreten sind.
@@ -478,7 +484,7 @@ Für beide Protokolle muss an dieser Stelle erwähnt werden, dass diese Probleme
 
 Für diesen Test wurde bei jedem Testdurchlauf immer nur **ein** Client verbunden, um Übertragung von kleinen Nachrichten. Dabei wurde eine Nachricht an den Server geschickt und gewartet, bis der Client eine Antwort erhielt. Der ersten Zeile der Ergebnisse kann entnommen werden, dass hier ein Datenpaket an den Server geschickt wurde und auch nur für dieses Paket auf die Antwort gewartet wurde. Daher kann man für diese Zeile von der tatsächlichen Latenz (Round Trip Time) sprechen. Das Prinzip 100-mal wiederholt, um verlässliche Ergebnisse zu erhalten.
 
-In den darauffolgenden Zeilen wurde gemessen, wie lange es dauert *X* Datenpakete zu versenden und für jedes eine Antwort zu erhalten. Auch hier wurde das Prinzip wurde jede Zeile 100-mal wiederholt. Die Ergebnisse sind in Millisekunden.
+In den darauffolgenden Zeilen wurde gemessen, wie lange es dauert *X* Datenpakete zu versenden und für jedes eine Antwort zu erhalten. Auch hier wurde das Prinzip wurde jede Zeile 100-mal wiederholt. Die Ergebnisse sind in Millisekunden. *Abbildung 9* zeigt die Messung als Graphen an. Der Vorteil der parallelen Ausführung, der im Folgenden angesprochen wird, wird hier sehr deutlich.
 
 |                    | WebTransport | WebSocket |
 | ------------------ | ------------ | --------- |
@@ -488,11 +494,16 @@ In den darauffolgenden Zeilen wurde gemessen, wie lange es dauert *X* Datenpaket
 | 1.000 Datenpakete  | 487          | 11341     |
 | 10.000 Datenpakete | 2280         | 114392    |
 
+<figure style="text-align: center;">
+    <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/roundTripTimeGraph.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
+    <figcaption>Abbildung 9: Datenpaketmessung als Scatter-Graph.</figcaption>
+</figure>
+
 WebTransport kann hier auf Client-Seite einfach parallele Aufrufe starten, während das bei WebSockets nicht ohne weiteres so auf demselben Channel möglich ist. Deswegen sieht man bei WebSockets als Ergebnis immer nahezu die Anzahl der Datenpakete mit der ursprünglichen Latenz multipliziert. Bei WebTransport kann festgestellt werden, dass dieses Protokoll auch bei vielen gleichzeitigen Anfragen langsamer wird, auf Grund der parallelen Abfragen zeitlich deutlich vor den WebSockets liegt.
 
 ### Austausch großer Datenmengen
 
-Für diesen Test wurde bei jedem Testdurchlauf immer nur **ein** Client mit dem Server verbunden, um die Zeit für den Download zu messen. Für jede Datengröße und jedes Protokoll wurde die Datei 101-mal heruntergeladen und die Durchschnittszeit in Millisekunden berechnet.
+Für diesen Test wurde bei jedem Testdurchlauf immer nur **ein** Client mit dem Server verbunden, um die Zeit für den Download zu messen. Für jede Datengröße und jedes Protokoll wurde die Datei 101-mal heruntergeladen und die Durchschnittszeit in Millisekunden berechnet. *Abbildung 10* zeigt die Messung als Graphen an. Auffällig ist hier, dass der Download bei WebTransport linear steigt *(y=x)*, wie es eigentlich von beiden Protokollen zu erwarten ist. Bei WebSocket ist ebenfalls eine Steigung erkennbar, jedoch keine im Verhältnis zur steigenden Dateigröße.
 
 |        | WebTransport | WebSocket |
 | ------ | ------------ | --------- |
@@ -502,12 +513,18 @@ Für diesen Test wurde bei jedem Testdurchlauf immer nur **ein** Client mit dem 
 | 100 MB | 9420         | 1537      |
 | 1 GB   | 95299        | 10264     |
 
-Dateien, die größer sind als 1GB können nicht mehr standardmäßig über WebSocket transportiert werden. Hier ist die Zunahme eines Streams erforderlich, sodass die Datei aufgeteilt werden kann und nicht komplett im Arbeitsspeicher liegen muss. Eine komplette Übertragung führt meist auf Client-Seite zu Fehlern *(Out-Of-Memory, Abbildung 8)*.
+<figure style="text-align: center;">
+    <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/dataSizeGraph.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
+    <figcaption>Abbildung 10: Messung der Datenmengen als Scatter-Graph.</figcaption>
+</figure>
+
+Dateien, die größer sind als 1GB können nicht mehr standardmäßig über WebSocket transportiert werden. Hier ist die Zunahme eines Streams erforderlich, sodass die Datei aufgeteilt werden kann und nicht komplett im Arbeitsspeicher liegen muss. Eine komplette Übertragung führt meist auf Client-Seite zu Fehlern *(Out-Of-Memory, Abbildung 11)*.
 
 <figure style="text-align: center;">
     <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/websocketOutOfMemory.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
-    <figcaption>Abbildung 8: Out-Of-Memory Fehler in Chrome.</figcaption>
+    <figcaption>Abbildung 11: Out-Of-Memory Fehler in Chrome.</figcaption>
 </figure>
+
 
 ## Auswertung
 
@@ -529,7 +546,7 @@ Auffällig war bei der Verwendung beider Protokolle für den Download, dass hier
 
 Anhand der Messergebnisse lassen sich verschiedene Einsatzbereiche für die Protokolle feststellen. Anhand dieser Einsatzbereiche wird ebenfalls deutlich, dass es gewisse Überschneidungen zwischen den Protokollen gibt. In bestimmten Bereichen ergänzen sie sich jedoch auch, sodass bezüglich der Forschungsfrage nicht zwingend von einem Ersatz oder einem "besseren" Protokoll gesprochen werden kann. Hier kommt es ganz auf die spezifischen Anforderungen an, die für ein Projekt umgesetzt werden sollen.
 
-*Abbildung 9* zeigt ein Entscheidungsdiagramm, mit dessen Hilfe das passende Protokoll für bestimmte Anforderungen ermittelt werden kann. Trotzdem ist zu erwähnen, dass es von Vorteil ist, für jede Anforderung das Entscheidungsdiagramm erneut zu durchlaufen, da sich die passenden Protokolle für jede Anforderung unterscheiden können. Aus diesem Grund kann es eben auch zum Einsatz von mehreren Protokollen kommen, die sich gegenseitig ergänzen.
+*Abbildung 12* zeigt ein Entscheidungsdiagramm, mit dessen Hilfe das passende Protokoll für bestimmte Anforderungen ermittelt werden kann. Trotzdem ist zu erwähnen, dass es von Vorteil ist, für jede Anforderung das Entscheidungsdiagramm erneut zu durchlaufen, da sich die passenden Protokolle für jede Anforderung unterscheiden können. Aus diesem Grund kann es eben auch zum Einsatz von mehreren Protokollen kommen, die sich gegenseitig ergänzen.
 
 Das Entscheidungsdiagramm beginnt mit der Startfrage "*Welches Protokoll soll für mein Projekt verwendet werden?*". Nun muss sich der Entwickler / das Entwicklungsteam Gedanken über die Anforderungen des Backend machen. Sollen Dateien, die größer sind als 1GB zum Download angeboten werden? Dann bietet sich hierfür ein normaler Download-Filestream an. Sollen viele Dateien, die größer als 1MB sind zum Download angeboten werden? Dann kommt WebSocket in Frage, da es gleichzeitig auch für andere Anfragen genutzt werden kann.
 
@@ -539,8 +556,9 @@ Wenn keine große Menge an kleinen Datenpaketen gleichzeitig ausgetauscht werden
 
 <figure style="text-align: center;">
     <img src="https://github.com/mwithoeft/SGSE22/blob/main/praktikum/with%C3%B6ft/assets/decisionDiagram.png?raw=true" style="border: 3px solid black; border-radius: 5px;" />
-    <figcaption>Abbildung 9: Selbst erstelltes Entscheidungsdiagramm zur Hilfe bei der Protokollwahl.</figcaption>
+    <figcaption>Abbildung 12: Selbst erstelltes Entscheidungsdiagramm zur Hilfe bei der Protokollwahl.</figcaption>
 </figure>
+
 
 
 ## Fazit und Ausblick
