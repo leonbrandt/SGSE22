@@ -29,7 +29,6 @@ Folgende Aspekte sollen untersucht/erläutert werden:
 
 [Meilensteinplan](https://crocus-island-7de.notion.site/e698d92cbf0a476d8f044fe727f03ea3?v=29abe0d1019e4d908513bf765bc34eff)
 
-
 ## Hintergrund: LLVM ##
 
 TODO:
@@ -53,6 +52,8 @@ gefunden werden).
 Compiler werden allgemein in zwei Schichten unterteilt. Das sprachspezifische
 Frontend, welches lexikalische, syntaktische und semantische Analysen vornimmmt und
 das Backend, welches Optimierungsschritte vornimmt und Maschinencode generiert.
+Die beiden Schichten sind mit den einzelnen beteiligten Phasen in der nachfolgenden
+Abbildung anschaulich als zwei Seiten eines Bergs dargestellt.
 
 ![Überblick über unterschiedliche Kompilierungsphasen aus TODO: quelle](./media/compiler_mountain.png )
 
@@ -84,10 +85,11 @@ Basic Blocks enthalten die einzelnen Operationen des Programms, und eine Termina
 welche einen bedingten oder unbedingten Sprung des Kontrollflusses in einen anderen
 Basic Block erlaubt (innerhalb des Basic Blocks sind solche Sprünge nicht erlaubt).
 
+TODO: Hierarchiebild und kurze Erläuterung
+
 Während der gesamten Optimierungsphase verwaltet LLVM den Programmfluss in einem
 Graphen, welcher durch die Sprung-Operationen der Basic-Blocks bestimmt wird (auch Calling
 Graph genannt).
-
 
 ## Inlining Pass ##
 
@@ -247,10 +249,21 @@ Die Ergebnisse sind in folgender Tabelle zusammengefasst. Die Größen sind jewe
 | [Linux Kernel](https://www.kernel.org/)                              | 568156016 | 568156016      | 0                             |
 | [jp2a](https://github.com/Talinx/jp2a)                               | 57976     | 57976          | 0                             |
 
-Teilweise sind durch MLGO (zu `-Oz` zusätzliche) Größenreduktionen im einstelligen Prozentbereich sichtbar. Ob die Größe der Binaries durch MLGO reduziert werden kann, hängt stark vom jeweiligen Programm ab.
+Teilweise sind durch MLGO (zu `-Oz` zusätzliche) Größenreduktionen im einstelligen Prozentbereich sichtbar.
+Ob die Größe der Binaries durch MLGO reduziert werden kann, hängt allerdings stark vom jeweiligen Projekt ab.
 
+## Projekt-Retrospektive ##
 
-
-
-
-
+Ursprünglich war der Scope des Projekts so ausgelegt, dass ein bisher nicht von
+MLGO behandelter Optimierungspass durch ein vollständig neu trainiertes KI-Modell
+erweitert werden sollte (der GreedyRegAlloc Pass TODO: referenz). Das Aufsetzen
+der Entwicklungsumgebung für LLVM mit MLGO hat allerdings bereits viel Zeit in Anspruch
+genommen. Der nächste Schritt des Feature-Engineerings setzt natürlicherweise
+ein tiefes Verständnis der Funktionsweise eines Optimierungspasses voraus. Der hiermit
+verbundene Aufwand wurde allerdings zum Projektbegin massiv unterschätzt. Um
+allerdings trotzdem Ergebnisse vorweisen zu können, wurde das Projekt derart
+rescoped, dass ein fertig trainiertes MLGO KI-Modell verwendet wird, um die Effektivität
+bezüglich verschiedener Softwareprojekte zu beurteilen. Da es sich teilweise um
+Projekte mit komplexen Toolchains handelt, in deren Build-Prozesse eine mit MLGO
+kompilierte LLVM-Version eingebettet werden muss, blieb nur Zeit für die Evaluierung
+weniger Projekte.
