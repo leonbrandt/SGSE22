@@ -543,10 +543,23 @@ Wenn keine große Menge an kleinen Datenpaketen gleichzeitig ausgetauscht werden
 </figure>
 
 
+## Fazit und Ausblick
 
-## Fazit
+Innerhalb dieser Ausarbeitung wurden die Protokolle WebSocket und WebTransport vorgestellt, implementiert und miteinander verglichen. Während es sich bei WebSocket um ein etabliertes Protokoll handelt, befindet sich WebTransport noch im Entwurfszustand. Um Gemeinsamkeiten und Unterschiede herausarbeiten zu können, wurden die beiden Protokolle im Hinblick auf die folgenden Fragen untersucht:
 
+- Hat WebTransport das Potential WebSockets abzulösen oder haben die Protokolle unterschiedliche Anwendungsbereiche, sodass sie sich gegenseitig ergänzen?
+- Wie unterscheiden sich WebTransport und WebSockets von einander?
+- Welche Schnittstelle ist unter welchen Bedingungen performanter?
 
+Es kann festgehalten werden, dass WebTransport in dem aktuellen Zustand nicht das Potential hat, WebSocket abzulösen. Unter [Einsatzbereiche](#einsatzbereiche) wurde dabei jedoch diskutiert, dass WebTransport an einigen Stellen - bzw. im Hinblick auf einige Anforderungen - als Ergänzung eingesetzt werden kann.
+
+Besonders in der Implementierung unterscheiden sich WebTransport und WebSocket aktuell stark voneinander. Während sich Frontend und Backend mit WebSocket schnell und einfach aufsetzen lassen, ist die gleiche Frontend-Backend-Kommunikation mit WebTransport deutlich schwieriger umzusetzen. Das liegt vor allem an der geringen Verfügbarkeit von Dokumentation und noch keinen zur Verfügung stehenden Bibliotheken. Weitere Unterschiede liegen in den diskutierten Einsatzbereichen. Gemeinsamkeiten weisen sie dadurch auf, dass beide Protokolle nicht für das Herunterladen großer Datenmengen geeignet sind. Weiterhin bieten beide Protokolle eine stabile, bidirektionale Verbindung durch die unterliegenden Protokolle TCP / QUIC. Während WebSockets auch ohne Verschlüsselung der Verbindung genutzt werden können (HTTP/2), ist eine gesicherte Verbindung für WebTransport zwingend erforderlich (HTTP/3).
+
+Um die Protokolle im Hinblick der Performanz voneinander abgrenzen zu können, wurden Tests geschrieben, die in verschiedenen Bereichen die Protokolle untersuchen sollten. Weil es für WebTransport aktuell keine Messtools gibt, wurde zum Zweck der Vergleichbarkeit in beiden Protokollen die Tests selbst implementiert, um hier eine gleiche Vorgehensweise bei den Messungen gewährleisten zu können. Während WebSocket in zwei von drei Tests besser abschneiden konnte *(Messung der Geschwindigkeit in Abhängigkeit verbundener Clients, Austausch großer Datenmengen)*, bietet WebTransport eine bessere Performanz beim Austausch vieler, kleiner Datenpakete.
+
+Beim WebSocket-Protokoll sind für die Zukunft keine großen Änderungen zu erwarten. Hier kann es lediglich passieren, dass bestehende Bibliotheken verbessert werden, die eine noch bessere und einfacherer Nutzung mit sich bringen. Da WebSocket ein sehr geraumer Zeit bestehendes Protokoll ist, sind ebenfalls keine *Breaking-Changes* zu erwarten, welche Neuimplementierungen / Veränderungen bestehender Lösungen mit sich bringen.
+
+Für WebTransport wird sich in der Zukunft sicherlich noch Einiges am Protokoll ändern. Da wir uns aktuell nur im Entwurfszustand befinden, ist es nicht auszuschließen, dass es noch zu diversen Veränderungen kommen wird, die sich positiv auf Robustheit und Performanz auswirken können. Durch solche Änderungen ist es möglich, dass die in dieser Ausarbeitung entwickelte Lösung nach einer solchen Änderung nicht mehr funktionsfähig sein wird, wie dies schon beim Umstieg von *Draft-01* auf *Draft-02* der Fall war. Gleichzeitig ist die Entwicklung von Bibliotheken zu erwarten, die für eine einfachere Nutzung des Protokolls sorgen. Interessant wäre dann an einer solchen Stelle, die verschiedenen Tests erneut durchzuführen und mit den alten Messergebnissen zu vergleichen, um den Fortschritt bei WebTransport beurteilen zu können. Dazu gehört dann auch eine neue Implementierung, um die Verbesserung im diesbezüglich nachvollziehen zu können.
 
 ## Referenzen
 
