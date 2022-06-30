@@ -48,6 +48,22 @@ werden.
 
 ### Emscipten
 
+Emscripten ist eine komplette Compilertoolchain hin zu WebAssebly. Emscripten verwendet dabei LLVM und 
+setzt den Fokus auf Geschwindigkeit, Groesse und der Webplatform. In C++ programmierter Code kann
+beispielsweise mit Hilfe von Emscripten uebersetzt werden und passende HTML-, JavaScript- und WASM-Dateien
+generiert werden. Emscripten liefert dabei beispielsweise die Moeglichkeit innerhalb vom C++-Code
+JavaScript-Funktionen und -Code zu definieren und aufzurufen.
+
+Emscripten bietet zur Kompilierung verschiedne Optimierungsstufen an. Im Folgenden werden die 
+Optimierungen kurz verdeutlicht.
+
+* O0 - Keine Optimierung (default)
+* O1 - Simple Optimierung. Waehrend des Kompilierens wird die 'O1' von LLVM verwendet. Waehrend des Linkens werden verschiedene JS-Assertions nicht eingeschlossen, welche bei O0 existieren wuerden.
+* O2 - Aehnlich wie 'O1', ermoeglicht aber weitere Optimierungen. Waehrend des Linkens werden ebenfalls verschiedene JavaScript Optimierungen ermoeglicht.
+* O3 - Aehnlich wie 'O3', aber mit zusaetzlichen Optimierungen, welche eventuell laenger zum Ausfuehren benoetigen.
+* Os - Aehnlich wie '03', aber konzentriert sich mehr auf die Codegroesse. Dies kann die Laufzeit beeintraechtigen, sowohl von WASM als auch von JavaScript.
+* Oz - Aehnlich wie 'Os', aber reduziert die Codegroesse noch weiter. Kann jedoch laengere Ausfuehrzeiten haben, sowohl von WASM als auch von JavaScript.
+
 ## Forschungsfragen und Beschreibung Projekt
 
 Im Rahmen der Forschungsarbeit sollen folgende Forschungsfragen beantwortet werden.
@@ -138,34 +154,118 @@ Es wird sich mit dem Websever verbunden und die kompilierte HTML-Datei geoeffnet
 aufgeschrieben und die Seite mehrfach neu geladen. Nachdem alle Browser auf der gleichen Version getestet
 wurden, wird eine neue Version (mit Optimierung) gebaut und alle Browser erneut getestet.
 
+Bei der Zeitmessung sind im Hintergrund die gleichen Programme geoeffnet (Visual Studio Code, Notepad++,
+etc.), um moegliche Zeitabweichungen konstant zu halten. Zusaetzlich ist immer nur der zu messende Browser
+mit einem Tab geoeffnet, um Vergleichbarkeit in den Messergebnissen zu gewaehrleisten.
+
 ## Ergebnisse
 
 Im Folgenden werden die gemessenen Ergebnisse dargestellt und erlaeutert.
 
-![](assets/O0.PNG)
+![Keine Optimierung (O0)](assets/O0.PNG)
 
-![](assets/O1.PNG)
+Bei der Uebersetzung ohne Optimierung laesst sich eindeutig erkennen, dass die gemessene Zeit von
+Firefox am geringsten ist. Dabei muss erwaehnt werden, dass Firefox als einziger Browser nur Zeiten
+mit Millisekunden-Genauigkeit ausgegeben hat. Alle anderen Browser waren bei gleicher Codebasis in 
+der Lage, mindestens in zehntel Millisekunden- bzw. in 100 µs Schritten anzugeben, wie lange die Ausfuerung
+gedauert hat. Chrome ist mit einer relativ konstanten Ausfuehrungsdauer der zweitschnellste Browswer bei
+der Ausfuehrung. Die restlichen drei Browser verhielten sich vergleichsweise schnell, Vivaldi hingegen
+benoetigte bei einer Ausfuehrung ca. 8,5 ms, was als Ausrutscher gewertet wird.
 
-![](assets/O2.PNG)
+![Optimierung O1](assets/O1.PNG)
 
-![](assets/O3.PNG)
+Bei der Version, die mit O1 optimiert wurde, lassen sich Unterschiede in den Ausfuehrungszeiten 
+feststellen. Die Ausfuehrungszeit mit Chrome verbessert sich, wobei die Ausfuehrungszeit mit Firefox
+sich marginal verbessert. Die Ausfuehrzeit mit Opera variiert staerker, bleibt im Durchschnitt gleich.
+Bei Edge verbessert sich der Durchschnitt, die Ausfuehrungszeit weist jedoch eine groessere Varianz auf.
+Die Ausfuehrzeit mit Vivaldi verschlechtert sich bei der ersten Optimierung. Es werden Zeiten von bis zu
+9500 µs erreicht.
 
-![](assets/Os.PNG)
+![Optimierung O2](assets/O2.PNG)
 
-![](assets/Oz.PNG)
+Bei Optimierung O2 vergroessert sich die Varianz bei der Ausfuehrung mit Chrome. Bei den weiteren
+Browsern ist keine starke Verbesserung oder Verschlechterung festzustellen. Firefox fuehrt das gegebene
+Programm weiterhin als schnellster Browser aus.
 
-![](assets/chrome.PNG)
+![Optimierung O3](assets/O3.PNG)
 
-![](assets/firefox.PNG)
+Zwischen Optimierung O3 und O2 ist kein deutlicher Unterschied in der Ausfuehrdauer festzustellen.
+Grundsaetzlich laesst sich sagen, dass alle Browser im Durchschnitt minimal langsamer geworden sind.
+Firefox ist weiterhin der schnellste Browser, gefolgt von Chrome. Vivaldi stellt aus der Auswahl an
+Browsern den Langsamsten in diesem Szenario dar.
 
-![](assets/opera.PNG)
+![Optimierung Os](assets/Os.PNG)
 
-![](assets/edge.PNG)
+Bei der Optimierung Os laesst sich feststellen, dass alle Browser langsamere Ausfuehrzeiten besitzen.
+Die Rangfolge bleibt jedoch gleich.
 
-![](assets/vivaldi.PNG)
+![Optimierung Oz](assets/Oz.PNG)
+
+Die letzte Optimierungsstufe Oz erhoeht bei allen Browsern die Ausfuehrzeit des Progamms. Vivaldi faellt
+am meisten auf mit einem Ausrutscher bei ueber 12 ms.
+
+Im Folgenden werden die Ausfuehrzeiten von jedem Browser abhaengig der Optimierungsstufe dargestellt.
+
+![Vergleich Chrome bezogen auf verschiedene Optimierungen](assets/chrome.PNG)
+
+Bei Chrome ist zu erkennen, dass O1 eine Verbesserung der Laufzeit ermoeglicht. Danach steigt die 
+Ausfuehrungszeit stark an. Die Varianz steigt ebenfalls mit steigender Stufe; die Ausfuehrzeiten schwanken
+stark.
+
+![Vergleich Firefox bezogen auf verschiedene Optimierungen](assets/firefox.PNG)
+
+Firefox bietet bei verschiedenen Optimierungsstufen aehnliche geringe Ausfuehrzeiten. Die fehlende
+Schwankung kann durch die Beschraenkung der Messung erklaert werden. Wie bereits oben erwaehnt, 
+laesst Firefox nur eine Zeitmessung in Millisekunden-Intervallen zu.
+
+![Vergleich Opera bezogen auf verschiedene Optimierungen](assets/opera.PNG)
+
+Bei den Ausfuehrungszeiten von Opera laesst sich feststellen, dass die ersten beiden Optimierungsstufen
+die Ausfuehrzeit verringert. O3 fuerht im Durschschnitt zu einer aehnlichen Ausfuehrzeit. Die beiden
+Optimierungen Os und Oz vergroessern die Zeit erneut.
+
+![Vergleich Edge bezogen auf verschiedene Optimierungen](assets/edge.PNG)
+
+Die Ausfuehrungszeit bei Edge bleibt nach Optimierungen relativ konstant. Man erkennt eine leichte 
+Verbesserung der Zeit bei O1 und O2. Ab O3 verlaengert sich die Ausfuehrungszeit marginal.
+
+![Vergleich Vivaldi bezogen auf verschiedene Optimierungen](assets/vivaldi.PNG)
+
+Die Optimierungen von Emscripten verschlechtern ausschliesslich die Ausfuehrungszeiten bei dem Browser
+Vivaldi. Die Varianz steigt und mehrere Ausreisser sind bei der Ausfuehrungszeit vorhanden. Grundsaetzlich
+ist Vivaldi in diesem Test der langsamste Browser aus der Auswahl.
+
+Zum Schluss werden die Ausfuehrungszeiten gemessen, wenn von Emscripten kein WASM generiert werden soll.
+Emscripten erstellt dann ausschliesslich JavaScript und HTML.
+
+![Ohne WASM](assets/NoWASM.PNG)
+
+Es ist deutlich zu sehen, dass das gleiche Programm, welches nur in Javascript ausgefuert wird, deutlich
+langsamer auf allen Browsern laeuft. Der Browser Chrome ist bei der Ausfuehrunszeit von durchschnittlich
+ueber 32 ms ahnlich langsam wie der Browser Vivaldi. Firefox ist dabei mit Abstand der schnellste der 
+ausgewahlten Browser und benoetigt fuer das Programm ca. 13 ms im Durchschnitt. Firefox' Ausfuehrungszeiten
+sind dabei sehr konstant im Gegensatz zu den anderen Browsern.
+
+Die Optimierungsstufen verringert ebenfalls die Dateigroesse. Das gebaute Projekt ohne Optimierung ist 
+489 KB gross. Die Groesse nimmt mit jeder Optimierungsstufe ab. Bei Oz sind die Dateien insgesamt 289 KB
+gross. Wenn das Projekt komplett ohne WASM kompiliert wird, ist die Dateigroesse um ein Vielfaches auf
+insgesamt 1,84 MB gestiegen.
+
+Grundsaetzlich laesst sich sagen, dass Firefox in jedem Test der schnellste Browser ist. Jedoch laesst 
+Firefox trotz gleichen Programmcode keine genauere Zeitmessung zu als in Millisekunden-Intervallen. Dies
+kann zum Beispiel daran liegen, dass intern bei der Auswertung des WASM eine andere Funktion zum Auslesen
+der aktuellen Zeit verwendet wird. Bei den meisten Browsern fuehren die Optimierungen zu einer Verkuerzung
+der Ausfuerzeit. Wie in der Dokumentation von Emscripten beschrieben, werden ab O3 die Dateigroessen
+optimiert. Dies kann dabei zu einer erhoehten Ausfuehrdauer fuehren. Der Browser Vivaldi hingegen
+wies bei dem optimierten Code keinerlei Zeitersparnisse auf; Im Gegenteil, die Ausfuehrdauer verlaengerte
+sich teils. Der kompilierte Code mit WASM ist schneller als der Code, welcher nach der Kompilierung nur 
+aus JavaScript und HTML besteht.
+
+## Zusammenfassung
 
 
 
+## Selbstreflektion
 
 # Literaturverzeichnis
 
