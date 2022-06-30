@@ -135,7 +135,7 @@ Bei den Anteilen ist zu beachten, dass **Protractor**, welches wiederrum selbst 
 
 Grundsätzlich ist somit davon auszugehen, dass sich der Anteil an Tests, den Protractor ausmacht, deutlich reduzieren wird und Migrationen zu anderen Frameworks erfolgen werden. Auch das Angular-Team hat sich aufgrund dessen dazu entschieden, Protractor als Standard-Framework nur noch bis Angular Version 15 zu unterstützen - ein Nachfolge-Standard ist bisher nicht bekannt gegeben.  
 
-Um abzuschätzen, welche End-to-end-Frameworks zukünftig potentiell an Anteil gewinnen und in Zukunft eine große Rolle spielen werden, wird die aktuellste Auswertung von [The State of Javascript 2021](https://2021.stateofjs.com/en-US/libraries/testing) herangezogen, welche unter anderem die Zufriedenheit/Beliebtheit von End-to-End- und Unit-Testframeworks sowie Testbibliotheken widerspiegelt. Entgegen der Erwartungen, ist das weit verbreitete Framework Selenium WebDriver nicht unter den Top 10 der beliebtesten Frameworks. Stattdessen belegen Cypress und Playwright hierbei die obersten Plätze. Zwar belegt Playwright hinsichtlich der Verbreitung noch nicht einen der Top-Plätze, jedoch ist hier Potential erkennbar, dass dieser in den nächsten Jahren zunimmt, da Playwright von demselben Entwicklerteam wie Puppeteer entwickelt wurde und zuästzliche Möglichkeiten wie Cross-Browsing ermöglicht. **Aufgrundlage dieser Repräsentation und Aufgrund der Umstände um Protractor werden im Weiteren [Cypress](https://www.cypress.io/) und [Playwright](https://playwright.dev/) in ihrer Anwendung verglichen.**  
+Um abzuschätzen, welche End-to-end-Frameworks zukünftig potentiell an Anteil gewinnen und in Zukunft eine große Rolle spielen werden, wird die aktuellste Auswertung von [The State of Javascript 2021](https://2021.stateofjs.com/en-US/libraries/testing) herangezogen, welche unter anderem die Zufriedenheit/Beliebtheit von End-to-End- und Unit-Testframeworks sowie Testbibliotheken widerspiegelt. Entgegen der Erwartungen, ist das weit verbreitete Framework Selenium WebDriver nicht unter den Top 10 der beliebtesten Frameworks. Stattdessen belegen Cypress und Playwright hierbei die obersten Plätze. Zwar belegt Playwright hinsichtlich der Verbreitung noch nicht einen der Top-Plätze, jedoch ist hier Potential erkennbar, dass dieser in den nächsten Jahren zunimmt, da Playwright von demselben Entwicklerteam wie Puppeteer entwickelt wurde und zuästzliche Möglichkeiten wie Cross-Browsing ermöglicht. **Aufgrundlage dieser Repräsentation und Aufgrund der Umstände um Protractor werden im Weiteren [Cypress](https://www.cypress.io/) und [Playwright](https://playwright.dev/) zunächst allgemein und später in ihrer Anwendung verglichen.**  
 
 **Cypress vs. Playwright**
 
@@ -159,7 +159,7 @@ Um abzuschätzen, welche End-to-end-Frameworks zukünftig potentiell an Anteil g
 
 ## Unit-Test-Frameworks
 
-Gemäß [The State of Javascript 2021](https://2021.stateofjs.com/en-US/libraries/testing) sind die beliebstesten Frameworks für Unit-Tests [Jest](https://jestjs.io/), [Mocha](https://mochajs.org/) und [Jasmine](https://jasmine.github.io/). Da diese auch in Cypress und Playwright unterstützt werden und sich diese bereits seit 2016 etabliert haben, werden diese im Weiteren in ihrer Anwendung verglichen.
+Gemäß [The State of Javascript 2021](https://2021.stateofjs.com/en-US/libraries/testing) sind die beliebstesten Frameworks für Unit-Tests [Jest](https://jestjs.io/), [Mocha](https://mochajs.org/) und [Jasmine](https://jasmine.github.io/). Da diese auch in Cypress und Playwright unterstützt werden und sich diese bereits seit 2016 etabliert haben, werden diese im Weiteren zunächst allgemein und später in ihrer Anwendung verglichen.
 
 **Jest vs. Mocha vs. Jasmine**
 
@@ -219,14 +219,15 @@ Die zu testende Einheit ist die *MachineVersionsPageComponent*, welche im Wesent
 
 ## Umsetzung
 
-Zwar hat Meta Framework den Vorteil, frameworkunabhäng verwendet zu werden und bietet somit großes Potential zur Erhöhung der Wiederverwendung von Code, jedoch wird im Rahmen des Praktikums die Entwicklung eines Meta Frameworks nicht in Betracht gezogen, da ...
+Zwar hat das Entwickeln eines Meta Framework den Vorteil, frameworkunabhäng verwendet zu werden und bietet somit großes Potential zur Erhöhung der Wiederverwendung von Code, jedoch wird im Rahmen des Praktikums die Entwicklung eines Meta Frameworks nicht in Betracht gezogen, da das Entwickeln eines qualitativen Meta Frameworks viel Erfahrung benötigt. Es wird als sinnvoller angesehen, im Rahmen dieses Praktikums zunächst erste Erfahrungen in der Entwicklung von automatischen Softwaretests unter Verwendung anderer Aspekte wie dem Page Object Model zu sammeln.  
 
-**Page Object Model**  
+Gemäß der [beleuchteten Design-Ansätze](#ansätze-für-wiederverwendbarenwartbaren-code-bei-der-entwicklung-von-automatischen-softwaretests) wird zunächst eine Separierung der seiten- und testspezifischen Codebestandteile vorgesehen.
 
+|![](assets/pageObjects.png)|
+|:--:| 
+| *Abbildung 2: Vorgesehene Page Objects* |
 
-**Testdaten** 
-
-### End-to-end-tests
+(Vorgesehene Kapselung der Testdaten schildern)
 
 **Cypress**
 
@@ -234,9 +235,14 @@ Das Setup von Cypress für das Angular-Projekt erfolgte anhand dieser [Anleitung
 
 (Performancediagramme, Implementierungserfahrungen, etc. schildern)
 
-## Fazit
+**Playwright**
 
-TODO
+(Setup, Performancediagramme, Implementierungserfahrungen, etc. schildern)
+
+# Fazit und Ausblick
+
+Mit dem Ziel, Erfahrungen hinsichtlich der Entwicklung automatisierter Frontendtests für Angular-Webapplikationen zu sammeln, wurden zunächst Ansätze zur Entwicklung qualitativer Tests beleuchtet. Weiter sind die am weitesten verbreiteten Frameworks unter Beachtung der Nutzerzufriedenheit ermittelt und eine Auswahl dieser getroffen worden. Es folgte die Konzeptionierung der Testcases unter Berücksichtigung der zu Beginn beleuchteten Ansätze sowie die Umsetzung erster Tests mit dem Framework Cypress.  
+Die geplante, vollständige Umsetzung der Tests mit allen ausgewählten Frameworks gelang nicht, wodurch zum jetzigen Zeitpunkt keine abschließende Aussage über die Eignung dieser für das Unternehmen getroffen werden kann. Folglich ist es Ziel, im Anschluss dieser Arbeit die Umsetzung der Tests unter den zuvor definierten Kriterien zu vervollständigen um somit eine Beurteilung treffen zu können. Nach Umsetzung der Tests sollten besonders die tatsächlich erreichten Resultate bezüglich der Qualitätsmerkmale Wiederverwendung, Erweiterbarkeit und auch Leserlichkeit bewertet werden, da im Rahmen dieses Projekts erstmalig Erfahrungen gesammelt werden und es laut der Test-Community keine allgemein gültigen Best-Practices gibt, sondern je nach Projekt entsprechende Ansätze gewählt werden sollten.
 
 # Referenzen
 
